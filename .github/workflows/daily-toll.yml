@@ -3,11 +3,22 @@ name: Daily AI Toll
 on:
   schedule:
     - cron: '0 6 * * *'  # 6 AM UTC daily
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch:      # Manual trigger from GitHub UI
+    inputs:
+      full_scan:
+        description: 'Run full historical scan'
+        required: false
+        default: 'false'
+        type: boolean
+  repository_dispatch:    # API trigger
+    types: [collect-toll, full-scan]
 
 jobs:
   collect-toll:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -26,22 +37,37 @@ jobs:
       - name: Run toll collection
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FULL_SCAN: ${{ github.event.inputs.full_scan || github.event.action == 'full-scan' }}
         run: python scripts/run_toll.py
+
+      - name: Generate timestamp
+        id: timestamp
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "toll: daily update ${{ github.run_id }}"
-          title: "Daily AI Toll - ${{ github.event.repository.updated_at }}"
+          commit-message: "toll: daily update ${{ steps.timestamp.outputs.date }}"
+          title: "Daily AI Toll - ${{ steps.timestamp.outputs.date }}"
           body: |
-            Automated daily toll collection.
+            ## Automated Daily Toll Collection
 
-            ## Summary
+            **Date:** ${{ steps.timestamp.outputs.date }}
+            **Trigger:** ${{ github.event_name }}
+
+            ### Changes
             - Events processed from sources
             - Data files updated in `data/`
             - Report generated in `reports/daily/`
 
+            ### Review Checklist
+            - [ ] Events have valid sources
+            - [ ] Causality assessments are reasonable
+            - [ ] Confidence scores are appropriate
+
+            ---
             **Review required before merge.**
-          branch: toll/daily-${{ github.run_number }}
+          branch: toll/daily-${{ steps.timestamp.outputs.date }}
           delete-branch: true
+          labels: toll,automated

@@ -4,73 +4,486 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily AI Toll</title>
+    <meta name="description" content="Evidence-based tracking of AI-driven displacement across jobs, teams, products, companies, revenue, and labor.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-primary: #030712;
+            --bg-secondary: #0f172a;
+            --bg-card: #1e293b;
+            --border: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --red: #ef4444;
+            --red-glow: rgba(239, 68, 68, 0.3);
+            --green: #22c55e;
+            --amber: #f59e0b;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #fafafa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* Animated gradient background */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 100% 0%, rgba(239, 68, 68, 0.1), transparent),
+                radial-gradient(ellipse 50% 30% at 0% 100%, rgba(59, 130, 246, 0.1), transparent);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 2rem;
         }
-        .container { max-width: 800px; text-align: center; }
-        h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .tagline { font-size: 1.25rem; color: #888; margin-bottom: 2rem; }
-        .segments {
+
+        /* Header */
+        header {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--red) 0%, var(--amber) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 0 30px var(--red-glow);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 1rem auto 0;
+            line-height: 1.6;
+        }
+
+        /* Total impact banner */
+        .total-impact {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .total-impact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--red), transparent);
+        }
+
+        .total-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .total-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--red);
+            text-shadow: 0 0 40px var(--red-glow);
+            line-height: 1;
+        }
+
+        .total-sub {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Toll segments grid */
+        .segments-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(6, 1fr);
             gap: 1rem;
             margin: 2rem 0;
         }
-        .segment {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 1rem;
+
+        @media (max-width: 1024px) {
+            .segments-grid { grid-template-columns: repeat(3, 1fr); }
         }
-        .segment-label { font-size: 0.75rem; color: #666; text-transform: uppercase; }
-        .segment-value { font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem; }
-        .status { color: #888; font-size: 0.875rem; margin-top: 2rem; }
-        a { color: #3b82f6; }
+
+        @media (max-width: 640px) {
+            .segments-grid { grid-template-columns: repeat(2, 1fr); }
+            h1 { font-size: 2.5rem; }
+            .total-value { font-size: 3rem; }
+        }
+
+        .segment {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .segment:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .segment-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .segment-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .segment-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .segment-delta {
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .delta-up {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--red);
+        }
+
+        .delta-down {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green);
+        }
+
+        /* Recent events */
+        .events-section {
+            margin: 3rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .view-all {
+            font-size: 0.875rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .view-all:hover { text-decoration: underline; }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .event-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .event-card:hover { border-color: var(--text-muted); }
+
+        .event-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            min-width: 80px;
+        }
+
+        .event-content {
+            flex: 1;
+        }
+
+        .event-title {
+            font-weight: 600;
+            font-size: 0.9375rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .event-source {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        .event-impact {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--red);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .footer-meta a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .footer-meta a:hover { color: var(--accent); }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 999px;
+            font-size: 0.75rem;
+            color: var(--green);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .methodology {
+            margin-top: 1.5rem;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Daily AI Toll</h1>
-        <p class="tagline">Tracking AI-driven displacement across jobs, teams, products, companies, revenue, and labor.</p>
+    <div class="bg-gradient"></div>
 
-        <div class="segments">
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">&#9761;</div>
+            </div>
+            <h1>Daily AI Toll</h1>
+            <p class="tagline">Evidence-based tracking of AI-driven displacement across jobs, teams, products, companies, revenue, and labor.</p>
+        </header>
+
+        <div class="total-impact">
+            <div class="total-label">Cumulative Impact</div>
+            <div class="total-value" id="total-jobs">--</div>
+            <div class="total-sub">jobs affected since tracking began</div>
+        </div>
+
+        <div class="segments-grid">
             <div class="segment">
+                <div class="segment-icon">&#128188;</div>
+                <div class="segment-value" id="jobs">--</div>
                 <div class="segment-label">Jobs</div>
-                <div class="segment-value">--</div>
+                <div class="segment-delta delta-up">--</div>
             </div>
             <div class="segment">
+                <div class="segment-icon">&#128101;</div>
+                <div class="segment-value" id="teams">--</div>
                 <div class="segment-label">Teams</div>
-                <div class="segment-value">--</div>
+                <div class="segment-delta delta-up">--</div>
             </div>
             <div class="segment">
+                <div class="segment-icon">&#128230;</div>
+                <div class="segment-value" id="products">--</div>
                 <div class="segment-label">Products</div>
-                <div class="segment-value">--</div>
+                <div class="segment-delta delta-up">--</div>
             </div>
             <div class="segment">
+                <div class="segment-icon">&#127970;</div>
+                <div class="segment-value" id="companies">--</div>
                 <div class="segment-label">Companies</div>
-                <div class="segment-value">--</div>
+                <div class="segment-delta delta-up">--</div>
             </div>
             <div class="segment">
+                <div class="segment-icon">&#128176;</div>
+                <div class="segment-value" id="revenue">--</div>
                 <div class="segment-label">Revenue ($)</div>
-                <div class="segment-value">--</div>
+                <div class="segment-delta delta-up">--</div>
             </div>
             <div class="segment">
+                <div class="segment-icon">&#9203;</div>
+                <div class="segment-value" id="labor">--</div>
                 <div class="segment-label">Labor Hours</div>
-                <div class="segment-value">--</div>
+                <div class="segment-delta delta-down">--</div>
             </div>
         </div>
 
-        <p class="status">Automated daily collection via <a href="https://github.com/Latarence/dailyaitoll">GitHub Actions</a></p>
+        <section class="events-section">
+            <div class="section-header">
+                <h2 class="section-title">Recent Events</h2>
+                <a href="#" class="view-all">View all &rarr;</a>
+            </div>
+            <div class="events-list" id="events-list">
+                <div class="event-card">
+                    <div class="event-date">--</div>
+                    <div class="event-content">
+                        <div class="event-title">Awaiting first collection run</div>
+                        <div class="event-source">No events recorded yet</div>
+                    </div>
+                    <div class="event-impact">--</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-meta">
+                <span class="status-badge">
+                    <span class="status-dot"></span>
+                    Collecting daily at 6:00 UTC
+                </span>
+                <span>Last updated: <span id="last-updated">--</span></span>
+                <a href="https://github.com/Latarence/dailyaitoll">GitHub</a>
+                <a href="https://github.com/Latarence/dailyaitoll/blob/main/docs/methodology.md">Methodology</a>
+            </div>
+            <p class="methodology">
+                No evidence, no entry. Every event requires source, excerpt, causality assessment, and confidence score.
+                <a href="https://github.com/Latarence/dailyaitoll/blob/main/docs/methodology.md">Learn more</a>
+            </p>
+        </footer>
     </div>
+
+    <script>
+        // Load data from daily_rollup.json when available
+        async function loadData() {
+            try {
+                const response = await fetch('/data/daily_rollup.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    updateUI(data);
+                }
+            } catch (e) {
+                console.log('Data not yet available');
+            }
+        }
+
+        function updateUI(data) {
+            if (data.totals) {
+                document.getElementById('total-jobs').textContent = formatNumber(data.totals.jobs);
+                document.getElementById('jobs').textContent = formatNumber(data.totals.jobs);
+                document.getElementById('teams').textContent = formatNumber(data.totals.teams);
+                document.getElementById('products').textContent = formatNumber(data.totals.products);
+                document.getElementById('companies').textContent = formatNumber(data.totals.companies);
+                document.getElementById('revenue').textContent = formatCurrency(data.totals.revenue);
+                document.getElementById('labor').textContent = formatNumber(data.totals.labor_hours);
+            }
+            if (data.last_updated) {
+                document.getElementById('last-updated').textContent = new Date(data.last_updated).toLocaleDateString();
+            }
+        }
+
+        function formatNumber(n) {
+            if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+            if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+            return n?.toString() || '--';
+        }
+
+        function formatCurrency(n) {
+            if (n >= 1000000000) return '$' + (n / 1000000000).toFixed(1) + 'B';
+            if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+            if (n >= 1000) return '$' + (n / 1000).toFixed(0) + 'K';
+            return n ? '$' + n : '--';
+        }
+
+        loadData();
+    </script>
 </body>
 </html>
