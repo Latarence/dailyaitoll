@@ -1,0 +1,2 @@
+# Daily AI Toll dependencies
+anthropic>=0.25.0

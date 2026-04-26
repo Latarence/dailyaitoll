@@ -1,0 +1,47 @@
+name: Daily AI Toll
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # 6 AM UTC daily
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  collect-toll:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run toll collection
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/run_toll.py
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "toll: daily update ${{ github.run_id }}"
+          title: "Daily AI Toll - ${{ github.event.repository.updated_at }}"
+          body: |
+            Automated daily toll collection.
+
+            ## Summary
+            - Events processed from sources
+            - Data files updated in `data/`
+            - Report generated in `reports/daily/`
+
+            **Review required before merge.**
+          branch: toll/daily-${{ github.run_number }}
+          delete-branch: true
