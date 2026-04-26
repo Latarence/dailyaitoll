@@ -1,12 +1,12 @@
 # Daily AI Toll
 
-Evidence-based tracking of AI-driven displacement across jobs, teams, products, companies, revenue, and labor.
+Tracking AI-driven displacement across jobs, teams, products, companies, revenue, and labor.
 
 **Live site:** https://dailyaitoll.com
 
 ## Overview
 
-Daily AI Toll is a GitHub-hosted, agent-driven system that collects and tracks verifiable instances of AI replacing human work. Every entry requires evidence—no speculation, no projections.
+Daily AI Toll is a GitHub-hosted, LLM-driven system that collects and tracks verifiable instances of AI replacing human work. No speculation, no projections—only confirmed events.
 
 ## Architecture
 
@@ -14,20 +14,19 @@ Daily AI Toll is a GitHub-hosted, agent-driven system that collects and tracks v
 GitHub Actions (cron/dispatch)
         │
         ▼
-   Python Wrapper
+   Python script
         │
         ▼
-  Claude Code CLI ──► Processes news/sources
+   Claude API (searches + generates report)
         │
         ▼
-   Updates repo (data/*.jsonl, reports/)
+   Saves to repo (data/*.jsonl, reports/)
         │
         ▼
    Creates PR for human review
-        │
-        ▼
-   Human merges after verification
 ```
+
+The LLM does the work—searching news, extracting events, and structuring the output. The script just orchestrates the call and saves results.
 
 ## Toll Segments
 

@@ -2,8 +2,6 @@
 
 ## Core Principle
 
-**No evidence, no entry.**
-
 Every toll entry must be traceable to a verifiable source. We do not include:
 - Projections or forecasts
 - Speculation about future layoffs

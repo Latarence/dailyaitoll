@@ -2,13 +2,11 @@
 """
 Daily AI Toll - Collection Script
 
-Invokes Claude Code CLI to process sources and update toll data.
-Outputs: data/events.jsonl, data/daily_rollup.json, reports/daily/YYYY-MM-DD.md
+Prompts Claude to search for and report AI displacement events.
 """
 
 import json
 import os
-import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -17,139 +15,107 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 DATA_DIR = ROOT / "data"
 REPORTS_DIR = ROOT / "reports" / "daily"
-CONFIG_DIR = ROOT / "config"
 EVENTS_FILE = DATA_DIR / "events.jsonl"
 PENDING_FILE = DATA_DIR / "pending.jsonl"
 ROLLUP_FILE = DATA_DIR / "daily_rollup.json"
+WEB_DATA_DIR = ROOT / "web" / "data"
 
 # Ensure directories exist
 DATA_DIR.mkdir(exist_ok=True)
 REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def get_today() -> str:
-    """Get today's date in YYYY-MM-DD format."""
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
 
-def load_existing_events() -> list[dict]:
-    """Load existing events from JSONL file."""
-    events = []
-    if EVENTS_FILE.exists():
-        with open(EVENTS_FILE, "r") as f:
-            for line in f:
-                if line.strip():
-                    events.append(json.loads(line))
-    return events
-
-
 def load_rollup() -> dict:
-    """Load existing rollup or create default."""
     if ROLLUP_FILE.exists():
         with open(ROLLUP_FILE, "r") as f:
             return json.load(f)
     return {
         "last_updated": None,
-        "totals": {
-            "jobs": 0,
-            "teams": 0,
-            "products": 0,
-            "companies": 0,
-            "revenue": 0,
-            "labor_hours": 0
-        },
-        "today": {
-            "jobs": 0,
-            "teams": 0,
-            "products": 0,
-            "companies": 0,
-            "revenue": 0,
-            "labor_hours": 0
-        },
+        "totals": {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0},
+        "today": {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0},
         "events_count": 0,
         "pending_review": 0
     }
 
 
 def build_prompt() -> str:
-    """Build the prompt for Claude Code CLI."""
     today = get_today()
+    rollup = load_rollup()
 
-    return f"""You are the Daily AI Toll collector. Today is {today}.
+    return f"""# Daily AI Toll Collection — {today}
 
-Your task: Search for and document verifiable instances of AI displacing human workers.
+Search for verifiable instances of AI displacing human workers from the past 24-48 hours.
 
-## Rules
-1. NO EVIDENCE, NO ENTRY - Every event must have a source URL
-2. Required fields: source_url, source_name, excerpt, causality, confidence, tolls
-3. Only include events from the last 24-48 hours
-4. Causality must be: direct, contributing, or inferred
-5. Confidence score: 0.0-1.0 based on source reliability and specificity
-
-## Search Strategy
-1. Check major tech news: Reuters, Bloomberg, TechCrunch, The Verge
-2. Search: "AI layoffs today", "AI job cuts", "company replaces workers AI"
-3. Check layoffs.fyi for recent entries mentioning AI
-4. Verify claims with primary sources when possible
-
-## Output Format
-For each event found, output a JSON object (one per line):
-
-```json
-{{"id": "evt_{today}_001", "date": "{today}", "source_url": "https://...", "source_name": "Source", "excerpt": "Quote from article...", "causality": "direct|contributing|inferred", "confidence": 0.85, "status": "verified|pending", "tolls": {{"jobs": 100, "teams": 2, "products": 0, "companies": 1, "revenue": null, "labor_hours": -208000}}, "notes": "Additional context"}}
-```
-
-## What to Look For
-- Layoff announcements citing AI/automation
-- Companies replacing customer service with chatbots
-- Coding/writing teams reduced after AI tool adoption
+## What to find
+- Layoffs explicitly citing AI/automation as a cause
+- Companies replacing workers with AI tools (customer service, coding, writing, etc.)
+- Teams reduced after AI tool deployment
 - Products discontinued due to AI alternatives
 
-## What to Exclude
+## What to exclude
 - Future projections ("AI may eliminate X jobs by 2030")
-- Hiring freezes without layoffs
-- AI tool announcements without workforce impact
-- Opinion pieces without factual events
+- AI hiring/capability announcements without actual job displacement
+- Opinion pieces without concrete events
+- Events already in our database
 
-Search now and output all events found. If no events found today, output: {{"no_events": true, "date": "{today}"}}
-"""
+## Current totals (for context)
+- Jobs displaced: {rollup['totals']['jobs']:,}
+- Companies affected: {rollup['totals']['companies']:,}
+- Events tracked: {rollup['events_count']}
+
+## Output format
+
+Return a JSON object with this structure:
+
+```json
+{{
+  "date": "{today}",
+  "events": [
+    {{
+      "id": "evt_{today.replace('-', '')}_001",
+      "headline": "Company X lays off 200 support staff, cites AI",
+      "source_url": "https://...",
+      "source_name": "Reuters",
+      "excerpt": "Direct quote from article...",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {{
+        "jobs": 200,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -416000
+      }},
+      "notes": "Q2 restructuring"
+    }}
+  ],
+  "summary": "Brief summary of today's findings"
+}}
+```
+
+### Field definitions
+- **causality**: "direct" (AI explicitly cited), "contributing" (AI among factors), "inferred" (pattern suggests AI)
+- **confidence**: 0.0-1.0 based on source reliability
+- **labor_hours**: negative = hours eliminated (jobs × 2080 annual hours)
+
+If no events found, return:
+```json
+{{"date": "{today}", "events": [], "summary": "No verifiable AI displacement events found in the past 24 hours."}}
+```
+
+Search now and return the JSON."""
 
 
-def run_claude_code(prompt: str) -> str:
-    """Invoke Claude Code CLI with the given prompt."""
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("ERROR: ANTHROPIC_API_KEY not set")
-        sys.exit(1)
-
-    # Try Claude Code CLI first
-    try:
-        result = subprocess.run(
-            ["claude", "-p", prompt, "--output-format", "text"],
-            capture_output=True,
-            text=True,
-            timeout=300,  # 5 minute timeout
-            env={**os.environ, "ANTHROPIC_API_KEY": api_key}
-        )
-        if result.returncode == 0:
-            return result.stdout
-        else:
-            print(f"Claude CLI error: {result.stderr}")
-    except FileNotFoundError:
-        print("Claude CLI not found, falling back to API...")
-    except subprocess.TimeoutExpired:
-        print("Claude CLI timed out")
-
-    # Fallback: Direct API call
-    return call_anthropic_api(prompt)
-
-
-def call_anthropic_api(prompt: str) -> str:
-    """Direct API call to Anthropic as fallback."""
+def call_claude(prompt: str) -> str:
+    """Call Anthropic API."""
     try:
         import anthropic
     except ImportError:
-        print("Installing anthropic package...")
+        import subprocess
         subprocess.run([sys.executable, "-m", "pip", "install", "anthropic"], check=True)
         import anthropic
 
@@ -158,192 +124,148 @@ def call_anthropic_api(prompt: str) -> str:
     message = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=4096,
-        messages=[
-            {"role": "user", "content": prompt}
-        ]
+        messages=[{"role": "user", "content": prompt}]
     )
 
     return message.content[0].text
 
 
-def parse_events(output: str) -> list[dict]:
-    """Parse Claude's output into event objects."""
-    events = []
+def parse_response(response: str) -> dict:
+    """Extract JSON from Claude's response."""
+    # Try to find JSON block
+    if "```json" in response:
+        start = response.find("```json") + 7
+        end = response.find("```", start)
+        response = response[start:end]
+    elif "```" in response:
+        start = response.find("```") + 3
+        end = response.find("```", start)
+        response = response[start:end]
 
-    for line in output.split("\n"):
-        line = line.strip()
-        if not line or line.startswith("```"):
-            continue
-
-        # Try to parse as JSON
-        if line.startswith("{"):
-            try:
-                event = json.loads(line)
-                if "no_events" in event:
-                    print(f"No events found for {event.get('date', 'today')}")
-                    continue
-                if "source_url" in event:
-                    events.append(event)
-            except json.JSONDecodeError:
-                continue
-
-    return events
+    return json.loads(response.strip())
 
 
-def update_rollup(events: list[dict], rollup: dict) -> dict:
-    """Update rollup totals with new events."""
+def update_data(result: dict, rollup: dict) -> dict:
+    """Update rollup with new events."""
     today = get_today()
+    events = result.get("events", [])
 
-    # Reset today's counts
-    rollup["today"] = {
-        "jobs": 0,
-        "teams": 0,
-        "products": 0,
-        "companies": 0,
-        "revenue": 0,
-        "labor_hours": 0
-    }
+    # Reset today
+    rollup["today"] = {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0}
 
     for event in events:
-        if event.get("date") == today and event.get("status") == "verified":
-            tolls = event.get("tolls", {})
-            for key in rollup["today"]:
-                value = tolls.get(key) or 0
-                rollup["today"][key] += value
-                rollup["totals"][key] += value
+        tolls = event.get("tolls", {})
+        for key in rollup["today"]:
+            val = tolls.get(key) or 0
+            rollup["today"][key] += val
+            rollup["totals"][key] += val
 
     rollup["last_updated"] = datetime.now(timezone.utc).isoformat()
-    rollup["events_count"] = len(load_existing_events()) + len([e for e in events if e.get("status") == "verified"])
-    rollup["pending_review"] = len([e for e in events if e.get("status") == "pending"])
+    rollup["events_count"] += len(events)
 
     return rollup
 
 
-def generate_report(events: list[dict], rollup: dict) -> str:
-    """Generate daily markdown report."""
+def save_outputs(result: dict, rollup: dict) -> None:
+    """Save all output files."""
     today = get_today()
+    events = result.get("events", [])
 
-    report = f"""# Daily AI Toll Report — {today}
+    # Append events to JSONL
+    if events:
+        with open(EVENTS_FILE, "a") as f:
+            for event in events:
+                event["date"] = today
+                event["created_at"] = datetime.now(timezone.utc).isoformat()
+                f.write(json.dumps(event) + "\n")
+
+    # Save rollup
+    with open(ROLLUP_FILE, "w") as f:
+        json.dump(rollup, f, indent=2)
+
+    # Copy to web
+    with open(WEB_DATA_DIR / "daily_rollup.json", "w") as f:
+        json.dump(rollup, f, indent=2)
+
+    # Generate report
+    report = f"""# Daily AI Toll — {today}
 
 ## Summary
 
-| Metric | Today | Cumulative |
-|--------|-------|------------|
+{result.get('summary', 'No summary available.')}
+
+## Today's Impact
+
+| Metric | Today | Total |
+|--------|-------|-------|
 | Jobs | {rollup['today']['jobs']:,} | {rollup['totals']['jobs']:,} |
 | Teams | {rollup['today']['teams']:,} | {rollup['totals']['teams']:,} |
-| Products | {rollup['today']['products']:,} | {rollup['totals']['products']:,} |
 | Companies | {rollup['today']['companies']:,} | {rollup['totals']['companies']:,} |
-| Revenue | ${rollup['today']['revenue']:,} | ${rollup['totals']['revenue']:,} |
 | Labor Hours | {rollup['today']['labor_hours']:,} | {rollup['totals']['labor_hours']:,} |
 
 ## Events
 
 """
 
-    today_events = [e for e in events if e.get("date") == today]
-
-    if not today_events:
-        report += "_No new events recorded today._\n"
+    if not events:
+        report += "_No events recorded._\n"
     else:
-        for event in today_events:
-            report += f"""### {event.get('source_name', 'Unknown Source')}
+        for event in events:
+            report += f"""### {event.get('headline', 'Untitled')}
 
-- **Source:** [{event.get('source_url', '#')}]({event.get('source_url', '#')})
-- **Causality:** {event.get('causality', 'unknown')}
-- **Confidence:** {event.get('confidence', 0):.0%}
-- **Status:** {event.get('status', 'unknown')}
+**Source:** [{event.get('source_name')}]({event.get('source_url')})
+**Causality:** {event.get('causality')} | **Confidence:** {event.get('confidence', 0):.0%}
 
-> {event.get('excerpt', 'No excerpt available.')}
+> {event.get('excerpt', '')}
 
-**Impact:**
-- Jobs: {event.get('tolls', {}).get('jobs', 0):,}
-- Teams: {event.get('tolls', {}).get('teams', 0):,}
-- Labor Hours: {event.get('tolls', {}).get('labor_hours', 0):,}
+**Impact:** {event.get('tolls', {}).get('jobs', 0):,} jobs
 
 ---
 
 """
 
-    report += f"""
-## Methodology
+    report += f"\n*Generated: {datetime.now(timezone.utc).isoformat()}*\n"
 
-Events are collected via automated search and verified by human review.
-See [methodology.md](/docs/methodology.md) for details.
-
----
-
-*Generated: {datetime.now(timezone.utc).isoformat()}*
-"""
-
-    return report
-
-
-def save_events(events: list[dict]) -> None:
-    """Append new events to JSONL file."""
-    verified = [e for e in events if e.get("status") == "verified"]
-    pending = [e for e in events if e.get("status") == "pending"]
-
-    if verified:
-        with open(EVENTS_FILE, "a") as f:
-            for event in verified:
-                f.write(json.dumps(event) + "\n")
-
-    if pending:
-        with open(PENDING_FILE, "a") as f:
-            for event in pending:
-                f.write(json.dumps(event) + "\n")
+    with open(REPORTS_DIR / f"{today}.md", "w") as f:
+        f.write(report)
 
 
 def main() -> int:
-    """Run the daily toll collection."""
     today = get_today()
-    print(f"[{today}] Starting Daily AI Toll collection...")
+    print(f"[{today}] Daily AI Toll collection starting...")
 
-    # Check for full scan mode
-    full_scan = os.environ.get("FULL_SCAN", "false").lower() == "true"
-    if full_scan:
-        print("Running full historical scan...")
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        print("ERROR: ANTHROPIC_API_KEY not set")
+        return 1
 
-    # Build and run prompt
+    # Build prompt and call Claude
     prompt = build_prompt()
-    print("Invoking Claude...")
+    print("Calling Claude...")
 
-    output = run_claude_code(prompt)
-    print(f"Received {len(output)} characters of output")
+    response = call_claude(prompt)
+    print(f"Response received ({len(response)} chars)")
 
-    # Parse events
-    events = parse_events(output)
-    print(f"Parsed {len(events)} events")
+    # Parse response
+    try:
+        result = parse_response(response)
+    except json.JSONDecodeError as e:
+        print(f"Failed to parse response: {e}")
+        print(f"Raw response:\n{response}")
+        return 1
 
-    if events:
-        # Save events
-        save_events(events)
-        print(f"Saved events to {EVENTS_FILE}")
+    events = result.get("events", [])
+    print(f"Found {len(events)} events")
 
-        # Update rollup
-        rollup = load_rollup()
-        rollup = update_rollup(events, rollup)
-        with open(ROLLUP_FILE, "w") as f:
-            json.dump(rollup, f, indent=2)
-        print(f"Updated rollup: {ROLLUP_FILE}")
+    # Update data
+    rollup = load_rollup()
+    rollup = update_data(result, rollup)
 
-        # Generate report
-        report = generate_report(events, rollup)
-        report_file = REPORTS_DIR / f"{today}.md"
-        with open(report_file, "w") as f:
-            f.write(report)
-        print(f"Generated report: {report_file}")
+    # Save outputs
+    save_outputs(result, rollup)
 
-        # Copy rollup to web for dashboard
-        web_data = ROOT / "web" / "data"
-        web_data.mkdir(exist_ok=True)
-        with open(web_data / "daily_rollup.json", "w") as f:
-            json.dump(rollup, f, indent=2)
-        print("Updated web dashboard data")
-    else:
-        print("No events found today")
+    print(f"Summary: {result.get('summary', 'N/A')}")
+    print(f"[{today}] Complete. Jobs today: {rollup['today']['jobs']}, Total: {rollup['totals']['jobs']}")
 
-    print(f"[{today}] Collection complete")
     return 0
 
 
