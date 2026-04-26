@@ -1,0 +1,21 @@
+{
+  "last_updated": null,
+  "totals": {
+    "jobs": 0,
+    "teams": 0,
+    "products": 0,
+    "companies": 0,
+    "revenue": 0,
+    "labor_hours": 0
+  },
+  "today": {
+    "jobs": 0,
+    "teams": 0,
+    "products": 0,
+    "companies": 0,
+    "revenue": 0,
+    "labor_hours": 0
+  },
+  "events_count": 0,
+  "pending_review": 0
+}

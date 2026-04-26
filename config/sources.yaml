@@ -1,0 +1,92 @@
+# Daily AI Toll - Source Configuration
+# These sources are scanned daily for AI displacement events
+
+news_sources:
+  tier_1:
+    - name: Reuters
+      url: https://www.reuters.com/technology/
+      keywords: ["layoffs", "job cuts", "AI", "automation", "workforce"]
+
+    - name: Bloomberg
+      url: https://www.bloomberg.com/technology
+      keywords: ["layoffs", "restructuring", "AI replacement"]
+
+    - name: SEC Filings
+      url: https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent
+      keywords: ["workforce reduction", "restructuring charges"]
+
+  tier_2:
+    - name: TechCrunch
+      url: https://techcrunch.com/
+      keywords: ["layoffs", "AI", "job cuts", "downsizing"]
+
+    - name: The Verge
+      url: https://www.theverge.com/tech
+      keywords: ["layoffs", "AI jobs", "automation"]
+
+    - name: Ars Technica
+      url: https://arstechnica.com/
+      keywords: ["AI workforce", "job displacement"]
+
+  tier_3:
+    - name: Layoffs.fyi
+      url: https://layoffs.fyi/
+      type: tracker
+      notes: "Cross-reference for verification"
+
+    - name: Hacker News
+      url: https://news.ycombinator.com/
+      keywords: ["layoff", "AI replacing"]
+      notes: "Use for leads, verify with primary sources"
+
+search_queries:
+  daily:
+    - "AI layoffs today"
+    - "AI job cuts announcement"
+    - "company replaces workers with AI"
+    - "AI automation workforce reduction"
+    - "chatbot replaces customer service"
+
+  weekly:
+    - "AI displacement report"
+    - "automation job losses"
+    - "AI workforce impact"
+
+filters:
+  exclude_terms:
+    - "hiring"
+    - "AI jobs growth"
+    - "new AI positions"
+    - "AI talent war"
+
+  require_terms:
+    - one_of: ["layoff", "cut", "eliminate", "replace", "reduce", "restructure"]
+    - one_of: ["AI", "automation", "machine learning", "chatbot", "GPT", "LLM"]
+
+confidence_modifiers:
+  source_tier_1: 0.3
+  source_tier_2: 0.2
+  source_tier_3: 0.1
+  multiple_sources: 0.1
+  official_announcement: 0.2
+  specific_numbers: 0.1
+  vague_language: -0.2
+  single_anonymous: -0.3
+
+causality_keywords:
+  direct:
+    - "replaced by AI"
+    - "AI-driven layoffs"
+    - "automated away"
+    - "AI taking over"
+    - "chatbot replacing"
+
+  contributing:
+    - "AI and restructuring"
+    - "efficiency through AI"
+    - "AI among factors"
+
+  inferred:
+    - "after deploying AI"
+    - "following AI rollout"
+    - "AI adoption and layoffs"

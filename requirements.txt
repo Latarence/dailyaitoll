@@ -1,2 +1,3 @@
 # Daily AI Toll dependencies
 anthropic>=0.25.0
+pyyaml>=6.0
