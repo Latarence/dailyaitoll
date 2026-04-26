@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily AI Toll</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fafafa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container { max-width: 800px; text-align: center; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .tagline { font-size: 1.25rem; color: #888; margin-bottom: 2rem; }
+        .segments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .segment {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .segment-label { font-size: 0.75rem; color: #666; text-transform: uppercase; }
+        .segment-value { font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem; }
+        .status { color: #888; font-size: 0.875rem; margin-top: 2rem; }
+        a { color: #3b82f6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily AI Toll</h1>
+        <p class="tagline">Tracking AI-driven displacement across jobs, teams, products, companies, revenue, and labor.</p>
+
+        <div class="segments">
+            <div class="segment">
+                <div class="segment-label">Jobs</div>
+                <div class="segment-value">--</div>
+            </div>
+            <div class="segment">
+                <div class="segment-label">Teams</div>
+                <div class="segment-value">--</div>
+            </div>
+            <div class="segment">
+                <div class="segment-label">Products</div>
+                <div class="segment-value">--</div>
+            </div>
+            <div class="segment">
+                <div class="segment-label">Companies</div>
+                <div class="segment-value">--</div>
+            </div>
+            <div class="segment">
+                <div class="segment-label">Revenue ($)</div>
+                <div class="segment-value">--</div>
+            </div>
+            <div class="segment">
+                <div class="segment-label">Labor Hours</div>
+                <div class="segment-value">--</div>
+            </div>
+        </div>
+
+        <p class="status">Automated daily collection via <a href="https://github.com/Latarence/dailyaitoll">GitHub Actions</a></p>
+    </div>
+</body>
+</html>
