@@ -2,7 +2,8 @@
 """
 Daily AI Toll - Collection Script
 
-Prompts Claude to search for and report AI displacement events.
+Prompts LLM to search for and report AI displacement events.
+Supports: Anthropic (Claude) and OpenAI (GPT-4)
 """
 
 import json
@@ -16,7 +17,6 @@ ROOT = Path(__file__).parent.parent
 DATA_DIR = ROOT / "data"
 REPORTS_DIR = ROOT / "reports" / "daily"
 EVENTS_FILE = DATA_DIR / "events.jsonl"
-PENDING_FILE = DATA_DIR / "pending.jsonl"
 ROLLUP_FILE = DATA_DIR / "daily_rollup.json"
 WEB_DATA_DIR = ROOT / "web" / "data"
 
@@ -61,7 +61,6 @@ Search for verifiable instances of AI displacing human workers from the past 24-
 - Future projections ("AI may eliminate X jobs by 2030")
 - AI hiring/capability announcements without actual job displacement
 - Opinion pieces without concrete events
-- Events already in our database
 
 ## Current totals (for context)
 - Jobs displaced: {rollup['totals']['jobs']:,}
@@ -70,9 +69,8 @@ Search for verifiable instances of AI displacing human workers from the past 24-
 
 ## Output format
 
-Return a JSON object with this structure:
+Return ONLY a JSON object (no other text):
 
-```json
 {{
   "date": "{today}",
   "events": [
@@ -95,23 +93,30 @@ Return a JSON object with this structure:
   ],
   "summary": "Brief summary of today's findings"
 }}
-```
 
 ### Field definitions
-- **causality**: "direct" (AI explicitly cited), "contributing" (AI among factors), "inferred" (pattern suggests AI)
-- **confidence**: 0.0-1.0 based on source reliability
-- **labor_hours**: negative = hours eliminated (jobs × 2080 annual hours)
+- causality: "direct" (AI explicitly cited), "contributing" (AI among factors), "inferred" (pattern suggests AI)
+- confidence: 0.0-1.0 based on source reliability
+- labor_hours: negative = hours eliminated (jobs × 2080 annual hours)
 
-If no events found, return:
-```json
-{{"date": "{today}", "events": [], "summary": "No verifiable AI displacement events found in the past 24 hours."}}
-```
+If no events found:
+{{"date": "{today}", "events": [], "summary": "No verifiable AI displacement events found."}}
 
-Search now and return the JSON."""
+Search now and return JSON only."""
 
 
-def call_claude(prompt: str) -> str:
-    """Call Anthropic API."""
+def get_provider() -> str:
+    """Determine which LLM provider to use."""
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return "anthropic"
+    elif os.environ.get("OPENAI_API_KEY"):
+        return "openai"
+    else:
+        return None
+
+
+def call_anthropic(prompt: str) -> str:
+    """Call Anthropic Claude API."""
     try:
         import anthropic
     except ImportError:
@@ -120,19 +125,51 @@ def call_claude(prompt: str) -> str:
         import anthropic
 
     client = anthropic.Anthropic()
-
     message = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=4096,
         messages=[{"role": "user", "content": prompt}]
     )
-
     return message.content[0].text
 
 
+def call_openai(prompt: str) -> str:
+    """Call OpenAI GPT-4 API."""
+    try:
+        import openai
+    except ImportError:
+        import subprocess
+        subprocess.run([sys.executable, "-m", "pip", "install", "openai"], check=True)
+        import openai
+
+    client = openai.OpenAI()
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=4096
+    )
+    return response.choices[0].message.content
+
+
+def call_llm(prompt: str) -> str:
+    """Call the configured LLM provider."""
+    provider = get_provider()
+
+    if provider == "anthropic":
+        print("Using Anthropic Claude...")
+        return call_anthropic(prompt)
+    elif provider == "openai":
+        print("Using OpenAI GPT-4...")
+        return call_openai(prompt)
+    else:
+        raise RuntimeError("No API key found. Set ANTHROPIC_API_KEY or OPENAI_API_KEY")
+
+
 def parse_response(response: str) -> dict:
-    """Extract JSON from Claude's response."""
-    # Try to find JSON block
+    """Extract JSON from LLM response."""
+    response = response.strip()
+
+    # Remove markdown code blocks if present
     if "```json" in response:
         start = response.find("```json") + 7
         end = response.find("```", start)
@@ -147,7 +184,6 @@ def parse_response(response: str) -> dict:
 
 def update_data(result: dict, rollup: dict) -> dict:
     """Update rollup with new events."""
-    today = get_today()
     events = result.get("events", [])
 
     # Reset today
@@ -234,15 +270,20 @@ def main() -> int:
     today = get_today()
     print(f"[{today}] Daily AI Toll collection starting...")
 
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ERROR: ANTHROPIC_API_KEY not set")
+    provider = get_provider()
+    if not provider:
+        print("ERROR: No API key found. Set ANTHROPIC_API_KEY or OPENAI_API_KEY")
         return 1
 
-    # Build prompt and call Claude
+    # Build prompt and call LLM
     prompt = build_prompt()
-    print("Calling Claude...")
 
-    response = call_claude(prompt)
+    try:
+        response = call_llm(prompt)
+    except Exception as e:
+        print(f"LLM call failed: {e}")
+        return 1
+
     print(f"Response received ({len(response)} chars)")
 
     # Parse response
@@ -250,7 +291,7 @@ def main() -> int:
         result = parse_response(response)
     except json.JSONDecodeError as e:
         print(f"Failed to parse response: {e}")
-        print(f"Raw response:\n{response}")
+        print(f"Raw response:\n{response[:500]}...")
         return 1
 
     events = result.get("events", [])
