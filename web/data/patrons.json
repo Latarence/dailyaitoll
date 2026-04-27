@@ -4,5 +4,10 @@
     "founding": [],
     "sustainer": [],
     "supporter": []
+  },
+  "schema": {
+    "supporter": {"name": "string"},
+    "sustainer": {"name": "string", "url": "string"},
+    "founding": {"name": "string", "url": "string", "description": "string (250 words max)"}
   }
 }

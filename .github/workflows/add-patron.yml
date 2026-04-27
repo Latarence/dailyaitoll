@@ -16,11 +16,11 @@ on:
         required: true
         type: string
       url:
-        description: 'Patron URL (optional for supporters)'
+        description: 'Patron URL (sustainer and founding only)'
         required: false
         type: string
-      logo:
-        description: 'Logo URL (founding patrons only)'
+      description:
+        description: 'Description (founding patrons only, 250 words max)'
         required: false
         type: string
 
@@ -39,12 +39,12 @@ jobs:
           TIER="${{ inputs.tier }}"
           NAME="${{ inputs.name }}"
           URL="${{ inputs.url }}"
-          LOGO="${{ inputs.logo }}"
+          DESC="${{ inputs.description }}"
 
           # Build patron object based on tier
           if [ "$TIER" = "founding" ]; then
-            PATRON=$(jq -n --arg name "$NAME" --arg url "$URL" --arg logo "$LOGO" \
-              '{name: $name, url: $url, logo: $logo}')
+            PATRON=$(jq -n --arg name "$NAME" --arg url "$URL" --arg desc "$DESC" \
+              '{name: $name, url: $url, description: $desc}')
           elif [ "$TIER" = "sustainer" ]; then
             PATRON=$(jq -n --arg name "$NAME" --arg url "$URL" \
               '{name: $name, url: $url}')
