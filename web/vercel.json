@@ -4,5 +4,10 @@
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "functions": {
+    "api/stripe-webhook.js": {
+      "maxDuration": 10
+    }
+  }
 }
