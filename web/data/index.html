@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Downloads | Daily AI Toll</title>
+    <meta name="description" content="Download AI displacement data in CSV format.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1A1A18;
+            --toll-red: #A32D2D;
+            --toll-red-dark: #E24B4A;
+            --slate: #888780;
+            --ash: #F1EFE8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--ink);
+            color: var(--ash);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+        }
+
+        .back-link {
+            font-size: 0.75rem;
+            color: var(--slate);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .back-link:hover {
+            color: var(--ash);
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--toll-red-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--slate);
+            font-size: 0.875rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ash);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .data-preview {
+            background: #232321;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .data-preview code {
+            color: var(--slate);
+            white-space: pre;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .stat-value {
+            color: var(--toll-red-dark);
+            font-weight: 500;
+        }
+
+        .tier {
+            background: #232321;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+        }
+
+        .tier-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--ash);
+        }
+
+        .tier-price {
+            color: var(--toll-red-dark);
+            font-weight: 500;
+        }
+
+        .tier-description {
+            color: var(--slate);
+            font-size: 0.8125rem;
+            margin-bottom: 1rem;
+        }
+
+        .tier-features {
+            font-size: 0.75rem;
+            color: var(--slate);
+            margin-bottom: 1rem;
+        }
+
+        .tier-features li {
+            margin-bottom: 0.25rem;
+            list-style: none;
+        }
+
+        .tier-features li::before {
+            content: "+ ";
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            padding: 0.625rem 1.25rem;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--toll-red-dark);
+            color: var(--ink);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #f25d5c;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--slate);
+            border: 1px solid var(--slate);
+        }
+
+        .btn-secondary:hover {
+            background: var(--slate);
+            color: var(--ink);
+        }
+
+        .fields-list {
+            font-size: 0.75rem;
+            color: var(--slate);
+        }
+
+        .fields-list dt {
+            color: var(--ash);
+            margin-top: 0.75rem;
+        }
+
+        .fields-list dd {
+            margin-left: 1rem;
+        }
+
+        .note {
+            font-size: 0.6875rem;
+            color: #555;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #333;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--slate);
+            text-decoration: none;
+            font-size: 0.75rem;
+            margin: 0 1rem;
+        }
+
+        footer a:hover {
+            color: var(--ash);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="back-link">&larr; Back to Daily AI Toll</a>
+            <h1>Data Downloads</h1>
+            <p class="subtitle">AI displacement events in machine-readable format</p>
+        </header>
+
+        <section>
+            <h2>Available Data</h2>
+            <div class="stats">
+                <div><span class="stat-value" id="event-count">—</span> events</div>
+                <div><span class="stat-value" id="job-count">—</span> jobs tracked</div>
+                <div>Updated daily</div>
+            </div>
+            <div class="data-preview">
+                <code id="preview">Loading preview...</code>
+            </div>
+        </section>
+
+        <section>
+            <h2>License Tiers</h2>
+
+            <div class="tier">
+                <div class="tier-header">
+                    <span class="tier-name">Journalist / Researcher</span>
+                    <span class="tier-price">Free</span>
+                </div>
+                <p class="tier-description">
+                    For journalists, academics, and non-commercial research.
+                </p>
+                <ul class="tier-features">
+                    <li>Full CSV download</li>
+                    <li>Attribution required</li>
+                    <li>Non-commercial use only</li>
+                </ul>
+                <button class="btn btn-primary" id="download-free">Download CSV</button>
+            </div>
+
+            <div class="tier">
+                <div class="tier-header">
+                    <span class="tier-name">Commercial License</span>
+                    <span class="tier-price">$100/year</span>
+                </div>
+                <p class="tier-description">
+                    For businesses, products, and commercial applications.
+                </p>
+                <ul class="tier-features">
+                    <li>Full CSV download</li>
+                    <li>No attribution required</li>
+                    <li>Commercial use permitted</li>
+                    <li>Priority data requests</li>
+                </ul>
+                <a href="mailto:data@dailyaitoll.com?subject=Commercial%20License%20Inquiry" class="btn btn-secondary">Contact for License</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Data Fields</h2>
+            <dl class="fields-list">
+                <dt>event_date</dt>
+                <dd>Date the event occurred (YYYY-MM-DD)</dd>
+
+                <dt>company</dt>
+                <dd>Company name</dd>
+
+                <dt>jobs</dt>
+                <dd>Number of jobs displaced</dd>
+
+                <dt>headline</dt>
+                <dd>Event headline/description</dd>
+
+                <dt>excerpt</dt>
+                <dd>Quote or summary from source</dd>
+
+                <dt>source_name</dt>
+                <dd>Publication name</dd>
+
+                <dt>source_url</dt>
+                <dd>Link to original article</dd>
+
+                <dt>causality</dt>
+                <dd>AI causality assessment (direct, contributing, inferred)</dd>
+
+                <dt>confidence</dt>
+                <dd>Confidence score (0.0 - 1.0)</dd>
+            </dl>
+        </section>
+
+        <p class="note">
+            Data is collected via automated AI analysis of public news sources.
+            No warranties are made regarding accuracy or completeness.
+            By downloading, you agree to the terms of your selected license tier.
+        </p>
+
+        <footer>
+            <a href="/">Home</a>
+            <a href="https://github.com/Latarence/dailyaitoll">GitHub</a>
+            <a href="mailto:data@dailyaitoll.com">Contact</a>
+        </footer>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                const response = await fetch('/data/daily_rollup.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    render(data);
+                }
+            } catch (e) {
+                console.log('Data not available');
+            }
+        }
+
+        function render(data) {
+            document.getElementById('event-count').textContent = data.events_count || 0;
+            document.getElementById('job-count').textContent =
+                (data.totals?.jobs || 0).toLocaleString();
+
+            // Preview
+            const events = data.all_events || [];
+            if (events.length > 0) {
+                const preview = generateCSVPreview(events);
+                document.getElementById('preview').textContent = preview;
+            }
+
+            // Download button
+            document.getElementById('download-free').addEventListener('click', () => {
+                downloadCSV(events);
+            });
+        }
+
+        function generateCSVPreview(events) {
+            const headers = 'event_date,company,jobs,headline,source_name,causality,confidence';
+            const rows = events.slice(0, 3).map(e => {
+                const company = e.headline?.split(' ')[0] || '';
+                return `${e.event_date},${company},${e.tolls?.jobs || 0},"${truncate(e.headline, 30)}",${e.source_name},${e.causality},${e.confidence}`;
+            });
+            return headers + '\n' + rows.join('\n') + '\n...';
+        }
+
+        function truncate(str, len) {
+            if (!str) return '';
+            return str.length > len ? str.substring(0, len) + '...' : str;
+        }
+
+        function downloadCSV(events) {
+            const headers = ['event_date', 'company', 'jobs', 'headline', 'excerpt', 'source_name', 'source_url', 'causality', 'confidence'];
+
+            const rows = events.map(e => {
+                const company = e.headline?.split(' ')[0] || '';
+                return [
+                    e.event_date || '',
+                    company,
+                    e.tolls?.jobs || 0,
+                    `"${(e.headline || '').replace(/"/g, '""')}"`,
+                    `"${(e.excerpt || '').replace(/"/g, '""')}"`,
+                    e.source_name || '',
+                    e.source_url || '',
+                    e.causality || '',
+                    e.confidence || ''
+                ].join(',');
+            });
+
+            const csv = headers.join(',') + '\n' + rows.join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `daily-ai-toll-${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+
+            URL.revokeObjectURL(url);
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
