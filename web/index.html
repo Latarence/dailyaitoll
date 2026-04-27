@@ -219,6 +219,36 @@
             color: var(--ash);
         }
 
+        .entry-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.75rem;
+        }
+
+        .entry-share {
+            display: flex;
+            gap: 0.375rem;
+        }
+
+        .entry-share a {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            text-align: center;
+            color: #444;
+            text-decoration: none;
+            font-size: 0.6875rem;
+            border: 1px solid #2a2a28;
+            border-radius: 3px;
+        }
+
+        .entry-share a:hover {
+            border-color: var(--slate);
+            color: var(--slate);
+        }
+
         /* Footer */
         footer {
             padding-top: 3rem;
@@ -407,15 +437,29 @@
                     // Extract company name from headline (first word usually)
                     const company = event.headline?.split(' ')[0] || 'Unknown';
 
+                    const entryShareText = `${company}: ${jobs.toLocaleString()} jobs displaced
+
+${event.excerpt || ''}
+
+Via Daily AI Toll`;
+                    const entryShareUrls = getEntryShareUrls(entryShareText, event.source_url);
+
                     entry.innerHTML = `
                         <div class="entry-header">
                             <span class="entry-company">${company}</span>
                             <span class="entry-jobs">${jobs.toLocaleString()} jobs</span>
                         </div>
                         <div class="entry-excerpt">"${event.excerpt || ''}"</div>
-                        <div class="entry-source">
-                            <a href="${event.source_url || '#'}" target="_blank" rel="noopener">${event.source_name || 'Source'}</a>
-                            · ${event.causality || 'unverified'}${confidence ? ` · ${confidence}% confidence` : ''}
+                        <div class="entry-footer">
+                            <div class="entry-source">
+                                <a href="${event.source_url || '#'}" target="_blank" rel="noopener">${event.source_name || 'Source'}</a>
+                                · ${event.causality || 'unverified'}${confidence ? ` · ${confidence}% confidence` : ''}
+                            </div>
+                            <div class="entry-share">
+                                <a href="${entryShareUrls.linkedin}" target="_blank" rel="noopener" title="Share on LinkedIn">in</a>
+                                <a href="${entryShareUrls.twitter}" target="_blank" rel="noopener" title="Share on X">𝕏</a>
+                                <a href="${entryShareUrls.email}" title="Share via Email">✉</a>
+                            </div>
                         </div>
                     `;
                     container.appendChild(entry);
@@ -461,6 +505,18 @@ The human cost of AI adoption, tracked daily.`;
             if (hours >= 1000000) return (hours / 1000000).toFixed(1) + 'M';
             if (hours >= 1000) return (hours / 1000).toFixed(1) + 'K';
             return hours.toString();
+        }
+
+        function getEntryShareUrls(text, sourceUrl) {
+            const url = sourceUrl || 'https://dailyaitoll.com';
+            const encodedText = encodeURIComponent(text);
+            const encodedUrl = encodeURIComponent(url);
+
+            return {
+                linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&summary=${encodedText}`,
+                twitter: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
+                email: `mailto:?subject=${encodeURIComponent('AI Displacement')}&body=${encodedText}%0A%0A${encodedUrl}`
+            };
         }
 
         loadData();
