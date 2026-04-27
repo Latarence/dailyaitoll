@@ -777,7 +777,14 @@
                 const company = event.headline?.split(' ')[0] || 'Unknown';
                 const entryId = `excerpt-${idx}`;
 
-                const entryShareText = `${company}: ${jobs.toLocaleString()} jobs displaced\n\n${event.excerpt || ''}\n\nVia Daily AI Toll`;
+                const hashtags = '#AI #Layoffs #Automation #FutureOfWork';
+                const entryShareText = `${company}: ${jobs.toLocaleString()} jobs displaced
+
+"${event.excerpt || ''}"
+
+${hashtags}
+
+Via @DailyAIToll`;
                 const entryShareUrls = getEntryShareUrls(entryShareText, event.source_url);
 
                 const shareUrl = event.source_url || 'https://dailyaitoll.com';
@@ -873,9 +880,11 @@
             const companies = data.totals?.companies?.toLocaleString() || '—';
             const laborHours = data.totals?.labor_hours ? formatLaborHours(Math.abs(data.totals.labor_hours)) : '—';
 
-            const shareText = `${jobs} jobs · ${companies} companies · ${laborHours} labor hours
+            const shareText = `${jobs} jobs displaced · ${companies} companies · ${laborHours} labor hours
 
-The human cost of AI adoption, tracked daily.`;
+The human cost of AI adoption, tracked daily.
+
+#AI #Layoffs #Automation #FutureOfWork`;
 
             const url = 'https://dailyaitoll.com';
             const encodedText = encodeURIComponent(shareText);
