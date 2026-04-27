@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-27T01:30:00.000000+00:00",
+  "last_updated": "2026-04-27T06:18:50.726448+00:00",
   "totals": {
     "jobs": 24400,
     "teams": 0,
@@ -9,12 +9,12 @@
     "labor_hours": -50752000
   },
   "today": {
-    "jobs": 24400,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 3,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -50752000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-04-24": {
@@ -44,7 +44,7 @@
   },
   "events_count": 3,
   "pending_review": 0,
-  "summary": "Three major AI-related workforce reductions announced April 24-26: Microsoft's voluntary buyouts targeting 15,000 (7% of staff) on April 24, Nike's 1,400 tech-focused layoffs on April 25, and Meta's 8,000 cuts (10% workforce) starting May 20 announced April 26. Combined displacement: 24,400 jobs eliminated.",
+  "summary": "No new verifiable AI displacement events found within the past 24-48 hours. Recent major events (Oracle 30,000 cuts on March 31, Snap 1,000 cuts on April 15) fall outside the specified timeframe. The search reveals continued discussion of previously reported layoffs but no fresh displacement announcements for April 25-26, 2026.",
   "events": [],
   "all_events": [
     {
@@ -54,7 +54,7 @@
       "headline": "Meta announces 8,000 job cuts effective May 20 as part of AI efficiency push",
       "source_url": "https://meyka.com/blog/meta-stock-april-26-8000-job-cuts-amid-ai-spending-surge-2604/",
       "source_name": "Meyka",
-      "excerpt": "Meta announced on April 26 that it will cut approximately 8,000 jobs—roughly 10% of its workforce—starting May 20, 2026.",
+      "excerpt": "Meta announced on April 26 that it will cut approximately 8,000 jobs\u2014roughly 10% of its workforce\u2014starting May 20, 2026.",
       "causality": "contributing",
       "confidence": 0.75,
       "tolls": {
