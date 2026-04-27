@@ -242,11 +242,21 @@
             transition: background 0.3s;
         }
 
-        .entry.highlight {
+        .entry.highlight,
+        .entry.highlighted {
             background: var(--surface);
             margin: 0 -1rem;
             padding: 0.5rem 1rem;
             border-radius: 4px;
+        }
+
+        .entry.highlighted {
+            animation: pulse-highlight 0.5s ease-out;
+        }
+
+        @keyframes pulse-highlight {
+            0% { background: var(--toll-red); }
+            100% { background: var(--surface); }
         }
 
         .entry-rank {
@@ -853,11 +863,43 @@
             if (allEvents.length > 0) {
                 renderRecord(filteredEvents.slice(0, displayCount), allDailyTotals);
                 updateShowMore();
+
+                // Handle URL hash - scroll to linked event
+                scrollToHashEvent();
             }
 
             // Setup search
             setupSearch();
         }
+
+        function scrollToHashEvent() {
+            const hash = window.location.hash.slice(1);
+            if (!hash) return;
+
+            // Check if event exists in data
+            const eventIndex = allEvents.findIndex(e => e.id === hash);
+            if (eventIndex === -1) return;
+
+            // If event is beyond current display count, expand to show it
+            if (eventIndex >= displayCount) {
+                displayCount = eventIndex + 5; // Show a few more for context
+                renderRecord(filteredEvents.slice(0, displayCount), allDailyTotals);
+                updateShowMore();
+            }
+
+            // Scroll to the element
+            setTimeout(() => {
+                const element = document.getElementById(hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    element.classList.add('highlighted');
+                    setTimeout(() => element.classList.remove('highlighted'), 3000);
+                }
+            }, 100);
+        }
+
+        // Also handle hash changes while on page
+        window.addEventListener('hashchange', scrollToHashEvent);
 
         function setupSearch() {
             const searchInput = document.getElementById('search-input');
