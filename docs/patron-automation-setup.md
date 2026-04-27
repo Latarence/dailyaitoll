@@ -18,6 +18,7 @@ Add these in Vercel Dashboard > Project Settings > Environment Variables:
 
 | Variable | Description |
 |----------|-------------|
+| `STRIPE_SECRET_KEY` | Stripe secret key (starts with `sk_live_` or `sk_test_`) |
 | `STRIPE_WEBHOOK_SECRET` | Webhook signing secret from Stripe (starts with `whsec_`) |
 | `GITHUB_TOKEN` | GitHub PAT with `repo` and `workflow` permissions |
 
@@ -29,23 +30,23 @@ Add these in Vercel Dashboard > Project Settings > Environment Variables:
 4. Events to send: `checkout.session.completed`
 5. Copy the signing secret to Vercel env vars
 
-### 3. Stripe Payment Links Metadata
+### 3. Install Stripe Dependency
 
-Edit each payment link in [Stripe Dashboard > Payment Links](https://dashboard.stripe.com/payment-links):
+The `create-checkout` API uses the Stripe SDK. Add to your project:
 
-**Supporter ($25)**
-- Add metadata: `tier` = `supporter`
+```bash
+npm install stripe
+```
 
-**Sustainer ($100)**
-- Add metadata: `tier` = `sustainer`
+Or add a `package.json` in the web directory:
 
-**Founding Patron ($500)**
-- Add metadata: `tier` = `founding`
-
-For all links, also:
-- Enable "Collect customers' names" in Checkout settings
-- Optionally add custom field for "url" (sustainer/founding)
-- Optionally add custom field for "description" (founding only)
+```json
+{
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
+```
 
 ### 4. GitHub Token
 

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Patron | Daily AI Toll</title>
+    <meta name="description" content="Support independent tracking of AI-driven job displacement.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1A1A18;
+            --surface: #232321;
+            --border: #333;
+            --text: #F1EFE8;
+            --muted: #888780;
+            --dim: #555;
+            --toll-red: #A32D2D;
+            --toll-red-dark: #E24B4A;
+        }
+
+        :root.light {
+            --bg: #f5f3ee;
+            --surface: #edeae4;
+            --border: rgba(0,0,0,0.12);
+            --text: #1a1916;
+            --muted: #6a6860;
+            --dim: #a09c94;
+            --toll-red: #8B2525;
+            --toll-red-dark: #C03030;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.75rem;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text);
+        }
+
+        .nav-brand svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .theme-btn {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 0.25rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-btn:hover {
+            color: var(--text);
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .tier-badge.founding {
+            border-color: var(--toll-red-dark);
+            color: var(--toll-red-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--muted);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: var(--dim);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .hint {
+            font-size: 0.6875rem;
+            color: var(--dim);
+            margin-top: 0.5rem;
+        }
+
+        .optional {
+            color: var(--dim);
+            font-weight: normal;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.875rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--toll-red-dark);
+            color: var(--bg);
+            border: none;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #f25d5c;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .price {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .price strong {
+            font-size: 1.5rem;
+            color: var(--text);
+        }
+
+        .error {
+            background: rgba(226, 75, 74, 0.1);
+            border: 1px solid var(--toll-red-dark);
+            color: var(--toll-red-dark);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            font-size: 0.8125rem;
+            display: none;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .back-link:hover {
+            color: var(--text);
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/" class="nav-brand">
+                <svg viewBox="0 0 32 32" fill="currentColor">
+                    <rect x="4" y="4" width="6" height="24" rx="1"/>
+                    <rect x="13" y="12" width="6" height="16" rx="1"/>
+                    <rect x="22" y="18" width="6" height="10" rx="1"/>
+                </svg>
+                Daily AI Toll
+            </a>
+            <div class="nav-links">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                </button>
+                <a href="/patrons/">Patrons</a>
+            </div>
+        </nav>
+
+        <h1>Become a Patron</h1>
+        <span class="tier-badge" id="tierBadge">Supporter</span>
+
+        <div class="error" id="error"></div>
+
+        <form id="patronForm">
+            <input type="hidden" id="tier" name="tier" value="supporter">
+
+            <div class="form-group">
+                <label for="name">Your Name or Organization</label>
+                <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+            </div>
+
+            <div class="form-group" id="urlGroup" style="display: none;">
+                <label for="url">Website URL <span class="optional">(optional)</span></label>
+                <input type="url" id="url" name="url" placeholder="https://example.com">
+            </div>
+
+            <div class="form-group" id="descGroup" style="display: none;">
+                <label for="description">Description <span class="optional">(optional)</span></label>
+                <textarea id="description" name="description" placeholder="A brief description of your organization..."></textarea>
+                <div class="hint">Maximum 250 words. Will appear on the patrons page.</div>
+            </div>
+
+            <div class="price">
+                <strong id="priceDisplay">$25</strong> one-time
+            </div>
+
+            <button type="submit" class="btn" id="submitBtn">Continue to Payment</button>
+        </form>
+
+        <a href="/patrons/" class="back-link">Back to Patron Tiers</a>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/patrons/">Patrons</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const TIERS = {
+            supporter: { name: 'Supporter', price: '$25', showUrl: false, showDesc: false },
+            sustainer: { name: 'Sustainer', price: '$100', showUrl: true, showDesc: false },
+            founding: { name: 'Founding Patron', price: '$500', showUrl: true, showDesc: true },
+        };
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('light');
+            localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
+        }
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light');
+        }
+
+        // Get tier from URL params
+        const params = new URLSearchParams(window.location.search);
+        const tier = params.get('tier') || 'supporter';
+        const tierConfig = TIERS[tier] || TIERS.supporter;
+
+        // Update UI for tier
+        document.getElementById('tier').value = tier;
+        document.getElementById('tierBadge').textContent = tierConfig.name;
+        document.getElementById('tierBadge').className = 'tier-badge ' + tier;
+        document.getElementById('priceDisplay').textContent = tierConfig.price;
+
+        if (tierConfig.showUrl) {
+            document.getElementById('urlGroup').style.display = 'block';
+        }
+        if (tierConfig.showDesc) {
+            document.getElementById('descGroup').style.display = 'block';
+        }
+
+        // Form submission
+        document.getElementById('patronForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const errorDiv = document.getElementById('error');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+            errorDiv.style.display = 'none';
+
+            const formData = {
+                tier: document.getElementById('tier').value,
+                name: document.getElementById('name').value.trim(),
+                url: document.getElementById('url').value.trim(),
+                description: document.getElementById('description').value.trim(),
+            };
+
+            try {
+                const response = await fetch('/api/create-checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Something went wrong');
+                }
+
+                // Redirect to Stripe Checkout
+                window.location.href = data.url;
+            } catch (err) {
+                errorDiv.textContent = err.message;
+                errorDiv.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Continue to Payment';
+            }
+        });
+    </script>
+</body>
+</html>
