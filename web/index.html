@@ -326,6 +326,27 @@
             color: var(--muted);
         }
 
+        .entry-share {
+            display: inline-flex;
+            gap: 0.375rem;
+            margin-left: 0.25rem;
+        }
+
+        .entry-share a {
+            color: var(--dim);
+            text-decoration: none;
+            font-size: 0.625rem;
+            padding: 0.125rem 0.25rem;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            transition: all 0.15s;
+        }
+
+        .entry-share a:hover {
+            color: var(--muted);
+            border-color: var(--muted);
+        }
+
         .date-separator {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 0.6875rem;
@@ -690,7 +711,13 @@
                             <a href="${event.source_url || '#'}" target="_blank" rel="noopener">${event.source_name || 'source'}</a>
                             · ${confidence || '?'}%
                             · <span class="entry-toggle" data-target="${entryId}">[less]</span>
-                            · <a href="${entryShareUrls.twitter}" target="_blank" rel="noopener">share</a>
+                            · share<span class="entry-share">
+                                <a href="${entryShareUrls.linkedin}" target="_blank" rel="noopener" title="LinkedIn">in</a>
+                                <a href="${entryShareUrls.twitter}" target="_blank" rel="noopener" title="X">𝕏</a>
+                                <a href="${entryShareUrls.threads}" target="_blank" rel="noopener" title="Threads">@</a>
+                                <a href="${entryShareUrls.bluesky}" target="_blank" rel="noopener" title="Bluesky">🦋</a>
+                                <a href="${entryShareUrls.email}" title="Email">✉</a>
+                            </span>
                         </div>
                         <div class="entry-excerpt" id="${entryId}">${event.excerpt || ''}</div>
                     </div>
@@ -757,6 +784,8 @@ The human cost of AI adoption, tracked daily.`;
             return {
                 linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&summary=${encodedText}`,
                 twitter: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
+                threads: `https://www.threads.net/intent/post?text=${encodedText}%0A%0A${encodedUrl}`,
+                bluesky: `https://bsky.app/intent/compose?text=${encodedText}%0A%0A${encodedUrl}`,
                 email: `mailto:?subject=${encodeURIComponent('AI Displacement')}&body=${encodedText}%0A%0A${encodedUrl}`
             };
         }
