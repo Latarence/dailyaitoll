@@ -237,12 +237,12 @@
             font-size: 0.75rem;
             margin-top: 0.25rem;
             padding-left: 0;
-            display: none;
+            display: block;
             font-style: italic;
         }
 
-        .entry-excerpt.expanded {
-            display: block;
+        .entry-excerpt.collapsed {
+            display: none;
         }
 
         .entry-toggle {
@@ -622,7 +622,7 @@
                         <div class="entry-meta">
                             <a href="${event.source_url || '#'}" target="_blank" rel="noopener">${event.source_name || 'source'}</a>
                             · ${confidence || '?'}%
-                            · <span class="entry-toggle" data-target="${entryId}">[more]</span>
+                            · <span class="entry-toggle" data-target="${entryId}">[less]</span>
                             · <a href="${entryShareUrls.twitter}" target="_blank" rel="noopener">share</a>
                         </div>
                         <div class="entry-excerpt" id="${entryId}">${event.excerpt || ''}</div>
@@ -636,8 +636,8 @@
             container.querySelectorAll('.entry-toggle').forEach(toggle => {
                 toggle.addEventListener('click', () => {
                     const target = document.getElementById(toggle.dataset.target);
-                    target.classList.toggle('expanded');
-                    toggle.textContent = target.classList.contains('expanded') ? '[less]' : '[more]';
+                    target.classList.toggle('collapsed');
+                    toggle.textContent = target.classList.contains('collapsed') ? '[more]' : '[less]';
                 });
             });
         }
