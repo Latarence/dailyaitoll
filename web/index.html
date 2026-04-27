@@ -42,10 +42,36 @@
             padding: 4rem 2rem;
         }
 
+        /* Nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #333;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        nav a {
+            color: var(--slate);
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: var(--ash);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
         /* Header */
         header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .wordmark {
@@ -370,6 +396,15 @@
 </head>
 <body>
     <div class="container">
+        <nav>
+            <a href="/" class="nav-brand">Daily AI Toll</a>
+            <div class="nav-links">
+                <a href="/data/">Data</a>
+                <a href="https://github.com/Latarence/dailyaitoll/blob/main/docs/methodology.md">Methodology</a>
+                <a href="https://github.com/Latarence/dailyaitoll">GitHub</a>
+            </div>
+        </nav>
+
         <header>
             <div class="wordmark">Daily AI Toll</div>
             <p class="tagline">A running ledger of the human cost of AI adoption.</p>
