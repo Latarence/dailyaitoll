@@ -238,6 +238,15 @@
             font-family: 'IBM Plex Mono', monospace;
             font-size: 0.8125rem;
             line-height: 1.5;
+            scroll-margin-top: 2rem;
+            transition: background 0.3s;
+        }
+
+        .entry.highlight {
+            background: var(--surface);
+            margin: 0 -1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
         }
 
         .entry-rank {
@@ -806,11 +815,16 @@
                 const entry = document.createElement('div');
                 entry.className = 'entry';
 
+                // Use event ID for anchor, fallback to index
+                const eventId = event.id || `event-${idx}`;
+                entry.id = eventId;
+
                 const jobs = event.tolls?.jobs || 0;
                 const confidence = event.confidence ? Math.round(event.confidence * 100) : null;
                 const company = event.headline?.split(' ')[0] || 'Unknown';
-                const entryId = `excerpt-${idx}`;
+                const excerptId = `excerpt-${idx}`;
 
+                const shareUrl = `https://dailyaitoll.com/#${eventId}`;
                 const hashtags = '#AI #Layoffs #Automation #FutureOfWork';
                 const entryShareText = `${company}: ${jobs.toLocaleString()} jobs displaced
 
@@ -819,9 +833,7 @@
 ${hashtags}
 
 Via @DailyAIToll`;
-                const entryShareUrls = getEntryShareUrls(entryShareText);
-
-                const shareUrl = 'https://dailyaitoll.com';
+                const entryShareUrls = getEntryShareUrls(entryShareText, eventId);
                 entry.innerHTML = `
                     <div class="entry-rank">${rank}.</div>
                     <div class="entry-main">
@@ -832,7 +844,7 @@ Via @DailyAIToll`;
                         <div class="entry-meta">
                             <a href="${event.source_url || '#'}" target="_blank" rel="noopener">${event.source_name || 'source'}</a>
                             · ${confidence || '?'}%
-                            · <span class="entry-toggle" data-target="${entryId}">[less]</span>
+                            · <span class="entry-toggle" data-target="${excerptId}">[less]</span>
                             · <span class="share-wrapper">
                                 <span class="share-trigger" data-share-id="${idx}">share</span>
                                 <div class="share-popup" id="share-popup-${idx}">
@@ -854,14 +866,14 @@ Via @DailyAIToll`;
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
                                         </a>
                                     </div>
-                                    <button class="share-copy-btn" data-url="${shareUrl}">
+                                    <button class="share-copy-btn" data-url="https://dailyaitoll.com/#${eventId}">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
                                         Copy link
                                     </button>
                                 </div>
                             </span>
                         </div>
-                        <div class="entry-excerpt" id="${entryId}">${event.excerpt || ''}</div>
+                        <div class="entry-excerpt" id="${excerptId}">${event.excerpt || ''}</div>
                     </div>
                 `;
                 container.appendChild(entry);
@@ -951,8 +963,8 @@ The human cost of AI adoption, tracked daily.
             return hours.toString();
         }
 
-        function getEntryShareUrls(text) {
-            const url = 'https://dailyaitoll.com';
+        function getEntryShareUrls(text, eventId) {
+            const url = `https://dailyaitoll.com/#${eventId}`;
             const encodedText = encodeURIComponent(text);
             const encodedUrl = encodeURIComponent(url);
 
@@ -986,7 +998,27 @@ The human cost of AI adoption, tracked daily.
             }
         });
 
-        loadData();
+        // Scroll to hash and highlight entry
+        function scrollToHash() {
+            const hash = window.location.hash.slice(1);
+            if (hash) {
+                const target = document.getElementById(hash);
+                if (target) {
+                    // Small delay to ensure render is complete
+                    setTimeout(() => {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        target.classList.add('highlight');
+                        // Remove highlight after a few seconds
+                        setTimeout(() => target.classList.remove('highlight'), 3000);
+                    }, 100);
+                }
+            }
+        }
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', scrollToHash);
+
+        loadData().then(scrollToHash);
     </script>
 </body>
 </html>
