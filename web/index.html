@@ -7,722 +7,292 @@
     <meta name="description" content="A running ledger of the human cost of AI adoption.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Brand palette - 5 colors */
-            --ink: #1A1A18;           /* Dark bg, headings */
-            --toll-red: #A32D2D;      /* Accent on light */
-            --toll-red-dark: #E24B4A; /* Accent on dark */
-            --slate: #888780;         /* Metadata, muted */
-            --ash: #F1EFE8;           /* Light bg, body on dark */
-
-            /* Semantic mappings */
-            --bg-primary: var(--ink);
-            --bg-secondary: #252523;
-            --bg-card: #2a2a28;
-            --border: #3a3a38;
-            --text-primary: var(--ash);
-            --text-secondary: #c4c2ba;
-            --text-muted: var(--slate);
-            --accent: var(--toll-red-dark);
-            --red: var(--toll-red-dark);
-            --red-glow: rgba(226, 75, 74, 0.3);
-            --green: #5a8a5a;
+            --ink: #1A1A18;
+            --toll-red: #A32D2D;
+            --toll-red-dark: #E24B4A;
+            --slate: #888780;
+            --ash: #F1EFE8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: Georgia, 'Times New Roman', serif;
+            background: var(--ink);
+            color: var(--ash);
             min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Subtle gradient background */
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(226, 75, 74, 0.08), transparent);
-            z-index: -1;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 4rem 2rem;
         }
 
         /* Header */
         header {
-            padding: 3rem 0 2rem;
             text-align: center;
+            margin-bottom: 4rem;
         }
 
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .logo-bars {
-            display: flex;
-            align-items: flex-end;
-            gap: 4px;
-            height: 32px;
-        }
-
-        .bar {
-            width: 8px;
-            background: var(--toll-red-dark);
-            border-radius: 2px;
-        }
-
-        .bar-1 { height: 100%; }
-        .bar-2 { height: 66%; }
-        .bar-3 { height: 33%; }
-
-        h1 {
-            font-size: 2.5rem;
+        .wordmark {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.125rem;
             font-weight: 600;
-            letter-spacing: 0.02em;
-            color: var(--toll-red-dark);
-        }
-
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 1rem auto 0;
-            line-height: 1.6;
-        }
-
-        /* Total impact banner */
-        .total-impact {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .total-impact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--red), transparent);
-        }
-
-        .total-label {
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--text-muted);
+            color: var(--toll-red-dark);
+            text-transform: uppercase;
             margin-bottom: 0.5rem;
         }
 
-        .total-value {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--red);
-            text-shadow: 0 0 40px var(--red-glow);
-            line-height: 1;
-        }
-
-        .total-sub {
+        .tagline {
             font-size: 1rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
+            color: var(--slate);
+            font-style: italic;
         }
 
-        /* Toll segments grid */
-        .segments-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1rem;
-            margin: 2rem 0;
+        /* The Monument */
+        .monument {
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            margin-bottom: 3rem;
         }
 
-        @media (max-width: 1024px) {
-            .segments-grid { grid-template-columns: repeat(3, 1fr); }
+        .toll-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 6rem;
+            font-weight: 500;
+            color: var(--toll-red-dark);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .toll-label {
+            font-size: 1.125rem;
+            color: var(--slate);
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .toll-context {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--slate);
+            margin-top: 2rem;
+        }
+
+        .toll-context span {
+            margin: 0 1rem;
         }
 
         @media (max-width: 640px) {
-            .segments-grid { grid-template-columns: repeat(2, 1fr); }
-            h1 { font-size: 2.5rem; }
-            .total-value { font-size: 3rem; }
+            .toll-number { font-size: 4rem; }
+            .toll-context span { display: block; margin: 0.25rem 0; }
         }
 
-        .segment {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem;
-            transition: all 0.2s ease;
+        /* The Record */
+        .record {
+            margin-bottom: 4rem;
         }
 
-        .segment:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .segment-icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .segment-value {
+        .record-date {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .segment-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-
-        .segment-delta {
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-top: 0.5rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            display: inline-block;
-        }
-
-        .delta-up {
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--red);
-        }
-
-        .delta-down {
-            background: rgba(34, 197, 94, 0.15);
-            color: var(--green);
-        }
-
-        /* Recent events */
-        .events-section {
-            margin: 3rem 0;
-        }
-
-        .section-header {
+            font-size: 0.875rem;
+            color: var(--slate);
+            padding: 1.5rem 0 0.75rem;
+            border-bottom: 1px solid #333;
+            margin-bottom: 1rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
+            align-items: baseline;
         }
 
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .view-all {
-            font-size: 0.875rem;
-            color: var(--accent);
-            text-decoration: none;
+        .record-date-total {
             font-weight: 500;
+            color: var(--toll-red-dark);
         }
 
-        .view-all:hover { text-decoration: underline; }
-
-        .events-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+        .entry {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #2a2a28;
         }
 
-        .event-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
+        .entry:last-child {
+            border-bottom: none;
+        }
+
+        .entry-header {
             display: flex;
-            align-items: center;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
             gap: 1rem;
-            transition: border-color 0.2s;
         }
 
-        .event-card:hover { border-color: var(--text-muted); }
+        .entry-company {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--ash);
+        }
 
-        .event-date {
+        .entry-jobs {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--toll-red-dark);
+            white-space: nowrap;
+        }
+
+        .entry-excerpt {
+            font-size: 0.9375rem;
+            color: var(--slate);
+            font-style: italic;
+            margin: 0.75rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid #333;
+        }
+
+        .entry-source {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 0.75rem;
-            color: var(--text-muted);
-            min-width: 80px;
+            color: var(--slate);
         }
 
-        .event-content {
-            flex: 1;
+        .entry-source a {
+            color: var(--slate);
+            text-decoration: none;
         }
 
-        .event-title {
-            font-weight: 600;
-            font-size: 0.9375rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .event-source {
-            font-size: 0.8125rem;
-            color: var(--text-muted);
-        }
-
-        .event-impact {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--red);
+        .entry-source a:hover {
+            color: var(--ash);
         }
 
         /* Footer */
         footer {
-            margin-top: 4rem;
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
+            padding-top: 3rem;
+            border-top: 1px solid #333;
             text-align: center;
         }
 
-        .footer-meta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            font-size: 0.875rem;
-            color: var(--text-muted);
-        }
-
-        .footer-meta a {
-            color: var(--text-secondary);
-            text-decoration: none;
-        }
-
-        .footer-meta a:hover { color: var(--accent); }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.25rem 0.75rem;
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            border-radius: 999px;
+        .footer-update {
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 0.75rem;
-            color: var(--green);
+            color: var(--slate);
+            margin-bottom: 1.5rem;
         }
 
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            background: var(--green);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .methodology {
-            margin-top: 1.5rem;
+        .footer-links {
+            font-family: 'Inter', sans-serif;
             font-size: 0.8125rem;
-            color: var(--text-muted);
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        /* Summary section */
-        .summary-section {
-            margin: 2rem 0;
-        }
-
-        .summary-card {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .summary-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .summary-text {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-        }
-
-        /* Enhanced event cards */
-        .event-card {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        @media (min-width: 768px) {
-            .event-card {
-                flex-direction: row;
-                align-items: center;
-            }
-        }
-
-        .event-title a:hover {
-            color: var(--accent) !important;
-            text-decoration: underline !important;
-        }
-
-        .event-excerpt {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin: 0.5rem 0;
-            padding-left: 0.75rem;
-            border-left: 2px solid var(--border);
-            font-style: italic;
-        }
-
-        .event-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-            font-size: 0.75rem;
-        }
-
-        .event-source {
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        .event-causality {
-            padding: 0.125rem 0.5rem;
-            border-radius: 4px;
-            background: rgba(59, 130, 246, 0.15);
-            color: var(--accent);
-            font-weight: 500;
-            text-transform: capitalize;
-        }
-
-        .event-confidence {
-            color: var(--text-muted);
-        }
-
-        /* Timeline chart */
-        .timeline-section {
-            margin: 2rem 0;
-        }
-
-        .timeline-chart {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 0.5rem;
-            height: 180px;
-            padding: 1rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-        }
-
-        .timeline-bar {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-            max-width: 80px;
-        }
-
-        .bar-fill {
-            width: 100%;
-            background: linear-gradient(180deg, var(--red) 0%, rgba(239, 68, 68, 0.5) 100%);
-            border-radius: 4px 4px 0 0;
-            margin-top: auto;
-            transition: height 0.3s ease;
-        }
-
-        .bar-label {
-            font-size: 0.625rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            white-space: nowrap;
-        }
-
-        .bar-value {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-        }
-
-        /* Date headers for grouped events */
-        .date-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 0 0.5rem;
-            margin-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .date-header:first-child {
-            margin-top: 0;
-            border-top: none;
-        }
-
-        .date-label {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .date-total {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--red);
-        }
-
-        /* Event title link styling */
-        .event-title a {
-            color: inherit;
+        .footer-links a {
+            color: var(--slate);
             text-decoration: none;
+            margin: 0 1rem;
         }
 
-        .event-title a:hover {
-            color: var(--accent);
-            text-decoration: underline;
+        .footer-links a:hover {
+            color: var(--ash);
+        }
+
+        .methodology-note {
+            font-size: 0.875rem;
+            color: var(--slate);
+            max-width: 480px;
+            margin: 2rem auto 0;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <div class="bg-gradient"></div>
-
     <div class="container">
         <header>
-            <div class="logo">
-                <div class="logo-bars">
-                    <span class="bar bar-1"></span>
-                    <span class="bar bar-2"></span>
-                    <span class="bar bar-3"></span>
-                </div>
-            </div>
-            <h1>Daily AI Toll</h1>
+            <div class="wordmark">Daily AI Toll</div>
             <p class="tagline">A running ledger of the human cost of AI adoption.</p>
         </header>
 
-        <div class="total-impact">
-            <div class="total-label">Cumulative Impact</div>
-            <div class="total-value" id="total-jobs">--</div>
-            <div class="total-sub">jobs affected since tracking began</div>
-        </div>
-
-        <div class="segments-grid">
-            <div class="segment">
-                <div class="segment-icon">&#128188;</div>
-                <div class="segment-value" id="jobs">--</div>
-                <div class="segment-label">Jobs</div>
-                <div class="segment-delta delta-up">--</div>
-            </div>
-            <div class="segment">
-                <div class="segment-icon">&#128101;</div>
-                <div class="segment-value" id="teams">--</div>
-                <div class="segment-label">Teams</div>
-                <div class="segment-delta delta-up">--</div>
-            </div>
-            <div class="segment">
-                <div class="segment-icon">&#128230;</div>
-                <div class="segment-value" id="products">--</div>
-                <div class="segment-label">Products</div>
-                <div class="segment-delta delta-up">--</div>
-            </div>
-            <div class="segment">
-                <div class="segment-icon">&#127970;</div>
-                <div class="segment-value" id="companies">--</div>
-                <div class="segment-label">Companies</div>
-                <div class="segment-delta delta-up">--</div>
-            </div>
-            <div class="segment">
-                <div class="segment-icon">&#128176;</div>
-                <div class="segment-value" id="revenue">--</div>
-                <div class="segment-label">Revenue ($)</div>
-                <div class="segment-delta delta-up">--</div>
-            </div>
-            <div class="segment">
-                <div class="segment-icon">&#9203;</div>
-                <div class="segment-value" id="labor">--</div>
-                <div class="segment-label">Labor Hours</div>
-                <div class="segment-delta delta-down">--</div>
+        <div class="monument">
+            <div class="toll-number" id="toll-number">—</div>
+            <div class="toll-label">jobs displaced</div>
+            <div class="toll-context">
+                <span><span id="companies-count">—</span> companies</span>
+                <span><span id="events-count">—</span> events</span>
+                <span>since April 2026</span>
             </div>
         </div>
 
-        <section class="summary-section" style="display: none;">
-            <div class="summary-card">
-                <div class="summary-label">Latest Collection</div>
-                <p class="summary-text" id="daily-summary"></p>
-            </div>
-        </section>
-
-        <section class="timeline-section" style="display: none;">
-            <div class="section-header">
-                <h2 class="section-title">Daily Impact Timeline</h2>
-            </div>
-            <div class="timeline-chart" id="timeline-chart"></div>
-        </section>
-
-        <section class="events-section">
-            <div class="section-header">
-                <h2 class="section-title">Recent Events</h2>
-                <a href="https://github.com/Latarence/dailyaitoll/tree/main/reports/daily" class="view-all">View all reports &rarr;</a>
-            </div>
-            <div class="events-list" id="events-list">
-                <div class="event-card">
-                    <div class="event-date">--</div>
-                    <div class="event-content">
-                        <div class="event-title">Awaiting first collection run</div>
-                        <div class="event-source">No events recorded yet</div>
-                    </div>
-                    <div class="event-impact">--</div>
-                </div>
+        <section class="record" id="record">
+            <div class="record-date">
+                <span>Loading...</span>
             </div>
         </section>
 
         <footer>
-            <div class="footer-meta">
-                <span class="status-badge">
-                    <span class="status-dot"></span>
-                    Collecting daily at 11:55 PM EDT
-                </span>
-                <span>Last updated: <span id="last-updated">--</span></span>
-                <a href="https://github.com/Latarence/dailyaitoll">GitHub</a>
-                <a href="https://github.com/Latarence/dailyaitoll/blob/main/docs/methodology.md">Methodology</a>
+            <div class="footer-update">
+                Updated daily at 11:55 PM EDT · Last update: <span id="last-updated">—</span>
             </div>
-            <p class="methodology">
-                Every event requires source, excerpt, causality assessment, and confidence score.
-                <a href="https://github.com/Latarence/dailyaitoll/blob/main/docs/methodology.md">Learn more</a>
+            <div class="footer-links">
+                <a href="https://github.com/Latarence/dailyaitoll/blob/main/docs/methodology.md">Methodology</a>
+                <a href="https://github.com/Latarence/dailyaitoll">GitHub</a>
+            </div>
+            <p class="methodology-note">
+                Every entry requires a source, excerpt, causality assessment, and confidence score.
+                No evidence, no entry.
             </p>
         </footer>
     </div>
 
     <script>
-        // Load data from daily_rollup.json when available
         async function loadData() {
             try {
                 const response = await fetch('/data/daily_rollup.json');
                 if (response.ok) {
                     const data = await response.json();
-                    updateUI(data);
+                    render(data);
                 }
             } catch (e) {
                 console.log('Data not yet available');
             }
         }
 
-        function updateUI(data) {
+        function render(data) {
+            // The Monument
             if (data.totals) {
-                document.getElementById('total-jobs').textContent = formatNumber(data.totals.jobs);
-                document.getElementById('jobs').textContent = formatNumber(data.totals.jobs);
-                document.getElementById('teams').textContent = formatNumber(data.totals.teams);
-                document.getElementById('products').textContent = formatNumber(data.totals.products);
-                document.getElementById('companies').textContent = formatNumber(data.totals.companies);
-                document.getElementById('revenue').textContent = formatCurrency(data.totals.revenue);
-                document.getElementById('labor').textContent = formatNumber(data.totals.labor_hours);
+                document.getElementById('toll-number').textContent =
+                    data.totals.jobs.toLocaleString();
+                document.getElementById('companies-count').textContent =
+                    data.totals.companies.toLocaleString();
             }
+
+            document.getElementById('events-count').textContent =
+                data.events_count || '0';
+
             if (data.last_updated) {
-                document.getElementById('last-updated').textContent = new Date(data.last_updated).toLocaleDateString();
+                const date = new Date(data.last_updated);
+                document.getElementById('last-updated').textContent =
+                    date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
             }
-            if (data.today) {
-                // Update delta indicators
-                const deltas = document.querySelectorAll('.segment-delta');
-                const values = [data.today.jobs, data.today.teams, data.today.products, data.today.companies, data.today.revenue, data.today.labor_hours];
-                deltas.forEach((el, i) => {
-                    const val = values[i];
-                    if (val !== 0) {
-                        el.textContent = (val > 0 ? '+' : '') + formatNumber(val) + ' today';
-                    } else {
-                        el.textContent = 'No change';
-                    }
-                });
-            }
-            // Render summary
-            if (data.summary) {
-                const summarySection = document.querySelector('.summary-section');
-                const summaryEl = document.getElementById('daily-summary');
-                if (summaryEl && summarySection) {
-                    summaryEl.textContent = data.summary;
-                    summarySection.style.display = 'block';
-                }
-            }
-            // Render daily timeline chart
-            if (data.daily_totals && Object.keys(data.daily_totals).length > 0) {
-                renderTimeline(data.daily_totals);
-            }
-            // Render events - prefer all_events, fall back to events
-            const eventsToRender = data.all_events || data.events || [];
-            if (eventsToRender.length > 0) {
-                renderEvents(eventsToRender, data.daily_totals);
+
+            // The Record
+            const events = data.all_events || data.events || [];
+            if (events.length > 0) {
+                renderRecord(events, data.daily_totals);
             }
         }
 
-        function renderTimeline(dailyTotals) {
-            const container = document.getElementById('timeline-chart');
-            if (!container) return;
-
-            // Sort dates and get last 14 days max
-            const dates = Object.keys(dailyTotals).sort().slice(-14);
-            if (dates.length === 0) return;
-
-            const maxJobs = Math.max(...dates.map(d => dailyTotals[d].jobs || 0));
-
-            container.innerHTML = dates.map(date => {
-                const jobs = dailyTotals[date].jobs || 0;
-                const height = maxJobs > 0 ? Math.max((jobs / maxJobs) * 100, 5) : 5;
-                const displayDate = new Date(date + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                return `
-                    <div class="timeline-bar" title="${displayDate}: ${formatNumber(jobs)} jobs">
-                        <div class="bar-fill" style="height: ${height}%"></div>
-                        <div class="bar-label">${displayDate}</div>
-                        <div class="bar-value">${formatNumber(jobs)}</div>
-                    </div>
-                `;
-            }).join('');
-
-            container.parentElement.style.display = 'block';
-        }
-
-        function renderEvents(events, dailyTotals) {
-            const container = document.getElementById('events-list');
+        function renderRecord(events, dailyTotals) {
+            const container = document.getElementById('record');
             container.innerHTML = '';
 
-            // Group events by event_date
+            // Group by date
             const grouped = {};
             events.forEach(event => {
                 const date = event.event_date || event.date || 'Unknown';
@@ -730,68 +300,57 @@
                 grouped[date].push(event);
             });
 
-            // Sort dates descending (most recent first)
-            const sortedDates = Object.keys(grouped).sort().reverse();
+            // Sort dates descending
+            const dates = Object.keys(grouped).sort().reverse();
 
-            sortedDates.forEach(date => {
+            dates.forEach(date => {
                 const dateEvents = grouped[date];
-                const dayTotal = dailyTotals?.[date]?.jobs || dateEvents.reduce((sum, e) => sum + (e.tolls?.jobs || 0), 0);
+                const dayTotal = dailyTotals?.[date]?.jobs ||
+                    dateEvents.reduce((sum, e) => sum + (e.tolls?.jobs || 0), 0);
 
                 // Date header
-                const header = document.createElement('div');
-                header.className = 'date-header';
                 const displayDate = date !== 'Unknown'
-                    ? new Date(date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
+                    ? new Date(date + 'T12:00:00').toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                      })
                     : 'Unknown Date';
-                header.innerHTML = `
-                    <span class="date-label">${displayDate}</span>
-                    <span class="date-total">${formatNumber(dayTotal)} jobs</span>
-                `;
-                container.appendChild(header);
 
-                // Events for this date
+                const dateHeader = document.createElement('div');
+                dateHeader.className = 'record-date';
+                dateHeader.innerHTML = `
+                    <span>${displayDate}</span>
+                    <span class="record-date-total">${dayTotal.toLocaleString()} jobs</span>
+                `;
+                container.appendChild(dateHeader);
+
+                // Entries
                 dateEvents.forEach(event => {
-                    const card = document.createElement('div');
-                    card.className = 'event-card';
+                    const entry = document.createElement('div');
+                    entry.className = 'entry';
 
                     const jobs = event.tolls?.jobs || 0;
-                    const confidence = event.confidence ? Math.round(event.confidence * 100) + '%' : '--';
+                    const confidence = event.confidence ? Math.round(event.confidence * 100) : null;
 
-                    card.innerHTML = `
-                        <div class="event-content">
-                            <div class="event-title">
-                                <a href="${event.source_url || '#'}" target="_blank" rel="noopener">
-                                    ${event.headline || 'Untitled Event'}
-                                </a>
-                            </div>
-                            <div class="event-excerpt">${event.excerpt || ''}</div>
-                            <div class="event-meta">
-                                <span class="event-source">${event.source_name || 'Unknown'}</span>
-                                <span class="event-causality">${event.causality || 'unknown'}</span>
-                                <span class="event-confidence">${confidence} confidence</span>
-                            </div>
+                    // Extract company name from headline (first word usually)
+                    const company = event.headline?.split(' ')[0] || 'Unknown';
+
+                    entry.innerHTML = `
+                        <div class="entry-header">
+                            <span class="entry-company">${company}</span>
+                            <span class="entry-jobs">${jobs.toLocaleString()} jobs</span>
                         </div>
-                        <div class="event-impact">${formatNumber(jobs)} jobs</div>
+                        <div class="entry-excerpt">"${event.excerpt || ''}"</div>
+                        <div class="entry-source">
+                            <a href="${event.source_url || '#'}" target="_blank" rel="noopener">${event.source_name || 'Source'}</a>
+                            · ${event.causality || 'unverified'}${confidence ? ` · ${confidence}% confidence` : ''}
+                        </div>
                     `;
-                    container.appendChild(card);
+                    container.appendChild(entry);
                 });
             });
-        }
-
-        function formatNumber(n) {
-            if (n === null || n === undefined) return '--';
-            const abs = Math.abs(n);
-            const sign = n < 0 ? '-' : '';
-            if (abs >= 1000000) return sign + (abs / 1000000).toFixed(1) + 'M';
-            if (abs >= 1000) return sign + (abs / 1000).toFixed(1) + 'K';
-            return n.toString();
-        }
-
-        function formatCurrency(n) {
-            if (n >= 1000000000) return '$' + (n / 1000000000).toFixed(1) + 'B';
-            if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
-            if (n >= 1000) return '$' + (n / 1000).toFixed(0) + 'K';
-            return n ? '$' + n : '--';
         }
 
         loadData();
