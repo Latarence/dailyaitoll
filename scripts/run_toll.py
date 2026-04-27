@@ -128,7 +128,7 @@ def call_anthropic(prompt: str) -> str:
     message = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=8096,
-        tools=[{"type": "web_search"}],
+        tools=[{"type": "web_search_20260209", "name": "web_search"}],
         messages=[{"role": "user", "content": prompt}]
     )
 
