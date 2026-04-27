@@ -1,0 +1,71 @@
+name: Add Patron
+
+on:
+  workflow_dispatch:
+    inputs:
+      tier:
+        description: 'Patron tier'
+        required: true
+        type: choice
+        options:
+          - founding
+          - sustainer
+          - supporter
+      name:
+        description: 'Patron name'
+        required: true
+        type: string
+      url:
+        description: 'Patron URL (optional for supporters)'
+        required: false
+        type: string
+      logo:
+        description: 'Logo URL (founding patrons only)'
+        required: false
+        type: string
+
+jobs:
+  add-patron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Add patron to JSON
+        run: |
+          # Install jq if needed
+          sudo apt-get install -y jq
+
+          TIER="${{ inputs.tier }}"
+          NAME="${{ inputs.name }}"
+          URL="${{ inputs.url }}"
+          LOGO="${{ inputs.logo }}"
+
+          # Build patron object based on tier
+          if [ "$TIER" = "founding" ]; then
+            PATRON=$(jq -n --arg name "$NAME" --arg url "$URL" --arg logo "$LOGO" \
+              '{name: $name, url: $url, logo: $logo}')
+          elif [ "$TIER" = "sustainer" ]; then
+            PATRON=$(jq -n --arg name "$NAME" --arg url "$URL" \
+              '{name: $name, url: $url}')
+          else
+            PATRON=$(jq -n --arg name "$NAME" '{name: $name}')
+          fi
+
+          # Add patron to the appropriate tier array
+          jq --argjson patron "$PATRON" \
+            --arg tier "$TIER" \
+            --arg now "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            '.patrons[$tier] += [$patron] | .last_updated = $now' \
+            web/data/patrons.json > tmp.json && mv tmp.json web/data/patrons.json
+
+          echo "Added $NAME to $TIER tier"
+          cat web/data/patrons.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add web/data/patrons.json
+          git commit -m "patron: add ${{ inputs.name }} (${{ inputs.tier }})"
+          git push

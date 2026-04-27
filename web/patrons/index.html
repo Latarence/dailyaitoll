@@ -202,6 +202,69 @@
             color: var(--dim);
         }
 
+        .patrons-tier {
+            margin-bottom: 2rem;
+        }
+
+        .patrons-tier-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6875rem;
+            color: var(--dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .patrons-tier-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .patron-founding {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .patron-founding img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .patron-founding a {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .patron-founding a:hover {
+            color: var(--toll-red-dark);
+        }
+
+        .patron-sustainer a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        .patron-sustainer a:hover {
+            color: var(--toll-red-dark);
+        }
+
+        .patron-supporter {
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+
         .cta {
             text-align: center;
             padding: 2rem;
@@ -355,9 +418,11 @@
             </div>
         </section>
 
-        <section>
+        <section id="current-patrons">
             <h2>Current Patrons</h2>
-            <p class="patrons-empty">Be the first to support this project.</p>
+            <div id="patrons-display">
+                <p class="patrons-empty">Be the first to support this project.</p>
+            </div>
         </section>
 
         <div class="cta">
@@ -384,6 +449,72 @@
         if (localStorage.getItem('theme') === 'light') {
             document.documentElement.classList.add('light');
         }
+
+        async function loadPatrons() {
+            try {
+                const response = await fetch('/data/patrons.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    renderPatrons(data.patrons);
+                }
+            } catch (e) {
+                console.log('Patrons data not available');
+            }
+        }
+
+        function renderPatrons(patrons) {
+            const container = document.getElementById('patrons-display');
+            const hasPatrons = patrons.founding.length || patrons.sustainer.length || patrons.supporter.length;
+
+            if (!hasPatrons) {
+                return; // Keep the "Be the first" message
+            }
+
+            let html = '';
+
+            // Founding Patrons
+            if (patrons.founding.length) {
+                html += `<div class="patrons-tier">
+                    <div class="patrons-tier-label">Founding Patrons</div>
+                    <div class="patrons-tier-list">
+                        ${patrons.founding.map(p => `
+                            <div class="patron-founding">
+                                ${p.logo ? `<img src="${p.logo}" alt="${p.name}">` : ''}
+                                <a href="${p.url || '#'}" target="_blank" rel="noopener">${p.name}</a>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>`;
+            }
+
+            // Sustainers
+            if (patrons.sustainer.length) {
+                html += `<div class="patrons-tier">
+                    <div class="patrons-tier-label">Sustainers</div>
+                    <div class="patrons-tier-list">
+                        ${patrons.sustainer.map(p => `
+                            <span class="patron-sustainer">
+                                ${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${p.name}</a>` : p.name}
+                            </span>
+                        `).join(' · ')}
+                    </div>
+                </div>`;
+            }
+
+            // Supporters
+            if (patrons.supporter.length) {
+                html += `<div class="patrons-tier">
+                    <div class="patrons-tier-label">Supporters</div>
+                    <div class="patrons-tier-list">
+                        ${patrons.supporter.map(p => `<span class="patron-supporter">${p.name}</span>`).join(' · ')}
+                    </div>
+                </div>`;
+            }
+
+            container.innerHTML = html;
+        }
+
+        loadPatrons();
     </script>
 </body>
 </html>
