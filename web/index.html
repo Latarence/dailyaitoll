@@ -165,8 +165,8 @@
 
         .hero-stats {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border);
@@ -223,7 +223,7 @@
 
         @media (max-width: 640px) {
             .hero-number { font-size: 3.5rem; }
-            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
         }
 
         /* The Record - HN-inspired compact list */
@@ -615,10 +615,6 @@
                     <div class="hero-stat-value" id="events-count">—</div>
                     <div class="hero-stat-label">Events</div>
                 </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">Apr 2026</div>
-                    <div class="hero-stat-label">Tracking since</div>
-                </div>
             </div>
 
             <div class="hero-share">
@@ -659,16 +655,16 @@
         <footer>
             <div class="footer-main">
                 <div class="footer-update">
-                    Updated daily · Last: <span id="last-updated">—</span>
+                    Tracking since April 2026 · Last update: <span id="last-updated">—</span>
                 </div>
                 <div class="footer-links">
                     <a href="/data/">Data</a>
                     <a href="/methodology/">Methodology</a>
-                    <a href="mailto:data@dailyaitoll.com">Contact</a>
+                    <a href="/patrons/">Patrons</a>
                 </div>
             </div>
             <p class="footer-disclaimer">
-                AI-automated aggregation of public reports. No opinions or analysis. Verify independently.
+                AI-automated aggregation of publicly reported information. Contains no opinions or original analysis. Data may contain errors. Verify all information independently before use.
             </p>
         </footer>
     </div>
