@@ -989,7 +989,8 @@
                 const company = event.headline?.split(' ')[0] || 'Unknown';
                 const excerptId = `excerpt-${idx}`;
 
-                const shareUrl = `https://dailyaitoll.com/#${eventId}`;
+                const datePath = date !== 'Unknown' ? date.replace(/-/g, '/') : '';
+                const shareUrl = datePath ? `https://dailyaitoll.com/${datePath}#${eventId}` : `https://dailyaitoll.com/#${eventId}`;
                 const hashtags = '#AI #Layoffs #Automation #FutureOfWork';
                 const entryShareText = `${company}: ${jobs.toLocaleString()} jobs displaced
 
@@ -998,7 +999,7 @@
 ${hashtags}
 
 Via @DailyAIToll`;
-                const entryShareUrls = getEntryShareUrls(entryShareText, eventId);
+                const entryShareUrls = getEntryShareUrls(entryShareText, eventId, date);
                 entry.innerHTML = `
                     <div class="entry-rank">${rank}.</div>
                     <div class="entry-main">
@@ -1050,7 +1051,7 @@ Via @DailyAIToll`;
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
                                         </a>
                                     </div>
-                                    <button class="share-copy-btn" data-url="https://dailyaitoll.com/#${eventId}">
+                                    <button class="share-copy-btn" data-url="${shareUrl}">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
                                         Copy link
                                     </button>
@@ -1179,8 +1180,12 @@ The human cost of AI adoption, tracked daily.
             return hours.toString();
         }
 
-        function getEntryShareUrls(text, eventId) {
-            const url = `https://dailyaitoll.com/#${eventId}`;
+        function getEntryShareUrls(text, eventId, date) {
+            // Use daily page URL for proper OG tags on LinkedIn
+            const datePath = date && date !== 'Unknown' ? date.replace(/-/g, '/') : '';
+            const url = datePath
+                ? `https://dailyaitoll.com/${datePath}#${eventId}`
+                : `https://dailyaitoll.com/#${eventId}`;
             const encodedText = encodeURIComponent(text);
             const encodedUrl = encodeURIComponent(url);
 

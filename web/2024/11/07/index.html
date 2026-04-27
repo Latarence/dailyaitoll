@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nov 7, 2024 - Daily AI Toll</title>
+    <meta name="description" content="2 companies announced 1,320 job cuts">
+    <link rel="canonical" href="https://dailyaitoll.com/2024/11/07">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <meta property="og:title" content="Daily AI Toll - Nov 7, 2024">
+    <meta property="og:description" content="2 companies announced 1,320 job cuts">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dailyaitoll.com/2024/11/07">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Daily AI Toll - Nov 7, 2024">
+    <meta name="twitter:description" content="2 companies announced 1,320 job cuts">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1A1A18;
+            --surface: #252522;
+            --border: #333;
+            --border-dim: #2a2a28;
+            --text: #F1EFE8;
+            --muted: #888780;
+            --dim: #555;
+            --toll-red: #A32D2D;
+            --toll-red-dark: #E24B4A;
+        }
+
+        :root.light {
+            --bg: #f5f3ee;
+            --surface: #edeae4;
+            --border: rgba(0,0,0,0.12);
+            --border-dim: rgba(0,0,0,0.06);
+            --text: #1a1916;
+            --muted: #6a6860;
+            --dim: #a09c94;
+            --toll-red: #8B2525;
+            --toll-red-dark: #C03030;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.8125rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .nav-brand:hover { color: var(--toll-red-dark); }
+        .nav-brand svg { width: 20px; height: 20px; }
+
+        nav a { color: var(--muted); text-decoration: none; }
+        nav a:hover { color: var(--text); }
+
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+
+        .theme-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+        }
+        .theme-btn:hover { color: var(--text); }
+
+        /* Daily Hero */
+        .daily-hero {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .daily-date {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .daily-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 4rem;
+            font-weight: 500;
+            color: var(--toll-red-dark);
+            line-height: 1;
+        }
+
+        .daily-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            margin-top: 0.5rem;
+        }
+
+        .daily-meta {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-top: 1.5rem;
+        }
+
+        .daily-share {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .daily-share a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            color: var(--dim);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.15s;
+        }
+
+        .daily-share a:hover {
+            color: var(--text);
+            border-color: var(--muted);
+        }
+
+        .daily-share svg { width: 14px; height: 14px; }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { color: var(--text); }
+
+        /* Events */
+        .record { margin-bottom: 2rem; }
+
+        .entry {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.75rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8125rem;
+            line-height: 1.5;
+            border-bottom: 1px solid var(--border-dim);
+            scroll-margin-top: 2rem;
+        }
+
+        .entry:last-child { border-bottom: none; }
+
+        .entry.highlighted {
+            background: var(--surface);
+            margin: 0 -1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            animation: pulse-highlight 0.5s ease-out;
+        }
+
+        @keyframes pulse-highlight {
+            0% { background: var(--toll-red); }
+            100% { background: var(--surface); }
+        }
+
+        .entry-rank {
+            color: var(--dim);
+            width: 2rem;
+            flex-shrink: 0;
+            text-align: right;
+            padding-right: 0.75rem;
+        }
+
+        .entry-main { flex: 1; min-width: 0; }
+
+        .entry-headline {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .entry-company {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .entry-jobs {
+            color: var(--toll-red-dark);
+            font-weight: 500;
+        }
+
+        .entry-jobs::after { content: ' jobs'; color: var(--muted); font-weight: 400; }
+
+        .entry-meta {
+            color: var(--dim);
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .entry-meta a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+        .entry-meta a:hover { color: var(--text); text-decoration: underline; }
+
+        .entry-excerpt {
+            color: var(--muted);
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            font-family: Georgia, serif;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6875rem;
+            color: var(--dim);
+        }
+
+        .footer-links { display: flex; gap: 1.5rem; margin-bottom: 1rem; }
+        .footer-links a { color: var(--muted); text-decoration: none; }
+        .footer-links a:hover { color: var(--text); }
+
+        @media (max-width: 640px) {
+            .daily-number { font-size: 3rem; }
+            .container { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/" class="nav-brand">
+                <svg viewBox="0 0 32 32" fill="currentColor">
+                    <rect x="4" y="4" width="6" height="24" rx="1"/>
+                    <rect x="13" y="12" width="6" height="16" rx="1"/>
+                    <rect x="22" y="18" width="6" height="10" rx="1"/>
+                </svg>
+                Daily AI Toll
+            </a>
+            <div class="nav-links">
+                <button class="theme-btn" onclick="document.documentElement.classList.toggle('light');localStorage.setItem('theme',document.documentElement.classList.contains('light')?'light':'dark')" aria-label="Toggle theme">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                </button>
+                <a href="/about/">About</a>
+                <a href="/data/">Data</a>
+            </div>
+        </nav>
+
+        <a href="/" class="back-link">← All events</a>
+
+        <section class="daily-hero">
+            <div class="daily-date">November 7, 2024</div>
+            <div class="daily-number">1,320</div>
+            <div class="daily-label">jobs displaced</div>
+            <div class="daily-meta">2 companies</div>
+
+            <div class="daily-share">
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fdailyaitoll.com%2F2024%2F11%2F07&title=Daily%20AI%20Toll%20-%20Nov%207%2C%202024&summary=Nov%207%2C%202024%3A%201%2C320%20jobs%20displaced%20across%202%20companies%0A%0A%23AI%20%23Layoffs%20%23Automation%20%23FutureOfWork%0A%0AVia%20%40DailyAIToll" target="_blank" rel="noopener" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Nov%207%2C%202024%3A%201%2C320%20jobs%20displaced%20across%202%20companies%0A%0A%23AI%20%23Layoffs%20%23Automation%20%23FutureOfWork%0A%0AVia%20%40DailyAIToll&url=https%3A%2F%2Fdailyaitoll.com%2F2024%2F11%2F07" target="_blank" rel="noopener" title="X">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://bsky.app/intent/compose?text=Nov%207%2C%202024%3A%201%2C320%20jobs%20displaced%20across%202%20companies%0A%0A%23AI%20%23Layoffs%20%23Automation%20%23FutureOfWork%0A%0AVia%20%40DailyAIToll%0A%0Ahttps%3A%2F%2Fdailyaitoll.com%2F2024%2F11%2F07" target="_blank" rel="noopener" title="Bluesky">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="record">
+
+        <div class="entry" id="evt_20241107_freshwor_118">
+            <div class="entry-rank">1.</div>
+            <div class="entry-main">
+                <div class="entry-headline">
+                    <span class="entry-company">Freshworks</span>
+                    <span class="entry-jobs">660</span>
+                </div>
+                <div class="entry-meta">
+                    70%
+                    <a href="https://www.cio.com/article/3601088/freshworks-lays-off-660-about-13-percent-of-its-global-workforce-despite-strong-earnings-profits.html" target="_blank" rel="noopener">source</a>
+                </div>
+                <div class="entry-excerpt">Freshworks cut 660 employees (13% of workforce) despite reporting strong earnings. CFO cited need to 'add more focus on EX, AI, and CX priorities.' ~500 of cuts were in India (~76% of total), suggesting cost arbitrage alongside AI restructuring. Analyst: 'AI quite likely played a key role.'</div>
+            </div>
+        </div>
+
+        <div class="entry" id="evt_20241107_freshwor_208">
+            <div class="entry-rank">2.</div>
+            <div class="entry-main">
+                <div class="entry-headline">
+                    <span class="entry-company">Freshworks</span>
+                    <span class="entry-jobs">660</span>
+                </div>
+                <div class="entry-meta">
+                    55%
+                    <a href="https://www.cio.com/article/3601088/freshworks-lays-off-660.html" target="_blank" rel="noopener">source</a>
+                </div>
+                <div class="entry-excerpt">13% of headcount cut despite strong earnings; described as a global workforce 'realignment' toward AI product strategy.</div>
+            </div>
+        </div>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/data/">Data</a>
+                <a href="/methodology/">Methodology</a>
+            </div>
+            <p>AI-automated aggregation of publicly reported information.</p>
+        </footer>
+    </div>
+
+    <script>
+        if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light');
+
+        // Scroll to hash on load
+        if (window.location.hash) {
+            setTimeout(() => {
+                const el = document.getElementById(window.location.hash.slice(1));
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.classList.add('highlighted');
+                    setTimeout(() => el.classList.remove('highlighted'), 3000);
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
