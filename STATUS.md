@@ -50,9 +50,9 @@ cd web && python -m http.server 8000
 
 | Issue | Severity | Status |
 |-------|----------|--------|
-| ANTHROPIC_API_KEY not in GitHub secrets | HIGH | Pending |
-| OPENAI_API_KEY not configured | MEDIUM | Pending |
-| First collection run not yet executed | LOW | Waiting on keys |
+| ANTHROPIC_API_KEY not in GitHub secrets | HIGH | ✅ DONE |
+| OPENAI_API_KEY not configured | MEDIUM | ✅ DONE |
+| First collection run not yet executed | LOW | Ready to test |
 
 ## API Keys
 
