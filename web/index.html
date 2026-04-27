@@ -286,6 +286,78 @@
             font-style: italic;
         }
 
+        /* Search */
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            background: #232321;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: var(--ash);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input::placeholder {
+            color: #555;
+        }
+
+        .search-input:focus {
+            border-color: var(--slate);
+        }
+
+        .search-results-count {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--slate);
+            margin-top: 0.5rem;
+        }
+
+        /* Show More */
+        .show-more-container {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #333;
+        }
+
+        .show-more-btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.75rem 2rem;
+            background: transparent;
+            border: 1px solid var(--slate);
+            border-radius: 4px;
+            color: var(--slate);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .show-more-btn:hover {
+            background: var(--slate);
+            color: var(--ink);
+        }
+
+        .show-more-count {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: #555;
+            margin-top: 0.75rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--slate);
+            font-style: italic;
+        }
+
         .disclaimer {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 0.6875rem;
@@ -321,11 +393,21 @@
             </div>
         </div>
 
+        <div class="search-container">
+            <input type="text" class="search-input" id="search-input" placeholder="Search companies, headlines..." />
+            <div class="search-results-count" id="search-results-count"></div>
+        </div>
+
         <section class="record" id="record">
             <div class="record-date">
                 <span>Loading...</span>
             </div>
         </section>
+
+        <div class="show-more-container" id="show-more-container" style="display: none;">
+            <button class="show-more-btn" id="show-more-btn">Show more</button>
+            <div class="show-more-count" id="show-more-count"></div>
+        </div>
 
         <footer>
             <div class="footer-update">
@@ -348,6 +430,13 @@
     </div>
 
     <script>
+        // State
+        let allEvents = [];
+        let allDailyTotals = {};
+        let filteredEvents = [];
+        let displayCount = 10;
+        const ITEMS_PER_PAGE = 10;
+
         async function loadData() {
             try {
                 const response = await fetch('/data/daily_rollup.json');
@@ -382,15 +471,72 @@
             }
 
             // The Record
-            const events = data.all_events || data.events || [];
-            if (events.length > 0) {
-                renderRecord(events, data.daily_totals);
+            allEvents = data.all_events || data.events || [];
+            allDailyTotals = data.daily_totals || {};
+            filteredEvents = [...allEvents];
+
+            if (allEvents.length > 0) {
+                renderRecord(filteredEvents.slice(0, displayCount), allDailyTotals);
+                updateShowMore();
+            }
+
+            // Setup search
+            setupSearch();
+        }
+
+        function setupSearch() {
+            const searchInput = document.getElementById('search-input');
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                displayCount = ITEMS_PER_PAGE;
+
+                if (!query) {
+                    filteredEvents = [...allEvents];
+                } else {
+                    filteredEvents = allEvents.filter(event => {
+                        const company = event.headline?.split(' ')[0]?.toLowerCase() || '';
+                        const headline = event.headline?.toLowerCase() || '';
+                        const excerpt = event.excerpt?.toLowerCase() || '';
+                        return company.includes(query) || headline.includes(query) || excerpt.includes(query);
+                    });
+                }
+
+                renderRecord(filteredEvents.slice(0, displayCount), allDailyTotals);
+                updateShowMore();
+                updateSearchCount(query);
+            });
+        }
+
+        function updateSearchCount(query) {
+            const countEl = document.getElementById('search-results-count');
+            if (query) {
+                countEl.textContent = `${filteredEvents.length} result${filteredEvents.length !== 1 ? 's' : ''} for "${query}"`;
+            } else {
+                countEl.textContent = '';
+            }
+        }
+
+        function updateShowMore() {
+            const container = document.getElementById('show-more-container');
+            const countEl = document.getElementById('show-more-count');
+            const showing = Math.min(displayCount, filteredEvents.length);
+
+            if (filteredEvents.length > displayCount) {
+                container.style.display = 'block';
+                countEl.textContent = `Showing ${showing} of ${filteredEvents.length}`;
+            } else {
+                container.style.display = 'none';
             }
         }
 
         function renderRecord(events, dailyTotals) {
             const container = document.getElementById('record');
             container.innerHTML = '';
+
+            if (events.length === 0) {
+                container.innerHTML = '<div class="no-results">No matching events found.</div>';
+                return;
+            }
 
             // Group by date
             const grouped = {};
@@ -518,6 +664,13 @@ The human cost of AI adoption, tracked daily.`;
                 email: `mailto:?subject=${encodeURIComponent('AI Displacement')}&body=${encodedText}%0A%0A${encodedUrl}`
             };
         }
+
+        // Show more button
+        document.getElementById('show-more-btn').addEventListener('click', () => {
+            displayCount += ITEMS_PER_PAGE;
+            renderRecord(filteredEvents.slice(0, displayCount), allDailyTotals);
+            updateShowMore();
+        });
 
         loadData();
     </script>
