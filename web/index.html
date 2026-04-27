@@ -564,9 +564,27 @@
             font-family: 'IBM Plex Mono', monospace;
             font-size: 0.6875rem;
             color: var(--dim);
-            padding: 1rem 0 0.5rem 2rem;
+            padding: 1rem 0 0.5rem 0;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+        }
+
+        .date-separator a {
+            color: var(--dim);
+            text-decoration: none;
+        }
+
+        .date-separator a:hover {
+            color: var(--text);
+        }
+
+        a.entry-company {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        a.entry-company:hover {
+            color: var(--toll-red-dark);
         }
 
         /* Footer */
@@ -962,7 +980,8 @@
             events.forEach((event, idx) => {
                 const date = event.event_date || event.date || 'Unknown';
 
-                // Date separator
+                // Date separator with link to daily page
+                const datePath = date !== 'Unknown' ? date.replace(/-/g, '/') : '';
                 if (date !== lastDate) {
                     const displayDate = date !== 'Unknown'
                         ? new Date(date + 'T12:00:00').toLocaleDateString('en-US', {
@@ -972,7 +991,11 @@
                         : 'Unknown';
                     const separator = document.createElement('div');
                     separator.className = 'date-separator';
-                    separator.textContent = displayDate;
+                    if (datePath) {
+                        separator.innerHTML = `<a href="/${datePath}">${displayDate}</a>`;
+                    } else {
+                        separator.textContent = displayDate;
+                    }
                     container.appendChild(separator);
                     lastDate = date;
                 }
@@ -989,8 +1012,8 @@
                 const company = event.headline?.split(' ')[0] || 'Unknown';
                 const excerptId = `excerpt-${idx}`;
 
-                const datePath = date !== 'Unknown' ? date.replace(/-/g, '/') : '';
                 const shareUrl = datePath ? `https://dailyaitoll.com/${datePath}#${eventId}` : `https://dailyaitoll.com/#${eventId}`;
+                const eventPageUrl = datePath ? `/${datePath}#${eventId}` : `#${eventId}`;
                 const hashtags = '#AI #Layoffs #Automation #FutureOfWork';
                 const entryShareText = `${company}: ${jobs.toLocaleString()} jobs displaced
 
@@ -1001,10 +1024,9 @@ ${hashtags}
 Via @DailyAIToll`;
                 const entryShareUrls = getEntryShareUrls(entryShareText, eventId, date);
                 entry.innerHTML = `
-                    <div class="entry-rank">${rank}.</div>
                     <div class="entry-main">
                         <div class="entry-headline">
-                            <span class="entry-company">${company}</span>
+                            <a href="${eventPageUrl}" class="entry-company">${company}</a>
                             <span class="entry-jobs">${jobs.toLocaleString()}</span>
                         </div>
                         <div class="entry-meta">
