@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Ready | Daily AI Toll</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1A1A18;
+            --toll-red: #A32D2D;
+            --toll-red-dark: #E24B4A;
+            --slate: #888780;
+            --ash: #F1EFE8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--ink);
+            color: var(--ash);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #333;
+            font-size: 0.75rem;
+        }
+
+        nav a {
+            color: var(--slate);
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: var(--ash);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--ash);
+            margin-bottom: 1rem;
+        }
+
+        .message {
+            color: var(--slate);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--toll-red-dark);
+            color: var(--ink);
+            border: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn:hover {
+            background: #f25d5c;
+        }
+
+        .stats {
+            font-size: 0.8125rem;
+            color: var(--slate);
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #232321;
+            border-radius: 4px;
+        }
+
+        .note {
+            font-size: 0.75rem;
+            color: #555;
+            margin-top: 2rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        footer a {
+            color: var(--slate);
+            text-decoration: none;
+            font-size: 0.75rem;
+            margin: 0 1rem;
+        }
+
+        footer a:hover {
+            color: var(--ash);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/" class="nav-brand">Daily AI Toll</a>
+            <div class="nav-links">
+                <a href="/data/">Data</a>
+                <a href="/methodology/">Methodology</a>
+                <a href="https://linkedin.com/company/dailyaitoll" title="LinkedIn">in</a>
+            </div>
+        </nav>
+
+        <div class="success-icon">&#10003;</div>
+        <h1>Thank you for your purchase</h1>
+        <p class="message">Your download is ready. Click below to get your CSV file.</p>
+
+        <button class="btn" id="download-btn">Download CSV</button>
+
+        <div class="stats">
+            <span id="event-count">—</span> events · <span id="job-count">—</span> jobs · Updated <span id="last-updated">—</span>
+        </div>
+
+        <p class="note">
+            This link is valid for this session only. Bookmark this page or save your CSV file.<br>
+            Questions? Contact data@dailyaitoll.com
+        </p>
+
+        <footer>
+            <a href="/">Home</a>
+            <a href="/data/">Data</a>
+            <a href="mailto:data@dailyaitoll.com">Contact</a>
+        </footer>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                const response = await fetch('/data/daily_rollup.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    render(data);
+                }
+            } catch (e) {
+                console.log('Data not available');
+            }
+        }
+
+        function render(data) {
+            document.getElementById('event-count').textContent = data.events_count || 0;
+            document.getElementById('job-count').textContent =
+                (data.totals?.jobs || 0).toLocaleString();
+
+            if (data.last_updated) {
+                const date = new Date(data.last_updated);
+                document.getElementById('last-updated').textContent =
+                    date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            }
+
+            const events = data.all_events || [];
+
+            document.getElementById('download-btn').addEventListener('click', () => {
+                downloadCSV(events);
+            });
+        }
+
+        function downloadCSV(events) {
+            const headers = ['event_date', 'company', 'jobs', 'headline', 'excerpt', 'source_name', 'source_url', 'causality', 'confidence'];
+
+            const rows = events.map(e => {
+                const company = e.headline?.split(' ')[0] || '';
+                return [
+                    e.event_date || '',
+                    company,
+                    e.tolls?.jobs || 0,
+                    `"${(e.headline || '').replace(/"/g, '""')}"`,
+                    `"${(e.excerpt || '').replace(/"/g, '""')}"`,
+                    e.source_name || '',
+                    e.source_url || '',
+                    e.causality || '',
+                    e.confidence || ''
+                ].join(',');
+            });
+
+            const csv = headers.join(',') + '\n' + rows.join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `daily-ai-toll-${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+
+            URL.revokeObjectURL(url);
+        }
+
+        loadData();
+    </script>
+</body>
+</html>

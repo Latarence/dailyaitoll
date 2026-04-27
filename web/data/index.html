@@ -380,27 +380,12 @@
                 document.getElementById('preview').textContent = preview;
             }
 
-            // Stripe Payment Links - replace these URLs with your actual Stripe links
-            const STRIPE_JOURNALIST = null; // e.g., 'https://buy.stripe.com/xxx'
-            const STRIPE_COMMERCIAL = null; // e.g., 'https://buy.stripe.com/yyy'
+            // Stripe Payment Links
+            const STRIPE_JOURNALIST = 'https://buy.stripe.com/7sY28qfVC7694u83NF8k80x';
+            const STRIPE_COMMERCIAL = 'https://buy.stripe.com/6oUcN49xegGJ1hW2JB8k80y';
 
-            document.getElementById('buy-journalist').addEventListener('click', (e) => {
-                e.preventDefault();
-                if (STRIPE_JOURNALIST) {
-                    window.location.href = STRIPE_JOURNALIST;
-                } else {
-                    alert('Coming soon. Contact data@dailyaitoll.com for early access.');
-                }
-            });
-
-            document.getElementById('buy-commercial').addEventListener('click', (e) => {
-                e.preventDefault();
-                if (STRIPE_COMMERCIAL) {
-                    window.location.href = STRIPE_COMMERCIAL;
-                } else {
-                    alert('Coming soon. Contact data@dailyaitoll.com for early access.');
-                }
-            });
+            document.getElementById('buy-journalist').href = STRIPE_JOURNALIST;
+            document.getElementById('buy-commercial').href = STRIPE_COMMERCIAL;
         }
 
         function generateCSVPreview(events) {
