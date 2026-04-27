@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily AI Toll</title>
     <meta name="description" content="A running ledger of the human cost of AI adoption.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <meta property="og:title" content="Daily AI Toll">
+    <meta property="og:description" content="A running ledger of the human cost of AI adoption.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dailyaitoll.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Daily AI Toll">
+    <meta name="twitter:description" content="A running ledger of the human cost of AI adoption.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
@@ -94,6 +103,42 @@
         @media (max-width: 640px) {
             .toll-number { font-size: 4rem; }
             .toll-context span { display: block; margin: 0.25rem 0; }
+        }
+
+        /* Share */
+        .share-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+        }
+
+        .share-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6875rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-right: 1rem;
+        }
+
+        .share-link {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            color: var(--slate);
+            text-decoration: none;
+            font-size: 0.875rem;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin: 0 0.25rem;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .share-link:hover {
+            border-color: var(--slate);
+            color: var(--ash);
         }
 
         /* The Record */
@@ -210,6 +255,15 @@
             margin: 2rem auto 0;
             font-style: italic;
         }
+
+        .disclaimer {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6875rem;
+            color: #555;
+            max-width: 480px;
+            margin: 2rem auto 0;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -226,6 +280,14 @@
                 <span><span id="companies-count">—</span> companies</span>
                 <span><span id="events-count">—</span> events</span>
                 <span>since April 2026</span>
+            </div>
+            <div class="share-section">
+                <span class="share-label">Share</span>
+                <a href="#" id="share-linkedin" class="share-link" title="Share on LinkedIn" target="_blank" rel="noopener">in</a>
+                <a href="#" id="share-twitter" class="share-link" title="Share on X" target="_blank" rel="noopener">𝕏</a>
+                <a href="#" id="share-threads" class="share-link" title="Share on Threads" target="_blank" rel="noopener">@</a>
+                <a href="#" id="share-bluesky" class="share-link" title="Share on Bluesky" target="_blank" rel="noopener">🦋</a>
+                <a href="#" id="share-email" class="share-link" title="Share via Email">✉</a>
             </div>
         </div>
 
@@ -246,6 +308,11 @@
             <p class="methodology-note">
                 Every entry requires a source, excerpt, causality assessment, and confidence score.
                 No evidence, no entry.
+            </p>
+            <p class="disclaimer">
+                This is an independent project, not affiliated with any company or organization mentioned.
+                Data is aggregated from public sources and may contain errors.
+                Use for informational purposes only.
             </p>
         </footer>
     </div>
@@ -274,6 +341,9 @@
 
             document.getElementById('events-count').textContent =
                 data.events_count || '0';
+
+            // Update share links
+            updateShareLinks(data);
 
             if (data.last_updated) {
                 const date = new Date(data.last_updated);
@@ -351,6 +421,46 @@
                     container.appendChild(entry);
                 });
             });
+        }
+
+        function updateShareLinks(data) {
+            const jobs = data.totals?.jobs?.toLocaleString() || '—';
+            const companies = data.totals?.companies?.toLocaleString() || '—';
+            const laborHours = data.totals?.labor_hours ? formatLaborHours(Math.abs(data.totals.labor_hours)) : '—';
+
+            const shareText = `${jobs} jobs · ${companies} companies · ${laborHours} labor hours
+
+The human cost of AI adoption, tracked daily.`;
+
+            const url = 'https://dailyaitoll.com';
+            const encodedText = encodeURIComponent(shareText);
+            const encodedUrl = encodeURIComponent(url);
+
+            // LinkedIn
+            document.getElementById('share-linkedin').href =
+                `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodeURIComponent('Daily AI Toll')}&summary=${encodedText}`;
+
+            // Twitter/X
+            document.getElementById('share-twitter').href =
+                `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+
+            // Threads
+            document.getElementById('share-threads').href =
+                `https://www.threads.net/intent/post?text=${encodedText}%0A%0A${encodedUrl}`;
+
+            // Bluesky
+            document.getElementById('share-bluesky').href =
+                `https://bsky.app/intent/compose?text=${encodedText}%0A%0A${encodedUrl}`;
+
+            // Email
+            document.getElementById('share-email').href =
+                `mailto:?subject=${encodeURIComponent('Daily AI Toll')}&body=${encodedText}%0A%0A${encodedUrl}`;
+        }
+
+        function formatLaborHours(hours) {
+            if (hours >= 1000000) return (hours / 1000000).toFixed(1) + 'M';
+            if (hours >= 1000) return (hours / 1000).toFixed(1) + 'K';
+            return hours.toString();
         }
 
         loadData();
