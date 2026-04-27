@@ -348,6 +348,88 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* Summary section */
+        .summary-section {
+            margin: 2rem 0;
+        }
+
+        .summary-card {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .summary-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .summary-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Enhanced event cards */
+        .event-card {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .event-card {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .event-title a:hover {
+            color: var(--accent) !important;
+            text-decoration: underline !important;
+        }
+
+        .event-excerpt {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0.5rem 0;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--border);
+            font-style: italic;
+        }
+
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .event-source {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .event-causality {
+            padding: 0.125rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent);
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .event-confidence {
+            color: var(--text-muted);
+        }
     </style>
 </head>
 <body>
@@ -407,10 +489,17 @@
             </div>
         </div>
 
+        <section class="summary-section" style="display: none;">
+            <div class="summary-card">
+                <div class="summary-label">Today's Summary</div>
+                <p class="summary-text" id="daily-summary"></p>
+            </div>
+        </section>
+
         <section class="events-section">
             <div class="section-header">
                 <h2 class="section-title">Recent Events</h2>
-                <a href="#" class="view-all">View all &rarr;</a>
+                <a href="https://github.com/Latarence/dailyaitoll/tree/main/reports/daily" class="view-all">View all reports &rarr;</a>
             </div>
             <div class="events-list" id="events-list">
                 <div class="event-card">
@@ -428,7 +517,7 @@
             <div class="footer-meta">
                 <span class="status-badge">
                     <span class="status-dot"></span>
-                    Collecting daily at 6:00 UTC
+                    Collecting daily at 11:55 PM EDT
                 </span>
                 <span>Last updated: <span id="last-updated">--</span></span>
                 <a href="https://github.com/Latarence/dailyaitoll">GitHub</a>
@@ -468,12 +557,74 @@
             if (data.last_updated) {
                 document.getElementById('last-updated').textContent = new Date(data.last_updated).toLocaleDateString();
             }
+            if (data.today) {
+                // Update delta indicators
+                const deltas = document.querySelectorAll('.segment-delta');
+                const values = [data.today.jobs, data.today.teams, data.today.products, data.today.companies, data.today.revenue, data.today.labor_hours];
+                deltas.forEach((el, i) => {
+                    const val = values[i];
+                    if (val !== 0) {
+                        el.textContent = (val > 0 ? '+' : '') + formatNumber(val) + ' today';
+                    } else {
+                        el.textContent = 'No change';
+                    }
+                });
+            }
+            // Render summary
+            if (data.summary) {
+                const summarySection = document.querySelector('.summary-section');
+                const summaryEl = document.getElementById('daily-summary');
+                if (summaryEl && summarySection) {
+                    summaryEl.textContent = data.summary;
+                    summarySection.style.display = 'block';
+                }
+            }
+            // Render events
+            if (data.events && data.events.length > 0) {
+                renderEvents(data.events);
+            }
+        }
+
+        function renderEvents(events) {
+            const container = document.getElementById('events-list');
+            container.innerHTML = '';
+
+            events.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+
+                const date = event.date || new Date().toISOString().slice(0, 10);
+                const jobs = event.tolls?.jobs || 0;
+                const confidence = event.confidence ? Math.round(event.confidence * 100) + '%' : '--';
+
+                card.innerHTML = `
+                    <div class="event-date">${date}</div>
+                    <div class="event-content">
+                        <div class="event-title">
+                            <a href="${event.source_url || '#'}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                                ${event.headline || 'Untitled Event'}
+                            </a>
+                        </div>
+                        <div class="event-excerpt">${event.excerpt || ''}</div>
+                        <div class="event-meta">
+                            <span class="event-source">${event.source_name || 'Unknown'}</span>
+                            <span class="event-causality">${event.causality || 'unknown'}</span>
+                            <span class="event-confidence">${confidence} confidence</span>
+                        </div>
+                    </div>
+                    <div class="event-impact">${formatNumber(jobs)} jobs</div>
+                `;
+                container.appendChild(card);
+            });
         }
 
         function formatNumber(n) {
-            if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
-            if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
-            return n?.toString() || '--';
+            if (n === null || n === undefined) return '--';
+            const abs = Math.abs(n);
+            const sign = n < 0 ? '-' : '';
+            if (abs >= 1000000) return sign + (abs / 1000000).toFixed(1) + 'M';
+            if (abs >= 1000) return sign + (abs / 1000).toFixed(1) + 'K';
+            return n.toString();
         }
 
         function formatCurrency(n) {

@@ -39,7 +39,9 @@ def load_rollup() -> dict:
         "totals": {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0},
         "today": {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0},
         "events_count": 0,
-        "pending_review": 0
+        "pending_review": 0,
+        "summary": "",
+        "events": []
     }
 
 
@@ -219,6 +221,10 @@ def update_data(result: dict, rollup: dict) -> dict:
 
     rollup["last_updated"] = datetime.now(timezone.utc).isoformat()
     rollup["events_count"] += len(events)
+
+    # Include today's events and summary in rollup for web display
+    rollup["summary"] = result.get("summary", "")
+    rollup["events"] = events
 
     return rollup
 
