@@ -278,36 +278,35 @@
             <div class="tier">
                 <div class="tier-header">
                     <span class="tier-name">Journalist / Researcher</span>
-                    <span class="tier-price">$5/mo</span>
+                    <span class="tier-price">$5</span>
                 </div>
                 <p class="tier-description">
                     For journalists, academics, and non-commercial research.
                 </p>
                 <ul class="tier-features">
                     <li>Full CSV download</li>
-                    <li>Daily updates</li>
+                    <li>Data current as of purchase date</li>
                     <li>Attribution required</li>
                     <li>Non-commercial use only</li>
                 </ul>
-                <a href="#" id="buy-journalist" class="btn btn-primary">Subscribe — $5/mo</a>
+                <a href="#" id="buy-journalist" class="btn btn-primary">Buy — $5</a>
             </div>
 
             <div class="tier">
                 <div class="tier-header">
                     <span class="tier-name">Commercial License</span>
-                    <span class="tier-price">$50/mo</span>
+                    <span class="tier-price">$50</span>
                 </div>
                 <p class="tier-description">
                     For businesses, products, and commercial applications.
                 </p>
                 <ul class="tier-features">
                     <li>Full CSV download</li>
-                    <li>Daily updates</li>
+                    <li>Data current as of purchase date</li>
                     <li>No attribution required</li>
                     <li>Commercial use permitted</li>
-                    <li>Priority support</li>
                 </ul>
-                <a href="#" id="buy-commercial" class="btn btn-secondary">Subscribe — $50/mo</a>
+                <a href="#" id="buy-commercial" class="btn btn-secondary">Buy — $50</a>
             </div>
         </section>
 
@@ -390,7 +389,7 @@
                 if (STRIPE_JOURNALIST) {
                     window.location.href = STRIPE_JOURNALIST;
                 } else {
-                    alert('Subscriptions launching soon. Contact data@dailyaitoll.com for early access.');
+                    alert('Coming soon. Contact data@dailyaitoll.com for early access.');
                 }
             });
 
@@ -399,7 +398,7 @@
                 if (STRIPE_COMMERCIAL) {
                     window.location.href = STRIPE_COMMERCIAL;
                 } else {
-                    alert('Subscriptions launching soon. Contact data@dailyaitoll.com for early access.');
+                    alert('Coming soon. Contact data@dailyaitoll.com for early access.');
                 }
             });
         }
