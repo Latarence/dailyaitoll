@@ -51,15 +51,13 @@ def generate_event_html(event, idx):
 
     return f'''
         <div class="entry" id="{event_id}">
-            <div class="entry-rank">{idx + 1}.</div>
             <div class="entry-main">
                 <div class="entry-headline">
                     <span class="entry-company">{company}</span>
                     <span class="entry-jobs">{jobs:,}</span>
                 </div>
                 <div class="entry-meta">
-                    {confidence}%
-                    <a href="{source_url}" target="_blank" rel="noopener">source</a>
+                    {confidence}% · <a href="{source_url}" target="_blank" rel="noopener">source</a>
                 </div>
                 <div class="entry-excerpt">{excerpt}</div>
             </div>
