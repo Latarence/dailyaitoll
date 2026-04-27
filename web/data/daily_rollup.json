@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-27T00:55:11.795221+00:00",
+  "last_updated": "2026-04-27T01:30:00.000000+00:00",
   "totals": {
     "jobs": 24400,
     "teams": 0,
@@ -16,12 +16,41 @@
     "revenue": 0,
     "labor_hours": -50752000
   },
+  "daily_totals": {
+    "2026-04-24": {
+      "jobs": 15000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -31200000
+    },
+    "2026-04-25": {
+      "jobs": 1400,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -2912000
+    },
+    "2026-04-26": {
+      "jobs": 8000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -16640000
+    }
+  },
   "events_count": 3,
   "pending_review": 0,
-  "summary": "Three major AI-related workforce reductions announced April 25-26: Meta's 8,000 cuts (10% workforce) starting May 20, Microsoft's voluntary buyouts targeting 15,000 (7% of staff), and Nike's 1,400 tech-focused layoffs. Combined displacement: 24,400 jobs eliminated.",
-  "events": [
+  "summary": "Three major AI-related workforce reductions announced April 24-26: Microsoft's voluntary buyouts targeting 15,000 (7% of staff) on April 24, Nike's 1,400 tech-focused layoffs on April 25, and Meta's 8,000 cuts (10% workforce) starting May 20 announced April 26. Combined displacement: 24,400 jobs eliminated.",
+  "events": [],
+  "all_events": [
     {
-      "id": "evt_20260427_001",
+      "id": "evt_20260426_001",
+      "event_date": "2026-04-26",
+      "collected_date": "2026-04-27",
       "headline": "Meta announces 8,000 job cuts effective May 20 as part of AI efficiency push",
       "source_url": "https://meyka.com/blog/meta-stock-april-26-8000-job-cuts-amid-ai-spending-surge-2604/",
       "source_name": "Meyka",
@@ -34,26 +63,12 @@
         "companies": 1,
         "labor_hours": -16640000
       },
-      "date": "2026-04-27"
+      "date": "2026-04-26"
     },
     {
-      "id": "evt_20260427_002",
-      "headline": "Microsoft offers voluntary buyouts to 7% of staff amid AI restructuring",
-      "source_url": "https://www.axios.com/2026/04/23/meta-layoffs-ai-efficiency-push",
-      "source_name": "Axios",
-      "excerpt": "Microsoft said Thursday it would offer buyouts to 7% of staff.",
-      "causality": "inferred",
-      "confidence": 0.65,
-      "tolls": {
-        "jobs": 15000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -31200000
-      },
-      "date": "2026-04-27"
-    },
-    {
-      "id": "evt_20260427_003",
+      "id": "evt_20260425_001",
+      "event_date": "2026-04-25",
+      "collected_date": "2026-04-27",
       "headline": "Nike announces 1,400 job cuts concentrated in technology department",
       "source_url": "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html",
       "source_name": "CNBC",
@@ -66,7 +81,25 @@
         "companies": 1,
         "labor_hours": -2912000
       },
-      "date": "2026-04-27"
+      "date": "2026-04-25"
+    },
+    {
+      "id": "evt_20260424_001",
+      "event_date": "2026-04-24",
+      "collected_date": "2026-04-27",
+      "headline": "Microsoft offers voluntary buyouts to 7% of staff amid AI restructuring",
+      "source_url": "https://www.axios.com/2026/04/23/meta-layoffs-ai-efficiency-push",
+      "source_name": "Axios",
+      "excerpt": "Microsoft said Thursday it would offer buyouts to 7% of staff.",
+      "causality": "inferred",
+      "confidence": 0.65,
+      "tolls": {
+        "jobs": 15000,
+        "teams": 0,
+        "companies": 1,
+        "labor_hours": -31200000
+      },
+      "date": "2026-04-24"
     }
   ]
 }

@@ -33,21 +33,62 @@ def get_today() -> str:
 def load_rollup() -> dict:
     if ROLLUP_FILE.exists():
         with open(ROLLUP_FILE, "r") as f:
-            return json.load(f)
+            data = json.load(f)
+            # Migrate old format if needed
+            if "daily_totals" not in data:
+                data["daily_totals"] = {}
+            if "all_events" not in data:
+                data["all_events"] = data.get("events", [])
+            return data
     return {
         "last_updated": None,
         "totals": {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0},
         "today": {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0},
+        "daily_totals": {},  # Keyed by event_date: {"jobs": N, "teams": N, ...}
         "events_count": 0,
         "pending_review": 0,
         "summary": "",
-        "events": []
+        "events": [],      # Today's new events
+        "all_events": []   # All events for display
     }
+
+
+def load_known_event_ids() -> set:
+    """Load existing event IDs to prevent duplicates."""
+    known_ids = set()
+    if EVENTS_FILE.exists():
+        with open(EVENTS_FILE, "r") as f:
+            for line in f:
+                if line.strip():
+                    try:
+                        event = json.loads(line)
+                        known_ids.add(event.get("id", ""))
+                        # Also track by headline to catch duplicates with different IDs
+                        known_ids.add(event.get("headline", "").lower().strip())
+                    except json.JSONDecodeError:
+                        pass
+    return known_ids
 
 
 def build_prompt() -> str:
     today = get_today()
     rollup = load_rollup()
+    known_ids = load_known_event_ids()
+
+    # Get recent headlines to help LLM avoid duplicates
+    recent_headlines = []
+    if EVENTS_FILE.exists():
+        with open(EVENTS_FILE, "r") as f:
+            for line in f:
+                if line.strip():
+                    try:
+                        event = json.loads(line)
+                        recent_headlines.append(event.get("headline", ""))
+                    except json.JSONDecodeError:
+                        pass
+    recent_headlines = recent_headlines[-20:]  # Last 20 events
+
+    recent_list = "\n".join(f"- {h}" for h in recent_headlines) if recent_headlines else "None yet"
 
     return f"""# Daily AI Toll Collection — {today}
 
@@ -63,6 +104,10 @@ Search for verifiable instances of AI displacing human workers from the past 24-
 - Future projections ("AI may eliminate X jobs by 2030")
 - AI hiring/capability announcements without actual job displacement
 - Opinion pieces without concrete events
+- Events we've already tracked (see below)
+
+## Already tracked (DO NOT duplicate)
+{recent_list}
 
 ## Current totals (for context)
 - Jobs displaced: {rollup['totals']['jobs']:,}
@@ -74,10 +119,11 @@ Search for verifiable instances of AI displacing human workers from the past 24-
 Return ONLY a JSON object (no other text):
 
 {{
-  "date": "{today}",
+  "collected_date": "{today}",
   "events": [
     {{
-      "id": "evt_{today.replace('-', '')}_001",
+      "id": "evt_YYYYMMDD_NNN",
+      "event_date": "YYYY-MM-DD",
       "headline": "Company X lays off 200 support staff, cites AI",
       "source_url": "https://...",
       "source_name": "Reuters",
@@ -97,12 +143,14 @@ Return ONLY a JSON object (no other text):
 }}
 
 ### Field definitions
+- id: Use format evt_YYYYMMDD_NNN where YYYYMMDD is the EVENT date (when it happened), not today
+- event_date: The actual date the event occurred/was announced (YYYY-MM-DD format)
 - causality: "direct" (AI explicitly cited), "contributing" (AI among factors), "inferred" (pattern suggests AI)
 - confidence: 0.0-1.0 based on source reliability
 - labor_hours: negative = hours eliminated (jobs × 2080 annual hours)
 
-If no events found:
-{{"date": "{today}", "events": [], "summary": "No verifiable AI displacement events found."}}
+If no NEW events found:
+{{"collected_date": "{today}", "events": [], "summary": "No new verifiable AI displacement events found."}}
 
 Search now and return JSON only."""
 
@@ -206,25 +254,65 @@ def parse_response(response: str) -> dict:
 
 
 def update_data(result: dict, rollup: dict) -> dict:
-    """Update rollup with new events."""
+    """Update rollup with new events, aggregating by event_date."""
     events = result.get("events", [])
+    collected_date = result.get("collected_date", get_today())
 
-    # Reset today
+    # Load known event IDs for deduplication
+    known_ids = load_known_event_ids()
+
+    # Reset today's collection stats
     rollup["today"] = {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0}
 
+    new_events = []
     for event in events:
+        # Skip duplicates
+        event_id = event.get("id", "")
+        headline = event.get("headline", "").lower().strip()
+        if event_id in known_ids or headline in known_ids:
+            continue
+
+        # Get event date (when it happened) - fall back to collected date
+        event_date = event.get("event_date") or event.get("date") or collected_date
+
+        # Add metadata
+        event["event_date"] = event_date
+        event["collected_date"] = collected_date
+
+        # For backwards compat, also set "date" to event_date
+        event["date"] = event_date
+
         tolls = event.get("tolls", {})
+
+        # Update today's collection totals
         for key in rollup["today"]:
             val = tolls.get(key) or 0
             rollup["today"][key] += val
             rollup["totals"][key] += val
 
-    rollup["last_updated"] = datetime.now(timezone.utc).isoformat()
-    rollup["events_count"] += len(events)
+        # Update daily_totals by event_date
+        if event_date not in rollup["daily_totals"]:
+            rollup["daily_totals"][event_date] = {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0}
 
-    # Include today's events and summary in rollup for web display
+        for key in rollup["daily_totals"][event_date]:
+            val = tolls.get(key) or 0
+            rollup["daily_totals"][event_date][key] += val
+
+        new_events.append(event)
+
+    rollup["last_updated"] = datetime.now(timezone.utc).isoformat()
+    rollup["events_count"] += len(new_events)
+
+    # Include today's new events and summary
     rollup["summary"] = result.get("summary", "")
-    rollup["events"] = events
+    rollup["events"] = new_events
+
+    # Add new events to all_events and sort by event_date descending
+    rollup["all_events"] = rollup.get("all_events", []) + new_events
+    rollup["all_events"].sort(key=lambda e: e.get("event_date", ""), reverse=True)
+
+    # Keep only last 100 events in all_events for the dashboard
+    rollup["all_events"] = rollup["all_events"][:100]
 
     return rollup
 

@@ -430,6 +430,92 @@
         .event-confidence {
             color: var(--text-muted);
         }
+
+        /* Timeline chart */
+        .timeline-section {
+            margin: 2rem 0;
+        }
+
+        .timeline-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 0.5rem;
+            height: 180px;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .timeline-bar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            max-width: 80px;
+        }
+
+        .bar-fill {
+            width: 100%;
+            background: linear-gradient(180deg, var(--red) 0%, rgba(239, 68, 68, 0.5) 100%);
+            border-radius: 4px 4px 0 0;
+            margin-top: auto;
+            transition: height 0.3s ease;
+        }
+
+        .bar-label {
+            font-size: 0.625rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .bar-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Date headers for grouped events */
+        .date-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0 0.5rem;
+            margin-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .date-header:first-child {
+            margin-top: 0;
+            border-top: none;
+        }
+
+        .date-label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .date-total {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--red);
+        }
+
+        /* Event title link styling */
+        .event-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .event-title a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -491,9 +577,16 @@
 
         <section class="summary-section" style="display: none;">
             <div class="summary-card">
-                <div class="summary-label">Today's Summary</div>
+                <div class="summary-label">Latest Collection</div>
                 <p class="summary-text" id="daily-summary"></p>
             </div>
+        </section>
+
+        <section class="timeline-section" style="display: none;">
+            <div class="section-header">
+                <h2 class="section-title">Daily Impact Timeline</h2>
+            </div>
+            <div class="timeline-chart" id="timeline-chart"></div>
         </section>
 
         <section class="events-section">
@@ -579,42 +672,100 @@
                     summarySection.style.display = 'block';
                 }
             }
-            // Render events
-            if (data.events && data.events.length > 0) {
-                renderEvents(data.events);
+            // Render daily timeline chart
+            if (data.daily_totals && Object.keys(data.daily_totals).length > 0) {
+                renderTimeline(data.daily_totals);
+            }
+            // Render events - prefer all_events, fall back to events
+            const eventsToRender = data.all_events || data.events || [];
+            if (eventsToRender.length > 0) {
+                renderEvents(eventsToRender, data.daily_totals);
             }
         }
 
-        function renderEvents(events) {
+        function renderTimeline(dailyTotals) {
+            const container = document.getElementById('timeline-chart');
+            if (!container) return;
+
+            // Sort dates and get last 14 days max
+            const dates = Object.keys(dailyTotals).sort().slice(-14);
+            if (dates.length === 0) return;
+
+            const maxJobs = Math.max(...dates.map(d => dailyTotals[d].jobs || 0));
+
+            container.innerHTML = dates.map(date => {
+                const jobs = dailyTotals[date].jobs || 0;
+                const height = maxJobs > 0 ? Math.max((jobs / maxJobs) * 100, 5) : 5;
+                const displayDate = new Date(date + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                return `
+                    <div class="timeline-bar" title="${displayDate}: ${formatNumber(jobs)} jobs">
+                        <div class="bar-fill" style="height: ${height}%"></div>
+                        <div class="bar-label">${displayDate}</div>
+                        <div class="bar-value">${formatNumber(jobs)}</div>
+                    </div>
+                `;
+            }).join('');
+
+            container.parentElement.style.display = 'block';
+        }
+
+        function renderEvents(events, dailyTotals) {
             const container = document.getElementById('events-list');
             container.innerHTML = '';
 
+            // Group events by event_date
+            const grouped = {};
             events.forEach(event => {
-                const card = document.createElement('div');
-                card.className = 'event-card';
+                const date = event.event_date || event.date || 'Unknown';
+                if (!grouped[date]) grouped[date] = [];
+                grouped[date].push(event);
+            });
 
-                const date = event.date || new Date().toISOString().slice(0, 10);
-                const jobs = event.tolls?.jobs || 0;
-                const confidence = event.confidence ? Math.round(event.confidence * 100) + '%' : '--';
+            // Sort dates descending (most recent first)
+            const sortedDates = Object.keys(grouped).sort().reverse();
 
-                card.innerHTML = `
-                    <div class="event-date">${date}</div>
-                    <div class="event-content">
-                        <div class="event-title">
-                            <a href="${event.source_url || '#'}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
-                                ${event.headline || 'Untitled Event'}
-                            </a>
-                        </div>
-                        <div class="event-excerpt">${event.excerpt || ''}</div>
-                        <div class="event-meta">
-                            <span class="event-source">${event.source_name || 'Unknown'}</span>
-                            <span class="event-causality">${event.causality || 'unknown'}</span>
-                            <span class="event-confidence">${confidence} confidence</span>
-                        </div>
-                    </div>
-                    <div class="event-impact">${formatNumber(jobs)} jobs</div>
+            sortedDates.forEach(date => {
+                const dateEvents = grouped[date];
+                const dayTotal = dailyTotals?.[date]?.jobs || dateEvents.reduce((sum, e) => sum + (e.tolls?.jobs || 0), 0);
+
+                // Date header
+                const header = document.createElement('div');
+                header.className = 'date-header';
+                const displayDate = date !== 'Unknown'
+                    ? new Date(date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
+                    : 'Unknown Date';
+                header.innerHTML = `
+                    <span class="date-label">${displayDate}</span>
+                    <span class="date-total">${formatNumber(dayTotal)} jobs</span>
                 `;
-                container.appendChild(card);
+                container.appendChild(header);
+
+                // Events for this date
+                dateEvents.forEach(event => {
+                    const card = document.createElement('div');
+                    card.className = 'event-card';
+
+                    const jobs = event.tolls?.jobs || 0;
+                    const confidence = event.confidence ? Math.round(event.confidence * 100) + '%' : '--';
+
+                    card.innerHTML = `
+                        <div class="event-content">
+                            <div class="event-title">
+                                <a href="${event.source_url || '#'}" target="_blank" rel="noopener">
+                                    ${event.headline || 'Untitled Event'}
+                                </a>
+                            </div>
+                            <div class="event-excerpt">${event.excerpt || ''}</div>
+                            <div class="event-meta">
+                                <span class="event-source">${event.source_name || 'Unknown'}</span>
+                                <span class="event-causality">${event.causality || 'unknown'}</span>
+                                <span class="event-confidence">${confidence} confidence</span>
+                            </div>
+                        </div>
+                        <div class="event-impact">${formatNumber(jobs)} jobs</div>
+                    `;
+                    container.appendChild(card);
+                });
             });
         }
 
