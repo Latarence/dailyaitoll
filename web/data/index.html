@@ -278,34 +278,36 @@
             <div class="tier">
                 <div class="tier-header">
                     <span class="tier-name">Journalist / Researcher</span>
-                    <span class="tier-price">Free</span>
+                    <span class="tier-price">$5/mo</span>
                 </div>
                 <p class="tier-description">
                     For journalists, academics, and non-commercial research.
                 </p>
                 <ul class="tier-features">
                     <li>Full CSV download</li>
+                    <li>Daily updates</li>
                     <li>Attribution required</li>
                     <li>Non-commercial use only</li>
                 </ul>
-                <button class="btn btn-primary" id="download-free">Download CSV</button>
+                <a href="#" id="buy-journalist" class="btn btn-primary">Subscribe — $5/mo</a>
             </div>
 
             <div class="tier">
                 <div class="tier-header">
                     <span class="tier-name">Commercial License</span>
-                    <span class="tier-price">$100/year</span>
+                    <span class="tier-price">$50/mo</span>
                 </div>
                 <p class="tier-description">
                     For businesses, products, and commercial applications.
                 </p>
                 <ul class="tier-features">
                     <li>Full CSV download</li>
+                    <li>Daily updates</li>
                     <li>No attribution required</li>
                     <li>Commercial use permitted</li>
-                    <li>Priority data requests</li>
+                    <li>Priority support</li>
                 </ul>
-                <a href="#" id="buy-license" class="btn btn-secondary">Buy License — $100/yr</a>
+                <a href="#" id="buy-commercial" class="btn btn-secondary">Subscribe — $50/mo</a>
             </div>
         </section>
 
@@ -379,17 +381,26 @@
                 document.getElementById('preview').textContent = preview;
             }
 
-            // Download button
-            document.getElementById('download-free').addEventListener('click', () => {
-                downloadCSV(events);
+            // Stripe Payment Links - replace these URLs with your actual Stripe links
+            const STRIPE_JOURNALIST = null; // e.g., 'https://buy.stripe.com/xxx'
+            const STRIPE_COMMERCIAL = null; // e.g., 'https://buy.stripe.com/yyy'
+
+            document.getElementById('buy-journalist').addEventListener('click', (e) => {
+                e.preventDefault();
+                if (STRIPE_JOURNALIST) {
+                    window.location.href = STRIPE_JOURNALIST;
+                } else {
+                    alert('Subscriptions launching soon. Contact data@dailyaitoll.com for early access.');
+                }
             });
 
-            // Buy license button - update href when payment is set up
-            document.getElementById('buy-license').addEventListener('click', (e) => {
-                // TODO: Replace with Gumroad/Stripe link
-                // e.g., window.location.href = 'https://gumroad.com/l/dailyaitoll-commercial';
+            document.getElementById('buy-commercial').addEventListener('click', (e) => {
                 e.preventDefault();
-                alert('Commercial licensing coming soon. Contact data@dailyaitoll.com for early access.');
+                if (STRIPE_COMMERCIAL) {
+                    window.location.href = STRIPE_COMMERCIAL;
+                } else {
+                    alert('Subscriptions launching soon. Contact data@dailyaitoll.com for early access.');
+                }
             });
         }
 
