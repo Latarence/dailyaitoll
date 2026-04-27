@@ -590,6 +590,7 @@
                         <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
                     </svg>
                 </button>
+                <a href="/about/">About</a>
                 <a href="/data/">Data</a>
                 <a href="/methodology/">Methodology</a>
                 <a href="/patrons/">Patrons</a>
@@ -818,9 +819,9 @@
 ${hashtags}
 
 Via @DailyAIToll`;
-                const entryShareUrls = getEntryShareUrls(entryShareText, event.source_url);
+                const entryShareUrls = getEntryShareUrls(entryShareText);
 
-                const shareUrl = event.source_url || 'https://dailyaitoll.com';
+                const shareUrl = 'https://dailyaitoll.com';
                 entry.innerHTML = `
                     <div class="entry-rank">${rank}.</div>
                     <div class="entry-main">
@@ -950,8 +951,8 @@ The human cost of AI adoption, tracked daily.
             return hours.toString();
         }
 
-        function getEntryShareUrls(text, sourceUrl) {
-            const url = sourceUrl || 'https://dailyaitoll.com';
+        function getEntryShareUrls(text) {
+            const url = 'https://dailyaitoll.com';
             const encodedText = encodeURIComponent(text);
             const encodedUrl = encodeURIComponent(url);
 
