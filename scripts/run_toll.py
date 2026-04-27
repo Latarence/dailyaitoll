@@ -116,7 +116,7 @@ def get_provider() -> str:
 
 
 def call_anthropic(prompt: str) -> str:
-    """Call Anthropic Claude API."""
+    """Call Anthropic Claude API with web search enabled."""
     try:
         import anthropic
     except ImportError:
@@ -127,14 +127,21 @@ def call_anthropic(prompt: str) -> str:
     client = anthropic.Anthropic()
     message = client.messages.create(
         model="claude-sonnet-4-20250514",
-        max_tokens=4096,
+        max_tokens=8096,
+        tools=[{"type": "web_search"}],
         messages=[{"role": "user", "content": prompt}]
     )
-    return message.content[0].text
+
+    # Extract text from response (may include tool use blocks)
+    result = ""
+    for block in message.content:
+        if hasattr(block, "text"):
+            result += block.text
+    return result
 
 
 def call_openai(prompt: str) -> str:
-    """Call OpenAI GPT-4 API."""
+    """Call OpenAI GPT-4 API with web search enabled."""
     try:
         import openai
     except ImportError:
@@ -143,12 +150,22 @@ def call_openai(prompt: str) -> str:
         import openai
 
     client = openai.OpenAI()
-    response = client.chat.completions.create(
+
+    # Use responses API with web search tool
+    response = client.responses.create(
         model="gpt-4o",
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=4096
+        tools=[{"type": "web_search_preview"}],
+        input=prompt
     )
-    return response.choices[0].message.content
+
+    # Extract text from response
+    result = ""
+    for item in response.output:
+        if hasattr(item, "content"):
+            for block in item.content:
+                if hasattr(block, "text"):
+                    result += block.text
+    return result
 
 
 def call_llm(prompt: str) -> str:
