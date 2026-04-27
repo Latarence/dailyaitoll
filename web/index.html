@@ -326,25 +326,105 @@
             color: var(--muted);
         }
 
-        .entry-share {
-            display: inline-flex;
-            gap: 0.375rem;
-            margin-left: 0.25rem;
+        .share-wrapper {
+            position: relative;
+            display: inline;
         }
 
-        .entry-share a {
+        .share-trigger {
             color: var(--dim);
-            text-decoration: none;
-            font-size: 0.625rem;
-            padding: 0.125rem 0.25rem;
+            cursor: pointer;
+        }
+
+        .share-trigger:hover {
+            color: var(--muted);
+        }
+
+        .share-popup {
+            display: none;
+            position: absolute;
+            bottom: 1.75rem;
+            left: -0.5rem;
+            background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 2px;
+            border-radius: 6px;
+            padding: 0.75rem;
+            min-width: 180px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            z-index: 100;
+        }
+
+        .share-popup.open {
+            display: block;
+        }
+
+        .share-popup-title {
+            font-size: 0.6875rem;
+            color: var(--dim);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .share-popup-icons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .share-popup-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 4px;
             transition: all 0.15s;
         }
 
-        .entry-share a:hover {
-            color: var(--muted);
+        .share-popup-icons a:hover {
+            color: var(--text);
             border-color: var(--muted);
+        }
+
+        .share-popup-icons svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .share-copy-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--muted);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6875rem;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .share-copy-btn:hover {
+            border-color: var(--muted);
+            color: var(--text);
+        }
+
+        .share-copy-btn.copied {
+            color: var(--toll-red-dark);
+            border-color: var(--toll-red-dark);
+        }
+
+        .share-copy-btn svg {
+            width: 12px;
+            height: 12px;
         }
 
         .date-separator {
@@ -700,6 +780,7 @@
                 const entryShareText = `${company}: ${jobs.toLocaleString()} jobs displaced\n\n${event.excerpt || ''}\n\nVia Daily AI Toll`;
                 const entryShareUrls = getEntryShareUrls(entryShareText, event.source_url);
 
+                const shareUrl = event.source_url || 'https://dailyaitoll.com';
                 entry.innerHTML = `
                     <div class="entry-rank">${rank}.</div>
                     <div class="entry-main">
@@ -711,12 +792,32 @@
                             <a href="${event.source_url || '#'}" target="_blank" rel="noopener">${event.source_name || 'source'}</a>
                             · ${confidence || '?'}%
                             · <span class="entry-toggle" data-target="${entryId}">[less]</span>
-                            · share<span class="entry-share">
-                                <a href="${entryShareUrls.linkedin}" target="_blank" rel="noopener" title="LinkedIn">in</a>
-                                <a href="${entryShareUrls.twitter}" target="_blank" rel="noopener" title="X">𝕏</a>
-                                <a href="${entryShareUrls.threads}" target="_blank" rel="noopener" title="Threads">@</a>
-                                <a href="${entryShareUrls.bluesky}" target="_blank" rel="noopener" title="Bluesky">🦋</a>
-                                <a href="${entryShareUrls.email}" title="Email">✉</a>
+                            · <span class="share-wrapper">
+                                <span class="share-trigger" data-share-id="${idx}">share</span>
+                                <div class="share-popup" id="share-popup-${idx}">
+                                    <div class="share-popup-title">Share this</div>
+                                    <div class="share-popup-icons">
+                                        <a href="${entryShareUrls.linkedin}" target="_blank" rel="noopener" title="LinkedIn">
+                                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                        </a>
+                                        <a href="${entryShareUrls.twitter}" target="_blank" rel="noopener" title="X">
+                                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                        </a>
+                                        <a href="${entryShareUrls.threads}" target="_blank" rel="noopener" title="Threads">
+                                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.187.408-2.264 1.332-3.03.903-.748 2.141-1.202 3.583-1.315.996-.078 1.964-.022 2.882.167.004-.396-.01-.784-.053-1.16-.144-1.226-.573-2.09-1.238-2.5-.69-.422-1.647-.517-2.767-.274l-.418-1.953c1.557-.333 2.99-.2 4.142.386 1.21.614 2.027 1.69 2.363 3.112.106.448.173.942.206 1.476 1.12.603 1.987 1.413 2.508 2.404.79 1.505.96 3.947-.942 5.81-1.77 1.737-4.017 2.493-7.085 2.516zm-.508-6.27c-1.553.1-2.404.756-2.357 1.63.028.5.307.936.786 1.229.538.328 1.255.472 2.016.431 1.072-.058 1.9-.472 2.464-1.23.475-.638.756-1.503.84-2.585-.907-.182-1.87-.26-2.862-.186-.299.024-.593.058-.887.104z"/></svg>
+                                        </a>
+                                        <a href="${entryShareUrls.bluesky}" target="_blank" rel="noopener" title="Bluesky">
+                                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
+                                        </a>
+                                        <a href="${entryShareUrls.email}" title="Email">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+                                        </a>
+                                    </div>
+                                    <button class="share-copy-btn" data-url="${shareUrl}">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                        Copy link
+                                    </button>
+                                </div>
                             </span>
                         </div>
                         <div class="entry-excerpt" id="${entryId}">${event.excerpt || ''}</div>
@@ -732,6 +833,37 @@
                     const target = document.getElementById(toggle.dataset.target);
                     target.classList.toggle('collapsed');
                     toggle.textContent = target.classList.contains('collapsed') ? '[more]' : '[less]';
+                });
+            });
+
+            // Setup share popup handlers
+            container.querySelectorAll('.share-trigger').forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const popup = document.getElementById(`share-popup-${trigger.dataset.shareId}`);
+                    // Close all other popups
+                    document.querySelectorAll('.share-popup.open').forEach(p => {
+                        if (p !== popup) p.classList.remove('open');
+                    });
+                    popup.classList.toggle('open');
+                });
+            });
+
+            // Setup copy link handlers
+            container.querySelectorAll('.share-copy-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const url = btn.dataset.url;
+                    try {
+                        await navigator.clipboard.writeText(url);
+                        btn.classList.add('copied');
+                        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!`;
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy link`;
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Copy failed', err);
+                    }
                 });
             });
         }
@@ -803,6 +935,13 @@ The human cost of AI adoption, tracked daily.`;
             localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
         }
         if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light');
+
+        // Close share popups when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.share-wrapper')) {
+                document.querySelectorAll('.share-popup.open').forEach(p => p.classList.remove('open'));
+            }
+        });
 
         loadData();
     </script>
