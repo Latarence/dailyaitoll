@@ -128,103 +128,102 @@
             color: var(--text);
         }
 
-        /* Header */
-        header {
+        /* Hero Section */
+        .hero {
             text-align: center;
+            padding: 3rem 0 4rem;
             margin-bottom: 3rem;
-        }
-
-        .wordmark {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.125rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            color: var(--toll-red-dark);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .tagline {
-            font-size: 1rem;
-            color: var(--muted);
-            font-style: italic;
-        }
-
-        /* The Monument */
-        .monument {
-            text-align: center;
-            padding: 4rem 0;
-            border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
-            margin-bottom: 3rem;
         }
 
-        .toll-number {
+        .hero-tagline {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 6rem;
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+        }
+
+        .hero-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 5rem;
             font-weight: 500;
             color: var(--toll-red-dark);
             line-height: 1;
             letter-spacing: -0.02em;
         }
 
-        .toll-label {
-            font-size: 1.125rem;
-            color: var(--muted);
-            margin-top: 1rem;
-            letter-spacing: 0.05em;
+        .hero-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-top: 0.5rem;
+            letter-spacing: 0.02em;
         }
 
-        .toll-context {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.875rem;
-            color: var(--muted);
-            margin-top: 2rem;
-        }
-
-        .toll-context span {
-            margin: 0 1rem;
-        }
-
-        @media (max-width: 640px) {
-            .toll-number { font-size: 4rem; }
-            .toll-context span { display: block; margin: 0.25rem 0; }
-        }
-
-        /* Share */
-        .share-section {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
             border-top: 1px solid var(--border);
         }
 
-        .share-label {
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .hero-stat-label {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 0.6875rem;
-            color: var(--muted);
+            color: var(--dim);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-right: 1rem;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
         }
 
-        .share-link {
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            line-height: 2rem;
-            text-align: center;
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.875rem;
+        .hero-share {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .hero-share a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            color: var(--dim);
             border: 1px solid var(--border);
             border-radius: 4px;
-            margin: 0 0.25rem;
-            transition: border-color 0.2s, color 0.2s;
+            transition: all 0.15s;
         }
 
-        .share-link:hover {
-            border-color: var(--muted);
+        .hero-share a:hover {
             color: var(--text);
+            border-color: var(--muted);
+        }
+
+        .hero-share svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        @media (max-width: 640px) {
+            .hero-number { font-size: 3.5rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
         }
 
         /* The Record - HN-inspired compact list */
@@ -438,39 +437,57 @@
 
         /* Footer */
         footer {
-            padding-top: 3rem;
+            padding: 2rem 0;
+            margin-top: 2rem;
             border-top: 1px solid var(--border);
-            text-align: center;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
         }
 
         .footer-update {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--muted);
-            margin-bottom: 1.5rem;
+            font-size: 0.6875rem;
+            color: var(--dim);
         }
 
         .footer-links {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8125rem;
+            display: flex;
+            gap: 1.5rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
         }
 
         .footer-links a {
             color: var(--muted);
             text-decoration: none;
-            margin: 0 1rem;
         }
 
         .footer-links a:hover {
             color: var(--text);
         }
 
-        .methodology-note {
-            font-size: 0.875rem;
-            color: var(--muted);
-            max-width: 480px;
-            margin: 2rem auto 0;
-            font-style: italic;
+        .footer-disclaimer {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.625rem;
+            color: var(--dim);
+            line-height: 1.6;
+            max-width: 100%;
+        }
+
+        @media (max-width: 640px) {
+            .footer-main {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .footer-links {
+                justify-content: center;
+            }
         }
 
         /* Search */
@@ -579,29 +596,48 @@
             </div>
         </nav>
 
-        <header>
-            <div class="wordmark">Daily AI Toll</div>
-            <p class="tagline">A running ledger of the human cost of AI adoption.</p>
-        </header>
+        <section class="hero">
+            <p class="hero-tagline">The human cost of AI adoption</p>
+            <div class="hero-number" id="toll-number">—</div>
+            <div class="hero-label">jobs displaced</div>
 
-        <div class="monument">
-            <div class="toll-number" id="toll-number">—</div>
-            <div class="toll-label">jobs displaced</div>
-            <div class="toll-context">
-                <span><span id="companies-count">—</span> companies</span>
-                <span><span id="labor-hours">—</span> labor hours</span>
-                <span><span id="events-count">—</span> events</span>
-                <span>since April 2026</span>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value" id="companies-count">—</div>
+                    <div class="hero-stat-label">Companies</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value" id="labor-hours">—</div>
+                    <div class="hero-stat-label">Labor hours</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value" id="events-count">—</div>
+                    <div class="hero-stat-label">Events</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">Apr 2026</div>
+                    <div class="hero-stat-label">Tracking since</div>
+                </div>
             </div>
-            <div class="share-section">
-                <span class="share-label">Share</span>
-                <a href="#" id="share-linkedin" class="share-link" title="Share on LinkedIn" target="_blank" rel="noopener">in</a>
-                <a href="#" id="share-twitter" class="share-link" title="Share on X" target="_blank" rel="noopener">𝕏</a>
-                <a href="#" id="share-threads" class="share-link" title="Share on Threads" target="_blank" rel="noopener">@</a>
-                <a href="#" id="share-bluesky" class="share-link" title="Share on Bluesky" target="_blank" rel="noopener">🦋</a>
-                <a href="#" id="share-email" class="share-link" title="Share via Email">✉</a>
+
+            <div class="hero-share">
+                <a href="#" id="share-linkedin" title="LinkedIn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="#" id="share-twitter" title="X" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="#" id="share-threads" title="Threads" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.187.408-2.264 1.332-3.03.903-.748 2.141-1.202 3.583-1.315.996-.078 1.964-.022 2.882.167.004-.396-.01-.784-.053-1.16-.144-1.226-.573-2.09-1.238-2.5-.69-.422-1.647-.517-2.767-.274l-.418-1.953c1.557-.333 2.99-.2 4.142.386 1.21.614 2.027 1.69 2.363 3.112.106.448.173.942.206 1.476 1.12.603 1.987 1.413 2.508 2.404.79 1.505.96 3.947-.942 5.81-1.77 1.737-4.017 2.493-7.085 2.516zm-.508-6.27c-1.553.1-2.404.756-2.357 1.63.028.5.307.936.786 1.229.538.328 1.255.472 2.016.431 1.072-.058 1.9-.472 2.464-1.23.475-.638.756-1.503.84-2.585-.907-.182-1.87-.26-2.862-.186-.299.024-.593.058-.887.104z"/></svg>
+                </a>
+                <a href="#" id="share-bluesky" title="Bluesky" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
+                </a>
+                <a href="#" id="share-email" title="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+                </a>
             </div>
-        </div>
+        </section>
 
         <div class="search-container">
             <input type="text" class="search-input" id="search-input" placeholder="Search companies, headlines..." />
@@ -620,18 +656,18 @@
         </div>
 
         <footer>
-            <div class="footer-update">
-                Updated daily at 11:55 PM EDT · Last update: <span id="last-updated">—</span>
+            <div class="footer-main">
+                <div class="footer-update">
+                    Updated daily · Last: <span id="last-updated">—</span>
+                </div>
+                <div class="footer-links">
+                    <a href="/data/">Data</a>
+                    <a href="/methodology/">Methodology</a>
+                    <a href="mailto:data@dailyaitoll.com">Contact</a>
+                </div>
             </div>
-            <div class="footer-links">
-                <a href="/data/">Download Data</a>
-                <a href="/methodology/">Methodology</a>
-                <a href="mailto:data@dailyaitoll.com">Contact</a>
-            </div>
-            <p class="disclaimer">
-                This site is AI-automated and aggregates publicly reported information.
-                It contains no opinions or original analysis. Do not cite as a primary source.
-                Data may contain errors. Verify all information independently.
+            <p class="footer-disclaimer">
+                AI-automated aggregation of public reports. No opinions or analysis. Verify independently.
             </p>
         </footer>
     </div>
