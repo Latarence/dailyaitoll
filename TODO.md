@@ -16,7 +16,7 @@
 
 ## LinkedIn
 
-- Company page: https://linkedin.com/company/dailyaitoll (needs creation/verification)
+- Company page: https://www.linkedin.com/company/dailyaitoll
 
 ## Future Enhancements
 
