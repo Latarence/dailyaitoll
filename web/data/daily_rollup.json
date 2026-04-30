@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-04-29T06:14:53.581576+00:00",
+  "last_updated": "2026-04-30T01:15:49.004436+00:00",
   "totals": {
-    "jobs": 280039,
+    "jobs": 316789,
     "teams": 0,
     "products": 0,
-    "companies": 73,
+    "companies": 76,
     "revenue": 0,
-    "labor_hours": -582481120
+    "labor_hours": -658821120
   },
   "today": {
-    "jobs": 0,
+    "jobs": 36750,
     "teams": 0,
     "products": 0,
-    "companies": 0,
+    "companies": 3,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -76340000
   },
   "daily_totals": {
     "2026-04-26": {
@@ -448,13 +448,110 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -74880000
+    },
+    "2026-04-23": {
+      "jobs": 16750,
+      "teams": 0,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -34740000
+    },
+    "2026-04-27": {
+      "jobs": 20000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -41600000
     }
   },
-  "events_count": 73,
+  "events_count": 76,
   "pending_review": 0,
-  "summary": "No new verifiable AI displacement events found. The search results primarily show events already tracked (Meta, Microsoft, Oracle, Nike layoffs) or aggregated reporting without new specific events. The Nike April 2026 layoffs (1,400 jobs) appear to be primarily business restructuring rather than explicit AI displacement, and Oracle's massive layoffs (20,000-30,000) were announced in early April and likely already tracked. Most recent reporting focuses on analysis of existing layoff trends rather than announcing new specific AI-driven job displacement events in the 24-48 hour window.",
-  "events": [],
+  "summary": "Today's findings include significant layoffs at Meta, Microsoft, and Oracle, all citing AI investments and restructuring as key factors.",
+  "events": [
+    {
+      "id": "evt_20260423_001",
+      "event_date": "2026-04-23",
+      "headline": "Meta to lay off 8,000 employees as part of AI efficiency push",
+      "source_url": "https://www.axios.com/2026/04/23/meta-layoffs-ai-efficiency-push",
+      "source_name": "Axios",
+      "excerpt": "Meta announced plans to lay off approximately 8,000 employees, representing about 10% of its workforce, in a move aimed at boosting efficiency amid rising artificial intelligence (AI) infrastructure costs.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "Layoffs part of strategic shift towards AI investments.",
+      "collected_date": "2026-04-30",
+      "date": "2026-04-30",
+      "created_at": "2026-04-30T01:15:49.004486+00:00"
+    },
+    {
+      "id": "evt_20260423_002",
+      "event_date": "2026-04-23",
+      "headline": "Microsoft offers buyouts to 7% of U.S. staff amid AI restructuring",
+      "source_url": "https://www.wsws.org/en/articles/2026/04/28/nura-a28.html",
+      "source_name": "World Socialist Web Site",
+      "excerpt": "Microsoft announced it is offering buyouts to about 7% of its U.S. staff, or approximately 8,750 jobs, as part of broader restructuring efforts focused on artificial intelligence.",
+      "causality": "contributing",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 8750,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -18100000
+      },
+      "notes": "Buyouts offered as part of AI-driven restructuring.",
+      "collected_date": "2026-04-30",
+      "date": "2026-04-30",
+      "created_at": "2026-04-30T01:15:49.004509+00:00"
+    },
+    {
+      "id": "evt_20260427_001",
+      "event_date": "2026-04-27",
+      "headline": "Oracle to cut over 20,000 jobs amid AI pivot",
+      "source_url": "https://www.ndtv.com/business-news/meta-disney-asml-microsoft-oracle-to-cut-over-20-000-tech-jobs-ai-pivot-is-increasing-profits-fuelling-layoffs-11414470?pfrom=home-ndtv_topscroll",
+      "source_name": "NDTV",
+      "excerpt": "Oracle announced global layoffs affecting 20,000 to 30,000 employees across multiple regions, as the company invests heavily in artificial intelligence and automates workflows.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 20000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -41600000
+      },
+      "notes": "Layoffs part of AI-focused restructuring.",
+      "collected_date": "2026-04-30",
+      "date": "2026-04-30",
+      "created_at": "2026-04-30T01:15:49.004519+00:00"
+    }
+  ],
   "all_events": [
+    {
+      "id": "evt_20260427_001",
+      "event_date": "2026-04-27",
+      "headline": "Oracle to cut over 20,000 jobs amid AI pivot",
+      "source_url": "https://www.ndtv.com/business-news/meta-disney-asml-microsoft-oracle-to-cut-over-20-000-tech-jobs-ai-pivot-is-increasing-profits-fuelling-layoffs-11414470?pfrom=home-ndtv_topscroll",
+      "source_name": "NDTV",
+      "excerpt": "Oracle announced global layoffs affecting 20,000 to 30,000 employees across multiple regions, as the company invests heavily in artificial intelligence and automates workflows.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 20000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -41600000
+      },
+      "notes": "Layoffs part of AI-focused restructuring.",
+      "collected_date": "2026-04-30",
+      "date": "2026-04-30",
+      "created_at": "2026-04-30T01:15:49.004519+00:00"
+    },
     {
       "id": "evt_20260426_001",
       "event_date": "2026-04-26",
@@ -514,6 +611,46 @@
       "notes": "Voluntary buyouts targeting 7% of ~220K workforce; announced April 24",
       "date": "2026-04-24",
       "created_at": "2026-04-27T00:55:11.795351+00:00"
+    },
+    {
+      "id": "evt_20260423_001",
+      "event_date": "2026-04-23",
+      "headline": "Meta to lay off 8,000 employees as part of AI efficiency push",
+      "source_url": "https://www.axios.com/2026/04/23/meta-layoffs-ai-efficiency-push",
+      "source_name": "Axios",
+      "excerpt": "Meta announced plans to lay off approximately 8,000 employees, representing about 10% of its workforce, in a move aimed at boosting efficiency amid rising artificial intelligence (AI) infrastructure costs.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "Layoffs part of strategic shift towards AI investments.",
+      "collected_date": "2026-04-30",
+      "date": "2026-04-30",
+      "created_at": "2026-04-30T01:15:49.004486+00:00"
+    },
+    {
+      "id": "evt_20260423_002",
+      "event_date": "2026-04-23",
+      "headline": "Microsoft offers buyouts to 7% of U.S. staff amid AI restructuring",
+      "source_url": "https://www.wsws.org/en/articles/2026/04/28/nura-a28.html",
+      "source_name": "World Socialist Web Site",
+      "excerpt": "Microsoft announced it is offering buyouts to about 7% of its U.S. staff, or approximately 8,750 jobs, as part of broader restructuring efforts focused on artificial intelligence.",
+      "causality": "contributing",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 8750,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -18100000
+      },
+      "notes": "Buyouts offered as part of AI-driven restructuring.",
+      "collected_date": "2026-04-30",
+      "date": "2026-04-30",
+      "created_at": "2026-04-30T01:15:49.004509+00:00"
     },
     {
       "id": "evt_20260415_vianaisy_100",
