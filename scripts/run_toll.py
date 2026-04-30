@@ -176,7 +176,7 @@ def call_anthropic(prompt: str) -> str:
 
     client = anthropic.Anthropic()
     message = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-4-5-20241022",
         max_tokens=8096,
         tools=[{
             "type": "web_search_20260209",
@@ -249,6 +249,13 @@ def parse_response(response: str) -> dict:
         start = response.find("```") + 3
         end = response.find("```", start)
         response = response[start:end]
+
+    # Extract JSON object from response (handles preamble and trailing text)
+    response = response.strip()
+    first_brace = response.find("{")
+    last_brace = response.rfind("}")
+    if first_brace != -1 and last_brace != -1 and last_brace > first_brace:
+        response = response[first_brace:last_brace + 1]
 
     return json.loads(response.strip())
 
