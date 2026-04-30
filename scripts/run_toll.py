@@ -3,22 +3,45 @@
 Daily AI Toll - Collection Script
 
 Prompts LLM to search for and report AI displacement events.
-Supports: Anthropic (Claude) and OpenAI (GPT-4)
+Supports: Anthropic (Claude) and OpenAI (GPT-4) with automatic fallback.
 """
 
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+# =============================================================================
+# CONFIGURATION - Token usage and quality thresholds
+# =============================================================================
+
+# Token limits (cost protection)
+MAX_TOKENS_RESPONSE = 4096          # Max tokens in LLM response (was 8096)
+MAX_RESPONSE_CHARS = 50000          # Max response length before warning
+MAX_EVENTS_PER_DAY = 10             # Cap events to prevent runaway costs
+
+# Quality thresholds
+MIN_CONFIDENCE = 0.5                # Minimum confidence score (0.0-1.0)
+MIN_JOBS_PER_EVENT = 1              # Minimum jobs to include event
+MAX_JOBS_PER_EVENT = 100000         # Sanity check - reject if above this
+
+# Retry settings
+MAX_RETRIES = 2                     # Retries per provider before fallback
+RETRY_DELAY_SECONDS = 5             # Delay between retries
+
+# =============================================================================
 # Paths
+# =============================================================================
+
 ROOT = Path(__file__).parent.parent
 DATA_DIR = ROOT / "data"
 REPORTS_DIR = ROOT / "reports" / "daily"
 EVENTS_FILE = DATA_DIR / "events.jsonl"
 ROLLUP_FILE = DATA_DIR / "daily_rollup.json"
 WEB_DATA_DIR = ROOT / "web" / "data"
+USAGE_FILE = DATA_DIR / "token_usage.jsonl"
 
 # Ensure directories exist
 DATA_DIR.mkdir(exist_ok=True)
@@ -155,18 +178,11 @@ If no NEW events found:
 Search now and return JSON only."""
 
 
-def get_provider() -> str:
-    """Determine which LLM provider to use."""
-    if os.environ.get("ANTHROPIC_API_KEY"):
-        return "anthropic"
-    elif os.environ.get("OPENAI_API_KEY"):
-        return "openai"
-    else:
-        return None
+def call_anthropic(prompt: str) -> tuple[str, dict]:
+    """Call Anthropic Claude API with web search enabled.
 
-
-def call_anthropic(prompt: str) -> str:
-    """Call Anthropic Claude API with web search enabled."""
+    Returns: (response_text, usage_info)
+    """
     try:
         import anthropic
     except ImportError:
@@ -177,7 +193,7 @@ def call_anthropic(prompt: str) -> str:
     client = anthropic.Anthropic()
     message = client.messages.create(
         model="claude-sonnet-4-5-20241022",
-        max_tokens=8096,
+        max_tokens=MAX_TOKENS_RESPONSE,
         tools=[{
             "type": "web_search_20260209",
             "name": "web_search",
@@ -191,11 +207,23 @@ def call_anthropic(prompt: str) -> str:
     for block in message.content:
         if hasattr(block, "text"):
             result += block.text
-    return result
+
+    # Track token usage
+    usage = {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-5-20241022",
+        "input_tokens": getattr(message.usage, "input_tokens", 0),
+        "output_tokens": getattr(message.usage, "output_tokens", 0),
+    }
+
+    return result, usage
 
 
-def call_openai(prompt: str) -> str:
-    """Call OpenAI GPT-4 API with web search enabled."""
+def call_openai(prompt: str) -> tuple[str, dict]:
+    """Call OpenAI GPT-4 API with web search enabled.
+
+    Returns: (response_text, usage_info)
+    """
     try:
         import openai
     except ImportError:
@@ -219,21 +247,66 @@ def call_openai(prompt: str) -> str:
             for block in item.content:
                 if hasattr(block, "text"):
                     result += block.text
-    return result
+
+    # Track token usage (OpenAI responses API format)
+    usage = {
+        "provider": "openai",
+        "model": "gpt-4o",
+        "input_tokens": getattr(response, "input_tokens", 0),
+        "output_tokens": getattr(response, "output_tokens", 0),
+    }
+
+    return result, usage
 
 
-def call_llm(prompt: str) -> str:
-    """Call the configured LLM provider."""
-    provider = get_provider()
+def call_with_retry(call_fn, prompt: str, provider_name: str) -> tuple[str, dict]:
+    """Call an LLM function with retry logic."""
+    last_error = None
 
-    if provider == "anthropic":
-        print("Using Anthropic Claude...")
-        return call_anthropic(prompt)
-    elif provider == "openai":
-        print("Using OpenAI GPT-4...")
-        return call_openai(prompt)
-    else:
+    for attempt in range(MAX_RETRIES):
+        try:
+            return call_fn(prompt)
+        except Exception as e:
+            last_error = e
+            print(f"  {provider_name} attempt {attempt + 1}/{MAX_RETRIES} failed: {e}")
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY_SECONDS)
+
+    raise last_error
+
+
+def call_llm(prompt: str) -> tuple[str, dict]:
+    """Call LLM with automatic fallback between providers.
+
+    Returns: (response_text, usage_info)
+    """
+    has_anthropic = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    has_openai = bool(os.environ.get("OPENAI_API_KEY"))
+
+    if not has_anthropic and not has_openai:
         raise RuntimeError("No API key found. Set ANTHROPIC_API_KEY or OPENAI_API_KEY")
+
+    # Try primary provider first, fallback to secondary
+    providers = []
+    if has_anthropic:
+        providers.append(("Anthropic Claude", call_anthropic))
+    if has_openai:
+        providers.append(("OpenAI GPT-4", call_openai))
+
+    last_error = None
+    for provider_name, call_fn in providers:
+        print(f"Trying {provider_name}...")
+        try:
+            response, usage = call_with_retry(call_fn, prompt, provider_name)
+            print(f"  Success! Tokens: {usage.get('input_tokens', '?')} in, {usage.get('output_tokens', '?')} out")
+            return response, usage
+        except Exception as e:
+            last_error = e
+            print(f"  {provider_name} failed after {MAX_RETRIES} retries: {e}")
+            if len(providers) > 1:
+                print("  Falling back to next provider...")
+
+    raise RuntimeError(f"All providers failed. Last error: {last_error}")
 
 
 def parse_response(response: str) -> dict:
@@ -258,6 +331,81 @@ def parse_response(response: str) -> dict:
         response = response[first_brace:last_brace + 1]
 
     return json.loads(response.strip())
+
+
+def validate_event(event: dict) -> tuple[bool, str]:
+    """Validate a single event against quality thresholds.
+
+    Returns: (is_valid, reason)
+    """
+    # Check confidence threshold
+    confidence = event.get("confidence", 0)
+    if confidence < MIN_CONFIDENCE:
+        return False, f"confidence {confidence:.2f} < {MIN_CONFIDENCE}"
+
+    # Check job count thresholds
+    jobs = event.get("tolls", {}).get("jobs", 0)
+    if jobs < MIN_JOBS_PER_EVENT:
+        return False, f"jobs {jobs} < {MIN_JOBS_PER_EVENT}"
+    if jobs > MAX_JOBS_PER_EVENT:
+        return False, f"jobs {jobs} > {MAX_JOBS_PER_EVENT} (sanity check)"
+
+    # Check required fields
+    if not event.get("headline"):
+        return False, "missing headline"
+    if not event.get("source_url"):
+        return False, "missing source_url"
+
+    return True, "ok"
+
+
+def filter_events(events: list) -> tuple[list, list]:
+    """Filter events by quality thresholds.
+
+    Returns: (valid_events, rejected_events_with_reasons)
+    """
+    valid = []
+    rejected = []
+
+    for event in events:
+        is_valid, reason = validate_event(event)
+        if is_valid:
+            valid.append(event)
+        else:
+            rejected.append({"event": event, "reason": reason})
+
+    # Apply max events cap
+    if len(valid) > MAX_EVENTS_PER_DAY:
+        # Keep highest confidence events
+        valid.sort(key=lambda e: e.get("confidence", 0), reverse=True)
+        excess = valid[MAX_EVENTS_PER_DAY:]
+        valid = valid[:MAX_EVENTS_PER_DAY]
+        for event in excess:
+            rejected.append({"event": event, "reason": f"exceeded {MAX_EVENTS_PER_DAY} events/day cap"})
+
+    return valid, rejected
+
+
+def log_usage(usage: dict) -> None:
+    """Log token usage for cost tracking."""
+    usage["timestamp"] = datetime.now(timezone.utc).isoformat()
+    usage["date"] = get_today()
+
+    with open(USAGE_FILE, "a") as f:
+        f.write(json.dumps(usage) + "\n")
+
+    # Calculate approximate cost (rough estimates)
+    input_tokens = usage.get("input_tokens", 0)
+    output_tokens = usage.get("output_tokens", 0)
+
+    if usage.get("provider") == "anthropic":
+        # Claude Sonnet pricing (approximate)
+        cost = (input_tokens * 0.003 + output_tokens * 0.015) / 1000
+    else:
+        # GPT-4o pricing (approximate)
+        cost = (input_tokens * 0.005 + output_tokens * 0.015) / 1000
+
+    print(f"  Estimated cost: ${cost:.4f}")
 
 
 def update_data(result: dict, rollup: dict) -> dict:
@@ -391,22 +539,24 @@ def save_outputs(result: dict, rollup: dict) -> None:
 def main() -> int:
     today = get_today()
     print(f"[{today}] Daily AI Toll collection starting...")
-
-    provider = get_provider()
-    if not provider:
-        print("ERROR: No API key found. Set ANTHROPIC_API_KEY or OPENAI_API_KEY")
-        return 1
+    print(f"Config: max_tokens={MAX_TOKENS_RESPONSE}, min_confidence={MIN_CONFIDENCE}, max_events={MAX_EVENTS_PER_DAY}")
 
     # Build prompt and call LLM
     prompt = build_prompt()
 
     try:
-        response = call_llm(prompt)
+        response, usage = call_llm(prompt)
     except Exception as e:
         print(f"LLM call failed: {e}")
         return 1
 
+    # Log token usage
+    log_usage(usage)
+
+    # Validate response length
     print(f"Response received ({len(response)} chars)")
+    if len(response) > MAX_RESPONSE_CHARS:
+        print(f"WARNING: Response exceeds {MAX_RESPONSE_CHARS} chars - may indicate runaway output")
 
     # Parse response
     try:
@@ -417,7 +567,18 @@ def main() -> int:
         return 1
 
     events = result.get("events", [])
-    print(f"Found {len(events)} events")
+    print(f"Found {len(events)} raw events")
+
+    # Filter events by quality thresholds
+    valid_events, rejected = filter_events(events)
+    if rejected:
+        print(f"Rejected {len(rejected)} events:")
+        for r in rejected:
+            headline = r["event"].get("headline", "?")[:50]
+            print(f"  - {headline}... ({r['reason']})")
+
+    result["events"] = valid_events
+    print(f"Accepted {len(valid_events)} events after filtering")
 
     # Update data
     rollup = load_rollup()
