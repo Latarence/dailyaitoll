@@ -31,6 +31,11 @@ MAX_JOBS_PER_EVENT = 100000         # Sanity check - reject if above this
 MAX_RETRIES = 2                     # Retries per provider before fallback
 RETRY_DELAY_SECONDS = 5             # Delay between retries
 
+# Model configuration (update these when models change)
+ANTHROPIC_MODEL = "claude-sonnet-4-20250514"
+ANTHROPIC_SEARCH_TOOL = "web_search_20250115"
+OPENAI_MODEL = "gpt-4o"
+
 # =============================================================================
 # Paths
 # =============================================================================
@@ -192,12 +197,11 @@ def call_anthropic(prompt: str) -> tuple[str, dict]:
 
     client = anthropic.Anthropic()
     message = client.messages.create(
-        model="claude-3-5-sonnet-20241022",
+        model=ANTHROPIC_MODEL,
         max_tokens=MAX_TOKENS_RESPONSE,
         tools=[{
-            "type": "web_search_20260209",
+            "type": ANTHROPIC_SEARCH_TOOL,
             "name": "web_search",
-            "allowed_callers": ["direct"]
         }],
         messages=[{"role": "user", "content": prompt}]
     )
@@ -211,7 +215,7 @@ def call_anthropic(prompt: str) -> tuple[str, dict]:
     # Track token usage
     usage = {
         "provider": "anthropic",
-        "model": "claude-3-5-sonnet-20241022",
+        "model": ANTHROPIC_MODEL,
         "input_tokens": getattr(message.usage, "input_tokens", 0),
         "output_tokens": getattr(message.usage, "output_tokens", 0),
     }
@@ -235,7 +239,7 @@ def call_openai(prompt: str) -> tuple[str, dict]:
 
     # Use responses API with web search tool
     response = client.responses.create(
-        model="gpt-4o",
+        model=OPENAI_MODEL,
         tools=[{"type": "web_search_preview"}],
         input=prompt
     )
@@ -251,7 +255,7 @@ def call_openai(prompt: str) -> tuple[str, dict]:
     # Track token usage (OpenAI responses API format)
     usage = {
         "provider": "openai",
-        "model": "gpt-4o",
+        "model": OPENAI_MODEL,
         "input_tokens": getattr(response, "input_tokens", 0),
         "output_tokens": getattr(response, "output_tokens", 0),
     }
