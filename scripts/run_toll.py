@@ -192,7 +192,7 @@ def call_anthropic(prompt: str) -> tuple[str, dict]:
 
     client = anthropic.Anthropic()
     message = client.messages.create(
-        model="claude-sonnet-4-5-20241022",
+        model="claude-3-5-sonnet-20241022",
         max_tokens=MAX_TOKENS_RESPONSE,
         tools=[{
             "type": "web_search_20260209",
@@ -211,7 +211,7 @@ def call_anthropic(prompt: str) -> tuple[str, dict]:
     # Track token usage
     usage = {
         "provider": "anthropic",
-        "model": "claude-sonnet-4-5-20241022",
+        "model": "claude-3-5-sonnet-20241022",
         "input_tokens": getattr(message.usage, "input_tokens", 0),
         "output_tokens": getattr(message.usage, "output_tokens", 0),
     }
