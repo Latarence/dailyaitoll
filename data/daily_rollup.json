@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-30T06:19:10.121005+00:00",
+  "last_updated": "2026-05-01T06:29:54.219600+00:00",
   "totals": {
     "jobs": 316789,
     "teams": 0,
@@ -468,7 +468,7 @@
   },
   "events_count": 76,
   "pending_review": 0,
-  "summary": "Today's findings include significant layoffs at Meta, Microsoft, and Oracle, all citing AI and automation as primary factors.",
+  "summary": "No new verifiable AI displacement events found.",
   "events": [],
   "all_events": [
     {
