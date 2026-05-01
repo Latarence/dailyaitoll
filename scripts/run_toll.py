@@ -33,7 +33,7 @@ RETRY_DELAY_SECONDS = 5             # Delay between retries
 
 # Model configuration (update these when models change)
 ANTHROPIC_MODEL = "claude-sonnet-4-20250514"
-ANTHROPIC_SEARCH_TOOL = "web_search_20250115"
+ANTHROPIC_SEARCH_TOOL = "web_search_20260209"
 OPENAI_MODEL = "gpt-4o"
 
 # =============================================================================
@@ -47,6 +47,7 @@ EVENTS_FILE = DATA_DIR / "events.jsonl"
 ROLLUP_FILE = DATA_DIR / "daily_rollup.json"
 WEB_DATA_DIR = ROOT / "web" / "data"
 USAGE_FILE = DATA_DIR / "token_usage.jsonl"
+STATUS_FILE = ROOT / "collection_status.json"  # For GitHub Actions to read
 
 # Ensure directories exist
 DATA_DIR.mkdir(exist_ok=True)
@@ -279,10 +280,10 @@ def call_with_retry(call_fn, prompt: str, provider_name: str) -> tuple[str, dict
     raise last_error
 
 
-def call_llm(prompt: str) -> tuple[str, dict]:
+def call_llm(prompt: str) -> tuple[str, dict, dict]:
     """Call LLM with automatic fallback between providers.
 
-    Returns: (response_text, usage_info)
+    Returns: (response_text, usage_info, status_info)
     """
     has_anthropic = bool(os.environ.get("ANTHROPIC_API_KEY"))
     has_openai = bool(os.environ.get("OPENAI_API_KEY"))
@@ -290,24 +291,40 @@ def call_llm(prompt: str) -> tuple[str, dict]:
     if not has_anthropic and not has_openai:
         raise RuntimeError("No API key found. Set ANTHROPIC_API_KEY or OPENAI_API_KEY")
 
+    # Track provider status for health monitoring
+    status = {
+        "anthropic_available": has_anthropic,
+        "openai_available": has_openai,
+        "anthropic_failed": False,
+        "anthropic_error": None,
+        "openai_failed": False,
+        "openai_error": None,
+        "used_fallback": False,
+        "provider_used": None,
+    }
+
     # Try primary provider first, fallback to secondary
     providers = []
     if has_anthropic:
-        providers.append(("Anthropic Claude", call_anthropic))
+        providers.append(("anthropic", "Anthropic Claude", call_anthropic))
     if has_openai:
-        providers.append(("OpenAI GPT-4", call_openai))
+        providers.append(("openai", "OpenAI GPT-4", call_openai))
 
     last_error = None
-    for provider_name, call_fn in providers:
+    for i, (provider_key, provider_name, call_fn) in enumerate(providers):
         print(f"Trying {provider_name}...")
         try:
             response, usage = call_with_retry(call_fn, prompt, provider_name)
             print(f"  Success! Tokens: {usage.get('input_tokens', '?')} in, {usage.get('output_tokens', '?')} out")
-            return response, usage
+            status["provider_used"] = provider_key
+            status["used_fallback"] = i > 0
+            return response, usage, status
         except Exception as e:
             last_error = e
+            status[f"{provider_key}_failed"] = True
+            status[f"{provider_key}_error"] = str(e)
             print(f"  {provider_name} failed after {MAX_RETRIES} retries: {e}")
-            if len(providers) > 1:
+            if i < len(providers) - 1:
                 print("  Falling back to next provider...")
 
     raise RuntimeError(f"All providers failed. Last error: {last_error}")
@@ -540,6 +557,94 @@ def save_outputs(result: dict, rollup: dict) -> None:
         f.write(report)
 
 
+def write_github_output(key: str, value: str) -> None:
+    """Write output variable for GitHub Actions."""
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        with open(github_output, "a") as f:
+            f.write(f"{key}={value}\n")
+
+
+def update_health_tracking(rollup: dict, status: dict, events_count: int) -> dict:
+    """Update health tracking in rollup data."""
+    today = get_today()
+
+    # Initialize health section if missing
+    if "health" not in rollup:
+        rollup["health"] = {
+            "last_anthropic_success": None,
+            "last_openai_success": None,
+            "last_nonzero_collection": None,
+            "consecutive_zero_days": 0,
+            "last_collection_date": None,
+        }
+
+    health = rollup["health"]
+
+    # Update provider success dates
+    provider = status.get("provider_used")
+    if provider == "anthropic":
+        health["last_anthropic_success"] = today
+    elif provider == "openai":
+        health["last_openai_success"] = today
+
+    # Track consecutive zero-event days
+    if events_count > 0:
+        health["last_nonzero_collection"] = today
+        health["consecutive_zero_days"] = 0
+    else:
+        # Only increment if this is a new day
+        if health.get("last_collection_date") != today:
+            health["consecutive_zero_days"] = health.get("consecutive_zero_days", 0) + 1
+
+    health["last_collection_date"] = today
+
+    return rollup
+
+
+def write_status_file(status: dict, events_count: int, rollup: dict) -> None:
+    """Write status file for GitHub Actions to read."""
+    today = get_today()
+    health = rollup.get("health", {})
+
+    collection_status = {
+        "date": today,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "events_found": events_count,
+        "provider_used": status.get("provider_used"),
+        "used_fallback": status.get("used_fallback", False),
+        "anthropic_failed": status.get("anthropic_failed", False),
+        "anthropic_error": status.get("anthropic_error"),
+        "openai_failed": status.get("openai_failed", False),
+        "openai_error": status.get("openai_error"),
+        "consecutive_zero_days": health.get("consecutive_zero_days", 0),
+        "last_nonzero_collection": health.get("last_nonzero_collection"),
+        "total_jobs": rollup.get("totals", {}).get("jobs", 0),
+    }
+
+    with open(STATUS_FILE, "w") as f:
+        json.dump(collection_status, f, indent=2)
+
+    # Also write GitHub Actions outputs
+    write_github_output("events_found", str(events_count))
+    write_github_output("provider_used", status.get("provider_used", "none"))
+    write_github_output("used_fallback", str(status.get("used_fallback", False)).lower())
+    write_github_output("anthropic_failed", str(status.get("anthropic_failed", False)).lower())
+    write_github_output("consecutive_zero_days", str(health.get("consecutive_zero_days", 0)))
+
+    # Build commit message suffix
+    provider = status.get("provider_used", "unknown")
+    suffix_parts = []
+    if status.get("used_fallback"):
+        suffix_parts.append(f"{provider} fallback")
+    else:
+        suffix_parts.append(provider)
+    suffix_parts.append(f"{events_count} events")
+
+    commit_suffix = ", ".join(suffix_parts)
+    write_github_output("commit_suffix", commit_suffix)
+
+
 def main() -> int:
     today = get_today()
     print(f"[{today}] Daily AI Toll collection starting...")
@@ -548,10 +653,22 @@ def main() -> int:
     # Build prompt and call LLM
     prompt = build_prompt()
 
+    # Initialize status for error cases
+    status = {
+        "provider_used": None,
+        "used_fallback": False,
+        "anthropic_failed": False,
+        "openai_failed": False,
+    }
+
     try:
-        response, usage = call_llm(prompt)
+        response, usage, status = call_llm(prompt)
     except Exception as e:
         print(f"LLM call failed: {e}")
+        # Write status even on failure
+        rollup = load_rollup()
+        rollup = update_health_tracking(rollup, status, 0)
+        write_status_file(status, 0, rollup)
         return 1
 
     # Log token usage
@@ -568,6 +685,10 @@ def main() -> int:
     except json.JSONDecodeError as e:
         print(f"Failed to parse response: {e}")
         print(f"Raw response:\n{response[:500]}...")
+        # Write status even on parse failure
+        rollup = load_rollup()
+        rollup = update_health_tracking(rollup, status, 0)
+        write_status_file(status, 0, rollup)
         return 1
 
     events = result.get("events", [])
@@ -588,11 +709,24 @@ def main() -> int:
     rollup = load_rollup()
     rollup = update_data(result, rollup)
 
+    # Update health tracking
+    rollup = update_health_tracking(rollup, status, len(valid_events))
+
     # Save outputs
     save_outputs(result, rollup)
 
+    # Write status file for GitHub Actions
+    write_status_file(status, len(valid_events), rollup)
+
     print(f"Summary: {result.get('summary', 'N/A')}")
     print(f"[{today}] Complete. Jobs today: {rollup['today']['jobs']}, Total: {rollup['totals']['jobs']}")
+
+    # Print health status
+    health = rollup.get("health", {})
+    if status.get("used_fallback"):
+        print(f"WARNING: Used fallback provider ({status.get('provider_used')})")
+    if health.get("consecutive_zero_days", 0) >= 3:
+        print(f"WARNING: {health['consecutive_zero_days']} consecutive days with 0 events")
 
     return 0
 

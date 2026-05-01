@@ -5,3 +5,8 @@ __pycache__/
 *.pyc
 .vercel
 node_modules/
+
+# Temporary status files (used by GitHub Actions)
+collection_status.json
+anthropic_status.json
+openai_status.json

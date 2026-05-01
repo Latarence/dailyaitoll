@@ -1,0 +1,229 @@
+name: Weekly Health Check
+
+on:
+  schedule:
+    - cron: '0 12 * * 0'  # Every Sunday at noon UTC
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic openai
+
+      - name: Validate Anthropic API
+        id: anthropic
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python << 'EOF'
+          import os
+          import sys
+          import json
+
+          # Read config from script
+          with open('scripts/run_toll.py', 'r') as f:
+              content = f.read()
+
+          # Extract model and tool config
+          for line in content.split('\n'):
+              if 'ANTHROPIC_MODEL = ' in line:
+                  model = line.split('"')[1]
+              if 'ANTHROPIC_SEARCH_TOOL = ' in line:
+                  tool = line.split('"')[1]
+
+          print(f"Testing model: {model}")
+          print(f"Testing tool: {tool}")
+
+          try:
+              import anthropic
+              client = anthropic.Anthropic()
+
+              # Minimal test call with web search tool
+              message = client.messages.create(
+                  model=model,
+                  max_tokens=50,
+                  tools=[{"type": tool, "name": "web_search"}],
+                  messages=[{"role": "user", "content": "What is 2+2? Reply with just the number."}]
+              )
+              print("Anthropic API: OK")
+              print(f"Response: {message.content}")
+
+              # Write status
+              with open('anthropic_status.json', 'w') as f:
+                  json.dump({"status": "ok", "model": model, "tool": tool}, f)
+
+          except Exception as e:
+              error_msg = str(e)
+              print(f"Anthropic API: FAILED")
+              print(f"Error: {error_msg}")
+
+              with open('anthropic_status.json', 'w') as f:
+                  json.dump({"status": "failed", "model": model, "tool": tool, "error": error_msg}, f)
+
+              # Check if it's a deprecation issue
+              if "does not match any of the expected tags" in error_msg:
+                  print("\n=== DEPRECATION DETECTED ===")
+                  print("The configured tool version is no longer valid.")
+                  print("Check the error message for valid tool versions.")
+
+              sys.exit(1)
+          EOF
+
+      - name: Validate OpenAI API
+        id: openai
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python << 'EOF'
+          import os
+          import sys
+          import json
+
+          try:
+              import openai
+              client = openai.OpenAI()
+
+              # Minimal test call
+              response = client.responses.create(
+                  model="gpt-4o",
+                  tools=[{"type": "web_search_preview"}],
+                  input="What is 2+2? Reply with just the number."
+              )
+              print("OpenAI API: OK")
+
+              with open('openai_status.json', 'w') as f:
+                  json.dump({"status": "ok", "model": "gpt-4o"}, f)
+
+          except Exception as e:
+              error_msg = str(e)
+              print(f"OpenAI API: FAILED")
+              print(f"Error: {error_msg}")
+
+              with open('openai_status.json', 'w') as f:
+                  json.dump({"status": "failed", "error": error_msg}, f)
+
+              sys.exit(1)
+          EOF
+
+      - name: Check collection health
+        run: |
+          python << 'EOF'
+          import json
+          from datetime import datetime, timedelta
+
+          try:
+              with open('data/daily_rollup.json', 'r') as f:
+                  rollup = json.load(f)
+
+              health = rollup.get('health', {})
+              last_nonzero = health.get('last_nonzero_collection')
+              consecutive_zero = health.get('consecutive_zero_days', 0)
+              last_anthropic = health.get('last_anthropic_success')
+
+              print("=== Collection Health ===")
+              print(f"Last non-zero collection: {last_nonzero or 'never'}")
+              print(f"Consecutive zero days: {consecutive_zero}")
+              print(f"Last Anthropic success: {last_anthropic or 'never'}")
+              print(f"Total events: {rollup.get('events_count', 0)}")
+              print(f"Total jobs: {rollup.get('totals', {}).get('jobs', 0)}")
+
+              # Check for staleness
+              if last_nonzero:
+                  last_date = datetime.strptime(last_nonzero, '%Y-%m-%d')
+                  days_stale = (datetime.now() - last_date).days
+                  if days_stale > 7:
+                      print(f"\nWARNING: No events collected in {days_stale} days")
+
+          except FileNotFoundError:
+              print("No rollup file found - first run?")
+          except Exception as e:
+              print(f"Error reading rollup: {e}")
+          EOF
+
+      - name: Create issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ANTHROPIC_STATUS="unknown"
+          OPENAI_STATUS="unknown"
+          ANTHROPIC_ERROR=""
+          OPENAI_ERROR=""
+
+          if [ -f anthropic_status.json ]; then
+            ANTHROPIC_STATUS=$(jq -r '.status' anthropic_status.json)
+            ANTHROPIC_ERROR=$(jq -r '.error // ""' anthropic_status.json)
+          fi
+
+          if [ -f openai_status.json ]; then
+            OPENAI_STATUS=$(jq -r '.status' openai_status.json)
+            OPENAI_ERROR=$(jq -r '.error // ""' openai_status.json)
+          fi
+
+          ISSUE_BODY="## Weekly Health Check Failed
+
+          | Provider | Status | Error |
+          |----------|--------|-------|
+          | Anthropic | $ANTHROPIC_STATUS | $ANTHROPIC_ERROR |
+          | OpenAI | $OPENAI_STATUS | $OPENAI_ERROR |
+
+          **Action needed:** Review API configuration and update as necessary.
+
+          Common issues:
+          - API key expired or invalid
+          - Model name deprecated
+          - Tool version deprecated (check \`ANTHROPIC_SEARCH_TOOL\` in \`scripts/run_toll.py\`)
+          "
+
+          # Check for existing open issue
+          EXISTING=$(gh issue list --state open --label "health-check" --json number --jq '.[0].number // empty')
+          if [ -z "$EXISTING" ]; then
+            gh issue create \
+              --title "Health Check Failed: API validation errors" \
+              --body "$ISSUE_BODY" \
+              --label "health-check,automated"
+          else
+            echo "Health check issue #$EXISTING already exists"
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Health Check Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f anthropic_status.json ]; then
+            STATUS=$(jq -r '.status' anthropic_status.json)
+            MODEL=$(jq -r '.model // "unknown"' anthropic_status.json)
+            TOOL=$(jq -r '.tool // "unknown"' anthropic_status.json)
+            if [ "$STATUS" = "ok" ]; then
+              echo "- Anthropic: $STATUS (model: $MODEL, tool: $TOOL)" >> $GITHUB_STEP_SUMMARY
+            else
+              ERROR=$(jq -r '.error // "unknown"' anthropic_status.json)
+              echo "- Anthropic: **FAILED** - $ERROR" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
+
+          if [ -f openai_status.json ]; then
+            STATUS=$(jq -r '.status' openai_status.json)
+            if [ "$STATUS" = "ok" ]; then
+              echo "- OpenAI: $STATUS" >> $GITHUB_STEP_SUMMARY
+            else
+              ERROR=$(jq -r '.error // "unknown"' openai_status.json)
+              echo "- OpenAI: **FAILED** - $ERROR" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi

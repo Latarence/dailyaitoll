@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
 
     steps:
       - name: Checkout repository
@@ -35,18 +36,113 @@ jobs:
         run: pytest tests/ -v
 
       - name: Run toll collection
+        id: collect
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python scripts/run_toll.py
+
+      - name: Check for anomalies and create issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Read status file if it exists
+          if [ -f collection_status.json ]; then
+            ANTHROPIC_FAILED=$(jq -r '.anthropic_failed' collection_status.json)
+            ANTHROPIC_ERROR=$(jq -r '.anthropic_error // "none"' collection_status.json)
+            CONSECUTIVE_ZERO=$(jq -r '.consecutive_zero_days' collection_status.json)
+            PROVIDER_USED=$(jq -r '.provider_used // "none"' collection_status.json)
+            EVENTS_FOUND=$(jq -r '.events_found' collection_status.json)
+            USED_FALLBACK=$(jq -r '.used_fallback' collection_status.json)
+
+            echo "Status: provider=$PROVIDER_USED, events=$EVENTS_FOUND, fallback=$USED_FALLBACK, zero_streak=$CONSECUTIVE_ZERO"
+
+            # Check if we should create an issue
+            CREATE_ISSUE=false
+            ISSUE_TITLE=""
+            ISSUE_BODY=""
+
+            # Condition 1: Anthropic failed (even if fallback worked)
+            if [ "$ANTHROPIC_FAILED" = "true" ]; then
+              CREATE_ISSUE=true
+              ISSUE_TITLE="Collection Alert: Anthropic API failed"
+              ISSUE_BODY="## Anthropic API Failure
+
+          The daily toll collection failed to use Anthropic Claude.
+
+          **Error:** \`$ANTHROPIC_ERROR\`
+          **Fallback provider:** $PROVIDER_USED
+          **Events found:** $EVENTS_FOUND
+
+          This may indicate:
+          - API key issues
+          - Model deprecation
+          - Tool version deprecation (check \`ANTHROPIC_SEARCH_TOOL\` in \`scripts/run_toll.py\`)
+
+          **Action needed:** Review the error and update configuration if needed."
+            fi
+
+            # Condition 2: 3+ consecutive days with 0 events
+            if [ "$CONSECUTIVE_ZERO" -ge 3 ]; then
+              CREATE_ISSUE=true
+              ISSUE_TITLE="Collection Alert: $CONSECUTIVE_ZERO consecutive days with 0 events"
+              ISSUE_BODY="## Extended Zero-Event Period
+
+          The daily toll collection has found **0 events for $CONSECUTIVE_ZERO consecutive days**.
+
+          **Provider used:** $PROVIDER_USED
+          **Used fallback:** $USED_FALLBACK
+
+          This may indicate:
+          - API issues preventing proper search
+          - Prompt issues
+          - Legitimate quiet period in AI displacement news
+
+          **Action needed:** Review recent collection logs and verify API functionality."
+            fi
+
+            # Create issue if needed (check for existing open issue first)
+            if [ "$CREATE_ISSUE" = "true" ]; then
+              EXISTING=$(gh issue list --state open --label "collection-alert" --json number --jq '.[0].number // empty')
+              if [ -z "$EXISTING" ]; then
+                gh issue create \
+                  --title "$ISSUE_TITLE" \
+                  --body "$ISSUE_BODY" \
+                  --label "collection-alert,automated"
+                echo "Created issue: $ISSUE_TITLE"
+              else
+                echo "Alert issue #$EXISTING already exists, skipping creation"
+              fi
+            fi
+          else
+            echo "No status file found - collection may have failed early"
+          fi
 
       - name: Commit and push
         if: ${{ github.event.inputs.create_pr != 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Build commit message from status
+          DATE=$(date +'%Y-%m-%d')
+          if [ -f collection_status.json ]; then
+            SUFFIX=$(jq -r '.provider_used // "unknown"' collection_status.json)
+            EVENTS=$(jq -r '.events_found // 0' collection_status.json)
+            FALLBACK=$(jq -r '.used_fallback' collection_status.json)
+
+            if [ "$FALLBACK" = "true" ]; then
+              COMMIT_MSG="toll: $DATE ($SUFFIX fallback, $EVENTS events)"
+            else
+              COMMIT_MSG="toll: $DATE ($SUFFIX, $EVENTS events)"
+            fi
+          else
+            COMMIT_MSG="toll: $DATE update"
+          fi
+
           git add -A
-          git diff --staged --quiet || git commit -m "toll: $(date +'%Y-%m-%d') update"
+          git diff --staged --quiet || git commit -m "$COMMIT_MSG"
           git push
 
       - name: Create PR (manual only)
