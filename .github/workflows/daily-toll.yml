@@ -49,12 +49,12 @@ jobs:
         run: |
           # Read status file if it exists
           if [ -f collection_status.json ]; then
-            ANTHROPIC_FAILED=$(jq -r '.anthropic_failed' collection_status.json)
+            ANTHROPIC_FAILED=$(jq -r '.anthropic_failed // "false"' collection_status.json)
             ANTHROPIC_ERROR=$(jq -r '.anthropic_error // "none"' collection_status.json)
-            CONSECUTIVE_ZERO=$(jq -r '.consecutive_zero_days' collection_status.json)
+            CONSECUTIVE_ZERO=$(jq -r '.consecutive_zero_days // 0' collection_status.json)
             PROVIDER_USED=$(jq -r '.provider_used // "none"' collection_status.json)
-            EVENTS_FOUND=$(jq -r '.events_found' collection_status.json)
-            USED_FALLBACK=$(jq -r '.used_fallback' collection_status.json)
+            EVENTS_FOUND=$(jq -r '.events_found // 0' collection_status.json)
+            USED_FALLBACK=$(jq -r '.used_fallback // "false"' collection_status.json)
 
             echo "Status: provider=$PROVIDER_USED, events=$EVENTS_FOUND, fallback=$USED_FALLBACK, zero_streak=$CONSECUTIVE_ZERO"
 
@@ -104,6 +104,10 @@ jobs:
 
             # Create issue if needed (check for existing open issue first)
             if [ "$CREATE_ISSUE" = "true" ]; then
+              # Ensure labels exist
+              gh label create "collection-alert" --color "ff0000" --force 2>/dev/null || true
+              gh label create "automated" --color "0000ff" --force 2>/dev/null || true
+
               EXISTING=$(gh issue list --state open --label "collection-alert" --json number --jq '.[0].number // empty')
               if [ -z "$EXISTING" ]; then
                 gh issue create \
