@@ -3,7 +3,27 @@
     "allow": [
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)",
+      "Bash(find:*)",
+      "Bash(gh workflow run:*)",
+      "Bash(python:*)",
+      "Bash(ANTHROPIC_API_KEY=\"\" OPENAI_API_KEY=\"\" python:*)",
+      "Bash(ls:*)",
+      "Bash(if [ -n \"$ANTHROPIC_API_KEY\" ])",
+      "Bash(then echo \"ANTHROPIC_API_KEY is set\")",
+      "Bash(else echo \"ANTHROPIC_API_KEY not set\")",
+      "Bash(fi)",
+      "Bash(pytest:*)",
+      "Bash(gh run watch:*)",
+      "Bash(git pull:*)",
+      "Bash(sort:*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:dailyaitoll.com)",
+      "Bash(curl:*)",
+      "Bash(jq:*)",
+      "Bash(python3:*)"
     ]
   }
 }

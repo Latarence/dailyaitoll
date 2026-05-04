@@ -28,6 +28,8 @@
             --dim: #555;
             --toll-red: #A32D2D;
             --toll-red-dark: #E24B4A;
+            --cursor-outer: rgba(241,239,232,0.55);
+            --cursor-inner: rgba(241,239,232,1);
         }
 
         :root.light {
@@ -40,6 +42,8 @@
             --dim: #a09c94;
             --toll-red: #8B2525;
             --toll-red-dark: #C03030;
+            --cursor-outer: rgba(26,25,22,0.55);
+            --cursor-inner: rgba(26,25,22,1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -729,6 +733,38 @@
             margin: 2rem auto 0;
             line-height: 1.6;
         }
+
+        /* CURSOR TRACKER */
+        .mouseCursor {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none; border-radius: 50%;
+            transform: translateZ(0); visibility: visible; z-index: 100000;
+            mix-blend-mode: normal;
+        }
+        .cursor-outer {
+            margin-left: -16px; margin-top: -16px;
+            width: 32px; height: 32px;
+            border: 1.2px solid var(--cursor-outer);
+            box-sizing: border-box; opacity: 1;
+            transition: all 0.25s ease-out;
+        }
+        .cursor-outer.cursor-hover, .cursor-outer.cursor-big { opacity: 0; }
+        .cursor-inner {
+            margin-left: -5px; margin-top: -5px;
+            width: 10px; height: 10px;
+            background-color: var(--cursor-inner); opacity: 1;
+            transition: width 0.25s ease-in-out, height 0.25s ease-in-out, margin 0.25s ease-in-out, opacity 0.25s ease-in-out;
+        }
+        .cursor-inner.cursor-big { background-color: transparent; }
+        .cursor-inner.cursor-hover {
+            margin-left: -15px; margin-top: -15px;
+            width: 30px; height: 30px; opacity: 0;
+        }
+        .cursor-inner.cursor-big {
+            width: 120px; height: 120px; margin-left: -60px; margin-top: -60px;
+            background: transparent; border: 1px solid var(--cursor-outer); opacity: 0.35;
+        }
+        @media (pointer: coarse) { .mouseCursor { display: none; } }
     </style>
 </head>
 <body>
@@ -1232,6 +1268,32 @@ The human cost of AI adoption, tracked daily.
             localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
         }
         if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light');
+
+        // Cursor tracker
+        (() => {
+            if (!window.matchMedia) return;
+            if (!window.matchMedia('(pointer: fine)').matches) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const outer = document.createElement('div');
+            outer.className = 'mouseCursor cursor-outer';
+            const inner = document.createElement('div');
+            inner.className = 'mouseCursor cursor-inner';
+            document.body.appendChild(outer);
+            document.body.appendChild(inner);
+            let x = 0; let y = 0;
+            const onMove = (e) => { x = e.clientX; y = e.clientY; const t = `translate(${x}px, ${y}px)`; outer.style.transform = t; inner.style.transform = t; };
+            window.addEventListener('mousemove', onMove, { passive: true });
+            const setHover = (on) => { outer.classList.toggle('cursor-hover', on); inner.classList.toggle('cursor-hover', on); };
+            const setBig = (on) => { outer.classList.toggle('cursor-big', on); inner.classList.toggle('cursor-big', on); };
+            document.querySelectorAll('a, button, .entry-company').forEach((el) => {
+                el.addEventListener('mouseenter', () => setHover(true));
+                el.addEventListener('mouseleave', () => setHover(false));
+            });
+            document.querySelectorAll('.entry-excerpt, .entry-headline, .hero-tagline, .hero-label, .footer-disclaimer').forEach((el) => {
+                el.addEventListener('mouseenter', () => setBig(true));
+                el.addEventListener('mouseleave', () => setBig(false));
+            });
+        })();
 
         // Close popups when clicking outside
         document.addEventListener('click', (e) => {
