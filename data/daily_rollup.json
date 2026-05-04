@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-05-03T06:18:37.711602+00:00",
+  "last_updated": "2026-05-04T06:31:38.042963+00:00",
   "totals": {
-    "jobs": 324789,
+    "jobs": 332789,
     "teams": 0,
     "products": 0,
-    "companies": 77,
+    "companies": 78,
     "revenue": 0,
-    "labor_hours": -675461120
+    "labor_hours": -692101120
   },
   "today": {
     "jobs": 8000,
@@ -472,19 +472,27 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -16640000
+    },
+    "2026-04-30": {
+      "jobs": 8000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -16640000
     }
   },
-  "events_count": 77,
+  "events_count": 78,
   "pending_review": 0,
-  "summary": "Meta announced plans to lay off 8,000 employees and freeze 6,000 open roles, citing increased capital spending on AI infrastructure as the primary reason.",
+  "summary": "Meta announced layoffs totaling 8,000 employees, attributing the reductions to increased investments in AI infrastructure.",
   "events": [
     {
-      "id": "evt_20260501_001",
-      "event_date": "2026-05-01",
-      "headline": "Meta to lay off 8,000 employees, freeze 6,000 open roles amid AI investment surge",
-      "source_url": "https://www.moneycontrol.com/technology/meta-ceo-zuckerberg-blames-layoffs-on-capital-spending-won-t-rule-out-more-job-cuts-article-13905065.html",
-      "source_name": "Moneycontrol",
-      "excerpt": "Meta plans to lay off about 10% of its workforce on May 20, with CEO Mark Zuckerberg attributing the layoffs to increased capital spending for AI.",
+      "id": "evt_20260430_001",
+      "event_date": "2026-04-30",
+      "headline": "Meta to lay off 8,000 employees, citing AI infrastructure costs",
+      "source_url": "https://www.forbes.com/sites/antoniopequenoiv/2026/04/30/mark-zuckerberg-says-ai-costs-contributed-to-layoffs-of-8000-staffers-report-says/",
+      "source_name": "Forbes",
+      "excerpt": "Meta chief Mark Zuckerberg acknowledged his company\u2019s spending on artificial intelligence has contributed to layoffs at Meta, according to a recording of an internal Thursday meeting reported by The Wall Street Journal.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
@@ -493,10 +501,10 @@
         "companies": 1,
         "labor_hours": -16640000
       },
-      "notes": "Layoffs linked to AI infrastructure investment",
-      "collected_date": "2026-05-03",
-      "date": "2026-05-03",
-      "created_at": "2026-05-03T06:18:37.711657+00:00"
+      "notes": "Layoffs attributed to increased AI infrastructure investments.",
+      "collected_date": "2026-05-04",
+      "date": "2026-05-04",
+      "created_at": "2026-05-04T06:31:38.043020+00:00"
     }
   ],
   "all_events": [
@@ -519,6 +527,26 @@
       "collected_date": "2026-05-03",
       "date": "2026-05-03",
       "created_at": "2026-05-03T06:18:37.711657+00:00"
+    },
+    {
+      "id": "evt_20260430_001",
+      "event_date": "2026-04-30",
+      "headline": "Meta to lay off 8,000 employees, citing AI infrastructure costs",
+      "source_url": "https://www.forbes.com/sites/antoniopequenoiv/2026/04/30/mark-zuckerberg-says-ai-costs-contributed-to-layoffs-of-8000-staffers-report-says/",
+      "source_name": "Forbes",
+      "excerpt": "Meta chief Mark Zuckerberg acknowledged his company\u2019s spending on artificial intelligence has contributed to layoffs at Meta, according to a recording of an internal Thursday meeting reported by The Wall Street Journal.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "Layoffs attributed to increased AI infrastructure investments.",
+      "collected_date": "2026-05-04",
+      "date": "2026-05-04",
+      "created_at": "2026-05-04T06:31:38.043020+00:00"
     },
     {
       "id": "evt_20260427_001",
@@ -2151,9 +2179,9 @@
   ],
   "health": {
     "last_anthropic_success": null,
-    "last_openai_success": "2026-05-03",
-    "last_nonzero_collection": "2026-05-03",
+    "last_openai_success": "2026-05-04",
+    "last_nonzero_collection": "2026-05-04",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-03"
+    "last_collection_date": "2026-05-04"
   }
 }
