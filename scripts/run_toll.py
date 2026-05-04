@@ -203,6 +203,7 @@ def call_anthropic(prompt: str) -> tuple[str, dict]:
         tools=[{
             "type": ANTHROPIC_SEARCH_TOOL,
             "name": "web_search",
+            "allowed_callers": ["direct"],
         }],
         messages=[{"role": "user", "content": prompt}]
     )
