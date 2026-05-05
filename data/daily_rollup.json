@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-04T06:31:38.042963+00:00",
+  "last_updated": "2026-05-05T06:07:18.292426+00:00",
   "totals": {
     "jobs": 332789,
     "teams": 0,
@@ -9,12 +9,12 @@
     "labor_hours": -692101120
   },
   "today": {
-    "jobs": 8000,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -16640000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-04-26": {
@@ -484,29 +484,8 @@
   },
   "events_count": 78,
   "pending_review": 0,
-  "summary": "Meta announced layoffs totaling 8,000 employees, attributing the reductions to increased investments in AI infrastructure.",
-  "events": [
-    {
-      "id": "evt_20260430_001",
-      "event_date": "2026-04-30",
-      "headline": "Meta to lay off 8,000 employees, citing AI infrastructure costs",
-      "source_url": "https://www.forbes.com/sites/antoniopequenoiv/2026/04/30/mark-zuckerberg-says-ai-costs-contributed-to-layoffs-of-8000-staffers-report-says/",
-      "source_name": "Forbes",
-      "excerpt": "Meta chief Mark Zuckerberg acknowledged his company\u2019s spending on artificial intelligence has contributed to layoffs at Meta, according to a recording of an internal Thursday meeting reported by The Wall Street Journal.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 8000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -16640000
-      },
-      "notes": "Layoffs attributed to increased AI infrastructure investments.",
-      "collected_date": "2026-05-04",
-      "date": "2026-05-04",
-      "created_at": "2026-05-04T06:31:38.043020+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found in the past 24-48 hours. Search results primarily contained previously tracked events (Meta, Microsoft, Oracle layoffs) and general analysis of Q1 2026 tech layoffs. One potential event (HGS Solutions - 92 employees in El Paso) occurred March 31, outside the specified timeframe.",
+  "events": [],
   "all_events": [
     {
       "id": "evt_20260501_001",
@@ -2178,10 +2157,10 @@
     }
   ],
   "health": {
-    "last_anthropic_success": null,
+    "last_anthropic_success": "2026-05-05",
     "last_openai_success": "2026-05-04",
     "last_nonzero_collection": "2026-05-04",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-04"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-05-05"
   }
 }
