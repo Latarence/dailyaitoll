@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-05T06:07:18.292426+00:00",
+  "last_updated": "2026-05-06T06:22:35.616030+00:00",
   "totals": {
-    "jobs": 332789,
-    "teams": 0,
+    "jobs": 333489,
+    "teams": 1,
     "products": 0,
-    "companies": 78,
+    "companies": 79,
     "revenue": 0,
-    "labor_hours": -692101120
+    "labor_hours": -693557120
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 700,
+    "teams": 1,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -1456000
   },
   "daily_totals": {
     "2026-04-26": {
@@ -480,13 +480,62 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -16640000
+    },
+    "2026-05-05": {
+      "jobs": 700,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -1456000
     }
   },
-  "events_count": 78,
+  "events_count": 79,
   "pending_review": 0,
-  "summary": "No new verifiable AI displacement events found in the past 24-48 hours. Search results primarily contained previously tracked events (Meta, Microsoft, Oracle layoffs) and general analysis of Q1 2026 tech layoffs. One potential event (HGS Solutions - 92 employees in El Paso) occurred March 31, outside the specified timeframe.",
-  "events": [],
+  "summary": "Two new AI displacement events identified: Coinbase's major 700-person layoff on May 5 citing AI-driven workflow transformation, and SuperOps' 60-person cut (30% workforce) on April 24 for AI restructuring. Both represent direct AI causality with high confidence.",
+  "events": [
+    {
+      "id": "evt_20260505_001",
+      "event_date": "2026-05-05",
+      "headline": "Coinbase lays off 700 employees, cites AI-driven workflow transformation",
+      "source_url": "https://www.hcamag.com/us/specialization/transformation/coinbase-slashes-14-of-workforce-as-ai-layoff-wave-shows-no-signs-of-slowing/574133",
+      "source_name": "Human Resources Director",
+      "excerpt": "Armstrong said the layoffs are partly due to a crypto downturn. Yet the main motivator is making the company's leadership structure flatter, enabling its employees to work fast, with AI at the forefront.",
+      "causality": "direct",
+      "confidence": 0.95,
+      "tolls": {
+        "jobs": 700,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "Restructuring complete Q2 2026, creating 'AI-native pods'",
+      "collected_date": "2026-05-06",
+      "date": "2026-05-06",
+      "created_at": "2026-05-06T06:22:35.616085+00:00"
+    }
+  ],
   "all_events": [
+    {
+      "id": "evt_20260505_001",
+      "event_date": "2026-05-05",
+      "headline": "Coinbase lays off 700 employees, cites AI-driven workflow transformation",
+      "source_url": "https://www.hcamag.com/us/specialization/transformation/coinbase-slashes-14-of-workforce-as-ai-layoff-wave-shows-no-signs-of-slowing/574133",
+      "source_name": "Human Resources Director",
+      "excerpt": "Armstrong said the layoffs are partly due to a crypto downturn. Yet the main motivator is making the company's leadership structure flatter, enabling its employees to work fast, with AI at the forefront.",
+      "causality": "direct",
+      "confidence": 0.95,
+      "tolls": {
+        "jobs": 700,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "Restructuring complete Q2 2026, creating 'AI-native pods'",
+      "collected_date": "2026-05-06",
+      "date": "2026-05-06",
+      "created_at": "2026-05-06T06:22:35.616085+00:00"
+    },
     {
       "id": "evt_20260501_001",
       "event_date": "2026-05-01",
@@ -2157,10 +2206,10 @@
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-05-05",
+    "last_anthropic_success": "2026-05-06",
     "last_openai_success": "2026-05-04",
-    "last_nonzero_collection": "2026-05-04",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-05-05"
+    "last_nonzero_collection": "2026-05-06",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-05-06"
   }
 }
