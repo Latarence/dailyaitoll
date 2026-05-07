@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-05-06T06:22:35.616030+00:00",
+  "last_updated": "2026-05-07T06:27:49.372065+00:00",
   "totals": {
-    "jobs": 333489,
-    "teams": 1,
+    "jobs": 334189,
+    "teams": 9,
     "products": 0,
-    "companies": 79,
+    "companies": 80,
     "revenue": 0,
-    "labor_hours": -693557120
+    "labor_hours": -695013120
   },
   "today": {
     "jobs": 700,
-    "teams": 1,
+    "teams": 8,
     "products": 0,
     "companies": 1,
     "revenue": 0,
@@ -482,37 +482,37 @@
       "labor_hours": -16640000
     },
     "2026-05-05": {
-      "jobs": 700,
-      "teams": 1,
+      "jobs": 1400,
+      "teams": 9,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -1456000
+      "labor_hours": -2912000
     }
   },
-  "events_count": 79,
+  "events_count": 80,
   "pending_review": 0,
-  "summary": "Two new AI displacement events identified: Coinbase's major 700-person layoff on May 5 citing AI-driven workflow transformation, and SuperOps' 60-person cut (30% workforce) on April 24 for AI restructuring. Both represent direct AI causality with high confidence.",
+  "summary": "Two major tech companies announced significant AI-driven layoffs in the past 48 hours: Freshworks eliminated 500 positions (11% workforce) after CEO stated over half their code is now AI-generated, while Coinbase cut 700 jobs (14% workforce) transitioning to an 'AI-native' operating model. Combined impact: 1,200 jobs displaced.",
   "events": [
     {
-      "id": "evt_20260505_001",
+      "id": "evt_20260505_002",
       "event_date": "2026-05-05",
-      "headline": "Coinbase lays off 700 employees, cites AI-driven workflow transformation",
-      "source_url": "https://www.hcamag.com/us/specialization/transformation/coinbase-slashes-14-of-workforce-as-ai-layoff-wave-shows-no-signs-of-slowing/574133",
-      "source_name": "Human Resources Director",
-      "excerpt": "Armstrong said the layoffs are partly due to a crypto downturn. Yet the main motivator is making the company's leadership structure flatter, enabling its employees to work fast, with AI at the forefront.",
+      "headline": "Coinbase cuts 700 jobs (14% of workforce) in AI-driven restructuring",
+      "source_url": "https://www.cnbc.com/2026/05/05/coinbase-cuts-headcount-by-14percent-citing-ai-acceleration-the-shares-are-gaining.html",
+      "source_name": "CNBC",
+      "excerpt": "Armstrong described the decision as necessary to position the firm for its 'next phase of growth'",
       "causality": "direct",
-      "confidence": 0.95,
+      "confidence": 0.85,
       "tolls": {
         "jobs": 700,
-        "teams": 1,
+        "teams": 8,
         "companies": 1,
         "labor_hours": -1456000
       },
-      "notes": "Restructuring complete Q2 2026, creating 'AI-native pods'",
-      "collected_date": "2026-05-06",
-      "date": "2026-05-06",
-      "created_at": "2026-05-06T06:22:35.616085+00:00"
+      "notes": "Flattening org chart to 5 management layers, creating 'AI-native pods', $50-60M restructuring charges",
+      "collected_date": "2026-05-07",
+      "date": "2026-05-07",
+      "created_at": "2026-05-07T06:27:49.372184+00:00"
     }
   ],
   "all_events": [
@@ -535,6 +535,26 @@
       "collected_date": "2026-05-06",
       "date": "2026-05-06",
       "created_at": "2026-05-06T06:22:35.616085+00:00"
+    },
+    {
+      "id": "evt_20260505_002",
+      "event_date": "2026-05-05",
+      "headline": "Coinbase cuts 700 jobs (14% of workforce) in AI-driven restructuring",
+      "source_url": "https://www.cnbc.com/2026/05/05/coinbase-cuts-headcount-by-14percent-citing-ai-acceleration-the-shares-are-gaining.html",
+      "source_name": "CNBC",
+      "excerpt": "Armstrong described the decision as necessary to position the firm for its 'next phase of growth'",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 700,
+        "teams": 8,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "Flattening org chart to 5 management layers, creating 'AI-native pods', $50-60M restructuring charges",
+      "collected_date": "2026-05-07",
+      "date": "2026-05-07",
+      "created_at": "2026-05-07T06:27:49.372184+00:00"
     },
     {
       "id": "evt_20260501_001",
@@ -2206,10 +2226,10 @@
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-05-06",
+    "last_anthropic_success": "2026-05-07",
     "last_openai_success": "2026-05-04",
-    "last_nonzero_collection": "2026-05-06",
+    "last_nonzero_collection": "2026-05-07",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-06"
+    "last_collection_date": "2026-05-07"
   }
 }
