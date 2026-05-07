@@ -99,6 +99,46 @@ def load_known_event_ids() -> set:
     return known_ids
 
 
+def load_event_counts_by_date() -> dict:
+    """Load count of existing events per event_date for ID generation."""
+    counts = {}
+    if EVENTS_FILE.exists():
+        with open(EVENTS_FILE, "r") as f:
+            for line in f:
+                if line.strip():
+                    try:
+                        event = json.loads(line)
+                        event_date = event.get("event_date", "")
+                        if event_date:
+                            counts[event_date] = counts.get(event_date, 0) + 1
+                    except json.JSONDecodeError:
+                        pass
+    return counts
+
+
+def generate_unique_id(event_date: str, date_counts: dict, used_ids: set) -> str:
+    """Generate a unique event ID for the given event_date.
+
+    Args:
+        event_date: The event date in YYYY-MM-DD format
+        date_counts: Dict tracking count of events per date
+        used_ids: Set of IDs already used (existing + newly assigned)
+
+    Returns:
+        A unique event ID in format evt_YYYYMMDD_NNN
+    """
+    date_str = event_date.replace("-", "")
+
+    # Start from current count + 1
+    counter = date_counts.get(event_date, 0) + 1
+
+    while True:
+        new_id = f"evt_{date_str}_{counter:03d}"
+        if new_id not in used_ids:
+            return new_id
+        counter += 1
+
+
 def build_prompt() -> str:
     today = get_today()
     rollup = load_rollup()
@@ -435,22 +475,39 @@ def update_data(result: dict, rollup: dict) -> dict:
     events = result.get("events", [])
     collected_date = result.get("collected_date", get_today())
 
-    # Load known event IDs for deduplication
+    # Load known event IDs and headlines for deduplication
     known_ids = load_known_event_ids()
+
+    # Load event counts per date for unique ID generation
+    date_counts = load_event_counts_by_date()
+
+    # Track all used IDs (existing + newly assigned in this batch)
+    used_ids = {eid for eid in known_ids if eid.startswith("evt_")}
 
     # Reset today's collection stats
     rollup["today"] = {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0}
 
     new_events = []
     for event in events:
-        # Skip duplicates
-        event_id = event.get("id", "")
+        # Skip duplicates by headline (more reliable than LLM-generated IDs)
         headline = event.get("headline", "").lower().strip()
-        if event_id in known_ids or headline in known_ids:
+        if headline in known_ids:
+            print(f"  Skipping duplicate headline: {event.get('headline', '')[:50]}...")
             continue
 
         # Get event date (when it happened) - fall back to collected date
         event_date = event.get("event_date") or event.get("date") or collected_date
+
+        # Generate a unique ID (don't trust LLM-generated IDs)
+        new_id = generate_unique_id(event_date, date_counts, used_ids)
+        old_id = event.get("id", "")
+        if old_id != new_id:
+            print(f"  Reassigned ID: {old_id} -> {new_id}")
+        event["id"] = new_id
+        used_ids.add(new_id)
+
+        # Update count for this date so next event gets a different ID
+        date_counts[event_date] = date_counts.get(event_date, 0) + 1
 
         # Add metadata
         event["event_date"] = event_date
