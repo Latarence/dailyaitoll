@@ -24,7 +24,7 @@ def parse_date(date_str):
             if fmt == "%b %Y":
                 return dt.strftime("%Y-%m-15")  # Default to mid-month
             return dt.strftime("%Y-%m-%d")
-        except:
+        except ValueError:
             continue
     return None
 
@@ -36,7 +36,7 @@ def parse_jobs(jobs_str):
     jobs_str = re.sub(r'[~+,]', '', jobs_str)
     try:
         return int(float(jobs_str))
-    except:
+    except (ValueError, TypeError):
         return 0
 
 def parse_ai_factor(factor_str):
@@ -46,7 +46,7 @@ def parse_ai_factor(factor_str):
     factor_str = str(factor_str).strip().replace('%', '')
     try:
         return float(factor_str) / 100
-    except:
+    except (ValueError, TypeError):
         return 0.5
 
 def determine_causality(ai_attribution):

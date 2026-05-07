@@ -1,6 +1,14 @@
 name: Generate Daily Pages
 
 on:
+  # Trigger after daily toll collection completes successfully
+  workflow_run:
+    workflows: ["Daily AI Toll"]
+    types:
+      - completed
+    branches:
+      - main
+  # Backup: trigger on data file changes (for manual updates)
   push:
     paths:
       - 'data/events.jsonl'
@@ -14,6 +22,8 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    # Only run if triggered by workflow_dispatch, push, or if the triggering workflow succeeded
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     permissions:
       contents: write
     env:
@@ -24,6 +34,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          # For workflow_run, fetch the latest commit from main to get updated data
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || github.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v5

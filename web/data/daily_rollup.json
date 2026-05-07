@@ -1,22 +1,54 @@
 {
-  "last_updated": "2026-05-07T06:27:49.372065+00:00",
+  "last_updated": "2026-05-07T06:15:10.407057+00:00",
   "totals": {
-    "jobs": 334189,
-    "teams": 9,
+    "jobs": 334689,
+    "teams": 14,
     "products": 0,
-    "companies": 80,
+    "companies": 45,
     "revenue": 0,
-    "labor_hours": -695013120
+    "labor_hours": -696053120
   },
   "today": {
-    "jobs": 700,
-    "teams": 8,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -1456000
+    "labor_hours": 0
   },
   "daily_totals": {
+    "2026-05-05": {
+      "jobs": 1900,
+      "teams": 14,
+      "products": 0,
+      "companies": 3,
+      "revenue": 0,
+      "labor_hours": -3952000
+    },
+    "2026-05-01": {
+      "jobs": 8000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -16640000
+    },
+    "2026-04-30": {
+      "jobs": 8000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -16640000
+    },
+    "2026-04-27": {
+      "jobs": 20000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -41600000
+    },
     "2026-04-26": {
       "jobs": 8000,
       "teams": 0,
@@ -40,6 +72,14 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -31200000
+    },
+    "2026-04-23": {
+      "jobs": 16750,
+      "teams": 0,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -34740000
     },
     "2026-04-15": {
       "jobs": 0,
@@ -448,73 +488,9 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -74880000
-    },
-    "2026-04-23": {
-      "jobs": 16750,
-      "teams": 0,
-      "products": 0,
-      "companies": 2,
-      "revenue": 0,
-      "labor_hours": -34740000
-    },
-    "2026-04-27": {
-      "jobs": 20000,
-      "teams": 0,
-      "products": 0,
-      "companies": 1,
-      "revenue": 0,
-      "labor_hours": -41600000
-    },
-    "2026-05-01": {
-      "jobs": 8000,
-      "teams": 0,
-      "products": 0,
-      "companies": 1,
-      "revenue": 0,
-      "labor_hours": -16640000
-    },
-    "2026-04-30": {
-      "jobs": 8000,
-      "teams": 0,
-      "products": 0,
-      "companies": 1,
-      "revenue": 0,
-      "labor_hours": -16640000
-    },
-    "2026-05-05": {
-      "jobs": 1400,
-      "teams": 9,
-      "products": 0,
-      "companies": 2,
-      "revenue": 0,
-      "labor_hours": -2912000
     }
   },
-  "events_count": 80,
-  "pending_review": 0,
-  "summary": "Two major tech companies announced significant AI-driven layoffs in the past 48 hours: Freshworks eliminated 500 positions (11% workforce) after CEO stated over half their code is now AI-generated, while Coinbase cut 700 jobs (14% workforce) transitioning to an 'AI-native' operating model. Combined impact: 1,200 jobs displaced.",
-  "events": [
-    {
-      "id": "evt_20260505_002",
-      "event_date": "2026-05-05",
-      "headline": "Coinbase cuts 700 jobs (14% of workforce) in AI-driven restructuring",
-      "source_url": "https://www.cnbc.com/2026/05/05/coinbase-cuts-headcount-by-14percent-citing-ai-acceleration-the-shares-are-gaining.html",
-      "source_name": "CNBC",
-      "excerpt": "Armstrong described the decision as necessary to position the firm for its 'next phase of growth'",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 700,
-        "teams": 8,
-        "companies": 1,
-        "labor_hours": -1456000
-      },
-      "notes": "Flattening org chart to 5 management layers, creating 'AI-native pods', $50-60M restructuring charges",
-      "collected_date": "2026-05-07",
-      "date": "2026-05-07",
-      "created_at": "2026-05-07T06:27:49.372184+00:00"
-    }
-  ],
+  "events_count": 81,
   "all_events": [
     {
       "id": "evt_20260505_001",
@@ -535,6 +511,25 @@
       "collected_date": "2026-05-06",
       "date": "2026-05-06",
       "created_at": "2026-05-06T06:22:35.616085+00:00"
+    },
+    {
+      "id": "evt_20260505_003",
+      "event_date": "2026-05-05",
+      "headline": "Freshworks lays off 500 workers (11% of workforce) citing AI code automation",
+      "source_url": "https://www.theworkersrights.com/freshworks-layoffs-2026-ai-code-jobs/",
+      "source_name": "The Workers Rights",
+      "excerpt": "CEO Dennis Woodside said that more than half of their code is written by AI",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 500,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "AI automation eliminated 'rote work', $8M restructuring cost",
+      "date": "2026-05-07",
+      "created_at": "2026-05-07T06:27:49.372122+00:00"
     },
     {
       "id": "evt_20260505_002",
@@ -567,7 +562,7 @@
       "confidence": 0.9,
       "tolls": {
         "jobs": 8000,
-        "teams": null,
+        "teams": 0,
         "companies": 1,
         "labor_hours": -16640000
       },
@@ -587,7 +582,7 @@
       "confidence": 0.9,
       "tolls": {
         "jobs": 8000,
-        "teams": null,
+        "teams": 0,
         "companies": 1,
         "labor_hours": -16640000
       },
@@ -607,7 +602,7 @@
       "confidence": 0.85,
       "tolls": {
         "jobs": 20000,
-        "teams": null,
+        "teams": 0,
         "companies": 1,
         "labor_hours": -41600000
       },
@@ -687,7 +682,7 @@
       "confidence": 0.9,
       "tolls": {
         "jobs": 8000,
-        "teams": null,
+        "teams": 0,
         "companies": 1,
         "labor_hours": -16640000
       },
@@ -707,7 +702,7 @@
       "confidence": 0.8,
       "tolls": {
         "jobs": 8750,
-        "teams": null,
+        "teams": 0,
         "companies": 1,
         "labor_hours": -18100000
       },
@@ -2224,12 +2219,5 @@
       "date": "2023-01-04",
       "created_at": "2026-04-27T17:59:55.149844"
     }
-  ],
-  "health": {
-    "last_anthropic_success": "2026-05-07",
-    "last_openai_success": "2026-05-04",
-    "last_nonzero_collection": "2026-05-07",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-07"
-  }
+  ]
 }

@@ -9,11 +9,15 @@ from datetime import datetime
 def load_template():
     """Load the daily page template."""
     template_path = Path(__file__).parent / "templates" / "daily_page.html"
+    if not template_path.exists():
+        raise FileNotFoundError(f"Template not found: {template_path}")
     return template_path.read_text()
 
 def load_events():
     """Load all events from events.jsonl."""
     events_path = Path(__file__).parent.parent / "data" / "events.jsonl"
+    if not events_path.exists():
+        raise FileNotFoundError(f"Events file not found: {events_path}")
     events = []
     with open(events_path) as f:
         for line in f:
@@ -112,18 +116,31 @@ def main():
     base_dir = Path(__file__).parent.parent
     web_dir = base_dir / "web"
 
-    print("Loading template...")
-    template = load_template()
+    try:
+        print("Loading template...")
+        template = load_template()
+    except FileNotFoundError as e:
+        print(f"ERROR: {e}")
+        return 1
 
-    print("Loading events...")
-    events = load_events()
-    print(f"Loaded {len(events)} events")
+    try:
+        print("Loading events...")
+        events = load_events()
+        print(f"Loaded {len(events)} events")
+    except FileNotFoundError as e:
+        print(f"ERROR: {e}")
+        return 1
 
     print("Grouping by date...")
     by_date = group_by_date(events)
     print(f"Found {len(by_date)} unique dates")
 
+    if len(by_date) == 0:
+        print("WARNING: No dates found in events - no pages will be generated")
+        return 0
+
     print("Generating daily pages...")
+    pages_generated = 0
     for date_str, date_events in sorted(by_date.items()):
         # Create directory structure: web/2024/01/30/index.html
         year, month, day = date_str.split('-')
@@ -134,11 +151,14 @@ def main():
 
         output_path = page_dir / "index.html"
         output_path.write_text(html)
+        pages_generated += 1
 
         total_jobs = sum(e.get('tolls', {}).get('jobs', 0) for e in date_events)
         print(f"  {date_str}: {len(date_events)} events, {total_jobs:,} jobs → {output_path.relative_to(base_dir)}")
 
-    print(f"\nGenerated {len(by_date)} daily pages")
+    print(f"\nGenerated {pages_generated} daily pages")
+    return 0
 
 if __name__ == "__main__":
-    main()
+    import sys
+    sys.exit(main())
