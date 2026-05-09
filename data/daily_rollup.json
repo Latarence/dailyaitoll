@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-08T05:49:14.777420+00:00",
+  "last_updated": "2026-05-09T06:06:45.468007+00:00",
   "totals": {
-    "jobs": 336389,
-    "teams": 18,
+    "jobs": 337839,
+    "teams": 41,
     "products": 0,
-    "companies": 49,
+    "companies": 51,
     "revenue": 0,
-    "labor_hours": -699589120
+    "labor_hours": -702605120
   },
   "today": {
-    "jobs": 1700,
-    "teams": 4,
+    "jobs": 1450,
+    "teams": 23,
     "products": 0,
-    "companies": 4,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": -3536000
+    "labor_hours": -3016000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -490,23 +490,23 @@
       "labor_hours": -74880000
     },
     "2026-05-07": {
-      "jobs": 750,
-      "teams": 2,
+      "jobs": 1850,
+      "teams": 17,
+      "products": 0,
+      "companies": 3,
+      "revenue": 0,
+      "labor_hours": -3848000
+    },
+    "2026-05-06": {
+      "jobs": 600,
+      "teams": 9,
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -1560000
-    },
-    "2026-05-06": {
-      "jobs": 250,
-      "teams": 1,
-      "products": 0,
-      "companies": 1,
-      "revenue": 0,
-      "labor_hours": -520000
+      "labor_hours": -1248000
     }
   },
-  "events_count": 85,
+  "events_count": 87,
   "all_events": [
     {
       "id": "evt_20260507_001",
@@ -549,6 +549,26 @@
       "created_at": "2026-05-08T05:49:14.777519+00:00"
     },
     {
+      "id": "evt_20260507_003",
+      "event_date": "2026-05-07",
+      "headline": "Cloudflare cuts 1,100 jobs citing 600% surge in AI usage",
+      "source_url": "https://blog.cloudflare.com/building-for-the-future/",
+      "source_name": "Cloudflare Official Blog",
+      "excerpt": "Cloudflare's usage of AI has increased by more than 600% in the last three months alone",
+      "causality": "direct",
+      "confidence": 0.95,
+      "tolls": {
+        "jobs": 1100,
+        "teams": 15,
+        "companies": 1,
+        "labor_hours": -2288000
+      },
+      "notes": "20% workforce reduction as company shifts to 'agentic AI-first operating model'",
+      "collected_date": "2026-05-09",
+      "date": "2026-05-09",
+      "created_at": "2026-05-09T06:06:45.468069+00:00"
+    },
+    {
       "id": "evt_20260506_001",
       "event_date": "2026-05-06",
       "headline": "Arctic Wolf lays off 250 workers to invest in AI platform",
@@ -567,6 +587,26 @@
       "collected_date": "2026-05-08",
       "date": "2026-05-08",
       "created_at": "2026-05-08T05:49:14.777528+00:00"
+    },
+    {
+      "id": "evt_20260506_002",
+      "event_date": "2026-05-06",
+      "headline": "Ticketmaster lays off 350 workers prioritizing AI initiatives",
+      "source_url": "https://news.pollstar.com/2026/05/06/ticketmaster-cuts-8-of-staff-350-employees-primarily-in-engineering-product-design/",
+      "source_name": "Pollstar News",
+      "excerpt": "AI as a new utility",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 350,
+        "teams": 8,
+        "companies": 1,
+        "labor_hours": -728000
+      },
+      "notes": "8% of global workforce cut across 25 countries, focused on engineering, product, and design",
+      "collected_date": "2026-05-09",
+      "date": "2026-05-09",
+      "created_at": "2026-05-09T06:06:45.468090+00:00"
     },
     {
       "id": "evt_20260505_001",
@@ -2316,94 +2356,54 @@
       "created_at": "2026-04-27T17:59:55.149844"
     }
   ],
-  "summary": "Four new AI displacement events found in past 48 hours: Freshworks (500), Coinbase (700), DeepL (250), and Arctic Wolf (250). Total displacement: 1,700 jobs. Notable pattern: profitable companies with growth citing AI efficiency as primary driver.",
+  "summary": "May 7-8 saw major AI-driven workforce reductions with Cloudflare eliminating 1,100 jobs (20% of workforce) citing 600% AI usage growth, and Ticketmaster cutting 350 positions (8%) for AI prioritization. Both companies explicitly linked layoffs to AI transformation despite strong revenue growth.",
   "events": [
     {
-      "id": "evt_20260507_001",
+      "id": "evt_20260507_003",
       "event_date": "2026-05-07",
-      "headline": "Freshworks lays off 500 employees citing AI writing half their code",
-      "source_url": "https://www.peoplematters.in/news/strategic-hr/software-firm-freshworks-announces-layoffs-tied-to-ai-transformation-cuts-500-jobs-49578",
-      "source_name": "People Matters",
-      "excerpt": "<cite index=\"11-1\">\"Over half of our code is written by AI.\" \u2014 Freshworks CEO Dennis Woodside</cite>",
+      "headline": "Cloudflare cuts 1,100 jobs citing 600% surge in AI usage",
+      "source_url": "https://blog.cloudflare.com/building-for-the-future/",
+      "source_name": "Cloudflare Official Blog",
+      "excerpt": "Cloudflare's usage of AI has increased by more than 600% in the last three months alone",
       "causality": "direct",
       "confidence": 0.95,
       "tolls": {
-        "jobs": 500,
-        "teams": 1,
+        "jobs": 1100,
+        "teams": 15,
         "companies": 1,
-        "labor_hours": -1040000
+        "labor_hours": -2288000
       },
-      "notes": "Q1 2026 restructuring; CEO explicitly cited AI writing majority of code",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777486+00:00"
+      "notes": "20% workforce reduction as company shifts to 'agentic AI-first operating model'",
+      "collected_date": "2026-05-09",
+      "date": "2026-05-09",
+      "created_at": "2026-05-09T06:06:45.468069+00:00"
     },
     {
-      "id": "evt_20260505_004",
-      "event_date": "2026-05-05",
-      "headline": "Coinbase cuts 700 jobs in AI-native restructuring",
-      "source_url": "https://www.cnbc.com/2026/05/05/coinbase-cuts-headcount-by-14percent-citing-ai-acceleration.html",
-      "source_name": "CNBC",
-      "excerpt": "<cite index=\"27-7\">\"rebuilding Coinbase as an intelligence, with humans around the edge aligning it\"</cite>",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 700,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -1456000
-      },
-      "notes": "14% workforce reduction for AI-native operating model",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777508+00:00"
-    },
-    {
-      "id": "evt_20260507_002",
-      "event_date": "2026-05-07",
-      "headline": "DeepL cuts 250 jobs citing massive AI structural shift",
-      "source_url": "https://www.bloomberg.com/news/articles/2026-05-07/google-translate-rival-deepl-announces-plans-to-cut-25-of-staff",
-      "source_name": "Bloomberg",
-      "excerpt": "<cite index=\"35-4\">\"massive structural shift\" from artificial intelligence</cite>",
-      "causality": "direct",
-      "confidence": 0.92,
-      "tolls": {
-        "jobs": 250,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -520000
-      },
-      "notes": "25% workforce reduction at German translation unicorn",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777519+00:00"
-    },
-    {
-      "id": "evt_20260506_001",
+      "id": "evt_20260506_002",
       "event_date": "2026-05-06",
-      "headline": "Arctic Wolf lays off 250 workers to invest in AI platform",
-      "source_url": "https://www.theregister.com/ai-and-ml/2026/05/06/arctic-wolf-cuts-250-jobs-in-ai-push/5231213",
-      "source_name": "The Register",
-      "excerpt": "<cite index=\"1-2\">\"position Arctic Wolf to operate more efficiently, continue investing in our Superintelligence platform\"</cite>",
+      "headline": "Ticketmaster lays off 350 workers prioritizing AI initiatives",
+      "source_url": "https://news.pollstar.com/2026/05/06/ticketmaster-cuts-8-of-staff-350-employees-primarily-in-engineering-product-design/",
+      "source_name": "Pollstar News",
+      "excerpt": "AI as a new utility",
       "causality": "direct",
       "confidence": 0.85,
       "tolls": {
-        "jobs": 250,
-        "teams": 1,
+        "jobs": 350,
+        "teams": 8,
         "companies": 1,
-        "labor_hours": -520000
+        "labor_hours": -728000
       },
-      "notes": "Cybersecurity vendor restructuring for AI SOC investment",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777528+00:00"
+      "notes": "8% of global workforce cut across 25 countries, focused on engineering, product, and design",
+      "collected_date": "2026-05-09",
+      "date": "2026-05-09",
+      "created_at": "2026-05-09T06:06:45.468090+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-05-08",
+    "last_anthropic_success": "2026-05-09",
     "last_openai_success": null,
-    "last_nonzero_collection": "2026-05-08",
+    "last_nonzero_collection": "2026-05-09",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-08"
+    "last_collection_date": "2026-05-09"
   }
 }
