@@ -151,6 +151,11 @@ jobs:
           git diff --staged --quiet || git commit -m "$COMMIT_MSG"
           git push
 
+      - name: Trigger Vercel deploy
+        if: ${{ github.event.inputs.create_pr != 'true' }}
+        run: |
+          curl -s -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}"
+
       - name: Create PR (manual only)
         if: ${{ github.event.inputs.create_pr == 'true' }}
         uses: peter-evans/create-pull-request@v6
