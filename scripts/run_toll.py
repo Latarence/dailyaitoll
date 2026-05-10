@@ -32,7 +32,7 @@ MAX_RETRIES = 2                     # Retries per provider before fallback
 RETRY_DELAY_SECONDS = 5             # Delay between retries
 
 # Model configuration (update these when models change)
-ANTHROPIC_MODEL = "claude-sonnet-4-20250514"
+ANTHROPIC_MODEL = "claude-sonnet-4-latest"
 ANTHROPIC_SEARCH_TOOL = "web_search_20260209"
 OPENAI_MODEL = "gpt-4o"
 
