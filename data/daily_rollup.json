@@ -1,29 +1,29 @@
 {
-  "last_updated": "2026-05-09T06:06:45.468007+00:00",
+  "last_updated": "2026-05-10T06:27:26.199114+00:00",
   "totals": {
-    "jobs": 337839,
-    "teams": 41,
+    "jobs": 343799,
+    "teams": 45,
     "products": 0,
-    "companies": 51,
+    "companies": 55,
     "revenue": 0,
-    "labor_hours": -702605120
+    "labor_hours": -715001920
   },
   "today": {
-    "jobs": 1450,
-    "teams": 23,
+    "jobs": 5960,
+    "teams": 4,
     "products": 0,
-    "companies": 2,
+    "companies": 4,
     "revenue": 0,
-    "labor_hours": -3016000
+    "labor_hours": -12396800
   },
   "daily_totals": {
     "2026-05-05": {
-      "jobs": 2600,
-      "teams": 15,
+      "jobs": 7360,
+      "teams": 16,
       "products": 0,
-      "companies": 4,
+      "companies": 5,
       "revenue": 0,
-      "labor_hours": -5408000
+      "labor_hours": -15308800
     },
     "2026-05-01": {
       "jobs": 8000,
@@ -490,12 +490,12 @@
       "labor_hours": -74880000
     },
     "2026-05-07": {
-      "jobs": 1850,
-      "teams": 17,
+      "jobs": 3050,
+      "teams": 20,
       "products": 0,
-      "companies": 3,
+      "companies": 6,
       "revenue": 0,
-      "labor_hours": -3848000
+      "labor_hours": -6344000
     },
     "2026-05-06": {
       "jobs": 600,
@@ -506,7 +506,7 @@
       "labor_hours": -1248000
     }
   },
-  "events_count": 87,
+  "events_count": 91,
   "all_events": [
     {
       "id": "evt_20260507_001",
@@ -567,6 +567,66 @@
       "collected_date": "2026-05-09",
       "date": "2026-05-09",
       "created_at": "2026-05-09T06:06:45.468069+00:00"
+    },
+    {
+      "id": "evt_20260507_004",
+      "event_date": "2026-05-07",
+      "headline": "BILL Holdings cuts 30% of workforce amid AI-native transformation",
+      "source_url": "https://layoffhedge.com/company/bill-holdings",
+      "source_name": "LayoffHedge",
+      "excerpt": "BILL Holdings is cutting up to 30% of its workforce, an estimated 700 jobs, on the same day it authorized a $1.0 billion stock buyback.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 700,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "CEO announced becoming 'AI native company' as rationale, announced same day as $1B buyback",
+      "collected_date": "2026-05-10",
+      "date": "2026-05-10",
+      "created_at": "2026-05-10T06:27:26.199180+00:00"
+    },
+    {
+      "id": "evt_20260507_005",
+      "event_date": "2026-05-07",
+      "headline": "Ticketmaster cuts 350 workers citing AI as new utility",
+      "source_url": "https://beincrypto.com/ai-restructuring-job-layoffs-2026/",
+      "source_name": "BeInCrypto",
+      "excerpt": "LAYOFF ALERT: TICKETMASTER \ud83d\udea8 8% of workforce. The reason from Global President Saumil Mehta: 'AI as a new utility.'",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 350,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -728000
+      },
+      "notes": "8% of global workforce, Global President explicitly cited AI as rationale",
+      "collected_date": "2026-05-10",
+      "date": "2026-05-10",
+      "created_at": "2026-05-10T06:27:26.199203+00:00"
+    },
+    {
+      "id": "evt_20260507_006",
+      "event_date": "2026-05-07",
+      "headline": "Upwork cuts 24% of staff in restructuring citing evolving nature of work",
+      "source_url": "https://www.trueup.io/layoffs",
+      "source_name": "TrueUp",
+      "excerpt": "Upwork to Cut 24% of Staff in Restructuring, Citing Evolving 'Nature of Work'",
+      "causality": "inferred",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 150,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -312000
+      },
+      "notes": "Freelancing marketplace citing evolving nature of work, likely AI-driven given industry context",
+      "collected_date": "2026-05-10",
+      "date": "2026-05-10",
+      "created_at": "2026-05-10T06:27:26.199210+00:00"
     },
     {
       "id": "evt_20260506_001",
@@ -686,6 +746,26 @@
       "collected_date": "2026-05-08",
       "date": "2026-05-08",
       "created_at": "2026-05-08T05:49:14.777508+00:00"
+    },
+    {
+      "id": "evt_20260505_005",
+      "event_date": "2026-05-05",
+      "headline": "PayPal announces 4,760 job cuts over 2-3 years in AI transformation",
+      "source_url": "https://layoffhedge.com/company/paypal",
+      "source_name": "LayoffHedge",
+      "excerpt": "PayPal will cut approximately 4,760 employees (20% of workforce) phased over 2-3 years, new CEO Enrique Lores announced May 5, 2026. Targets $1.5B run-rate savings as company shifts to AI-native operating model.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 4760,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -9900800
+      },
+      "notes": "Multi-year phased reduction, CEO cited 'becoming a technology company again' via AI adoption",
+      "collected_date": "2026-05-10",
+      "date": "2026-05-10",
+      "created_at": "2026-05-10T06:27:26.199163+00:00"
     },
     {
       "id": "evt_20260501_001",
@@ -2356,54 +2436,94 @@
       "created_at": "2026-04-27T17:59:55.149844"
     }
   ],
-  "summary": "May 7-8 saw major AI-driven workforce reductions with Cloudflare eliminating 1,100 jobs (20% of workforce) citing 600% AI usage growth, and Ticketmaster cutting 350 positions (8%) for AI prioritization. Both companies explicitly linked layoffs to AI transformation despite strong revenue growth.",
+  "summary": "Six new AI displacement events found from May 5-7, 2026, totaling 7,010 jobs across fintech, cybersecurity, crypto, and ticketing sectors. PayPal's 4,760-job multi-year plan represents the largest single commitment. All companies explicitly cited AI transformation, efficiency gains, or restructuring for AI-native operations as primary rationales.",
   "events": [
     {
-      "id": "evt_20260507_003",
-      "event_date": "2026-05-07",
-      "headline": "Cloudflare cuts 1,100 jobs citing 600% surge in AI usage",
-      "source_url": "https://blog.cloudflare.com/building-for-the-future/",
-      "source_name": "Cloudflare Official Blog",
-      "excerpt": "Cloudflare's usage of AI has increased by more than 600% in the last three months alone",
+      "id": "evt_20260505_005",
+      "event_date": "2026-05-05",
+      "headline": "PayPal announces 4,760 job cuts over 2-3 years in AI transformation",
+      "source_url": "https://layoffhedge.com/company/paypal",
+      "source_name": "LayoffHedge",
+      "excerpt": "PayPal will cut approximately 4,760 employees (20% of workforce) phased over 2-3 years, new CEO Enrique Lores announced May 5, 2026. Targets $1.5B run-rate savings as company shifts to AI-native operating model.",
       "causality": "direct",
-      "confidence": 0.95,
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 1100,
-        "teams": 15,
+        "jobs": 4760,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": -2288000
+        "labor_hours": -9900800
       },
-      "notes": "20% workforce reduction as company shifts to 'agentic AI-first operating model'",
-      "collected_date": "2026-05-09",
-      "date": "2026-05-09",
-      "created_at": "2026-05-09T06:06:45.468069+00:00"
+      "notes": "Multi-year phased reduction, CEO cited 'becoming a technology company again' via AI adoption",
+      "collected_date": "2026-05-10",
+      "date": "2026-05-10",
+      "created_at": "2026-05-10T06:27:26.199163+00:00"
     },
     {
-      "id": "evt_20260506_002",
-      "event_date": "2026-05-06",
-      "headline": "Ticketmaster lays off 350 workers prioritizing AI initiatives",
-      "source_url": "https://news.pollstar.com/2026/05/06/ticketmaster-cuts-8-of-staff-350-employees-primarily-in-engineering-product-design/",
-      "source_name": "Pollstar News",
-      "excerpt": "AI as a new utility",
+      "id": "evt_20260507_004",
+      "event_date": "2026-05-07",
+      "headline": "BILL Holdings cuts 30% of workforce amid AI-native transformation",
+      "source_url": "https://layoffhedge.com/company/bill-holdings",
+      "source_name": "LayoffHedge",
+      "excerpt": "BILL Holdings is cutting up to 30% of its workforce, an estimated 700 jobs, on the same day it authorized a $1.0 billion stock buyback.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 700,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "CEO announced becoming 'AI native company' as rationale, announced same day as $1B buyback",
+      "collected_date": "2026-05-10",
+      "date": "2026-05-10",
+      "created_at": "2026-05-10T06:27:26.199180+00:00"
+    },
+    {
+      "id": "evt_20260507_005",
+      "event_date": "2026-05-07",
+      "headline": "Ticketmaster cuts 350 workers citing AI as new utility",
+      "source_url": "https://beincrypto.com/ai-restructuring-job-layoffs-2026/",
+      "source_name": "BeInCrypto",
+      "excerpt": "LAYOFF ALERT: TICKETMASTER \ud83d\udea8 8% of workforce. The reason from Global President Saumil Mehta: 'AI as a new utility.'",
       "causality": "direct",
       "confidence": 0.85,
       "tolls": {
         "jobs": 350,
-        "teams": 8,
+        "teams": 1,
         "companies": 1,
         "labor_hours": -728000
       },
-      "notes": "8% of global workforce cut across 25 countries, focused on engineering, product, and design",
-      "collected_date": "2026-05-09",
-      "date": "2026-05-09",
-      "created_at": "2026-05-09T06:06:45.468090+00:00"
+      "notes": "8% of global workforce, Global President explicitly cited AI as rationale",
+      "collected_date": "2026-05-10",
+      "date": "2026-05-10",
+      "created_at": "2026-05-10T06:27:26.199203+00:00"
+    },
+    {
+      "id": "evt_20260507_006",
+      "event_date": "2026-05-07",
+      "headline": "Upwork cuts 24% of staff in restructuring citing evolving nature of work",
+      "source_url": "https://www.trueup.io/layoffs",
+      "source_name": "TrueUp",
+      "excerpt": "Upwork to Cut 24% of Staff in Restructuring, Citing Evolving 'Nature of Work'",
+      "causality": "inferred",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 150,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -312000
+      },
+      "notes": "Freelancing marketplace citing evolving nature of work, likely AI-driven given industry context",
+      "collected_date": "2026-05-10",
+      "date": "2026-05-10",
+      "created_at": "2026-05-10T06:27:26.199210+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-05-09",
+    "last_anthropic_success": "2026-05-10",
     "last_openai_success": null,
-    "last_nonzero_collection": "2026-05-09",
+    "last_nonzero_collection": "2026-05-10",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-09"
+    "last_collection_date": "2026-05-10"
   }
 }
