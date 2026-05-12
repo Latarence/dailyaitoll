@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-10T06:27:26.199114+00:00",
+  "last_updated": "2026-05-12T06:30:24.623825+00:00",
   "totals": {
-    "jobs": 343799,
-    "teams": 45,
+    "jobs": 345499,
+    "teams": 47,
     "products": 0,
-    "companies": 55,
+    "companies": 57,
     "revenue": 0,
-    "labor_hours": -715001920
+    "labor_hours": -718537920
   },
   "today": {
-    "jobs": 5960,
-    "teams": 4,
+    "jobs": 1700,
+    "teams": 2,
     "products": 0,
-    "companies": 4,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": -12396800
+    "labor_hours": -3536000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -504,10 +504,58 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -1248000
+    },
+    "2026-05-11": {
+      "jobs": 1700,
+      "teams": 2,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -3536000
     }
   },
-  "events_count": 91,
+  "events_count": 93,
   "all_events": [
+    {
+      "id": "evt_20260511_001",
+      "event_date": "2026-05-11",
+      "headline": "GM lays off 600 IT workers to hire AI-skilled employees",
+      "source_url": "https://techcrunch.com/2026/05/11/gm-just-laid-off-hundreds-of-it-workers-to-hire-those-with-stronger-ai-skills/",
+      "source_name": "TechCrunch",
+      "excerpt": "General Motors has laid off more than 10% of its IT department, or about 600 salaried employees, in a deliberate skills swap: clearing out workers whose expertise no longer fits and making room for some with AI-focused backgrounds.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 600,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -1248000
+      },
+      "notes": "Restructuring IT department to focus on AI capabilities",
+      "collected_date": "2026-05-12",
+      "date": "2026-05-12",
+      "created_at": "2026-05-12T06:30:24.623887+00:00"
+    },
+    {
+      "id": "evt_20260511_002",
+      "event_date": "2026-05-11",
+      "headline": "Cloudflare cuts 1,100 jobs as internal AI usage climbs 600%",
+      "source_url": "https://www.aibusinessreview.org/2026/05/08/cloudflare-cuts-1100-jobs-ai-usage-surge/",
+      "source_name": "AI Business Review",
+      "excerpt": "Cloudflare is eliminating approximately 1,100 positions as the web infrastructure and security company restructures operations around what it terms 'agentic AI' capabilities, according to an internal announcement.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 1100,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -2288000
+      },
+      "notes": "Restructuring due to increased internal AI adoption",
+      "collected_date": "2026-05-12",
+      "date": "2026-05-12",
+      "created_at": "2026-05-12T06:30:24.623908+00:00"
+    },
     {
       "id": "evt_20260507_001",
       "event_date": "2026-05-07",
@@ -2436,94 +2484,54 @@
       "created_at": "2026-04-27T17:59:55.149844"
     }
   ],
-  "summary": "Six new AI displacement events found from May 5-7, 2026, totaling 7,010 jobs across fintech, cybersecurity, crypto, and ticketing sectors. PayPal's 4,760-job multi-year plan represents the largest single commitment. All companies explicitly cited AI transformation, efficiency gains, or restructuring for AI-native operations as primary rationales.",
+  "summary": "Today's findings include GM's layoff of 600 IT workers to hire employees with AI skills and Cloudflare's reduction of 1,100 positions due to increased internal AI usage.",
   "events": [
     {
-      "id": "evt_20260505_005",
-      "event_date": "2026-05-05",
-      "headline": "PayPal announces 4,760 job cuts over 2-3 years in AI transformation",
-      "source_url": "https://layoffhedge.com/company/paypal",
-      "source_name": "LayoffHedge",
-      "excerpt": "PayPal will cut approximately 4,760 employees (20% of workforce) phased over 2-3 years, new CEO Enrique Lores announced May 5, 2026. Targets $1.5B run-rate savings as company shifts to AI-native operating model.",
+      "id": "evt_20260511_001",
+      "event_date": "2026-05-11",
+      "headline": "GM lays off 600 IT workers to hire AI-skilled employees",
+      "source_url": "https://techcrunch.com/2026/05/11/gm-just-laid-off-hundreds-of-it-workers-to-hire-those-with-stronger-ai-skills/",
+      "source_name": "TechCrunch",
+      "excerpt": "General Motors has laid off more than 10% of its IT department, or about 600 salaried employees, in a deliberate skills swap: clearing out workers whose expertise no longer fits and making room for some with AI-focused backgrounds.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
-        "jobs": 4760,
+        "jobs": 600,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -9900800
+        "labor_hours": -1248000
       },
-      "notes": "Multi-year phased reduction, CEO cited 'becoming a technology company again' via AI adoption",
-      "collected_date": "2026-05-10",
-      "date": "2026-05-10",
-      "created_at": "2026-05-10T06:27:26.199163+00:00"
+      "notes": "Restructuring IT department to focus on AI capabilities",
+      "collected_date": "2026-05-12",
+      "date": "2026-05-12",
+      "created_at": "2026-05-12T06:30:24.623887+00:00"
     },
     {
-      "id": "evt_20260507_004",
-      "event_date": "2026-05-07",
-      "headline": "BILL Holdings cuts 30% of workforce amid AI-native transformation",
-      "source_url": "https://layoffhedge.com/company/bill-holdings",
-      "source_name": "LayoffHedge",
-      "excerpt": "BILL Holdings is cutting up to 30% of its workforce, an estimated 700 jobs, on the same day it authorized a $1.0 billion stock buyback.",
+      "id": "evt_20260511_002",
+      "event_date": "2026-05-11",
+      "headline": "Cloudflare cuts 1,100 jobs as internal AI usage climbs 600%",
+      "source_url": "https://www.aibusinessreview.org/2026/05/08/cloudflare-cuts-1100-jobs-ai-usage-surge/",
+      "source_name": "AI Business Review",
+      "excerpt": "Cloudflare is eliminating approximately 1,100 positions as the web infrastructure and security company restructures operations around what it terms 'agentic AI' capabilities, according to an internal announcement.",
       "causality": "direct",
       "confidence": 0.85,
       "tolls": {
-        "jobs": 700,
+        "jobs": 1100,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -1456000
+        "labor_hours": -2288000
       },
-      "notes": "CEO announced becoming 'AI native company' as rationale, announced same day as $1B buyback",
-      "collected_date": "2026-05-10",
-      "date": "2026-05-10",
-      "created_at": "2026-05-10T06:27:26.199180+00:00"
-    },
-    {
-      "id": "evt_20260507_005",
-      "event_date": "2026-05-07",
-      "headline": "Ticketmaster cuts 350 workers citing AI as new utility",
-      "source_url": "https://beincrypto.com/ai-restructuring-job-layoffs-2026/",
-      "source_name": "BeInCrypto",
-      "excerpt": "LAYOFF ALERT: TICKETMASTER \ud83d\udea8 8% of workforce. The reason from Global President Saumil Mehta: 'AI as a new utility.'",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 350,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -728000
-      },
-      "notes": "8% of global workforce, Global President explicitly cited AI as rationale",
-      "collected_date": "2026-05-10",
-      "date": "2026-05-10",
-      "created_at": "2026-05-10T06:27:26.199203+00:00"
-    },
-    {
-      "id": "evt_20260507_006",
-      "event_date": "2026-05-07",
-      "headline": "Upwork cuts 24% of staff in restructuring citing evolving nature of work",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "Upwork to Cut 24% of Staff in Restructuring, Citing Evolving 'Nature of Work'",
-      "causality": "inferred",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 150,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -312000
-      },
-      "notes": "Freelancing marketplace citing evolving nature of work, likely AI-driven given industry context",
-      "collected_date": "2026-05-10",
-      "date": "2026-05-10",
-      "created_at": "2026-05-10T06:27:26.199210+00:00"
+      "notes": "Restructuring due to increased internal AI adoption",
+      "collected_date": "2026-05-12",
+      "date": "2026-05-12",
+      "created_at": "2026-05-12T06:30:24.623908+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": null,
-    "last_nonzero_collection": "2026-05-10",
+    "last_openai_success": "2026-05-12",
+    "last_nonzero_collection": "2026-05-12",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-10"
+    "last_collection_date": "2026-05-12"
   }
 }
