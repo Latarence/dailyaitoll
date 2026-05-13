@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-12T06:30:24.623825+00:00",
+  "last_updated": "2026-05-13T06:40:42.237199+00:00",
   "totals": {
-    "jobs": 345499,
-    "teams": 47,
+    "jobs": 346599,
+    "teams": 48,
     "products": 0,
-    "companies": 57,
+    "companies": 58,
     "revenue": 0,
-    "labor_hours": -718537920
+    "labor_hours": -720825920
   },
   "today": {
-    "jobs": 1700,
-    "teams": 2,
+    "jobs": 1100,
+    "teams": 1,
     "products": 0,
-    "companies": 2,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -3536000
+    "labor_hours": -2288000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -490,12 +490,12 @@
       "labor_hours": -74880000
     },
     "2026-05-07": {
-      "jobs": 3050,
-      "teams": 20,
+      "jobs": 4150,
+      "teams": 21,
       "products": 0,
-      "companies": 6,
+      "companies": 7,
       "revenue": 0,
-      "labor_hours": -6344000
+      "labor_hours": -8632000
     },
     "2026-05-06": {
       "jobs": 600,
@@ -514,7 +514,7 @@
       "labor_hours": -3536000
     }
   },
-  "events_count": 93,
+  "events_count": 94,
   "all_events": [
     {
       "id": "evt_20260511_001",
@@ -675,6 +675,26 @@
       "collected_date": "2026-05-10",
       "date": "2026-05-10",
       "created_at": "2026-05-10T06:27:26.199210+00:00"
+    },
+    {
+      "id": "evt_20260507_007",
+      "event_date": "2026-05-07",
+      "headline": "Cloudflare cuts 1,100 jobs amid AI-driven restructuring",
+      "source_url": "https://www.latimes.com/business/story/2026-05-07/california-tech-company-cloudflare-to-lay-off-more-than-1-000-workers-cites-ai",
+      "source_name": "Los Angeles Times",
+      "excerpt": "Cloudflare is laying off 20% of its staff, the latest technology company to announce big cuts as it uses more artificial intelligence-powered tools.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 1100,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -2288000
+      },
+      "notes": "Restructuring for the 'agentic AI era'",
+      "collected_date": "2026-05-13",
+      "date": "2026-05-13",
+      "created_at": "2026-05-13T06:40:42.237285+00:00"
     },
     {
       "id": "evt_20260506_001",
@@ -2484,54 +2504,34 @@
       "created_at": "2026-04-27T17:59:55.149844"
     }
   ],
-  "summary": "Today's findings include GM's layoff of 600 IT workers to hire employees with AI skills and Cloudflare's reduction of 1,100 positions due to increased internal AI usage.",
+  "summary": "Two significant AI-related layoffs were identified: GM laid off 600 IT workers to hire AI-skilled employees, and Cloudflare cut 1,100 jobs amid AI-driven restructuring.",
   "events": [
     {
-      "id": "evt_20260511_001",
-      "event_date": "2026-05-11",
-      "headline": "GM lays off 600 IT workers to hire AI-skilled employees",
-      "source_url": "https://techcrunch.com/2026/05/11/gm-just-laid-off-hundreds-of-it-workers-to-hire-those-with-stronger-ai-skills/",
-      "source_name": "TechCrunch",
-      "excerpt": "General Motors has laid off more than 10% of its IT department, or about 600 salaried employees, in a deliberate skills swap: clearing out workers whose expertise no longer fits and making room for some with AI-focused backgrounds.",
+      "id": "evt_20260507_007",
+      "event_date": "2026-05-07",
+      "headline": "Cloudflare cuts 1,100 jobs amid AI-driven restructuring",
+      "source_url": "https://www.latimes.com/business/story/2026-05-07/california-tech-company-cloudflare-to-lay-off-more-than-1-000-workers-cites-ai",
+      "source_name": "Los Angeles Times",
+      "excerpt": "Cloudflare is laying off 20% of its staff, the latest technology company to announce big cuts as it uses more artificial intelligence-powered tools.",
       "causality": "direct",
       "confidence": 0.9,
-      "tolls": {
-        "jobs": 600,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -1248000
-      },
-      "notes": "Restructuring IT department to focus on AI capabilities",
-      "collected_date": "2026-05-12",
-      "date": "2026-05-12",
-      "created_at": "2026-05-12T06:30:24.623887+00:00"
-    },
-    {
-      "id": "evt_20260511_002",
-      "event_date": "2026-05-11",
-      "headline": "Cloudflare cuts 1,100 jobs as internal AI usage climbs 600%",
-      "source_url": "https://www.aibusinessreview.org/2026/05/08/cloudflare-cuts-1100-jobs-ai-usage-surge/",
-      "source_name": "AI Business Review",
-      "excerpt": "Cloudflare is eliminating approximately 1,100 positions as the web infrastructure and security company restructures operations around what it terms 'agentic AI' capabilities, according to an internal announcement.",
-      "causality": "direct",
-      "confidence": 0.85,
       "tolls": {
         "jobs": 1100,
         "teams": 1,
         "companies": 1,
         "labor_hours": -2288000
       },
-      "notes": "Restructuring due to increased internal AI adoption",
-      "collected_date": "2026-05-12",
-      "date": "2026-05-12",
-      "created_at": "2026-05-12T06:30:24.623908+00:00"
+      "notes": "Restructuring for the 'agentic AI era'",
+      "collected_date": "2026-05-13",
+      "date": "2026-05-13",
+      "created_at": "2026-05-13T06:40:42.237285+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-12",
-    "last_nonzero_collection": "2026-05-12",
+    "last_openai_success": "2026-05-13",
+    "last_nonzero_collection": "2026-05-13",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-12"
+    "last_collection_date": "2026-05-13"
   }
 }
