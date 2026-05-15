@@ -237,16 +237,39 @@ def call_anthropic(prompt: str) -> tuple[str, dict]:
         import anthropic
 
     client = anthropic.Anthropic()
-    message = client.messages.create(
-        model=ANTHROPIC_MODEL,
-        max_tokens=MAX_TOKENS_RESPONSE,
-        tools=[{
-            "type": ANTHROPIC_SEARCH_TOOL,
-            "name": "web_search",
-            "allowed_callers": ["direct"],
-        }],
-        messages=[{"role": "user", "content": prompt}]
-    )
+
+    # Anthropic's built-in web search tool schema/version has changed over time.
+    # Try a few known variants before giving up (caller may fallback to OpenAI).
+    last_err = None
+    tool_variants = [
+        # Current repo config (versioned tool type plus legacy fields)
+        [{"type": ANTHROPIC_SEARCH_TOOL, "name": "web_search", "allowed_callers": ["direct"]}],
+        # Versioned tool type only
+        [{"type": ANTHROPIC_SEARCH_TOOL}],
+        # Unversioned tool type (SDK/server may map to latest)
+        [{"type": "web_search"}],
+        # No tools (still allows collection if model can answer without browsing)
+        None,
+    ]
+
+    message = None
+    for tools in tool_variants:
+        try:
+            kwargs = {
+                "model": ANTHROPIC_MODEL,
+                "max_tokens": MAX_TOKENS_RESPONSE,
+                "messages": [{"role": "user", "content": prompt}],
+            }
+            if tools is not None:
+                kwargs["tools"] = tools
+            message = client.messages.create(**kwargs)
+            break
+        except Exception as e:
+            last_err = e
+            message = None
+
+    if message is None:
+        raise last_err
 
     # Extract text from response (may include tool use blocks)
     result = ""
@@ -279,12 +302,28 @@ def call_openai(prompt: str) -> tuple[str, dict]:
 
     client = openai.OpenAI()
 
-    # Use responses API with web search tool
-    response = client.responses.create(
-        model=OPENAI_MODEL,
-        tools=[{"type": "web_search_preview"}],
-        input=prompt
-    )
+    # OpenAI search tool naming has changed; try a couple variants then no-tools.
+    last_err = None
+    response = None
+    tool_variants = [
+        [{"type": "web_search_preview"}],
+        [{"type": "web_search"}],
+        None,
+    ]
+
+    for tools in tool_variants:
+        try:
+            kwargs = {"model": OPENAI_MODEL, "input": prompt}
+            if tools is not None:
+                kwargs["tools"] = tools
+            response = client.responses.create(**kwargs)
+            break
+        except Exception as e:
+            last_err = e
+            response = None
+
+    if response is None:
+        raise last_err
 
     # Extract text from response
     result = ""

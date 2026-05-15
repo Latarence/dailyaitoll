@@ -29,7 +29,8 @@ cd web && python -m http.server 8000
 |-----------|--------|---------|
 | Domain | ✅ Active | dailyaitoll.com (GoDaddy → Cloudflare) |
 | DNS | ✅ Active | Cloudflare zone `53666f866ac83f42b8ab6f5e65117a0e` |
-| Hosting | ✅ Active | Vercel project `prj_UV8D8Z2gnT4hCHFEHGcbszQuh1fc` |
+| Hosting | ✅ Active | Vercel project `dailyaitoll` under Latarence account |
+| Vercel Project ID | `prj_UV8D8Z2gnT4hCHFEHGcbszQuh1fc` | vercel.com/latarences-projects/dailyaitoll |
 | GitHub | ✅ Active | https://github.com/Latarence/dailyaitoll |
 | Actions | ✅ Configured | Cron at 11:55 PM EDT (03:55 UTC) |
 
@@ -53,6 +54,7 @@ cd web && python -m http.server 8000
 | ANTHROPIC_API_KEY not in GitHub secrets | HIGH | ✅ DONE |
 | OPENAI_API_KEY not configured | MEDIUM | ✅ DONE |
 | First collection run not yet executed | LOW | Ready to test |
+| Vercel not auto-deploying on push | MEDIUM | Investigating - github-actions push not triggering deploy |
 
 ## API Keys
 
@@ -86,6 +88,18 @@ dailyaitoll/
 ├── STATUS.md                         # This file
 └── requirements.txt
 ```
+
+## Stripe Integration
+
+Stripe is configured for patronage payments. Uses payment links (no live API keys needed in code).
+
+| Product | Price | Payment Link |
+|---------|-------|--------------|
+| Journalist | $5/mo | https://buy.stripe.com/7sY28qfVC7694u83NF8k80x |
+| Commercial | $50/mo | https://buy.stripe.com/6oUcN49xegGJ1hW2JB8k80y |
+
+**Env vars (Vercel):** `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`
+**Account:** MDO3 (mdo3group@gmail.com)
 
 ## Next Steps
 

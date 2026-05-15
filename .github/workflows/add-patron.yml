@@ -27,6 +27,8 @@ on:
 jobs:
   add-patron:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
@@ -65,9 +67,12 @@ jobs:
           cat web/data/patrons.json
 
       - name: Commit and push
+        env:
+          PATRON_NAME: ${{ inputs.name }}
+          PATRON_TIER: ${{ inputs.tier }}
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add web/data/patrons.json
-          git commit -m "patron: add ${{ inputs.name }} (${{ inputs.tier }})"
+          git commit -m "patron: add ${PATRON_NAME} (${PATRON_TIER})"
           git push

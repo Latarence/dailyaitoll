@@ -25,11 +25,34 @@ def load_events():
                 events.append(json.loads(line))
     return events
 
+def _infer_collection_date(event: dict) -> str | None:
+    """Infer a YYYY-MM-DD date key for grouping.
+
+    We group pages by the collection/report date ("collected_date") so the site
+    reflects what was published each day, even when the underlying event_date is
+    earlier.
+    """
+    d = event.get("collected_date")
+    if isinstance(d, str) and len(d) >= 10:
+        return d[:10]
+
+    created_at = event.get("created_at")
+    if isinstance(created_at, str) and len(created_at) >= 10:
+        return created_at[:10]
+
+    # Fallbacks for older data.
+    d = event.get("event_date") or event.get("date")
+    if isinstance(d, str) and len(d) >= 10:
+        return d[:10]
+
+    return None
+
+
 def group_by_date(events):
-    """Group events by date."""
+    """Group events by collection date."""
     by_date = defaultdict(list)
     for event in events:
-        date = event.get('event_date') or event.get('date')
+        date = _infer_collection_date(event)
         if date:
             by_date[date].append(event)
     return dict(by_date)

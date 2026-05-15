@@ -1198,7 +1198,8 @@
             let rank = 1;
 
             events.forEach((event, idx) => {
-                const date = event.event_date || event.date || 'Unknown';
+                // Daily pages are keyed by publication/collection date.
+                const date = event.collected_date || event.date || event.event_date || 'Unknown';
 
                 // Date separator with link to daily page
                 const datePath = date !== 'Unknown' ? date.replace(/-/g, '/') : '';
