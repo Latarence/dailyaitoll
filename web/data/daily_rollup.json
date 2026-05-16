@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-14T06:39:15.960267+00:00",
+  "last_updated": "2026-05-16T06:13:47.847532+00:00",
   "totals": {
-    "jobs": 351199,
-    "teams": 48,
+    "jobs": 356299,
+    "teams": 63,
     "products": 0,
-    "companies": 60,
+    "companies": 62,
     "revenue": 0,
-    "labor_hours": -730393920
+    "labor_hours": -741001920
   },
   "today": {
-    "jobs": 4600,
-    "teams": 0,
+    "jobs": 5100,
+    "teams": 15,
     "products": 0,
     "companies": 2,
     "revenue": 0,
-    "labor_hours": -9568000
+    "labor_hours": -10608000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -514,12 +514,12 @@
       "labor_hours": -3536000
     },
     "2026-05-14": {
-      "jobs": 4000,
-      "teams": 0,
+      "jobs": 8000,
+      "teams": 10,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -8320000
+      "labor_hours": -16640000
     },
     "2026-05-13": {
       "jobs": 600,
@@ -528,9 +528,17 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -1248000
+    },
+    "2026-05-08": {
+      "jobs": 1100,
+      "teams": 5,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -2288000
     }
   },
-  "events_count": 96,
+  "events_count": 98,
   "all_events": [
     {
       "id": "evt_20260514_001",
@@ -551,6 +559,26 @@
       "collected_date": "2026-05-14",
       "date": "2026-05-14",
       "created_at": "2026-05-14T06:39:15.960330+00:00"
+    },
+    {
+      "id": "evt_20260514_002",
+      "event_date": "2026-05-14",
+      "headline": "Cisco announces 4,000 job cuts amid AI-focused restructuring",
+      "source_url": "https://www.techradar.com/pro/we-are-making-clear-strategic-investments-cisco-cuts-4-000-jobs-even-as-ai-orders-surge",
+      "source_name": "TechRadar",
+      "excerpt": "Cisco has announced it will lay off approximately 4,000 employees, equivalent to 5% of its global workforce, as part of a strategic restructuring to prioritize high-growth areas including AI infrastructure.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 4000,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -8320000
+      },
+      "notes": "Strategic realignment towards AI and cybersecurity",
+      "collected_date": "2026-05-16",
+      "date": "2026-05-16",
+      "created_at": "2026-05-16T06:13:47.847595+00:00"
     },
     {
       "id": "evt_20260513_001",
@@ -611,6 +639,26 @@
       "collected_date": "2026-05-12",
       "date": "2026-05-12",
       "created_at": "2026-05-12T06:30:24.623908+00:00"
+    },
+    {
+      "id": "evt_20260508_001",
+      "event_date": "2026-05-08",
+      "headline": "Cloudflare cuts 1,100 jobs citing increased AI usage",
+      "source_url": "https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/",
+      "source_name": "TechCrunch",
+      "excerpt": "Cloudflare announced it was cutting its workforce by approximately 20%, which equates to 1,100 people, attributing the layoffs to a 600% increase in AI usage over the past three months.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 1100,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -2288000
+      },
+      "notes": "First mass layoff in company's 16-year history",
+      "collected_date": "2026-05-16",
+      "date": "2026-05-16",
+      "created_at": "2026-05-16T06:13:47.847615+00:00"
     },
     {
       "id": "evt_20260507_001",
@@ -2560,54 +2608,54 @@
       "created_at": "2026-04-27T17:59:55.149844"
     }
   ],
-  "summary": "Today's findings include Cisco's announcement of nearly 4,000 job cuts as part of an AI-focused restructuring, and General Motors laying off approximately 600 IT employees to hire staff with stronger AI skills.",
+  "summary": "Two significant AI-related layoffs were reported: Cisco's reduction of 4,000 jobs as part of an AI-focused restructuring, and Cloudflare's elimination of 1,100 positions due to increased AI integration.",
   "events": [
     {
-      "id": "evt_20260514_001",
+      "id": "evt_20260514_002",
       "event_date": "2026-05-14",
-      "headline": "Cisco to cut nearly 4,000 jobs in AI-focused restructuring as orders surge",
-      "source_url": "https://www.business-standard.com/world-news/cisco-to-cut-nearly-4-000-jobs-in-ai-focused-restructuring-as-orders-surge-126051400091_1.html",
-      "source_name": "Business Standard",
-      "excerpt": "Cisco said on Wednesday it would cut nearly 4,000 jobs, as part of a restructuring aimed at shifting investment toward artificial intelligence and related growth areas, and raised its annual revenue forecast after a surge in hyperscaler orders.",
+      "headline": "Cisco announces 4,000 job cuts amid AI-focused restructuring",
+      "source_url": "https://www.techradar.com/pro/we-are-making-clear-strategic-investments-cisco-cuts-4-000-jobs-even-as-ai-orders-surge",
+      "source_name": "TechRadar",
+      "excerpt": "Cisco has announced it will lay off approximately 4,000 employees, equivalent to 5% of its global workforce, as part of a strategic restructuring to prioritize high-growth areas including AI infrastructure.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
         "jobs": 4000,
-        "teams": null,
+        "teams": 10,
         "companies": 1,
         "labor_hours": -8320000
       },
-      "notes": "Strategic shift towards AI investments",
-      "collected_date": "2026-05-14",
-      "date": "2026-05-14",
-      "created_at": "2026-05-14T06:39:15.960330+00:00"
+      "notes": "Strategic realignment towards AI and cybersecurity",
+      "collected_date": "2026-05-16",
+      "date": "2026-05-16",
+      "created_at": "2026-05-16T06:13:47.847595+00:00"
     },
     {
-      "id": "evt_20260513_001",
-      "event_date": "2026-05-13",
-      "headline": "GM lays off hundreds of IT workers to hire those with stronger AI skills",
-      "source_url": "https://techcrunch.com/2026/05/11/gm-just-laid-off-hundreds-of-it-workers-to-hire-those-with-stronger-ai-skills/",
+      "id": "evt_20260508_001",
+      "event_date": "2026-05-08",
+      "headline": "Cloudflare cuts 1,100 jobs citing increased AI usage",
+      "source_url": "https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/",
       "source_name": "TechCrunch",
-      "excerpt": "General Motors has laid off more than 10% of its IT department, or about 600 salaried employees \u2014 in a deliberate skills swap: clearing out workers whose expertise no longer fits and making room for some with AI-focused backgrounds.",
+      "excerpt": "Cloudflare announced it was cutting its workforce by approximately 20%, which equates to 1,100 people, attributing the layoffs to a 600% increase in AI usage over the past three months.",
       "causality": "direct",
-      "confidence": 0.85,
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 600,
-        "teams": null,
+        "jobs": 1100,
+        "teams": 5,
         "companies": 1,
-        "labor_hours": -1248000
+        "labor_hours": -2288000
       },
-      "notes": "Focus on AI talent acquisition",
-      "collected_date": "2026-05-14",
-      "date": "2026-05-14",
-      "created_at": "2026-05-14T06:39:15.960352+00:00"
+      "notes": "First mass layoff in company's 16-year history",
+      "collected_date": "2026-05-16",
+      "date": "2026-05-16",
+      "created_at": "2026-05-16T06:13:47.847615+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-14",
-    "last_nonzero_collection": "2026-05-14",
+    "last_openai_success": "2026-05-16",
+    "last_nonzero_collection": "2026-05-16",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-14"
+    "last_collection_date": "2026-05-16"
   }
 }
