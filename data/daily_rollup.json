@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-16T06:13:47.847532+00:00",
+  "last_updated": "2026-05-17T06:37:48.724941+00:00",
   "totals": {
-    "jobs": 356299,
-    "teams": 63,
+    "jobs": 356324,
+    "teams": 64,
     "products": 0,
-    "companies": 62,
+    "companies": 63,
     "revenue": 0,
-    "labor_hours": -741001920
+    "labor_hours": -741053920
   },
   "today": {
-    "jobs": 5100,
-    "teams": 15,
+    "jobs": 25,
+    "teams": 1,
     "products": 0,
-    "companies": 2,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -10608000
+    "labor_hours": -52000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -514,12 +514,12 @@
       "labor_hours": -3536000
     },
     "2026-05-14": {
-      "jobs": 8000,
-      "teams": 10,
+      "jobs": 8025,
+      "teams": 11,
       "products": 0,
-      "companies": 2,
+      "companies": 3,
       "revenue": 0,
-      "labor_hours": -16640000
+      "labor_hours": -16692000
     },
     "2026-05-13": {
       "jobs": 600,
@@ -538,7 +538,7 @@
       "labor_hours": -2288000
     }
   },
-  "events_count": 98,
+  "events_count": 99,
   "all_events": [
     {
       "id": "evt_20260514_001",
@@ -579,6 +579,26 @@
       "collected_date": "2026-05-16",
       "date": "2026-05-16",
       "created_at": "2026-05-16T06:13:47.847595+00:00"
+    },
+    {
+      "id": "evt_20260514_003",
+      "event_date": "2026-05-14",
+      "headline": "Dune cuts 25% of staff citing AI efficiencies",
+      "source_url": "https://www.theblock.co/post/401322/crypto-data-firm-dune-cuts-25-of-staff-citing-ai-efficiencies",
+      "source_name": "The Block",
+      "excerpt": "Dune CEO Fredrik Haga announced the firm let 25% of the team go this week, in part citing its heavy investment in AI-powered tools.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 25,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -52000
+      },
+      "notes": "Restructuring to focus on core data products",
+      "collected_date": "2026-05-17",
+      "date": "2026-05-17",
+      "created_at": "2026-05-17T06:37:48.725005+00:00"
     },
     {
       "id": "evt_20260513_001",
@@ -2608,54 +2628,34 @@
       "created_at": "2026-04-27T17:59:55.149844"
     }
   ],
-  "summary": "Two significant AI-related layoffs were reported: Cisco's reduction of 4,000 jobs as part of an AI-focused restructuring, and Cloudflare's elimination of 1,100 positions due to increased AI integration.",
+  "summary": "One new verifiable AI displacement event found: Dune laid off 25% of its staff, citing AI efficiencies.",
   "events": [
     {
-      "id": "evt_20260514_002",
+      "id": "evt_20260514_003",
       "event_date": "2026-05-14",
-      "headline": "Cisco announces 4,000 job cuts amid AI-focused restructuring",
-      "source_url": "https://www.techradar.com/pro/we-are-making-clear-strategic-investments-cisco-cuts-4-000-jobs-even-as-ai-orders-surge",
-      "source_name": "TechRadar",
-      "excerpt": "Cisco has announced it will lay off approximately 4,000 employees, equivalent to 5% of its global workforce, as part of a strategic restructuring to prioritize high-growth areas including AI infrastructure.",
+      "headline": "Dune cuts 25% of staff citing AI efficiencies",
+      "source_url": "https://www.theblock.co/post/401322/crypto-data-firm-dune-cuts-25-of-staff-citing-ai-efficiencies",
+      "source_name": "The Block",
+      "excerpt": "Dune CEO Fredrik Haga announced the firm let 25% of the team go this week, in part citing its heavy investment in AI-powered tools.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
-        "jobs": 4000,
-        "teams": 10,
+        "jobs": 25,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": -8320000
+        "labor_hours": -52000
       },
-      "notes": "Strategic realignment towards AI and cybersecurity",
-      "collected_date": "2026-05-16",
-      "date": "2026-05-16",
-      "created_at": "2026-05-16T06:13:47.847595+00:00"
-    },
-    {
-      "id": "evt_20260508_001",
-      "event_date": "2026-05-08",
-      "headline": "Cloudflare cuts 1,100 jobs citing increased AI usage",
-      "source_url": "https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/",
-      "source_name": "TechCrunch",
-      "excerpt": "Cloudflare announced it was cutting its workforce by approximately 20%, which equates to 1,100 people, attributing the layoffs to a 600% increase in AI usage over the past three months.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 1100,
-        "teams": 5,
-        "companies": 1,
-        "labor_hours": -2288000
-      },
-      "notes": "First mass layoff in company's 16-year history",
-      "collected_date": "2026-05-16",
-      "date": "2026-05-16",
-      "created_at": "2026-05-16T06:13:47.847615+00:00"
+      "notes": "Restructuring to focus on core data products",
+      "collected_date": "2026-05-17",
+      "date": "2026-05-17",
+      "created_at": "2026-05-17T06:37:48.725005+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-16",
-    "last_nonzero_collection": "2026-05-16",
+    "last_openai_success": "2026-05-17",
+    "last_nonzero_collection": "2026-05-17",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-16"
+    "last_collection_date": "2026-05-17"
   }
 }
