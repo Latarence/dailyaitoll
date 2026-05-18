@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-17T06:37:48.724941+00:00",
+  "last_updated": "2026-05-18T07:50:12.261140+00:00",
   "totals": {
-    "jobs": 356324,
-    "teams": 64,
+    "jobs": 360499,
+    "teams": 79,
     "products": 0,
-    "companies": 63,
+    "companies": 66,
     "revenue": 0,
-    "labor_hours": -741053920
+    "labor_hours": -749737920
   },
   "today": {
-    "jobs": 25,
-    "teams": 1,
+    "jobs": 4175,
+    "teams": 15,
     "products": 0,
-    "companies": 1,
+    "companies": 3,
     "revenue": 0,
-    "labor_hours": -52000
+    "labor_hours": -8684000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -514,12 +514,12 @@
       "labor_hours": -3536000
     },
     "2026-05-14": {
-      "jobs": 8025,
-      "teams": 11,
+      "jobs": 12175,
+      "teams": 24,
       "products": 0,
-      "companies": 3,
+      "companies": 5,
       "revenue": 0,
-      "labor_hours": -16692000
+      "labor_hours": -25324000
     },
     "2026-05-13": {
       "jobs": 600,
@@ -536,10 +536,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -2288000
+    },
+    "2026-05-15": {
+      "jobs": 25,
+      "teams": 2,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -52000
     }
   },
-  "events_count": 99,
+  "events_count": 102,
   "all_events": [
+    {
+      "id": "evt_20260515_001",
+      "event_date": "2026-05-15",
+      "headline": "Dune Analytics slashes 25% of workforce in AI, institutional pivot",
+      "source_url": "https://decrypt.co/367949/dune-analytics-slashes-25-of-workforce-in-ai-institutional-pivot",
+      "source_name": "Decrypt",
+      "excerpt": "Dune CEO Fredrik Haga announced Thursday that the company has cut 25% of its staff as part of a strategic refocus on AI tooling and institutional crypto adoption.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 25,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -52000
+      },
+      "notes": "Strategic refocus on AI tooling and institutional crypto adoption",
+      "collected_date": "2026-05-18",
+      "date": "2026-05-18",
+      "created_at": "2026-05-18T07:50:12.261212+00:00"
+    },
     {
       "id": "evt_20260514_001",
       "event_date": "2026-05-14",
@@ -599,6 +627,46 @@
       "collected_date": "2026-05-17",
       "date": "2026-05-17",
       "created_at": "2026-05-17T06:37:48.725005+00:00"
+    },
+    {
+      "id": "evt_20260514_004",
+      "event_date": "2026-05-14",
+      "headline": "Cisco announces record revenue and 4,000 layoffs in the same day",
+      "source_url": "https://arstechnica.com/information-technology/2026/05/cisco-announces-record-revenue-and-4000-layoffs-in-the-same-day/",
+      "source_name": "Ars Technica",
+      "excerpt": "Cisco CEO Chuck Robbins announced that the company\u2019s latest round of layoffs begins today... attributed to the growth of AI.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 4000,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -8320000
+      },
+      "notes": "Layoffs attributed to the growth of AI",
+      "collected_date": "2026-05-18",
+      "date": "2026-05-18",
+      "created_at": "2026-05-18T07:50:12.261235+00:00"
+    },
+    {
+      "id": "evt_20260514_005",
+      "event_date": "2026-05-14",
+      "headline": "Kraken cuts 150 staff amid AI efficiencies, potentially delaying IPO",
+      "source_url": "https://cointelegraph.com/news/kraken-parent-payward-cuts-150-staff-potentially-delaying-ipo-report",
+      "source_name": "Cointelegraph",
+      "excerpt": "The company, whose corporate name is Payward, laid off about 150 workers due to efficiencies from deploying artificial intelligence across the business.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 150,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -312000
+      },
+      "notes": "Layoffs due to AI efficiencies, potential IPO delay",
+      "collected_date": "2026-05-18",
+      "date": "2026-05-18",
+      "created_at": "2026-05-18T07:50:12.261249+00:00"
     },
     {
       "id": "evt_20260513_001",
@@ -2583,79 +2651,76 @@
       "hashtags": "#Salesforce #CRM #AILayoffs #TechLayoffs",
       "date": "2023-01-15",
       "created_at": "2026-04-27T17:59:55.149882"
-    },
-    {
-      "id": "evt_20230104_amazon_137",
-      "event_date": "2023-01-04",
-      "collected_date": "2026-04-27",
-      "headline": "Amazon cuts 18,000 jobs amid AI transition",
-      "source_url": "https://news.crunchbase.com/startups/tech-layoffs/",
-      "source_name": "TrueUp",
-      "excerpt": "Amazon cut 18,000 employees (6% of corporate workforce) \u2014 largest layoff in company history at the time. CEO Andy Jassy memo cited 'macroeconomic uncertainty' and prior rapid hiring. Cuts concentrated in retail, devices (Alexa), and recruiting teams. Alexa team cuts foreshadow eventual AI assistant competition that would reduce its strategic priority.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 18000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -37440000
-      },
-      "notes": "Amazon cut 18,000 employees (6% of corporate workforce) \u2014 largest layoff in company history at the time. CEO Andy Jassy memo cited 'macroeconomic uncertainty' and prior rapid hiring. Cuts concentrated in retail, devices (Alexa), and recruiting teams. Alexa team cuts foreshadow eventual AI assistant competition that would reduce its strategic priority.",
-      "industry": "E-commerce / Cloud",
-      "hashtags": "#Amazon #AWS #Alexa #AILayoffs #TechLayoffs2023 #CloudComputing #Jassy",
-      "date": "2023-01-04",
-      "created_at": "2026-04-27T17:59:55.142134"
-    },
-    {
-      "id": "evt_20230104_amazon_235",
-      "event_date": "2023-01-04",
-      "collected_date": "2026-04-27",
-      "headline": "Amazon cuts 18,000 jobs",
-      "source_url": "https://www.computerworld.com/article/1617283/tech-layoffs-in-2023-a-timeline.html",
-      "source_name": "Computerworld",
-      "excerpt": "18,000 roles cut \u2014 largest layoff in Amazon history at the time. Majority from retail, HR, and devices/services teams; accelerated AI infrastructure pivot.",
-      "causality": "inferred",
-      "confidence": 0.5,
-      "tolls": {
-        "jobs": 18000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -37440000
-      },
-      "notes": "18,000 roles cut \u2014 largest layoff in Amazon history at the time. Majority from retail, HR, and devices/services teams; accelerated AI infrastructure pivot.",
-      "hashtags": "#Amazon #TechLayoffs #Restructuring #AWS",
-      "date": "2023-01-04",
-      "created_at": "2026-04-27T17:59:55.149844"
     }
   ],
-  "summary": "One new verifiable AI displacement event found: Dune laid off 25% of its staff, citing AI efficiencies.",
+  "summary": "Three new verifiable AI displacement events were identified between May 14 and May 15, 2026, involving significant layoffs at Dune Analytics, Cisco, and Kraken, all citing AI as a primary factor.",
   "events": [
     {
-      "id": "evt_20260514_003",
-      "event_date": "2026-05-14",
-      "headline": "Dune cuts 25% of staff citing AI efficiencies",
-      "source_url": "https://www.theblock.co/post/401322/crypto-data-firm-dune-cuts-25-of-staff-citing-ai-efficiencies",
-      "source_name": "The Block",
-      "excerpt": "Dune CEO Fredrik Haga announced the firm let 25% of the team go this week, in part citing its heavy investment in AI-powered tools.",
+      "id": "evt_20260515_001",
+      "event_date": "2026-05-15",
+      "headline": "Dune Analytics slashes 25% of workforce in AI, institutional pivot",
+      "source_url": "https://decrypt.co/367949/dune-analytics-slashes-25-of-workforce-in-ai-institutional-pivot",
+      "source_name": "Decrypt",
+      "excerpt": "Dune CEO Fredrik Haga announced Thursday that the company has cut 25% of its staff as part of a strategic refocus on AI tooling and institutional crypto adoption.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
         "jobs": 25,
-        "teams": 1,
+        "teams": 2,
         "companies": 1,
         "labor_hours": -52000
       },
-      "notes": "Restructuring to focus on core data products",
-      "collected_date": "2026-05-17",
-      "date": "2026-05-17",
-      "created_at": "2026-05-17T06:37:48.725005+00:00"
+      "notes": "Strategic refocus on AI tooling and institutional crypto adoption",
+      "collected_date": "2026-05-18",
+      "date": "2026-05-18",
+      "created_at": "2026-05-18T07:50:12.261212+00:00"
+    },
+    {
+      "id": "evt_20260514_004",
+      "event_date": "2026-05-14",
+      "headline": "Cisco announces record revenue and 4,000 layoffs in the same day",
+      "source_url": "https://arstechnica.com/information-technology/2026/05/cisco-announces-record-revenue-and-4000-layoffs-in-the-same-day/",
+      "source_name": "Ars Technica",
+      "excerpt": "Cisco CEO Chuck Robbins announced that the company\u2019s latest round of layoffs begins today... attributed to the growth of AI.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 4000,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -8320000
+      },
+      "notes": "Layoffs attributed to the growth of AI",
+      "collected_date": "2026-05-18",
+      "date": "2026-05-18",
+      "created_at": "2026-05-18T07:50:12.261235+00:00"
+    },
+    {
+      "id": "evt_20260514_005",
+      "event_date": "2026-05-14",
+      "headline": "Kraken cuts 150 staff amid AI efficiencies, potentially delaying IPO",
+      "source_url": "https://cointelegraph.com/news/kraken-parent-payward-cuts-150-staff-potentially-delaying-ipo-report",
+      "source_name": "Cointelegraph",
+      "excerpt": "The company, whose corporate name is Payward, laid off about 150 workers due to efficiencies from deploying artificial intelligence across the business.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 150,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -312000
+      },
+      "notes": "Layoffs due to AI efficiencies, potential IPO delay",
+      "collected_date": "2026-05-18",
+      "date": "2026-05-18",
+      "created_at": "2026-05-18T07:50:12.261249+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-17",
-    "last_nonzero_collection": "2026-05-17",
+    "last_openai_success": "2026-05-18",
+    "last_nonzero_collection": "2026-05-18",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-17"
+    "last_collection_date": "2026-05-18"
   }
 }
