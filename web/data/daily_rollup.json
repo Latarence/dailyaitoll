@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-05-19T07:33:27.923885+00:00",
+  "last_updated": "2026-05-20T07:32:46.659936+00:00",
   "totals": {
-    "jobs": 368499,
+    "jobs": 376499,
     "teams": 79,
     "products": 0,
-    "companies": 67,
+    "companies": 68,
     "revenue": 0,
-    "labor_hours": -766377920
+    "labor_hours": -783017920
   },
   "today": {
     "jobs": 8000,
@@ -552,10 +552,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -16640000
+    },
+    "2026-05-20": {
+      "jobs": 8000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -16640000
     }
   },
-  "events_count": 103,
+  "events_count": 104,
   "all_events": [
+    {
+      "id": "evt_20260520_001",
+      "event_date": "2026-05-20",
+      "headline": "Meta lays off 8,000 employees, shifts focus to AI initiatives",
+      "source_url": "https://www.republicworld.com/tech/metas-brutal-ai-reset-layoffs-transfers-and-managerial-cuts-set-to-hit-workers-on-may-20-2026-05-19-124856",
+      "source_name": "Republic World",
+      "excerpt": "Meta is laying off 10% of staff and moving thousands to AI units as part of a sweeping restructuring, sparking employee protests over privacy and job cuts.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8000,
+        "teams": 0,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "Part of a broader AI-focused restructuring",
+      "collected_date": "2026-05-20",
+      "date": "2026-05-20",
+      "created_at": "2026-05-20T07:32:46.660000+00:00"
+    },
     {
       "id": "evt_20260518_001",
       "event_date": "2026-05-18",
@@ -2637,57 +2665,36 @@
       "hashtags": "#Microsoft #Azure #OpenAI #AILayoffs #TechLayoffs2023 #Copilot #Nadella",
       "date": "2023-01-18",
       "created_at": "2026-04-27T17:59:55.142101"
-    },
-    {
-      "id": "evt_20230118_microsof_234",
-      "event_date": "2023-01-18",
-      "collected_date": "2026-04-27",
-      "headline": "Microsoft cuts 10,000 jobs",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/0000789019/000119312523009934/d447690dex991.htm",
-      "source_name": "SEC Filing / CNBC",
-      "excerpt": "Less than 5% of workforce; CEO Nadella cited AI as key strategic priority while realigning cost structure. Came weeks before $10B OpenAI investment closed.",
-      "causality": "contributing",
-      "confidence": 0.65,
-      "tolls": {
-        "jobs": 10000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -20800000
-      },
-      "notes": "Less than 5% of workforce; CEO Nadella cited AI as key strategic priority while realigning cost structure. Came weeks before $10B OpenAI investment closed.",
-      "hashtags": "#Microsoft #AILayoffs #TechLayoffs #OpenAI",
-      "date": "2023-01-18",
-      "created_at": "2026-04-27T17:59:55.149809"
     }
   ],
-  "summary": "Meta announced plans to lay off 8,000 employees and reassign 7,000 to AI-focused roles as part of a major restructuring aimed at improving AI workflows.",
+  "summary": "Meta has announced the layoff of 8,000 employees as part of a strategic shift towards AI initiatives, marking a significant instance of AI-driven workforce reduction.",
   "events": [
     {
-      "id": "evt_20260518_001",
-      "event_date": "2026-05-18",
-      "headline": "Meta to lay off 8,000 employees, shift 7,000 to AI roles",
-      "source_url": "https://www.ndtv.com/world-news/meta-layoffs-7-000-staff-to-shift-to-ai-roles-as-meta-cuts-jobs-revamps-structure-report-11514861?pfrom=home-ndtv_topstories",
-      "source_name": "NDTV",
-      "excerpt": "Meta detailed its layoff plans for this week in a memo shared with employees on Monday, saying cuts to its workforce globally would be accompanied by a fresh round of organisational changes aimed at improving the company's AI workflows.",
+      "id": "evt_20260520_001",
+      "event_date": "2026-05-20",
+      "headline": "Meta lays off 8,000 employees, shifts focus to AI initiatives",
+      "source_url": "https://www.republicworld.com/tech/metas-brutal-ai-reset-layoffs-transfers-and-managerial-cuts-set-to-hit-workers-on-may-20-2026-05-19-124856",
+      "source_name": "Republic World",
+      "excerpt": "Meta is laying off 10% of staff and moving thousands to AI units as part of a sweeping restructuring, sparking employee protests over privacy and job cuts.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
         "jobs": 8000,
-        "teams": null,
+        "teams": 0,
         "companies": 1,
         "labor_hours": -16640000
       },
-      "notes": "Meta is laying off 10% of its workforce and moving 7,000 employees to AI-related initiatives as part of a restructuring to enhance AI workflows.",
-      "collected_date": "2026-05-19",
-      "date": "2026-05-19",
-      "created_at": "2026-05-19T07:33:27.923955+00:00"
+      "notes": "Part of a broader AI-focused restructuring",
+      "collected_date": "2026-05-20",
+      "date": "2026-05-20",
+      "created_at": "2026-05-20T07:32:46.660000+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-19",
-    "last_nonzero_collection": "2026-05-19",
+    "last_openai_success": "2026-05-20",
+    "last_nonzero_collection": "2026-05-20",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-19"
+    "last_collection_date": "2026-05-20"
   }
 }
