@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-22T07:33:07.715749+00:00",
+  "last_updated": "2026-05-23T06:26:35.316838+00:00",
   "totals": {
     "jobs": 397499,
     "teams": 79,
@@ -9,12 +9,12 @@
     "labor_hours": -826697920
   },
   "today": {
-    "jobs": 10000,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 2,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -20800000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2661,54 +2661,13 @@
       "created_at": "2026-04-27T17:59:55.149704"
     }
   ],
-  "summary": "On May 20, 2026, Standard Chartered announced plans to cut 7,000 jobs by 2030 as part of its shift toward AI and automation, primarily affecting back-office positions. On the same day, Intuit revealed a 17% workforce reduction, amounting to nearly 3,000 employees, to accelerate its AI initiatives, including closing offices in Reno and Woodland Hills.",
-  "events": [
-    {
-      "id": "evt_20260520_004",
-      "event_date": "2026-05-20",
-      "headline": "Standard Chartered plans to cut 7,000 jobs in AI push",
-      "source_url": "https://www.tomshardware.com/tech-industry/standard-chartered-plans-to-cut-7-000-jobs-in-ai-push-lender-wants-to-replace-lower-value-human-capital-and-focus-on-automation",
-      "source_name": "Tom's Hardware",
-      "excerpt": "Standard Chartered has announced a significant workforce reduction as part of its strategic shift toward automation and artificial intelligence (AI). The British multinational bank plans to eliminate 7,000 jobs, or around 15% of its corporate roles, by 2030.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 7000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -14560000
-      },
-      "notes": "Layoffs primarily affecting back-office positions in Chennai, Bengaluru, Kuala Lumpur, and Warsaw.",
-      "collected_date": "2026-05-22",
-      "date": "2026-05-22",
-      "created_at": "2026-05-22T07:33:07.715805+00:00"
-    },
-    {
-      "id": "evt_20260520_005",
-      "event_date": "2026-05-20",
-      "headline": "Intuit to cut 17% of its workforce to invest heavily in AI",
-      "source_url": "https://www.ndtv.com/us-markets/after-meta-intuit-to-cut-17-of-its-workforce-to-invest-heavily-in-ai-11524484",
-      "source_name": "NDTV",
-      "excerpt": "Intuit is reportedly planning to cut around 17% of its workforce, or nearly 3,000 employees, as part of a broader restructuring aimed at accelerating its artificial intelligence goals.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 3000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -6240000
-      },
-      "notes": "Restructuring includes shutting down office locations in Reno and Woodland Hills.",
-      "collected_date": "2026-05-22",
-      "date": "2026-05-22",
-      "created_at": "2026-05-22T07:33:07.715824+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-22",
+    "last_openai_success": "2026-05-23",
     "last_nonzero_collection": "2026-05-22",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-22"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-05-23"
   }
 }
