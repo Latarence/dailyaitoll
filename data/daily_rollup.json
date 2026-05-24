@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-23T06:26:35.316838+00:00",
+  "last_updated": "2026-05-24T06:52:27.220401+00:00",
   "totals": {
-    "jobs": 397499,
+    "jobs": 405499,
     "teams": 79,
     "products": 0,
-    "companies": 72,
+    "companies": 73,
     "revenue": 0,
-    "labor_hours": -826697920
+    "labor_hours": -843337920
   },
   "today": {
-    "jobs": 0,
+    "jobs": 8000,
     "teams": 0,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -16640000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -554,15 +554,15 @@
       "labor_hours": -16640000
     },
     "2026-05-20": {
-      "jobs": 29000,
+      "jobs": 37000,
       "teams": 0,
       "products": 0,
-      "companies": 5,
+      "companies": 6,
       "revenue": 0,
-      "labor_hours": -60320000
+      "labor_hours": -76960000
     }
   },
-  "events_count": 108,
+  "events_count": 109,
   "all_events": [
     {
       "id": "evt_20260520_001",
@@ -663,6 +663,26 @@
       "collected_date": "2026-05-22",
       "date": "2026-05-22",
       "created_at": "2026-05-22T07:33:07.715824+00:00"
+    },
+    {
+      "id": "evt_20260520_006",
+      "event_date": "2026-05-20",
+      "headline": "Meta lays off 8,000 employees, shifts focus to AI",
+      "source_url": "https://www.androidcentral.com/apps-software/meta/meta-chops-8-000-in-may-layoff-spree-and-its-only-getting-worse",
+      "source_name": "Android Central",
+      "excerpt": "Meta carried out another significant round of layoffs, cutting 8,000 employees in three waves as part of a planned 10% workforce reduction. This decision, communicated through early-morning emails, added to a growing trend of job cuts at the company dating back to 2022, contributing to low morale among workers. The moves are part of a major shift in focus towards AI development, with an additional 7,000 roles expected to be restructured for AI initiatives.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "Part of a broader AI-focused restructuring",
+      "collected_date": "2026-05-24",
+      "date": "2026-05-24",
+      "created_at": "2026-05-24T06:52:27.220477+00:00"
     },
     {
       "id": "evt_20260518_001",
@@ -2638,36 +2658,36 @@
       "hashtags": "#Grammarly #WritingAI #ContentAI #AILayoffs #TechLayoffs2023 #GenAI",
       "date": "2023-05-15",
       "created_at": "2026-04-27T17:59:55.142036"
-    },
-    {
-      "id": "evt_20230126_ibm_231",
-      "event_date": "2023-01-26",
-      "collected_date": "2026-04-27",
-      "headline": "IBM cuts 3,900 jobs",
-      "source_url": "https://www.cnn.com/2023/01/26/tech/ibm-layoffs-intl-hnk/index.html",
-      "source_name": "CNN Business",
-      "excerpt": "3,900 cuts tied to reorganization of Kyndryl spinoff and healthcare analytics divestiture; part of IBM's AI-first pivot.",
-      "causality": "inferred",
-      "confidence": 0.55,
-      "tolls": {
-        "jobs": 3900,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -8112000
-      },
-      "notes": "3,900 cuts tied to reorganization of Kyndryl spinoff and healthcare analytics divestiture; part of IBM's AI-first pivot.",
-      "hashtags": "#IBM #TechLayoffs #AI #Restructuring",
-      "date": "2023-01-26",
-      "created_at": "2026-04-27T17:59:55.149704"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "Meta has laid off 8,000 employees as part of its strategic shift towards AI development.",
+  "events": [
+    {
+      "id": "evt_20260520_006",
+      "event_date": "2026-05-20",
+      "headline": "Meta lays off 8,000 employees, shifts focus to AI",
+      "source_url": "https://www.androidcentral.com/apps-software/meta/meta-chops-8-000-in-may-layoff-spree-and-its-only-getting-worse",
+      "source_name": "Android Central",
+      "excerpt": "Meta carried out another significant round of layoffs, cutting 8,000 employees in three waves as part of a planned 10% workforce reduction. This decision, communicated through early-morning emails, added to a growing trend of job cuts at the company dating back to 2022, contributing to low morale among workers. The moves are part of a major shift in focus towards AI development, with an additional 7,000 roles expected to be restructured for AI initiatives.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "Part of a broader AI-focused restructuring",
+      "collected_date": "2026-05-24",
+      "date": "2026-05-24",
+      "created_at": "2026-05-24T06:52:27.220477+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-23",
-    "last_nonzero_collection": "2026-05-22",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-05-23"
+    "last_openai_success": "2026-05-24",
+    "last_nonzero_collection": "2026-05-24",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-05-24"
   }
 }
