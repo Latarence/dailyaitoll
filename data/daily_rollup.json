@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-24T06:52:27.220401+00:00",
+  "last_updated": "2026-05-25T08:08:59.768366+00:00",
   "totals": {
-    "jobs": 405499,
-    "teams": 79,
+    "jobs": 406599,
+    "teams": 84,
     "products": 0,
-    "companies": 73,
+    "companies": 74,
     "revenue": 0,
-    "labor_hours": -843337920
+    "labor_hours": -845625920
   },
   "today": {
-    "jobs": 8000,
-    "teams": 0,
+    "jobs": 1100,
+    "teams": 5,
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": -16640000
+    "labor_hours": -2288000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -560,10 +560,38 @@
       "companies": 6,
       "revenue": 0,
       "labor_hours": -76960000
+    },
+    "2026-05-21": {
+      "jobs": 1100,
+      "teams": 5,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -2288000
     }
   },
-  "events_count": 109,
+  "events_count": 110,
   "all_events": [
+    {
+      "id": "evt_20260521_001",
+      "event_date": "2026-05-21",
+      "headline": "Cloudflare CEO announces 20% workforce reduction due to AI efficiencies",
+      "source_url": "https://fortune.com/2026/05/21/cloudflare-ceo-matthew-prince-layoffs-ai-automation-measurers/",
+      "source_name": "Fortune",
+      "excerpt": "Cloudflare CEO Matthew Prince stated that the company slashed 20% of its workforce, with middle management facing the brunt of the cuts, attributing the layoffs to AI making an entire category of workers obsolete.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 1100,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -2288000
+      },
+      "notes": "Layoffs primarily affected middle management roles.",
+      "collected_date": "2026-05-25",
+      "date": "2026-05-25",
+      "created_at": "2026-05-25T08:08:59.768439+00:00"
+    },
     {
       "id": "evt_20260520_001",
       "event_date": "2026-05-20",
@@ -2636,58 +2664,36 @@
       "hashtags": "#Airtable #LowCode #AILayoffs #TechLayoffs",
       "date": "2023-09-15",
       "created_at": "2026-04-27T17:59:55.149670"
-    },
-    {
-      "id": "evt_20230515_grammarl_134",
-      "event_date": "2023-05-15",
-      "collected_date": "2026-04-27",
-      "headline": "Grammarly cuts 230 jobs amid AI transition",
-      "source_url": "https://techcrunch.com/2024/02/09/grammarly-lays-off-230-employees-as-part-of-a-business-restructuring",
-      "source_name": "TrueUp",
-      "excerpt": "Grammarly cut ~230 employees in February 2024 (announced May 2023) as it restructured around AI-powered writing and productivity tools. The company's own core product \u2014 AI writing assistance \u2014 was simultaneously reducing demand for human content and editing roles company-wide.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 230,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -478400
-      },
-      "notes": "Grammarly cut ~230 employees in February 2024 (announced May 2023) as it restructured around AI-powered writing and productivity tools. The company's own core product \u2014 AI writing assistance \u2014 was simultaneously reducing demand for human content and editing roles company-wide.",
-      "industry": "Writing AI / SaaS",
-      "hashtags": "#Grammarly #WritingAI #ContentAI #AILayoffs #TechLayoffs2023 #GenAI",
-      "date": "2023-05-15",
-      "created_at": "2026-04-27T17:59:55.142036"
     }
   ],
-  "summary": "Meta has laid off 8,000 employees as part of its strategic shift towards AI development.",
+  "summary": "Two significant AI-related layoffs were reported: Cloudflare reduced its workforce by 20% due to AI efficiencies, and Meta laid off 8,000 employees as it shifts focus to AI initiatives.",
   "events": [
     {
-      "id": "evt_20260520_006",
-      "event_date": "2026-05-20",
-      "headline": "Meta lays off 8,000 employees, shifts focus to AI",
-      "source_url": "https://www.androidcentral.com/apps-software/meta/meta-chops-8-000-in-may-layoff-spree-and-its-only-getting-worse",
-      "source_name": "Android Central",
-      "excerpt": "Meta carried out another significant round of layoffs, cutting 8,000 employees in three waves as part of a planned 10% workforce reduction. This decision, communicated through early-morning emails, added to a growing trend of job cuts at the company dating back to 2022, contributing to low morale among workers. The moves are part of a major shift in focus towards AI development, with an additional 7,000 roles expected to be restructured for AI initiatives.",
+      "id": "evt_20260521_001",
+      "event_date": "2026-05-21",
+      "headline": "Cloudflare CEO announces 20% workforce reduction due to AI efficiencies",
+      "source_url": "https://fortune.com/2026/05/21/cloudflare-ceo-matthew-prince-layoffs-ai-automation-measurers/",
+      "source_name": "Fortune",
+      "excerpt": "Cloudflare CEO Matthew Prince stated that the company slashed 20% of its workforce, with middle management facing the brunt of the cuts, attributing the layoffs to AI making an entire category of workers obsolete.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
-        "jobs": 8000,
-        "teams": null,
+        "jobs": 1100,
+        "teams": 5,
         "companies": 1,
-        "labor_hours": -16640000
+        "labor_hours": -2288000
       },
-      "notes": "Part of a broader AI-focused restructuring",
-      "collected_date": "2026-05-24",
-      "date": "2026-05-24",
-      "created_at": "2026-05-24T06:52:27.220477+00:00"
+      "notes": "Layoffs primarily affected middle management roles.",
+      "collected_date": "2026-05-25",
+      "date": "2026-05-25",
+      "created_at": "2026-05-25T08:08:59.768439+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-24",
-    "last_nonzero_collection": "2026-05-24",
+    "last_openai_success": "2026-05-25",
+    "last_nonzero_collection": "2026-05-25",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-24"
+    "last_collection_date": "2026-05-25"
   }
 }
