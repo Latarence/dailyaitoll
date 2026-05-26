@@ -31,6 +31,16 @@ async function ensureSchema() {
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     );
   `;
+
+  await sql`
+    CREATE TABLE IF NOT EXISTS data_licenses (
+      id BIGSERIAL PRIMARY KEY,
+      tier TEXT NOT NULL CHECK (tier IN ('journalist', 'commercial')),
+      email TEXT NOT NULL DEFAULT '',
+      stripe_session_id TEXT UNIQUE,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+  `;
 }
 
 module.exports = async (req, res) => {
@@ -71,22 +81,41 @@ module.exports = async (req, res) => {
   const session = event.data.object;
   const metadata = session.metadata || {};
 
-  // Extract patron info from metadata
-  const tier = metadata.tier;
-  const name = metadata.name || session.customer_details?.name;
-  const url = metadata.url || '';
-  const description = metadata.description || '';
-
-  if (!tier || !name) {
-    console.error('Missing tier or name in session metadata');
-    return res.status(400).json({ error: 'Missing patron info' });
-  }
-
-  // Persist patron record (no git commits/deploy required)
   try {
     await ensureSchema();
 
     const stripeSessionId = session.id;
+
+    const kind = metadata.kind;
+
+    if (kind === 'data_license') {
+      const tier = metadata.tier;
+      if (!tier) {
+        return res.status(400).json({ error: 'Missing license tier' });
+      }
+
+      const email = session.customer_details?.email || '';
+      await sql`
+        INSERT INTO data_licenses (tier, email, stripe_session_id)
+        VALUES (${tier}, ${email}, ${stripeSessionId})
+        ON CONFLICT (stripe_session_id)
+        DO NOTHING;
+      `;
+
+      console.log(`Data license recorded: ${email || 'unknown'} (${tier})`);
+      return res.status(200).json({ success: true, kind, tier });
+    }
+
+    // Default: patron
+    const tier = metadata.tier;
+    const name = metadata.name || session.customer_details?.name;
+    const url = metadata.url || '';
+    const description = metadata.description || '';
+
+    if (!tier || !name) {
+      console.error('Missing tier or name in session metadata');
+      return res.status(400).json({ error: 'Missing patron info' });
+    }
 
     await sql`
       INSERT INTO patrons (tier, name, url, description, stripe_session_id)
@@ -96,7 +125,7 @@ module.exports = async (req, res) => {
     `;
 
     console.log(`Patron recorded: ${name} (${tier})`);
-    return res.status(200).json({ success: true, patron: name, tier });
+    return res.status(200).json({ success: true, kind: 'patron', patron: name, tier });
   } catch (err) {
     console.error('Error recording patron:', err);
     return res.status(500).json({ error: 'Internal error' });

@@ -257,7 +257,7 @@
 
         <div class="success-icon">&#10003;</div>
         <h1>Thank you for your purchase</h1>
-        <p class="message">Your download is ready. Click below to get your CSV file.</p>
+        <p class="message">Your download is ready. Click below to get your licensed CSV file.</p>
 
         <button class="btn" id="download-btn">Download CSV</button>
 
@@ -266,7 +266,7 @@
         </div>
 
         <p class="note">
-            This link is valid for this session only. Bookmark this page or save your CSV file.<br>
+            This download requires a verified purchase session.<br>
             Questions? Contact data@dailyaitoll.com
         </p>
 
@@ -283,60 +283,29 @@
                 const response = await fetch('/data/daily_rollup.json');
                 if (response.ok) {
                     const data = await response.json();
-                    render(data);
+                    document.getElementById('event-count').textContent = data.events_count || 0;
+                    document.getElementById('job-count').textContent = (data.totals?.jobs || 0).toLocaleString();
+                    if (data.last_updated) {
+                        const date = new Date(data.last_updated);
+                        document.getElementById('last-updated').textContent =
+                            date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    }
                 }
             } catch (e) {
                 console.log('Data not available');
             }
         }
 
-        function render(data) {
-            document.getElementById('event-count').textContent = data.events_count || 0;
-            document.getElementById('job-count').textContent =
-                (data.totals?.jobs || 0).toLocaleString();
+        const params = new URLSearchParams(window.location.search);
+        const sessionId = params.get('session_id');
 
-            if (data.last_updated) {
-                const date = new Date(data.last_updated);
-                document.getElementById('last-updated').textContent =
-                    date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        document.getElementById('download-btn').addEventListener('click', () => {
+            if (!sessionId) {
+                alert('Missing purchase session. Please return to /data and complete checkout.');
+                return;
             }
-
-            const events = data.all_events || [];
-
-            document.getElementById('download-btn').addEventListener('click', () => {
-                downloadCSV(events);
-            });
-        }
-
-        function downloadCSV(events) {
-            const headers = ['event_date', 'company', 'jobs', 'headline', 'excerpt', 'source_name', 'source_url', 'causality', 'confidence'];
-
-            const rows = events.map(e => {
-                const company = e.headline?.split(' ')[0] || '';
-                return [
-                    e.event_date || '',
-                    company,
-                    e.tolls?.jobs || 0,
-                    `"${(e.headline || '').replace(/"/g, '""')}"`,
-                    `"${(e.excerpt || '').replace(/"/g, '""')}"`,
-                    e.source_name || '',
-                    e.source_url || '',
-                    e.causality || '',
-                    e.confidence || ''
-                ].join(',');
-            });
-
-            const csv = headers.join(',') + '\n' + rows.join('\n');
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = URL.createObjectURL(blob);
-
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `daily-ai-toll-${new Date().toISOString().split('T')[0]}.csv`;
-            a.click();
-
-            URL.revokeObjectURL(url);
-        }
+            window.location.href = `/api/data-download?session_id=${encodeURIComponent(sessionId)}`;
+        });
 
         loadData();
 

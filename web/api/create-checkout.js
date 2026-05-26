@@ -59,6 +59,7 @@ module.exports = async (req, res) => {
         },
       ],
       metadata: {
+        kind: 'patron',
         tier,
         name,
         url: url || '',

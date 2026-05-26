@@ -44,6 +44,11 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python scripts/run_toll.py
 
+      - name: Sync dataset to Postgres (for licensed downloads)
+        env:
+          POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+        run: python scripts/sync_events_to_postgres.py
+
       - name: Check for anomalies and create issue
         if: always()
         env:
