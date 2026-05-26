@@ -1,4 +1,11 @@
-const { kv } = require('@vercel/kv');
+const fs = require('fs');
+const path = require('path');
+let kv;
+try {
+  ({ kv } = require('@vercel/kv'));
+} catch {
+  kv = null;
+}
 
 module.exports = async (req, res) => {
   if (req.method !== 'GET') {
@@ -6,8 +13,16 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const patrons =
-      (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
+    if (process.env.FEATURE_USE_KV_PATRONS === 'true') {
+      if (!kv) throw new Error('KV not available');
+      const patrons =
+        (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
+      return res.status(200).json({ patrons });
+    }
+
+    // Fallback: read the static JSON file committed to the repo.
+    const p = path.join(__dirname, '..', 'data', 'patrons.json');
+    const patrons = JSON.parse(fs.readFileSync(p, 'utf8')).patrons;
 
     return res.status(200).json({ patrons });
   } catch (err) {

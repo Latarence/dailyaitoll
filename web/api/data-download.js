@@ -1,8 +1,21 @@
-const { kv } = require('@vercel/kv');
+const fs = require('fs');
+const path = require('path');
+let kv;
+try {
+  ({ kv } = require('@vercel/kv'));
+} catch {
+  kv = null;
+}
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const { get } = require('@vercel/blob');
+let blobGet;
+try {
+  ({ get: blobGet } = require('@vercel/blob'));
+} catch {
+  blobGet = null;
+}
 
 async function hasLicense(sessionId) {
+  if (!kv) return null;
   const v = await kv.get(`data_license_session:${sessionId}`);
   if (!v) return null;
   try {
@@ -24,7 +37,7 @@ module.exports = async (req, res) => {
 
   try {
     // Fast path: already recorded via webhook.
-    let license = await hasLicense(sessionId);
+    let license = process.env.FEATURE_USE_KV_DATA_LICENSES === 'true' ? await hasLicense(sessionId) : null;
 
     // Slow path: verify with Stripe (covers webhook delays).
     if (!license) {
@@ -41,25 +54,35 @@ module.exports = async (req, res) => {
 
       const email = session.customer_details?.email || session.customer_email || '';
 
-      await kv.set(
-        `data_license_session:${sessionId}`,
-        JSON.stringify({ tier, email, created_at: new Date().toISOString() })
-      );
+      if (process.env.FEATURE_USE_KV_DATA_LICENSES === 'true' && kv) {
+        await kv.set(
+          `data_license_session:${sessionId}`,
+          JSON.stringify({ tier, email, created_at: new Date().toISOString() })
+        );
+      }
 
       license = { tier, email };
-    }
-
-    // Deliver the dataset from private Blob storage through this function.
-    const blob = await get('datasets/events.csv', { access: 'private' });
-    if (!blob || !blob.stream) {
-      return res.status(500).json({ error: 'Dataset not available yet' });
     }
 
     res.setHeader('Content-Type', 'text/csv; charset=utf-8');
     res.setHeader('Content-Disposition', 'attachment; filename="daily-ai-toll-events.csv"');
 
-    // Node stream piping
-    blob.stream.pipe(res);
+    if (process.env.FEATURE_USE_BLOB_DATASET === 'true') {
+      if (!blobGet) return res.status(500).json({ error: 'Blob not available' });
+      const blob = await blobGet('datasets/events.csv', { access: 'private' });
+      if (!blob || !blob.stream) {
+        return res.status(500).json({ error: 'Dataset not available yet' });
+      }
+      blob.stream.pipe(res);
+      return;
+    }
+
+    // Fallback: serve the CSV committed in /web/data/events.csv, but only through this API.
+    const csvPath = path.join(__dirname, '..', 'data', 'events.csv');
+    if (!fs.existsSync(csvPath)) {
+      return res.status(500).json({ error: 'Dataset not available yet' });
+    }
+    fs.createReadStream(csvPath).pipe(res);
     return;
   } catch (err) {
     console.error('data download error:', err);

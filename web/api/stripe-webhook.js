@@ -1,5 +1,10 @@
 const crypto = require('crypto');
-const { kv } = require('@vercel/kv');
+let kv;
+try {
+  ({ kv } = require('@vercel/kv'));
+} catch {
+  kv = null;
+}
 
 // Verify Stripe webhook signature
 function verifyStripeSignature(payload, signature, secret) {
@@ -20,6 +25,7 @@ function verifyStripeSignature(payload, signature, secret) {
 }
 
 async function recordPatron({ tier, name, url, description, stripeSessionId }) {
+  if (!kv) throw new Error('KV not available');
   const dedupeKey = `patron_session:${stripeSessionId}`;
   const first = await kv.setnx(dedupeKey, '1');
   if (!first) return false;
@@ -43,9 +49,36 @@ async function recordPatron({ tier, name, url, description, stripeSessionId }) {
 }
 
 async function recordLicense({ tier, email, stripeSessionId }) {
+  if (!kv) throw new Error('KV not available');
   const key = `data_license_session:${stripeSessionId}`;
   await kv.set(key, JSON.stringify({ tier, email: email || '', created_at: new Date().toISOString() }));
   return true;
+}
+
+async function dispatchPatronToGitHub({ tier, name, url, description }) {
+  const githubToken = process.env.GITHUB_TOKEN;
+  if (!githubToken) throw new Error('Missing GITHUB_TOKEN');
+
+  const response = await fetch(
+    'https://api.github.com/repos/Latarence/dailyaitoll/actions/workflows/add-patron.yml/dispatches',
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${githubToken}`,
+        Accept: 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ref: 'main',
+        inputs: { tier, name, url: url || '', description: description || '' },
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`GitHub dispatch failed: ${response.status} ${text}`);
+  }
 }
 
 module.exports = async (req, res) => {
@@ -98,7 +131,9 @@ module.exports = async (req, res) => {
       }
 
       const email = session.customer_details?.email || '';
-      await recordLicense({ tier, email, stripeSessionId });
+      if (process.env.FEATURE_USE_KV_DATA_LICENSES === 'true') {
+        await recordLicense({ tier, email, stripeSessionId });
+      }
 
       console.log(`Data license recorded: ${email || 'unknown'} (${tier})`);
       return res.status(200).json({ success: true, kind, tier });
@@ -115,7 +150,11 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: 'Missing patron info' });
     }
 
-    await recordPatron({ tier, name, url, description, stripeSessionId });
+    if (process.env.FEATURE_USE_KV_PATRONS === 'true') {
+      await recordPatron({ tier, name, url, description, stripeSessionId });
+    } else {
+      await dispatchPatronToGitHub({ tier, name, url, description });
+    }
 
     console.log(`Patron recorded: ${name} (${tier})`);
     return res.status(200).json({ success: true, kind: 'patron', patron: name, tier });
