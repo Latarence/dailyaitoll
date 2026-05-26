@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-25T08:08:59.768366+00:00",
+  "last_updated": "2026-05-26T07:02:50.990940+00:00",
   "totals": {
     "jobs": 406599,
     "teams": 84,
@@ -9,12 +9,12 @@
     "labor_hours": -845625920
   },
   "today": {
-    "jobs": 1100,
-    "teams": 5,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -2288000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2666,34 +2666,13 @@
       "created_at": "2026-04-27T17:59:55.149670"
     }
   ],
-  "summary": "Two significant AI-related layoffs were reported: Cloudflare reduced its workforce by 20% due to AI efficiencies, and Meta laid off 8,000 employees as it shifts focus to AI initiatives.",
-  "events": [
-    {
-      "id": "evt_20260521_001",
-      "event_date": "2026-05-21",
-      "headline": "Cloudflare CEO announces 20% workforce reduction due to AI efficiencies",
-      "source_url": "https://fortune.com/2026/05/21/cloudflare-ceo-matthew-prince-layoffs-ai-automation-measurers/",
-      "source_name": "Fortune",
-      "excerpt": "Cloudflare CEO Matthew Prince stated that the company slashed 20% of its workforce, with middle management facing the brunt of the cuts, attributing the layoffs to AI making an entire category of workers obsolete.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 1100,
-        "teams": 5,
-        "companies": 1,
-        "labor_hours": -2288000
-      },
-      "notes": "Layoffs primarily affected middle management roles.",
-      "collected_date": "2026-05-25",
-      "date": "2026-05-25",
-      "created_at": "2026-05-25T08:08:59.768439+00:00"
-    }
-  ],
+  "summary": "Today's findings include significant AI-driven workforce reductions at Meta and Standard Chartered, with Meta also reassigning employees to AI-focused roles.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-25",
-    "last_nonzero_collection": "2026-05-25",
+    "last_openai_success": "2026-05-26",
+    "last_nonzero_collection": "2026-05-26",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-25"
+    "last_collection_date": "2026-05-26"
   }
 }
