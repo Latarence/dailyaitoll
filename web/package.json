@@ -2,6 +2,8 @@
   "name": "dailyaitoll",
   "private": true,
   "dependencies": {
+    "@vercel/blob": "^1.0.0",
+    "@vercel/kv": "^2.0.0",
     "@vercel/postgres": "^0.10.0",
     "stripe": "^14.0.0"
   }

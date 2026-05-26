@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const { sql } = require('@vercel/postgres');
+const { kv } = require('@vercel/kv');
 
 // Verify Stripe webhook signature
 function verifyStripeSignature(payload, signature, secret) {
@@ -19,28 +19,33 @@ function verifyStripeSignature(payload, signature, secret) {
   );
 }
 
-async function ensureSchema() {
-  await sql`
-    CREATE TABLE IF NOT EXISTS patrons (
-      id BIGSERIAL PRIMARY KEY,
-      tier TEXT NOT NULL CHECK (tier IN ('supporter', 'sustainer', 'founding')),
-      name TEXT NOT NULL,
-      url TEXT NOT NULL DEFAULT '',
-      description TEXT NOT NULL DEFAULT '',
-      stripe_session_id TEXT UNIQUE,
-      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-    );
-  `;
+async function recordPatron({ tier, name, url, description, stripeSessionId }) {
+  const dedupeKey = `patron_session:${stripeSessionId}`;
+  const first = await kv.setnx(dedupeKey, '1');
+  if (!first) return false;
 
-  await sql`
-    CREATE TABLE IF NOT EXISTS data_licenses (
-      id BIGSERIAL PRIMARY KEY,
-      tier TEXT NOT NULL CHECK (tier IN ('journalist', 'commercial')),
-      email TEXT NOT NULL DEFAULT '',
-      stripe_session_id TEXT UNIQUE,
-      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-    );
-  `;
+  const existing =
+    (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
+
+  const entry = { name, url: url || '' };
+  if (tier === 'founding') entry.description = description || '';
+
+  const next = {
+    founding: existing.founding || [],
+    sustainer: existing.sustainer || [],
+    supporter: existing.supporter || [],
+  };
+  if (!next[tier]) return false;
+  next[tier] = [entry, ...next[tier]].slice(0, 500);
+
+  await kv.set('patrons:v1', next);
+  return true;
+}
+
+async function recordLicense({ tier, email, stripeSessionId }) {
+  const key = `data_license_session:${stripeSessionId}`;
+  await kv.set(key, JSON.stringify({ tier, email: email || '', created_at: new Date().toISOString() }));
+  return true;
 }
 
 module.exports = async (req, res) => {
@@ -82,8 +87,6 @@ module.exports = async (req, res) => {
   const metadata = session.metadata || {};
 
   try {
-    await ensureSchema();
-
     const stripeSessionId = session.id;
 
     const kind = metadata.kind;
@@ -95,12 +98,7 @@ module.exports = async (req, res) => {
       }
 
       const email = session.customer_details?.email || '';
-      await sql`
-        INSERT INTO data_licenses (tier, email, stripe_session_id)
-        VALUES (${tier}, ${email}, ${stripeSessionId})
-        ON CONFLICT (stripe_session_id)
-        DO NOTHING;
-      `;
+      await recordLicense({ tier, email, stripeSessionId });
 
       console.log(`Data license recorded: ${email || 'unknown'} (${tier})`);
       return res.status(200).json({ success: true, kind, tier });
@@ -117,12 +115,7 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: 'Missing patron info' });
     }
 
-    await sql`
-      INSERT INTO patrons (tier, name, url, description, stripe_session_id)
-      VALUES (${tier}, ${name}, ${url}, ${description}, ${stripeSessionId})
-      ON CONFLICT (stripe_session_id)
-      DO NOTHING;
-    `;
+    await recordPatron({ tier, name, url, description, stripeSessionId });
 
     console.log(`Patron recorded: ${name} (${tier})`);
     return res.status(200).json({ success: true, kind: 'patron', patron: name, tier });

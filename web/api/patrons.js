@@ -1,18 +1,4 @@
-const { sql } = require('@vercel/postgres');
-
-async function ensureSchema() {
-  await sql`
-    CREATE TABLE IF NOT EXISTS patrons (
-      id BIGSERIAL PRIMARY KEY,
-      tier TEXT NOT NULL CHECK (tier IN ('supporter', 'sustainer', 'founding')),
-      name TEXT NOT NULL,
-      url TEXT NOT NULL DEFAULT '',
-      description TEXT NOT NULL DEFAULT '',
-      stripe_session_id TEXT UNIQUE,
-      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-    );
-  `;
-}
+const { kv } = require('@vercel/kv');
 
 module.exports = async (req, res) => {
   if (req.method !== 'GET') {
@@ -20,23 +6,8 @@ module.exports = async (req, res) => {
   }
 
   try {
-    await ensureSchema();
-
-    const { rows } = await sql`
-      SELECT tier, name, url, description
-      FROM patrons
-      ORDER BY created_at DESC, id DESC
-      LIMIT 250;
-    `;
-
-    const patrons = { founding: [], sustainer: [], supporter: [] };
-    for (const r of rows) {
-      patrons[r.tier]?.push({
-        name: r.name,
-        url: r.url || '',
-        description: r.description || '',
-      });
-    }
+    const patrons =
+      (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
 
     return res.status(200).json({ patrons });
   } catch (err) {
