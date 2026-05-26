@@ -515,7 +515,7 @@
 
         async function loadPatrons() {
             try {
-                const response = await fetch('/data/patrons.json');
+                const response = await fetch('/api/patrons');
                 if (response.ok) {
                     const data = await response.json();
                     renderPatrons(data.patrons);

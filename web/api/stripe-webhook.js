@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+const { sql } = require('@vercel/postgres');
 
 // Verify Stripe webhook signature
 function verifyStripeSignature(payload, signature, secret) {
@@ -18,6 +19,20 @@ function verifyStripeSignature(payload, signature, secret) {
   );
 }
 
+async function ensureSchema() {
+  await sql`
+    CREATE TABLE IF NOT EXISTS patrons (
+      id BIGSERIAL PRIMARY KEY,
+      tier TEXT NOT NULL CHECK (tier IN ('supporter', 'sustainer', 'founding')),
+      name TEXT NOT NULL,
+      url TEXT NOT NULL DEFAULT '',
+      description TEXT NOT NULL DEFAULT '',
+      stripe_session_id TEXT UNIQUE,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+  `;
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -25,7 +40,6 @@ module.exports = async (req, res) => {
 
   const signature = req.headers['stripe-signature'];
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
-  const githubToken = process.env.GITHUB_TOKEN;
 
   if (!signature || !webhookSecret) {
     return res.status(400).json({ error: 'Missing signature or secret' });
@@ -68,39 +82,23 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'Missing patron info' });
   }
 
-  // Trigger GitHub Actions workflow
+  // Persist patron record (no git commits/deploy required)
   try {
-    const response = await fetch(
-      'https://api.github.com/repos/Latarence/dailyaitoll/actions/workflows/add-patron.yml/dispatches',
-      {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${githubToken}`,
-          'Accept': 'application/vnd.github.v3+json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ref: 'main',
-          inputs: {
-            tier,
-            name,
-            url,
-            description,
-          },
-        }),
-      }
-    );
+    await ensureSchema();
 
-    if (!response.ok) {
-      const error = await response.text();
-      console.error('GitHub API error:', error);
-      return res.status(500).json({ error: 'Failed to trigger workflow' });
-    }
+    const stripeSessionId = session.id;
 
-    console.log(`Patron added: ${name} (${tier})`);
+    await sql`
+      INSERT INTO patrons (tier, name, url, description, stripe_session_id)
+      VALUES (${tier}, ${name}, ${url}, ${description}, ${stripeSessionId})
+      ON CONFLICT (stripe_session_id)
+      DO NOTHING;
+    `;
+
+    console.log(`Patron recorded: ${name} (${tier})`);
     return res.status(200).json({ success: true, patron: name, tier });
   } catch (err) {
-    console.error('Error triggering workflow:', err);
+    console.error('Error recording patron:', err);
     return res.status(500).json({ error: 'Internal error' });
   }
 };
