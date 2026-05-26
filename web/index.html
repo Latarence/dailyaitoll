@@ -15,13 +15,13 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dailyaitoll.com">
     <meta property="og:site_name" content="Daily AI Toll">
-    <meta property="og:image" content="https://dailyaitoll.com/images/logo-dark.png">
-    <meta property="og:image:width" content="1040">
-    <meta property="og:image:height" content="240">
+    <meta property="og:image" content="https://dailyaitoll.com/images/og-image.png">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="622">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Daily AI Toll">
     <meta name="twitter:description" content="A running ledger of the human cost of AI adoption.">
-    <meta name="twitter:image" content="https://dailyaitoll.com/images/logo-dark.png">
+    <meta name="twitter:image" content="https://dailyaitoll.com/images/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
@@ -1213,7 +1213,8 @@
                     const separator = document.createElement('div');
                     separator.className = 'date-separator';
                     if (datePath) {
-                        separator.innerHTML = `<a href="/${datePath}">${displayDate}</a>`;
+                        // Daily pages are emitted as /YYYY/MM/DD/index.html; link to the directory URL.
+                        separator.innerHTML = `<a href="/${datePath}/">${displayDate}</a>`;
                     } else {
                         separator.textContent = displayDate;
                     }
