@@ -21,6 +21,7 @@ jobs:
       issues: write
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -57,9 +58,7 @@ jobs:
         working-directory: web
 
       - name: Upload dataset to Blob (private)
-        if: ${{ secrets.BLOB_READ_WRITE_TOKEN != '' }}
-        env:
-          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+        if: ${{ env.BLOB_READ_WRITE_TOKEN != '' }}
         run: node scripts/upload_dataset_blob.js
 
       - name: Check for anomalies and create issue
