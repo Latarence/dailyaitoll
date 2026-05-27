@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-26T07:02:50.990940+00:00",
+  "last_updated": "2026-05-27T07:53:45.187557+00:00",
   "totals": {
-    "jobs": 406599,
+    "jobs": 407799,
     "teams": 84,
     "products": 0,
-    "companies": 74,
+    "companies": 76,
     "revenue": 0,
-    "labor_hours": -845625920
+    "labor_hours": -848121920
   },
   "today": {
-    "jobs": 0,
+    "jobs": 1200,
     "teams": 0,
     "products": 0,
-    "companies": 0,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -2496000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -514,12 +514,12 @@
       "labor_hours": -3536000
     },
     "2026-05-14": {
-      "jobs": 12175,
+      "jobs": 13375,
       "teams": 24,
       "products": 0,
-      "companies": 5,
+      "companies": 7,
       "revenue": 0,
-      "labor_hours": -25324000
+      "labor_hours": -27820000
     },
     "2026-05-13": {
       "jobs": 600,
@@ -570,7 +570,7 @@
       "labor_hours": -2288000
     }
   },
-  "events_count": 110,
+  "events_count": 112,
   "all_events": [
     {
       "id": "evt_20260521_001",
@@ -851,6 +851,46 @@
       "collected_date": "2026-05-18",
       "date": "2026-05-18",
       "created_at": "2026-05-18T07:50:12.261249+00:00"
+    },
+    {
+      "id": "evt_20260514_006",
+      "event_date": "2026-05-14",
+      "headline": "Coinbase to cut 700 jobs as it transitions into an 'AI-native' company",
+      "source_url": "https://www.techradar.com/pro/freshworks-and-coinbase-announce-more-than-1-in-10-jobs-to-go-as-companies-replace-workforce-with-ai-technologies-tech-company-layoffs-near-100k-in-2026-alone",
+      "source_name": "TechRadar",
+      "excerpt": "Similarly, Coinbase plans to cut 14% of its workforce, or 700 jobs, as it transitions into an 'AI-native' company.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 700,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "Coinbase's layoffs are part of its strategy to become an AI-native company.",
+      "collected_date": "2026-05-27",
+      "date": "2026-05-27",
+      "created_at": "2026-05-27T07:53:45.187665+00:00"
+    },
+    {
+      "id": "evt_20260514_007",
+      "event_date": "2026-05-14",
+      "headline": "Freshworks announces 500 job cuts due to increased use of AI and automation",
+      "source_url": "https://www.techradar.com/pro/freshworks-and-coinbase-announce-more-than-1-in-10-jobs-to-go-as-companies-replace-workforce-with-ai-technologies-tech-company-layoffs-near-100k-in-2026-alone",
+      "source_name": "TechRadar",
+      "excerpt": "Freshworks has announced a reduction of 11% of its workforce, equating to approximately 500 jobs, citing increased use of AI and automation in handling routine tasks.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 500,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "Freshworks' layoffs are attributed to the adoption of AI and automation for routine tasks.",
+      "collected_date": "2026-05-27",
+      "date": "2026-05-27",
+      "created_at": "2026-05-27T07:53:45.187674+00:00"
     },
     {
       "id": "evt_20260513_001",
@@ -2622,57 +2662,56 @@
       "hashtags": "#StackOverflow #GenerativeAI #AILayoffs #Developers",
       "date": "2023-10-16",
       "created_at": "2026-04-27T17:59:55.149601"
-    },
-    {
-      "id": "evt_20231013_qualcomm_229",
-      "event_date": "2023-10-13",
-      "collected_date": "2026-04-27",
-      "headline": "Qualcomm cuts 1,258 jobs",
-      "source_url": "https://www.computerworld.com/article/3708749/qualcomm-to-lay-off-1258-employees.html",
-      "source_name": "Computerworld",
-      "excerpt": "1,258 roles cut from San Diego and Santa Clara offices; revenue down 23% YoY and net income down 52% for the quarter.",
-      "causality": "inferred",
-      "confidence": 0.4,
-      "tolls": {
-        "jobs": 1258,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2616640
-      },
-      "notes": "1,258 roles cut from San Diego and Santa Clara offices; revenue down 23% YoY and net income down 52% for the quarter.",
-      "hashtags": "#Qualcomm #Semiconductors #TechLayoffs #Chips",
-      "date": "2023-10-13",
-      "created_at": "2026-04-27T17:59:55.149635"
-    },
-    {
-      "id": "evt_20230915_airtable_230",
-      "event_date": "2023-09-15",
-      "collected_date": "2026-04-27",
-      "headline": "Airtable cuts 237 jobs",
-      "source_url": "https://www.computerworld.com/article/3706911/airtable-enacts-new-round-of-layoffs.html",
-      "source_name": "Computerworld",
-      "excerpt": "Second layoff round in 9 months; 27% of workforce cut as company refocused on enterprise clients and AI-enhanced platform.",
-      "causality": "inferred",
-      "confidence": 0.6,
-      "tolls": {
-        "jobs": 237,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -492960
-      },
-      "notes": "Second layoff round in 9 months; 27% of workforce cut as company refocused on enterprise clients and AI-enhanced platform.",
-      "hashtags": "#Airtable #LowCode #AILayoffs #TechLayoffs",
-      "date": "2023-09-15",
-      "created_at": "2026-04-27T17:59:55.149670"
     }
   ],
-  "summary": "Today's findings include significant AI-driven workforce reductions at Meta and Standard Chartered, with Meta also reassigning employees to AI-focused roles.",
-  "events": [],
+  "summary": "Recent reports indicate significant job cuts across multiple companies due to AI integration. Intuit, Meta, Cisco, Coinbase, and Freshworks have collectively announced layoffs totaling over 16,000 positions, citing shifts towards AI and automation as primary factors.",
+  "events": [
+    {
+      "id": "evt_20260514_006",
+      "event_date": "2026-05-14",
+      "headline": "Coinbase to cut 700 jobs as it transitions into an 'AI-native' company",
+      "source_url": "https://www.techradar.com/pro/freshworks-and-coinbase-announce-more-than-1-in-10-jobs-to-go-as-companies-replace-workforce-with-ai-technologies-tech-company-layoffs-near-100k-in-2026-alone",
+      "source_name": "TechRadar",
+      "excerpt": "Similarly, Coinbase plans to cut 14% of its workforce, or 700 jobs, as it transitions into an 'AI-native' company.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 700,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "Coinbase's layoffs are part of its strategy to become an AI-native company.",
+      "collected_date": "2026-05-27",
+      "date": "2026-05-27",
+      "created_at": "2026-05-27T07:53:45.187665+00:00"
+    },
+    {
+      "id": "evt_20260514_007",
+      "event_date": "2026-05-14",
+      "headline": "Freshworks announces 500 job cuts due to increased use of AI and automation",
+      "source_url": "https://www.techradar.com/pro/freshworks-and-coinbase-announce-more-than-1-in-10-jobs-to-go-as-companies-replace-workforce-with-ai-technologies-tech-company-layoffs-near-100k-in-2026-alone",
+      "source_name": "TechRadar",
+      "excerpt": "Freshworks has announced a reduction of 11% of its workforce, equating to approximately 500 jobs, citing increased use of AI and automation in handling routine tasks.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 500,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "Freshworks' layoffs are attributed to the adoption of AI and automation for routine tasks.",
+      "collected_date": "2026-05-27",
+      "date": "2026-05-27",
+      "created_at": "2026-05-27T07:53:45.187674+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-26",
-    "last_nonzero_collection": "2026-05-26",
+    "last_openai_success": "2026-05-27",
+    "last_nonzero_collection": "2026-05-27",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-26"
+    "last_collection_date": "2026-05-27"
   }
 }
