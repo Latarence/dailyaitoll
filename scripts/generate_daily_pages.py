@@ -4,7 +4,7 @@
 import json
 from pathlib import Path
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 def load_template():
     """Load the daily page template."""
@@ -101,15 +101,27 @@ def generate_daily_page(date_str, events, template):
     date_short = format_date_short(date_str)
     canonical_url = f'https://dailyaitoll.com/{date_str.replace("-", "/")}'
 
-    # Generate OG description
-    if num_companies == 1:
+    # Generate OG description and events HTML, with empty-day fallback so
+    # /YYYY/MM/DD is always reachable even when the day had zero collected events.
+    if num_companies == 0:
+        og_description = "No AI displacement events recorded on this date."
+        events_html = (
+            '        <div class="entry no-events">\n'
+            '            <div class="entry-main">\n'
+            '                <div class="entry-excerpt">'
+            'No qualifying AI displacement events were recorded on this date. '
+            'See the <a href="/">running ledger</a> for surrounding days.'
+            '</div>\n'
+            '            </div>\n'
+            '        </div>'
+        )
+    elif num_companies == 1:
         company = events[0].get('headline', '').split()[0]
         og_description = f"{company} announces {total_jobs:,} job cuts"
+        events_html = '\n'.join(generate_event_html(e, i) for i, e in enumerate(events))
     else:
         og_description = f"{num_companies} companies announced {total_jobs:,} job cuts"
-
-    # Generate events HTML
-    events_html = '\n'.join(generate_event_html(e, i) for i, e in enumerate(events))
+        events_html = '\n'.join(generate_event_html(e, i) for i, e in enumerate(events))
 
     # Generate share text
     share_text = f"{date_short}: {total_jobs:,} jobs displaced across {num_companies} {'company' if num_companies == 1 else 'companies'}\n\n#AI #Layoffs #Automation #FutureOfWork\n\nVia @DailyAIToll"
@@ -179,7 +191,30 @@ def main():
         total_jobs = sum(e.get('tolls', {}).get('jobs', 0) for e in date_events)
         print(f"  {date_str}: {len(date_events)} events, {total_jobs:,} jobs → {output_path.relative_to(base_dir)}")
 
-    print(f"\nGenerated {pages_generated} daily pages")
+    # Fill in placeholder pages for any missing dates between the earliest
+    # collected date and today (UTC). Without this, days where the collector
+    # found zero events return a 404 even though the site is operating.
+    placeholders_generated = 0
+    try:
+        sorted_dates = sorted(by_date.keys())
+        first_date = datetime.strptime(sorted_dates[0], "%Y-%m-%d").date()
+        today = datetime.now(timezone.utc).date()
+        cur = first_date
+        while cur <= today:
+            date_str = cur.isoformat()
+            if date_str not in by_date:
+                year, month, day = date_str.split('-')
+                output_path = web_dir / year / month / day / "index.html"
+                if not output_path.exists():
+                    output_path.parent.mkdir(parents=True, exist_ok=True)
+                    output_path.write_text(generate_daily_page(date_str, [], template))
+                    placeholders_generated += 1
+                    print(f"  {date_str}: placeholder (0 events) → {output_path.relative_to(base_dir)}")
+            cur += timedelta(days=1)
+    except (ValueError, IndexError) as e:
+        print(f"WARNING: skipping placeholder fill: {e}")
+
+    print(f"\nGenerated {pages_generated} daily pages ({placeholders_generated} placeholders)")
     return 0
 
 if __name__ == "__main__":

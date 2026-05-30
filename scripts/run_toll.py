@@ -31,8 +31,18 @@ MAX_JOBS_PER_EVENT = 100000         # Sanity check - reject if above this
 MAX_RETRIES = 2                     # Retries per provider before fallback
 RETRY_DELAY_SECONDS = 5             # Delay between retries
 
-# Model configuration (update these when models change)
-ANTHROPIC_MODEL = "claude-sonnet-4-latest"
+# Model configuration (update these when models change).
+#
+# ANTHROPIC_MODELS is tried in order; the first one the API recognizes wins.
+# Including both "-latest" aliases and pinned IDs means a single retired model
+# no longer breaks collection — the next one in the list takes over.
+ANTHROPIC_MODELS = [
+    "claude-opus-4-7",
+    "claude-sonnet-4-6",
+    "claude-sonnet-4-latest",
+    "claude-haiku-4-5",
+]
+ANTHROPIC_MODEL = ANTHROPIC_MODELS[0]  # back-compat; first preference
 ANTHROPIC_SEARCH_TOOL = "web_search_20260209"
 OPENAI_MODEL = "gpt-4o"
 
@@ -224,10 +234,25 @@ If no NEW events found:
 Search now and return JSON only."""
 
 
+def _is_model_not_found(err: Exception) -> bool:
+    """True when an API error indicates the model ID is unrecognized.
+
+    We use duck typing so this works across SDK versions/exception classes.
+    """
+    if getattr(err, "status_code", None) == 404:
+        return True
+    msg = str(err).lower()
+    return "not_found" in msg or "model:" in msg or "does not exist" in msg
+
+
 def call_anthropic(prompt: str) -> tuple[str, dict]:
     """Call Anthropic Claude API with web search enabled.
 
-    Returns: (response_text, usage_info)
+    Walks ANTHROPIC_MODELS in order so a retired/renamed model just falls
+    through to the next candidate rather than killing the whole collection run.
+
+    Returns: (response_text, usage_info). usage_info includes a `search_calls`
+    count so the caller can detect "model answered without browsing" cases.
     """
     try:
         import anthropic
@@ -240,7 +265,6 @@ def call_anthropic(prompt: str) -> tuple[str, dict]:
 
     # Anthropic's built-in web search tool schema/version has changed over time.
     # Try a few known variants before giving up (caller may fallback to OpenAI).
-    last_err = None
     tool_variants = [
         # Current repo config (versioned tool type plus legacy fields)
         [{"type": ANTHROPIC_SEARCH_TOOL, "name": "web_search", "allowed_callers": ["direct"]}],
@@ -252,37 +276,59 @@ def call_anthropic(prompt: str) -> tuple[str, dict]:
         None,
     ]
 
+    last_err = None
     message = None
-    for tools in tool_variants:
-        try:
-            kwargs = {
-                "model": ANTHROPIC_MODEL,
-                "max_tokens": MAX_TOKENS_RESPONSE,
-                "messages": [{"role": "user", "content": prompt}],
-            }
-            if tools is not None:
-                kwargs["tools"] = tools
-            message = client.messages.create(**kwargs)
+    chosen_model = None
+    for model in ANTHROPIC_MODELS:
+        model_unrecognized = False
+        for tools in tool_variants:
+            try:
+                kwargs = {
+                    "model": model,
+                    "max_tokens": MAX_TOKENS_RESPONSE,
+                    "messages": [{"role": "user", "content": prompt}],
+                }
+                if tools is not None:
+                    kwargs["tools"] = tools
+                message = client.messages.create(**kwargs)
+                chosen_model = model
+                break
+            except Exception as e:
+                last_err = e
+                message = None
+                if _is_model_not_found(e):
+                    # No point trying other tool variants on a model the API
+                    # doesn't know — move on to the next model.
+                    print(f"  Anthropic model '{model}' not recognized, trying next…")
+                    model_unrecognized = True
+                    break
+                # Otherwise it's likely a tool-schema issue; try the next variant.
+        if message is not None:
             break
-        except Exception as e:
-            last_err = e
-            message = None
+        if not model_unrecognized:
+            # Errors weren't "model missing" — same outcome on other models, bail.
+            break
 
     if message is None:
         raise last_err
 
-    # Extract text from response (may include tool use blocks)
+    # Extract text and count actual tool invocations. A response with 0
+    # tool_use blocks means the model didn't browse; caller may treat that
+    # as suspicious if it also produced 0 events.
     result = ""
+    search_calls = 0
     for block in message.content:
         if hasattr(block, "text"):
             result += block.text
+        if getattr(block, "type", "") == "tool_use":
+            search_calls += 1
 
-    # Track token usage
     usage = {
         "provider": "anthropic",
-        "model": ANTHROPIC_MODEL,
+        "model": chosen_model,
         "input_tokens": getattr(message.usage, "input_tokens", 0),
         "output_tokens": getattr(message.usage, "output_tokens", 0),
+        "search_calls": search_calls,
     }
 
     return result, usage
@@ -325,20 +371,27 @@ def call_openai(prompt: str) -> tuple[str, dict]:
     if response is None:
         raise last_err
 
-    # Extract text from response
+    # Extract text and count actual web_search invocations. The Responses API
+    # surfaces tool calls as items in `response.output` with type containing
+    # "search" (e.g. "web_search_call"). Zero such items + zero events = the
+    # model answered from training data instead of browsing.
     result = ""
+    search_calls = 0
     for item in response.output:
+        item_type = getattr(item, "type", "") or ""
+        if "search" in item_type.lower():
+            search_calls += 1
         if hasattr(item, "content"):
             for block in item.content:
                 if hasattr(block, "text"):
                     result += block.text
 
-    # Track token usage (OpenAI responses API format)
     usage = {
         "provider": "openai",
         "model": OPENAI_MODEL,
         "input_tokens": getattr(response, "input_tokens", 0),
         "output_tokens": getattr(response, "output_tokens", 0),
+        "search_calls": search_calls,
     }
 
     return result, usage
@@ -358,6 +411,22 @@ def call_with_retry(call_fn, prompt: str, provider_name: str) -> tuple[str, dict
                 time.sleep(RETRY_DELAY_SECONDS)
 
     raise last_error
+
+
+def _looks_like_silent_search_failure(response: str, usage: dict) -> bool:
+    """Heuristic: a provider that returns 0 events without ever invoking its
+    web_search tool almost certainly answered from training data rather than
+    actually browsing. Treat that as a soft failure so we try the next
+    provider instead of accepting a fake "quiet day".
+    """
+    if usage.get("search_calls", 0) > 0:
+        return False
+    try:
+        parsed = parse_response(response)
+    except Exception:
+        return True  # unparseable + no search calls = definitely broken
+    events = parsed.get("events") or []
+    return len(events) == 0
 
 
 def call_llm(prompt: str) -> tuple[str, dict, dict]:
@@ -381,6 +450,7 @@ def call_llm(prompt: str) -> tuple[str, dict, dict]:
         "openai_error": None,
         "used_fallback": False,
         "provider_used": None,
+        "silent_search_failure": False,
     }
 
     # Try primary provider first, fallback to secondary
@@ -391,14 +461,38 @@ def call_llm(prompt: str) -> tuple[str, dict, dict]:
         providers.append(("openai", "OpenAI GPT-4", call_openai))
 
     last_error = None
+    # If a provider returns a parseable-but-suspicious response (no search
+    # calls, no events) we hold onto it so we can still surface *something*
+    # if every other provider also fails or is also suspicious.
+    held_response = None  # (response, usage, provider_key, idx)
+
     for i, (provider_key, provider_name, call_fn) in enumerate(providers):
         print(f"Trying {provider_name}...")
         try:
             response, usage = call_with_retry(call_fn, prompt, provider_name)
-            print(f"  Success! Tokens: {usage.get('input_tokens', '?')} in, {usage.get('output_tokens', '?')} out")
-            status["provider_used"] = provider_key
-            status["used_fallback"] = i > 0
-            return response, usage, status
+            print(
+                f"  Success! Tokens: {usage.get('input_tokens', '?')} in, "
+                f"{usage.get('output_tokens', '?')} out, "
+                f"search_calls: {usage.get('search_calls', '?')}"
+            )
+
+            if _looks_like_silent_search_failure(response, usage):
+                print(
+                    f"  WARNING: {provider_name} returned 0 events with 0 "
+                    f"search calls — likely answered from training data."
+                )
+                status[f"{provider_key}_failed"] = True
+                status[f"{provider_key}_error"] = "silent search failure (0 events, 0 tool calls)"
+                if held_response is None:
+                    held_response = (response, usage, provider_key, i)
+                if i < len(providers) - 1:
+                    print("  Falling back to next provider...")
+                    continue
+                # No more providers — fall through to held-response handling.
+            else:
+                status["provider_used"] = provider_key
+                status["used_fallback"] = i > 0
+                return response, usage, status
         except Exception as e:
             last_error = e
             status[f"{provider_key}_failed"] = True
@@ -406,6 +500,20 @@ def call_llm(prompt: str) -> tuple[str, dict, dict]:
             print(f"  {provider_name} failed after {MAX_RETRIES} retries: {e}")
             if i < len(providers) - 1:
                 print("  Falling back to next provider...")
+
+    # Every provider either raised or looked silently broken. Prefer returning
+    # the silent-broken response (it might still be a legitimate quiet day)
+    # over raising and zeroing the whole run.
+    if held_response is not None:
+        response, usage, provider_key, i = held_response
+        status["provider_used"] = provider_key
+        status["used_fallback"] = i > 0
+        status["silent_search_failure"] = True
+        print(
+            f"  All providers suspicious. Accepting {provider_key} response "
+            f"(may be a genuine zero-event day)."
+        )
+        return response, usage, status
 
     raise RuntimeError(f"All providers failed. Last error: {last_error}")
 
@@ -580,9 +688,17 @@ def update_data(result: dict, rollup: dict) -> dict:
     rollup["summary"] = result.get("summary", "")
     rollup["events"] = new_events
 
-    # Add new events to all_events and sort by event_date descending
+    # Add new events to all_events and sort by collected_date descending so the
+    # homepage (which groups entries by collected_date) renders date separators
+    # in monotonically decreasing order. event_date is the tiebreaker.
     rollup["all_events"] = rollup.get("all_events", []) + new_events
-    rollup["all_events"].sort(key=lambda e: e.get("event_date", ""), reverse=True)
+    rollup["all_events"].sort(
+        key=lambda e: (
+            e.get("collected_date") or e.get("date") or e.get("event_date") or "",
+            e.get("event_date") or "",
+        ),
+        reverse=True,
+    )
 
     # Keep only last 100 events in all_events for the dashboard
     rollup["all_events"] = rollup["all_events"][:100]

@@ -7,7 +7,37 @@ from pathlib import Path
 # Add scripts to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
-from run_toll import parse_response, validate_event, filter_events
+from run_toll import (
+    parse_response,
+    validate_event,
+    filter_events,
+    _looks_like_silent_search_failure,
+)
+
+
+def test_silent_failure_zero_events_zero_search():
+    """0 events + 0 tool calls = likely a fake "quiet day"."""
+    response = '{"collected_date": "2026-05-29", "events": [], "summary": "none"}'
+    assert _looks_like_silent_search_failure(response, {"search_calls": 0}) is True
+
+
+def test_silent_failure_zero_events_but_searched():
+    """0 events but the model actually browsed = legitimate quiet day."""
+    response = '{"collected_date": "2026-05-29", "events": [], "summary": "none"}'
+    assert _looks_like_silent_search_failure(response, {"search_calls": 3}) is False
+
+
+def test_silent_failure_events_present():
+    """Any events at all means not a silent failure regardless of tool count."""
+    response = (
+        '{"collected_date": "2026-05-29", "events": [{"headline": "x"}], "summary": "ok"}'
+    )
+    assert _looks_like_silent_search_failure(response, {"search_calls": 0}) is False
+
+
+def test_silent_failure_unparseable():
+    """Garbage response + no tool calls is the worst case — treat as broken."""
+    assert _looks_like_silent_search_failure("not json at all", {"search_calls": 0}) is True
 
 
 def test_parse_pure_json():

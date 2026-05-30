@@ -641,6 +641,46 @@
       "created_at": "2026-05-29T07:42:57.915308+00:00"
     },
     {
+      "id": "evt_20260514_006",
+      "event_date": "2026-05-14",
+      "headline": "Coinbase to cut 700 jobs as it transitions into an 'AI-native' company",
+      "source_url": "https://www.techradar.com/pro/freshworks-and-coinbase-announce-more-than-1-in-10-jobs-to-go-as-companies-replace-workforce-with-ai-technologies-tech-company-layoffs-near-100k-in-2026-alone",
+      "source_name": "TechRadar",
+      "excerpt": "Similarly, Coinbase plans to cut 14% of its workforce, or 700 jobs, as it transitions into an 'AI-native' company.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 700,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "Coinbase's layoffs are part of its strategy to become an AI-native company.",
+      "collected_date": "2026-05-27",
+      "date": "2026-05-27",
+      "created_at": "2026-05-27T07:53:45.187665+00:00"
+    },
+    {
+      "id": "evt_20260514_007",
+      "event_date": "2026-05-14",
+      "headline": "Freshworks announces 500 job cuts due to increased use of AI and automation",
+      "source_url": "https://www.techradar.com/pro/freshworks-and-coinbase-announce-more-than-1-in-10-jobs-to-go-as-companies-replace-workforce-with-ai-technologies-tech-company-layoffs-near-100k-in-2026-alone",
+      "source_name": "TechRadar",
+      "excerpt": "Freshworks has announced a reduction of 11% of its workforce, equating to approximately 500 jobs, citing increased use of AI and automation in handling routine tasks.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 500,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "Freshworks' layoffs are attributed to the adoption of AI and automation for routine tasks.",
+      "collected_date": "2026-05-27",
+      "date": "2026-05-27",
+      "created_at": "2026-05-27T07:53:45.187674+00:00"
+    },
+    {
       "id": "evt_20260521_001",
       "event_date": "2026-05-21",
       "headline": "Cloudflare CEO announces 20% workforce reduction due to AI efficiencies",
@@ -661,64 +701,24 @@
       "created_at": "2026-05-25T08:08:59.768439+00:00"
     },
     {
-      "id": "evt_20260520_001",
+      "id": "evt_20260520_006",
       "event_date": "2026-05-20",
-      "headline": "Meta lays off 8,000 employees, shifts focus to AI initiatives",
-      "source_url": "https://www.republicworld.com/tech/metas-brutal-ai-reset-layoffs-transfers-and-managerial-cuts-set-to-hit-workers-on-may-20-2026-05-19-124856",
-      "source_name": "Republic World",
-      "excerpt": "Meta is laying off 10% of staff and moving thousands to AI units as part of a sweeping restructuring, sparking employee protests over privacy and job cuts.",
+      "headline": "Meta lays off 8,000 employees, shifts focus to AI",
+      "source_url": "https://www.androidcentral.com/apps-software/meta/meta-chops-8-000-in-may-layoff-spree-and-its-only-getting-worse",
+      "source_name": "Android Central",
+      "excerpt": "Meta carried out another significant round of layoffs, cutting 8,000 employees in three waves as part of a planned 10% workforce reduction. This decision, communicated through early-morning emails, added to a growing trend of job cuts at the company dating back to 2022, contributing to low morale among workers. The moves are part of a major shift in focus towards AI development, with an additional 7,000 roles expected to be restructured for AI initiatives.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
         "jobs": 8000,
-        "teams": 0,
+        "teams": null,
         "companies": 1,
         "labor_hours": -16640000
       },
       "notes": "Part of a broader AI-focused restructuring",
-      "collected_date": "2026-05-20",
-      "date": "2026-05-20",
-      "created_at": "2026-05-20T07:32:46.660000+00:00"
-    },
-    {
-      "id": "evt_20260520_002",
-      "event_date": "2026-05-20",
-      "headline": "Intuit to lay off over 3,000 employees to refocus on AI",
-      "source_url": "https://techcrunch.com/2026/05/20/intuit-to-lay-off-over-3000-employees-to-refocus-on-ai/",
-      "source_name": "TechCrunch",
-      "excerpt": "Enterprise software giant Intuit is letting 17% of its staff go, or about 3,000 people, as it seeks to divert resources toward baking AI into its products, Reuters reported, citing an internal memo sent to employees.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 3000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -6240000
-      },
-      "notes": "Layoffs aimed at simplifying corporate structure and focusing on AI efforts.",
-      "collected_date": "2026-05-21",
-      "date": "2026-05-21",
-      "created_at": "2026-05-21T07:38:52.448592+00:00"
-    },
-    {
-      "id": "evt_20260520_003",
-      "event_date": "2026-05-20",
-      "headline": "Meta begins 8,000 job cuts in AI efficiency push",
-      "source_url": "https://www.latimes.com/business/story/2026-05-20/meta-begins-8-000-global-job-cuts-in-ai-efficiency-push",
-      "source_name": "Los Angeles Times",
-      "excerpt": "Meta Platforms Inc. is alerting thousands of employees that they\u2019re being laid off, part of a previously announced restructuring aimed at reducing costs while the company invests heavily in artificial intelligence.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 8000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -16640000
-      },
-      "notes": "Layoffs are part of a restructuring to reduce costs and invest in AI.",
-      "collected_date": "2026-05-21",
-      "date": "2026-05-21",
-      "created_at": "2026-05-21T07:38:52.448613+00:00"
+      "collected_date": "2026-05-24",
+      "date": "2026-05-24",
+      "created_at": "2026-05-24T06:52:27.220477+00:00"
     },
     {
       "id": "evt_20260520_004",
@@ -761,12 +761,32 @@
       "created_at": "2026-05-22T07:33:07.715824+00:00"
     },
     {
-      "id": "evt_20260520_006",
+      "id": "evt_20260520_002",
       "event_date": "2026-05-20",
-      "headline": "Meta lays off 8,000 employees, shifts focus to AI",
-      "source_url": "https://www.androidcentral.com/apps-software/meta/meta-chops-8-000-in-may-layoff-spree-and-its-only-getting-worse",
-      "source_name": "Android Central",
-      "excerpt": "Meta carried out another significant round of layoffs, cutting 8,000 employees in three waves as part of a planned 10% workforce reduction. This decision, communicated through early-morning emails, added to a growing trend of job cuts at the company dating back to 2022, contributing to low morale among workers. The moves are part of a major shift in focus towards AI development, with an additional 7,000 roles expected to be restructured for AI initiatives.",
+      "headline": "Intuit to lay off over 3,000 employees to refocus on AI",
+      "source_url": "https://techcrunch.com/2026/05/20/intuit-to-lay-off-over-3000-employees-to-refocus-on-ai/",
+      "source_name": "TechCrunch",
+      "excerpt": "Enterprise software giant Intuit is letting 17% of its staff go, or about 3,000 people, as it seeks to divert resources toward baking AI into its products, Reuters reported, citing an internal memo sent to employees.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 3000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -6240000
+      },
+      "notes": "Layoffs aimed at simplifying corporate structure and focusing on AI efforts.",
+      "collected_date": "2026-05-21",
+      "date": "2026-05-21",
+      "created_at": "2026-05-21T07:38:52.448592+00:00"
+    },
+    {
+      "id": "evt_20260520_003",
+      "event_date": "2026-05-20",
+      "headline": "Meta begins 8,000 job cuts in AI efficiency push",
+      "source_url": "https://www.latimes.com/business/story/2026-05-20/meta-begins-8-000-global-job-cuts-in-ai-efficiency-push",
+      "source_name": "Los Angeles Times",
+      "excerpt": "Meta Platforms Inc. is alerting thousands of employees that they\u2019re being laid off, part of a previously announced restructuring aimed at reducing costs while the company invests heavily in artificial intelligence.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
@@ -775,10 +795,30 @@
         "companies": 1,
         "labor_hours": -16640000
       },
+      "notes": "Layoffs are part of a restructuring to reduce costs and invest in AI.",
+      "collected_date": "2026-05-21",
+      "date": "2026-05-21",
+      "created_at": "2026-05-21T07:38:52.448613+00:00"
+    },
+    {
+      "id": "evt_20260520_001",
+      "event_date": "2026-05-20",
+      "headline": "Meta lays off 8,000 employees, shifts focus to AI initiatives",
+      "source_url": "https://www.republicworld.com/tech/metas-brutal-ai-reset-layoffs-transfers-and-managerial-cuts-set-to-hit-workers-on-may-20-2026-05-19-124856",
+      "source_name": "Republic World",
+      "excerpt": "Meta is laying off 10% of staff and moving thousands to AI units as part of a sweeping restructuring, sparking employee protests over privacy and job cuts.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8000,
+        "teams": 0,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
       "notes": "Part of a broader AI-focused restructuring",
-      "collected_date": "2026-05-24",
-      "date": "2026-05-24",
-      "created_at": "2026-05-24T06:52:27.220477+00:00"
+      "collected_date": "2026-05-20",
+      "date": "2026-05-20",
+      "created_at": "2026-05-20T07:32:46.660000+00:00"
     },
     {
       "id": "evt_20260518_001",
@@ -821,66 +861,6 @@
       "created_at": "2026-05-18T07:50:12.261212+00:00"
     },
     {
-      "id": "evt_20260514_001",
-      "event_date": "2026-05-14",
-      "headline": "Cisco to cut nearly 4,000 jobs in AI-focused restructuring as orders surge",
-      "source_url": "https://www.business-standard.com/world-news/cisco-to-cut-nearly-4-000-jobs-in-ai-focused-restructuring-as-orders-surge-126051400091_1.html",
-      "source_name": "Business Standard",
-      "excerpt": "Cisco said on Wednesday it would cut nearly 4,000 jobs, as part of a restructuring aimed at shifting investment toward artificial intelligence and related growth areas, and raised its annual revenue forecast after a surge in hyperscaler orders.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 4000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -8320000
-      },
-      "notes": "Strategic shift towards AI investments",
-      "collected_date": "2026-05-14",
-      "date": "2026-05-14",
-      "created_at": "2026-05-14T06:39:15.960330+00:00"
-    },
-    {
-      "id": "evt_20260514_002",
-      "event_date": "2026-05-14",
-      "headline": "Cisco announces 4,000 job cuts amid AI-focused restructuring",
-      "source_url": "https://www.techradar.com/pro/we-are-making-clear-strategic-investments-cisco-cuts-4-000-jobs-even-as-ai-orders-surge",
-      "source_name": "TechRadar",
-      "excerpt": "Cisco has announced it will lay off approximately 4,000 employees, equivalent to 5% of its global workforce, as part of a strategic restructuring to prioritize high-growth areas including AI infrastructure.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 4000,
-        "teams": 10,
-        "companies": 1,
-        "labor_hours": -8320000
-      },
-      "notes": "Strategic realignment towards AI and cybersecurity",
-      "collected_date": "2026-05-16",
-      "date": "2026-05-16",
-      "created_at": "2026-05-16T06:13:47.847595+00:00"
-    },
-    {
-      "id": "evt_20260514_003",
-      "event_date": "2026-05-14",
-      "headline": "Dune cuts 25% of staff citing AI efficiencies",
-      "source_url": "https://www.theblock.co/post/401322/crypto-data-firm-dune-cuts-25-of-staff-citing-ai-efficiencies",
-      "source_name": "The Block",
-      "excerpt": "Dune CEO Fredrik Haga announced the firm let 25% of the team go this week, in part citing its heavy investment in AI-powered tools.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 25,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -52000
-      },
-      "notes": "Restructuring to focus on core data products",
-      "collected_date": "2026-05-17",
-      "date": "2026-05-17",
-      "created_at": "2026-05-17T06:37:48.725005+00:00"
-    },
-    {
       "id": "evt_20260514_004",
       "event_date": "2026-05-14",
       "headline": "Cisco announces record revenue and 4,000 layoffs in the same day",
@@ -921,44 +901,84 @@
       "created_at": "2026-05-18T07:50:12.261249+00:00"
     },
     {
-      "id": "evt_20260514_006",
+      "id": "evt_20260514_003",
       "event_date": "2026-05-14",
-      "headline": "Coinbase to cut 700 jobs as it transitions into an 'AI-native' company",
-      "source_url": "https://www.techradar.com/pro/freshworks-and-coinbase-announce-more-than-1-in-10-jobs-to-go-as-companies-replace-workforce-with-ai-technologies-tech-company-layoffs-near-100k-in-2026-alone",
-      "source_name": "TechRadar",
-      "excerpt": "Similarly, Coinbase plans to cut 14% of its workforce, or 700 jobs, as it transitions into an 'AI-native' company.",
+      "headline": "Dune cuts 25% of staff citing AI efficiencies",
+      "source_url": "https://www.theblock.co/post/401322/crypto-data-firm-dune-cuts-25-of-staff-citing-ai-efficiencies",
+      "source_name": "The Block",
+      "excerpt": "Dune CEO Fredrik Haga announced the firm let 25% of the team go this week, in part citing its heavy investment in AI-powered tools.",
       "causality": "direct",
-      "confidence": 0.85,
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 700,
-        "teams": null,
+        "jobs": 25,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": -1456000
+        "labor_hours": -52000
       },
-      "notes": "Coinbase's layoffs are part of its strategy to become an AI-native company.",
-      "collected_date": "2026-05-27",
-      "date": "2026-05-27",
-      "created_at": "2026-05-27T07:53:45.187665+00:00"
+      "notes": "Restructuring to focus on core data products",
+      "collected_date": "2026-05-17",
+      "date": "2026-05-17",
+      "created_at": "2026-05-17T06:37:48.725005+00:00"
     },
     {
-      "id": "evt_20260514_007",
+      "id": "evt_20260514_002",
       "event_date": "2026-05-14",
-      "headline": "Freshworks announces 500 job cuts due to increased use of AI and automation",
-      "source_url": "https://www.techradar.com/pro/freshworks-and-coinbase-announce-more-than-1-in-10-jobs-to-go-as-companies-replace-workforce-with-ai-technologies-tech-company-layoffs-near-100k-in-2026-alone",
+      "headline": "Cisco announces 4,000 job cuts amid AI-focused restructuring",
+      "source_url": "https://www.techradar.com/pro/we-are-making-clear-strategic-investments-cisco-cuts-4-000-jobs-even-as-ai-orders-surge",
       "source_name": "TechRadar",
-      "excerpt": "Freshworks has announced a reduction of 11% of its workforce, equating to approximately 500 jobs, citing increased use of AI and automation in handling routine tasks.",
+      "excerpt": "Cisco has announced it will lay off approximately 4,000 employees, equivalent to 5% of its global workforce, as part of a strategic restructuring to prioritize high-growth areas including AI infrastructure.",
       "causality": "direct",
-      "confidence": 0.85,
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 500,
+        "jobs": 4000,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -8320000
+      },
+      "notes": "Strategic realignment towards AI and cybersecurity",
+      "collected_date": "2026-05-16",
+      "date": "2026-05-16",
+      "created_at": "2026-05-16T06:13:47.847595+00:00"
+    },
+    {
+      "id": "evt_20260508_001",
+      "event_date": "2026-05-08",
+      "headline": "Cloudflare cuts 1,100 jobs citing increased AI usage",
+      "source_url": "https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/",
+      "source_name": "TechCrunch",
+      "excerpt": "Cloudflare announced it was cutting its workforce by approximately 20%, which equates to 1,100 people, attributing the layoffs to a 600% increase in AI usage over the past three months.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 1100,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -2288000
+      },
+      "notes": "First mass layoff in company's 16-year history",
+      "collected_date": "2026-05-16",
+      "date": "2026-05-16",
+      "created_at": "2026-05-16T06:13:47.847615+00:00"
+    },
+    {
+      "id": "evt_20260514_001",
+      "event_date": "2026-05-14",
+      "headline": "Cisco to cut nearly 4,000 jobs in AI-focused restructuring as orders surge",
+      "source_url": "https://www.business-standard.com/world-news/cisco-to-cut-nearly-4-000-jobs-in-ai-focused-restructuring-as-orders-surge-126051400091_1.html",
+      "source_name": "Business Standard",
+      "excerpt": "Cisco said on Wednesday it would cut nearly 4,000 jobs, as part of a restructuring aimed at shifting investment toward artificial intelligence and related growth areas, and raised its annual revenue forecast after a surge in hyperscaler orders.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 4000,
         "teams": null,
         "companies": 1,
-        "labor_hours": -1040000
+        "labor_hours": -8320000
       },
-      "notes": "Freshworks' layoffs are attributed to the adoption of AI and automation for routine tasks.",
-      "collected_date": "2026-05-27",
-      "date": "2026-05-27",
-      "created_at": "2026-05-27T07:53:45.187674+00:00"
+      "notes": "Strategic shift towards AI investments",
+      "collected_date": "2026-05-14",
+      "date": "2026-05-14",
+      "created_at": "2026-05-14T06:39:15.960330+00:00"
     },
     {
       "id": "evt_20260513_001",
@@ -979,6 +999,26 @@
       "collected_date": "2026-05-14",
       "date": "2026-05-14",
       "created_at": "2026-05-14T06:39:15.960352+00:00"
+    },
+    {
+      "id": "evt_20260507_007",
+      "event_date": "2026-05-07",
+      "headline": "Cloudflare cuts 1,100 jobs amid AI-driven restructuring",
+      "source_url": "https://www.latimes.com/business/story/2026-05-07/california-tech-company-cloudflare-to-lay-off-more-than-1-000-workers-cites-ai",
+      "source_name": "Los Angeles Times",
+      "excerpt": "Cloudflare is laying off 20% of its staff, the latest technology company to announce big cuts as it uses more artificial intelligence-powered tools.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 1100,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -2288000
+      },
+      "notes": "Restructuring for the 'agentic AI era'",
+      "collected_date": "2026-05-13",
+      "date": "2026-05-13",
+      "created_at": "2026-05-13T06:40:42.237285+00:00"
     },
     {
       "id": "evt_20260511_001",
@@ -1019,86 +1059,6 @@
       "collected_date": "2026-05-12",
       "date": "2026-05-12",
       "created_at": "2026-05-12T06:30:24.623908+00:00"
-    },
-    {
-      "id": "evt_20260508_001",
-      "event_date": "2026-05-08",
-      "headline": "Cloudflare cuts 1,100 jobs citing increased AI usage",
-      "source_url": "https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/",
-      "source_name": "TechCrunch",
-      "excerpt": "Cloudflare announced it was cutting its workforce by approximately 20%, which equates to 1,100 people, attributing the layoffs to a 600% increase in AI usage over the past three months.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 1100,
-        "teams": 5,
-        "companies": 1,
-        "labor_hours": -2288000
-      },
-      "notes": "First mass layoff in company's 16-year history",
-      "collected_date": "2026-05-16",
-      "date": "2026-05-16",
-      "created_at": "2026-05-16T06:13:47.847615+00:00"
-    },
-    {
-      "id": "evt_20260507_001",
-      "event_date": "2026-05-07",
-      "headline": "Freshworks lays off 500 employees citing AI writing half their code",
-      "source_url": "https://www.peoplematters.in/news/strategic-hr/software-firm-freshworks-announces-layoffs-tied-to-ai-transformation-cuts-500-jobs-49578",
-      "source_name": "People Matters",
-      "excerpt": "<cite index=\"11-1\">\"Over half of our code is written by AI.\" \u2014 Freshworks CEO Dennis Woodside</cite>",
-      "causality": "direct",
-      "confidence": 0.95,
-      "tolls": {
-        "jobs": 500,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -1040000
-      },
-      "notes": "Q1 2026 restructuring; CEO explicitly cited AI writing majority of code",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777486+00:00"
-    },
-    {
-      "id": "evt_20260507_002",
-      "event_date": "2026-05-07",
-      "headline": "DeepL cuts 250 jobs citing massive AI structural shift",
-      "source_url": "https://www.bloomberg.com/news/articles/2026-05-07/google-translate-rival-deepl-announces-plans-to-cut-25-of-staff",
-      "source_name": "Bloomberg",
-      "excerpt": "<cite index=\"35-4\">\"massive structural shift\" from artificial intelligence</cite>",
-      "causality": "direct",
-      "confidence": 0.92,
-      "tolls": {
-        "jobs": 250,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -520000
-      },
-      "notes": "25% workforce reduction at German translation unicorn",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777519+00:00"
-    },
-    {
-      "id": "evt_20260507_003",
-      "event_date": "2026-05-07",
-      "headline": "Cloudflare cuts 1,100 jobs citing 600% surge in AI usage",
-      "source_url": "https://blog.cloudflare.com/building-for-the-future/",
-      "source_name": "Cloudflare Official Blog",
-      "excerpt": "Cloudflare's usage of AI has increased by more than 600% in the last three months alone",
-      "causality": "direct",
-      "confidence": 0.95,
-      "tolls": {
-        "jobs": 1100,
-        "teams": 15,
-        "companies": 1,
-        "labor_hours": -2288000
-      },
-      "notes": "20% workforce reduction as company shifts to 'agentic AI-first operating model'",
-      "collected_date": "2026-05-09",
-      "date": "2026-05-09",
-      "created_at": "2026-05-09T06:06:45.468069+00:00"
     },
     {
       "id": "evt_20260507_004",
@@ -1161,44 +1121,44 @@
       "created_at": "2026-05-10T06:27:26.199210+00:00"
     },
     {
-      "id": "evt_20260507_007",
-      "event_date": "2026-05-07",
-      "headline": "Cloudflare cuts 1,100 jobs amid AI-driven restructuring",
-      "source_url": "https://www.latimes.com/business/story/2026-05-07/california-tech-company-cloudflare-to-lay-off-more-than-1-000-workers-cites-ai",
-      "source_name": "Los Angeles Times",
-      "excerpt": "Cloudflare is laying off 20% of its staff, the latest technology company to announce big cuts as it uses more artificial intelligence-powered tools.",
+      "id": "evt_20260505_005",
+      "event_date": "2026-05-05",
+      "headline": "PayPal announces 4,760 job cuts over 2-3 years in AI transformation",
+      "source_url": "https://layoffhedge.com/company/paypal",
+      "source_name": "LayoffHedge",
+      "excerpt": "PayPal will cut approximately 4,760 employees (20% of workforce) phased over 2-3 years, new CEO Enrique Lores announced May 5, 2026. Targets $1.5B run-rate savings as company shifts to AI-native operating model.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
-        "jobs": 1100,
+        "jobs": 4760,
         "teams": 1,
+        "companies": 1,
+        "labor_hours": -9900800
+      },
+      "notes": "Multi-year phased reduction, CEO cited 'becoming a technology company again' via AI adoption",
+      "collected_date": "2026-05-10",
+      "date": "2026-05-10",
+      "created_at": "2026-05-10T06:27:26.199163+00:00"
+    },
+    {
+      "id": "evt_20260507_003",
+      "event_date": "2026-05-07",
+      "headline": "Cloudflare cuts 1,100 jobs citing 600% surge in AI usage",
+      "source_url": "https://blog.cloudflare.com/building-for-the-future/",
+      "source_name": "Cloudflare Official Blog",
+      "excerpt": "Cloudflare's usage of AI has increased by more than 600% in the last three months alone",
+      "causality": "direct",
+      "confidence": 0.95,
+      "tolls": {
+        "jobs": 1100,
+        "teams": 15,
         "companies": 1,
         "labor_hours": -2288000
       },
-      "notes": "Restructuring for the 'agentic AI era'",
-      "collected_date": "2026-05-13",
-      "date": "2026-05-13",
-      "created_at": "2026-05-13T06:40:42.237285+00:00"
-    },
-    {
-      "id": "evt_20260506_001",
-      "event_date": "2026-05-06",
-      "headline": "Arctic Wolf lays off 250 workers to invest in AI platform",
-      "source_url": "https://www.theregister.com/ai-and-ml/2026/05/06/arctic-wolf-cuts-250-jobs-in-ai-push/5231213",
-      "source_name": "The Register",
-      "excerpt": "<cite index=\"1-2\">\"position Arctic Wolf to operate more efficiently, continue investing in our Superintelligence platform\"</cite>",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 250,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -520000
-      },
-      "notes": "Cybersecurity vendor restructuring for AI SOC investment",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777528+00:00"
+      "notes": "20% workforce reduction as company shifts to 'agentic AI-first operating model'",
+      "collected_date": "2026-05-09",
+      "date": "2026-05-09",
+      "created_at": "2026-05-09T06:06:45.468069+00:00"
     },
     {
       "id": "evt_20260506_002",
@@ -1221,24 +1181,84 @@
       "created_at": "2026-05-09T06:06:45.468090+00:00"
     },
     {
-      "id": "evt_20260505_001",
-      "event_date": "2026-05-05",
-      "headline": "Coinbase lays off 700 employees, cites AI-driven workflow transformation",
-      "source_url": "https://www.hcamag.com/us/specialization/transformation/coinbase-slashes-14-of-workforce-as-ai-layoff-wave-shows-no-signs-of-slowing/574133",
-      "source_name": "Human Resources Director",
-      "excerpt": "Armstrong said the layoffs are partly due to a crypto downturn. Yet the main motivator is making the company's leadership structure flatter, enabling its employees to work fast, with AI at the forefront.",
+      "id": "evt_20260507_001",
+      "event_date": "2026-05-07",
+      "headline": "Freshworks lays off 500 employees citing AI writing half their code",
+      "source_url": "https://www.peoplematters.in/news/strategic-hr/software-firm-freshworks-announces-layoffs-tied-to-ai-transformation-cuts-500-jobs-49578",
+      "source_name": "People Matters",
+      "excerpt": "<cite index=\"11-1\">\"Over half of our code is written by AI.\" \u2014 Freshworks CEO Dennis Woodside</cite>",
       "causality": "direct",
       "confidence": 0.95,
+      "tolls": {
+        "jobs": 500,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "Q1 2026 restructuring; CEO explicitly cited AI writing majority of code",
+      "collected_date": "2026-05-08",
+      "date": "2026-05-08",
+      "created_at": "2026-05-08T05:49:14.777486+00:00"
+    },
+    {
+      "id": "evt_20260507_002",
+      "event_date": "2026-05-07",
+      "headline": "DeepL cuts 250 jobs citing massive AI structural shift",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-05-07/google-translate-rival-deepl-announces-plans-to-cut-25-of-staff",
+      "source_name": "Bloomberg",
+      "excerpt": "<cite index=\"35-4\">\"massive structural shift\" from artificial intelligence</cite>",
+      "causality": "direct",
+      "confidence": 0.92,
+      "tolls": {
+        "jobs": 250,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -520000
+      },
+      "notes": "25% workforce reduction at German translation unicorn",
+      "collected_date": "2026-05-08",
+      "date": "2026-05-08",
+      "created_at": "2026-05-08T05:49:14.777519+00:00"
+    },
+    {
+      "id": "evt_20260506_001",
+      "event_date": "2026-05-06",
+      "headline": "Arctic Wolf lays off 250 workers to invest in AI platform",
+      "source_url": "https://www.theregister.com/ai-and-ml/2026/05/06/arctic-wolf-cuts-250-jobs-in-ai-push/5231213",
+      "source_name": "The Register",
+      "excerpt": "<cite index=\"1-2\">\"position Arctic Wolf to operate more efficiently, continue investing in our Superintelligence platform\"</cite>",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 250,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -520000
+      },
+      "notes": "Cybersecurity vendor restructuring for AI SOC investment",
+      "collected_date": "2026-05-08",
+      "date": "2026-05-08",
+      "created_at": "2026-05-08T05:49:14.777528+00:00"
+    },
+    {
+      "id": "evt_20260505_004",
+      "event_date": "2026-05-05",
+      "headline": "Coinbase cuts 700 jobs in AI-native restructuring",
+      "source_url": "https://www.cnbc.com/2026/05/05/coinbase-cuts-headcount-by-14percent-citing-ai-acceleration.html",
+      "source_name": "CNBC",
+      "excerpt": "<cite index=\"27-7\">\"rebuilding Coinbase as an intelligence, with humans around the edge aligning it\"</cite>",
+      "causality": "direct",
+      "confidence": 0.9,
       "tolls": {
         "jobs": 700,
         "teams": 1,
         "companies": 1,
         "labor_hours": -1456000
       },
-      "notes": "Restructuring complete Q2 2026, creating 'AI-native pods'",
-      "collected_date": "2026-05-06",
-      "date": "2026-05-06",
-      "created_at": "2026-05-06T06:22:35.616085+00:00"
+      "notes": "14% workforce reduction for AI-native operating model",
+      "collected_date": "2026-05-08",
+      "date": "2026-05-08",
+      "created_at": "2026-05-08T05:49:14.777508+00:00"
     },
     {
       "id": "evt_20260505_003",
@@ -1280,64 +1300,24 @@
       "created_at": "2026-05-07T06:27:49.372184+00:00"
     },
     {
-      "id": "evt_20260505_004",
+      "id": "evt_20260505_001",
       "event_date": "2026-05-05",
-      "headline": "Coinbase cuts 700 jobs in AI-native restructuring",
-      "source_url": "https://www.cnbc.com/2026/05/05/coinbase-cuts-headcount-by-14percent-citing-ai-acceleration.html",
-      "source_name": "CNBC",
-      "excerpt": "<cite index=\"27-7\">\"rebuilding Coinbase as an intelligence, with humans around the edge aligning it\"</cite>",
+      "headline": "Coinbase lays off 700 employees, cites AI-driven workflow transformation",
+      "source_url": "https://www.hcamag.com/us/specialization/transformation/coinbase-slashes-14-of-workforce-as-ai-layoff-wave-shows-no-signs-of-slowing/574133",
+      "source_name": "Human Resources Director",
+      "excerpt": "Armstrong said the layoffs are partly due to a crypto downturn. Yet the main motivator is making the company's leadership structure flatter, enabling its employees to work fast, with AI at the forefront.",
       "causality": "direct",
-      "confidence": 0.9,
+      "confidence": 0.95,
       "tolls": {
         "jobs": 700,
         "teams": 1,
         "companies": 1,
         "labor_hours": -1456000
       },
-      "notes": "14% workforce reduction for AI-native operating model",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777508+00:00"
-    },
-    {
-      "id": "evt_20260505_005",
-      "event_date": "2026-05-05",
-      "headline": "PayPal announces 4,760 job cuts over 2-3 years in AI transformation",
-      "source_url": "https://layoffhedge.com/company/paypal",
-      "source_name": "LayoffHedge",
-      "excerpt": "PayPal will cut approximately 4,760 employees (20% of workforce) phased over 2-3 years, new CEO Enrique Lores announced May 5, 2026. Targets $1.5B run-rate savings as company shifts to AI-native operating model.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 4760,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -9900800
-      },
-      "notes": "Multi-year phased reduction, CEO cited 'becoming a technology company again' via AI adoption",
-      "collected_date": "2026-05-10",
-      "date": "2026-05-10",
-      "created_at": "2026-05-10T06:27:26.199163+00:00"
-    },
-    {
-      "id": "evt_20260501_001",
-      "event_date": "2026-05-01",
-      "headline": "Meta to lay off 8,000 employees, freeze 6,000 open roles amid AI investment surge",
-      "source_url": "https://www.moneycontrol.com/technology/meta-ceo-zuckerberg-blames-layoffs-on-capital-spending-won-t-rule-out-more-job-cuts-article-13905065.html",
-      "source_name": "Moneycontrol",
-      "excerpt": "Meta plans to lay off about 10% of its workforce on May 20, with CEO Mark Zuckerberg attributing the layoffs to increased capital spending for AI.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 8000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -16640000
-      },
-      "notes": "Layoffs linked to AI infrastructure investment",
-      "collected_date": "2026-05-03",
-      "date": "2026-05-03",
-      "created_at": "2026-05-03T06:18:37.711657+00:00"
+      "notes": "Restructuring complete Q2 2026, creating 'AI-native pods'",
+      "collected_date": "2026-05-06",
+      "date": "2026-05-06",
+      "created_at": "2026-05-06T06:22:35.616085+00:00"
     },
     {
       "id": "evt_20260430_001",
@@ -1360,6 +1340,26 @@
       "created_at": "2026-05-04T06:31:38.043020+00:00"
     },
     {
+      "id": "evt_20260501_001",
+      "event_date": "2026-05-01",
+      "headline": "Meta to lay off 8,000 employees, freeze 6,000 open roles amid AI investment surge",
+      "source_url": "https://www.moneycontrol.com/technology/meta-ceo-zuckerberg-blames-layoffs-on-capital-spending-won-t-rule-out-more-job-cuts-article-13905065.html",
+      "source_name": "Moneycontrol",
+      "excerpt": "Meta plans to lay off about 10% of its workforce on May 20, with CEO Mark Zuckerberg attributing the layoffs to increased capital spending for AI.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8000,
+        "teams": 0,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "Layoffs linked to AI infrastructure investment",
+      "collected_date": "2026-05-03",
+      "date": "2026-05-03",
+      "created_at": "2026-05-03T06:18:37.711657+00:00"
+    },
+    {
       "id": "evt_20260427_001",
       "event_date": "2026-04-27",
       "headline": "Oracle to cut over 20,000 jobs amid AI pivot",
@@ -1378,6 +1378,46 @@
       "collected_date": "2026-04-30",
       "date": "2026-04-30",
       "created_at": "2026-04-30T01:15:49.004519+00:00"
+    },
+    {
+      "id": "evt_20260423_001",
+      "event_date": "2026-04-23",
+      "headline": "Meta to lay off 8,000 employees as part of AI efficiency push",
+      "source_url": "https://www.axios.com/2026/04/23/meta-layoffs-ai-efficiency-push",
+      "source_name": "Axios",
+      "excerpt": "Meta announced plans to lay off approximately 8,000 employees, representing about 10% of its workforce, in a move aimed at boosting efficiency amid rising artificial intelligence (AI) infrastructure costs.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8000,
+        "teams": 0,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "Layoffs part of strategic shift towards AI investments.",
+      "collected_date": "2026-04-30",
+      "date": "2026-04-30",
+      "created_at": "2026-04-30T01:15:49.004486+00:00"
+    },
+    {
+      "id": "evt_20260423_002",
+      "event_date": "2026-04-23",
+      "headline": "Microsoft offers buyouts to 7% of U.S. staff amid AI restructuring",
+      "source_url": "https://www.wsws.org/en/articles/2026/04/28/nura-a28.html",
+      "source_name": "World Socialist Web Site",
+      "excerpt": "Microsoft announced it is offering buyouts to about 7% of its U.S. staff, or approximately 8,750 jobs, as part of broader restructuring efforts focused on artificial intelligence.",
+      "causality": "contributing",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 8750,
+        "teams": 0,
+        "companies": 1,
+        "labor_hours": -18100000
+      },
+      "notes": "Buyouts offered as part of AI-driven restructuring.",
+      "collected_date": "2026-04-30",
+      "date": "2026-04-30",
+      "created_at": "2026-04-30T01:15:49.004509+00:00"
     },
     {
       "id": "evt_20260426_001",
@@ -1438,46 +1478,6 @@
       "notes": "Voluntary buyouts targeting 7% of ~220K workforce; announced April 24",
       "date": "2026-04-24",
       "created_at": "2026-04-27T00:55:11.795351+00:00"
-    },
-    {
-      "id": "evt_20260423_001",
-      "event_date": "2026-04-23",
-      "headline": "Meta to lay off 8,000 employees as part of AI efficiency push",
-      "source_url": "https://www.axios.com/2026/04/23/meta-layoffs-ai-efficiency-push",
-      "source_name": "Axios",
-      "excerpt": "Meta announced plans to lay off approximately 8,000 employees, representing about 10% of its workforce, in a move aimed at boosting efficiency amid rising artificial intelligence (AI) infrastructure costs.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 8000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -16640000
-      },
-      "notes": "Layoffs part of strategic shift towards AI investments.",
-      "collected_date": "2026-04-30",
-      "date": "2026-04-30",
-      "created_at": "2026-04-30T01:15:49.004486+00:00"
-    },
-    {
-      "id": "evt_20260423_002",
-      "event_date": "2026-04-23",
-      "headline": "Microsoft offers buyouts to 7% of U.S. staff amid AI restructuring",
-      "source_url": "https://www.wsws.org/en/articles/2026/04/28/nura-a28.html",
-      "source_name": "World Socialist Web Site",
-      "excerpt": "Microsoft announced it is offering buyouts to about 7% of its U.S. staff, or approximately 8,750 jobs, as part of broader restructuring efforts focused on artificial intelligence.",
-      "causality": "contributing",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 8750,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -18100000
-      },
-      "notes": "Buyouts offered as part of AI-driven restructuring.",
-      "collected_date": "2026-04-30",
-      "date": "2026-04-30",
-      "created_at": "2026-04-30T01:15:49.004509+00:00"
     },
     {
       "id": "evt_20260415_vianaisy_100",
