@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-29T07:42:57.915195+00:00",
+  "last_updated": "2026-05-30T06:38:26.629197+00:00",
   "totals": {
     "jobs": 422609,
     "teams": 84,
@@ -9,12 +9,12 @@
     "labor_hours": -878926720
   },
   "today": {
-    "jobs": 14810,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 3,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -30804800
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2669,74 +2669,13 @@
       "created_at": "2026-04-27T17:59:55.141999"
     }
   ],
-  "summary": "On May 28, 2026, Standard Chartered, PayPal, and Acrisure announced significant layoffs totaling 14,810 jobs, all citing AI-driven transformations as the primary cause.",
-  "events": [
-    {
-      "id": "evt_20260528_001",
-      "event_date": "2026-05-28",
-      "headline": "Standard Chartered plans to cut 7,800 jobs in AI push",
-      "source_url": "https://layoffhedge.com/trends/may-2026-layoffs",
-      "source_name": "LayoffHedge",
-      "excerpt": "Standard Chartered announced plans to reduce its workforce by 7,800 employees, citing a strategic shift towards AI-driven operations.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 7800,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -16224000
-      },
-      "notes": "Part of broader AI integration strategy",
-      "collected_date": "2026-05-29",
-      "date": "2026-05-29",
-      "created_at": "2026-05-29T07:42:57.915272+00:00"
-    },
-    {
-      "id": "evt_20260528_002",
-      "event_date": "2026-05-28",
-      "headline": "PayPal to lay off 4,760 employees amid AI-driven restructuring",
-      "source_url": "https://layoffhedge.com/trends/may-2026-layoffs",
-      "source_name": "LayoffHedge",
-      "excerpt": "PayPal announced a reduction of 4,760 positions, attributing the layoffs to its ongoing AI-driven restructuring efforts.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 4760,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -9900800
-      },
-      "notes": "Focus on automation and efficiency",
-      "collected_date": "2026-05-29",
-      "date": "2026-05-29",
-      "created_at": "2026-05-29T07:42:57.915295+00:00"
-    },
-    {
-      "id": "evt_20260528_003",
-      "event_date": "2026-05-28",
-      "headline": "Acrisure cuts 2,250 jobs due to AI transformation",
-      "source_url": "https://layoffhedge.com/trends/may-2026-layoffs",
-      "source_name": "LayoffHedge",
-      "excerpt": "Acrisure announced the elimination of 2,250 positions, citing its transition towards AI-driven processes.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 2250,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -4680000
-      },
-      "notes": "Part of digital transformation strategy",
-      "collected_date": "2026-05-29",
-      "date": "2026-05-29",
-      "created_at": "2026-05-29T07:42:57.915308+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-05-10",
-    "last_openai_success": "2026-05-29",
+    "last_openai_success": "2026-05-30",
     "last_nonzero_collection": "2026-05-29",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-29"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-05-30"
   }
 }
