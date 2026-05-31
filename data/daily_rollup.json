@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-30T06:38:26.629197+00:00",
+  "last_updated": "2026-05-31T07:36:50.252676+00:00",
   "totals": {
-    "jobs": 422609,
-    "teams": 84,
+    "jobs": 423609,
+    "teams": 89,
     "products": 0,
-    "companies": 79,
+    "companies": 80,
     "revenue": 0,
-    "labor_hours": -878926720
+    "labor_hours": -881006720
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 1000,
+    "teams": 5,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -2080000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -570,16 +570,36 @@
       "labor_hours": -2288000
     },
     "2026-05-28": {
-      "jobs": 14810,
-      "teams": 0,
+      "jobs": 15810,
+      "teams": 5,
       "products": 0,
-      "companies": 3,
+      "companies": 4,
       "revenue": 0,
-      "labor_hours": -30804800
+      "labor_hours": -32884800
     }
   },
-  "events_count": 115,
+  "events_count": 116,
   "all_events": [
+    {
+      "id": "evt_20260528_004",
+      "event_date": "2026-05-28",
+      "headline": "Wix lays off 1,000 employees (20% of workforce), CEO cites AI evolution",
+      "source_url": "https://www.cnbc.com/2026/05/28/wix-layoffs-ai-exchange-rates.html",
+      "source_name": "CNBC",
+      "excerpt": "Israel-based web development company Wix is slashing roughly 20% of its workforce, CEO Avishai Abrahami announced in a post on X early Thursday morning, citing the 'fast evolution of AI capabilities' and difficulties around currency exchange rates.",
+      "causality": "direct",
+      "confidence": 0.92,
+      "tolls": {
+        "jobs": 1000,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -2080000
+      },
+      "notes": "CEO Avishai Abrahami publicly cited AI as a primary driver alongside shekel/dollar currency pressure. Wix had 5,277 employees at end of Q1 2026; post-restructuring workforce expected to settle around 4,200. Largest layoff in Wix's history. The company is moving to fewer leadership layers and introducing AI-native roles (Xengineer, Creators). Announced May 28, 2026.",
+      "collected_date": "2026-05-31",
+      "date": "2026-05-31",
+      "created_at": "2026-05-31T07:36:50.252757+00:00"
+    },
     {
       "id": "evt_20260528_001",
       "event_date": "2026-05-28",
@@ -2645,37 +2665,36 @@
       "hashtags": "#Amazon #Alexa #GenerativeAI #AILayoffs",
       "date": "2023-11-20",
       "created_at": "2026-04-27T17:59:55.149495"
-    },
-    {
-      "id": "evt_20231115_googleal_133",
-      "event_date": "2023-11-15",
-      "collected_date": "2026-04-27",
-      "headline": "Google / Alphabet reduces workforce citing AI efficiency",
-      "source_url": "https://news.crunchbase.com/startups/tech-layoffs/",
-      "source_name": "TrueUp",
-      "excerpt": "Google began rolling small cuts throughout late 2023 as it reorganized around AI products (Bard/Gemini). Hundreds of roles in recruiting, real estate, and some product teams. Google's pattern: no single large cut but continuous small reductions totaling 1,000+ through year-end 2023.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": -1001,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 2082080
-      },
-      "notes": "Google began rolling small cuts throughout late 2023 as it reorganized around AI products (Bard/Gemini). Hundreds of roles in recruiting, real estate, and some product teams. Google's pattern: no single large cut but continuous small reductions totaling 1,000+ through year-end 2023.",
-      "industry": "Big Tech / Search",
-      "hashtags": "#Google #Alphabet #Gemini #AILayoffs #TechLayoffs2023 #SearchAI",
-      "date": "2023-11-15",
-      "created_at": "2026-04-27T17:59:55.141999"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "One new verifiable AI-displacement event found in the past 24-48 hours: Wix.com announced on May 28, 2026 it is cutting approximately 1,000 employees (20% of its workforce), with CEO Avishai Abrahami explicitly citing the 'fast evolution of AI capabilities' as a primary driver, alongside currency pressure from the strengthening Israeli shekel. The company is restructuring around AI-native roles and a flatter organizational structure. Other May 2026 events (Meta, Cisco, Intuit, Coinbase, Cloudflare, LinkedIn, PayPal) were already tracked or fall outside the 24-48 hour window.",
+  "events": [
+    {
+      "id": "evt_20260528_004",
+      "event_date": "2026-05-28",
+      "headline": "Wix lays off 1,000 employees (20% of workforce), CEO cites AI evolution",
+      "source_url": "https://www.cnbc.com/2026/05/28/wix-layoffs-ai-exchange-rates.html",
+      "source_name": "CNBC",
+      "excerpt": "Israel-based web development company Wix is slashing roughly 20% of its workforce, CEO Avishai Abrahami announced in a post on X early Thursday morning, citing the 'fast evolution of AI capabilities' and difficulties around currency exchange rates.",
+      "causality": "direct",
+      "confidence": 0.92,
+      "tolls": {
+        "jobs": 1000,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -2080000
+      },
+      "notes": "CEO Avishai Abrahami publicly cited AI as a primary driver alongside shekel/dollar currency pressure. Wix had 5,277 employees at end of Q1 2026; post-restructuring workforce expected to settle around 4,200. Largest layoff in Wix's history. The company is moving to fewer leadership layers and introducing AI-native roles (Xengineer, Creators). Announced May 28, 2026.",
+      "collected_date": "2026-05-31",
+      "date": "2026-05-31",
+      "created_at": "2026-05-31T07:36:50.252757+00:00"
+    }
+  ],
   "health": {
-    "last_anthropic_success": "2026-05-10",
+    "last_anthropic_success": "2026-05-31",
     "last_openai_success": "2026-05-30",
-    "last_nonzero_collection": "2026-05-29",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-05-30"
+    "last_nonzero_collection": "2026-05-31",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-05-31"
   }
 }
