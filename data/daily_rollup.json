@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-05-31T07:36:50.252676+00:00",
+  "last_updated": "2026-06-01T09:08:21.424044+00:00",
   "totals": {
-    "jobs": 423609,
-    "teams": 89,
+    "jobs": 427609,
+    "teams": 99,
     "products": 0,
-    "companies": 80,
+    "companies": 81,
     "revenue": 0,
-    "labor_hours": -881006720
+    "labor_hours": -889326720
   },
   "today": {
-    "jobs": 1000,
-    "teams": 5,
+    "jobs": 4000,
+    "teams": 10,
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": -2080000
+    "labor_hours": -8320000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -576,10 +576,38 @@
       "companies": 4,
       "revenue": 0,
       "labor_hours": -32884800
+    },
+    "2026-05-30": {
+      "jobs": 4000,
+      "teams": 10,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -8320000
     }
   },
-  "events_count": 116,
+  "events_count": 117,
   "all_events": [
+    {
+      "id": "evt_20260530_001",
+      "event_date": "2026-05-30",
+      "headline": "Block (Square) lays off 4,000 employees, nearly half of workforce",
+      "source_url": "https://www.aiterminated.com/",
+      "source_name": "Terminated.ai",
+      "excerpt": "Block (Square) has announced the termination of 4,000 employees, nearly half of its workforce, as part of its strategic shift towards AI-driven operations.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 4000,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -8320000
+      },
+      "notes": "Strategic shift towards AI-driven operations",
+      "collected_date": "2026-06-01",
+      "date": "2026-06-01",
+      "created_at": "2026-06-01T09:08:21.424127+00:00"
+    },
     {
       "id": "evt_20260528_004",
       "event_date": "2026-05-28",
@@ -2644,57 +2672,36 @@
       "hashtags": "#Broadcom #VMware #TechLayoffs #MergerCuts",
       "date": "2023-12-01",
       "created_at": "2026-04-27T17:59:55.149459"
-    },
-    {
-      "id": "evt_20231120_amazonal_225",
-      "event_date": "2023-11-20",
-      "collected_date": "2026-04-27",
-      "headline": "Amazon (Alexa) reduces workforce",
-      "source_url": "https://www.computerworld.com/article/3711182/amazon-to-cut-jobs-at-alexa-unit.html",
-      "source_name": "Computerworld",
-      "excerpt": "Hundreds cut from Alexa division explicitly to shift resources to generative AI. Amazon stated it was 'maximizing efforts focused on generative AI.'",
-      "causality": "contributing",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Hundreds cut from Alexa division explicitly to shift resources to generative AI. Amazon stated it was 'maximizing efforts focused on generative AI.'",
-      "hashtags": "#Amazon #Alexa #GenerativeAI #AILayoffs",
-      "date": "2023-11-20",
-      "created_at": "2026-04-27T17:59:55.149495"
     }
   ],
-  "summary": "One new verifiable AI-displacement event found in the past 24-48 hours: Wix.com announced on May 28, 2026 it is cutting approximately 1,000 employees (20% of its workforce), with CEO Avishai Abrahami explicitly citing the 'fast evolution of AI capabilities' as a primary driver, alongside currency pressure from the strengthening Israeli shekel. The company is restructuring around AI-native roles and a flatter organizational structure. Other May 2026 events (Meta, Cisco, Intuit, Coinbase, Cloudflare, LinkedIn, PayPal) were already tracked or fall outside the 24-48 hour window.",
+  "summary": "On May 30, 2026, Block (Square) announced the layoff of 4,000 employees, nearly half of its workforce, citing a strategic shift towards AI-driven operations.",
   "events": [
     {
-      "id": "evt_20260528_004",
-      "event_date": "2026-05-28",
-      "headline": "Wix lays off 1,000 employees (20% of workforce), CEO cites AI evolution",
-      "source_url": "https://www.cnbc.com/2026/05/28/wix-layoffs-ai-exchange-rates.html",
-      "source_name": "CNBC",
-      "excerpt": "Israel-based web development company Wix is slashing roughly 20% of its workforce, CEO Avishai Abrahami announced in a post on X early Thursday morning, citing the 'fast evolution of AI capabilities' and difficulties around currency exchange rates.",
+      "id": "evt_20260530_001",
+      "event_date": "2026-05-30",
+      "headline": "Block (Square) lays off 4,000 employees, nearly half of workforce",
+      "source_url": "https://www.aiterminated.com/",
+      "source_name": "Terminated.ai",
+      "excerpt": "Block (Square) has announced the termination of 4,000 employees, nearly half of its workforce, as part of its strategic shift towards AI-driven operations.",
       "causality": "direct",
-      "confidence": 0.92,
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 1000,
-        "teams": 5,
+        "jobs": 4000,
+        "teams": 10,
         "companies": 1,
-        "labor_hours": -2080000
+        "labor_hours": -8320000
       },
-      "notes": "CEO Avishai Abrahami publicly cited AI as a primary driver alongside shekel/dollar currency pressure. Wix had 5,277 employees at end of Q1 2026; post-restructuring workforce expected to settle around 4,200. Largest layoff in Wix's history. The company is moving to fewer leadership layers and introducing AI-native roles (Xengineer, Creators). Announced May 28, 2026.",
-      "collected_date": "2026-05-31",
-      "date": "2026-05-31",
-      "created_at": "2026-05-31T07:36:50.252757+00:00"
+      "notes": "Strategic shift towards AI-driven operations",
+      "collected_date": "2026-06-01",
+      "date": "2026-06-01",
+      "created_at": "2026-06-01T09:08:21.424127+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-05-31",
-    "last_openai_success": "2026-05-30",
-    "last_nonzero_collection": "2026-05-31",
+    "last_openai_success": "2026-06-01",
+    "last_nonzero_collection": "2026-06-01",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-05-31"
+    "last_collection_date": "2026-06-01"
   }
 }
