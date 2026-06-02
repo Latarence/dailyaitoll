@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-01T09:08:21.424044+00:00",
+  "last_updated": "2026-06-02T08:18:05.264334+00:00",
   "totals": {
-    "jobs": 427609,
-    "teams": 99,
+    "jobs": 431179,
+    "teams": 112,
     "products": 0,
-    "companies": 81,
+    "companies": 87,
     "revenue": 0,
-    "labor_hours": -889326720
+    "labor_hours": -896752320
   },
   "today": {
-    "jobs": 4000,
-    "teams": 10,
+    "jobs": 3570,
+    "teams": 13,
     "products": 0,
-    "companies": 1,
+    "companies": 6,
     "revenue": 0,
-    "labor_hours": -8320000
+    "labor_hours": -7425600
   },
   "daily_totals": {
     "2026-05-05": {
@@ -570,12 +570,12 @@
       "labor_hours": -2288000
     },
     "2026-05-28": {
-      "jobs": 15810,
-      "teams": 5,
+      "jobs": 15870,
+      "teams": 6,
       "products": 0,
-      "companies": 4,
+      "companies": 5,
       "revenue": 0,
-      "labor_hours": -32884800
+      "labor_hours": -33009600
     },
     "2026-05-30": {
       "jobs": 4000,
@@ -584,10 +584,138 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -8320000
+    },
+    "2026-06-01": {
+      "jobs": 3510,
+      "teams": 12,
+      "products": 0,
+      "companies": 5,
+      "revenue": 0,
+      "labor_hours": -7300800
     }
   },
-  "events_count": 117,
+  "events_count": 123,
   "all_events": [
+    {
+      "id": "evt_20260601_001",
+      "event_date": "2026-06-01",
+      "headline": "Taboola lays off about 100 employees amid AI-driven Israeli tech shakeup",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-12\">Israeli online advertising company Taboola laid off about 100 employees.</cite>",
+      "causality": "contributing",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 100,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -208000
+      },
+      "notes": "Part of broader AI-driven layoff wave in Israeli tech sector",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264450+00:00"
+    },
+    {
+      "id": "evt_20260601_002",
+      "event_date": "2026-06-01",
+      "headline": "AI21 shuts down AI model development operation, lays off 60% of staff",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-15\">Israeli AI company AI21 shut down its AI model development operation and laid off 60% of its staff.</cite>",
+      "causality": "direct",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 120,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -249600
+      },
+      "notes": "Smaller AI firms being crushed by giant model competition; estimated 60% of ~200 staff",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264461+00:00"
+    },
+    {
+      "id": "evt_20260601_003",
+      "event_date": "2026-06-01",
+      "headline": "Amdocs reports layoffs affecting 10% of workforce amid AI shift",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-16\">Amdocs, one of the pillars of Israeli high-tech, reported layoffs affecting 10% of its workforce, including hundreds in Israel.</cite>",
+      "causality": "contributing",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 3000,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -6240000
+      },
+      "notes": "Amdocs has ~30,000 employees globally; 10% = ~3,000",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264471+00:00"
+    },
+    {
+      "id": "evt_20260601_004",
+      "event_date": "2026-06-01",
+      "headline": "SentinelOne cuts 10% of workforce amid AI-era cybersecurity disruption",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-17\">Cybersecurity giant SentinelOne carried out a broad 10% workforce cut, affecting about 70 employees in Israel.</cite>",
+      "causality": "contributing",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 250,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -520000
+      },
+      "notes": "10% of ~2,500 SentinelOne workforce; cybersecurity firms facing AI model disruption",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264480+00:00"
+    },
+    {
+      "id": "evt_20260601_005",
+      "event_date": "2026-06-01",
+      "headline": "Lightricks lays off dozens as AI reshapes video creation industry",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-10\">Israeli AI video company Lightricks laid off dozens.</cite>",
+      "causality": "contributing",
+      "confidence": 0.65,
+      "tolls": {
+        "jobs": 40,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -83200
+      },
+      "notes": "Estimated 'dozens' as ~40 layoffs",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264488+00:00"
+    },
+    {
+      "id": "evt_20260528_005",
+      "event_date": "2026-05-28",
+      "headline": "Minute Media lays off 12% of workforce (~60 employees), cites rise of AI in media market",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/kk215pdq7",
+      "source_name": "CTech (Calcalist)",
+      "excerpt": "<cite index=\"28-14,28-15\">About 12% of the company's global workforce was laid off, including employees in Israel. The move comes alongside continued growth at the company, as it adapts its operations to changes in the media market and the rise of artificial intelligence.</cite>",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 60,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -124800
+      },
+      "notes": "Israeli sports/media platform; also terminated VideoVerse contract after $200M acquisition",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264426+00:00"
+    },
     {
       "id": "evt_20260530_001",
       "event_date": "2026-05-30",
@@ -2543,165 +2671,136 @@
       "hashtags": "#PayPal #Fintech #AILayoffs #Automation",
       "date": "2024-01-30",
       "created_at": "2026-04-27T17:59:55.149334"
+    }
+  ],
+  "summary": "Found 6 new AI-related displacement events, primarily from a wave of Israeli tech layoffs reported June 1, 2026. Major findings include Minute Media (60 jobs, explicitly citing AI), AI21 shutting down model development (~60% of staff), Amdocs 10% cut (~3,000), SentinelOne 10% cut, Taboola ~100, and Lightricks dozens. Total new jobs displaced: approximately 3,570 across 6 companies. The Israeli tech sector is experiencing a particularly acute AI-driven contraction, with strong shekel exchange rates also contributing.",
+  "events": [
+    {
+      "id": "evt_20260528_005",
+      "event_date": "2026-05-28",
+      "headline": "Minute Media lays off 12% of workforce (~60 employees), cites rise of AI in media market",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/kk215pdq7",
+      "source_name": "CTech (Calcalist)",
+      "excerpt": "<cite index=\"28-14,28-15\">About 12% of the company's global workforce was laid off, including employees in Israel. The move comes alongside continued growth at the company, as it adapts its operations to changes in the media market and the rise of artificial intelligence.</cite>",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 60,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -124800
+      },
+      "notes": "Israeli sports/media platform; also terminated VideoVerse contract after $200M acquisition",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264426+00:00"
     },
     {
-      "id": "evt_20240115_unitytec_130",
-      "event_date": "2024-01-15",
-      "collected_date": "2026-04-27",
-      "headline": "Unity Technologies cuts 1,800 jobs amid AI transition",
-      "source_url": "https://programs.com/resources/ai-layoffs/",
-      "source_name": "TrueUp",
-      "excerpt": "Unity cut ~1,800 employees (25% of workforce) as it refocused on AI-assisted game development tools. Comes after CEO John Riccitiello resigned over controversial runtime fee policy that alienated developers. Unity is betting on AI to help small studios compete with large ones.",
-      "causality": "direct",
+      "id": "evt_20260601_001",
+      "event_date": "2026-06-01",
+      "headline": "Taboola lays off about 100 employees amid AI-driven Israeli tech shakeup",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-12\">Israeli online advertising company Taboola laid off about 100 employees.</cite>",
+      "causality": "contributing",
       "confidence": 0.7,
       "tolls": {
-        "jobs": 1800,
-        "teams": 0,
+        "jobs": 100,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": -3744000
+        "labor_hours": -208000
       },
-      "notes": "Unity cut ~1,800 employees (25% of workforce) as it refocused on AI-assisted game development tools. Comes after CEO John Riccitiello resigned over controversial runtime fee policy that alienated developers. Unity is betting on AI to help small studios compete with large ones.",
-      "industry": "Gaming Engine / AI",
-      "hashtags": "#Unity #GameDev #GameEngine #AILayoffs #TechLayoffs2024 #GameAI",
-      "date": "2024-01-15",
-      "created_at": "2026-04-27T17:59:55.141890"
+      "notes": "Part of broader AI-driven layoff wave in Israeli tech sector",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264450+00:00"
     },
     {
-      "id": "evt_20240115_paypal_131",
-      "event_date": "2024-01-15",
-      "collected_date": "2026-04-27",
-      "headline": "PayPal cuts 2,500 jobs amid AI transition",
-      "source_url": "https://programs.com/resources/ai-layoffs/",
-      "source_name": "TrueUp",
-      "excerpt": "PayPal cut ~2,500 jobs (9% of workforce) as CEO Alex Chriss cited need to 'drive more focus and efficiency, deploy automation, and consolidate our technology.' AI systems increasingly handle fraud detection, risk management, and customer support \u2014 core PayPal functions.",
+      "id": "evt_20260601_002",
+      "event_date": "2026-06-01",
+      "headline": "AI21 shuts down AI model development operation, lays off 60% of staff",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-15\">Israeli AI company AI21 shut down its AI model development operation and laid off 60% of its staff.</cite>",
       "causality": "direct",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 120,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -249600
+      },
+      "notes": "Smaller AI firms being crushed by giant model competition; estimated 60% of ~200 staff",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264461+00:00"
+    },
+    {
+      "id": "evt_20260601_003",
+      "event_date": "2026-06-01",
+      "headline": "Amdocs reports layoffs affecting 10% of workforce amid AI shift",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-16\">Amdocs, one of the pillars of Israeli high-tech, reported layoffs affecting 10% of its workforce, including hundreds in Israel.</cite>",
+      "causality": "contributing",
       "confidence": 0.7,
       "tolls": {
-        "jobs": 2500,
-        "teams": 0,
+        "jobs": 3000,
+        "teams": 5,
         "companies": 1,
-        "labor_hours": -5200000
+        "labor_hours": -6240000
       },
-      "notes": "PayPal cut ~2,500 jobs (9% of workforce) as CEO Alex Chriss cited need to 'drive more focus and efficiency, deploy automation, and consolidate our technology.' AI systems increasingly handle fraud detection, risk management, and customer support \u2014 core PayPal functions.",
-      "industry": "Fintech / Payments",
-      "hashtags": "#PayPal #Fintech #FraudDetection #AILayoffs #TechLayoffs2024 #Payments",
-      "date": "2024-01-15",
-      "created_at": "2026-04-27T17:59:55.141927"
+      "notes": "Amdocs has ~30,000 employees globally; 10% = ~3,000",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264471+00:00"
     },
     {
-      "id": "evt_20240115_unity_221",
-      "event_date": "2024-01-15",
-      "collected_date": "2026-04-27",
-      "headline": "Unity cuts 1,800 jobs",
-      "source_url": "https://www.visualcapitalist.com/all-the-major-tech-layoffs-in-2024-so-far/",
-      "source_name": "Visual Capitalist",
-      "excerpt": "25% of workforce cut as Unity pivoted to AI-assisted developer tools; came amid broader revenue challenges and strategic reorganization.",
-      "causality": "inferred",
-      "confidence": 0.55,
-      "tolls": {
-        "jobs": 1800,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -3744000
-      },
-      "notes": "25% of workforce cut as Unity pivoted to AI-assisted developer tools; came amid broader revenue challenges and strategic reorganization.",
-      "hashtags": "#Unity #GameDev #AILayoffs #TechLayoffs",
-      "date": "2024-01-15",
-      "created_at": "2026-04-27T17:59:55.149373"
-    },
-    {
-      "id": "evt_20231215_meta_132",
-      "event_date": "2023-12-15",
-      "collected_date": "2026-04-27",
-      "headline": "Meta reduces workforce citing AI efficiency",
-      "source_url": "https://www.computerworld.com/article/3816579/tech-layoffs-this-year-a-timeline.html",
-      "source_name": "TrueUp",
-      "excerpt": "Meta reduced headcount 5% through attrition (natural exits not replaced) as Zuckerberg shifted hiring toward AI roles. Also closed US fact-checking program replacing human reviewers with AI-moderated Community Notes system. Setting the stage for 2025 announced cuts.",
-      "causality": "direct",
+      "id": "evt_20260601_004",
+      "event_date": "2026-06-01",
+      "headline": "SentinelOne cuts 10% of workforce amid AI-era cybersecurity disruption",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-17\">Cybersecurity giant SentinelOne carried out a broad 10% workforce cut, affecting about 70 employees in Israel.</cite>",
+      "causality": "contributing",
       "confidence": 0.7,
       "tolls": {
-        "jobs": 0,
-        "teams": 0,
+        "jobs": 250,
+        "teams": 3,
         "companies": 1,
-        "labor_hours": 0
+        "labor_hours": -520000
       },
-      "notes": "Meta reduced headcount 5% through attrition (natural exits not replaced) as Zuckerberg shifted hiring toward AI roles. Also closed US fact-checking program replacing human reviewers with AI-moderated Community Notes system. Setting the stage for 2025 announced cuts.",
-      "industry": "Big Tech / Social Media",
-      "hashtags": "#Meta #Facebook #AILayoffs #TechLayoffs2023 #FactChecking #CommunityNotes",
-      "date": "2023-12-15",
-      "created_at": "2026-04-27T17:59:55.141963"
+      "notes": "10% of ~2,500 SentinelOne workforce; cybersecurity firms facing AI model disruption",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264480+00:00"
     },
     {
-      "id": "evt_20231204_twilio_223",
-      "event_date": "2023-12-04",
-      "collected_date": "2026-04-27",
-      "headline": "Twilio reduces workforce",
-      "source_url": "https://www.computerworld.com/article/3711421/twilio-sheds-jobs-in-third-round.html",
-      "source_name": "Computerworld",
-      "excerpt": "Third round of cuts in 2023; most affected were sales teams for contact center software as Twilio refocused on AI-driven analytics.",
+      "id": "evt_20260601_005",
+      "event_date": "2026-06-01",
+      "headline": "Lightricks lays off dozens as AI reshapes video creation industry",
+      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
+      "source_name": "Ynet News",
+      "excerpt": "<cite index=\"29-10\">Israeli AI video company Lightricks laid off dozens.</cite>",
       "causality": "contributing",
       "confidence": 0.65,
       "tolls": {
-        "jobs": 0,
-        "teams": 0,
+        "jobs": 40,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": 0
+        "labor_hours": -83200
       },
-      "notes": "Third round of cuts in 2023; most affected were sales teams for contact center software as Twilio refocused on AI-driven analytics.",
-      "hashtags": "#Twilio #CloudComms #AILayoffs #TechLayoffs",
-      "date": "2023-12-04",
-      "created_at": "2026-04-27T17:59:55.149423"
-    },
-    {
-      "id": "evt_20231201_broadcom_224",
-      "event_date": "2023-12-01",
-      "collected_date": "2026-04-27",
-      "headline": "Broadcom/VMware cuts 1,267 jobs",
-      "source_url": "https://www.networkworld.com/article/1250690/broadcom-to-lay-off-over-1200-vmware.html",
-      "source_name": "Network World",
-      "excerpt": "Days after closing $69B VMware acquisition, Broadcom cut 1,267 VMware employees; further cuts signalled in filings.",
-      "causality": "inferred",
-      "confidence": 0.5,
-      "tolls": {
-        "jobs": 1267,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2635360
-      },
-      "notes": "Days after closing $69B VMware acquisition, Broadcom cut 1,267 VMware employees; further cuts signalled in filings.",
-      "hashtags": "#Broadcom #VMware #TechLayoffs #MergerCuts",
-      "date": "2023-12-01",
-      "created_at": "2026-04-27T17:59:55.149459"
-    }
-  ],
-  "summary": "On May 30, 2026, Block (Square) announced the layoff of 4,000 employees, nearly half of its workforce, citing a strategic shift towards AI-driven operations.",
-  "events": [
-    {
-      "id": "evt_20260530_001",
-      "event_date": "2026-05-30",
-      "headline": "Block (Square) lays off 4,000 employees, nearly half of workforce",
-      "source_url": "https://www.aiterminated.com/",
-      "source_name": "Terminated.ai",
-      "excerpt": "Block (Square) has announced the termination of 4,000 employees, nearly half of its workforce, as part of its strategic shift towards AI-driven operations.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 4000,
-        "teams": 10,
-        "companies": 1,
-        "labor_hours": -8320000
-      },
-      "notes": "Strategic shift towards AI-driven operations",
-      "collected_date": "2026-06-01",
-      "date": "2026-06-01",
-      "created_at": "2026-06-01T09:08:21.424127+00:00"
+      "notes": "Estimated 'dozens' as ~40 layoffs",
+      "collected_date": "2026-06-02",
+      "date": "2026-06-02",
+      "created_at": "2026-06-02T08:18:05.264488+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-05-31",
+    "last_anthropic_success": "2026-06-02",
     "last_openai_success": "2026-06-01",
-    "last_nonzero_collection": "2026-06-01",
+    "last_nonzero_collection": "2026-06-02",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-01"
+    "last_collection_date": "2026-06-02"
   }
 }
