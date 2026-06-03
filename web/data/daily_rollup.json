@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-02T08:18:05.264334+00:00",
+  "last_updated": "2026-06-03T08:45:11.083462+00:00",
   "totals": {
-    "jobs": 431179,
-    "teams": 112,
+    "jobs": 432179,
+    "teams": 114,
     "products": 0,
-    "companies": 87,
+    "companies": 88,
     "revenue": 0,
-    "labor_hours": -896752320
+    "labor_hours": -898832320
   },
   "today": {
-    "jobs": 3570,
-    "teams": 13,
+    "jobs": 1000,
+    "teams": 2,
     "products": 0,
-    "companies": 6,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -7425600
+    "labor_hours": -2080000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -522,12 +522,12 @@
       "labor_hours": -27820000
     },
     "2026-05-13": {
-      "jobs": 600,
-      "teams": 0,
+      "jobs": 1600,
+      "teams": 2,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -1248000
+      "labor_hours": -3328000
     },
     "2026-05-08": {
       "jobs": 1100,
@@ -594,8 +594,28 @@
       "labor_hours": -7300800
     }
   },
-  "events_count": 123,
+  "events_count": 124,
   "all_events": [
+    {
+      "id": "evt_20260513_003",
+      "event_date": "2026-05-13",
+      "headline": "Walmart cuts or relocates 1,000 corporate workers as it consolidates global tech and AI product teams",
+      "source_url": "https://hrexecutive.com/walmart-cuts-1000-corporate-roles-as-ai-reorganization-reshapes-tech-teams/",
+      "source_name": "HR Executive",
+      "excerpt": "Walmart is set to cut or relocate about 1,000 corporate employees as the retail giant reorganizes its global technology and AI product teams. The reorganization was led by Suresh Kumar, Walmart's head of global technology, who reviewed internal structures and identified overlapping roles created in part by the integration of AI-focused product units.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 1000,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -2080000
+      },
+      "notes": "Walmart's head of global AI acceleration Daniel Danker and global technology chief Suresh Kumar led the restructuring; cuts tied to consolidation of AI-focused product teams. Walmart publicly framed it as organizational simplification rather than AI replacement, but AI integration was a stated driver.",
+      "collected_date": "2026-06-03",
+      "date": "2026-06-03",
+      "created_at": "2026-06-03T08:45:11.083551+00:00"
+    },
     {
       "id": "evt_20260601_001",
       "event_date": "2026-06-01",
@@ -2650,157 +2670,36 @@
       "hashtags": "#Cisco #Networking #AILayoffs #TechLayoffs2024 #SoftwareNetworking",
       "date": "2024-02-08",
       "created_at": "2026-04-27T17:59:55.141853"
-    },
-    {
-      "id": "evt_20240130_paypal_220",
-      "event_date": "2024-01-30",
-      "collected_date": "2026-04-27",
-      "headline": "PayPal cuts 2,500 jobs",
-      "source_url": "https://www.cnbc.com/2024/01/30/paypal-will-cut-about-2500-jobs.html",
-      "source_name": "CNBC",
-      "excerpt": "9% workforce reduction; CEO Alex Chriss cited need to deploy automation, consolidate tech, and reduce duplication to compete.",
-      "causality": "inferred",
-      "confidence": 0.6,
-      "tolls": {
-        "jobs": 2500,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -5200000
-      },
-      "notes": "9% workforce reduction; CEO Alex Chriss cited need to deploy automation, consolidate tech, and reduce duplication to compete.",
-      "hashtags": "#PayPal #Fintech #AILayoffs #Automation",
-      "date": "2024-01-30",
-      "created_at": "2026-04-27T17:59:55.149334"
     }
   ],
-  "summary": "Found 6 new AI-related displacement events, primarily from a wave of Israeli tech layoffs reported June 1, 2026. Major findings include Minute Media (60 jobs, explicitly citing AI), AI21 shutting down model development (~60% of staff), Amdocs 10% cut (~3,000), SentinelOne 10% cut, Taboola ~100, and Lightricks dozens. Total new jobs displaced: approximately 3,570 across 6 companies. The Israeli tech sector is experiencing a particularly acute AI-driven contraction, with strong shekel exchange rates also contributing.",
+  "summary": "One new verifiable event identified that was not in the already-tracked list: Walmart's announced cut/relocation of approximately 1,000 corporate workers as part of an AI-driven consolidation of its global tech and AI product teams (announced mid-May 2026, reported via WSJ). No fresh AI-displacement announcements were found dated June 2-3, 2026 in available sources beyond aggregate tracker updates. Major already-tracked events (Meta, Intuit, Cisco, Cloudflare, PayPal, Coinbase, Wix, Block, etc.) dominate recent coverage. Note: <cite index=\"27-14,27-15,27-16\">MIT Sloan professor Paul Osterman argues much of the 2026 layoff wave reflects 'AI washing' \u2014 companies using AI as cover for cost-cutting they would have done anyway</cite>, so attribution confidence is moderated accordingly.",
   "events": [
     {
-      "id": "evt_20260528_005",
-      "event_date": "2026-05-28",
-      "headline": "Minute Media lays off 12% of workforce (~60 employees), cites rise of AI in media market",
-      "source_url": "https://www.calcalistech.com/ctechnews/article/kk215pdq7",
-      "source_name": "CTech (Calcalist)",
-      "excerpt": "<cite index=\"28-14,28-15\">About 12% of the company's global workforce was laid off, including employees in Israel. The move comes alongside continued growth at the company, as it adapts its operations to changes in the media market and the rise of artificial intelligence.</cite>",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 60,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -124800
-      },
-      "notes": "Israeli sports/media platform; also terminated VideoVerse contract after $200M acquisition",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264426+00:00"
-    },
-    {
-      "id": "evt_20260601_001",
-      "event_date": "2026-06-01",
-      "headline": "Taboola lays off about 100 employees amid AI-driven Israeli tech shakeup",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-12\">Israeli online advertising company Taboola laid off about 100 employees.</cite>",
+      "id": "evt_20260513_003",
+      "event_date": "2026-05-13",
+      "headline": "Walmart cuts or relocates 1,000 corporate workers as it consolidates global tech and AI product teams",
+      "source_url": "https://hrexecutive.com/walmart-cuts-1000-corporate-roles-as-ai-reorganization-reshapes-tech-teams/",
+      "source_name": "HR Executive",
+      "excerpt": "Walmart is set to cut or relocate about 1,000 corporate employees as the retail giant reorganizes its global technology and AI product teams. The reorganization was led by Suresh Kumar, Walmart's head of global technology, who reviewed internal structures and identified overlapping roles created in part by the integration of AI-focused product units.",
       "causality": "contributing",
-      "confidence": 0.7,
+      "confidence": 0.75,
       "tolls": {
-        "jobs": 100,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -208000
-      },
-      "notes": "Part of broader AI-driven layoff wave in Israeli tech sector",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264450+00:00"
-    },
-    {
-      "id": "evt_20260601_002",
-      "event_date": "2026-06-01",
-      "headline": "AI21 shuts down AI model development operation, lays off 60% of staff",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-15\">Israeli AI company AI21 shut down its AI model development operation and laid off 60% of its staff.</cite>",
-      "causality": "direct",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 120,
+        "jobs": 1000,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -249600
+        "labor_hours": -2080000
       },
-      "notes": "Smaller AI firms being crushed by giant model competition; estimated 60% of ~200 staff",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264461+00:00"
-    },
-    {
-      "id": "evt_20260601_003",
-      "event_date": "2026-06-01",
-      "headline": "Amdocs reports layoffs affecting 10% of workforce amid AI shift",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-16\">Amdocs, one of the pillars of Israeli high-tech, reported layoffs affecting 10% of its workforce, including hundreds in Israel.</cite>",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 3000,
-        "teams": 5,
-        "companies": 1,
-        "labor_hours": -6240000
-      },
-      "notes": "Amdocs has ~30,000 employees globally; 10% = ~3,000",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264471+00:00"
-    },
-    {
-      "id": "evt_20260601_004",
-      "event_date": "2026-06-01",
-      "headline": "SentinelOne cuts 10% of workforce amid AI-era cybersecurity disruption",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-17\">Cybersecurity giant SentinelOne carried out a broad 10% workforce cut, affecting about 70 employees in Israel.</cite>",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 250,
-        "teams": 3,
-        "companies": 1,
-        "labor_hours": -520000
-      },
-      "notes": "10% of ~2,500 SentinelOne workforce; cybersecurity firms facing AI model disruption",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264480+00:00"
-    },
-    {
-      "id": "evt_20260601_005",
-      "event_date": "2026-06-01",
-      "headline": "Lightricks lays off dozens as AI reshapes video creation industry",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-10\">Israeli AI video company Lightricks laid off dozens.</cite>",
-      "causality": "contributing",
-      "confidence": 0.65,
-      "tolls": {
-        "jobs": 40,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -83200
-      },
-      "notes": "Estimated 'dozens' as ~40 layoffs",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264488+00:00"
+      "notes": "Walmart's head of global AI acceleration Daniel Danker and global technology chief Suresh Kumar led the restructuring; cuts tied to consolidation of AI-focused product teams. Walmart publicly framed it as organizational simplification rather than AI replacement, but AI integration was a stated driver.",
+      "collected_date": "2026-06-03",
+      "date": "2026-06-03",
+      "created_at": "2026-06-03T08:45:11.083551+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-06-02",
+    "last_anthropic_success": "2026-06-03",
     "last_openai_success": "2026-06-01",
-    "last_nonzero_collection": "2026-06-02",
+    "last_nonzero_collection": "2026-06-03",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-02"
+    "last_collection_date": "2026-06-03"
   }
 }
