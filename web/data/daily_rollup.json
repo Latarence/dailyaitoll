@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-03T08:45:11.083462+00:00",
+  "last_updated": "2026-06-04T08:10:22.305260+00:00",
   "totals": {
-    "jobs": 432179,
-    "teams": 114,
+    "jobs": 432279,
+    "teams": 115,
     "products": 0,
-    "companies": 88,
+    "companies": 89,
     "revenue": 0,
-    "labor_hours": -898832320
+    "labor_hours": -899040320
   },
   "today": {
-    "jobs": 1000,
-    "teams": 2,
+    "jobs": 100,
+    "teams": 1,
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": -2080000
+    "labor_hours": -208000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -592,10 +592,38 @@
       "companies": 5,
       "revenue": 0,
       "labor_hours": -7300800
+    },
+    "2026-06-03": {
+      "jobs": 100,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -208000
     }
   },
-  "events_count": 124,
+  "events_count": 125,
   "all_events": [
+    {
+      "id": "evt_20260603_001",
+      "event_date": "2026-06-03",
+      "headline": "Skai (formerly Kenshoo) lays off 20% of staff (~100 employees), cites AI-driven transformation",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/jmjuqzfe6",
+      "source_name": "Calcalist (Ctech)",
+      "excerpt": "Digital marketing company Skai, formerly known as Kenshoo, has laid off about 20% of its workforce in Israel and around the world, roughly 100 employees. The company also attributes the current layoffs to the impact of artificial intelligence on its operations.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 100,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -208000
+      },
+      "notes": "Skai's second round in recent years (after ~80 in 2024). Company statement: launched several AI-based products and changed work methods 'with an emphasis on artificial intelligence.' Pre-layoff headcount ~550. Reported by Ctech and tracked by TrueUp on June 3, 2026.",
+      "collected_date": "2026-06-04",
+      "date": "2026-06-04",
+      "created_at": "2026-06-04T08:10:22.305343+00:00"
+    },
     {
       "id": "evt_20260513_003",
       "event_date": "2026-05-13",
@@ -2648,58 +2676,36 @@
       "hashtags": "#UPS #Logistics #DeliveryAI #Management #AILayoffs #TechLayoffs2024 #Automation",
       "date": "2024-02-10",
       "created_at": "2026-04-27T17:59:55.141820"
-    },
-    {
-      "id": "evt_20240208_cisco_129",
-      "event_date": "2024-02-08",
-      "collected_date": "2026-04-27",
-      "headline": "Cisco cuts 4,200 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3816662/tech-layoffs-in-2024-a-timeline.html",
-      "source_name": "TrueUp",
-      "excerpt": "Cisco's first major 2024 cut: 4,200 employees (5% of workforce). Part of CEO Chuck Robbins' strategy to invest in AI-era networking \u2014 shifting from hardware-centric to AI-driven software platforms. Followed by another 6,000 in September 2024.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 4200,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -8736000
-      },
-      "notes": "Cisco's first major 2024 cut: 4,200 employees (5% of workforce). Part of CEO Chuck Robbins' strategy to invest in AI-era networking \u2014 shifting from hardware-centric to AI-driven software platforms. Followed by another 6,000 in September 2024.",
-      "industry": "Networking / Cybersecurity",
-      "hashtags": "#Cisco #Networking #AILayoffs #TechLayoffs2024 #SoftwareNetworking",
-      "date": "2024-02-08",
-      "created_at": "2026-04-27T17:59:55.141853"
     }
   ],
-  "summary": "One new verifiable event identified that was not in the already-tracked list: Walmart's announced cut/relocation of approximately 1,000 corporate workers as part of an AI-driven consolidation of its global tech and AI product teams (announced mid-May 2026, reported via WSJ). No fresh AI-displacement announcements were found dated June 2-3, 2026 in available sources beyond aggregate tracker updates. Major already-tracked events (Meta, Intuit, Cisco, Cloudflare, PayPal, Coinbase, Wix, Block, etc.) dominate recent coverage. Note: <cite index=\"27-14,27-15,27-16\">MIT Sloan professor Paul Osterman argues much of the 2026 layoff wave reflects 'AI washing' \u2014 companies using AI as cover for cost-cutting they would have done anyway</cite>, so attribution confidence is moderated accordingly.",
+  "summary": "One new verifiable AI-driven displacement event found in the past 24-48 hours: Israeli digital marketing company Skai (formerly Kenshoo) laid off approximately 100 employees (20% of its workforce) on June 3, 2026, with the company explicitly citing the impact of AI on its operations and a shift to AI-based products as the rationale. Uber also announced cutting 23% of its People & Places division on June 3, but a company spokesperson explicitly ruled out AI as a factor, so it was excluded from the tally. Innovaccer (340 AI-native layoffs) and other recent AI-cited events fall outside the 24-48 hour window or were previously tracked.",
   "events": [
     {
-      "id": "evt_20260513_003",
-      "event_date": "2026-05-13",
-      "headline": "Walmart cuts or relocates 1,000 corporate workers as it consolidates global tech and AI product teams",
-      "source_url": "https://hrexecutive.com/walmart-cuts-1000-corporate-roles-as-ai-reorganization-reshapes-tech-teams/",
-      "source_name": "HR Executive",
-      "excerpt": "Walmart is set to cut or relocate about 1,000 corporate employees as the retail giant reorganizes its global technology and AI product teams. The reorganization was led by Suresh Kumar, Walmart's head of global technology, who reviewed internal structures and identified overlapping roles created in part by the integration of AI-focused product units.",
-      "causality": "contributing",
-      "confidence": 0.75,
+      "id": "evt_20260603_001",
+      "event_date": "2026-06-03",
+      "headline": "Skai (formerly Kenshoo) lays off 20% of staff (~100 employees), cites AI-driven transformation",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/jmjuqzfe6",
+      "source_name": "Calcalist (Ctech)",
+      "excerpt": "Digital marketing company Skai, formerly known as Kenshoo, has laid off about 20% of its workforce in Israel and around the world, roughly 100 employees. The company also attributes the current layoffs to the impact of artificial intelligence on its operations.",
+      "causality": "direct",
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 1000,
-        "teams": 2,
+        "jobs": 100,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": -2080000
+        "labor_hours": -208000
       },
-      "notes": "Walmart's head of global AI acceleration Daniel Danker and global technology chief Suresh Kumar led the restructuring; cuts tied to consolidation of AI-focused product teams. Walmart publicly framed it as organizational simplification rather than AI replacement, but AI integration was a stated driver.",
-      "collected_date": "2026-06-03",
-      "date": "2026-06-03",
-      "created_at": "2026-06-03T08:45:11.083551+00:00"
+      "notes": "Skai's second round in recent years (after ~80 in 2024). Company statement: launched several AI-based products and changed work methods 'with an emphasis on artificial intelligence.' Pre-layoff headcount ~550. Reported by Ctech and tracked by TrueUp on June 3, 2026.",
+      "collected_date": "2026-06-04",
+      "date": "2026-06-04",
+      "created_at": "2026-06-04T08:10:22.305343+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-06-03",
+    "last_anthropic_success": "2026-06-04",
     "last_openai_success": "2026-06-01",
-    "last_nonzero_collection": "2026-06-03",
+    "last_nonzero_collection": "2026-06-04",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-03"
+    "last_collection_date": "2026-06-04"
   }
 }
