@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-04T08:10:22.305260+00:00",
+  "last_updated": "2026-06-05T07:57:01.874489+00:00",
   "totals": {
-    "jobs": 432279,
-    "teams": 115,
+    "jobs": 432889,
+    "teams": 120,
     "products": 0,
-    "companies": 89,
+    "companies": 91,
     "revenue": 0,
-    "labor_hours": -899040320
+    "labor_hours": -900309120
   },
   "today": {
-    "jobs": 100,
-    "teams": 1,
+    "jobs": 610,
+    "teams": 5,
     "products": 0,
-    "companies": 1,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": -208000
+    "labor_hours": -1268800
   },
   "daily_totals": {
     "2026-05-05": {
@@ -586,12 +586,12 @@
       "labor_hours": -8320000
     },
     "2026-06-01": {
-      "jobs": 3510,
-      "teams": 12,
+      "jobs": 3770,
+      "teams": 14,
       "products": 0,
-      "companies": 5,
+      "companies": 6,
       "revenue": 0,
-      "labor_hours": -7300800
+      "labor_hours": -7841600
     },
     "2026-06-03": {
       "jobs": 100,
@@ -600,10 +600,58 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -208000
+    },
+    "2026-06-02": {
+      "jobs": 350,
+      "teams": 3,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -728000
     }
   },
-  "events_count": 125,
+  "events_count": 127,
   "all_events": [
+    {
+      "id": "evt_20260602_001",
+      "event_date": "2026-06-02",
+      "headline": "GitLab cuts 14% of workforce (~350 employees) in AI pivot to 'agentic era'",
+      "source_url": "https://techcrunch.com/2026/06/03/gitlab-cuts-14-of-staff-as-it-scales-its-platform-to-serve-ai-workloads/",
+      "source_name": "TechCrunch",
+      "excerpt": "Developer platform GitLab has laid off about 14% of its workforce, about 350 employees, as part of a broader restructuring effort... as it exited 22 countries, flattened management layers, and invested in infrastructure to scale its platform and serve increased traffic from AI workflows.",
+      "causality": "direct",
+      "confidence": 0.92,
+      "tolls": {
+        "jobs": 350,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -728000
+      },
+      "notes": "Announced alongside Q1 FY27 earnings on June 2, 2026. CEO Bill Staples cited 'agentic era' transformation; ~$30-35M restructuring charge. Savings reinvested in Duo Agent Platform and AI infrastructure. Exit from 22 countries.",
+      "collected_date": "2026-06-05",
+      "date": "2026-06-05",
+      "created_at": "2026-06-05T07:57:01.874600+00:00"
+    },
+    {
+      "id": "evt_20260601_006",
+      "event_date": "2026-06-01",
+      "headline": "Manhattan Associates cuts ~260 jobs (6% of workforce) citing operational efficiencies amid AI shift",
+      "source_url": "https://www.stocktitan.net/sec-filings/MANH/8-k-manhattan-associates-inc-reports-material-event-05b6c9aa2551.html",
+      "source_name": "StockTitan / SEC 8-K",
+      "excerpt": "Manhattan Associates, Inc. has launched a cost-reduction plan that will cut its global workforce by approximately 6%... leveraging increased operational efficiencies and allowing it to focus investments on key strategic priorities.",
+      "causality": "inferred",
+      "confidence": 0.55,
+      "tolls": {
+        "jobs": 260,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -540800
+      },
+      "notes": "Atlanta supply-chain software maker. 8-K filed June 1, 2026 listed 'generative and agentic artificial intelligence' as a risk factor. Coincides with launch of AI-powered Solution Design Studio and Manhattan Active platform. AI causality inferred, not explicitly stated; $7-9M Q2 severance charge.",
+      "collected_date": "2026-06-05",
+      "date": "2026-06-05",
+      "created_at": "2026-06-05T07:57:01.874636+00:00"
+    },
     {
       "id": "evt_20260603_001",
       "event_date": "2026-06-03",
@@ -2633,79 +2681,56 @@
       "hashtags": "#Cisco #Networking #AILayoffs #TechLayoffs",
       "date": "2024-02-15",
       "created_at": "2026-04-27T17:59:55.149261"
-    },
-    {
-      "id": "evt_20240215_grammarl_219",
-      "event_date": "2024-02-15",
-      "collected_date": "2026-04-27",
-      "headline": "Grammarly cuts 230 jobs",
-      "source_url": "https://programs.com/resources/ai-layoffs/",
-      "source_name": "Programs.com",
-      "excerpt": "Restructured around AI-powered writing tools; CEO cited need to align teams and resources with AI strategic priorities.",
-      "causality": "contributing",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 230,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -478400
-      },
-      "notes": "Restructured around AI-powered writing tools; CEO cited need to align teams and resources with AI strategic priorities.",
-      "hashtags": "#Grammarly #AILayoffs #WritingAI #TechLayoffs",
-      "date": "2024-02-15",
-      "created_at": "2026-04-27T17:59:55.149299"
-    },
-    {
-      "id": "evt_20240210_ups_128",
-      "event_date": "2024-02-10",
-      "collected_date": "2026-04-27",
-      "headline": "UPS cuts 12,000 jobs amid AI transition",
-      "source_url": "https://www.notebookcheck.net/UPS-lays-off-12-000-managers-as-AI-replaces-jobs.802229.0.html",
-      "source_name": "TrueUp",
-      "excerpt": "UPS cut 12,000 of its 85,000 management jobs explicitly because AI tools are replacing coordination and scheduling functions. CEO Carol Tom\u00e9 also imposed 5-day office return. Target: $1B in savings. AI route optimization and automated sortation systems replace what entire management layers previously did.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 12000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -24960000
-      },
-      "notes": "UPS cut 12,000 of its 85,000 management jobs explicitly because AI tools are replacing coordination and scheduling functions. CEO Carol Tom\u00e9 also imposed 5-day office return. Target: $1B in savings. AI route optimization and automated sortation systems replace what entire management layers previously did.",
-      "industry": "Logistics / Delivery",
-      "hashtags": "#UPS #Logistics #DeliveryAI #Management #AILayoffs #TechLayoffs2024 #Automation",
-      "date": "2024-02-10",
-      "created_at": "2026-04-27T17:59:55.141820"
     }
   ],
-  "summary": "One new verifiable AI-driven displacement event found in the past 24-48 hours: Israeli digital marketing company Skai (formerly Kenshoo) laid off approximately 100 employees (20% of its workforce) on June 3, 2026, with the company explicitly citing the impact of AI on its operations and a shift to AI-based products as the rationale. Uber also announced cutting 23% of its People & Places division on June 3, but a company spokesperson explicitly ruled out AI as a factor, so it was excluded from the tally. Innovaccer (340 AI-native layoffs) and other recent AI-cited events fall outside the 24-48 hour window or were previously tracked.",
+  "summary": "Two new AI-linked workforce reductions identified in the past 48 hours. GitLab confirmed ~350 layoffs (14%) on June 2-3 as part of its 'Act 2' pivot to AI agentic workloads \u2014 a direct, explicit AI-driven restructuring. Manhattan Associates disclosed a ~260-job (6%) cut on June 1 citing operational efficiencies, with AI causality inferred from concurrent AI product rollouts. Uber's June 3 cut of 23% of its People division was reviewed but excluded: company explicitly denied AI as the cause. Skai's June 3 layoffs were already tracked. Total new jobs displaced: 610.",
   "events": [
     {
-      "id": "evt_20260603_001",
-      "event_date": "2026-06-03",
-      "headline": "Skai (formerly Kenshoo) lays off 20% of staff (~100 employees), cites AI-driven transformation",
-      "source_url": "https://www.calcalistech.com/ctechnews/article/jmjuqzfe6",
-      "source_name": "Calcalist (Ctech)",
-      "excerpt": "Digital marketing company Skai, formerly known as Kenshoo, has laid off about 20% of its workforce in Israel and around the world, roughly 100 employees. The company also attributes the current layoffs to the impact of artificial intelligence on its operations.",
+      "id": "evt_20260602_001",
+      "event_date": "2026-06-02",
+      "headline": "GitLab cuts 14% of workforce (~350 employees) in AI pivot to 'agentic era'",
+      "source_url": "https://techcrunch.com/2026/06/03/gitlab-cuts-14-of-staff-as-it-scales-its-platform-to-serve-ai-workloads/",
+      "source_name": "TechCrunch",
+      "excerpt": "Developer platform GitLab has laid off about 14% of its workforce, about 350 employees, as part of a broader restructuring effort... as it exited 22 countries, flattened management layers, and invested in infrastructure to scale its platform and serve increased traffic from AI workflows.",
       "causality": "direct",
-      "confidence": 0.9,
+      "confidence": 0.92,
       "tolls": {
-        "jobs": 100,
-        "teams": 1,
+        "jobs": 350,
+        "teams": 3,
         "companies": 1,
-        "labor_hours": -208000
+        "labor_hours": -728000
       },
-      "notes": "Skai's second round in recent years (after ~80 in 2024). Company statement: launched several AI-based products and changed work methods 'with an emphasis on artificial intelligence.' Pre-layoff headcount ~550. Reported by Ctech and tracked by TrueUp on June 3, 2026.",
-      "collected_date": "2026-06-04",
-      "date": "2026-06-04",
-      "created_at": "2026-06-04T08:10:22.305343+00:00"
+      "notes": "Announced alongside Q1 FY27 earnings on June 2, 2026. CEO Bill Staples cited 'agentic era' transformation; ~$30-35M restructuring charge. Savings reinvested in Duo Agent Platform and AI infrastructure. Exit from 22 countries.",
+      "collected_date": "2026-06-05",
+      "date": "2026-06-05",
+      "created_at": "2026-06-05T07:57:01.874600+00:00"
+    },
+    {
+      "id": "evt_20260601_006",
+      "event_date": "2026-06-01",
+      "headline": "Manhattan Associates cuts ~260 jobs (6% of workforce) citing operational efficiencies amid AI shift",
+      "source_url": "https://www.stocktitan.net/sec-filings/MANH/8-k-manhattan-associates-inc-reports-material-event-05b6c9aa2551.html",
+      "source_name": "StockTitan / SEC 8-K",
+      "excerpt": "Manhattan Associates, Inc. has launched a cost-reduction plan that will cut its global workforce by approximately 6%... leveraging increased operational efficiencies and allowing it to focus investments on key strategic priorities.",
+      "causality": "inferred",
+      "confidence": 0.55,
+      "tolls": {
+        "jobs": 260,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -540800
+      },
+      "notes": "Atlanta supply-chain software maker. 8-K filed June 1, 2026 listed 'generative and agentic artificial intelligence' as a risk factor. Coincides with launch of AI-powered Solution Design Studio and Manhattan Active platform. AI causality inferred, not explicitly stated; $7-9M Q2 severance charge.",
+      "collected_date": "2026-06-05",
+      "date": "2026-06-05",
+      "created_at": "2026-06-05T07:57:01.874636+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-06-04",
+    "last_anthropic_success": "2026-06-05",
     "last_openai_success": "2026-06-01",
-    "last_nonzero_collection": "2026-06-04",
+    "last_nonzero_collection": "2026-06-05",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-04"
+    "last_collection_date": "2026-06-05"
   }
 }
