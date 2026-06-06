@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-05T07:57:01.874489+00:00",
+  "last_updated": "2026-06-06T06:45:02.212898+00:00",
   "totals": {
-    "jobs": 432889,
-    "teams": 120,
+    "jobs": 433277,
+    "teams": 123,
     "products": 0,
-    "companies": 91,
+    "companies": 93,
     "revenue": 0,
-    "labor_hours": -900309120
+    "labor_hours": -901116160
   },
   "today": {
-    "jobs": 610,
-    "teams": 5,
+    "jobs": 388,
+    "teams": 3,
     "products": 0,
     "companies": 2,
     "revenue": 0,
-    "labor_hours": -1268800
+    "labor_hours": -807040
   },
   "daily_totals": {
     "2026-05-05": {
@@ -594,24 +594,64 @@
       "labor_hours": -7841600
     },
     "2026-06-03": {
-      "jobs": 100,
-      "teams": 1,
+      "jobs": 440,
+      "teams": 2,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -208000
+      "labor_hours": -915200
     },
     "2026-06-02": {
-      "jobs": 350,
-      "teams": 3,
+      "jobs": 398,
+      "teams": 5,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -728000
+      "labor_hours": -827840
     }
   },
-  "events_count": 127,
+  "events_count": 129,
   "all_events": [
+    {
+      "id": "evt_20260603_002",
+      "event_date": "2026-06-03",
+      "headline": "Uber cuts 23% of People & Places division (~340 jobs) amid AI productivity push",
+      "source_url": "https://www.techtimes.com/articles/317848/20260605/tech-layoffs-2026-hit-149935-uber-cuts-hr-days-after-ai-drained-its-coding-budget.htm",
+      "source_name": "TechTimes / Bloomberg / CNBC",
+      "excerpt": "Uber, a company that exhausted its entire 2026 AI coding budget in just four months, announced it was cutting 23% of the division responsible for its own human workforce.",
+      "causality": "inferred",
+      "confidence": 0.55,
+      "tolls": {
+        "jobs": 340,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -707200
+      },
+      "notes": "Uber explicitly stated the cuts are unrelated to AI, but the layoffs came days after the company exhausted its 2026 AI coding budget and last month said it would slow hiring due to internal AI use. CEO Khosrowshahi previously stated AI will replace 70-80% of human work in 10 years. Estimated headcount at ~340 (upper bound of 'well under 1%' of 34,000 employees). Marked inferred due to Uber's explicit denial.",
+      "collected_date": "2026-06-06",
+      "date": "2026-06-06",
+      "created_at": "2026-06-06T06:45:02.213002+00:00"
+    },
+    {
+      "id": "evt_20260602_002",
+      "event_date": "2026-06-02",
+      "headline": "Interview Kickstart lays off nearly 50 employees amid AI automation push",
+      "source_url": "https://inc42.com/buzz/blume-backed-interview-kickstart-lays-off-nearly-50-employees-amid-ai-automation-push/",
+      "source_name": "Inc42",
+      "excerpt": "The primary reason behind the restructuring was the increase in AI automation, the sources said, adding that the startup's enrollments are down 20-25% in 2026 from the previous year.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 48,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -99840
+      },
+      "notes": "Blume Ventures-backed upskilling startup; sources cited 80-100 impacted but cofounder Soham Mehta said less than 50; operations and support functions most affected. Using conservative figure of 48 per TrueUp tracker.",
+      "collected_date": "2026-06-06",
+      "date": "2026-06-06",
+      "created_at": "2026-06-06T06:45:02.212981+00:00"
+    },
     {
       "id": "evt_20260602_001",
       "event_date": "2026-06-02",
@@ -2639,98 +2679,56 @@
       "hashtags": "#Dell #TechLayoffs #AIShift #Restructuring",
       "date": "2024-04-01",
       "created_at": "2026-04-27T17:59:55.149183"
-    },
-    {
-      "id": "evt_20240215_sap_217",
-      "event_date": "2024-02-15",
-      "collected_date": "2026-04-27",
-      "headline": "SAP cuts 8,000 jobs",
-      "source_url": "https://www.cio.com/article/1297964/sap-announces-2-2b-restructuring-program.html",
-      "source_name": "CIO / TechTarget",
-      "excerpt": "$2.2B restructuring program targeting 8,000 roles to pivot to AI; most covered by voluntary leave and reskilling, headcount to stay flat.",
-      "causality": "contributing",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 8000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -16640000
-      },
-      "notes": "$2.2B restructuring program targeting 8,000 roles to pivot to AI; most covered by voluntary leave and reskilling, headcount to stay flat.",
-      "hashtags": "#SAP #EnterpriseSoft #AILayoffs #GenAI",
-      "date": "2024-02-15",
-      "created_at": "2026-04-27T17:59:55.149222"
-    },
-    {
-      "id": "evt_20240215_cisco_218",
-      "event_date": "2024-02-15",
-      "collected_date": "2026-04-27",
-      "headline": "Cisco cuts 4,200 jobs",
-      "source_url": "https://www.computerworld.com/article/3816662/tech-layoffs-in-2024-a-timeline.html",
-      "source_name": "Computerworld",
-      "excerpt": "First 2024 round; 5% of 84,900 employees cut as Cisco refocuses on AI and security and away from legacy telecom equipment.",
-      "causality": "contributing",
-      "confidence": 0.65,
-      "tolls": {
-        "jobs": 4200,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -8736000
-      },
-      "notes": "First 2024 round; 5% of 84,900 employees cut as Cisco refocuses on AI and security and away from legacy telecom equipment.",
-      "hashtags": "#Cisco #Networking #AILayoffs #TechLayoffs",
-      "date": "2024-02-15",
-      "created_at": "2026-04-27T17:59:55.149261"
     }
   ],
-  "summary": "Two new AI-linked workforce reductions identified in the past 48 hours. GitLab confirmed ~350 layoffs (14%) on June 2-3 as part of its 'Act 2' pivot to AI agentic workloads \u2014 a direct, explicit AI-driven restructuring. Manhattan Associates disclosed a ~260-job (6%) cut on June 1 citing operational efficiencies, with AI causality inferred from concurrent AI product rollouts. Uber's June 3 cut of 23% of its People division was reviewed but excluded: company explicitly denied AI as the cause. Skai's June 3 layoffs were already tracked. Total new jobs displaced: 610.",
+  "summary": "Two new events identified in the past 48 hours. Interview Kickstart (India-based upskilling startup) laid off ~48-80 employees with sources directly citing AI automation as the primary reason and enrollment declines of 20-25% as students use AI tools instead. Uber cut 23% of its People & Places (HR/recruiting) division on June 3, affecting roughly 340 employees; while Uber explicitly denied AI as the cause, the timing\u2014days after exhausting its 2026 AI coding budget and following CEO statements about AI slowing hiring\u2014suggests AI as a contributing factor. Total new jobs displaced: ~388 across 2 companies.",
   "events": [
     {
-      "id": "evt_20260602_001",
+      "id": "evt_20260602_002",
       "event_date": "2026-06-02",
-      "headline": "GitLab cuts 14% of workforce (~350 employees) in AI pivot to 'agentic era'",
-      "source_url": "https://techcrunch.com/2026/06/03/gitlab-cuts-14-of-staff-as-it-scales-its-platform-to-serve-ai-workloads/",
-      "source_name": "TechCrunch",
-      "excerpt": "Developer platform GitLab has laid off about 14% of its workforce, about 350 employees, as part of a broader restructuring effort... as it exited 22 countries, flattened management layers, and invested in infrastructure to scale its platform and serve increased traffic from AI workflows.",
+      "headline": "Interview Kickstart lays off nearly 50 employees amid AI automation push",
+      "source_url": "https://inc42.com/buzz/blume-backed-interview-kickstart-lays-off-nearly-50-employees-amid-ai-automation-push/",
+      "source_name": "Inc42",
+      "excerpt": "The primary reason behind the restructuring was the increase in AI automation, the sources said, adding that the startup's enrollments are down 20-25% in 2026 from the previous year.",
       "causality": "direct",
-      "confidence": 0.92,
+      "confidence": 0.85,
       "tolls": {
-        "jobs": 350,
-        "teams": 3,
+        "jobs": 48,
+        "teams": 2,
         "companies": 1,
-        "labor_hours": -728000
+        "labor_hours": -99840
       },
-      "notes": "Announced alongside Q1 FY27 earnings on June 2, 2026. CEO Bill Staples cited 'agentic era' transformation; ~$30-35M restructuring charge. Savings reinvested in Duo Agent Platform and AI infrastructure. Exit from 22 countries.",
-      "collected_date": "2026-06-05",
-      "date": "2026-06-05",
-      "created_at": "2026-06-05T07:57:01.874600+00:00"
+      "notes": "Blume Ventures-backed upskilling startup; sources cited 80-100 impacted but cofounder Soham Mehta said less than 50; operations and support functions most affected. Using conservative figure of 48 per TrueUp tracker.",
+      "collected_date": "2026-06-06",
+      "date": "2026-06-06",
+      "created_at": "2026-06-06T06:45:02.212981+00:00"
     },
     {
-      "id": "evt_20260601_006",
-      "event_date": "2026-06-01",
-      "headline": "Manhattan Associates cuts ~260 jobs (6% of workforce) citing operational efficiencies amid AI shift",
-      "source_url": "https://www.stocktitan.net/sec-filings/MANH/8-k-manhattan-associates-inc-reports-material-event-05b6c9aa2551.html",
-      "source_name": "StockTitan / SEC 8-K",
-      "excerpt": "Manhattan Associates, Inc. has launched a cost-reduction plan that will cut its global workforce by approximately 6%... leveraging increased operational efficiencies and allowing it to focus investments on key strategic priorities.",
+      "id": "evt_20260603_002",
+      "event_date": "2026-06-03",
+      "headline": "Uber cuts 23% of People & Places division (~340 jobs) amid AI productivity push",
+      "source_url": "https://www.techtimes.com/articles/317848/20260605/tech-layoffs-2026-hit-149935-uber-cuts-hr-days-after-ai-drained-its-coding-budget.htm",
+      "source_name": "TechTimes / Bloomberg / CNBC",
+      "excerpt": "Uber, a company that exhausted its entire 2026 AI coding budget in just four months, announced it was cutting 23% of the division responsible for its own human workforce.",
       "causality": "inferred",
       "confidence": 0.55,
       "tolls": {
-        "jobs": 260,
-        "teams": 2,
+        "jobs": 340,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": -540800
+        "labor_hours": -707200
       },
-      "notes": "Atlanta supply-chain software maker. 8-K filed June 1, 2026 listed 'generative and agentic artificial intelligence' as a risk factor. Coincides with launch of AI-powered Solution Design Studio and Manhattan Active platform. AI causality inferred, not explicitly stated; $7-9M Q2 severance charge.",
-      "collected_date": "2026-06-05",
-      "date": "2026-06-05",
-      "created_at": "2026-06-05T07:57:01.874636+00:00"
+      "notes": "Uber explicitly stated the cuts are unrelated to AI, but the layoffs came days after the company exhausted its 2026 AI coding budget and last month said it would slow hiring due to internal AI use. CEO Khosrowshahi previously stated AI will replace 70-80% of human work in 10 years. Estimated headcount at ~340 (upper bound of 'well under 1%' of 34,000 employees). Marked inferred due to Uber's explicit denial.",
+      "collected_date": "2026-06-06",
+      "date": "2026-06-06",
+      "created_at": "2026-06-06T06:45:02.213002+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-06-05",
+    "last_anthropic_success": "2026-06-06",
     "last_openai_success": "2026-06-01",
-    "last_nonzero_collection": "2026-06-05",
+    "last_nonzero_collection": "2026-06-06",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-05"
+    "last_collection_date": "2026-06-06"
   }
 }
