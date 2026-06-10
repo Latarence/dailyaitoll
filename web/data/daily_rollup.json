@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-09T07:34:54.401597+00:00",
+  "last_updated": "2026-06-10T07:57:43.777601+00:00",
   "totals": {
-    "jobs": 441477,
-    "teams": 126,
+    "jobs": 442817,
+    "teams": 132,
     "products": 0,
-    "companies": 96,
+    "companies": 98,
     "revenue": 0,
-    "labor_hours": -918172160
+    "labor_hours": -920959360
   },
   "today": {
-    "jobs": 8000,
-    "teams": 0,
+    "jobs": 1340,
+    "teams": 6,
     "products": 0,
-    "companies": 1,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": -16640000
+    "labor_hours": -2787200
   },
   "daily_totals": {
     "2026-05-05": {
@@ -616,10 +616,66 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -16640000
+    },
+    "2026-05-16": {
+      "jobs": 340,
+      "teams": 2,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -707200
+    },
+    "2026-02-01": {
+      "jobs": 1000,
+      "teams": 4,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -2080000
     }
   },
-  "events_count": 132,
+  "events_count": 134,
   "all_events": [
+    {
+      "id": "evt_20260516_001",
+      "event_date": "2026-05-16",
+      "headline": "Innovaccer lays off 340 employees in pivot to 'AI-Native' model",
+      "source_url": "https://entrackr.com/news/innovaccer-lays-off-340-employees-amid-shift-to-ai-native-operations-11838352",
+      "source_name": "Entrackr",
+      "excerpt": "<cite index=\"26-1,26-2,26-3,26-4\">Innovaccer has carried out a fresh round of layoffs as part of its shift toward becoming an 'AI-native' organisation, according to an internal email from founder and CEO Abhinav Shashank. He said that AI systems had automated workflows that previously required large teams. The company later confirmed 340 employees globally were impacted.</cite>",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 340,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -707200
+      },
+      "notes": "San Francisco-headquartered healthtech unicorn valued at $3.45B; cuts across India and US; CEO email titled 'Moving Forward as an AI-Native Company'; third major layoff round in four years",
+      "collected_date": "2026-06-10",
+      "date": "2026-06-10",
+      "created_at": "2026-06-10T07:57:43.777683+00:00"
+    },
+    {
+      "id": "evt_20260201_001",
+      "event_date": "2026-02-01",
+      "headline": "Livspace lays off ~1,000 employees in transition to AI-native organization",
+      "source_url": "https://entrackr.com/news/innovaccer-lays-off-340-employees-amid-shift-to-ai-native-operations-11838352",
+      "source_name": "Entrackr",
+      "excerpt": "<cite index=\"26-16\">In February, home d\u00e9cor and interior design company Livspace also laid off around 1,000 employees as part of an internal restructuring aimed at transitioning into an AI-native organisation.</cite>",
+      "causality": "direct",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 1000,
+        "teams": 4,
+        "companies": 1,
+        "labor_hours": -2080000
+      },
+      "notes": "Home d\u00e9cor / interior design company; restructuring explicitly aimed at AI-native transition; date approximate (February 2026)",
+      "collected_date": "2026-06-10",
+      "date": "2026-06-10",
+      "created_at": "2026-06-10T07:57:43.777706+00:00"
+    },
     {
       "id": "evt_20260604_001",
       "event_date": "2026-06-04",
@@ -2639,79 +2695,56 @@
       "hashtags": "#Google #Alphabet #AILayoffs #TechRestructuring",
       "date": "2024-05-01",
       "created_at": "2026-04-27T17:59:55.149105"
-    },
-    {
-      "id": "evt_20240415_tesla_125",
-      "event_date": "2024-04-15",
-      "collected_date": "2026-04-27",
-      "headline": "Tesla cuts 14,000 jobs amid AI transition",
-      "source_url": "https://techcrunch.com/2024/04/16/tesla-layoffs-hit-high-performers-slashes-some-departments-sources-say/",
-      "source_name": "TrueUp",
-      "excerpt": "Elon Musk cut 14,000+ employees (10%+ of global workforce), pivoting from EV cost battles toward autonomous vehicles and AI robotaxi. 'It is extremely important to look at every aspect of the company for cost reductions and increasing productivity... we are developing some of the most revolutionary technologies in AI.' Two senior execs (SVP Drew Baglino, VP Rohan Patel) also departed.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 14000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -29120000
-      },
-      "notes": "Elon Musk cut 14,000+ employees (10%+ of global workforce), pivoting from EV cost battles toward autonomous vehicles and AI robotaxi. 'It is extremely important to look at every aspect of the company for cost reductions and increasing productivity... we are developing some of the most revolutionary technologies in AI.' Two senior execs (SVP Drew Baglino, VP Rohan Patel) also departed.",
-      "industry": "Electric Vehicles / AI",
-      "hashtags": "#Tesla #ElonMusk #AutonomousVehicles #Robotaxi #AILayoffs #TechLayoffs2024 #EV",
-      "date": "2024-04-15",
-      "created_at": "2026-04-27T17:59:55.141718"
-    },
-    {
-      "id": "evt_20240415_amazonaw_215",
-      "event_date": "2024-04-15",
-      "collected_date": "2026-04-27",
-      "headline": "Amazon (AWS) reduces workforce",
-      "source_url": "https://www.cio.com/article/2081437/amazon-downsizes-aws.html",
-      "source_name": "CIO",
-      "excerpt": "Hundreds cut from AWS sales, marketing, and tech development for physical retail as Amazon scaled back Just Walk Out technology.",
-      "causality": "inferred",
-      "confidence": 0.55,
-      "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Hundreds cut from AWS sales, marketing, and tech development for physical retail as Amazon scaled back Just Walk Out technology.",
-      "hashtags": "#Amazon #AWS #CloudComputing #TechLayoffs",
-      "date": "2024-04-15",
-      "created_at": "2026-04-27T17:59:55.149147"
     }
   ],
-  "summary": "Meta announced 8,000 job cuts on June 4, 2026, attributing the layoffs to increased investments in AI infrastructure.",
+  "summary": "Found two new AI-cited workforce reduction events not previously tracked: Innovaccer (340 jobs, healthtech, San Francisco-based, AI-Native pivot announced May 16) and Livspace (~1,000 jobs, home d\u00e9cor, February 2026, AI-native restructuring). Most coverage on June 10 reiterated previously tracked events (Meta 8,000; Standard Chartered 7,800; Gambling.com; Skai; Uber; etc.). Challenger, Gray & Christmas confirmed AI remained the leading cited reason for layoffs in May 2026 for the third consecutive month, with 38,579 cuts attributed to automation in May alone.",
   "events": [
     {
-      "id": "evt_20260604_001",
-      "event_date": "2026-06-04",
-      "headline": "Meta cuts 8,000 jobs, cites AI infrastructure investments",
-      "source_url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/tech-sector-cut-us-jobs-by-38242-in-may",
-      "source_name": "Tom's Hardware",
-      "excerpt": "Meta CEO Mark Zuckerberg told staff that the company's roughly 8,000 job cuts were a direct consequence of its AI infrastructure spending.",
+      "id": "evt_20260516_001",
+      "event_date": "2026-05-16",
+      "headline": "Innovaccer lays off 340 employees in pivot to 'AI-Native' model",
+      "source_url": "https://entrackr.com/news/innovaccer-lays-off-340-employees-amid-shift-to-ai-native-operations-11838352",
+      "source_name": "Entrackr",
+      "excerpt": "<cite index=\"26-1,26-2,26-3,26-4\">Innovaccer has carried out a fresh round of layoffs as part of its shift toward becoming an 'AI-native' organisation, according to an internal email from founder and CEO Abhinav Shashank. He said that AI systems had automated workflows that previously required large teams. The company later confirmed 340 employees globally were impacted.</cite>",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
-        "jobs": 8000,
-        "teams": null,
+        "jobs": 340,
+        "teams": 2,
         "companies": 1,
-        "labor_hours": -16640000
+        "labor_hours": -707200
       },
-      "notes": "Part of broader tech industry layoffs in May 2026",
-      "collected_date": "2026-06-09",
-      "date": "2026-06-09",
-      "created_at": "2026-06-09T07:34:54.401675+00:00"
+      "notes": "San Francisco-headquartered healthtech unicorn valued at $3.45B; cuts across India and US; CEO email titled 'Moving Forward as an AI-Native Company'; third major layoff round in four years",
+      "collected_date": "2026-06-10",
+      "date": "2026-06-10",
+      "created_at": "2026-06-10T07:57:43.777683+00:00"
+    },
+    {
+      "id": "evt_20260201_001",
+      "event_date": "2026-02-01",
+      "headline": "Livspace lays off ~1,000 employees in transition to AI-native organization",
+      "source_url": "https://entrackr.com/news/innovaccer-lays-off-340-employees-amid-shift-to-ai-native-operations-11838352",
+      "source_name": "Entrackr",
+      "excerpt": "<cite index=\"26-16\">In February, home d\u00e9cor and interior design company Livspace also laid off around 1,000 employees as part of an internal restructuring aimed at transitioning into an AI-native organisation.</cite>",
+      "causality": "direct",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 1000,
+        "teams": 4,
+        "companies": 1,
+        "labor_hours": -2080000
+      },
+      "notes": "Home d\u00e9cor / interior design company; restructuring explicitly aimed at AI-native transition; date approximate (February 2026)",
+      "collected_date": "2026-06-10",
+      "date": "2026-06-10",
+      "created_at": "2026-06-10T07:57:43.777706+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-06-07",
+    "last_anthropic_success": "2026-06-10",
     "last_openai_success": "2026-06-09",
-    "last_nonzero_collection": "2026-06-09",
+    "last_nonzero_collection": "2026-06-10",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-09"
+    "last_collection_date": "2026-06-10"
   }
 }
