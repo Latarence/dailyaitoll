@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-10T07:57:43.777601+00:00",
+  "last_updated": "2026-06-11T08:25:27.751051+00:00",
   "totals": {
-    "jobs": 442817,
-    "teams": 132,
+    "jobs": 442953,
+    "teams": 137,
     "products": 0,
-    "companies": 98,
+    "companies": 100,
     "revenue": 0,
-    "labor_hours": -920959360
+    "labor_hours": -921242240
   },
   "today": {
-    "jobs": 1340,
-    "teams": 6,
+    "jobs": 136,
+    "teams": 5,
     "products": 0,
     "companies": 2,
     "revenue": 0,
-    "labor_hours": -2787200
+    "labor_hours": -282880
   },
   "daily_totals": {
     "2026-05-05": {
@@ -632,10 +632,58 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -2080000
+    },
+    "2026-06-10": {
+      "jobs": 136,
+      "teams": 5,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -282880
     }
   },
-  "events_count": 134,
+  "events_count": 136,
   "all_events": [
+    {
+      "id": "evt_20260610_001",
+      "event_date": "2026-06-10",
+      "headline": "Salesforce cuts 86 California employees in third AI-era layoff round, targeting Agentforce AI and Marketing Cloud teams",
+      "source_url": "https://www.gurufocus.com/news/8909903/salesforce-crm-announces-latest-round-of-layoffs-amid-ai-transition",
+      "source_name": "GuruFocus",
+      "excerpt": "On June 10, 2026, Salesforce Inc CRM announced a new round of layoffs affecting 86 employees in California, marking the third such reduction since September of the previous year. This strategic move reflects the software giant's ongoing efforts to optimize its organizational structure in the age of artificial intelligence. The layoffs specifically target areas such as Agentforce AI products and Marketing Cloud software.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 86,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -178880
+      },
+      "notes": "Third reduction since September 2025; cuts span sales, administration, technology, and product teams within Agentforce AI, Mulesoft IT and Marketing Cloud software products. Confirmed via Crunchbase News tracker for week ending June 10, 2026.",
+      "collected_date": "2026-06-11",
+      "date": "2026-06-11",
+      "created_at": "2026-06-11T08:25:27.751141+00:00"
+    },
+    {
+      "id": "evt_20260610_002",
+      "event_date": "2026-06-10",
+      "headline": "Google trims Cloud and Threat Intelligence Group workforce as it prioritizes AI investments",
+      "source_url": "https://news.crunchbase.com/startups/tech-layoffs/",
+      "source_name": "Crunchbase News",
+      "excerpt": "In its efforts to prioritize its investments in AI, Mountain View, California-based internet giant Google has been paring the workforce in its Google Cloud division lately, with its Threat Intelligence Group also getting trimmed. It's unclear exactly how many of the workers in these divisions were let go.",
+      "causality": "direct",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 50,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -104000
+      },
+      "notes": "Headcount estimate is conservative (~50) as exact numbers were not disclosed. Reported in Crunchbase tracker week ending June 10, 2026. AI investment prioritization explicitly cited.",
+      "collected_date": "2026-06-11",
+      "date": "2026-06-11",
+      "created_at": "2026-06-11T08:25:27.751164+00:00"
+    },
     {
       "id": "evt_20260516_001",
       "event_date": "2026-05-16",
@@ -2652,99 +2700,56 @@
       "hashtags": "#Microsoft #Azure #AILayoffs #CloudComputing",
       "date": "2024-06-15",
       "created_at": "2026-04-27T17:59:55.149069"
+    }
+  ],
+  "summary": "Two new AI-attributed displacement events identified for the 24-48 hour window ending June 11, 2026: Salesforce's third round of AI-era layoffs (86 California workers cut from Agentforce AI, Mulesoft, and Marketing Cloud teams on June 10) and Google's ongoing trimming of Cloud and Threat Intelligence Group staff to fund AI investments (headcount undisclosed; conservatively estimated at 50). Other layoffs reported this week (Expeditors International ~230, Amdocs ~2,900) were excluded \u2014 Expeditors did not cite AI as the cause, and Amdocs was already tracked. Total: 136 jobs displaced across 2 companies.",
+  "events": [
+    {
+      "id": "evt_20260610_001",
+      "event_date": "2026-06-10",
+      "headline": "Salesforce cuts 86 California employees in third AI-era layoff round, targeting Agentforce AI and Marketing Cloud teams",
+      "source_url": "https://www.gurufocus.com/news/8909903/salesforce-crm-announces-latest-round-of-layoffs-amid-ai-transition",
+      "source_name": "GuruFocus",
+      "excerpt": "On June 10, 2026, Salesforce Inc CRM announced a new round of layoffs affecting 86 employees in California, marking the third such reduction since September of the previous year. This strategic move reflects the software giant's ongoing efforts to optimize its organizational structure in the age of artificial intelligence. The layoffs specifically target areas such as Agentforce AI products and Marketing Cloud software.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 86,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -178880
+      },
+      "notes": "Third reduction since September 2025; cuts span sales, administration, technology, and product teams within Agentforce AI, Mulesoft IT and Marketing Cloud software products. Confirmed via Crunchbase News tracker for week ending June 10, 2026.",
+      "collected_date": "2026-06-11",
+      "date": "2026-06-11",
+      "created_at": "2026-06-11T08:25:27.751141+00:00"
     },
     {
-      "id": "evt_20240604_microsof_124",
-      "event_date": "2024-06-04",
-      "collected_date": "2026-04-27",
-      "headline": "Microsoft reduces workforce citing AI efficiency",
-      "source_url": "https://www.networkworld.com/article/2138075/microsoft-lays-off-staffers-from-its-azure-division.html",
-      "source_name": "TrueUp",
-      "excerpt": "Microsoft made undisclosed cuts to Azure division staff, including Azure for Operations and Mission Engineering teams. Part of a pattern of small, rolling Azure restructuring cuts throughout 2024 as the company pivots AI resources to Copilot and Azure OpenAI service builds.",
+      "id": "evt_20260610_002",
+      "event_date": "2026-06-10",
+      "headline": "Google trims Cloud and Threat Intelligence Group workforce as it prioritizes AI investments",
+      "source_url": "https://news.crunchbase.com/startups/tech-layoffs/",
+      "source_name": "Crunchbase News",
+      "excerpt": "In its efforts to prioritize its investments in AI, Mountain View, California-based internet giant Google has been paring the workforce in its Google Cloud division lately, with its Threat Intelligence Group also getting trimmed. It's unclear exactly how many of the workers in these divisions were let go.",
       "causality": "direct",
       "confidence": 0.7,
       "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Microsoft made undisclosed cuts to Azure division staff, including Azure for Operations and Mission Engineering teams. Part of a pattern of small, rolling Azure restructuring cuts throughout 2024 as the company pivots AI resources to Copilot and Azure OpenAI service builds.",
-      "industry": "Big Tech / Cloud",
-      "hashtags": "#Microsoft #Azure #CloudComputing #AILayoffs #TechLayoffs2024 #Copilot",
-      "date": "2024-06-04",
-      "created_at": "2026-04-27T17:59:55.141683"
-    },
-    {
-      "id": "evt_20240501_google_214",
-      "event_date": "2024-05-01",
-      "collected_date": "2026-04-27",
-      "headline": "Google cuts 200 jobs",
-      "source_url": "https://www.cnbc.com/2024/05/01/google-cuts-hundreds-of-core-workers.html",
-      "source_name": "CNBC",
-      "excerpt": "200+ Core team employees cut (engineering, IT, security, governance); some roles moved to India and Mexico to reduce costs.",
-      "causality": "contributing",
-      "confidence": 0.65,
-      "tolls": {
-        "jobs": 200,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -416000
-      },
-      "notes": "200+ Core team employees cut (engineering, IT, security, governance); some roles moved to India and Mexico to reduce costs.",
-      "hashtags": "#Google #Alphabet #AILayoffs #TechRestructuring",
-      "date": "2024-05-01",
-      "created_at": "2026-04-27T17:59:55.149105"
-    }
-  ],
-  "summary": "Found two new AI-cited workforce reduction events not previously tracked: Innovaccer (340 jobs, healthtech, San Francisco-based, AI-Native pivot announced May 16) and Livspace (~1,000 jobs, home d\u00e9cor, February 2026, AI-native restructuring). Most coverage on June 10 reiterated previously tracked events (Meta 8,000; Standard Chartered 7,800; Gambling.com; Skai; Uber; etc.). Challenger, Gray & Christmas confirmed AI remained the leading cited reason for layoffs in May 2026 for the third consecutive month, with 38,579 cuts attributed to automation in May alone.",
-  "events": [
-    {
-      "id": "evt_20260516_001",
-      "event_date": "2026-05-16",
-      "headline": "Innovaccer lays off 340 employees in pivot to 'AI-Native' model",
-      "source_url": "https://entrackr.com/news/innovaccer-lays-off-340-employees-amid-shift-to-ai-native-operations-11838352",
-      "source_name": "Entrackr",
-      "excerpt": "<cite index=\"26-1,26-2,26-3,26-4\">Innovaccer has carried out a fresh round of layoffs as part of its shift toward becoming an 'AI-native' organisation, according to an internal email from founder and CEO Abhinav Shashank. He said that AI systems had automated workflows that previously required large teams. The company later confirmed 340 employees globally were impacted.</cite>",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 340,
+        "jobs": 50,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -707200
+        "labor_hours": -104000
       },
-      "notes": "San Francisco-headquartered healthtech unicorn valued at $3.45B; cuts across India and US; CEO email titled 'Moving Forward as an AI-Native Company'; third major layoff round in four years",
-      "collected_date": "2026-06-10",
-      "date": "2026-06-10",
-      "created_at": "2026-06-10T07:57:43.777683+00:00"
-    },
-    {
-      "id": "evt_20260201_001",
-      "event_date": "2026-02-01",
-      "headline": "Livspace lays off ~1,000 employees in transition to AI-native organization",
-      "source_url": "https://entrackr.com/news/innovaccer-lays-off-340-employees-amid-shift-to-ai-native-operations-11838352",
-      "source_name": "Entrackr",
-      "excerpt": "<cite index=\"26-16\">In February, home d\u00e9cor and interior design company Livspace also laid off around 1,000 employees as part of an internal restructuring aimed at transitioning into an AI-native organisation.</cite>",
-      "causality": "direct",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 4,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "Home d\u00e9cor / interior design company; restructuring explicitly aimed at AI-native transition; date approximate (February 2026)",
-      "collected_date": "2026-06-10",
-      "date": "2026-06-10",
-      "created_at": "2026-06-10T07:57:43.777706+00:00"
+      "notes": "Headcount estimate is conservative (~50) as exact numbers were not disclosed. Reported in Crunchbase tracker week ending June 10, 2026. AI investment prioritization explicitly cited.",
+      "collected_date": "2026-06-11",
+      "date": "2026-06-11",
+      "created_at": "2026-06-11T08:25:27.751164+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-06-10",
+    "last_anthropic_success": "2026-06-11",
     "last_openai_success": "2026-06-09",
-    "last_nonzero_collection": "2026-06-10",
+    "last_nonzero_collection": "2026-06-11",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-10"
+    "last_collection_date": "2026-06-11"
   }
 }
