@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-11T08:25:27.751051+00:00",
+  "last_updated": "2026-06-12T08:14:17.980699+00:00",
   "totals": {
-    "jobs": 442953,
-    "teams": 137,
+    "jobs": 443183,
+    "teams": 138,
     "products": 0,
-    "companies": 100,
+    "companies": 101,
     "revenue": 0,
-    "labor_hours": -921242240
+    "labor_hours": -921720640
   },
   "today": {
-    "jobs": 136,
-    "teams": 5,
+    "jobs": 230,
+    "teams": 1,
     "products": 0,
-    "companies": 2,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -282880
+    "labor_hours": -478400
   },
   "daily_totals": {
     "2026-05-05": {
@@ -640,10 +640,38 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -282880
+    },
+    "2026-06-09": {
+      "jobs": 230,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -478400
     }
   },
-  "events_count": 136,
+  "events_count": 137,
   "all_events": [
+    {
+      "id": "evt_20260609_001",
+      "event_date": "2026-06-09",
+      "headline": "Expeditors International cuts 230 tech jobs, ending no-layoff tradition after crediting AI for productivity gains",
+      "source_url": "https://wwd.com/sourcing-journal/logistics/expeditors-international-layoffs-230-job-cuts-artificial-intelligence-ai-1239006574/",
+      "source_name": "Sourcing Journal (WWD)",
+      "excerpt": "Weeks after crediting AI for productivity gains, Expeditors International filed a WARN notice to cut 230 tech jobs and end its no-layoff policy. The freight forwarder is restructuring its U.S. global technology department, with all cuts expected to be finalized by Dec. 31. Positions impacted included software developers, quality assurance engineers, project managers and business analysts. CFO David Hackett attributed productivity improvements to artificial intelligence deployments.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 230,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -478400
+      },
+      "notes": "Seattle-based freight forwarder Expeditors International filed a WARN notice on Monday June 8, 2026, breaking a four-decade no-layoff tradition. CEO Daniel Wall linked reductions to automation and new digital tools. Cuts represent 15.4% of the company's information systems branch as of March 31, 2026. Affected offices: Seattle (68), Federal Way (66), Lynnwood (59), Bellevue (35), Airway Heights (2). Separations begin Aug. 8 and complete by Dec. 31, 2026.",
+      "collected_date": "2026-06-12",
+      "date": "2026-06-12",
+      "created_at": "2026-06-12T08:14:17.980829+00:00"
+    },
     {
       "id": "evt_20260610_001",
       "event_date": "2026-06-10",
@@ -2679,77 +2707,36 @@
       "hashtags": "#OpenText #EnterpriseSoft #TechLayoffs #CostCutting",
       "date": "2024-07-04",
       "created_at": "2026-04-27T17:59:55.149029"
-    },
-    {
-      "id": "evt_20240615_microsof_213",
-      "event_date": "2024-06-15",
-      "collected_date": "2026-04-27",
-      "headline": "Microsoft cuts 1,000 jobs",
-      "source_url": "https://www.networkworld.com/article/2138075/microsoft-lays-off-azure-division.html",
-      "source_name": "Network World",
-      "excerpt": "Cuts hit Azure for Operations and Mission Engineering teams as Microsoft redirects cloud budgets to AI infrastructure build-out.",
-      "causality": "inferred",
-      "confidence": 0.6,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "Cuts hit Azure for Operations and Mission Engineering teams as Microsoft redirects cloud budgets to AI infrastructure build-out.",
-      "hashtags": "#Microsoft #Azure #AILayoffs #CloudComputing",
-      "date": "2024-06-15",
-      "created_at": "2026-04-27T17:59:55.149069"
     }
   ],
-  "summary": "Two new AI-attributed displacement events identified for the 24-48 hour window ending June 11, 2026: Salesforce's third round of AI-era layoffs (86 California workers cut from Agentforce AI, Mulesoft, and Marketing Cloud teams on June 10) and Google's ongoing trimming of Cloud and Threat Intelligence Group staff to fund AI investments (headcount undisclosed; conservatively estimated at 50). Other layoffs reported this week (Expeditors International ~230, Amdocs ~2,900) were excluded \u2014 Expeditors did not cite AI as the cause, and Amdocs was already tracked. Total: 136 jobs displaced across 2 companies.",
+  "summary": "One new verifiable AI displacement event identified in the past 24-48 hours: Expeditors International, a Seattle-area freight forwarder, filed a WARN notice to cut 230 employees by the end of the year, ending its longstanding no-layoff policy, with separations starting Aug. 8 across five Washington offices as it restructures its U.S. global technology department. The company has not formally given a reason for the policy changes but highlighted increased productivity across the business in its Q1 earnings release on May 5, with CFO David Hackett attributing the improvements to artificial intelligence deployments. CEO Daniel Wall has linked the reductions to automation and new digital tools that are reshaping operations. Positions impacted included software developers, quality assurance engineers, project managers and business analysts, among others. The staff cuts represent 15.4 percent of the company's information systems branch as of March 31, 2026. Other major recent AI layoff events (Groupon 400 jobs, ClickUp ~290 jobs, Wix 1,000, Snap 1,000) were announced in May 2026 and fall outside the 24-48 hour window for new events.",
   "events": [
     {
-      "id": "evt_20260610_001",
-      "event_date": "2026-06-10",
-      "headline": "Salesforce cuts 86 California employees in third AI-era layoff round, targeting Agentforce AI and Marketing Cloud teams",
-      "source_url": "https://www.gurufocus.com/news/8909903/salesforce-crm-announces-latest-round-of-layoffs-amid-ai-transition",
-      "source_name": "GuruFocus",
-      "excerpt": "On June 10, 2026, Salesforce Inc CRM announced a new round of layoffs affecting 86 employees in California, marking the third such reduction since September of the previous year. This strategic move reflects the software giant's ongoing efforts to optimize its organizational structure in the age of artificial intelligence. The layoffs specifically target areas such as Agentforce AI products and Marketing Cloud software.",
+      "id": "evt_20260609_001",
+      "event_date": "2026-06-09",
+      "headline": "Expeditors International cuts 230 tech jobs, ending no-layoff tradition after crediting AI for productivity gains",
+      "source_url": "https://wwd.com/sourcing-journal/logistics/expeditors-international-layoffs-230-job-cuts-artificial-intelligence-ai-1239006574/",
+      "source_name": "Sourcing Journal (WWD)",
+      "excerpt": "Weeks after crediting AI for productivity gains, Expeditors International filed a WARN notice to cut 230 tech jobs and end its no-layoff policy. The freight forwarder is restructuring its U.S. global technology department, with all cuts expected to be finalized by Dec. 31. Positions impacted included software developers, quality assurance engineers, project managers and business analysts. CFO David Hackett attributed productivity improvements to artificial intelligence deployments.",
       "causality": "direct",
       "confidence": 0.85,
       "tolls": {
-        "jobs": 86,
-        "teams": 3,
+        "jobs": 230,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": -178880
+        "labor_hours": -478400
       },
-      "notes": "Third reduction since September 2025; cuts span sales, administration, technology, and product teams within Agentforce AI, Mulesoft IT and Marketing Cloud software products. Confirmed via Crunchbase News tracker for week ending June 10, 2026.",
-      "collected_date": "2026-06-11",
-      "date": "2026-06-11",
-      "created_at": "2026-06-11T08:25:27.751141+00:00"
-    },
-    {
-      "id": "evt_20260610_002",
-      "event_date": "2026-06-10",
-      "headline": "Google trims Cloud and Threat Intelligence Group workforce as it prioritizes AI investments",
-      "source_url": "https://news.crunchbase.com/startups/tech-layoffs/",
-      "source_name": "Crunchbase News",
-      "excerpt": "In its efforts to prioritize its investments in AI, Mountain View, California-based internet giant Google has been paring the workforce in its Google Cloud division lately, with its Threat Intelligence Group also getting trimmed. It's unclear exactly how many of the workers in these divisions were let go.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 50,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": -104000
-      },
-      "notes": "Headcount estimate is conservative (~50) as exact numbers were not disclosed. Reported in Crunchbase tracker week ending June 10, 2026. AI investment prioritization explicitly cited.",
-      "collected_date": "2026-06-11",
-      "date": "2026-06-11",
-      "created_at": "2026-06-11T08:25:27.751164+00:00"
+      "notes": "Seattle-based freight forwarder Expeditors International filed a WARN notice on Monday June 8, 2026, breaking a four-decade no-layoff tradition. CEO Daniel Wall linked reductions to automation and new digital tools. Cuts represent 15.4% of the company's information systems branch as of March 31, 2026. Affected offices: Seattle (68), Federal Way (66), Lynnwood (59), Bellevue (35), Airway Heights (2). Separations begin Aug. 8 and complete by Dec. 31, 2026.",
+      "collected_date": "2026-06-12",
+      "date": "2026-06-12",
+      "created_at": "2026-06-12T08:14:17.980829+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-06-11",
+    "last_anthropic_success": "2026-06-12",
     "last_openai_success": "2026-06-09",
-    "last_nonzero_collection": "2026-06-11",
+    "last_nonzero_collection": "2026-06-12",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-11"
+    "last_collection_date": "2026-06-12"
   }
 }
