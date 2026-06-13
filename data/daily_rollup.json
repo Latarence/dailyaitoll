@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-12T08:14:17.980699+00:00",
+  "last_updated": "2026-06-13T07:37:45.739963+00:00",
   "totals": {
-    "jobs": 443183,
-    "teams": 138,
+    "jobs": 443483,
+    "teams": 142,
     "products": 0,
-    "companies": 101,
+    "companies": 102,
     "revenue": 0,
-    "labor_hours": -921720640
+    "labor_hours": -922344640
   },
   "today": {
-    "jobs": 230,
-    "teams": 1,
+    "jobs": 300,
+    "teams": 4,
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": -478400
+    "labor_hours": -624000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -648,10 +648,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -478400
+    },
+    "2026-06-11": {
+      "jobs": 300,
+      "teams": 4,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -624000
     }
   },
-  "events_count": 137,
+  "events_count": 138,
   "all_events": [
+    {
+      "id": "evt_20260611_001",
+      "event_date": "2026-06-11",
+      "headline": "ServiceNow lays off hundreds of employees, cites 'real AI efficiencies' inside its own business",
+      "source_url": "https://www.salesforceben.com/servicenow-lays-off-hundreds-of-staff-and-hails-real-ai-efficiencies-within-business/",
+      "source_name": "Salesforce Ben",
+      "excerpt": "ServiceNow is laying off hundreds of employees. A person familiar with the matter confirmed that a three-figure number of employees at the ITSM company are being let go. The company said its platform is generating 'real AI efficiencies' inside its own business and that it is 'actively investing in and hiring for the AI-focused skills this era demands, while managing headcount with discipline.'",
+      "causality": "direct",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 300,
+        "teams": 4,
+        "companies": 1,
+        "labor_hours": -624000
+      },
+      "notes": "ServiceNow's first layoff effort since CEO Bill McDermott's 2023 'no job cuts' pledge. Affected functions reportedly include solution consulting, sales, product marketing, and learning and development. Jobs estimate based on confirmed 'three-figure number' (low-hundreds), conservatively pegged at 300. Confirmed by Salesforce Ben, NowBen, and HRKatha reporting on June 11-12, 2026.",
+      "collected_date": "2026-06-13",
+      "date": "2026-06-13",
+      "created_at": "2026-06-13T07:37:45.740045+00:00"
+    },
     {
       "id": "evt_20260609_001",
       "event_date": "2026-06-09",
@@ -2686,57 +2714,36 @@
       "hashtags": "#OpenText #EnterpriseSoftware #AILayoffs #TechLayoffs2024 #Canada",
       "date": "2024-07-04",
       "created_at": "2026-04-27T17:59:55.141637"
-    },
-    {
-      "id": "evt_20240704_opentext_212",
-      "event_date": "2024-07-04",
-      "collected_date": "2026-04-27",
-      "headline": "OpenText cuts 1,200 jobs",
-      "source_url": "https://www.computerworld.com/article/3816662/tech-layoffs-in-2024-a-timeline.html",
-      "source_name": "Computerworld",
-      "excerpt": "1.7% of workforce cut to save ~$100M annually; plans to redeploy savings into AI-focused sales and engineering hiring.",
-      "causality": "inferred",
-      "confidence": 0.45,
-      "tolls": {
-        "jobs": 1200,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2496000
-      },
-      "notes": "1.7% of workforce cut to save ~$100M annually; plans to redeploy savings into AI-focused sales and engineering hiring.",
-      "hashtags": "#OpenText #EnterpriseSoft #TechLayoffs #CostCutting",
-      "date": "2024-07-04",
-      "created_at": "2026-04-27T17:59:55.149029"
     }
   ],
-  "summary": "One new verifiable AI displacement event identified in the past 24-48 hours: Expeditors International, a Seattle-area freight forwarder, filed a WARN notice to cut 230 employees by the end of the year, ending its longstanding no-layoff policy, with separations starting Aug. 8 across five Washington offices as it restructures its U.S. global technology department. The company has not formally given a reason for the policy changes but highlighted increased productivity across the business in its Q1 earnings release on May 5, with CFO David Hackett attributing the improvements to artificial intelligence deployments. CEO Daniel Wall has linked the reductions to automation and new digital tools that are reshaping operations. Positions impacted included software developers, quality assurance engineers, project managers and business analysts, among others. The staff cuts represent 15.4 percent of the company's information systems branch as of March 31, 2026. Other major recent AI layoff events (Groupon 400 jobs, ClickUp ~290 jobs, Wix 1,000, Snap 1,000) were announced in May 2026 and fall outside the 24-48 hour window for new events.",
+  "summary": "One new verifiable event identified: ServiceNow (NYSE: NOW) confirmed layoffs of hundreds of employees on June 11, 2026, with the company explicitly citing 'real AI efficiencies' generated inside its own business as it manages headcount while hiring for AI-focused roles. Affected teams reportedly include solution consulting, sales, product marketing, and learning and development. This breaks CEO Bill McDermott's 2023 pledge of 'no job cuts.' Other recent AI-cited layoffs (Wix, Rapyd, Acrisure, ServiceNow's broader attrition-plus-AI strategy) were already announced earlier and largely tracked. No additional fresh events from the past 24-48 hours surfaced that aren't already in the tracker.",
   "events": [
     {
-      "id": "evt_20260609_001",
-      "event_date": "2026-06-09",
-      "headline": "Expeditors International cuts 230 tech jobs, ending no-layoff tradition after crediting AI for productivity gains",
-      "source_url": "https://wwd.com/sourcing-journal/logistics/expeditors-international-layoffs-230-job-cuts-artificial-intelligence-ai-1239006574/",
-      "source_name": "Sourcing Journal (WWD)",
-      "excerpt": "Weeks after crediting AI for productivity gains, Expeditors International filed a WARN notice to cut 230 tech jobs and end its no-layoff policy. The freight forwarder is restructuring its U.S. global technology department, with all cuts expected to be finalized by Dec. 31. Positions impacted included software developers, quality assurance engineers, project managers and business analysts. CFO David Hackett attributed productivity improvements to artificial intelligence deployments.",
+      "id": "evt_20260611_001",
+      "event_date": "2026-06-11",
+      "headline": "ServiceNow lays off hundreds of employees, cites 'real AI efficiencies' inside its own business",
+      "source_url": "https://www.salesforceben.com/servicenow-lays-off-hundreds-of-staff-and-hails-real-ai-efficiencies-within-business/",
+      "source_name": "Salesforce Ben",
+      "excerpt": "ServiceNow is laying off hundreds of employees. A person familiar with the matter confirmed that a three-figure number of employees at the ITSM company are being let go. The company said its platform is generating 'real AI efficiencies' inside its own business and that it is 'actively investing in and hiring for the AI-focused skills this era demands, while managing headcount with discipline.'",
       "causality": "direct",
-      "confidence": 0.85,
+      "confidence": 0.8,
       "tolls": {
-        "jobs": 230,
-        "teams": 1,
+        "jobs": 300,
+        "teams": 4,
         "companies": 1,
-        "labor_hours": -478400
+        "labor_hours": -624000
       },
-      "notes": "Seattle-based freight forwarder Expeditors International filed a WARN notice on Monday June 8, 2026, breaking a four-decade no-layoff tradition. CEO Daniel Wall linked reductions to automation and new digital tools. Cuts represent 15.4% of the company's information systems branch as of March 31, 2026. Affected offices: Seattle (68), Federal Way (66), Lynnwood (59), Bellevue (35), Airway Heights (2). Separations begin Aug. 8 and complete by Dec. 31, 2026.",
-      "collected_date": "2026-06-12",
-      "date": "2026-06-12",
-      "created_at": "2026-06-12T08:14:17.980829+00:00"
+      "notes": "ServiceNow's first layoff effort since CEO Bill McDermott's 2023 'no job cuts' pledge. Affected functions reportedly include solution consulting, sales, product marketing, and learning and development. Jobs estimate based on confirmed 'three-figure number' (low-hundreds), conservatively pegged at 300. Confirmed by Salesforce Ben, NowBen, and HRKatha reporting on June 11-12, 2026.",
+      "collected_date": "2026-06-13",
+      "date": "2026-06-13",
+      "created_at": "2026-06-13T07:37:45.740045+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-06-12",
+    "last_anthropic_success": "2026-06-13",
     "last_openai_success": "2026-06-09",
-    "last_nonzero_collection": "2026-06-12",
+    "last_nonzero_collection": "2026-06-13",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-12"
+    "last_collection_date": "2026-06-13"
   }
 }
