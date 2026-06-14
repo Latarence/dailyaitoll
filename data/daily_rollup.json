@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-13T07:37:45.739963+00:00",
+  "last_updated": "2026-06-14T08:05:05.036867+00:00",
   "totals": {
     "jobs": 443483,
     "teams": 142,
@@ -9,12 +9,12 @@
     "labor_hours": -922344640
   },
   "today": {
-    "jobs": 300,
-    "teams": 4,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -624000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2716,34 +2716,13 @@
       "created_at": "2026-04-27T17:59:55.141637"
     }
   ],
-  "summary": "One new verifiable event identified: ServiceNow (NYSE: NOW) confirmed layoffs of hundreds of employees on June 11, 2026, with the company explicitly citing 'real AI efficiencies' generated inside its own business as it manages headcount while hiring for AI-focused roles. Affected teams reportedly include solution consulting, sales, product marketing, and learning and development. This breaks CEO Bill McDermott's 2023 pledge of 'no job cuts.' Other recent AI-cited layoffs (Wix, Rapyd, Acrisure, ServiceNow's broader attrition-plus-AI strategy) were already announced earlier and largely tracked. No additional fresh events from the past 24-48 hours surfaced that aren't already in the tracker.",
-  "events": [
-    {
-      "id": "evt_20260611_001",
-      "event_date": "2026-06-11",
-      "headline": "ServiceNow lays off hundreds of employees, cites 'real AI efficiencies' inside its own business",
-      "source_url": "https://www.salesforceben.com/servicenow-lays-off-hundreds-of-staff-and-hails-real-ai-efficiencies-within-business/",
-      "source_name": "Salesforce Ben",
-      "excerpt": "ServiceNow is laying off hundreds of employees. A person familiar with the matter confirmed that a three-figure number of employees at the ITSM company are being let go. The company said its platform is generating 'real AI efficiencies' inside its own business and that it is 'actively investing in and hiring for the AI-focused skills this era demands, while managing headcount with discipline.'",
-      "causality": "direct",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 300,
-        "teams": 4,
-        "companies": 1,
-        "labor_hours": -624000
-      },
-      "notes": "ServiceNow's first layoff effort since CEO Bill McDermott's 2023 'no job cuts' pledge. Affected functions reportedly include solution consulting, sales, product marketing, and learning and development. Jobs estimate based on confirmed 'three-figure number' (low-hundreds), conservatively pegged at 300. Confirmed by Salesforce Ben, NowBen, and HRKatha reporting on June 11-12, 2026.",
-      "collected_date": "2026-06-13",
-      "date": "2026-06-13",
-      "created_at": "2026-06-13T07:37:45.740045+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-06-13",
-    "last_openai_success": "2026-06-09",
+    "last_openai_success": "2026-06-14",
     "last_nonzero_collection": "2026-06-13",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-13"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-06-14"
   }
 }
