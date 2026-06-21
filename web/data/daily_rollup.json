@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-20T07:39:48.366843+00:00",
+  "last_updated": "2026-06-21T08:18:30.627481+00:00",
   "totals": {
-    "jobs": 443483,
-    "teams": 142,
+    "jobs": 443683,
+    "teams": 144,
     "products": 0,
-    "companies": 102,
+    "companies": 103,
     "revenue": 0,
-    "labor_hours": -922344640
+    "labor_hours": -922760640
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 200,
+    "teams": 2,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -416000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -656,10 +656,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -624000
+    },
+    "2026-06-16": {
+      "jobs": 200,
+      "teams": 2,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -416000
     }
   },
-  "events_count": 138,
+  "events_count": 139,
   "all_events": [
+    {
+      "id": "evt_20260616_001",
+      "event_date": "2026-06-16",
+      "headline": "Rivian lays off hundreds of workers after R2 deliveries start",
+      "source_url": "https://techcrunch.com/2026/06/16/rivian-cuts-hundreds-of-workers-after-r2-deliveries-start/",
+      "source_name": "TechCrunch",
+      "excerpt": "Rivian is laying off hundreds of workers just one week after it began deliveries of its hotly-anticipated R2 SUV, the company has confirmed to TechCrunch.",
+      "causality": "inferred",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 200,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -416000
+      },
+      "notes": "Layoffs impact service and customer teams; AI role not explicitly stated but inferred due to timing and industry trends.",
+      "collected_date": "2026-06-21",
+      "date": "2026-06-21",
+      "created_at": "2026-06-21T08:18:30.627559+00:00"
+    },
     {
       "id": "evt_20260611_001",
       "event_date": "2026-06-11",
@@ -2692,37 +2720,36 @@
       "hashtags": "#Intel #Semiconductors #AILayoffs #TechLayoffs",
       "date": "2024-08-01",
       "created_at": "2026-04-27T17:59:55.148991"
-    },
-    {
-      "id": "evt_20240704_opentext_123",
-      "event_date": "2024-07-04",
-      "collected_date": "2026-04-27",
-      "headline": "OpenText cuts 1,200 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3816662/tech-layoffs-in-2024-a-timeline.html",
-      "source_name": "TrueUp",
-      "excerpt": "Enterprise software company OpenText cut 1,200 jobs (1.7% of workforce) to save ~$100M annually. Plans to hire new sales and engineering staff in AI product areas in 2025. Classic restructuring: cut legacy support/sales, invest in AI product lines.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1200,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2496000
-      },
-      "notes": "Enterprise software company OpenText cut 1,200 jobs (1.7% of workforce) to save ~$100M annually. Plans to hire new sales and engineering staff in AI product areas in 2025. Classic restructuring: cut legacy support/sales, invest in AI product lines.",
-      "industry": "Enterprise Software",
-      "hashtags": "#OpenText #EnterpriseSoftware #AILayoffs #TechLayoffs2024 #Canada",
-      "date": "2024-07-04",
-      "created_at": "2026-04-27T17:59:55.141637"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "One new verifiable AI displacement event found: Rivian lays off hundreds of workers, with AI's role inferred.",
+  "events": [
+    {
+      "id": "evt_20260616_001",
+      "event_date": "2026-06-16",
+      "headline": "Rivian lays off hundreds of workers after R2 deliveries start",
+      "source_url": "https://techcrunch.com/2026/06/16/rivian-cuts-hundreds-of-workers-after-r2-deliveries-start/",
+      "source_name": "TechCrunch",
+      "excerpt": "Rivian is laying off hundreds of workers just one week after it began deliveries of its hotly-anticipated R2 SUV, the company has confirmed to TechCrunch.",
+      "causality": "inferred",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 200,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -416000
+      },
+      "notes": "Layoffs impact service and customer teams; AI role not explicitly stated but inferred due to timing and industry trends.",
+      "collected_date": "2026-06-21",
+      "date": "2026-06-21",
+      "created_at": "2026-06-21T08:18:30.627559+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-06-13",
-    "last_openai_success": "2026-06-20",
-    "last_nonzero_collection": "2026-06-13",
-    "consecutive_zero_days": 7,
-    "last_collection_date": "2026-06-20"
+    "last_openai_success": "2026-06-21",
+    "last_nonzero_collection": "2026-06-21",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-06-21"
   }
 }
