@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-21T08:18:30.627481+00:00",
+  "last_updated": "2026-06-22T09:34:52.374157+00:00",
   "totals": {
     "jobs": 443683,
     "teams": 144,
@@ -9,12 +9,12 @@
     "labor_hours": -922760640
   },
   "today": {
-    "jobs": 200,
-    "teams": 2,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -416000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2722,34 +2722,13 @@
       "created_at": "2026-04-27T17:59:55.148991"
     }
   ],
-  "summary": "One new verifiable AI displacement event found: Rivian lays off hundreds of workers, with AI's role inferred.",
-  "events": [
-    {
-      "id": "evt_20260616_001",
-      "event_date": "2026-06-16",
-      "headline": "Rivian lays off hundreds of workers after R2 deliveries start",
-      "source_url": "https://techcrunch.com/2026/06/16/rivian-cuts-hundreds-of-workers-after-r2-deliveries-start/",
-      "source_name": "TechCrunch",
-      "excerpt": "Rivian is laying off hundreds of workers just one week after it began deliveries of its hotly-anticipated R2 SUV, the company has confirmed to TechCrunch.",
-      "causality": "inferred",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 200,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": -416000
-      },
-      "notes": "Layoffs impact service and customer teams; AI role not explicitly stated but inferred due to timing and industry trends.",
-      "collected_date": "2026-06-21",
-      "date": "2026-06-21",
-      "created_at": "2026-06-21T08:18:30.627559+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-06-13",
-    "last_openai_success": "2026-06-21",
+    "last_openai_success": "2026-06-22",
     "last_nonzero_collection": "2026-06-21",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-21"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-06-22"
   }
 }
