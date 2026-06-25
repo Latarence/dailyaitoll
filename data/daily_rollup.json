@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-24T07:29:14.584769+00:00",
+  "last_updated": "2026-06-25T07:30:38.709330+00:00",
   "totals": {
     "jobs": 464683,
     "teams": 144,
@@ -9,12 +9,12 @@
     "labor_hours": -966440640
   },
   "today": {
-    "jobs": 21000,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -43680000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2729,34 +2729,13 @@
       "created_at": "2026-04-27T17:59:55.141601"
     }
   ],
-  "summary": "Oracle has reduced its workforce by 21,000 employees over the past 12 months, citing AI adoption as a direct cause.",
-  "events": [
-    {
-      "id": "evt_20260622_001",
-      "event_date": "2026-06-22",
-      "headline": "Oracle reduces workforce by 21,000 employees over 12 months, cites AI adoption",
-      "source_url": "https://techcrunch.com/2026/06/22/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/",
-      "source_name": "TechCrunch",
-      "excerpt": "Oracle disclosed Monday that it has reduced its workforce by 21,000 employees over the past 12 months, a decline of 13%, which means more cuts than was previously known, including because of AI. 'The adoption and deployment of AI technologies across our operations have resulted, and may continue to result, in reductions to our workforce,' the company said in an annual financial regulatory filing.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 21000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -43680000
-      },
-      "notes": "Annual financial filing disclosure",
-      "collected_date": "2026-06-24",
-      "date": "2026-06-24",
-      "created_at": "2026-06-24T07:29:14.584865+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-06-13",
-    "last_openai_success": "2026-06-24",
+    "last_openai_success": "2026-06-25",
     "last_nonzero_collection": "2026-06-24",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-06-24"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-06-25"
   }
 }
