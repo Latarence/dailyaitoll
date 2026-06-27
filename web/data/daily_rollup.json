@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-06-26T07:39:17.470944+00:00",
+  "last_updated": "2026-06-27T06:44:51.535200+00:00",
   "totals": {
-    "jobs": 464683,
+    "jobs": 494083,
     "teams": 144,
     "products": 0,
-    "companies": 104,
+    "companies": 107,
     "revenue": 0,
-    "labor_hours": -966440640
+    "labor_hours": -1027496640
   },
   "today": {
-    "jobs": 0,
+    "jobs": 29400,
     "teams": 0,
     "products": 0,
-    "companies": 0,
+    "companies": 3,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -61056000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -672,10 +672,78 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -43680000
+    },
+    "2026-06-23": {
+      "jobs": 29400,
+      "teams": 0,
+      "products": 0,
+      "companies": 3,
+      "revenue": 0,
+      "labor_hours": -61056000
     }
   },
-  "events_count": 140,
+  "events_count": 143,
   "all_events": [
+    {
+      "id": "evt_20260623_001",
+      "event_date": "2026-06-23",
+      "headline": "Oracle lays off 21,000 employees over 12 months, cites AI adoption",
+      "source_url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/oracle-lays-off-21-000-employees-in-just-12-months-due-to-ai-adoption-and-costly-ai-infrastructure-ambitions-says-layoffs-will-continue-as-internal-ai-deployment-grows",
+      "source_name": "Tom's Hardware",
+      "excerpt": "In its 2026 fiscal year ending May 31, Oracle laid off 21,000 employees\u2014about 13% of its workforce\u2014primarily due to AI adoption and a strategic focus on building AI infrastructure.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 21000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -43680000
+      },
+      "notes": "Fiscal year ending May 31, 2026",
+      "collected_date": "2026-06-27",
+      "date": "2026-06-27",
+      "created_at": "2026-06-27T06:44:51.535290+00:00"
+    },
+    {
+      "id": "evt_20260623_002",
+      "event_date": "2026-06-23",
+      "headline": "GM cuts 600 IT roles as AI productivity gains outpace headcount needs",
+      "source_url": "https://aikillcount.com/",
+      "source_name": "AI Kill Count",
+      "excerpt": "GM Cuts 600 IT Roles as AI Productivity Gains Outpace Headcount Needs.",
+      "causality": "direct",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 600,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1248000
+      },
+      "notes": "Reported on June 19, 2026",
+      "collected_date": "2026-06-27",
+      "date": "2026-06-27",
+      "created_at": "2026-06-27T06:44:51.535316+00:00"
+    },
+    {
+      "id": "evt_20260623_003",
+      "event_date": "2026-06-23",
+      "headline": "Standard Chartered automates 7,800 jobs amid AI adoption",
+      "source_url": "https://aikillcount.com/",
+      "source_name": "AI Kill Count",
+      "excerpt": "StanChart AI Layoffs: 7,800 Jobs Face Automation.",
+      "causality": "direct",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 7800,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -16128000
+      },
+      "notes": "Reported on June 19, 2026",
+      "collected_date": "2026-06-27",
+      "date": "2026-06-27",
+      "created_at": "2026-06-27T06:44:51.535328+00:00"
+    },
     {
       "id": "evt_20260622_001",
       "event_date": "2026-06-22",
@@ -2662,80 +2730,76 @@
       "hashtags": "#Cisco #Networking #AILayoffs #TechLayoffs",
       "date": "2024-09-17",
       "created_at": "2026-04-27T17:59:55.148916"
-    },
-    {
-      "id": "evt_20240820_generalm_121",
-      "event_date": "2024-08-20",
-      "collected_date": "2026-04-27",
-      "headline": "General Motors cuts 1,000 jobs amid AI transition",
-      "source_url": "https://www.cio.com/article/3489323/gm-software-layoffs-could-signal-a-shift-in-digital-transformation-strategy.html",
-      "source_name": "TrueUp",
-      "excerpt": "GM cut 1,000+ software and services staff as it reassessed its digital transformation strategy. Internal memo: moving resources to 'highest-priority work and flattening hierarchies.' GM had over-hired for its Cruise autonomous vehicle unit (before Cruise's collapse) and software-defined vehicle initiatives.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "GM cut 1,000+ software and services staff as it reassessed its digital transformation strategy. Internal memo: moving resources to 'highest-priority work and flattening hierarchies.' GM had over-hired for its Cruise autonomous vehicle unit (before Cruise's collapse) and software-defined vehicle initiatives.",
-      "industry": "Automotive / Tech",
-      "hashtags": "#GM #GeneralMotors #AutomotiveAI #DigitalTransformation #AILayoffs #TechLayoffs2024 #Cruise",
-      "date": "2024-08-20",
-      "created_at": "2026-04-27T17:59:55.141562"
-    },
-    {
-      "id": "evt_20240820_generalm_210",
-      "event_date": "2024-08-20",
-      "collected_date": "2026-04-27",
-      "headline": "General Motors cuts 1,000 jobs",
-      "source_url": "https://www.cio.com/article/3489323/gm-software-layoffs.html",
-      "source_name": "CIO",
-      "excerpt": "1,000+ software and services staff let go as GM flattens hierarchies and re-prioritizes highest-value digital work.",
-      "causality": "inferred",
-      "confidence": 0.5,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "1,000+ software and services staff let go as GM flattens hierarchies and re-prioritizes highest-value digital work.",
-      "hashtags": "#GM #GeneralMotors #TechLayoffs #DigitalTransformation",
-      "date": "2024-08-20",
-      "created_at": "2026-04-27T17:59:55.148954"
-    },
-    {
-      "id": "evt_20240801_intel_122",
-      "event_date": "2024-08-01",
-      "collected_date": "2026-04-27",
-      "headline": "Intel cuts 15,000 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3480715/intel-fires-15000-employees-as-it-intensifies-focus-on-ai.html",
-      "source_name": "TrueUp",
-      "excerpt": "Intel CEO Pat Gelsinger announced 15,000 layoffs (15% of workforce) after Q2 revenue stagnated and net income fell 85%. 'Our revenues have not grown as expected \u2014 and we've yet to fully benefit from powerful trends, like AI.' Intel is losing the AI chip race to Nvidia and struggling to execute its foundry strategy.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 15000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -31200000
-      },
-      "notes": "Intel CEO Pat Gelsinger announced 15,000 layoffs (15% of workforce) after Q2 revenue stagnated and net income fell 85%. 'Our revenues have not grown as expected \u2014 and we've yet to fully benefit from powerful trends, like AI.' Intel is losing the AI chip race to Nvidia and struggling to execute its foundry strategy.",
-      "industry": "Semiconductors",
-      "hashtags": "#Intel #Semiconductors #AIChips #Foundry #AILayoffs #TechLayoffs2024 #Gelsinger",
-      "date": "2024-08-01",
-      "created_at": "2026-04-27T17:59:55.141601"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "Today's findings include significant layoffs attributed to AI adoption: Oracle reduced its workforce by 21,000 employees over the past year, GM cut 600 IT roles, and Standard Chartered automated 7,800 jobs. These events highlight the ongoing impact of AI on employment across various industries.",
+  "events": [
+    {
+      "id": "evt_20260623_001",
+      "event_date": "2026-06-23",
+      "headline": "Oracle lays off 21,000 employees over 12 months, cites AI adoption",
+      "source_url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/oracle-lays-off-21-000-employees-in-just-12-months-due-to-ai-adoption-and-costly-ai-infrastructure-ambitions-says-layoffs-will-continue-as-internal-ai-deployment-grows",
+      "source_name": "Tom's Hardware",
+      "excerpt": "In its 2026 fiscal year ending May 31, Oracle laid off 21,000 employees\u2014about 13% of its workforce\u2014primarily due to AI adoption and a strategic focus on building AI infrastructure.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 21000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -43680000
+      },
+      "notes": "Fiscal year ending May 31, 2026",
+      "collected_date": "2026-06-27",
+      "date": "2026-06-27",
+      "created_at": "2026-06-27T06:44:51.535290+00:00"
+    },
+    {
+      "id": "evt_20260623_002",
+      "event_date": "2026-06-23",
+      "headline": "GM cuts 600 IT roles as AI productivity gains outpace headcount needs",
+      "source_url": "https://aikillcount.com/",
+      "source_name": "AI Kill Count",
+      "excerpt": "GM Cuts 600 IT Roles as AI Productivity Gains Outpace Headcount Needs.",
+      "causality": "direct",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 600,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1248000
+      },
+      "notes": "Reported on June 19, 2026",
+      "collected_date": "2026-06-27",
+      "date": "2026-06-27",
+      "created_at": "2026-06-27T06:44:51.535316+00:00"
+    },
+    {
+      "id": "evt_20260623_003",
+      "event_date": "2026-06-23",
+      "headline": "Standard Chartered automates 7,800 jobs amid AI adoption",
+      "source_url": "https://aikillcount.com/",
+      "source_name": "AI Kill Count",
+      "excerpt": "StanChart AI Layoffs: 7,800 Jobs Face Automation.",
+      "causality": "direct",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 7800,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -16128000
+      },
+      "notes": "Reported on June 19, 2026",
+      "collected_date": "2026-06-27",
+      "date": "2026-06-27",
+      "created_at": "2026-06-27T06:44:51.535328+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-06-13",
-    "last_openai_success": "2026-06-26",
-    "last_nonzero_collection": "2026-06-24",
-    "consecutive_zero_days": 2,
-    "last_collection_date": "2026-06-26"
+    "last_openai_success": "2026-06-27",
+    "last_nonzero_collection": "2026-06-27",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-06-27"
   }
 }
