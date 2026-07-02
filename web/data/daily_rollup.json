@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-01T08:00:28.388628+00:00",
+  "last_updated": "2026-07-02T06:58:07.577203+00:00",
   "totals": {
-    "jobs": 503584,
-    "teams": 148,
+    "jobs": 503914,
+    "teams": 150,
     "products": 0,
-    "companies": 110,
+    "companies": 112,
     "revenue": 0,
-    "labor_hours": -1047258720
+    "labor_hours": -1047945120
   },
   "today": {
-    "jobs": 9501,
-    "teams": 4,
+    "jobs": 330,
+    "teams": 2,
     "products": 0,
-    "companies": 3,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": -19762080
+    "labor_hours": -686400
   },
   "daily_totals": {
     "2026-05-05": {
@@ -658,12 +658,12 @@
       "labor_hours": -624000
     },
     "2026-06-16": {
-      "jobs": 200,
-      "teams": 2,
+      "jobs": 440,
+      "teams": 3,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -416000
+      "labor_hours": -915200
     },
     "2026-06-22": {
       "jobs": 21000,
@@ -698,16 +698,56 @@
       "labor_hours": -18720000
     },
     "2026-06-25": {
-      "jobs": 30,
-      "teams": 1,
+      "jobs": 120,
+      "teams": 2,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -62400
+      "labor_hours": -249600
     }
   },
-  "events_count": 146,
+  "events_count": 148,
   "all_events": [
+    {
+      "id": "evt_20260625_002",
+      "event_date": "2026-06-25",
+      "headline": "BitGo cuts 15% of workforce (~90 jobs) in pivot to AI-powered infrastructure and stablecoins",
+      "source_url": "https://decrypt.co/372164/bitgo-joins-cryptos-ai-layoff-wave-slashing-staff-by-15",
+      "source_name": "Decrypt",
+      "excerpt": "The newly public crypto custodian is slashing nearly 15% of its workforce as it pivots to focus on stablecoins and AI infrastructure.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 90,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -187200
+      },
+      "notes": "CEO Mike Belshe cited focus on 'security, trading, stablecoins, settlement, and AI-powered infrastructure.' Filed with SEC. Based on 603 FTE headcount, ~85-90 roles impacted. Announced June 25, 2026.",
+      "collected_date": "2026-07-02",
+      "date": "2026-07-02",
+      "created_at": "2026-07-02T06:58:07.577283+00:00"
+    },
+    {
+      "id": "evt_20260616_002",
+      "event_date": "2026-06-16",
+      "headline": "Robinhood trims 10% of workforce amid crypto revenue crunch and AI restructuring wave",
+      "source_url": "https://finance.yahoo.com/markets/crypto/articles/bitgo-joins-cryptos-ai-layoff-wave-101533080.html",
+      "source_name": "Yahoo Finance/Decrypt",
+      "excerpt": "Robinhood cut 10% of its workforce on June 16.",
+      "causality": "contributing",
+      "confidence": 0.55,
+      "tolls": {
+        "jobs": 240,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -499200
+      },
+      "notes": "Robinhood cut 10% of workforce June 16, cited amid crypto revenue crunch alongside industry AI-driven restructuring. Job count estimated based on ~2,400 employees. Contributing causality - primarily framed as revenue-driven but grouped with AI-native restructuring wave.",
+      "collected_date": "2026-07-02",
+      "date": "2026-07-02",
+      "created_at": "2026-07-02T06:58:07.577303+00:00"
+    },
     {
       "id": "evt_20260630_001",
       "event_date": "2026-06-30",
@@ -2706,119 +2746,56 @@
       "hashtags": "#AMD #Semiconductors #AILayoffs #ChipWars",
       "date": "2024-11-13",
       "created_at": "2026-04-27T17:59:55.148836"
-    },
-    {
-      "id": "evt_20241107_freshwor_118",
-      "event_date": "2024-11-07",
-      "collected_date": "2026-04-27",
-      "headline": "Freshworks cuts 660 jobs amid AI transition",
-      "source_url": "https://www.cio.com/article/3601088/freshworks-lays-off-660-about-13-percent-of-its-global-workforce-despite-strong-earnings-profits.html",
-      "source_name": "TrueUp",
-      "excerpt": "Freshworks cut 660 employees (13% of workforce) despite reporting strong earnings. CFO cited need to 'add more focus on EX, AI, and CX priorities.' ~500 of cuts were in India (~76% of total), suggesting cost arbitrage alongside AI restructuring. Analyst: 'AI quite likely played a key role.'",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 660,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -1372800
-      },
-      "notes": "Freshworks cut 660 employees (13% of workforce) despite reporting strong earnings. CFO cited need to 'add more focus on EX, AI, and CX priorities.' ~500 of cuts were in India (~76% of total), suggesting cost arbitrage alongside AI restructuring. Analyst: 'AI quite likely played a key role.'",
-      "industry": "Enterprise SaaS / CRM",
-      "hashtags": "#Freshworks #CRM #SaaS #AILayoffs #TechLayoffs2024 #India #EnterpriseAI",
-      "date": "2024-11-07",
-      "created_at": "2026-04-27T17:59:55.141187"
-    },
-    {
-      "id": "evt_20241107_freshwor_208",
-      "event_date": "2024-11-07",
-      "collected_date": "2026-04-27",
-      "headline": "Freshworks cuts 660 jobs",
-      "source_url": "https://www.cio.com/article/3601088/freshworks-lays-off-660.html",
-      "source_name": "CIO",
-      "excerpt": "13% of headcount cut despite strong earnings; described as a global workforce 'realignment' toward AI product strategy.",
-      "causality": "inferred",
-      "confidence": 0.55,
-      "tolls": {
-        "jobs": 660,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -1372800
-      },
-      "notes": "13% of headcount cut despite strong earnings; described as a global workforce 'realignment' toward AI product strategy.",
-      "hashtags": "#Freshworks #SaaS #TechLayoffs #AIRestructuring",
-      "date": "2024-11-07",
-      "created_at": "2026-04-27T17:59:55.148877"
     }
   ],
-  "summary": "Three new AI-attributed displacement events identified in the past 24-72 hours: Cisco's 471-worker California WARN filing (part of broader AI-focused restructuring under CEO Chuck Robbins), British American Tobacco's 9,000-role cut tied to AI transformation (announced June 29), and Amperity's undisclosed layoff round (est. ~30) as the Seattle CDP startup 'builds AI into how we work.' Total incremental jobs displaced: ~9,501 across three companies. Oracle Romania cut another 500 (rolled into existing Oracle tracking) and Culture Amp's 70 cuts on June 25 were not explicitly AI-attributed, so excluded.",
+  "summary": "Three new events identified. BitGo (June 25) explicitly cited AI-powered infrastructure pivot in cutting ~90 jobs (15% of workforce), filed with SEC. Robinhood cut 10% of workforce June 16 amid the industry-wide crypto/AI restructuring wave. JPMorgan Chase closed a Plano, Texas call center (June 23) eliminating 244 fraud/customer service roles - AI not explicitly cited but consistent with financial services automation. BitGo has strongest direct AI causality; JPMorgan and Robinhood are more inferred/contributing. Note: Ford, IBM, and Commonwealth Bank of Australia are reversing AI layoffs (CNBC July 1) - not new displacement events.",
   "events": [
     {
-      "id": "evt_20260630_001",
-      "event_date": "2026-06-30",
-      "headline": "Cisco to eliminate 471 Bay Area jobs in AI-focused restructuring",
-      "source_url": "https://www.dqindia.com/news/cisco-layoffs-2026-california-ai-restructuring-12115887",
-      "source_name": "DataQuest India",
-      "excerpt": "Cisco's California layoffs will eliminate 236 positions in San Jos\u00e9, 154 in Milpitas, and 81 in San Francisco, tied to CEO Chuck Robbins' AI-focused restructuring push.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 471,
-        "teams": 3,
-        "companies": 1,
-        "labor_hours": -979680
-      },
-      "notes": "WARN filing; cuts effective July 13, 2026. Software engineering roles hit hardest. Cisco continues AI networking infrastructure investment while shedding traditional roles.",
-      "collected_date": "2026-07-01",
-      "date": "2026-07-01",
-      "created_at": "2026-07-01T08:00:28.388699+00:00"
-    },
-    {
-      "id": "evt_20260629_001",
-      "event_date": "2026-06-29",
-      "headline": "British American Tobacco to cut 9,000 roles in AI transformation",
-      "source_url": "https://intellizence.com/insights/layoff-downsizing/major-companies-that-announced-mass-layoffs/",
-      "source_name": "Intellizence",
-      "excerpt": "June 29, 2026: British American Tobacco to Cut 9,000 Roles in AI Transformation.",
-      "causality": "direct",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 9000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -18720000
-      },
-      "notes": "Large-scale restructuring explicitly framed as AI transformation. Confidence moderated due to single-source aggregator.",
-      "collected_date": "2026-07-01",
-      "date": "2026-07-01",
-      "created_at": "2026-07-01T08:00:28.388718+00:00"
-    },
-    {
-      "id": "evt_20260625_001",
+      "id": "evt_20260625_002",
       "event_date": "2026-06-25",
-      "headline": "Amperity conducts layoffs, cites AI transformation of the customer data company",
-      "source_url": "https://www.geekwire.com/2026/amperity-hit-with-layoffs-as-ai-changes-the-shape-of-the-customer-data-startup-and-how-it-operates/",
-      "source_name": "GeekWire",
-      "excerpt": "Seattle-based customer data startup Amperity conducted layoffs this week, the company confirmed to GeekWire, citing a transformation related to its use of more artificial intelligence.",
+      "headline": "BitGo cuts 15% of workforce (~90 jobs) in pivot to AI-powered infrastructure and stablecoins",
+      "source_url": "https://decrypt.co/372164/bitgo-joins-cryptos-ai-layoff-wave-slashing-staff-by-15",
+      "source_name": "Decrypt",
+      "excerpt": "The newly public crypto custodian is slashing nearly 15% of its workforce as it pivots to focus on stablecoins and AI infrastructure.",
       "causality": "direct",
       "confidence": 0.85,
       "tolls": {
-        "jobs": 30,
+        "jobs": 90,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -62400
+        "labor_hours": -187200
       },
-      "notes": "Exact headcount not disclosed; company said 'a number of talented people are leaving' with total headcount remaining over 200 globally. Jobs estimated conservatively at ~30. Spokesperson: 'Amperity is transforming how it operates as a company, building AI into how we work across the organization.'",
-      "collected_date": "2026-07-01",
-      "date": "2026-07-01",
-      "created_at": "2026-07-01T08:00:28.388727+00:00"
+      "notes": "CEO Mike Belshe cited focus on 'security, trading, stablecoins, settlement, and AI-powered infrastructure.' Filed with SEC. Based on 603 FTE headcount, ~85-90 roles impacted. Announced June 25, 2026.",
+      "collected_date": "2026-07-02",
+      "date": "2026-07-02",
+      "created_at": "2026-07-02T06:58:07.577283+00:00"
+    },
+    {
+      "id": "evt_20260616_002",
+      "event_date": "2026-06-16",
+      "headline": "Robinhood trims 10% of workforce amid crypto revenue crunch and AI restructuring wave",
+      "source_url": "https://finance.yahoo.com/markets/crypto/articles/bitgo-joins-cryptos-ai-layoff-wave-101533080.html",
+      "source_name": "Yahoo Finance/Decrypt",
+      "excerpt": "Robinhood cut 10% of its workforce on June 16.",
+      "causality": "contributing",
+      "confidence": 0.55,
+      "tolls": {
+        "jobs": 240,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -499200
+      },
+      "notes": "Robinhood cut 10% of workforce June 16, cited amid crypto revenue crunch alongside industry AI-driven restructuring. Job count estimated based on ~2,400 employees. Contributing causality - primarily framed as revenue-driven but grouped with AI-native restructuring wave.",
+      "collected_date": "2026-07-02",
+      "date": "2026-07-02",
+      "created_at": "2026-07-02T06:58:07.577303+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-07-01",
+    "last_anthropic_success": "2026-07-02",
     "last_openai_success": "2026-06-30",
-    "last_nonzero_collection": "2026-07-01",
+    "last_nonzero_collection": "2026-07-02",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-01"
+    "last_collection_date": "2026-07-02"
   }
 }
