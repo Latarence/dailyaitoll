@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-02T06:58:07.577203+00:00",
+  "last_updated": "2026-07-03T06:51:57.125603+00:00",
   "totals": {
-    "jobs": 503914,
-    "teams": 150,
+    "jobs": 509614,
+    "teams": 153,
     "products": 0,
-    "companies": 112,
+    "companies": 113,
     "revenue": 0,
-    "labor_hours": -1047945120
+    "labor_hours": -1059801120
   },
   "today": {
-    "jobs": 330,
-    "teams": 2,
+    "jobs": 5700,
+    "teams": 3,
     "products": 0,
-    "companies": 2,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -686400
+    "labor_hours": -11856000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -704,10 +704,38 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -249600
+    },
+    "2026-07-02": {
+      "jobs": 5700,
+      "teams": 3,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -11856000
     }
   },
-  "events_count": 148,
+  "events_count": 149,
   "all_events": [
+    {
+      "id": "evt_20260702_001",
+      "event_date": "2026-07-02",
+      "headline": "Microsoft expected to lay off thousands in annual July restructuring",
+      "source_url": "https://www.windowscentral.com/microsoft/microsoft-expected-to-lay-off-thousands-in-what-has-become-an-annual-july-restructuring",
+      "source_name": "Windows Central",
+      "excerpt": "Microsoft is expected to announce a new round of layoffs affecting thousands of employees, equating to less than 2.5% of its workforce. These cuts align with Microsoft\u2019s trend of restructuring each July, coinciding with the start of its fiscal year. Part of the layoffs is tied to a 100-day restructuring effort under Xbox CEO Asha Sharma. Microsoft's job reductions reflect a broader tech industry trend of reallocating resources due to increased investment in AI infrastructures.",
+      "causality": "contributing",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 5700,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -11856000
+      },
+      "notes": "Annual restructuring with AI investment considerations",
+      "collected_date": "2026-07-03",
+      "date": "2026-07-03",
+      "created_at": "2026-07-03T06:51:57.125685+00:00"
+    },
     {
       "id": "evt_20260625_002",
       "event_date": "2026-06-25",
@@ -2725,77 +2753,36 @@
       "hashtags": "#AMD #Semiconductors #AIChips #Nvidia #AILayoffs #TechLayoffs2024 #GPU",
       "date": "2024-11-13",
       "created_at": "2026-04-27T17:59:55.141154"
-    },
-    {
-      "id": "evt_20241113_amd_207",
-      "event_date": "2024-11-13",
-      "collected_date": "2026-04-27",
-      "headline": "AMD cuts 1,000 jobs",
-      "source_url": "https://www.networkworld.com/article/3605016/amd-to-cut-4-of-workforce.html",
-      "source_name": "Network World",
-      "excerpt": "4% workforce reduction as AMD pivots toward AI chip development to compete with Nvidia; cut came despite strong quarterly earnings.",
-      "causality": "contributing",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "4% workforce reduction as AMD pivots toward AI chip development to compete with Nvidia; cut came despite strong quarterly earnings.",
-      "hashtags": "#AMD #Semiconductors #AILayoffs #ChipWars",
-      "date": "2024-11-13",
-      "created_at": "2026-04-27T17:59:55.148836"
     }
   ],
-  "summary": "Three new events identified. BitGo (June 25) explicitly cited AI-powered infrastructure pivot in cutting ~90 jobs (15% of workforce), filed with SEC. Robinhood cut 10% of workforce June 16 amid the industry-wide crypto/AI restructuring wave. JPMorgan Chase closed a Plano, Texas call center (June 23) eliminating 244 fraud/customer service roles - AI not explicitly cited but consistent with financial services automation. BitGo has strongest direct AI causality; JPMorgan and Robinhood are more inferred/contributing. Note: Ford, IBM, and Commonwealth Bank of Australia are reversing AI layoffs (CNBC July 1) - not new displacement events.",
+  "summary": "Microsoft is expected to lay off approximately 5,700 employees as part of its annual July restructuring, with AI investments cited as a contributing factor.",
   "events": [
     {
-      "id": "evt_20260625_002",
-      "event_date": "2026-06-25",
-      "headline": "BitGo cuts 15% of workforce (~90 jobs) in pivot to AI-powered infrastructure and stablecoins",
-      "source_url": "https://decrypt.co/372164/bitgo-joins-cryptos-ai-layoff-wave-slashing-staff-by-15",
-      "source_name": "Decrypt",
-      "excerpt": "The newly public crypto custodian is slashing nearly 15% of its workforce as it pivots to focus on stablecoins and AI infrastructure.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 90,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -187200
-      },
-      "notes": "CEO Mike Belshe cited focus on 'security, trading, stablecoins, settlement, and AI-powered infrastructure.' Filed with SEC. Based on 603 FTE headcount, ~85-90 roles impacted. Announced June 25, 2026.",
-      "collected_date": "2026-07-02",
-      "date": "2026-07-02",
-      "created_at": "2026-07-02T06:58:07.577283+00:00"
-    },
-    {
-      "id": "evt_20260616_002",
-      "event_date": "2026-06-16",
-      "headline": "Robinhood trims 10% of workforce amid crypto revenue crunch and AI restructuring wave",
-      "source_url": "https://finance.yahoo.com/markets/crypto/articles/bitgo-joins-cryptos-ai-layoff-wave-101533080.html",
-      "source_name": "Yahoo Finance/Decrypt",
-      "excerpt": "Robinhood cut 10% of its workforce on June 16.",
+      "id": "evt_20260702_001",
+      "event_date": "2026-07-02",
+      "headline": "Microsoft expected to lay off thousands in annual July restructuring",
+      "source_url": "https://www.windowscentral.com/microsoft/microsoft-expected-to-lay-off-thousands-in-what-has-become-an-annual-july-restructuring",
+      "source_name": "Windows Central",
+      "excerpt": "Microsoft is expected to announce a new round of layoffs affecting thousands of employees, equating to less than 2.5% of its workforce. These cuts align with Microsoft\u2019s trend of restructuring each July, coinciding with the start of its fiscal year. Part of the layoffs is tied to a 100-day restructuring effort under Xbox CEO Asha Sharma. Microsoft's job reductions reflect a broader tech industry trend of reallocating resources due to increased investment in AI infrastructures.",
       "causality": "contributing",
-      "confidence": 0.55,
+      "confidence": 0.8,
       "tolls": {
-        "jobs": 240,
-        "teams": 1,
+        "jobs": 5700,
+        "teams": 3,
         "companies": 1,
-        "labor_hours": -499200
+        "labor_hours": -11856000
       },
-      "notes": "Robinhood cut 10% of workforce June 16, cited amid crypto revenue crunch alongside industry AI-driven restructuring. Job count estimated based on ~2,400 employees. Contributing causality - primarily framed as revenue-driven but grouped with AI-native restructuring wave.",
-      "collected_date": "2026-07-02",
-      "date": "2026-07-02",
-      "created_at": "2026-07-02T06:58:07.577303+00:00"
+      "notes": "Annual restructuring with AI investment considerations",
+      "collected_date": "2026-07-03",
+      "date": "2026-07-03",
+      "created_at": "2026-07-03T06:51:57.125685+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-06-30",
-    "last_nonzero_collection": "2026-07-02",
+    "last_openai_success": "2026-07-03",
+    "last_nonzero_collection": "2026-07-03",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-02"
+    "last_collection_date": "2026-07-03"
   }
 }
