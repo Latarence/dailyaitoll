@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-04T06:38:05.508650+00:00",
+  "last_updated": "2026-07-05T06:57:38.419075+00:00",
   "totals": {
     "jobs": 511009,
     "teams": 157,
@@ -9,12 +9,12 @@
     "labor_hours": -1062696720
   },
   "today": {
-    "jobs": 1395,
-    "teams": 4,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -2895600
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2753,34 +2753,13 @@
       "created_at": "2026-04-27T17:59:55.148795"
     }
   ],
-  "summary": "Today's findings include Microsoft's anticipated layoffs of approximately 5,700 employees as part of its annual fiscal restructuring, influenced by increased AI investments, and Meta's planned reduction of 1,395 positions in Washington state, directly tied to its ongoing AI-focused restructuring efforts.",
-  "events": [
-    {
-      "id": "evt_20260702_002",
-      "event_date": "2026-07-02",
-      "headline": "Meta to lay off 1,395 employees in Washington as AI restructuring continues",
-      "source_url": "https://www.kucoin.com/news/flash/meta-to-lay-off-1-395-employees-in-washington-as-ai-restructuring-continues",
-      "source_name": "KuCoin",
-      "excerpt": "Meta filed a WARN notice for 1,395 layoffs in Washington, including 699 in Bellevue, 259 in Seattle, 206 in Redmond, and 231 remote workers, starting July 22, 2026. This follows 8,000 global job cuts, or 10% of the workforce, beginning May 20, 2026. The restructuring prioritizes AI and ecosystem growth, shifting focus from Reality Labs, which lost 1,500 jobs in January 2026.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 1395,
-        "teams": 4,
-        "companies": 1,
-        "labor_hours": -2895600
-      },
-      "notes": "AI-focused restructuring affecting Washington state employees",
-      "collected_date": "2026-07-04",
-      "date": "2026-07-04",
-      "created_at": "2026-07-04T06:38:05.508760+00:00"
-    }
-  ],
+  "summary": "Today's findings include Microsoft's anticipated layoffs as part of its annual restructuring, with AI investments cited as a contributing factor, and Ford's rehiring of engineers after AI-driven layoffs led to quality issues.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-04",
-    "last_nonzero_collection": "2026-07-04",
+    "last_openai_success": "2026-07-05",
+    "last_nonzero_collection": "2026-07-05",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-04"
+    "last_collection_date": "2026-07-05"
   }
 }
