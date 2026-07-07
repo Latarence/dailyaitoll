@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-06T08:07:03.482492+00:00",
+  "last_updated": "2026-07-07T07:24:59.636903+00:00",
   "totals": {
-    "jobs": 511009,
-    "teams": 157,
+    "jobs": 515809,
+    "teams": 159,
     "products": 0,
-    "companies": 114,
+    "companies": 115,
     "revenue": 0,
-    "labor_hours": -1062696720
+    "labor_hours": -1072680720
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 4800,
+    "teams": 2,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -9984000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -712,10 +712,38 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -14751600
+    },
+    "2026-07-06": {
+      "jobs": 4800,
+      "teams": 2,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -9984000
     }
   },
-  "events_count": 150,
+  "events_count": 151,
   "all_events": [
+    {
+      "id": "evt_20260706_001",
+      "event_date": "2026-07-06",
+      "headline": "Microsoft cuts 4,800 jobs in AI-driven restructuring",
+      "source_url": "https://www.investing.com/news/stock-market-news/factboxcompanies-cutting-jobs-as-investments-shift-toward-ai-4776976",
+      "source_name": "Reuters",
+      "excerpt": "Microsoft said on Monday it is cutting about 2.1% of its workforce, or roughly 4,800 jobs, as the Windows maker restructures parts of its commercial and Xbox businesses, joining other tech giants in a wave of layoffs as companies shift investment toward AI infrastructure.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 4800,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -9984000
+      },
+      "notes": "Part of annual July restructuring",
+      "collected_date": "2026-07-07",
+      "date": "2026-07-07",
+      "created_at": "2026-07-07T07:24:59.636989+00:00"
+    },
     {
       "id": "evt_20260702_002",
       "event_date": "2026-07-02",
@@ -2730,36 +2758,36 @@
       "hashtags": "#Equinix #DataCenter #AI #AILayoffs #TechLayoffs2024 #Infrastructure",
       "date": "2024-11-26",
       "created_at": "2026-04-27T17:59:55.141121"
-    },
-    {
-      "id": "evt_20241126_equinix_206",
-      "event_date": "2024-11-26",
-      "collected_date": "2026-04-27",
-      "headline": "Equinix cuts 400 jobs",
-      "source_url": "https://www.networkworld.com/article/3613399/equinix-to-cut-3-of-staff.html",
-      "source_name": "Network World",
-      "excerpt": "3% of workforce reduced following CEO change; company pivoting resources toward AI infrastructure.",
-      "causality": "inferred",
-      "confidence": 0.45,
-      "tolls": {
-        "jobs": 400,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -832000
-      },
-      "notes": "3% of workforce reduced following CEO change; company pivoting resources toward AI infrastructure.",
-      "hashtags": "#Equinix #DataCenter #TechLayoffs #AIShift",
-      "date": "2024-11-26",
-      "created_at": "2026-04-27T17:59:55.148795"
     }
   ],
-  "summary": "Today's findings include Microsoft's anticipated layoffs as part of its annual restructuring, with AI investments cited as a contributing factor, and Ford's rehiring of engineers after AI-driven quality issues.",
-  "events": [],
+  "summary": "Microsoft announced the elimination of 4,800 positions as part of an AI-focused restructuring, reflecting the ongoing trend of workforce reductions attributed to AI investments.",
+  "events": [
+    {
+      "id": "evt_20260706_001",
+      "event_date": "2026-07-06",
+      "headline": "Microsoft cuts 4,800 jobs in AI-driven restructuring",
+      "source_url": "https://www.investing.com/news/stock-market-news/factboxcompanies-cutting-jobs-as-investments-shift-toward-ai-4776976",
+      "source_name": "Reuters",
+      "excerpt": "Microsoft said on Monday it is cutting about 2.1% of its workforce, or roughly 4,800 jobs, as the Windows maker restructures parts of its commercial and Xbox businesses, joining other tech giants in a wave of layoffs as companies shift investment toward AI infrastructure.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 4800,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -9984000
+      },
+      "notes": "Part of annual July restructuring",
+      "collected_date": "2026-07-07",
+      "date": "2026-07-07",
+      "created_at": "2026-07-07T07:24:59.636989+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-06",
-    "last_nonzero_collection": "2026-07-06",
+    "last_openai_success": "2026-07-07",
+    "last_nonzero_collection": "2026-07-07",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-06"
+    "last_collection_date": "2026-07-07"
   }
 }
