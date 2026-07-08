@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-07T07:24:59.636903+00:00",
+  "last_updated": "2026-07-08T06:18:30.183272+00:00",
   "totals": {
     "jobs": 515809,
     "teams": 159,
@@ -9,12 +9,12 @@
     "labor_hours": -1072680720
   },
   "today": {
-    "jobs": 4800,
-    "teams": 2,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -9984000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2760,34 +2760,13 @@
       "created_at": "2026-04-27T17:59:55.141121"
     }
   ],
-  "summary": "Microsoft announced the elimination of 4,800 positions as part of an AI-focused restructuring, reflecting the ongoing trend of workforce reductions attributed to AI investments.",
-  "events": [
-    {
-      "id": "evt_20260706_001",
-      "event_date": "2026-07-06",
-      "headline": "Microsoft cuts 4,800 jobs in AI-driven restructuring",
-      "source_url": "https://www.investing.com/news/stock-market-news/factboxcompanies-cutting-jobs-as-investments-shift-toward-ai-4776976",
-      "source_name": "Reuters",
-      "excerpt": "Microsoft said on Monday it is cutting about 2.1% of its workforce, or roughly 4,800 jobs, as the Windows maker restructures parts of its commercial and Xbox businesses, joining other tech giants in a wave of layoffs as companies shift investment toward AI infrastructure.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 4800,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": -9984000
-      },
-      "notes": "Part of annual July restructuring",
-      "collected_date": "2026-07-07",
-      "date": "2026-07-07",
-      "created_at": "2026-07-07T07:24:59.636989+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-07",
+    "last_openai_success": "2026-07-08",
     "last_nonzero_collection": "2026-07-07",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-07"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-07-08"
   }
 }
