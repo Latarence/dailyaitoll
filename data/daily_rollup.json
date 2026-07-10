@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-09T07:25:39.482682+00:00",
+  "last_updated": "2026-07-10T07:23:50.080716+00:00",
   "totals": {
-    "jobs": 515809,
-    "teams": 159,
+    "jobs": 516309,
+    "teams": 169,
     "products": 0,
-    "companies": 115,
+    "companies": 120,
     "revenue": 0,
-    "labor_hours": -1072680720
+    "labor_hours": -1073720720
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 500,
+    "teams": 10,
     "products": 0,
-    "companies": 0,
+    "companies": 5,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -1040000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -720,10 +720,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -9984000
+    },
+    "2026-07-08": {
+      "jobs": 500,
+      "teams": 10,
+      "products": 0,
+      "companies": 5,
+      "revenue": 0,
+      "labor_hours": -1040000
     }
   },
-  "events_count": 151,
+  "events_count": 152,
   "all_events": [
+    {
+      "id": "evt_20260708_001",
+      "event_date": "2026-07-08",
+      "headline": "Animation industry faces job cuts as AI tools reshape creative roles",
+      "source_url": "https://www.theatlantic.com/culture/2026/07/animation-industry-ai-hollywood-job-cuts/687830/",
+      "source_name": "The Atlantic",
+      "excerpt": "Artists such as storyboarders, concept designers, and visual effects specialists have seen jobs diminish or evolve into roles where they 'clean up' AI-generated content.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 500,
+        "teams": 10,
+        "companies": 5,
+        "labor_hours": -1040000
+      },
+      "notes": "Impact on creative roles in animation due to AI adoption",
+      "collected_date": "2026-07-10",
+      "date": "2026-07-10",
+      "created_at": "2026-07-10T07:23:50.080788+00:00"
+    },
     {
       "id": "evt_20260706_001",
       "event_date": "2026-07-06",
@@ -2736,37 +2764,36 @@
       "hashtags": "#Chegg #EdTech #AILayoffs #ChatGPT",
       "date": "2024-12-15",
       "created_at": "2026-04-27T17:59:55.148751"
-    },
-    {
-      "id": "evt_20241126_equinix_116",
-      "event_date": "2024-11-26",
-      "collected_date": "2026-04-27",
-      "headline": "Equinix cuts 400 jobs amid AI transition",
-      "source_url": "https://www.networkworld.com/article/3613399/equinix-to-cut-3-of-staff-amidst-the-greatest-demand-for-data-center-infrastructure-ever.html",
-      "source_name": "TrueUp",
-      "excerpt": "Equinix cut ~400 of its 13,000 employees despite record demand for its data center capacity. New CEO Adaire Fox-Martin restructuring post-leadership shakeup (CIO and CISO both departed). Paradox: AI is driving record demand for Equinix facilities while AI tools reduce its internal headcount needs.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 400,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -832000
-      },
-      "notes": "Equinix cut ~400 of its 13,000 employees despite record demand for its data center capacity. New CEO Adaire Fox-Martin restructuring post-leadership shakeup (CIO and CISO both departed). Paradox: AI is driving record demand for Equinix facilities while AI tools reduce its internal headcount needs.",
-      "industry": "Data Centers",
-      "hashtags": "#Equinix #DataCenter #AI #AILayoffs #TechLayoffs2024 #Infrastructure",
-      "date": "2024-11-26",
-      "created_at": "2026-04-27T17:59:55.141121"
     }
   ],
-  "summary": "The animation and visual effects industry is experiencing job reductions and role transformations due to the adoption of AI tools, affecting positions like storyboarders and concept designers.",
-  "events": [],
+  "summary": "Today's findings highlight the impact of AI on the animation industry, with significant job cuts and role transformations as AI tools are increasingly adopted.",
+  "events": [
+    {
+      "id": "evt_20260708_001",
+      "event_date": "2026-07-08",
+      "headline": "Animation industry faces job cuts as AI tools reshape creative roles",
+      "source_url": "https://www.theatlantic.com/culture/2026/07/animation-industry-ai-hollywood-job-cuts/687830/",
+      "source_name": "The Atlantic",
+      "excerpt": "Artists such as storyboarders, concept designers, and visual effects specialists have seen jobs diminish or evolve into roles where they 'clean up' AI-generated content.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 500,
+        "teams": 10,
+        "companies": 5,
+        "labor_hours": -1040000
+      },
+      "notes": "Impact on creative roles in animation due to AI adoption",
+      "collected_date": "2026-07-10",
+      "date": "2026-07-10",
+      "created_at": "2026-07-10T07:23:50.080788+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-09",
-    "last_nonzero_collection": "2026-07-07",
-    "consecutive_zero_days": 2,
-    "last_collection_date": "2026-07-09"
+    "last_openai_success": "2026-07-10",
+    "last_nonzero_collection": "2026-07-10",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-07-10"
   }
 }
