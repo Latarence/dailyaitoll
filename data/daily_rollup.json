@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-10T07:23:50.080716+00:00",
+  "last_updated": "2026-07-11T06:03:51.075122+00:00",
   "totals": {
-    "jobs": 516309,
-    "teams": 169,
+    "jobs": 521109,
+    "teams": 171,
     "products": 0,
-    "companies": 120,
+    "companies": 121,
     "revenue": 0,
-    "labor_hours": -1073720720
+    "labor_hours": -1083704720
   },
   "today": {
-    "jobs": 500,
-    "teams": 10,
+    "jobs": 4800,
+    "teams": 2,
     "products": 0,
-    "companies": 5,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -1040000
+    "labor_hours": -9984000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -714,12 +714,12 @@
       "labor_hours": -14751600
     },
     "2026-07-06": {
-      "jobs": 4800,
-      "teams": 2,
+      "jobs": 9600,
+      "teams": 4,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -9984000
+      "labor_hours": -19968000
     },
     "2026-07-08": {
       "jobs": 500,
@@ -730,8 +730,28 @@
       "labor_hours": -1040000
     }
   },
-  "events_count": 152,
+  "events_count": 153,
   "all_events": [
+    {
+      "id": "evt_20260706_002",
+      "event_date": "2026-07-06",
+      "headline": "Microsoft cuts 4,800 jobs amid AI-driven restructuring",
+      "source_url": "https://www.windowscentral.com/microsoft/ai-is-changing-how-work-gets-done-microsoft-insists-4-800-layoffs-arent-because-of-ai-but-points-to-a-shifting-workforce",
+      "source_name": "Windows Central",
+      "excerpt": "Microsoft has confirmed a layoff of 4,800 employees, approximately 2.1% of its workforce. The majority of these job cuts are from Xbox and gaming-related divisions, marking the largest reduction in Xbox history, with additional layoffs stemming from the Commercial business sector.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 4800,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -9984000
+      },
+      "notes": "Layoffs attributed to AI-driven changes in work processes.",
+      "collected_date": "2026-07-11",
+      "date": "2026-07-11",
+      "created_at": "2026-07-11T06:03:51.075206+00:00"
+    },
     {
       "id": "evt_20260708_001",
       "event_date": "2026-07-08",
@@ -2743,57 +2763,36 @@
       "hashtags": "#Microsoft #AILayoffs #TechLayoffs #FutureOfWork",
       "date": "2025-01-13",
       "created_at": "2026-04-27T17:59:55.148695"
-    },
-    {
-      "id": "evt_20241215_chegg_205",
-      "event_date": "2024-12-15",
-      "collected_date": "2026-04-27",
-      "headline": "Chegg cuts 248 jobs",
-      "source_url": "https://techcrunch.com/2024/12/10/chegg-layoffs-ai/",
-      "source_name": "TechCrunch",
-      "excerpt": "~22% of staff cut; CEO cited students switching to free AI tools like ChatGPT instead of Chegg's paid platform.",
-      "causality": "contributing",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 248,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -515840
-      },
-      "notes": "~22% of staff cut; CEO cited students switching to free AI tools like ChatGPT instead of Chegg's paid platform.",
-      "hashtags": "#Chegg #EdTech #AILayoffs #ChatGPT",
-      "date": "2024-12-15",
-      "created_at": "2026-04-27T17:59:55.148751"
     }
   ],
-  "summary": "Today's findings highlight the impact of AI on the animation industry, with significant job cuts and role transformations as AI tools are increasingly adopted.",
+  "summary": "Microsoft announced the layoff of 4,800 employees, citing AI-driven changes in work processes as a contributing factor.",
   "events": [
     {
-      "id": "evt_20260708_001",
-      "event_date": "2026-07-08",
-      "headline": "Animation industry faces job cuts as AI tools reshape creative roles",
-      "source_url": "https://www.theatlantic.com/culture/2026/07/animation-industry-ai-hollywood-job-cuts/687830/",
-      "source_name": "The Atlantic",
-      "excerpt": "Artists such as storyboarders, concept designers, and visual effects specialists have seen jobs diminish or evolve into roles where they 'clean up' AI-generated content.",
+      "id": "evt_20260706_002",
+      "event_date": "2026-07-06",
+      "headline": "Microsoft cuts 4,800 jobs amid AI-driven restructuring",
+      "source_url": "https://www.windowscentral.com/microsoft/ai-is-changing-how-work-gets-done-microsoft-insists-4-800-layoffs-arent-because-of-ai-but-points-to-a-shifting-workforce",
+      "source_name": "Windows Central",
+      "excerpt": "Microsoft has confirmed a layoff of 4,800 employees, approximately 2.1% of its workforce. The majority of these job cuts are from Xbox and gaming-related divisions, marking the largest reduction in Xbox history, with additional layoffs stemming from the Commercial business sector.",
       "causality": "direct",
       "confidence": 0.85,
       "tolls": {
-        "jobs": 500,
-        "teams": 10,
-        "companies": 5,
-        "labor_hours": -1040000
+        "jobs": 4800,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -9984000
       },
-      "notes": "Impact on creative roles in animation due to AI adoption",
-      "collected_date": "2026-07-10",
-      "date": "2026-07-10",
-      "created_at": "2026-07-10T07:23:50.080788+00:00"
+      "notes": "Layoffs attributed to AI-driven changes in work processes.",
+      "collected_date": "2026-07-11",
+      "date": "2026-07-11",
+      "created_at": "2026-07-11T06:03:51.075206+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-10",
-    "last_nonzero_collection": "2026-07-10",
+    "last_openai_success": "2026-07-11",
+    "last_nonzero_collection": "2026-07-11",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-10"
+    "last_collection_date": "2026-07-11"
   }
 }
