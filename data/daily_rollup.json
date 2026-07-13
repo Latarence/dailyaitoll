@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-12T06:22:44.820125+00:00",
+  "last_updated": "2026-07-13T06:41:28.711996+00:00",
   "totals": {
-    "jobs": 521109,
+    "jobs": 528909,
     "teams": 171,
     "products": 0,
-    "companies": 121,
+    "companies": 123,
     "revenue": 0,
-    "labor_hours": -1083704720
+    "labor_hours": -1099928720
   },
   "today": {
-    "jobs": 0,
+    "jobs": 7800,
     "teams": 0,
     "products": 0,
-    "companies": 0,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -16224000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -728,10 +728,58 @@
       "companies": 5,
       "revenue": 0,
       "labor_hours": -1040000
+    },
+    "2026-07-12": {
+      "jobs": 7800,
+      "teams": 0,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -16224000
     }
   },
-  "events_count": 153,
+  "events_count": 155,
   "all_events": [
+    {
+      "id": "evt_20260712_001",
+      "event_date": "2026-07-12",
+      "headline": "Microsoft lays off 4,800 workers amid AI-driven workforce transformation",
+      "source_url": "https://www-cdn.abcnews.com/Business/microsoft-laying-off-4800-workers-ai-changing-work/story?id=134518435",
+      "source_name": "ABC News",
+      "excerpt": "Microsoft said on Monday it will lay off 4,800 employees and that the job cuts would be especially pronounced in its Xbox department.",
+      "causality": "contributing",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 4800,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -9984000
+      },
+      "notes": "Layoffs attributed to AI-driven changes in work processes.",
+      "collected_date": "2026-07-13",
+      "date": "2026-07-13",
+      "created_at": "2026-07-13T06:41:28.712080+00:00"
+    },
+    {
+      "id": "evt_20260712_002",
+      "event_date": "2026-07-12",
+      "headline": "Intuit to cut 3,000 jobs as it pivots toward AI",
+      "source_url": "https://www.thedailystar.net/news/tech-startup/news/intuit-cut-3000-jobs-it-pivots-toward-ai-4181181",
+      "source_name": "The Daily Star",
+      "excerpt": "US-based business software company Intuit is laying off around 3,000 employees, or 17% of its global workforce, as it deepens its push into artificial intelligence.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 3000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -6240000
+      },
+      "notes": "Layoffs part of AI-driven restructuring.",
+      "collected_date": "2026-07-13",
+      "date": "2026-07-13",
+      "created_at": "2026-07-13T06:41:28.712102+00:00"
+    },
     {
       "id": "evt_20260706_002",
       "event_date": "2026-07-06",
@@ -2720,58 +2768,56 @@
       "hashtags": "#Salesforce #Agentforce #AILayoffs #TechLayoffs2025 #CRM",
       "date": "2025-02-04",
       "created_at": "2026-04-27T17:59:55.141004"
-    },
-    {
-      "id": "evt_20250114_meta_115",
-      "event_date": "2025-01-14",
-      "collected_date": "2026-04-27",
-      "headline": "Meta cuts 3,600 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3816579/tech-layoffs-this-year-a-timeline.html",
-      "source_name": "TrueUp",
-      "excerpt": "CEO Zuckerberg told staff he would 'move out low performers faster' \u2014 cutting 5% (~3,600 employees) beginning Feb 10. Company had already reduced headcount 5% via attrition in 2024. US fact-checkers replaced by AI-assisted community notes system. Zuckerberg framed it as building a 'more meritocratic' organization.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 3600,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -7488000
-      },
-      "notes": "CEO Zuckerberg told staff he would 'move out low performers faster' \u2014 cutting 5% (~3,600 employees) beginning Feb 10. Company had already reduced headcount 5% via attrition in 2024. US fact-checkers replaced by AI-assisted community notes system. Zuckerberg framed it as building a 'more meritocratic' organization.",
-      "industry": "Big Tech / Social Media",
-      "hashtags": "#Meta #Facebook #Instagram #AILayoffs #TechLayoffs2025 #Zuckerberg #PerformanceManagement",
-      "date": "2025-01-14",
-      "created_at": "2026-04-27T17:59:55.141088"
-    },
-    {
-      "id": "evt_20250113_microsof_204",
-      "event_date": "2025-01-13",
-      "collected_date": "2026-04-27",
-      "headline": "Microsoft cuts 200 jobs",
-      "source_url": "https://www.cnbc.com/2025/01/13/microsoft-layoffs-2025.html",
-      "source_name": "CNBC",
-      "excerpt": "Small round of cuts across gaming & sales teams; part of ongoing AI-driven restructuring entering 2025.",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 200,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -416000
-      },
-      "notes": "Small round of cuts across gaming & sales teams; part of ongoing AI-driven restructuring entering 2025.",
-      "hashtags": "#Microsoft #AILayoffs #TechLayoffs #FutureOfWork",
-      "date": "2025-01-13",
-      "created_at": "2026-04-27T17:59:55.148695"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "On July 12, 2026, Microsoft announced the layoff of 4,800 employees, citing AI-driven changes in work processes, while Intuit disclosed plans to cut 3,000 jobs as it pivots toward artificial intelligence.",
+  "events": [
+    {
+      "id": "evt_20260712_001",
+      "event_date": "2026-07-12",
+      "headline": "Microsoft lays off 4,800 workers amid AI-driven workforce transformation",
+      "source_url": "https://www-cdn.abcnews.com/Business/microsoft-laying-off-4800-workers-ai-changing-work/story?id=134518435",
+      "source_name": "ABC News",
+      "excerpt": "Microsoft said on Monday it will lay off 4,800 employees and that the job cuts would be especially pronounced in its Xbox department.",
+      "causality": "contributing",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 4800,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -9984000
+      },
+      "notes": "Layoffs attributed to AI-driven changes in work processes.",
+      "collected_date": "2026-07-13",
+      "date": "2026-07-13",
+      "created_at": "2026-07-13T06:41:28.712080+00:00"
+    },
+    {
+      "id": "evt_20260712_002",
+      "event_date": "2026-07-12",
+      "headline": "Intuit to cut 3,000 jobs as it pivots toward AI",
+      "source_url": "https://www.thedailystar.net/news/tech-startup/news/intuit-cut-3000-jobs-it-pivots-toward-ai-4181181",
+      "source_name": "The Daily Star",
+      "excerpt": "US-based business software company Intuit is laying off around 3,000 employees, or 17% of its global workforce, as it deepens its push into artificial intelligence.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 3000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -6240000
+      },
+      "notes": "Layoffs part of AI-driven restructuring.",
+      "collected_date": "2026-07-13",
+      "date": "2026-07-13",
+      "created_at": "2026-07-13T06:41:28.712102+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-12",
-    "last_nonzero_collection": "2026-07-11",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-07-12"
+    "last_openai_success": "2026-07-13",
+    "last_nonzero_collection": "2026-07-13",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-07-13"
   }
 }
