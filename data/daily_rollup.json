@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-13T06:41:28.711996+00:00",
+  "last_updated": "2026-07-14T06:00:41.027534+00:00",
   "totals": {
-    "jobs": 528909,
-    "teams": 171,
+    "jobs": 529409,
+    "teams": 172,
     "products": 0,
-    "companies": 123,
+    "companies": 124,
     "revenue": 0,
-    "labor_hours": -1099928720
+    "labor_hours": -1100968720
   },
   "today": {
-    "jobs": 7800,
-    "teams": 0,
+    "jobs": 500,
+    "teams": 1,
     "products": 0,
-    "companies": 2,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -16224000
+    "labor_hours": -1040000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -736,10 +736,38 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -16224000
+    },
+    "2026-07-13": {
+      "jobs": 500,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -1040000
     }
   },
-  "events_count": 155,
+  "events_count": 156,
   "all_events": [
+    {
+      "id": "evt_20260713_001",
+      "event_date": "2026-07-13",
+      "headline": "Thomson Reuters to cut 'small number' of engineering jobs",
+      "source_url": "https://www.thestar.com.my/tech/tech-news/2026/07/14/thomson-reuters-to-cut-039small-number039-of-engineering-jobs",
+      "source_name": "The Star",
+      "excerpt": "Thomson Reuters on Monday said it is cutting 'a small number of roles' in engineering, as the Canadian content and technology company aggressively deploys artificial intelligence across its businesses.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 500,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "Layoffs account for about 5.2% of the 9,400 employees in the company's operations and technology unit.",
+      "collected_date": "2026-07-14",
+      "date": "2026-07-14",
+      "created_at": "2026-07-14T06:00:41.027624+00:00"
+    },
     {
       "id": "evt_20260712_001",
       "event_date": "2026-07-12",
@@ -2746,78 +2774,36 @@
       "hashtags": "#Workday #HRIS #ERP #AILayoffs #TechLayoffs2025 #HRTech",
       "date": "2025-02-05",
       "created_at": "2026-04-27T17:59:55.140968"
-    },
-    {
-      "id": "evt_20250204_salesfor_113",
-      "event_date": "2025-02-04",
-      "collected_date": "2026-04-27",
-      "headline": "Salesforce cuts 1,000 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3816579/tech-layoffs-this-year-a-timeline.html",
-      "source_name": "TrueUp",
-      "excerpt": "Salesforce cut 1,000+ workers across the company (per Bloomberg) while simultaneously hiring sales staff for new Agentforce AI products. CEO Benioff: the company hired 'zero new engineers in FY26' because AI coding agents handle capacity. Classic dual motion: cut human roles, sell AI to others.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "Salesforce cut 1,000+ workers across the company (per Bloomberg) while simultaneously hiring sales staff for new Agentforce AI products. CEO Benioff: the company hired 'zero new engineers in FY26' because AI coding agents handle capacity. Classic dual motion: cut human roles, sell AI to others.",
-      "industry": "CRM / Enterprise SaaS",
-      "hashtags": "#Salesforce #Agentforce #AILayoffs #TechLayoffs2025 #CRM",
-      "date": "2025-02-04",
-      "created_at": "2026-04-27T17:59:55.141004"
     }
   ],
-  "summary": "On July 12, 2026, Microsoft announced the layoff of 4,800 employees, citing AI-driven changes in work processes, while Intuit disclosed plans to cut 3,000 jobs as it pivots toward artificial intelligence.",
+  "summary": "Thomson Reuters announced the elimination of up to 500 engineering positions as part of its aggressive AI deployment strategy.",
   "events": [
     {
-      "id": "evt_20260712_001",
-      "event_date": "2026-07-12",
-      "headline": "Microsoft lays off 4,800 workers amid AI-driven workforce transformation",
-      "source_url": "https://www-cdn.abcnews.com/Business/microsoft-laying-off-4800-workers-ai-changing-work/story?id=134518435",
-      "source_name": "ABC News",
-      "excerpt": "Microsoft said on Monday it will lay off 4,800 employees and that the job cuts would be especially pronounced in its Xbox department.",
-      "causality": "contributing",
+      "id": "evt_20260713_001",
+      "event_date": "2026-07-13",
+      "headline": "Thomson Reuters to cut 'small number' of engineering jobs",
+      "source_url": "https://www.thestar.com.my/tech/tech-news/2026/07/14/thomson-reuters-to-cut-039small-number039-of-engineering-jobs",
+      "source_name": "The Star",
+      "excerpt": "Thomson Reuters on Monday said it is cutting 'a small number of roles' in engineering, as the Canadian content and technology company aggressively deploys artificial intelligence across its businesses.",
+      "causality": "direct",
       "confidence": 0.85,
       "tolls": {
-        "jobs": 4800,
-        "teams": null,
+        "jobs": 500,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": -9984000
+        "labor_hours": -1040000
       },
-      "notes": "Layoffs attributed to AI-driven changes in work processes.",
-      "collected_date": "2026-07-13",
-      "date": "2026-07-13",
-      "created_at": "2026-07-13T06:41:28.712080+00:00"
-    },
-    {
-      "id": "evt_20260712_002",
-      "event_date": "2026-07-12",
-      "headline": "Intuit to cut 3,000 jobs as it pivots toward AI",
-      "source_url": "https://www.thedailystar.net/news/tech-startup/news/intuit-cut-3000-jobs-it-pivots-toward-ai-4181181",
-      "source_name": "The Daily Star",
-      "excerpt": "US-based business software company Intuit is laying off around 3,000 employees, or 17% of its global workforce, as it deepens its push into artificial intelligence.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 3000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -6240000
-      },
-      "notes": "Layoffs part of AI-driven restructuring.",
-      "collected_date": "2026-07-13",
-      "date": "2026-07-13",
-      "created_at": "2026-07-13T06:41:28.712102+00:00"
+      "notes": "Layoffs account for about 5.2% of the 9,400 employees in the company's operations and technology unit.",
+      "collected_date": "2026-07-14",
+      "date": "2026-07-14",
+      "created_at": "2026-07-14T06:00:41.027624+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-13",
-    "last_nonzero_collection": "2026-07-13",
+    "last_openai_success": "2026-07-14",
+    "last_nonzero_collection": "2026-07-14",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-13"
+    "last_collection_date": "2026-07-14"
   }
 }
