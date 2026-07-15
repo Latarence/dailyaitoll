@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-14T06:00:41.027534+00:00",
+  "last_updated": "2026-07-15T06:03:06.010658+00:00",
   "totals": {
-    "jobs": 529409,
-    "teams": 172,
+    "jobs": 529435,
+    "teams": 173,
     "products": 0,
-    "companies": 124,
+    "companies": 125,
     "revenue": 0,
-    "labor_hours": -1100968720
+    "labor_hours": -1101022800
   },
   "today": {
-    "jobs": 500,
+    "jobs": 26,
     "teams": 1,
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": -1040000
+    "labor_hours": -54080
   },
   "daily_totals": {
     "2026-05-05": {
@@ -744,10 +744,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -1040000
+    },
+    "2026-07-14": {
+      "jobs": 26,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -54080
     }
   },
-  "events_count": 156,
+  "events_count": 157,
   "all_events": [
+    {
+      "id": "evt_20260714_001",
+      "event_date": "2026-07-14",
+      "headline": "Meta employees sue over AI-driven layoff decisions",
+      "source_url": "https://apnews.com/article/019fb9c7fdc09167e91547546bce5be8",
+      "source_name": "AP News",
+      "excerpt": "A group of 26 Meta employees filed a federal lawsuit in Oakland, California, accusing the company of using AI-driven systems in its recent layoff decisions, which they claim disproportionately targeted workers on medical, parental, or family leave.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 26,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -54080
+      },
+      "notes": "Lawsuit alleges AI-driven layoffs violated federal and state laws.",
+      "collected_date": "2026-07-15",
+      "date": "2026-07-15",
+      "created_at": "2026-07-15T06:03:06.010742+00:00"
+    },
     {
       "id": "evt_20260713_001",
       "event_date": "2026-07-13",
@@ -2752,58 +2780,36 @@
       "hashtags": "#CISA #Cybersecurity #DOGE #GovernmentLayoffs #TechLayoffs2025 #NationalSecurity",
       "date": "2025-02-21",
       "created_at": "2026-04-27T17:59:55.140933"
-    },
-    {
-      "id": "evt_20250205_workday_112",
-      "event_date": "2025-02-05",
-      "collected_date": "2026-04-27",
-      "headline": "Workday cuts 1,750 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3817887/workday-to-cut-1750-jobs-shift-focus-to-ai-and-global-expansion.html",
-      "source_name": "TrueUp",
-      "excerpt": "Workday CEO Carl Eschenbach cut 1,750 employees (8.5% of workforce) to fund AI investment and global expansion, disposing of unused office space. Analysts flagged that AI \u2014 in the form of Workday's own HRIS automation \u2014 was reducing staffing needs in HR-adjacent roles internally.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1750,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -3640000
-      },
-      "notes": "Workday CEO Carl Eschenbach cut 1,750 employees (8.5% of workforce) to fund AI investment and global expansion, disposing of unused office space. Analysts flagged that AI \u2014 in the form of Workday's own HRIS automation \u2014 was reducing staffing needs in HR-adjacent roles internally.",
-      "industry": "HR / ERP Software",
-      "hashtags": "#Workday #HRIS #ERP #AILayoffs #TechLayoffs2025 #HRTech",
-      "date": "2025-02-05",
-      "created_at": "2026-04-27T17:59:55.140968"
     }
   ],
-  "summary": "Thomson Reuters announced the elimination of up to 500 engineering positions as part of its aggressive AI deployment strategy.",
+  "summary": "One new verifiable AI displacement event found: Meta employees filed a lawsuit alleging AI-driven layoff decisions.",
   "events": [
     {
-      "id": "evt_20260713_001",
-      "event_date": "2026-07-13",
-      "headline": "Thomson Reuters to cut 'small number' of engineering jobs",
-      "source_url": "https://www.thestar.com.my/tech/tech-news/2026/07/14/thomson-reuters-to-cut-039small-number039-of-engineering-jobs",
-      "source_name": "The Star",
-      "excerpt": "Thomson Reuters on Monday said it is cutting 'a small number of roles' in engineering, as the Canadian content and technology company aggressively deploys artificial intelligence across its businesses.",
+      "id": "evt_20260714_001",
+      "event_date": "2026-07-14",
+      "headline": "Meta employees sue over AI-driven layoff decisions",
+      "source_url": "https://apnews.com/article/019fb9c7fdc09167e91547546bce5be8",
+      "source_name": "AP News",
+      "excerpt": "A group of 26 Meta employees filed a federal lawsuit in Oakland, California, accusing the company of using AI-driven systems in its recent layoff decisions, which they claim disproportionately targeted workers on medical, parental, or family leave.",
       "causality": "direct",
-      "confidence": 0.85,
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 500,
+        "jobs": 26,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -1040000
+        "labor_hours": -54080
       },
-      "notes": "Layoffs account for about 5.2% of the 9,400 employees in the company's operations and technology unit.",
-      "collected_date": "2026-07-14",
-      "date": "2026-07-14",
-      "created_at": "2026-07-14T06:00:41.027624+00:00"
+      "notes": "Lawsuit alleges AI-driven layoffs violated federal and state laws.",
+      "collected_date": "2026-07-15",
+      "date": "2026-07-15",
+      "created_at": "2026-07-15T06:03:06.010742+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-14",
-    "last_nonzero_collection": "2026-07-14",
+    "last_openai_success": "2026-07-15",
+    "last_nonzero_collection": "2026-07-15",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-14"
+    "last_collection_date": "2026-07-15"
   }
 }
