@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-15T06:03:06.010658+00:00",
+  "last_updated": "2026-07-16T06:07:18.594960+00:00",
   "totals": {
     "jobs": 529435,
     "teams": 173,
@@ -9,12 +9,12 @@
     "labor_hours": -1101022800
   },
   "today": {
-    "jobs": 26,
-    "teams": 1,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -54080
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2782,34 +2782,13 @@
       "created_at": "2026-04-27T17:59:55.140933"
     }
   ],
-  "summary": "One new verifiable AI displacement event found: Meta employees filed a lawsuit alleging AI-driven layoff decisions.",
-  "events": [
-    {
-      "id": "evt_20260714_001",
-      "event_date": "2026-07-14",
-      "headline": "Meta employees sue over AI-driven layoff decisions",
-      "source_url": "https://apnews.com/article/019fb9c7fdc09167e91547546bce5be8",
-      "source_name": "AP News",
-      "excerpt": "A group of 26 Meta employees filed a federal lawsuit in Oakland, California, accusing the company of using AI-driven systems in its recent layoff decisions, which they claim disproportionately targeted workers on medical, parental, or family leave.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 26,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -54080
-      },
-      "notes": "Lawsuit alleges AI-driven layoffs violated federal and state laws.",
-      "collected_date": "2026-07-15",
-      "date": "2026-07-15",
-      "created_at": "2026-07-15T06:03:06.010742+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-15",
+    "last_openai_success": "2026-07-16",
     "last_nonzero_collection": "2026-07-15",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-15"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-07-16"
   }
 }
