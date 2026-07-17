@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-16T06:07:18.594960+00:00",
+  "last_updated": "2026-07-17T06:07:04.173183+00:00",
   "totals": {
-    "jobs": 529435,
-    "teams": 173,
+    "jobs": 538242,
+    "teams": 208,
     "products": 0,
-    "companies": 125,
+    "companies": 130,
     "revenue": 0,
-    "labor_hours": -1101022800
+    "labor_hours": -1119331760
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 8807,
+    "teams": 35,
     "products": 0,
-    "companies": 0,
+    "companies": 5,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -18308960
   },
   "daily_totals": {
     "2026-05-05": {
@@ -714,36 +714,36 @@
       "labor_hours": -14751600
     },
     "2026-07-06": {
-      "jobs": 9600,
-      "teams": 4,
+      "jobs": 14264,
+      "teams": 19,
       "products": 0,
-      "companies": 2,
+      "companies": 3,
       "revenue": 0,
-      "labor_hours": -19968000
+      "labor_hours": -29659520
     },
     "2026-07-08": {
-      "jobs": 500,
-      "teams": 10,
+      "jobs": 630,
+      "teams": 12,
       "products": 0,
-      "companies": 5,
+      "companies": 6,
       "revenue": 0,
-      "labor_hours": -1040000
+      "labor_hours": -1310400
     },
     "2026-07-12": {
-      "jobs": 7800,
-      "teams": 0,
+      "jobs": 11143,
+      "teams": 10,
+      "products": 0,
+      "companies": 3,
+      "revenue": 0,
+      "labor_hours": -23177440
+    },
+    "2026-07-13": {
+      "jobs": 1000,
+      "teams": 6,
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -16224000
-    },
-    "2026-07-13": {
-      "jobs": 500,
-      "teams": 1,
-      "products": 0,
-      "companies": 1,
-      "revenue": 0,
-      "labor_hours": -1040000
+      "labor_hours": -2080000
     },
     "2026-07-14": {
       "jobs": 26,
@@ -752,10 +752,118 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -54080
+    },
+    "2026-07-07": {
+      "jobs": 170,
+      "teams": 3,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -353600
     }
   },
-  "events_count": 157,
+  "events_count": 162,
   "all_events": [
+    {
+      "id": "evt_20260713_002",
+      "event_date": "2026-07-13",
+      "headline": "Thomson Reuters to cut 500 jobs amid AI-driven restructuring",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "Thomson Reuters announced the elimination of 500 positions, attributing the cuts to its ongoing AI-driven transformation efforts.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 500,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "Part of broader AI integration strategy",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173278+00:00"
+    },
+    {
+      "id": "evt_20260712_003",
+      "event_date": "2026-07-12",
+      "headline": "HDFC Bank lays off 3,343 employees citing AI adoption",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "HDFC Bank announced the reduction of 3,343 positions, explicitly citing the adoption of AI technologies as a primary factor.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 3343,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -6953440
+      },
+      "notes": "AI implementation in banking operations",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173301+00:00"
+    },
+    {
+      "id": "evt_20260708_002",
+      "event_date": "2026-07-08",
+      "headline": "Starling Bank reduces workforce by 130 amid AI integration",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "Starling Bank announced the layoff of 130 employees, attributing the decision to the integration of AI systems within its operations.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 130,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -270400
+      },
+      "notes": "AI-driven operational changes",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173312+00:00"
+    },
+    {
+      "id": "evt_20260707_001",
+      "event_date": "2026-07-07",
+      "headline": "Mews lays off 170 employees due to AI-driven restructuring",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "Mews announced the reduction of 170 positions, citing AI-driven restructuring as the primary reason for the layoffs.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 170,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -353600
+      },
+      "notes": "Restructuring to enhance AI capabilities",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173320+00:00"
+    },
+    {
+      "id": "evt_20260706_003",
+      "event_date": "2026-07-06",
+      "headline": "Microsoft cuts 4,664 jobs amid AI-focused cost restructuring",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "Microsoft announced the elimination of 4,664 positions, attributing the cuts to cost restructuring efforts focused on AI investments.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 4664,
+        "teams": 15,
+        "companies": 1,
+        "labor_hours": -9691520
+      },
+      "notes": "AI infrastructure investment strategy",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173328+00:00"
+    },
     {
       "id": "evt_20260714_001",
       "event_date": "2026-07-14",
@@ -2670,125 +2778,116 @@
       "hashtags": "#Kaseya #Datto #MSP #ITManagement #AILayoffs #TechLayoffs2026",
       "date": "2026-01-08",
       "created_at": "2026-04-27T17:59:55.140787"
-    },
+    }
+  ],
+  "summary": "Recent reports indicate significant job cuts across various industries due to AI integration. Notably, Thomson Reuters, HDFC Bank, Starling Bank, Mews, and Microsoft have collectively laid off thousands of employees, explicitly citing AI adoption and restructuring as primary factors. These developments underscore the accelerating impact of AI on workforce dynamics.",
+  "events": [
     {
-      "id": "evt_20260105_multiver_108",
-      "event_date": "2026-01-05",
-      "collected_date": "2026-04-27",
-      "headline": "Multiverse cuts 50 jobs amid AI transition",
-      "source_url": "https://sifted.eu/articles/multiverse-job-cuts-euan-blair",
-      "source_name": "TrueUp",
-      "excerpt": "London-based edtech Multiverse (corporate apprenticeship platform backed by Euan Blair) cut dozens of jobs amid widening losses. The apprenticeship market is being disrupted by AI upskilling tools that reduce need for structured human-led programs.",
+      "id": "evt_20260713_002",
+      "event_date": "2026-07-13",
+      "headline": "Thomson Reuters to cut 500 jobs amid AI-driven restructuring",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "Thomson Reuters announced the elimination of 500 positions, attributing the cuts to its ongoing AI-driven transformation efforts.",
       "causality": "direct",
-      "confidence": 0.7,
+      "confidence": 0.85,
       "tolls": {
-        "jobs": 50,
-        "teams": 0,
+        "jobs": 500,
+        "teams": 5,
         "companies": 1,
-        "labor_hours": -104000
+        "labor_hours": -1040000
       },
-      "notes": "London-based edtech Multiverse (corporate apprenticeship platform backed by Euan Blair) cut dozens of jobs amid widening losses. The apprenticeship market is being disrupted by AI upskilling tools that reduce need for structured human-led programs.",
-      "industry": "EdTech",
-      "hashtags": "#Multiverse #EdTech #CorporateTraining #AILayoffs #TechLayoffs2026 #UK",
-      "date": "2026-01-05",
-      "created_at": "2026-04-27T17:59:55.140823"
+      "notes": "Part of broader AI integration strategy",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173278+00:00"
     },
     {
-      "id": "evt_20250306_hpehewle_114",
-      "event_date": "2025-03-06",
-      "collected_date": "2026-04-27",
-      "headline": "HPE (Hewlett Packard Enterprise) cuts 2,500 jobs amid AI transition",
-      "source_url": "https://www.networkworld.com/article/3840596/hpe-cuts-2500-workers-expects-juniper-buy-to-close-end-of-25-faces-tariff-issues.html",
-      "source_name": "TrueUp",
-      "excerpt": "HPE CEO Antonio Neri announced 2,500 layoffs over 18 months, part of broader cost-cutting while completing the Juniper Networks acquisition. HPE is restructuring around AI-era infrastructure (networking, cloud) and cutting traditional IT support and sales roles.",
+      "id": "evt_20260712_003",
+      "event_date": "2026-07-12",
+      "headline": "HDFC Bank lays off 3,343 employees citing AI adoption",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "HDFC Bank announced the reduction of 3,343 positions, explicitly citing the adoption of AI technologies as a primary factor.",
       "causality": "direct",
-      "confidence": 0.7,
+      "confidence": 0.85,
       "tolls": {
-        "jobs": 2500,
-        "teams": 0,
+        "jobs": 3343,
+        "teams": 10,
         "companies": 1,
-        "labor_hours": -5200000
+        "labor_hours": -6953440
       },
-      "notes": "HPE CEO Antonio Neri announced 2,500 layoffs over 18 months, part of broader cost-cutting while completing the Juniper Networks acquisition. HPE is restructuring around AI-era infrastructure (networking, cloud) and cutting traditional IT support and sales roles.",
-      "industry": "Enterprise Hardware / Cloud",
-      "hashtags": "#HPE #HewlettPackardEnterprise #Juniper #AILayoffs #TechLayoffs2025 #CloudInfrastructure",
-      "date": "2025-03-06",
-      "created_at": "2026-04-27T17:59:55.141054"
+      "notes": "AI implementation in banking operations",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173301+00:00"
     },
     {
-      "id": "evt_20250227_autodesk_109",
-      "event_date": "2025-02-27",
-      "collected_date": "2026-04-27",
-      "headline": "Autodesk cuts 1,350 jobs amid AI transition",
-      "source_url": "https://adsknews.autodesk.com/en/news/022725-employee-message/",
-      "source_name": "TrueUp",
-      "excerpt": "Autodesk cut ~1,350 employees (9% of workforce), citing AI-driven cloud and platform products as most profitable. CEO Andrew Anagnost noted fewer sales staff needed as subscription models and AI self-service tools grow. Company shifting investment toward AI-augmented design tools.",
+      "id": "evt_20260708_002",
+      "event_date": "2026-07-08",
+      "headline": "Starling Bank reduces workforce by 130 amid AI integration",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "Starling Bank announced the layoff of 130 employees, attributing the decision to the integration of AI systems within its operations.",
       "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1350,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2808000
-      },
-      "notes": "Autodesk cut ~1,350 employees (9% of workforce), citing AI-driven cloud and platform products as most profitable. CEO Andrew Anagnost noted fewer sales staff needed as subscription models and AI self-service tools grow. Company shifting investment toward AI-augmented design tools.",
-      "industry": "Design / Engineering Software",
-      "hashtags": "#Autodesk #CAD #DesignSoftware #AILayoffs #TechLayoffs2025 #AutoCAD",
-      "date": "2025-02-27",
-      "created_at": "2026-04-27T17:59:55.140861"
-    },
-    {
-      "id": "evt_20250227_hpinc_110",
-      "event_date": "2025-02-27",
-      "collected_date": "2026-04-27",
-      "headline": "HP Inc. cuts 2,000 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3816579/tech-layoffs-this-year-a-timeline.html",
-      "source_name": "TrueUp",
-      "excerpt": "HP cut up to 2,000 more workers as part of ongoing multi-year restructuring. Earlier HP had controversially tried to eliminate phone support by forcing 15-minute waits \u2014 a failed attempt to use friction to push users to AI self-service. Cuts continue as printing division shrinks.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 2000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -4160000
-      },
-      "notes": "HP cut up to 2,000 more workers as part of ongoing multi-year restructuring. Earlier HP had controversially tried to eliminate phone support by forcing 15-minute waits \u2014 a failed attempt to use friction to push users to AI self-service. Cuts continue as printing division shrinks.",
-      "industry": "Hardware / Personal Computing",
-      "hashtags": "#HP #HewlettPackard #TechLayoffs2025 #Printing #CustomerService #AILayoffs",
-      "date": "2025-02-27",
-      "created_at": "2026-04-27T17:59:55.140897"
-    },
-    {
-      "id": "evt_20250221_cisa_111",
-      "event_date": "2025-02-21",
-      "collected_date": "2026-04-27",
-      "headline": "CISA cuts 130 jobs amid AI transition",
-      "source_url": "https://www.csoonline.com/article/3829710/firing-of-130-cisa-staff-worries-cybersecurity-industry.html",
-      "source_name": "TrueUp",
-      "excerpt": "US Cybersecurity and Infrastructure Security Agency lost 130 staff via DOGE-driven cuts. Cybersecurity experts warned the losses would harm international threat-intelligence collaborations. One of the few government AI-efficiency-adjacent layoffs with documented national security concerns.",
-      "causality": "direct",
-      "confidence": 0.7,
+      "confidence": 0.85,
       "tolls": {
         "jobs": 130,
-        "teams": 0,
+        "teams": 2,
         "companies": 1,
         "labor_hours": -270400
       },
-      "notes": "US Cybersecurity and Infrastructure Security Agency lost 130 staff via DOGE-driven cuts. Cybersecurity experts warned the losses would harm international threat-intelligence collaborations. One of the few government AI-efficiency-adjacent layoffs with documented national security concerns.",
-      "industry": "US Government / Cybersecurity",
-      "hashtags": "#CISA #Cybersecurity #DOGE #GovernmentLayoffs #TechLayoffs2025 #NationalSecurity",
-      "date": "2025-02-21",
-      "created_at": "2026-04-27T17:59:55.140933"
+      "notes": "AI-driven operational changes",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173312+00:00"
+    },
+    {
+      "id": "evt_20260707_001",
+      "event_date": "2026-07-07",
+      "headline": "Mews lays off 170 employees due to AI-driven restructuring",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "Mews announced the reduction of 170 positions, citing AI-driven restructuring as the primary reason for the layoffs.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 170,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -353600
+      },
+      "notes": "Restructuring to enhance AI capabilities",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173320+00:00"
+    },
+    {
+      "id": "evt_20260706_003",
+      "event_date": "2026-07-06",
+      "headline": "Microsoft cuts 4,664 jobs amid AI-focused cost restructuring",
+      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
+      "source_name": "layoffhedge",
+      "excerpt": "Microsoft announced the elimination of 4,664 positions, attributing the cuts to cost restructuring efforts focused on AI investments.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 4664,
+        "teams": 15,
+        "companies": 1,
+        "labor_hours": -9691520
+      },
+      "notes": "AI infrastructure investment strategy",
+      "collected_date": "2026-07-17",
+      "date": "2026-07-17",
+      "created_at": "2026-07-17T06:07:04.173328+00:00"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-16",
-    "last_nonzero_collection": "2026-07-15",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-07-16"
+    "last_openai_success": "2026-07-17",
+    "last_nonzero_collection": "2026-07-17",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-07-17"
   }
 }
