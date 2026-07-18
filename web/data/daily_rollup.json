@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-17T06:07:04.173183+00:00",
+  "last_updated": "2026-07-18T05:54:06.362978+00:00",
   "totals": {
-    "jobs": 538242,
+    "jobs": 546242,
     "teams": 208,
     "products": 0,
-    "companies": 130,
+    "companies": 131,
     "revenue": 0,
-    "labor_hours": -1119331760
+    "labor_hours": -1135971760
   },
   "today": {
-    "jobs": 8807,
-    "teams": 35,
+    "jobs": 8000,
+    "teams": 0,
     "products": 0,
-    "companies": 5,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -18308960
+    "labor_hours": -16640000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -760,10 +760,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -353600
+    },
+    "2026-07-15": {
+      "jobs": 8000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -16640000
     }
   },
-  "events_count": 162,
+  "events_count": 163,
   "all_events": [
+    {
+      "id": "evt_20260715_001",
+      "event_date": "2026-07-15",
+      "headline": "Meta sued by employees alleging AI-driven layoffs targeting those on medical and parental leave",
+      "source_url": "https://www.itpro.com/business/business-strategy/meta-used-a-constellation-of-internal-artificial-intelligence-systems-to-target-workers-in-recent-layoffs-lawsuit-claims-keystroke-monitoring-data-ai-token-usage-and-performance-ratings-allegedly-decided-employee-fates",
+      "source_name": "ITPro",
+      "excerpt": "A group of 26 current and former Meta employees has filed a lawsuit alleging the company used internal AI systems to target workers, particularly those on medical or family leave, for layoffs.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 8000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "Lawsuit claims AI systems like 'Metamate' and 'second-brain' agents were used to monitor performance and select employees for layoffs.",
+      "collected_date": "2026-07-18",
+      "date": "2026-07-18",
+      "created_at": "2026-07-18T05:54:06.363064+00:00"
+    },
     {
       "id": "evt_20260713_002",
       "event_date": "2026-07-13",
@@ -2756,138 +2784,36 @@
       "hashtags": "#Ericsson #Telecom #5G #AILayoffs #TechLayoffs2026 #Sweden",
       "date": "2026-01-15",
       "created_at": "2026-04-27T17:59:55.140750"
-    },
-    {
-      "id": "evt_20260108_kaseya_107",
-      "event_date": "2026-01-08",
-      "collected_date": "2026-04-27",
-      "headline": "Kaseya cuts 250 jobs amid AI transition",
-      "source_url": "https://medhacloud.com/blog/kaseya-layoffs-2026-msp-industry",
-      "source_name": "TrueUp",
-      "excerpt": "IT management vendor Kaseya (owner of Datto, ConnectWise rival) cut 250 employees in its 4th round since April 2024, primarily in sales, marketing, and admin. Cuts reflect Datto acquisition integration and shift to AI-automated MSP tooling.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 250,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -520000
-      },
-      "notes": "IT management vendor Kaseya (owner of Datto, ConnectWise rival) cut 250 employees in its 4th round since April 2024, primarily in sales, marketing, and admin. Cuts reflect Datto acquisition integration and shift to AI-automated MSP tooling.",
-      "industry": "IT Management / MSP",
-      "hashtags": "#Kaseya #Datto #MSP #ITManagement #AILayoffs #TechLayoffs2026",
-      "date": "2026-01-08",
-      "created_at": "2026-04-27T17:59:55.140787"
     }
   ],
-  "summary": "Recent reports indicate significant job cuts across various industries due to AI integration. Notably, Thomson Reuters, HDFC Bank, Starling Bank, Mews, and Microsoft have collectively laid off thousands of employees, explicitly citing AI adoption and restructuring as primary factors. These developments underscore the accelerating impact of AI on workforce dynamics.",
+  "summary": "Meta faces a lawsuit from 26 employees alleging that AI systems were used to target workers on medical and parental leave for layoffs, affecting approximately 8,000 employees.",
   "events": [
     {
-      "id": "evt_20260713_002",
-      "event_date": "2026-07-13",
-      "headline": "Thomson Reuters to cut 500 jobs amid AI-driven restructuring",
-      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
-      "source_name": "layoffhedge",
-      "excerpt": "Thomson Reuters announced the elimination of 500 positions, attributing the cuts to its ongoing AI-driven transformation efforts.",
+      "id": "evt_20260715_001",
+      "event_date": "2026-07-15",
+      "headline": "Meta sued by employees alleging AI-driven layoffs targeting those on medical and parental leave",
+      "source_url": "https://www.itpro.com/business/business-strategy/meta-used-a-constellation-of-internal-artificial-intelligence-systems-to-target-workers-in-recent-layoffs-lawsuit-claims-keystroke-monitoring-data-ai-token-usage-and-performance-ratings-allegedly-decided-employee-fates",
+      "source_name": "ITPro",
+      "excerpt": "A group of 26 current and former Meta employees has filed a lawsuit alleging the company used internal AI systems to target workers, particularly those on medical or family leave, for layoffs.",
       "causality": "direct",
       "confidence": 0.85,
       "tolls": {
-        "jobs": 500,
-        "teams": 5,
+        "jobs": 8000,
+        "teams": null,
         "companies": 1,
-        "labor_hours": -1040000
+        "labor_hours": -16640000
       },
-      "notes": "Part of broader AI integration strategy",
-      "collected_date": "2026-07-17",
-      "date": "2026-07-17",
-      "created_at": "2026-07-17T06:07:04.173278+00:00"
-    },
-    {
-      "id": "evt_20260712_003",
-      "event_date": "2026-07-12",
-      "headline": "HDFC Bank lays off 3,343 employees citing AI adoption",
-      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
-      "source_name": "layoffhedge",
-      "excerpt": "HDFC Bank announced the reduction of 3,343 positions, explicitly citing the adoption of AI technologies as a primary factor.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 3343,
-        "teams": 10,
-        "companies": 1,
-        "labor_hours": -6953440
-      },
-      "notes": "AI implementation in banking operations",
-      "collected_date": "2026-07-17",
-      "date": "2026-07-17",
-      "created_at": "2026-07-17T06:07:04.173301+00:00"
-    },
-    {
-      "id": "evt_20260708_002",
-      "event_date": "2026-07-08",
-      "headline": "Starling Bank reduces workforce by 130 amid AI integration",
-      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
-      "source_name": "layoffhedge",
-      "excerpt": "Starling Bank announced the layoff of 130 employees, attributing the decision to the integration of AI systems within its operations.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 130,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": -270400
-      },
-      "notes": "AI-driven operational changes",
-      "collected_date": "2026-07-17",
-      "date": "2026-07-17",
-      "created_at": "2026-07-17T06:07:04.173312+00:00"
-    },
-    {
-      "id": "evt_20260707_001",
-      "event_date": "2026-07-07",
-      "headline": "Mews lays off 170 employees due to AI-driven restructuring",
-      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
-      "source_name": "layoffhedge",
-      "excerpt": "Mews announced the reduction of 170 positions, citing AI-driven restructuring as the primary reason for the layoffs.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 170,
-        "teams": 3,
-        "companies": 1,
-        "labor_hours": -353600
-      },
-      "notes": "Restructuring to enhance AI capabilities",
-      "collected_date": "2026-07-17",
-      "date": "2026-07-17",
-      "created_at": "2026-07-17T06:07:04.173320+00:00"
-    },
-    {
-      "id": "evt_20260706_003",
-      "event_date": "2026-07-06",
-      "headline": "Microsoft cuts 4,664 jobs amid AI-focused cost restructuring",
-      "source_url": "https://layoffhedge.com/trends/july-2026-layoffs",
-      "source_name": "layoffhedge",
-      "excerpt": "Microsoft announced the elimination of 4,664 positions, attributing the cuts to cost restructuring efforts focused on AI investments.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 4664,
-        "teams": 15,
-        "companies": 1,
-        "labor_hours": -9691520
-      },
-      "notes": "AI infrastructure investment strategy",
-      "collected_date": "2026-07-17",
-      "date": "2026-07-17",
-      "created_at": "2026-07-17T06:07:04.173328+00:00"
+      "notes": "Lawsuit claims AI systems like 'Metamate' and 'second-brain' agents were used to monitor performance and select employees for layoffs.",
+      "collected_date": "2026-07-18",
+      "date": "2026-07-18",
+      "created_at": "2026-07-18T05:54:06.363064+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-17",
-    "last_nonzero_collection": "2026-07-17",
+    "last_openai_success": "2026-07-18",
+    "last_nonzero_collection": "2026-07-18",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-17"
+    "last_collection_date": "2026-07-18"
   }
 }
