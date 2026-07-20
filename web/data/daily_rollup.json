@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-07-18T05:54:06.362978+00:00",
+  "last_updated": "2026-07-20T06:35:57.165283+00:00",
   "totals": {
-    "jobs": 546242,
+    "jobs": 554242,
     "teams": 208,
     "products": 0,
-    "companies": 131,
+    "companies": 132,
     "revenue": 0,
-    "labor_hours": -1135971760
+    "labor_hours": -1152611760
   },
   "today": {
     "jobs": 8000,
@@ -746,12 +746,12 @@
       "labor_hours": -2080000
     },
     "2026-07-14": {
-      "jobs": 26,
+      "jobs": 8026,
       "teams": 1,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -54080
+      "labor_hours": -16694080
     },
     "2026-07-07": {
       "jobs": 170,
@@ -770,8 +770,28 @@
       "labor_hours": -16640000
     }
   },
-  "events_count": 163,
+  "events_count": 164,
   "all_events": [
+    {
+      "id": "evt_20260714_002",
+      "event_date": "2026-07-14",
+      "headline": "26 Meta employees sue, alleging AI-driven layoff picks hit workers on medical and parental leave",
+      "source_url": "https://apnews.com/article/019fb9c7fdc09167e91547546bce5be8",
+      "source_name": "AP News",
+      "excerpt": "A group of 26 Meta employees has filed a lawsuit against the company, alleging that Meta's use of artificial intelligence in its layoff process disproportionately targeted employees who were on medical, parental, or family leave.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 8000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -16640000
+      },
+      "notes": "The lawsuit claims AI tools, including activity monitors and performance rankings, negatively impacted staff unable to work due to protected leave.",
+      "collected_date": "2026-07-20",
+      "date": "2026-07-20",
+      "created_at": "2026-07-20T06:35:57.165367+00:00"
+    },
     {
       "id": "evt_20260715_001",
       "event_date": "2026-07-15",
@@ -2762,39 +2782,17 @@
       "hashtags": "#Monzo #Neobank #Fintech #TechLayoffs2026 #USMarketExit",
       "date": "2026-03-31",
       "created_at": "2026-04-27T17:59:55.140712"
-    },
-    {
-      "id": "evt_20260115_ericsson_106",
-      "event_date": "2026-01-15",
-      "collected_date": "2026-04-27",
-      "headline": "Ericsson cuts 1,600 jobs amid AI transition",
-      "source_url": "https://www.reuters.com/business/world-at-work/ericsson-shed-1600-jobs-sweden-2026-01-15/",
-      "source_name": "TrueUp",
-      "excerpt": "Ericsson announced 1,600 job cuts in Sweden, doubling down on cost-saving measures after years of 5G spending slowdown and US tariff headwinds. AI-driven network tools are reducing the need for traditional RF engineering and support roles.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1600,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -3328000
-      },
-      "notes": "Ericsson announced 1,600 job cuts in Sweden, doubling down on cost-saving measures after years of 5G spending slowdown and US tariff headwinds. AI-driven network tools are reducing the need for traditional RF engineering and support roles.",
-      "industry": "Telecom Equipment",
-      "hashtags": "#Ericsson #Telecom #5G #AILayoffs #TechLayoffs2026 #Sweden",
-      "date": "2026-01-15",
-      "created_at": "2026-04-27T17:59:55.140750"
     }
   ],
-  "summary": "Meta faces a lawsuit from 26 employees alleging that AI systems were used to target workers on medical and parental leave for layoffs, affecting approximately 8,000 employees.",
+  "summary": "Two lawsuits have been filed against Meta alleging that the company's use of AI systems in recent layoffs disproportionately targeted employees on medical and parental leave. These cases highlight growing concerns over AI's role in HR decisions and potential biases in automated processes.",
   "events": [
     {
-      "id": "evt_20260715_001",
-      "event_date": "2026-07-15",
-      "headline": "Meta sued by employees alleging AI-driven layoffs targeting those on medical and parental leave",
-      "source_url": "https://www.itpro.com/business/business-strategy/meta-used-a-constellation-of-internal-artificial-intelligence-systems-to-target-workers-in-recent-layoffs-lawsuit-claims-keystroke-monitoring-data-ai-token-usage-and-performance-ratings-allegedly-decided-employee-fates",
-      "source_name": "ITPro",
-      "excerpt": "A group of 26 current and former Meta employees has filed a lawsuit alleging the company used internal AI systems to target workers, particularly those on medical or family leave, for layoffs.",
+      "id": "evt_20260714_002",
+      "event_date": "2026-07-14",
+      "headline": "26 Meta employees sue, alleging AI-driven layoff picks hit workers on medical and parental leave",
+      "source_url": "https://apnews.com/article/019fb9c7fdc09167e91547546bce5be8",
+      "source_name": "AP News",
+      "excerpt": "A group of 26 Meta employees has filed a lawsuit against the company, alleging that Meta's use of artificial intelligence in its layoff process disproportionately targeted employees who were on medical, parental, or family leave.",
       "causality": "direct",
       "confidence": 0.85,
       "tolls": {
@@ -2803,17 +2801,17 @@
         "companies": 1,
         "labor_hours": -16640000
       },
-      "notes": "Lawsuit claims AI systems like 'Metamate' and 'second-brain' agents were used to monitor performance and select employees for layoffs.",
-      "collected_date": "2026-07-18",
-      "date": "2026-07-18",
-      "created_at": "2026-07-18T05:54:06.363064+00:00"
+      "notes": "The lawsuit claims AI tools, including activity monitors and performance rankings, negatively impacted staff unable to work due to protected leave.",
+      "collected_date": "2026-07-20",
+      "date": "2026-07-20",
+      "created_at": "2026-07-20T06:35:57.165367+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-18",
-    "last_nonzero_collection": "2026-07-18",
+    "last_openai_success": "2026-07-20",
+    "last_nonzero_collection": "2026-07-20",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-18"
+    "last_collection_date": "2026-07-20"
   }
 }
