@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-20T06:35:57.165283+00:00",
+  "last_updated": "2026-07-21T06:19:35.791338+00:00",
   "totals": {
     "jobs": 554242,
     "teams": 208,
@@ -9,12 +9,12 @@
     "labor_hours": -1152611760
   },
   "today": {
-    "jobs": 8000,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -16640000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2784,34 +2784,13 @@
       "created_at": "2026-04-27T17:59:55.140712"
     }
   ],
-  "summary": "Two lawsuits have been filed against Meta alleging that the company's use of AI systems in recent layoffs disproportionately targeted employees on medical and parental leave. These cases highlight growing concerns over AI's role in HR decisions and potential biases in automated processes.",
-  "events": [
-    {
-      "id": "evt_20260714_002",
-      "event_date": "2026-07-14",
-      "headline": "26 Meta employees sue, alleging AI-driven layoff picks hit workers on medical and parental leave",
-      "source_url": "https://apnews.com/article/019fb9c7fdc09167e91547546bce5be8",
-      "source_name": "AP News",
-      "excerpt": "A group of 26 Meta employees has filed a lawsuit against the company, alleging that Meta's use of artificial intelligence in its layoff process disproportionately targeted employees who were on medical, parental, or family leave.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 8000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -16640000
-      },
-      "notes": "The lawsuit claims AI tools, including activity monitors and performance rankings, negatively impacted staff unable to work due to protected leave.",
-      "collected_date": "2026-07-20",
-      "date": "2026-07-20",
-      "created_at": "2026-07-20T06:35:57.165367+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-20",
+    "last_openai_success": "2026-07-21",
     "last_nonzero_collection": "2026-07-20",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-07-20"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-07-21"
   }
 }
