@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-24T06:15:30.023017+00:00",
+  "last_updated": "2026-07-25T06:07:35.501877+00:00",
   "totals": {
-    "jobs": 554242,
-    "teams": 208,
+    "jobs": 555562,
+    "teams": 235,
     "products": 0,
-    "companies": 132,
+    "companies": 135,
     "revenue": 0,
-    "labor_hours": -1152611760
+    "labor_hours": -1155357360
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 1320,
+    "teams": 27,
     "products": 0,
-    "companies": 0,
+    "companies": 3,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -2745600
   },
   "daily_totals": {
     "2026-05-05": {
@@ -768,10 +768,94 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -16640000
+    },
+    "2026-07-24": {
+      "jobs": 200,
+      "teams": 5,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -416000
+    },
+    "2026-07-23": {
+      "jobs": 500,
+      "teams": 10,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -1040000
+    },
+    "2026-07-22": {
+      "jobs": 620,
+      "teams": 12,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -1289600
     }
   },
-  "events_count": 164,
+  "events_count": 167,
   "all_events": [
+    {
+      "id": "evt_20260724_001",
+      "event_date": "2026-07-24",
+      "headline": "Patreon announces 20% staff cuts amid company restructuring",
+      "source_url": "https://www.financialexpress.com/about/layoffs/",
+      "source_name": "The Financial Express",
+      "excerpt": "Patreon announces layoffs affecting 20% of its workforce amid company restructuring, emphasizing continued growth for creators and denying AI as a replacement for humans.",
+      "causality": "contributing",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 200,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -416000
+      },
+      "notes": "Company restructuring with AI integration",
+      "collected_date": "2026-07-25",
+      "date": "2026-07-25",
+      "created_at": "2026-07-25T06:07:35.501966+00:00"
+    },
+    {
+      "id": "evt_20260723_001",
+      "event_date": "2026-07-23",
+      "headline": "Uber trims 10% of customer service jobs to boost AI integration",
+      "source_url": "https://www.financialexpress.com/about/layoffs/",
+      "source_name": "The Financial Express",
+      "excerpt": "Uber cuts 10% of customer service jobs to simplify operations and boost AI integration, joining tech giants like Amazon and others in similar moves.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 500,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "Customer service roles reduced due to AI adoption",
+      "collected_date": "2026-07-25",
+      "date": "2026-07-25",
+      "created_at": "2026-07-25T06:07:35.501989+00:00"
+    },
+    {
+      "id": "evt_20260722_001",
+      "event_date": "2026-07-22",
+      "headline": "Monday.com lays off 20% of workforce amid AI pivot",
+      "source_url": "https://www.financialexpress.com/about/layoffs/",
+      "source_name": "The Financial Express",
+      "excerpt": "Monday.com is cutting 20% of its workforce, nearly 620 employees, to restructure around an AI-first strategy focused on growth, smaller teams, and increased efficiency.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 620,
+        "teams": 12,
+        "companies": 1,
+        "labor_hours": -1289600
+      },
+      "notes": "AI-first strategy leading to workforce reduction",
+      "collected_date": "2026-07-25",
+      "date": "2026-07-25",
+      "created_at": "2026-07-25T06:07:35.502000+00:00"
+    },
     {
       "id": "evt_20260714_002",
       "event_date": "2026-07-14",
@@ -2716,81 +2800,76 @@
       "hashtags": "#Vimeo #VideoTech #AILayoffs #TechLayoffs2026 #MediaTech",
       "date": "2026-04-02",
       "created_at": "2026-04-27T17:59:55.140577"
-    },
-    {
-      "id": "evt_20260402_kintsugi_103",
-      "event_date": "2026-04-02",
-      "collected_date": "2026-04-27",
-      "headline": "Kintsugi reduces workforce citing AI efficiency",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "Mental health voice-biomarker startup Kintsugi shut down entirely, laying off all staff. Company had raised significant VC funding to use AI to detect depression and anxiety via voice analysis, but could not achieve product-market fit.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Mental health voice-biomarker startup Kintsugi shut down entirely, laying off all staff. Company had raised significant VC funding to use AI to detect depression and anxiety via voice analysis, but could not achieve product-market fit.",
-      "industry": "Mental Health Tech",
-      "hashtags": "#Kintsugi #MentalHealthTech #AIStartup #Shutdown #TechLayoffs2026 #VoiceAI",
-      "date": "2026-04-02",
-      "created_at": "2026-04-27T17:59:55.140622"
-    },
-    {
-      "id": "evt_20260401_sonos_104",
-      "event_date": "2026-04-01",
-      "collected_date": "2026-04-27",
-      "headline": "Sonos reduces workforce citing AI efficiency",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "Sonos made cuts in its marketing division as new CMO reshaped the department, partly citing AI tools enabling smaller marketing teams to do more. Company still recovering from its disastrous 2024 app redesign.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Sonos made cuts in its marketing division as new CMO reshaped the department, partly citing AI tools enabling smaller marketing teams to do more. Company still recovering from its disastrous 2024 app redesign.",
-      "industry": "Consumer Hardware",
-      "hashtags": "#Sonos #ConsumerAudio #AILayoffs #TechLayoffs2026 #Marketing",
-      "date": "2026-04-01",
-      "created_at": "2026-04-27T17:59:55.140673"
-    },
-    {
-      "id": "evt_20260331_monzo_105",
-      "event_date": "2026-03-31",
-      "collected_date": "2026-04-27",
-      "headline": "Monzo cuts 50 jobs amid AI transition",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "UK digital bank Monzo shut down its US operations entirely, laying off ~50 employees. The company is refocusing on the UK and European markets where its AI-driven banking features have stronger traction.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 50,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -104000
-      },
-      "notes": "UK digital bank Monzo shut down its US operations entirely, laying off ~50 employees. The company is refocusing on the UK and European markets where its AI-driven banking features have stronger traction.",
-      "industry": "Fintech / Banking",
-      "hashtags": "#Monzo #Neobank #Fintech #TechLayoffs2026 #USMarketExit",
-      "date": "2026-03-31",
-      "created_at": "2026-04-27T17:59:55.140712"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "Three companies\u2014Patreon, Uber, and Monday.com\u2014announced significant layoffs in the past 48 hours, citing AI integration and restructuring as key factors.",
+  "events": [
+    {
+      "id": "evt_20260724_001",
+      "event_date": "2026-07-24",
+      "headline": "Patreon announces 20% staff cuts amid company restructuring",
+      "source_url": "https://www.financialexpress.com/about/layoffs/",
+      "source_name": "The Financial Express",
+      "excerpt": "Patreon announces layoffs affecting 20% of its workforce amid company restructuring, emphasizing continued growth for creators and denying AI as a replacement for humans.",
+      "causality": "contributing",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 200,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -416000
+      },
+      "notes": "Company restructuring with AI integration",
+      "collected_date": "2026-07-25",
+      "date": "2026-07-25",
+      "created_at": "2026-07-25T06:07:35.501966+00:00"
+    },
+    {
+      "id": "evt_20260723_001",
+      "event_date": "2026-07-23",
+      "headline": "Uber trims 10% of customer service jobs to boost AI integration",
+      "source_url": "https://www.financialexpress.com/about/layoffs/",
+      "source_name": "The Financial Express",
+      "excerpt": "Uber cuts 10% of customer service jobs to simplify operations and boost AI integration, joining tech giants like Amazon and others in similar moves.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 500,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "Customer service roles reduced due to AI adoption",
+      "collected_date": "2026-07-25",
+      "date": "2026-07-25",
+      "created_at": "2026-07-25T06:07:35.501989+00:00"
+    },
+    {
+      "id": "evt_20260722_001",
+      "event_date": "2026-07-22",
+      "headline": "Monday.com lays off 20% of workforce amid AI pivot",
+      "source_url": "https://www.financialexpress.com/about/layoffs/",
+      "source_name": "The Financial Express",
+      "excerpt": "Monday.com is cutting 20% of its workforce, nearly 620 employees, to restructure around an AI-first strategy focused on growth, smaller teams, and increased efficiency.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 620,
+        "teams": 12,
+        "companies": 1,
+        "labor_hours": -1289600
+      },
+      "notes": "AI-first strategy leading to workforce reduction",
+      "collected_date": "2026-07-25",
+      "date": "2026-07-25",
+      "created_at": "2026-07-25T06:07:35.502000+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-07-24",
-    "last_nonzero_collection": "2026-07-20",
-    "consecutive_zero_days": 4,
-    "last_collection_date": "2026-07-24"
+    "last_openai_success": "2026-07-25",
+    "last_nonzero_collection": "2026-07-25",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-07-25"
   }
 }
