@@ -69,7 +69,7 @@ def format_date_short(date_str):
 
 def generate_event_html(event, idx):
     """Generate HTML for a single event entry."""
-    jobs = event.get('tolls', {}).get('jobs', 0)
+    jobs = (event.get('tolls') or {}).get('jobs') or 0
     confidence = int(event.get('confidence', 0.5) * 100)
     company = event.get('headline', '').split()[0] if event.get('headline') else 'Unknown'
     excerpt = event.get('excerpt', '') or event.get('notes', '') or ''
@@ -94,7 +94,7 @@ def generate_daily_page(date_str, events, template):
     """Generate a daily page for a specific date."""
     from urllib.parse import quote
 
-    total_jobs = sum(e.get('tolls', {}).get('jobs', 0) for e in events)
+    total_jobs = sum((e.get('tolls') or {}).get('jobs') or 0 for e in events)
     num_companies = len(events)
 
     date_display = format_date_display(date_str)
@@ -188,7 +188,7 @@ def main():
         output_path.write_text(html)
         pages_generated += 1
 
-        total_jobs = sum(e.get('tolls', {}).get('jobs', 0) for e in date_events)
+        total_jobs = sum((e.get('tolls') or {}).get('jobs') or 0 for e in date_events)
         print(f"  {date_str}: {len(date_events)} events, {total_jobs:,} jobs → {output_path.relative_to(base_dir)}")
 
     # Fill in placeholder pages for any missing dates between the earliest
@@ -205,11 +205,12 @@ def main():
             if date_str not in by_date:
                 year, month, day = date_str.split('-')
                 output_path = web_dir / year / month / day / "index.html"
-                if not output_path.exists():
-                    output_path.parent.mkdir(parents=True, exist_ok=True)
-                    output_path.write_text(generate_daily_page(date_str, [], template))
-                    placeholders_generated += 1
-                    print(f"  {date_str}: placeholder (0 events) → {output_path.relative_to(base_dir)}")
+                # Always write: overwrites stale pages for dates whose events
+                # were later removed (e.g. dedup), and is idempotent otherwise.
+                output_path.parent.mkdir(parents=True, exist_ok=True)
+                output_path.write_text(generate_daily_page(date_str, [], template))
+                placeholders_generated += 1
+                print(f"  {date_str}: placeholder (0 events) → {output_path.relative_to(base_dir)}")
             cur += timedelta(days=1)
     except (ValueError, IndexError) as e:
         print(f"WARNING: skipping placeholder fill: {e}")
