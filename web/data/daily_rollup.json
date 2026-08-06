@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-08-05T06:15:12.415042+00:00",
+  "last_updated": "2026-08-06T06:19:08.088368+00:00",
   "totals": {
-    "jobs": 555562,
-    "teams": 235,
+    "jobs": 558162,
+    "teams": 237,
     "products": 0,
-    "companies": 135,
+    "companies": 136,
     "revenue": 0,
-    "labor_hours": -1155357360
+    "labor_hours": -1160765360
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 2600,
+    "teams": 2,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -5408000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -792,10 +792,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -1289600
+    },
+    "2026-07-28": {
+      "jobs": 2600,
+      "teams": 2,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -5408000
     }
   },
-  "events_count": 167,
+  "events_count": 168,
   "all_events": [
+    {
+      "id": "evt_20260728_001",
+      "event_date": "2026-07-28",
+      "headline": "Visa lays off 2,600 employees (7% of workforce) citing AI reshaping work",
+      "source_url": "https://www.cnbc.com/2026/07/28/visa-is-cutting-7percent-of-employees-in-efficiency-push-as-ai-reshapes-work.html",
+      "source_name": "CNBC",
+      "excerpt": "Visa plans to cut about 7% of its workforce, or roughly 2,600 employees, as CEO Ryan McInerney seeks to streamline the payments giant. CEO Ryan McInerney said AI is helping 'shape the way work gets done at Visa,' while a person with direct knowledge said AI was a significant factor, but not the sole driver, of the layoffs.",
+      "causality": "contributing",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 2600,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -5408000
+      },
+      "notes": "Cuts fall mostly on technology and product teams. Follow-up SFGate coverage August 5 detailed 6 VPs, 37 senior directors, 16 chief engineering/architect positions and senior software engineers laid off at Foster City HQ. AI cited as significant factor but not sole driver; company reinvesting in cross-border payments, stablecoins, value-added services.",
+      "collected_date": "2026-08-06",
+      "date": "2026-08-06",
+      "created_at": "2026-08-06T06:19:08.088448+00:00"
+    },
     {
       "id": "evt_20260724_001",
       "event_date": "2026-07-24",
@@ -2778,37 +2806,36 @@
       "hashtags": "#CarsDotCom #AutomotiveTech #AILayoffs #TechLayoffs2026 #DigitalAds",
       "date": "2026-04-09",
       "created_at": "2026-04-27T17:59:55.140526"
-    },
-    {
-      "id": "evt_20260402_vimeo_102",
-      "event_date": "2026-04-02",
-      "collected_date": "2026-04-27",
-      "headline": "Vimeo cuts 123 jobs amid AI transition",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "Video platform Vimeo cut ~25% of its New York staff after being acquired by Italian firm Mediaforeurope. Cuts reflect platform consolidation as AI video tools reduce need for human-led production services.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 123,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -255840
-      },
-      "notes": "Video platform Vimeo cut ~25% of its New York staff after being acquired by Italian firm Mediaforeurope. Cuts reflect platform consolidation as AI video tools reduce need for human-led production services.",
-      "industry": "Video Tech",
-      "hashtags": "#Vimeo #VideoTech #AILayoffs #TechLayoffs2026 #MediaTech",
-      "date": "2026-04-02",
-      "created_at": "2026-04-27T17:59:55.140577"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "One new AI-linked layoff event surfaced in the 24-48 hour window: Visa's 2,600-employee cut (7% of workforce), announced July 28, 2026, with expanded senior-staff details reported by SFGate on August 5, 2026. CEO Ryan McInerney's internal memo tied the restructuring to AI accelerating how work gets done at Visa; a person with direct knowledge told CNBC AI was a significant but not sole factor. Cuts fell primarily on technology and product teams, including VPs, senior directors, chief architects, and senior software engineers at the Foster City headquarters.",
+  "events": [
+    {
+      "id": "evt_20260728_001",
+      "event_date": "2026-07-28",
+      "headline": "Visa lays off 2,600 employees (7% of workforce) citing AI reshaping work",
+      "source_url": "https://www.cnbc.com/2026/07/28/visa-is-cutting-7percent-of-employees-in-efficiency-push-as-ai-reshapes-work.html",
+      "source_name": "CNBC",
+      "excerpt": "Visa plans to cut about 7% of its workforce, or roughly 2,600 employees, as CEO Ryan McInerney seeks to streamline the payments giant. CEO Ryan McInerney said AI is helping 'shape the way work gets done at Visa,' while a person with direct knowledge said AI was a significant factor, but not the sole driver, of the layoffs.",
+      "causality": "contributing",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 2600,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -5408000
+      },
+      "notes": "Cuts fall mostly on technology and product teams. Follow-up SFGate coverage August 5 detailed 6 VPs, 37 senior directors, 16 chief engineering/architect positions and senior software engineers laid off at Foster City HQ. AI cited as significant factor but not sole driver; company reinvesting in cross-border payments, stablecoins, value-added services.",
+      "collected_date": "2026-08-06",
+      "date": "2026-08-06",
+      "created_at": "2026-08-06T06:19:08.088448+00:00"
+    }
+  ],
   "health": {
-    "last_anthropic_success": "2026-07-02",
+    "last_anthropic_success": "2026-08-06",
     "last_openai_success": "2026-08-05",
-    "last_nonzero_collection": "2026-07-25",
-    "consecutive_zero_days": 10,
-    "last_collection_date": "2026-08-05"
+    "last_nonzero_collection": "2026-08-06",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-08-06"
   }
 }
