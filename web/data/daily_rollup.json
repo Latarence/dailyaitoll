@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-07T02:28:21.221918+00:00",
+  "last_updated": "2026-08-07T05:25:55.717348+00:00",
   "totals": {
     "jobs": 269972,
     "teams": 143,
@@ -2793,13 +2793,13 @@
       "created_at": "2026-04-27T17:59:55.141890"
     }
   ],
-  "summary": "Audit merged: dedup + corrections + July backfill. 2026-08-06 anthropic collection re-found Visa (already backfilled; deduped).",
+  "summary": "No new verifiable AI displacement events found.",
   "events": [],
   "health": {
     "last_anthropic_success": "2026-08-06",
-    "last_openai_success": "2026-08-05",
+    "last_openai_success": "2026-08-07",
     "last_nonzero_collection": "2026-08-06",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-08-06"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-08-07"
   }
 }
