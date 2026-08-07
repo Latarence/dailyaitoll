@@ -23,7 +23,17 @@
       "WebFetch(domain:dailyaitoll.com)",
       "Bash(curl:*)",
       "Bash(jq:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(grep:*)",
+      "Bash(git -C /Users/latarencebutts/mdo3d/projects/dailyaitoll log --oneline --all -20)",
+      "Bash(git -C /Users/latarencebutts/mdo3d/projects/dailyaitoll log --oneline)",
+      "Bash(git -C /Users/latarencebutts/mdo3d/projects/dailyaitoll show --stat 3d8106d)",
+      "Bash(gh repo view:*)",
+      "Bash(vercel ls:*)",
+      "Bash(vercel whoami:*)",
+      "Bash(gh secret list:*)",
+      "Bash(done)",
+      "WebSearch"
     ]
   }
 }

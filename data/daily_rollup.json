@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-05T05:16:23.603478+00:00",
+  "last_updated": "2026-08-07T02:28:21.221918+00:00",
   "totals": {
     "jobs": 269972,
     "teams": 143,
@@ -9,12 +9,12 @@
     "labor_hours": -561441760
   },
   "today": {
-    "jobs": 5860,
-    "teams": 2,
-    "products": 1,
-    "companies": 7,
+    "jobs": 0,
+    "teams": 0,
+    "products": 0,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -12188800
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -715,8 +715,8 @@
       "source_url": "https://www.cnbc.com/2026/07/28/visa-is-cutting-7percent-of-employees-in-efficiency-push-as-ai-reshapes-work.html",
       "source_name": "CNBC",
       "excerpt": "Visa is cutting about 2,600 jobs, roughly 7% of its workforce, largely in product and technology teams. CEO Ryan McInerney: 'AI is also helping to accelerate this evolution and shape the way work gets done at Visa.'",
-      "causality": "direct",
-      "confidence": 0.95,
+      "causality": "contributing",
+      "confidence": 0.9,
       "tolls": {
         "jobs": 2600,
         "teams": null,
@@ -725,7 +725,7 @@
         "revenue": null,
         "labor_hours": -5408000
       },
-      "notes": "Announced on Q3 FY2026 earnings call, Jul 28, 2026. Largest AI-attributed cut of late July; the collector logged zero events this week. [Backfilled 2026-08-05 during data audit; collector missed this date.]",
+      "notes": "Announced on Q3 FY2026 earnings call, Jul 28, 2026. Largest AI-attributed cut of late July; the collector logged zero events this week. [Backfilled 2026-08-05 during data audit; collector missed this date.] Collector re-found this event 2026-08-06 (deduped); per CNBC sourcing, AI was a significant factor but not the sole driver.",
       "collected_date": "2026-07-28",
       "date": "2026-07-28",
       "created_at": "2026-08-05T05:16:23.603478+00:00"
@@ -2793,168 +2793,13 @@
       "created_at": "2026-04-27T17:59:55.141890"
     }
   ],
-  "summary": "Data audit 2026-08-05: removed duplicate entries (same events logged on multiple days), corrected numbers/dates/attribution against primary sources, and backfilled 7 events the collector missed between Jul 8 and Aug 3.",
-  "events": [
-    {
-      "id": "evt_20260709_001",
-      "event_date": "2026-07-09",
-      "headline": "OpenAI sunsets Atlas browser eight months after launch",
-      "source_url": "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/",
-      "source_name": "TechCrunch",
-      "excerpt": "OpenAI is shutting down its standalone Atlas AI browser roughly eight months after launch, folding its agentic browsing features into the ChatGPT desktop app and a Chrome extension.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": null,
-        "teams": null,
-        "products": 1,
-        "companies": 1,
-        "revenue": null,
-        "labor_hours": null
-      },
-      "notes": "Product toll. User data export deadline Aug 9, 2026. Part of 'cut side quests' consolidation under Fidji Simo (Sora shutdown scheduled Sep 24, 2026). [Backfilled 2026-08-05 during data audit; collector missed this date.]",
-      "collected_date": "2026-07-09",
-      "date": "2026-07-09",
-      "created_at": "2026-08-05T05:16:23.603478+00:00"
-    },
-    {
-      "id": "evt_20260715_001",
-      "event_date": "2026-07-15",
-      "headline": "Sprout Social cuts 260 jobs (20% of workforce) citing AI investments",
-      "source_url": "https://www.chicagobusiness.com/technology/ccb-sprout-social-layoffs-ai-20260715",
-      "source_name": "Crain's Chicago Business",
-      "excerpt": "Sprout Social will lay off about 260 employees, 20% of its workforce, under a restructuring plan to streamline its organizational structure and align costs with strategic priorities, including ongoing investments in AI-powered social intelligence.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 260,
-        "teams": null,
-        "products": null,
-        "companies": 1,
-        "revenue": null,
-        "labor_hours": -540800
-      },
-      "notes": "8-K restructuring plan board-approved Jul 8, 2026; $18-20M charge. CEO Ryan Barretto: software companies 'now need to operate and invest differently' amid AI. [Backfilled 2026-08-05 during data audit; collector missed this date.]",
-      "collected_date": "2026-07-15",
-      "date": "2026-07-15",
-      "created_at": "2026-08-05T05:16:23.603478+00:00"
-    },
-    {
-      "id": "evt_20260716_001",
-      "event_date": "2026-07-16",
-      "headline": "Verizon cuts ~3,000 more jobs tied to AI-driven efficiencies",
-      "source_url": "https://www.theglobeandmail.com/investing/markets/stocks/VZ/pressreleases/1936167/verizon-announces-new-layoffs-as-cost-cutting-continues-into-2026/",
-      "source_name": "The Globe and Mail",
-      "excerpt": "Verizon announced a new round of layoffs affecting roughly 3,000 jobs - its third round in nine months (16,000+ cut since Nov 2025) - as part of a $5B opex savings plan tied to artificial-intelligence-driven efficiencies.",
-      "causality": "direct",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 3000,
-        "teams": null,
-        "products": null,
-        "companies": 1,
-        "revenue": null,
-        "labor_hours": -6240000
-      },
-      "notes": "CEO Dan Schulman told investors the AI tech stack would be 'substantially complete' by July and fully done by November; AI already handling customer-service interactions. [Backfilled 2026-08-05 during data audit; collector missed this date.]",
-      "collected_date": "2026-07-16",
-      "date": "2026-07-16",
-      "created_at": "2026-08-05T05:16:23.603478+00:00"
-    },
-    {
-      "id": "evt_20260722_002",
-      "event_date": "2026-07-22",
-      "headline": "Amazon lays off employees in AGI unit, closes San Francisco AGI Lab",
-      "source_url": "https://www.cnbc.com/2026/07/22/amazon-lays-off-some-employees-in-its-agi-unit.html",
-      "source_name": "CNBC",
-      "excerpt": "Amazon laid off employees in its Artificial General Intelligence organization and closed its San Francisco AGI Lab about 18 months after opening it, cutting model-customization and post-training roles to sharpen focus on priority AI initiatives.",
-      "causality": "direct",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": null,
-        "teams": 1,
-        "products": null,
-        "companies": 1,
-        "revenue": null,
-        "labor_hours": null
-      },
-      "notes": "Headcount undisclosed, so jobs left uncounted. Teams under VPs Adeeb Shanaa and Vishal Sharma affected; pivot from frontier research to customer-facing/enterprise AI. [Backfilled 2026-08-05 during data audit; collector missed this date.]",
-      "collected_date": "2026-07-22",
-      "date": "2026-07-22",
-      "created_at": "2026-08-05T05:16:23.603478+00:00"
-    },
-    {
-      "id": "evt_20260724_001",
-      "event_date": "2026-07-24",
-      "headline": "Intel cuts jobs in Data Center & AI group as automation replaces technician tasks",
-      "source_url": "https://www.benzinga.com/markets/tech/26/07/60568468/intel-layoffs-data-center-ai-unit-earnings",
-      "source_name": "Benzinga",
-      "excerpt": "Intel began fresh layoffs in its Data Center and AI (DCAI) group ahead of Q2 earnings, part of CEO Lip-Bu Tan's 15% workforce reduction plan, while rolling out Remote Operations Center automation designed to handle monitoring and control tasks previously handled by Intel technicians.",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": null,
-        "teams": 1,
-        "products": null,
-        "companies": 1,
-        "revenue": null,
-        "labor_hours": null
-      },
-      "notes": "DCAI headcount undisclosed, so jobs left uncounted. Cuts hit Intel's strongest segment ($5.1B Q1 revenue, +22% YoY). [Backfilled 2026-08-05 during data audit; collector missed this date.]",
-      "collected_date": "2026-07-24",
-      "date": "2026-07-24",
-      "created_at": "2026-08-05T05:16:23.603478+00:00"
-    },
-    {
-      "id": "evt_20260727_001",
-      "event_date": "2026-07-27",
-      "headline": "K&L Gates cuts ~10% of business-services staff amid genAI shift in legal profession",
-      "source_url": "https://legaltechnology.com/kl-gates-cuts-circa-10-of-its-business-services-workforce/",
-      "source_name": "Legal IT Insider",
-      "excerpt": "Law firm K&L Gates cut roughly 10% of its non-attorney business-services staff, entry-level through management, after a months-long structural review; coverage placed the cuts against the backdrop of increased investment across the profession in generative AI technology.",
-      "causality": "inferred",
-      "confidence": 0.6,
-      "tolls": {
-        "jobs": null,
-        "teams": null,
-        "products": null,
-        "companies": 1,
-        "revenue": null,
-        "labor_hours": null
-      },
-      "notes": "No lawyers affected; absolute headcount undisclosed, so jobs left uncounted. Managing partner Stacy Ackerman cited streamlining the support structure. [Backfilled 2026-08-05 during data audit; collector missed this date.]",
-      "collected_date": "2026-07-27",
-      "date": "2026-07-27",
-      "created_at": "2026-08-05T05:16:23.603478+00:00"
-    },
-    {
-      "id": "evt_20260728_001",
-      "event_date": "2026-07-28",
-      "headline": "Visa cuts ~2,600 jobs (7%) as CEO says AI is reshaping how work gets done",
-      "source_url": "https://www.cnbc.com/2026/07/28/visa-is-cutting-7percent-of-employees-in-efficiency-push-as-ai-reshapes-work.html",
-      "source_name": "CNBC",
-      "excerpt": "Visa is cutting about 2,600 jobs, roughly 7% of its workforce, largely in product and technology teams. CEO Ryan McInerney: 'AI is also helping to accelerate this evolution and shape the way work gets done at Visa.'",
-      "causality": "direct",
-      "confidence": 0.95,
-      "tolls": {
-        "jobs": 2600,
-        "teams": null,
-        "products": null,
-        "companies": 1,
-        "revenue": null,
-        "labor_hours": -5408000
-      },
-      "notes": "Announced on Q3 FY2026 earnings call, Jul 28, 2026. Largest AI-attributed cut of late July; the collector logged zero events this week. [Backfilled 2026-08-05 during data audit; collector missed this date.]",
-      "collected_date": "2026-07-28",
-      "date": "2026-07-28",
-      "created_at": "2026-08-05T05:16:23.603478+00:00"
-    }
-  ],
+  "summary": "Audit merged: dedup + corrections + July backfill. 2026-08-06 anthropic collection re-found Visa (already backfilled; deduped).",
+  "events": [],
   "health": {
-    "last_anthropic_success": "2026-07-02",
-    "last_openai_success": "2026-08-03",
-    "last_nonzero_collection": "2026-07-25",
-    "consecutive_zero_days": 8,
-    "last_collection_date": "2026-08-03"
+    "last_anthropic_success": "2026-08-06",
+    "last_openai_success": "2026-08-05",
+    "last_nonzero_collection": "2026-08-06",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-08-06"
   }
 }

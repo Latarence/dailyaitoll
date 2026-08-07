@@ -109,6 +109,77 @@ def load_known_event_ids() -> set:
     return known_ids
 
 
+def _company_key(headline: str) -> str:
+    """First word of the headline, lowercased and stripped of punctuation.
+
+    Crude but effective company fingerprint: the collector's headlines lead
+    with the company name ("Visa cuts...", "Meta lays off...").
+    """
+    text = (headline or "").strip().lower()
+    if not text:
+        return ""
+    return text.split()[0].strip(".,:;'\"")
+
+
+def load_dedup_records() -> list:
+    """Load (company, jobs, event_date, url) fingerprints of existing events."""
+    records = []
+    if EVENTS_FILE.exists():
+        with open(EVENTS_FILE, "r") as f:
+            for line in f:
+                if line.strip():
+                    try:
+                        event = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    records.append({
+                        "company": _company_key(event.get("headline", "")),
+                        "jobs": (event.get("tolls") or {}).get("jobs"),
+                        "event_date": event.get("event_date") or event.get("date") or "",
+                        "url": (event.get("source_url") or "").strip().rstrip("/"),
+                    })
+    return records
+
+
+def _dates_within(d1: str, d2: str, days: int) -> bool:
+    try:
+        a = datetime.strptime(d1[:10], "%Y-%m-%d")
+        b = datetime.strptime(d2[:10], "%Y-%m-%d")
+    except (ValueError, TypeError):
+        return False
+    return abs((a - b).days) <= days
+
+
+def is_duplicate_event(event: dict, records: list, window_days: int = 60) -> str | None:
+    """Check a candidate event against existing fingerprints.
+
+    Exact-headline matching alone let the same story re-enter for weeks under
+    slightly different headlines (Meta's 8,000 cut was logged 12 times). Two
+    stronger signals:
+      1. Same source URL as any existing event.
+      2. Same company + same job count within `window_days` of an existing
+         event (re-reports of one announcement cluster within weeks).
+
+    Returns a human-readable reason if duplicate, else None.
+    """
+    url = (event.get("source_url") or "").strip().rstrip("/")
+    if url:
+        for r in records:
+            if r["url"] and r["url"] == url:
+                return f"source URL already tracked ({url[:60]})"
+
+    company = _company_key(event.get("headline", ""))
+    jobs = (event.get("tolls") or {}).get("jobs")
+    event_date = event.get("event_date") or event.get("date") or ""
+    if company and jobs:
+        for r in records:
+            if (r["company"] == company and r["jobs"] == jobs
+                    and _dates_within(event_date, r["event_date"], window_days)):
+                return (f"same company+jobs within {window_days}d "
+                        f"({company}, {jobs} jobs, existing {r['event_date']})")
+    return None
+
+
 def load_event_counts_by_date() -> dict:
     """Load count of existing events per event_date for ID generation."""
     counts = {}
@@ -165,7 +236,7 @@ def build_prompt() -> str:
                         recent_headlines.append(event.get("headline", ""))
                     except json.JSONDecodeError:
                         pass
-    recent_headlines = recent_headlines[-20:]  # Last 20 events
+    recent_headlines = recent_headlines[-60:]  # Last 60 events (~2 months at current volume)
 
     recent_list = "\n".join(f"- {h}" for h in recent_headlines) if recent_headlines else "None yet"
 
@@ -634,12 +705,23 @@ def update_data(result: dict, rollup: dict) -> dict:
     # Reset today's collection stats
     rollup["today"] = {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0}
 
+    # Fingerprints for URL and company+jobs dedup (catches re-reports that
+    # exact-headline matching misses)
+    dedup_records = load_dedup_records()
+
     new_events = []
     for event in events:
         # Skip duplicates by headline (more reliable than LLM-generated IDs)
         headline = event.get("headline", "").lower().strip()
         if headline in known_ids:
             print(f"  Skipping duplicate headline: {event.get('headline', '')[:50]}...")
+            continue
+
+        # Skip re-reports of already-tracked events (same URL, or same
+        # company+jobs within 60 days)
+        dup_reason = is_duplicate_event(event, dedup_records)
+        if dup_reason:
+            print(f"  Skipping duplicate event: {event.get('headline', '')[:50]}... ({dup_reason})")
             continue
 
         # Get event date (when it happened) - fall back to collected date
@@ -680,6 +762,15 @@ def update_data(result: dict, rollup: dict) -> dict:
             rollup["daily_totals"][event_date][key] += val
 
         new_events.append(event)
+
+        # Register the accepted event so later events in this batch dedupe
+        # against it too
+        dedup_records.append({
+            "company": _company_key(event.get("headline", "")),
+            "jobs": tolls.get("jobs"),
+            "event_date": event_date,
+            "url": (event.get("source_url") or "").strip().rstrip("/"),
+        })
 
     rollup["last_updated"] = datetime.now(timezone.utc).isoformat()
     rollup["events_count"] += len(new_events)
