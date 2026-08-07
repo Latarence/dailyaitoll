@@ -109,6 +109,9 @@
         }
         .theme-btn:hover { color: var(--text); }
 
+        /* Mobile-only nav actions wrapper (theme toggle + hamburger) */
+        .nav-mobile-actions { display: none; align-items: center; gap: 0.25rem; }
+
         /* Hamburger menu */
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--muted); transition: color 0.15s; }
         .hamburger:hover { color: var(--text); }
@@ -290,6 +293,7 @@
             .daily-number { font-size: 3rem; }
             .container { padding: 2rem 1rem; }
             .nav-links { display: none; }
+            .nav-mobile-actions { display: flex; }
             .hamburger { display: flex; }
         }
     </style>
@@ -317,7 +321,10 @@
                 <a href="/data/">Data</a>
                 <a href="/patrons/">Patrons</a>
             </div>
-            <button class="hamburger" onclick="openMobileMenu()" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+            <div class="nav-mobile-actions">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+                <button class="hamburger" onclick="openMobileMenu()" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+            </div>
         </nav>
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-header">
