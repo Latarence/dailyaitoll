@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-08-08T04:43:31.776247+00:00",
+  "last_updated": "2026-08-09T04:52:56.381712+00:00",
   "totals": {
-    "jobs": 271122,
-    "teams": 147,
+    "jobs": 272144,
+    "teams": 151,
     "products": 1,
-    "companies": 120,
+    "companies": 124,
     "revenue": 0,
-    "labor_hours": -563833760
+    "labor_hours": -565959520
   },
   "today": {
-    "jobs": 1150,
+    "jobs": 1022,
     "teams": 4,
     "products": 0,
-    "companies": 2,
+    "companies": 4,
     "revenue": 0,
-    "labor_hours": -2392000
+    "labor_hours": -2125760
   },
   "daily_totals": {
     "2026-05-05": {
@@ -712,10 +712,114 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -2392000
+    },
+    "2026-08-06": {
+      "jobs": 250,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -520000
+    },
+    "2026-08-04": {
+      "jobs": 500,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -1040000
+    },
+    "2026-08-05": {
+      "jobs": 272,
+      "teams": 3,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -565760
     }
   },
-  "events_count": 117,
+  "events_count": 121,
   "all_events": [
+    {
+      "id": "evt_20260806_001",
+      "event_date": "2026-08-06",
+      "headline": "TikTok lays off 250 employees, closes Nashville content moderation office as AI takes over",
+      "source_url": "https://techcrunch.com/2026/08/06/tiktok-lays-off-250-employees-shutters-its-nashville-office/",
+      "source_name": "TechCrunch",
+      "excerpt": "<cite index=\"99-1,99-8\">TikTok is laying off 250 employees and closing its Nashville office, which housed some members of TikTok's content-moderation team. The cuts come as social media companies rely more on AI to monitor and remove violent or explicit content on their platforms.</cite>",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 250,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -520000
+      },
+      "notes": "<cite index=\"92-2\">TikTok has laid off 250 employees and announced the closure of its Nashville, Tennessee office, as the company restructures parts of its operations and increasingly relies on artificial intelligence for content moderation.</cite> WARN notice filed with Tennessee Department of Labor; office closes October 5. Content moderation team specifically.",
+      "collected_date": "2026-08-09",
+      "date": "2026-08-09",
+      "created_at": "2026-08-09T04:52:56.381812+00:00"
+    },
+    {
+      "id": "evt_20260805_001",
+      "event_date": "2026-08-05",
+      "headline": "Etsy cuts 220 jobs (12% of workforce), CEO says 'AI is changing how all of us work'",
+      "source_url": "https://www.cnbc.com/2026/08/05/etsy-layoffs-q2-earnings.html",
+      "source_name": "CNBC",
+      "excerpt": "<cite index=\"86-3\">CEO Kruti Patel Goyal said neither cost cuts nor artificial intelligence drove the downsizing, but also said that 'AI is changing how all of us work.'</cite>",
+      "causality": "inferred",
+      "confidence": 0.5,
+      "tolls": {
+        "jobs": 220,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -457600
+      },
+      "notes": "<cite index=\"83-3,83-4\">Most of the cuts will fall on the product and engineering teams. Patel Goyal, who took over as CEO at the start of this year, said the decision was not a cost-cutting effort and was not driven by artificial intelligence.</cite> However, CEO also acknowledged AI is changing how work is done. Reduces headcount to ~1,600.",
+      "collected_date": "2026-08-09",
+      "date": "2026-08-09",
+      "created_at": "2026-08-09T04:52:56.381848+00:00"
+    },
+    {
+      "id": "evt_20260805_002",
+      "event_date": "2026-08-05",
+      "headline": "Google to lay off 52 Washington state employees per WARN notice amid AI-focused restructuring",
+      "source_url": "https://www.ibtimes.co.uk/tech-layoffs-2026-zillow-tiktok-etsy-google-1813127",
+      "source_name": "IBTimes UK",
+      "excerpt": "<cite index=\"54-8\">A Washington state WARN notice published on 5 August said Google planned to lay off 52 employees on 5 October.</cite>",
+      "causality": "contributing",
+      "confidence": 0.55,
+      "tolls": {
+        "jobs": 52,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -108160
+      },
+      "notes": "<cite index=\"54-2,54-5\">Google described the reductions to The Seattle Times as a team-level reorganisation rather than part of a wider company-wide layoff round. As firms spend heavily on AI infrastructure and other capital projects, they are looking for savings elsewhere.</cite> Part of broader industry AI capital reallocation.",
+      "collected_date": "2026-08-09",
+      "date": "2026-08-09",
+      "created_at": "2026-08-09T04:52:56.381859+00:00"
+    },
+    {
+      "id": "evt_20260804_001",
+      "event_date": "2026-08-04",
+      "headline": "Zillow cuts 500+ jobs (7% of workforce) amid AI-native transformation push",
+      "source_url": "https://www.geekwire.com/2026/zillow-cuts-more-than-500-jobs-in-its-largest-layoff-of-the-year/",
+      "source_name": "GeekWire",
+      "excerpt": "<cite index=\"76-2,76-4\">Seattle-based online real estate company Zillow Group laid off more than 500 employees Tuesday, about 7% of its global workforce, its second and largest round of cuts this year. Wacksman told real estate executives at the T3 Leadership Summit in April that Zillow employees were being retrained to use AI in their jobs, with gains that 'are small, but they're compounding.'</cite>",
+      "causality": "contributing",
+      "confidence": 0.65,
+      "tolls": {
+        "jobs": 500,
+        "teams": 0,
+        "companies": 1,
+        "labor_hours": -1040000
+      },
+      "notes": "<cite index=\"76-5\">Zillow told GeekWire the cuts were not driven by AI.</cite> However, <cite index=\"79-3,79-4\">the self-styled 'AI-native' firm cut more than 500 jobs, its biggest layoff of the year, and declined to say whether AI had anything to do with it.</cite> Company has publicly emphasized AI-native identity; news outlets framing as AI push.",
+      "collected_date": "2026-08-09",
+      "date": "2026-08-09",
+      "created_at": "2026-08-09T04:52:56.381834+00:00"
+    },
     {
       "id": "evt_20260731_001",
       "event_date": "2026-07-31",
@@ -2711,141 +2815,96 @@
       "hashtags": "#Dell #Hardware #AIServers #AILayoffs #TechLayoffs2024 #Enterprise",
       "date": "2024-04-01",
       "created_at": "2026-04-27T17:59:55.141787"
-    },
+    }
+  ],
+  "summary": "Four new AI-adjacent workforce reduction events identified from August 4-6, 2026 (past 24-72 hours). TikTok's 250-job Nashville closure is directly tied to AI content moderation replacement. Zillow's 500-worker cut occurred at a self-described 'AI-native' company though officially not linked to AI. Etsy's 220 cuts hit product/engineering teams; CEO acknowledged AI is changing work despite denying it was the cause. Google filed a Washington state WARN notice for 52 additional layoffs. Total new displacement: approximately 1,022 jobs across 4 companies.",
+  "events": [
     {
-      "id": "evt_20240215_sap_217",
-      "event_date": "2024-02-15",
-      "collected_date": "2026-04-27",
-      "headline": "SAP cuts 8,000 jobs",
-      "source_url": "https://www.cio.com/article/1297964/sap-announces-2-2b-restructuring-program.html",
-      "source_name": "CIO / TechTarget",
-      "excerpt": "$2.2B restructuring program targeting 8,000 roles to pivot to AI; most covered by voluntary leave and reskilling, headcount to stay flat.",
-      "causality": "contributing",
+      "id": "evt_20260806_001",
+      "event_date": "2026-08-06",
+      "headline": "TikTok lays off 250 employees, closes Nashville content moderation office as AI takes over",
+      "source_url": "https://techcrunch.com/2026/08/06/tiktok-lays-off-250-employees-shutters-its-nashville-office/",
+      "source_name": "TechCrunch",
+      "excerpt": "<cite index=\"99-1,99-8\">TikTok is laying off 250 employees and closing its Nashville office, which housed some members of TikTok's content-moderation team. The cuts come as social media companies rely more on AI to monitor and remove violent or explicit content on their platforms.</cite>",
+      "causality": "direct",
       "confidence": 0.85,
       "tolls": {
-        "jobs": 8000,
-        "teams": 0,
+        "jobs": 250,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": -16640000
+        "labor_hours": -520000
       },
-      "notes": "$2.2B restructuring program targeting 8,000 roles to pivot to AI; most covered by voluntary leave and reskilling, headcount to stay flat.",
-      "hashtags": "#SAP #EnterpriseSoft #AILayoffs #GenAI",
-      "date": "2024-02-15",
-      "created_at": "2026-04-27T17:59:55.149222"
+      "notes": "<cite index=\"92-2\">TikTok has laid off 250 employees and announced the closure of its Nashville, Tennessee office, as the company restructures parts of its operations and increasingly relies on artificial intelligence for content moderation.</cite> WARN notice filed with Tennessee Department of Labor; office closes October 5. Content moderation team specifically.",
+      "collected_date": "2026-08-09",
+      "date": "2026-08-09",
+      "created_at": "2026-08-09T04:52:56.381812+00:00"
     },
     {
-      "id": "evt_20240215_cisco_218",
-      "event_date": "2024-02-15",
-      "collected_date": "2026-04-27",
-      "headline": "Cisco cuts 4,200 jobs",
-      "source_url": "https://www.computerworld.com/article/3816662/tech-layoffs-in-2024-a-timeline.html",
-      "source_name": "Computerworld",
-      "excerpt": "First 2024 round; 5% of 84,900 employees cut as Cisco refocuses on AI and security and away from legacy telecom equipment.",
+      "id": "evt_20260804_001",
+      "event_date": "2026-08-04",
+      "headline": "Zillow cuts 500+ jobs (7% of workforce) amid AI-native transformation push",
+      "source_url": "https://www.geekwire.com/2026/zillow-cuts-more-than-500-jobs-in-its-largest-layoff-of-the-year/",
+      "source_name": "GeekWire",
+      "excerpt": "<cite index=\"76-2,76-4\">Seattle-based online real estate company Zillow Group laid off more than 500 employees Tuesday, about 7% of its global workforce, its second and largest round of cuts this year. Wacksman told real estate executives at the T3 Leadership Summit in April that Zillow employees were being retrained to use AI in their jobs, with gains that 'are small, but they're compounding.'</cite>",
       "causality": "contributing",
       "confidence": 0.65,
       "tolls": {
-        "jobs": 4200,
+        "jobs": 500,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -8736000
+        "labor_hours": -1040000
       },
-      "notes": "First 2024 round; 5% of 84,900 employees cut as Cisco refocuses on AI and security and away from legacy telecom equipment.",
-      "hashtags": "#Cisco #Networking #AILayoffs #TechLayoffs",
-      "date": "2024-02-15",
-      "created_at": "2026-04-27T17:59:55.149261"
+      "notes": "<cite index=\"76-5\">Zillow told GeekWire the cuts were not driven by AI.</cite> However, <cite index=\"79-3,79-4\">the self-styled 'AI-native' firm cut more than 500 jobs, its biggest layoff of the year, and declined to say whether AI had anything to do with it.</cite> Company has publicly emphasized AI-native identity; news outlets framing as AI push.",
+      "collected_date": "2026-08-09",
+      "date": "2026-08-09",
+      "created_at": "2026-08-09T04:52:56.381834+00:00"
     },
     {
-      "id": "evt_20240215_grammarl_219",
-      "event_date": "2024-02-15",
-      "collected_date": "2026-04-27",
-      "headline": "Grammarly cuts 230 jobs",
-      "source_url": "https://programs.com/resources/ai-layoffs/",
-      "source_name": "Programs.com",
-      "excerpt": "Restructured around AI-powered writing tools; CEO cited need to align teams and resources with AI strategic priorities.",
+      "id": "evt_20260805_001",
+      "event_date": "2026-08-05",
+      "headline": "Etsy cuts 220 jobs (12% of workforce), CEO says 'AI is changing how all of us work'",
+      "source_url": "https://www.cnbc.com/2026/08/05/etsy-layoffs-q2-earnings.html",
+      "source_name": "CNBC",
+      "excerpt": "<cite index=\"86-3\">CEO Kruti Patel Goyal said neither cost cuts nor artificial intelligence drove the downsizing, but also said that 'AI is changing how all of us work.'</cite>",
+      "causality": "inferred",
+      "confidence": 0.5,
+      "tolls": {
+        "jobs": 220,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -457600
+      },
+      "notes": "<cite index=\"83-3,83-4\">Most of the cuts will fall on the product and engineering teams. Patel Goyal, who took over as CEO at the start of this year, said the decision was not a cost-cutting effort and was not driven by artificial intelligence.</cite> However, CEO also acknowledged AI is changing how work is done. Reduces headcount to ~1,600.",
+      "collected_date": "2026-08-09",
+      "date": "2026-08-09",
+      "created_at": "2026-08-09T04:52:56.381848+00:00"
+    },
+    {
+      "id": "evt_20260805_002",
+      "event_date": "2026-08-05",
+      "headline": "Google to lay off 52 Washington state employees per WARN notice amid AI-focused restructuring",
+      "source_url": "https://www.ibtimes.co.uk/tech-layoffs-2026-zillow-tiktok-etsy-google-1813127",
+      "source_name": "IBTimes UK",
+      "excerpt": "<cite index=\"54-8\">A Washington state WARN notice published on 5 August said Google planned to lay off 52 employees on 5 October.</cite>",
       "causality": "contributing",
-      "confidence": 0.8,
+      "confidence": 0.55,
       "tolls": {
-        "jobs": 230,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -478400
-      },
-      "notes": "Restructured around AI-powered writing tools; CEO cited need to align teams and resources with AI strategic priorities.",
-      "hashtags": "#Grammarly #AILayoffs #WritingAI #TechLayoffs",
-      "date": "2024-02-15",
-      "created_at": "2026-04-27T17:59:55.149299"
-    },
-    {
-      "id": "evt_20240210_ups_128",
-      "event_date": "2024-02-10",
-      "collected_date": "2026-04-27",
-      "headline": "UPS cuts 12,000 jobs amid AI transition",
-      "source_url": "https://www.notebookcheck.net/UPS-lays-off-12-000-managers-as-AI-replaces-jobs.802229.0.html",
-      "source_name": "TrueUp",
-      "excerpt": "UPS cut 12,000 of its 85,000 management jobs explicitly because AI tools are replacing coordination and scheduling functions. CEO Carol Tom\u00e9 also imposed 5-day office return. Target: $1B in savings. AI route optimization and automated sortation systems replace what entire management layers previously did.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 12000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -24960000
-      },
-      "notes": "UPS cut 12,000 of its 85,000 management jobs explicitly because AI tools are replacing coordination and scheduling functions. CEO Carol Tom\u00e9 also imposed 5-day office return. Target: $1B in savings. AI route optimization and automated sortation systems replace what entire management layers previously did.",
-      "industry": "Logistics / Delivery",
-      "hashtags": "#UPS #Logistics #DeliveryAI #Management #AILayoffs #TechLayoffs2024 #Automation",
-      "date": "2024-02-10",
-      "created_at": "2026-04-27T17:59:55.141820"
-    }
-  ],
-  "summary": "Three new AI-driven displacement events identified: Chime (~150 jobs, July 31, fintech CEO cited AI efficiencies), Freshworks (500 jobs, May 5, CEO said over half of company code is written by AI), and Snap (~1,000 jobs, CEO said AI is reducing repetitive work and company shifting to AI-agent model). Total: 1,650 additional jobs displaced across 3 companies. Notably, Etsy (220 jobs, Aug 6) and Zillow (500+ jobs, Aug 4) announced layoffs this week but explicitly denied AI as a driver, so were excluded.",
-  "events": [
-    {
-      "id": "evt_20260731_001",
-      "event_date": "2026-07-31",
-      "headline": "Chime cuts 10% of workforce (~150 jobs) citing AI efficiencies",
-      "source_url": "https://www.bankingdive.com/news/chime-cut-workforce-10-percent-150-employees-ai-smaller-teams-chris-britt/826730/",
-      "source_name": "Banking Dive",
-      "excerpt": "The fintech Chime plans to cut 10% of its workforce, or about 150 employees, to take advantage of artificial intelligence efficiencies and innovate using smaller teams.",
-      "causality": "direct",
-      "confidence": 0.92,
-      "tolls": {
-        "jobs": 150,
+        "jobs": 52,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -312000
+        "labor_hours": -108160
       },
-      "notes": "CEO Chris Britt memo cited AI as changing what's possible; announced July 31, 2026, five days before Q2 earnings. Confirmed by Bloomberg, Reuters, Banking Dive, PYMNTS, American Banker.",
-      "collected_date": "2026-08-08",
-      "date": "2026-08-08",
-      "created_at": "2026-08-08T04:43:31.776337+00:00"
-    },
-    {
-      "id": "evt_20260731_002",
-      "event_date": "2026-07-31",
-      "headline": "Snap cuts ~1,000 jobs as CEO cites AI reducing repetitive work",
-      "source_url": "https://www.informationweek.com/it-staffing-careers/2026-tech-company-layoffs",
-      "source_name": "InformationWeek",
-      "excerpt": "Snap, parent company of social media platform Snapchat, is reducing its headcount by 1,000 jobs... CEO Evan Spiegel said in a memo to employees that advancements in AI are reducing 'repetitive work' and improving the company's ability to support its 'community, partners, and advertisers.'",
-      "causality": "direct",
-      "confidence": 0.88,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 3,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "Snap plans to restructure business model to increase use of AI agents; ~$500M annualized cost savings estimated. Not previously tracked.",
-      "collected_date": "2026-08-08",
-      "date": "2026-08-08",
-      "created_at": "2026-08-08T04:43:31.776372+00:00"
+      "notes": "<cite index=\"54-2,54-5\">Google described the reductions to The Seattle Times as a team-level reorganisation rather than part of a wider company-wide layoff round. As firms spend heavily on AI infrastructure and other capital projects, they are looking for savings elsewhere.</cite> Part of broader industry AI capital reallocation.",
+      "collected_date": "2026-08-09",
+      "date": "2026-08-09",
+      "created_at": "2026-08-09T04:52:56.381859+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-08-08",
+    "last_anthropic_success": "2026-08-09",
     "last_openai_success": "2026-08-07",
-    "last_nonzero_collection": "2026-08-08",
+    "last_nonzero_collection": "2026-08-09",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-08-08"
+    "last_collection_date": "2026-08-09"
   }
 }
