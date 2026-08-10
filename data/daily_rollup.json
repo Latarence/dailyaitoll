@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-08-09T04:52:56.381712+00:00",
+  "last_updated": "2026-08-10T05:12:07.398839+00:00",
   "totals": {
-    "jobs": 272144,
+    "jobs": 272412,
     "teams": 151,
     "products": 1,
-    "companies": 124,
+    "companies": 125,
     "revenue": 0,
-    "labor_hours": -565959520
+    "labor_hours": -566516960
   },
   "today": {
-    "jobs": 1022,
-    "teams": 4,
+    "jobs": 268,
+    "teams": 0,
     "products": 0,
-    "companies": 4,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -2125760
+    "labor_hours": -557440
   },
   "daily_totals": {
     "2026-05-05": {
@@ -722,12 +722,12 @@
       "labor_hours": -520000
     },
     "2026-08-04": {
-      "jobs": 500,
+      "jobs": 768,
       "teams": 0,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": -1040000
+      "labor_hours": -1597440
     },
     "2026-08-05": {
       "jobs": 272,
@@ -738,8 +738,28 @@
       "labor_hours": -565760
     }
   },
-  "events_count": 121,
+  "events_count": 122,
   "all_events": [
+    {
+      "id": "evt_20260804_002",
+      "event_date": "2026-08-04",
+      "headline": "E.W. Scripps cuts 268 jobs as it transforms into 'AI-powered broadcast journalism company'",
+      "source_url": "https://www.thewrap.com/industry-news/business/ew-scripps-layoffs-ai-local-news/",
+      "source_name": "TheWrap",
+      "excerpt": "E.W. Scripps has cut 12% of its workforce this year as the high-profile TV station group embraces artificial intelligence and automation in a sweeping overhaul of its news operations to become an 'AI-powered broadcast journalism company.' The company has eliminated 432 positions and 126 open roles since the beginning of the year, CEO Adam Symson told analysts during Scripps' second quarter earnings call on Thursday. That includes 268 layoffs disclosed earlier this week, most of which affected employees at the company's local television stations. 'We're leaning into AI, automation, technology and the centralization of some roles,' Symson said, describing the changes as a 'revolution' in how Scripps produces local news.",
+      "causality": "direct",
+      "confidence": 0.95,
+      "tolls": {
+        "jobs": 268,
+        "teams": 0,
+        "companies": 1,
+        "labor_hours": -557440
+      },
+      "notes": "Layoffs at local TV stations including WXYZ-TV Detroit and WXMI-TV Grand Rapids in Michigan, plus Nebraska and Oklahoma outlets. Part of transformation to 24/7 streaming-first model with centralized digital production and AI-driven automation. CEO Symson described shift as 'revolution' in local news production. Total cuts for year at Scripps: 432 positions plus 126 open roles = 12% of workforce.",
+      "collected_date": "2026-08-10",
+      "date": "2026-08-10",
+      "created_at": "2026-08-10T05:12:07.398929+00:00"
+    },
     {
       "id": "evt_20260806_001",
       "event_date": "2026-08-06",
@@ -2793,118 +2813,36 @@
       "hashtags": "#Amazon #AWS #JustWalkOut #Automation #AILayoffs #TechLayoffs2024 #CheckoutAI",
       "date": "2024-04-04",
       "created_at": "2026-04-27T17:59:55.141753"
-    },
-    {
-      "id": "evt_20240401_delltech_127",
-      "event_date": "2024-04-01",
-      "collected_date": "2026-04-27",
-      "headline": "Dell Technologies cuts 13,000 jobs amid AI transition",
-      "source_url": "https://investors.delltechnologies.com/static-files/d6e82f58-d417-422f-b2f3-4d08d498abd4",
-      "source_name": "TrueUp",
-      "excerpt": "Dell's FY2024 10-K disclosed 13,000 layoffs over fiscal year (133k\u2192120k employees). Dell had announced 6,650 cuts in Feb 2024. Moving aggressively into AI server infrastructure (PowerEdge AI servers) while cutting legacy PC and enterprise sales roles.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 13000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -27040000
-      },
-      "notes": "Dell's FY2024 10-K disclosed 13,000 layoffs over fiscal year (133k\u2192120k employees). Dell had announced 6,650 cuts in Feb 2024. Moving aggressively into AI server infrastructure (PowerEdge AI servers) while cutting legacy PC and enterprise sales roles.",
-      "industry": "Hardware / Enterprise IT",
-      "hashtags": "#Dell #Hardware #AIServers #AILayoffs #TechLayoffs2024 #Enterprise",
-      "date": "2024-04-01",
-      "created_at": "2026-04-27T17:59:55.141787"
     }
   ],
-  "summary": "Four new AI-adjacent workforce reduction events identified from August 4-6, 2026 (past 24-72 hours). TikTok's 250-job Nashville closure is directly tied to AI content moderation replacement. Zillow's 500-worker cut occurred at a self-described 'AI-native' company though officially not linked to AI. Etsy's 220 cuts hit product/engineering teams; CEO acknowledged AI is changing work despite denying it was the cause. Google filed a Washington state WARN notice for 52 additional layoffs. Total new displacement: approximately 1,022 jobs across 4 companies.",
+  "summary": "One new verifiable AI-displacement event identified in the past 48 hours: E.W. Scripps confirmed 268 layoffs (announced Aug 4, discussed on Aug 7 Q2 earnings call) as it becomes an 'AI-powered broadcast journalism company,' centralizing news production and adopting AI/automation tools across its local TV stations. Previously tracked events (Scripps preparing layoffs was not in the tracked list; this is the confirmed new event). Total impact: 268 direct jobs displaced, ~557,440 labor-hours eliminated.",
   "events": [
     {
-      "id": "evt_20260806_001",
-      "event_date": "2026-08-06",
-      "headline": "TikTok lays off 250 employees, closes Nashville content moderation office as AI takes over",
-      "source_url": "https://techcrunch.com/2026/08/06/tiktok-lays-off-250-employees-shutters-its-nashville-office/",
-      "source_name": "TechCrunch",
-      "excerpt": "<cite index=\"99-1,99-8\">TikTok is laying off 250 employees and closing its Nashville office, which housed some members of TikTok's content-moderation team. The cuts come as social media companies rely more on AI to monitor and remove violent or explicit content on their platforms.</cite>",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 250,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -520000
-      },
-      "notes": "<cite index=\"92-2\">TikTok has laid off 250 employees and announced the closure of its Nashville, Tennessee office, as the company restructures parts of its operations and increasingly relies on artificial intelligence for content moderation.</cite> WARN notice filed with Tennessee Department of Labor; office closes October 5. Content moderation team specifically.",
-      "collected_date": "2026-08-09",
-      "date": "2026-08-09",
-      "created_at": "2026-08-09T04:52:56.381812+00:00"
-    },
-    {
-      "id": "evt_20260804_001",
+      "id": "evt_20260804_002",
       "event_date": "2026-08-04",
-      "headline": "Zillow cuts 500+ jobs (7% of workforce) amid AI-native transformation push",
-      "source_url": "https://www.geekwire.com/2026/zillow-cuts-more-than-500-jobs-in-its-largest-layoff-of-the-year/",
-      "source_name": "GeekWire",
-      "excerpt": "<cite index=\"76-2,76-4\">Seattle-based online real estate company Zillow Group laid off more than 500 employees Tuesday, about 7% of its global workforce, its second and largest round of cuts this year. Wacksman told real estate executives at the T3 Leadership Summit in April that Zillow employees were being retrained to use AI in their jobs, with gains that 'are small, but they're compounding.'</cite>",
-      "causality": "contributing",
-      "confidence": 0.65,
+      "headline": "E.W. Scripps cuts 268 jobs as it transforms into 'AI-powered broadcast journalism company'",
+      "source_url": "https://www.thewrap.com/industry-news/business/ew-scripps-layoffs-ai-local-news/",
+      "source_name": "TheWrap",
+      "excerpt": "E.W. Scripps has cut 12% of its workforce this year as the high-profile TV station group embraces artificial intelligence and automation in a sweeping overhaul of its news operations to become an 'AI-powered broadcast journalism company.' The company has eliminated 432 positions and 126 open roles since the beginning of the year, CEO Adam Symson told analysts during Scripps' second quarter earnings call on Thursday. That includes 268 layoffs disclosed earlier this week, most of which affected employees at the company's local television stations. 'We're leaning into AI, automation, technology and the centralization of some roles,' Symson said, describing the changes as a 'revolution' in how Scripps produces local news.",
+      "causality": "direct",
+      "confidence": 0.95,
       "tolls": {
-        "jobs": 500,
+        "jobs": 268,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -1040000
+        "labor_hours": -557440
       },
-      "notes": "<cite index=\"76-5\">Zillow told GeekWire the cuts were not driven by AI.</cite> However, <cite index=\"79-3,79-4\">the self-styled 'AI-native' firm cut more than 500 jobs, its biggest layoff of the year, and declined to say whether AI had anything to do with it.</cite> Company has publicly emphasized AI-native identity; news outlets framing as AI push.",
-      "collected_date": "2026-08-09",
-      "date": "2026-08-09",
-      "created_at": "2026-08-09T04:52:56.381834+00:00"
-    },
-    {
-      "id": "evt_20260805_001",
-      "event_date": "2026-08-05",
-      "headline": "Etsy cuts 220 jobs (12% of workforce), CEO says 'AI is changing how all of us work'",
-      "source_url": "https://www.cnbc.com/2026/08/05/etsy-layoffs-q2-earnings.html",
-      "source_name": "CNBC",
-      "excerpt": "<cite index=\"86-3\">CEO Kruti Patel Goyal said neither cost cuts nor artificial intelligence drove the downsizing, but also said that 'AI is changing how all of us work.'</cite>",
-      "causality": "inferred",
-      "confidence": 0.5,
-      "tolls": {
-        "jobs": 220,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": -457600
-      },
-      "notes": "<cite index=\"83-3,83-4\">Most of the cuts will fall on the product and engineering teams. Patel Goyal, who took over as CEO at the start of this year, said the decision was not a cost-cutting effort and was not driven by artificial intelligence.</cite> However, CEO also acknowledged AI is changing how work is done. Reduces headcount to ~1,600.",
-      "collected_date": "2026-08-09",
-      "date": "2026-08-09",
-      "created_at": "2026-08-09T04:52:56.381848+00:00"
-    },
-    {
-      "id": "evt_20260805_002",
-      "event_date": "2026-08-05",
-      "headline": "Google to lay off 52 Washington state employees per WARN notice amid AI-focused restructuring",
-      "source_url": "https://www.ibtimes.co.uk/tech-layoffs-2026-zillow-tiktok-etsy-google-1813127",
-      "source_name": "IBTimes UK",
-      "excerpt": "<cite index=\"54-8\">A Washington state WARN notice published on 5 August said Google planned to lay off 52 employees on 5 October.</cite>",
-      "causality": "contributing",
-      "confidence": 0.55,
-      "tolls": {
-        "jobs": 52,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -108160
-      },
-      "notes": "<cite index=\"54-2,54-5\">Google described the reductions to The Seattle Times as a team-level reorganisation rather than part of a wider company-wide layoff round. As firms spend heavily on AI infrastructure and other capital projects, they are looking for savings elsewhere.</cite> Part of broader industry AI capital reallocation.",
-      "collected_date": "2026-08-09",
-      "date": "2026-08-09",
-      "created_at": "2026-08-09T04:52:56.381859+00:00"
+      "notes": "Layoffs at local TV stations including WXYZ-TV Detroit and WXMI-TV Grand Rapids in Michigan, plus Nebraska and Oklahoma outlets. Part of transformation to 24/7 streaming-first model with centralized digital production and AI-driven automation. CEO Symson described shift as 'revolution' in local news production. Total cuts for year at Scripps: 432 positions plus 126 open roles = 12% of workforce.",
+      "collected_date": "2026-08-10",
+      "date": "2026-08-10",
+      "created_at": "2026-08-10T05:12:07.398929+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-08-09",
+    "last_anthropic_success": "2026-08-10",
     "last_openai_success": "2026-08-07",
-    "last_nonzero_collection": "2026-08-09",
+    "last_nonzero_collection": "2026-08-10",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-08-09"
+    "last_collection_date": "2026-08-10"
   }
 }
