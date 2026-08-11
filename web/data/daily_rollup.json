@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-10T05:12:07.398839+00:00",
+  "last_updated": "2026-08-11T04:56:20.113890+00:00",
   "totals": {
     "jobs": 272412,
     "teams": 151,
@@ -9,12 +9,12 @@
     "labor_hours": -566516960
   },
   "today": {
-    "jobs": 268,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -557440
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2815,34 +2815,13 @@
       "created_at": "2026-04-27T17:59:55.141753"
     }
   ],
-  "summary": "One new verifiable AI-displacement event identified in the past 48 hours: E.W. Scripps confirmed 268 layoffs (announced Aug 4, discussed on Aug 7 Q2 earnings call) as it becomes an 'AI-powered broadcast journalism company,' centralizing news production and adopting AI/automation tools across its local TV stations. Previously tracked events (Scripps preparing layoffs was not in the tracked list; this is the confirmed new event). Total impact: 268 direct jobs displaced, ~557,440 labor-hours eliminated.",
-  "events": [
-    {
-      "id": "evt_20260804_002",
-      "event_date": "2026-08-04",
-      "headline": "E.W. Scripps cuts 268 jobs as it transforms into 'AI-powered broadcast journalism company'",
-      "source_url": "https://www.thewrap.com/industry-news/business/ew-scripps-layoffs-ai-local-news/",
-      "source_name": "TheWrap",
-      "excerpt": "E.W. Scripps has cut 12% of its workforce this year as the high-profile TV station group embraces artificial intelligence and automation in a sweeping overhaul of its news operations to become an 'AI-powered broadcast journalism company.' The company has eliminated 432 positions and 126 open roles since the beginning of the year, CEO Adam Symson told analysts during Scripps' second quarter earnings call on Thursday. That includes 268 layoffs disclosed earlier this week, most of which affected employees at the company's local television stations. 'We're leaning into AI, automation, technology and the centralization of some roles,' Symson said, describing the changes as a 'revolution' in how Scripps produces local news.",
-      "causality": "direct",
-      "confidence": 0.95,
-      "tolls": {
-        "jobs": 268,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -557440
-      },
-      "notes": "Layoffs at local TV stations including WXYZ-TV Detroit and WXMI-TV Grand Rapids in Michigan, plus Nebraska and Oklahoma outlets. Part of transformation to 24/7 streaming-first model with centralized digital production and AI-driven automation. CEO Symson described shift as 'revolution' in local news production. Total cuts for year at Scripps: 432 positions plus 126 open roles = 12% of workforce.",
-      "collected_date": "2026-08-10",
-      "date": "2026-08-10",
-      "created_at": "2026-08-10T05:12:07.398929+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-08-10",
-    "last_openai_success": "2026-08-07",
+    "last_openai_success": "2026-08-11",
     "last_nonzero_collection": "2026-08-10",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-08-10"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-08-11"
   }
 }
