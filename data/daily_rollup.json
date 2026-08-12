@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-08-11T04:56:20.113890+00:00",
+  "last_updated": "2026-08-12T05:20:06.853338+00:00",
   "totals": {
-    "jobs": 272412,
-    "teams": 151,
+    "jobs": 272726,
+    "teams": 152,
     "products": 1,
-    "companies": 125,
+    "companies": 126,
     "revenue": 0,
-    "labor_hours": -566516960
+    "labor_hours": -567170080
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 314,
+    "teams": 1,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -653120
   },
   "daily_totals": {
     "2026-05-05": {
@@ -736,10 +736,38 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -565760
+    },
+    "2026-08-10": {
+      "jobs": 314,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -653120
     }
   },
-  "events_count": 122,
+  "events_count": 123,
   "all_events": [
+    {
+      "id": "evt_20260810_001",
+      "event_date": "2026-08-10",
+      "headline": "Rapid7 cuts 12% of workforce (~314 jobs) as it shifts to AI-first cybersecurity platform",
+      "source_url": "https://pulse2.com/rapid7-cuts-12-of-workforce-as-it-shifts-resources-toward-ai-first-cybersecurity-platform/",
+      "source_name": "Pulse 2.0 / BankInfoSecurity / Boston Globe",
+      "excerpt": "Rapid7 is reducing its workforce by approximately 12% as the cybersecurity company restructures around its core platform and increases investment in AI-powered security operations. The restructuring is occurring alongside an explicit shift toward an AI-first platform strategy.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 314,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -653120
+      },
+      "notes": "Board approved restructuring plan on Aug 7, 2026; announced Aug 10, 2026 alongside Q2 earnings. New CEO Wael Mohamed leveraging Kenzo acquisition to build AI-first platform. Company has 2,613 employees; ~314 positions eliminated. Restructuring charges $10-11M. Boston Globe notes growth of AI-powered cyber apps is 'roiling the software security industry' with older firms like Rapid7 adapting while AI-native competitors raise hundreds of millions.",
+      "collected_date": "2026-08-12",
+      "date": "2026-08-12",
+      "created_at": "2026-08-12T05:20:06.853425+00:00"
+    },
     {
       "id": "evt_20260804_002",
       "event_date": "2026-08-04",
@@ -2791,37 +2819,36 @@
       "hashtags": "#Amazon #AWS #CloudComputing #TechLayoffs",
       "date": "2024-04-15",
       "created_at": "2026-04-27T17:59:55.149147"
-    },
-    {
-      "id": "evt_20240404_amazon_126",
-      "event_date": "2024-04-04",
-      "collected_date": "2026-04-27",
-      "headline": "Amazon reduces workforce citing AI efficiency",
-      "source_url": "https://www.cio.com/article/2081437/amazon-downsizes-aws-in-a-fresh-cost-cutting-round.html",
-      "source_name": "TrueUp",
-      "excerpt": "Amazon cut hundreds of AWS sales/marketing roles and axed the 'Just Walk Out' automated checkout technology for US Amazon Fresh stores \u2014 ironically laying off the AI product itself as it failed to scale economically. AWS cuts concentrated in operations and mission engineering teams.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Amazon cut hundreds of AWS sales/marketing roles and axed the 'Just Walk Out' automated checkout technology for US Amazon Fresh stores \u2014 ironically laying off the AI product itself as it failed to scale economically. AWS cuts concentrated in operations and mission engineering teams.",
-      "industry": "E-commerce / Cloud",
-      "hashtags": "#Amazon #AWS #JustWalkOut #Automation #AILayoffs #TechLayoffs2024 #CheckoutAI",
-      "date": "2024-04-04",
-      "created_at": "2026-04-27T17:59:55.141753"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "One new verifiable AI displacement event found: Rapid7 announced on August 10, 2026 that it is cutting approximately 314 jobs (12% of its 2,613-person workforce) as new CEO Wael Mohamed pivots the Boston cybersecurity firm toward an AI-first platform strategy, leveraging its Kenzo acquisition for agentic AI capabilities. The layoffs come as AI-native cybersecurity startups (7AI, Realm.Security) are gaining ground against older firms. Restructuring charges of $10-11M expected. Other recent items reviewed (Lufthansa 'New Ways' 550-position program, Howard University 600 buyouts) were either previously tracked in earlier weeks or lack sufficient AI causality.",
+  "events": [
+    {
+      "id": "evt_20260810_001",
+      "event_date": "2026-08-10",
+      "headline": "Rapid7 cuts 12% of workforce (~314 jobs) as it shifts to AI-first cybersecurity platform",
+      "source_url": "https://pulse2.com/rapid7-cuts-12-of-workforce-as-it-shifts-resources-toward-ai-first-cybersecurity-platform/",
+      "source_name": "Pulse 2.0 / BankInfoSecurity / Boston Globe",
+      "excerpt": "Rapid7 is reducing its workforce by approximately 12% as the cybersecurity company restructures around its core platform and increases investment in AI-powered security operations. The restructuring is occurring alongside an explicit shift toward an AI-first platform strategy.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 314,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -653120
+      },
+      "notes": "Board approved restructuring plan on Aug 7, 2026; announced Aug 10, 2026 alongside Q2 earnings. New CEO Wael Mohamed leveraging Kenzo acquisition to build AI-first platform. Company has 2,613 employees; ~314 positions eliminated. Restructuring charges $10-11M. Boston Globe notes growth of AI-powered cyber apps is 'roiling the software security industry' with older firms like Rapid7 adapting while AI-native competitors raise hundreds of millions.",
+      "collected_date": "2026-08-12",
+      "date": "2026-08-12",
+      "created_at": "2026-08-12T05:20:06.853425+00:00"
+    }
+  ],
   "health": {
-    "last_anthropic_success": "2026-08-10",
+    "last_anthropic_success": "2026-08-12",
     "last_openai_success": "2026-08-11",
-    "last_nonzero_collection": "2026-08-10",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-08-11"
+    "last_nonzero_collection": "2026-08-12",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-08-12"
   }
 }
