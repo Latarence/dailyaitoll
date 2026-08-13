@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-12T05:20:06.853338+00:00",
+  "last_updated": "2026-08-13T05:24:14.439887+00:00",
   "totals": {
     "jobs": 272726,
     "teams": 152,
@@ -9,12 +9,12 @@
     "labor_hours": -567170080
   },
   "today": {
-    "jobs": 314,
-    "teams": 1,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -653120
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2821,34 +2821,13 @@
       "created_at": "2026-04-27T17:59:55.149147"
     }
   ],
-  "summary": "One new verifiable AI displacement event found: Rapid7 announced on August 10, 2026 that it is cutting approximately 314 jobs (12% of its 2,613-person workforce) as new CEO Wael Mohamed pivots the Boston cybersecurity firm toward an AI-first platform strategy, leveraging its Kenzo acquisition for agentic AI capabilities. The layoffs come as AI-native cybersecurity startups (7AI, Realm.Security) are gaining ground against older firms. Restructuring charges of $10-11M expected. Other recent items reviewed (Lufthansa 'New Ways' 550-position program, Howard University 600 buyouts) were either previously tracked in earlier weeks or lack sufficient AI causality.",
-  "events": [
-    {
-      "id": "evt_20260810_001",
-      "event_date": "2026-08-10",
-      "headline": "Rapid7 cuts 12% of workforce (~314 jobs) as it shifts to AI-first cybersecurity platform",
-      "source_url": "https://pulse2.com/rapid7-cuts-12-of-workforce-as-it-shifts-resources-toward-ai-first-cybersecurity-platform/",
-      "source_name": "Pulse 2.0 / BankInfoSecurity / Boston Globe",
-      "excerpt": "Rapid7 is reducing its workforce by approximately 12% as the cybersecurity company restructures around its core platform and increases investment in AI-powered security operations. The restructuring is occurring alongside an explicit shift toward an AI-first platform strategy.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 314,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -653120
-      },
-      "notes": "Board approved restructuring plan on Aug 7, 2026; announced Aug 10, 2026 alongside Q2 earnings. New CEO Wael Mohamed leveraging Kenzo acquisition to build AI-first platform. Company has 2,613 employees; ~314 positions eliminated. Restructuring charges $10-11M. Boston Globe notes growth of AI-powered cyber apps is 'roiling the software security industry' with older firms like Rapid7 adapting while AI-native competitors raise hundreds of millions.",
-      "collected_date": "2026-08-12",
-      "date": "2026-08-12",
-      "created_at": "2026-08-12T05:20:06.853425+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-08-12",
-    "last_openai_success": "2026-08-11",
+    "last_openai_success": "2026-08-13",
     "last_nonzero_collection": "2026-08-12",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-08-12"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-08-13"
   }
 }
