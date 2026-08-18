@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-17T04:27:35.909776+00:00",
+  "last_updated": "2026-08-18T04:21:35.468417+00:00",
   "totals": {
     "jobs": 272726,
     "teams": 152,
@@ -2821,13 +2821,13 @@
       "created_at": "2026-04-27T17:59:55.149147"
     }
   ],
-  "summary": "Oracle plans additional layoffs, citing AI adoption, continuing a trend of significant workforce reductions.",
+  "summary": "No new verifiable AI displacement events found.",
   "events": [],
   "health": {
     "last_anthropic_success": "2026-08-12",
-    "last_openai_success": "2026-08-17",
+    "last_openai_success": "2026-08-18",
     "last_nonzero_collection": "2026-08-17",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-08-17"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-08-18"
   }
 }
