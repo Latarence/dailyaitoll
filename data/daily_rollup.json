@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-08-23T04:24:00.065068+00:00",
+  "last_updated": "2026-08-24T04:31:44.511239+00:00",
   "totals": {
-    "jobs": 272726,
-    "teams": 152,
+    "jobs": 272727,
+    "teams": 153,
     "products": 1,
-    "companies": 126,
+    "companies": 127,
     "revenue": 0,
-    "labor_hours": -567170080
+    "labor_hours": -567172160
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 1,
+    "teams": 1,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -2080
   },
   "daily_totals": {
     "2026-05-05": {
@@ -744,10 +744,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -653120
+    },
+    "2026-08-21": {
+      "jobs": 1,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -2080
     }
   },
-  "events_count": 123,
+  "events_count": 124,
   "all_events": [
+    {
+      "id": "evt_20260821_001",
+      "event_date": "2026-08-21",
+      "headline": "AI manager fires human employee for the first time",
+      "source_url": "https://e.vnexpress.net/news/tech/tech-news/ai-boss-fires-human-worker-for-the-first-time-5111129.html",
+      "source_name": "VnExpress International",
+      "excerpt": "An AI manager named Luna, operating at Andon Market in San Francisco, dismissed a human employee for repeated tardiness, marking the first known instance of an AI making such a decision.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 1,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -2080
+      },
+      "notes": "First documented case of AI autonomously terminating employment.",
+      "collected_date": "2026-08-24",
+      "date": "2026-08-24",
+      "created_at": "2026-08-24T04:31:44.511312+00:00"
+    },
     {
       "id": "evt_20260810_001",
       "event_date": "2026-08-10",
@@ -2798,36 +2826,36 @@
       "hashtags": "#Tesla #ElonMusk #AutonomousVehicles #Robotaxi #AILayoffs #TechLayoffs2024 #EV",
       "date": "2024-04-15",
       "created_at": "2026-04-27T17:59:55.141718"
-    },
-    {
-      "id": "evt_20240415_amazonaw_215",
-      "event_date": "2024-04-15",
-      "collected_date": "2026-04-27",
-      "headline": "Amazon (AWS) reduces workforce",
-      "source_url": "https://www.cio.com/article/2081437/amazon-downsizes-aws.html",
-      "source_name": "CIO",
-      "excerpt": "Hundreds cut from AWS sales, marketing, and tech development for physical retail as Amazon scaled back Just Walk Out technology.",
-      "causality": "inferred",
-      "confidence": 0.55,
-      "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Hundreds cut from AWS sales, marketing, and tech development for physical retail as Amazon scaled back Just Walk Out technology.",
-      "hashtags": "#Amazon #AWS #CloudComputing #TechLayoffs",
-      "date": "2024-04-15",
-      "created_at": "2026-04-27T17:59:55.149147"
     }
   ],
-  "summary": "One new verifiable AI displacement event found: Arrive AI reduced its workforce by 20% on August 14, 2026, citing AI advancements.",
-  "events": [],
+  "summary": "Today's findings include the first known instance of an AI manager autonomously terminating a human employee for repeated tardiness.",
+  "events": [
+    {
+      "id": "evt_20260821_001",
+      "event_date": "2026-08-21",
+      "headline": "AI manager fires human employee for the first time",
+      "source_url": "https://e.vnexpress.net/news/tech/tech-news/ai-boss-fires-human-worker-for-the-first-time-5111129.html",
+      "source_name": "VnExpress International",
+      "excerpt": "An AI manager named Luna, operating at Andon Market in San Francisco, dismissed a human employee for repeated tardiness, marking the first known instance of an AI making such a decision.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 1,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -2080
+      },
+      "notes": "First documented case of AI autonomously terminating employment.",
+      "collected_date": "2026-08-24",
+      "date": "2026-08-24",
+      "created_at": "2026-08-24T04:31:44.511312+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-08-12",
-    "last_openai_success": "2026-08-23",
-    "last_nonzero_collection": "2026-08-17",
-    "consecutive_zero_days": 6,
-    "last_collection_date": "2026-08-23"
+    "last_openai_success": "2026-08-24",
+    "last_nonzero_collection": "2026-08-24",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-08-24"
   }
 }
