@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-26T04:26:27.534076+00:00",
+  "last_updated": "2026-08-27T14:48:57.850851+00:00",
   "totals": {
     "jobs": 272992,
     "teams": 156,
@@ -9,12 +9,12 @@
     "labor_hours": -567723360
   },
   "today": {
-    "jobs": 265,
-    "teams": 3,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 2,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -551200
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2825,54 +2825,13 @@
       "created_at": "2026-04-27T17:59:55.149069"
     }
   ],
-  "summary": "Two new verifiable AI displacement events were identified: Apple reduced over 200 positions from its Siri and Vision Pro teams to focus on newer AI initiatives, and Latch, Inc. laid off 65 employees as part of an AI-driven restructuring.",
-  "events": [
-    {
-      "id": "evt_20260821_002",
-      "event_date": "2026-08-21",
-      "headline": "Apple cuts over 200 jobs from Siri and Vision Pro teams amid AI focus",
-      "source_url": "https://techcrunch.com/2026/08/21/apple-is-reportedly-cutting-hundreds-of-jobs-from-siri-vision-pro-teams/",
-      "source_name": "TechCrunch",
-      "excerpt": "Apple is chopping down the team behind the Vision Pro, its long-suffering VR headset, while eliminating positions across a number of other teams, Bloomberg reported.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 200,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": -416000
-      },
-      "notes": "Restructuring to focus on newer AI efforts and devices",
-      "collected_date": "2026-08-26",
-      "date": "2026-08-26",
-      "created_at": "2026-08-26T04:26:27.534164+00:00"
-    },
-    {
-      "id": "evt_20260805_003",
-      "event_date": "2026-08-05",
-      "headline": "Latch, Inc. lays off 65 employees, citing AI integration",
-      "source_url": "https://ailayoffs.org/",
-      "source_name": "AI Layoffs",
-      "excerpt": "Latch, Inc. (which has rebranded as DOOR) filed a Form 8-K (Item 2.05) on August 5 2026 reporting that on August 3 2026 its board approved a restructuring plan 'intended to streamline operations and reduce costs, which includes a reduction in force and the discontinuation of its DOOR Property Management business,' impacting approximately 65 employees and service providers (~32% of the total workforce), with ~$1.5M-$2.5M of cash restructuring charges.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 65,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -135200
-      },
-      "notes": "AI integration across software development and customer support",
-      "collected_date": "2026-08-26",
-      "date": "2026-08-26",
-      "created_at": "2026-08-26T04:26:27.534185+00:00"
-    }
-  ],
+  "summary": "Amazon's decision to shut down Mechanical Turk marks a significant AI-driven displacement, affecting approximately 500,000 crowdworkers.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-08-12",
-    "last_openai_success": "2026-08-26",
+    "last_openai_success": "2026-08-27",
     "last_nonzero_collection": "2026-08-26",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-08-26"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-08-27"
   }
 }
