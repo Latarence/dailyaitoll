@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-08-28T15:42:34.012812+00:00",
+  "last_updated": "2026-08-29T10:29:18.262912+00:00",
   "totals": {
-    "jobs": 272992,
-    "teams": 156,
+    "jobs": 273139,
+    "teams": 158,
     "products": 1,
-    "companies": 129,
+    "companies": 130,
     "revenue": 0,
-    "labor_hours": -567723360
+    "labor_hours": -568029120
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 147,
+    "teams": 2,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -305760
   },
   "daily_totals": {
     "2026-05-05": {
@@ -752,10 +752,38 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -418080
+    },
+    "2026-08-27": {
+      "jobs": 147,
+      "teams": 2,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -305760
     }
   },
-  "events_count": 126,
+  "events_count": 127,
   "all_events": [
+    {
+      "id": "evt_20260827_001",
+      "event_date": "2026-08-27",
+      "headline": "Apple lays off 147 employees in Bay Area amid AI restructuring",
+      "source_url": "https://www.latimes.com/business/story/2026-08-27/apple-lays-off-147-employees",
+      "source_name": "Los Angeles Times",
+      "excerpt": "Apple is laying off close to 150 employees, the latest tech titan to reduce staff amid the artificial intelligence boom.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 147,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -305760
+      },
+      "notes": "Layoffs primarily affected Vision Pro and Siri teams.",
+      "collected_date": "2026-08-29",
+      "date": "2026-08-29",
+      "created_at": "2026-08-29T10:29:18.263003+00:00"
+    },
     {
       "id": "evt_20260821_002",
       "event_date": "2026-08-21",
@@ -2802,36 +2830,36 @@
       "hashtags": "#OpenText #EnterpriseSoftware #AILayoffs #TechLayoffs2024 #Canada",
       "date": "2024-07-04",
       "created_at": "2026-04-27T17:59:55.141637"
-    },
-    {
-      "id": "evt_20240615_microsof_213",
-      "event_date": "2024-06-15",
-      "collected_date": "2026-04-27",
-      "headline": "Microsoft cuts 1,000 jobs",
-      "source_url": "https://www.networkworld.com/article/2138075/microsoft-lays-off-azure-division.html",
-      "source_name": "Network World",
-      "excerpt": "Cuts hit Azure for Operations and Mission Engineering teams as Microsoft redirects cloud budgets to AI infrastructure build-out.",
-      "causality": "inferred",
-      "confidence": 0.6,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "Cuts hit Azure for Operations and Mission Engineering teams as Microsoft redirects cloud budgets to AI infrastructure build-out.",
-      "hashtags": "#Microsoft #Azure #AILayoffs #CloudComputing",
-      "date": "2024-06-15",
-      "created_at": "2026-04-27T17:59:55.149069"
     }
   ],
-  "summary": "One new verifiable AI displacement event found: Meta's AI agents caused operational disruptions, leading to the cancellation of a project aimed at reducing team sizes by up to 60%.",
-  "events": [],
+  "summary": "Today's findings include Apple's layoff of 147 employees in the Bay Area as part of an AI-driven restructuring, and Meta's cancellation of a planned second round of AI-related layoffs following employee protests and underperformance of AI agents.",
+  "events": [
+    {
+      "id": "evt_20260827_001",
+      "event_date": "2026-08-27",
+      "headline": "Apple lays off 147 employees in Bay Area amid AI restructuring",
+      "source_url": "https://www.latimes.com/business/story/2026-08-27/apple-lays-off-147-employees",
+      "source_name": "Los Angeles Times",
+      "excerpt": "Apple is laying off close to 150 employees, the latest tech titan to reduce staff amid the artificial intelligence boom.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 147,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": -305760
+      },
+      "notes": "Layoffs primarily affected Vision Pro and Siri teams.",
+      "collected_date": "2026-08-29",
+      "date": "2026-08-29",
+      "created_at": "2026-08-29T10:29:18.263003+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-08-12",
-    "last_openai_success": "2026-08-28",
-    "last_nonzero_collection": "2026-08-26",
-    "consecutive_zero_days": 2,
-    "last_collection_date": "2026-08-28"
+    "last_openai_success": "2026-08-29",
+    "last_nonzero_collection": "2026-08-29",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-08-29"
   }
 }
