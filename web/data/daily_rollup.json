@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-08-31T10:07:40.920883+00:00",
+  "last_updated": "2026-09-01T08:56:35.944663+00:00",
   "totals": {
-    "jobs": 273139,
-    "teams": 158,
+    "jobs": 273646,
+    "teams": 164,
     "products": 1,
-    "companies": 130,
+    "companies": 134,
     "revenue": 0,
-    "labor_hours": -568029120
+    "labor_hours": -569083680
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 507,
+    "teams": 6,
     "products": 0,
-    "companies": 0,
+    "companies": 4,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -1054560
   },
   "daily_totals": {
     "2026-05-05": {
@@ -754,16 +754,112 @@
       "labor_hours": -418080
     },
     "2026-08-27": {
-      "jobs": 147,
-      "teams": 2,
+      "jobs": 319,
+      "teams": 3,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -663520
+    },
+    "2026-08-31": {
+      "jobs": 250,
+      "teams": 1,
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -305760
+      "labor_hours": -520000
+    },
+    "2026-08-17": {
+      "jobs": 85,
+      "teams": 4,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -176800
     }
   },
-  "events_count": 127,
+  "events_count": 131,
   "all_events": [
+    {
+      "id": "evt_20260831_001",
+      "event_date": "2026-08-31",
+      "headline": "Zomato lays off 250 employees, shuts Hyderabad customer support center amid AI automation push",
+      "source_url": "https://viestories.com/startupnews/zomato-lays-off-240-employees-as-hyderabad-customer-support-operations-shut-12458898",
+      "source_name": "Viestories / Business Standard",
+      "excerpt": "Zomato Increasing Use of AI and Automation. The latest layoffs are part of Zomato's wider restructuring of its customer support operations.",
+      "causality": "contributing",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 250,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -520000
+      },
+      "notes": "Eternal-owned Zomato shut its Hyderabad Customer Delight operations, moving in-house support to Gurugram. Reports indicate a larger share of customer support work is being outsourced and increased use of AI/automation. Prior 2025 round of ~600 customer support layoffs was explicitly tied to AI-driven cost cuts.",
+      "collected_date": "2026-09-01",
+      "date": "2026-09-01",
+      "created_at": "2026-09-01T08:56:35.944751+00:00"
+    },
+    {
+      "id": "evt_20260827_002",
+      "event_date": "2026-08-27",
+      "headline": "PagerDuty cuts 15% of workforce (~172 jobs) same day it ships autonomous AI incident response agent",
+      "source_url": "https://www.finalroundai.com/blog/pagerduty-layoffs",
+      "source_name": "FinalRoundAI",
+      "excerpt": "PagerDuty is cutting approximately 15% of its current headcount, which works out to roughly 173 roles against the 1,155 employees the company reported at the close of its last fiscal year.",
+      "causality": "inferred",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 172,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -357760
+      },
+      "notes": "SEC Form 8-K filed Aug 27, 2026. While the 8-K itself avoided naming AI, PagerDuty simultaneously shipped an autonomous agent for incident response and CEO framed the company as an 'AI-first operations management' leader. Analysts characterize this as an early example of an AI-driven workforce redesign in enterprise software.",
+      "collected_date": "2026-09-01",
+      "date": "2026-09-01",
+      "created_at": "2026-09-01T08:56:35.944771+00:00"
+    },
+    {
+      "id": "evt_20260817_001",
+      "event_date": "2026-08-17",
+      "headline": "Pentera lays off 60 employees in second AI-driven restructuring round, shifting to AI cybersecurity",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/cri3dnoqo",
+      "source_name": "Calcalist",
+      "excerpt": "Pentera plans to continue recruiting employees with relevant experience in artificial intelligence, reflecting the company's shift toward AI-based cybersecurity solutions... the changes were driven by the rapid development and adoption of artificial intelligence.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 60,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -124800
+      },
+      "notes": "Second round of cuts in four months at the Israeli cybersecurity unicorn, bringing total to ~100 (20% of workforce). Company explicitly stated changes were driven by adoption of AI and shift toward AI-based cybersecurity validation.",
+      "collected_date": "2026-09-01",
+      "date": "2026-09-01",
+      "created_at": "2026-09-01T08:56:35.944781+00:00"
+    },
+    {
+      "id": "evt_20260817_002",
+      "event_date": "2026-08-17",
+      "headline": "AI automation startup Relay.app shuts down; staff joins Google's Chrome/Gemini team",
+      "source_url": "https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/",
+      "source_name": "TechCrunch",
+      "excerpt": "Relay, an AI-powered workflow automation tool that was launched in 2021 with the goal of becoming the new Zapier, is shutting down, and some of its staff \u2014 including its top executive \u2014 are joining Google's Chrome team.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 25,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -52000
+      },
+      "notes": "Zapier competitor Relay.app is winding down after Google hired founder Jacob Bank (now VP of Product for Chrome) and staff to integrate Gemini into the browser. Product discontinued in favor of Google's AI-integrated alternative. Estimated ~25 employees affected based on $8.1M funding stage; free access ended Aug 15, paid access ends Sep 14.",
+      "collected_date": "2026-09-01",
+      "date": "2026-09-01",
+      "created_at": "2026-09-01T08:56:35.944789+00:00"
+    },
     {
       "id": "evt_20260827_001",
       "event_date": "2026-08-27",
@@ -2742,103 +2838,96 @@
       "hashtags": "#Kaseya #Datto #MSP #TechLayoffs2024 #ITManagement",
       "date": "2024-10-15",
       "created_at": "2026-04-27T17:59:55.141470"
-    },
-    {
-      "id": "evt_20240917_cisco_120",
-      "event_date": "2024-09-17",
-      "collected_date": "2026-04-27",
-      "headline": "Cisco cuts 6,000 jobs amid AI transition",
-      "source_url": "https://www.networkworld.com/article/3486901/cisco-to-cut-7-of-workforce-restructure-product-groups.html",
-      "source_name": "TrueUp",
-      "excerpt": "Cisco's second major 2024 round \u2014 6,000 layoffs (7% of workforce) following 4,200 in February. Divisions cut include threat intel unit Talos Security. CEO Chuck Robbins explicitly cited need to 'restructure product groups' around AI-era networking. Total 2024 Cisco cuts: 10,200+.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 6000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -12480000
-      },
-      "notes": "Cisco's second major 2024 round \u2014 6,000 layoffs (7% of workforce) following 4,200 in February. Divisions cut include threat intel unit Talos Security. CEO Chuck Robbins explicitly cited need to 'restructure product groups' around AI-era networking. Total 2024 Cisco cuts: 10,200+.",
-      "industry": "Networking / Cybersecurity",
-      "hashtags": "#Cisco #Networking #Cybersecurity #AILayoffs #TechLayoffs2024 #Talos",
-      "date": "2024-09-17",
-      "created_at": "2026-04-27T17:59:55.141511"
-    },
-    {
-      "id": "evt_20240820_generalm_121",
-      "event_date": "2024-08-20",
-      "collected_date": "2026-04-27",
-      "headline": "General Motors cuts 1,000 jobs amid AI transition",
-      "source_url": "https://www.cio.com/article/3489323/gm-software-layoffs-could-signal-a-shift-in-digital-transformation-strategy.html",
-      "source_name": "TrueUp",
-      "excerpt": "GM cut 1,000+ software and services staff as it reassessed its digital transformation strategy. Internal memo: moving resources to 'highest-priority work and flattening hierarchies.' GM had over-hired for its Cruise autonomous vehicle unit (before Cruise's collapse) and software-defined vehicle initiatives.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "GM cut 1,000+ software and services staff as it reassessed its digital transformation strategy. Internal memo: moving resources to 'highest-priority work and flattening hierarchies.' GM had over-hired for its Cruise autonomous vehicle unit (before Cruise's collapse) and software-defined vehicle initiatives.",
-      "industry": "Automotive / Tech",
-      "hashtags": "#GM #GeneralMotors #AutomotiveAI #DigitalTransformation #AILayoffs #TechLayoffs2024 #Cruise",
-      "date": "2024-08-20",
-      "created_at": "2026-04-27T17:59:55.141562"
-    },
-    {
-      "id": "evt_20240801_intel_122",
-      "event_date": "2024-08-01",
-      "collected_date": "2026-04-27",
-      "headline": "Intel cuts 15,000 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3480715/intel-fires-15000-employees-as-it-intensifies-focus-on-ai.html",
-      "source_name": "TrueUp",
-      "excerpt": "Intel CEO Pat Gelsinger announced 15,000 layoffs (15% of workforce) after Q2 revenue stagnated and net income fell 85%. 'Our revenues have not grown as expected \u2014 and we've yet to fully benefit from powerful trends, like AI.' Intel is losing the AI chip race to Nvidia and struggling to execute its foundry strategy.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 15000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -31200000
-      },
-      "notes": "Intel CEO Pat Gelsinger announced 15,000 layoffs (15% of workforce) after Q2 revenue stagnated and net income fell 85%. 'Our revenues have not grown as expected \u2014 and we've yet to fully benefit from powerful trends, like AI.' Intel is losing the AI chip race to Nvidia and struggling to execute its foundry strategy.",
-      "industry": "Semiconductors",
-      "hashtags": "#Intel #Semiconductors #AIChips #Foundry #AILayoffs #TechLayoffs2024 #Gelsinger",
-      "date": "2024-08-01",
-      "created_at": "2026-04-27T17:59:55.141601"
-    },
-    {
-      "id": "evt_20240704_opentext_123",
-      "event_date": "2024-07-04",
-      "collected_date": "2026-04-27",
-      "headline": "OpenText cuts 1,200 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3816662/tech-layoffs-in-2024-a-timeline.html",
-      "source_name": "TrueUp",
-      "excerpt": "Enterprise software company OpenText cut 1,200 jobs (1.7% of workforce) to save ~$100M annually. Plans to hire new sales and engineering staff in AI product areas in 2025. Classic restructuring: cut legacy support/sales, invest in AI product lines.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1200,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2496000
-      },
-      "notes": "Enterprise software company OpenText cut 1,200 jobs (1.7% of workforce) to save ~$100M annually. Plans to hire new sales and engineering staff in AI product areas in 2025. Classic restructuring: cut legacy support/sales, invest in AI product lines.",
-      "industry": "Enterprise Software",
-      "hashtags": "#OpenText #EnterpriseSoftware #AILayoffs #TechLayoffs2024 #Canada",
-      "date": "2024-07-04",
-      "created_at": "2026-04-27T17:59:55.141637"
     }
   ],
-  "summary": "Oracle has announced further job cuts ahead of its fiscal Q2, citing AI adoption, though specific numbers were not disclosed.",
-  "events": [],
+  "summary": "Found 4 new AI-displacement events not previously tracked. Zomato cut 250 customer support jobs (Aug 31) as it consolidates operations and expands AI/automation use. PagerDuty announced a 15% workforce reduction (~172 jobs) on Aug 27 the same day it shipped an autonomous AI incident-response agent. Cybersecurity firm Pentera laid off another 60 employees (Aug 17), explicitly citing the shift to AI-based cybersecurity. AI workflow automation startup Relay.app is shutting down (product discontinued) with staff absorbed into Google's Chrome/Gemini team. Total: ~507 additional jobs displaced across 4 companies.",
+  "events": [
+    {
+      "id": "evt_20260831_001",
+      "event_date": "2026-08-31",
+      "headline": "Zomato lays off 250 employees, shuts Hyderabad customer support center amid AI automation push",
+      "source_url": "https://viestories.com/startupnews/zomato-lays-off-240-employees-as-hyderabad-customer-support-operations-shut-12458898",
+      "source_name": "Viestories / Business Standard",
+      "excerpt": "Zomato Increasing Use of AI and Automation. The latest layoffs are part of Zomato's wider restructuring of its customer support operations.",
+      "causality": "contributing",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 250,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -520000
+      },
+      "notes": "Eternal-owned Zomato shut its Hyderabad Customer Delight operations, moving in-house support to Gurugram. Reports indicate a larger share of customer support work is being outsourced and increased use of AI/automation. Prior 2025 round of ~600 customer support layoffs was explicitly tied to AI-driven cost cuts.",
+      "collected_date": "2026-09-01",
+      "date": "2026-09-01",
+      "created_at": "2026-09-01T08:56:35.944751+00:00"
+    },
+    {
+      "id": "evt_20260827_002",
+      "event_date": "2026-08-27",
+      "headline": "PagerDuty cuts 15% of workforce (~172 jobs) same day it ships autonomous AI incident response agent",
+      "source_url": "https://www.finalroundai.com/blog/pagerduty-layoffs",
+      "source_name": "FinalRoundAI",
+      "excerpt": "PagerDuty is cutting approximately 15% of its current headcount, which works out to roughly 173 roles against the 1,155 employees the company reported at the close of its last fiscal year.",
+      "causality": "inferred",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 172,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -357760
+      },
+      "notes": "SEC Form 8-K filed Aug 27, 2026. While the 8-K itself avoided naming AI, PagerDuty simultaneously shipped an autonomous agent for incident response and CEO framed the company as an 'AI-first operations management' leader. Analysts characterize this as an early example of an AI-driven workforce redesign in enterprise software.",
+      "collected_date": "2026-09-01",
+      "date": "2026-09-01",
+      "created_at": "2026-09-01T08:56:35.944771+00:00"
+    },
+    {
+      "id": "evt_20260817_001",
+      "event_date": "2026-08-17",
+      "headline": "Pentera lays off 60 employees in second AI-driven restructuring round, shifting to AI cybersecurity",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/cri3dnoqo",
+      "source_name": "Calcalist",
+      "excerpt": "Pentera plans to continue recruiting employees with relevant experience in artificial intelligence, reflecting the company's shift toward AI-based cybersecurity solutions... the changes were driven by the rapid development and adoption of artificial intelligence.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 60,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": -124800
+      },
+      "notes": "Second round of cuts in four months at the Israeli cybersecurity unicorn, bringing total to ~100 (20% of workforce). Company explicitly stated changes were driven by adoption of AI and shift toward AI-based cybersecurity validation.",
+      "collected_date": "2026-09-01",
+      "date": "2026-09-01",
+      "created_at": "2026-09-01T08:56:35.944781+00:00"
+    },
+    {
+      "id": "evt_20260817_002",
+      "event_date": "2026-08-17",
+      "headline": "AI automation startup Relay.app shuts down; staff joins Google's Chrome/Gemini team",
+      "source_url": "https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/",
+      "source_name": "TechCrunch",
+      "excerpt": "Relay, an AI-powered workflow automation tool that was launched in 2021 with the goal of becoming the new Zapier, is shutting down, and some of its staff \u2014 including its top executive \u2014 are joining Google's Chrome team.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 25,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -52000
+      },
+      "notes": "Zapier competitor Relay.app is winding down after Google hired founder Jacob Bank (now VP of Product for Chrome) and staff to integrate Gemini into the browser. Product discontinued in favor of Google's AI-integrated alternative. Estimated ~25 employees affected based on $8.1M funding stage; free access ended Aug 15, paid access ends Sep 14.",
+      "collected_date": "2026-09-01",
+      "date": "2026-09-01",
+      "created_at": "2026-09-01T08:56:35.944789+00:00"
+    }
+  ],
   "health": {
-    "last_anthropic_success": "2026-08-12",
+    "last_anthropic_success": "2026-09-01",
     "last_openai_success": "2026-08-31",
-    "last_nonzero_collection": "2026-08-29",
-    "consecutive_zero_days": 2,
-    "last_collection_date": "2026-08-31"
+    "last_nonzero_collection": "2026-09-01",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-09-01"
   }
 }

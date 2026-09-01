@@ -116,3 +116,4 @@
 {"provider": "openai", "model": "gpt-4o", "input_tokens": 0, "output_tokens": 0, "search_calls": 1, "timestamp": "2026-08-29T10:29:18.258981+00:00", "date": "2026-08-29"}
 {"provider": "openai", "model": "gpt-4o", "input_tokens": 0, "output_tokens": 0, "search_calls": 1, "timestamp": "2026-08-30T09:29:55.360749+00:00", "date": "2026-08-30"}
 {"provider": "openai", "model": "gpt-4o", "input_tokens": 0, "output_tokens": 0, "search_calls": 1, "timestamp": "2026-08-31T10:07:40.916958+00:00", "date": "2026-08-31"}
+{"provider": "anthropic", "model": "claude-opus-4-7", "input_tokens": 230075, "output_tokens": 2971, "search_calls": 0, "timestamp": "2026-09-01T08:56:35.941676+00:00", "date": "2026-09-01"}
