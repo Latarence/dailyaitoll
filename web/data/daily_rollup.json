@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-09-01T08:56:35.944663+00:00",
+  "last_updated": "2026-09-02T08:10:09.230281+00:00",
   "totals": {
-    "jobs": 273646,
-    "teams": 164,
+    "jobs": 273654,
+    "teams": 165,
     "products": 1,
-    "companies": 134,
+    "companies": 135,
     "revenue": 0,
-    "labor_hours": -569083680
+    "labor_hours": -569100320
   },
   "today": {
-    "jobs": 507,
-    "teams": 6,
+    "jobs": 8,
+    "teams": 1,
     "products": 0,
-    "companies": 4,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": -1054560
+    "labor_hours": -16640
   },
   "daily_totals": {
     "2026-05-05": {
@@ -776,10 +776,38 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -176800
+    },
+    "2026-08-20": {
+      "jobs": 8,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -16640
     }
   },
-  "events_count": 131,
+  "events_count": 132,
   "all_events": [
+    {
+      "id": "evt_20260820_001",
+      "event_date": "2026-08-20",
+      "headline": "Expedia cuts 8 senior executives (SVP + 7 VPs) in AI-focused reorganization of Product & Technology division",
+      "source_url": "https://skift.com/2026/08/20/expedia-cuts-eight-executives-as-it-reorganizes-around-ai/",
+      "source_name": "Skift",
+      "excerpt": "Expedia Group has cut eight senior leaders, shifting authority from coordinating executives to focus on smaller AI-focused squads capable of building closer to the brands they support. Sachin Singh, senior vice president of book-to-trip technology, and seven other vice presidents covering payments, fraud and risk, and self-service tools are leaving the company. The reorg centralizes AI, data, and agentic platforms under Chief AI and Data Officer Xavier Amatriain.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 8,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": -16640
+      },
+      "notes": "Executive-layer AI restructuring; ~8,000-person Product and Technology group being reorganized into small autonomous AI-focused squads. Featured in Sept 1, 2026 AI Governance roundup as a recent example that 'no tier is safe from AI layoffs in 2026.' Event dated Aug 20-21, 2026 - slightly outside 48hr window but not previously tracked.",
+      "collected_date": "2026-09-02",
+      "date": "2026-09-02",
+      "created_at": "2026-09-02T08:10:09.230372+00:00"
+    },
     {
       "id": "evt_20260831_001",
       "event_date": "2026-08-31",
@@ -2816,118 +2844,36 @@
       "hashtags": "#Freshworks #CRM #SaaS #AILayoffs #TechLayoffs2024 #India #EnterpriseAI",
       "date": "2024-11-07",
       "created_at": "2026-04-27T17:59:55.141187"
-    },
-    {
-      "id": "evt_20241015_kaseya_119",
-      "event_date": "2024-10-15",
-      "collected_date": "2026-04-27",
-      "headline": "Kaseya cuts 200 jobs amid AI transition",
-      "source_url": "https://medhacloud.com/blog/kaseya-layoffs-2026-msp-industry",
-      "source_name": "TrueUp",
-      "excerpt": "Kaseya's 3rd round of cuts in 2024, eliminating ~200 roles in sales and back-office as it integrates the Datto acquisition and rolls out AI-automated MSP tools. Also laid off in September 2024.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 200,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -416000
-      },
-      "notes": "Kaseya's 3rd round of cuts in 2024, eliminating ~200 roles in sales and back-office as it integrates the Datto acquisition and rolls out AI-automated MSP tools. Also laid off in September 2024.",
-      "industry": "IT Management / MSP",
-      "hashtags": "#Kaseya #Datto #MSP #TechLayoffs2024 #ITManagement",
-      "date": "2024-10-15",
-      "created_at": "2026-04-27T17:59:55.141470"
     }
   ],
-  "summary": "Found 4 new AI-displacement events not previously tracked. Zomato cut 250 customer support jobs (Aug 31) as it consolidates operations and expands AI/automation use. PagerDuty announced a 15% workforce reduction (~172 jobs) on Aug 27 the same day it shipped an autonomous AI incident-response agent. Cybersecurity firm Pentera laid off another 60 employees (Aug 17), explicitly citing the shift to AI-based cybersecurity. AI workflow automation startup Relay.app is shutting down (product discontinued) with staff absorbed into Google's Chrome/Gemini team. Total: ~507 additional jobs displaced across 4 companies.",
+  "summary": "Limited new verifiable AI displacement events surfaced in the 24-48 hour window. Most 'September 2026' coverage refers to planned/anticipated Oracle and Pinterest cuts that have not yet been executed. The one notable previously-untracked event is Expedia's August 20-21 elimination of 8 senior executives (SVP + 7 VPs) in an explicitly AI-driven reorganization of its Product & Technology division, which continues to receive coverage as recently as September 1, 2026. Aggregate trackers show 2026 AI-attributed layoffs have now reached ~172,044-205,000 workers year-to-date, but no other specific new company events from the past 48 hours were identified beyond what is already tracked.",
   "events": [
     {
-      "id": "evt_20260831_001",
-      "event_date": "2026-08-31",
-      "headline": "Zomato lays off 250 employees, shuts Hyderabad customer support center amid AI automation push",
-      "source_url": "https://viestories.com/startupnews/zomato-lays-off-240-employees-as-hyderabad-customer-support-operations-shut-12458898",
-      "source_name": "Viestories / Business Standard",
-      "excerpt": "Zomato Increasing Use of AI and Automation. The latest layoffs are part of Zomato's wider restructuring of its customer support operations.",
-      "causality": "contributing",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 250,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -520000
-      },
-      "notes": "Eternal-owned Zomato shut its Hyderabad Customer Delight operations, moving in-house support to Gurugram. Reports indicate a larger share of customer support work is being outsourced and increased use of AI/automation. Prior 2025 round of ~600 customer support layoffs was explicitly tied to AI-driven cost cuts.",
-      "collected_date": "2026-09-01",
-      "date": "2026-09-01",
-      "created_at": "2026-09-01T08:56:35.944751+00:00"
-    },
-    {
-      "id": "evt_20260827_002",
-      "event_date": "2026-08-27",
-      "headline": "PagerDuty cuts 15% of workforce (~172 jobs) same day it ships autonomous AI incident response agent",
-      "source_url": "https://www.finalroundai.com/blog/pagerduty-layoffs",
-      "source_name": "FinalRoundAI",
-      "excerpt": "PagerDuty is cutting approximately 15% of its current headcount, which works out to roughly 173 roles against the 1,155 employees the company reported at the close of its last fiscal year.",
-      "causality": "inferred",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 172,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": -357760
-      },
-      "notes": "SEC Form 8-K filed Aug 27, 2026. While the 8-K itself avoided naming AI, PagerDuty simultaneously shipped an autonomous agent for incident response and CEO framed the company as an 'AI-first operations management' leader. Analysts characterize this as an early example of an AI-driven workforce redesign in enterprise software.",
-      "collected_date": "2026-09-01",
-      "date": "2026-09-01",
-      "created_at": "2026-09-01T08:56:35.944771+00:00"
-    },
-    {
-      "id": "evt_20260817_001",
-      "event_date": "2026-08-17",
-      "headline": "Pentera lays off 60 employees in second AI-driven restructuring round, shifting to AI cybersecurity",
-      "source_url": "https://www.calcalistech.com/ctechnews/article/cri3dnoqo",
-      "source_name": "Calcalist",
-      "excerpt": "Pentera plans to continue recruiting employees with relevant experience in artificial intelligence, reflecting the company's shift toward AI-based cybersecurity solutions... the changes were driven by the rapid development and adoption of artificial intelligence.",
+      "id": "evt_20260820_001",
+      "event_date": "2026-08-20",
+      "headline": "Expedia cuts 8 senior executives (SVP + 7 VPs) in AI-focused reorganization of Product & Technology division",
+      "source_url": "https://skift.com/2026/08/20/expedia-cuts-eight-executives-as-it-reorganizes-around-ai/",
+      "source_name": "Skift",
+      "excerpt": "Expedia Group has cut eight senior leaders, shifting authority from coordinating executives to focus on smaller AI-focused squads capable of building closer to the brands they support. Sachin Singh, senior vice president of book-to-trip technology, and seven other vice presidents covering payments, fraud and risk, and self-service tools are leaving the company. The reorg centralizes AI, data, and agentic platforms under Chief AI and Data Officer Xavier Amatriain.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
-        "jobs": 60,
-        "teams": 3,
-        "companies": 1,
-        "labor_hours": -124800
-      },
-      "notes": "Second round of cuts in four months at the Israeli cybersecurity unicorn, bringing total to ~100 (20% of workforce). Company explicitly stated changes were driven by adoption of AI and shift toward AI-based cybersecurity validation.",
-      "collected_date": "2026-09-01",
-      "date": "2026-09-01",
-      "created_at": "2026-09-01T08:56:35.944781+00:00"
-    },
-    {
-      "id": "evt_20260817_002",
-      "event_date": "2026-08-17",
-      "headline": "AI automation startup Relay.app shuts down; staff joins Google's Chrome/Gemini team",
-      "source_url": "https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/",
-      "source_name": "TechCrunch",
-      "excerpt": "Relay, an AI-powered workflow automation tool that was launched in 2021 with the goal of becoming the new Zapier, is shutting down, and some of its staff \u2014 including its top executive \u2014 are joining Google's Chrome team.",
-      "causality": "contributing",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 25,
+        "jobs": 8,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -52000
+        "labor_hours": -16640
       },
-      "notes": "Zapier competitor Relay.app is winding down after Google hired founder Jacob Bank (now VP of Product for Chrome) and staff to integrate Gemini into the browser. Product discontinued in favor of Google's AI-integrated alternative. Estimated ~25 employees affected based on $8.1M funding stage; free access ended Aug 15, paid access ends Sep 14.",
-      "collected_date": "2026-09-01",
-      "date": "2026-09-01",
-      "created_at": "2026-09-01T08:56:35.944789+00:00"
+      "notes": "Executive-layer AI restructuring; ~8,000-person Product and Technology group being reorganized into small autonomous AI-focused squads. Featured in Sept 1, 2026 AI Governance roundup as a recent example that 'no tier is safe from AI layoffs in 2026.' Event dated Aug 20-21, 2026 - slightly outside 48hr window but not previously tracked.",
+      "collected_date": "2026-09-02",
+      "date": "2026-09-02",
+      "created_at": "2026-09-02T08:10:09.230372+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-09-01",
+    "last_anthropic_success": "2026-09-02",
     "last_openai_success": "2026-08-31",
-    "last_nonzero_collection": "2026-09-01",
+    "last_nonzero_collection": "2026-09-02",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-09-01"
+    "last_collection_date": "2026-09-02"
   }
 }
