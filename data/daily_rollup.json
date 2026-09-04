@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-03T08:20:13.985686+00:00",
+  "last_updated": "2026-09-04T08:15:30.571629+00:00",
   "totals": {
     "jobs": 276954,
     "teams": 165,
@@ -9,12 +9,12 @@
     "labor_hours": -575964320
   },
   "today": {
-    "jobs": 3300,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -6864000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2852,34 +2852,13 @@
       "created_at": "2026-04-27T17:59:55.141154"
     }
   ],
-  "summary": "One new major event identified in the past 24-48 hours: Uber announced on September 2, 2026 that it is cutting about 3,300 roles, or 10% of its staff globally, in a massive restructuring aimed at reducing management layers and reallocating spending into its ride-sharing, delivery and robotaxi businesses. Khosrowshahi did not attribute the cuts to AI, which has been responsible for a wave of recent tech layoffs, so this is classified as 'contributing' causality \u2014 the savings are being redirected toward robotaxi and automation investments, placing it within the broader AI-era restructuring wave. The company said the changes will simplify operations and free resources for ride-sharing, delivery and robotaxi investments including more than $10 billion in partnerships. This is distinct from smaller previously-tracked Uber events (People & Places division, customer service). Other candidates reviewed (Groupon, Atlassian, Rackspace, Robinhood, Patreon, Fiverr) were either from months ago or already tracked.",
-  "events": [
-    {
-      "id": "evt_20260902_001",
-      "event_date": "2026-09-02",
-      "headline": "Uber cuts 3,300 jobs (10% of workforce) in restructuring to fund robotaxi and automation investments",
-      "source_url": "https://www.cnbc.com/2026/09/02/uber-to-cut-10percent-of-workforce-in-bid-to-move-simpler-and-faster.html",
-      "source_name": "CNBC",
-      "excerpt": "Uber on Wednesday announced plans to slash 10% of its workforce in a move to consolidate management layers and trim costs. Khosrowshahi did not attribute the cuts to AI, which has been responsible for a wave of recent tech layoffs.",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 3300,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -6864000
-      },
-      "notes": "Announced Sept 2, 2026 by CEO Dara Khosrowshahi. Uber is combining engineering, science and delivery divisions, cutting micro-teams by ~50%, and reducing employees more than seven layers below the CEO. Savings will be reallocated into ride-sharing, delivery, and robotaxi businesses (over $10B in partnerships), placing this within the broader wave of tech restructurings tied to AI/automation-era efficiency. CEO explicitly did NOT cite AI, so causality classified as 'contributing' rather than 'direct'. This is a separate, larger, company-wide event distinct from prior Uber cuts already tracked (People & Places division, customer service).",
-      "collected_date": "2026-09-03",
-      "date": "2026-09-03",
-      "created_at": "2026-09-03T08:20:13.985789+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-08-31",
+    "last_openai_success": "2026-09-04",
     "last_nonzero_collection": "2026-09-03",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-09-03"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-09-04"
   }
 }
