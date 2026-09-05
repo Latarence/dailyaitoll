@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-04T08:15:30.571629+00:00",
+  "last_updated": "2026-09-05T07:53:14.020894+00:00",
   "totals": {
     "jobs": 276954,
     "teams": 165,
@@ -2852,13 +2852,13 @@
       "created_at": "2026-04-27T17:59:55.141154"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
+  "summary": "Recent events include Uber's layoffs linked to AI-driven restructuring, Anthropic's pause in AI training due to safety concerns, and AWS's decision to shut down Mechanical Turk as AI capabilities advance.",
   "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-04",
-    "last_nonzero_collection": "2026-09-03",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-09-04"
+    "last_openai_success": "2026-09-05",
+    "last_nonzero_collection": "2026-09-05",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-09-05"
   }
 }
