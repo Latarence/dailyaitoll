@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-09-05T07:53:14.020894+00:00",
+  "last_updated": "2026-09-06T08:08:49.433233+00:00",
   "totals": {
-    "jobs": 276954,
+    "jobs": 277174,
     "teams": 165,
     "products": 1,
-    "companies": 136,
+    "companies": 137,
     "revenue": 0,
-    "labor_hours": -575964320
+    "labor_hours": -576421920
   },
   "today": {
-    "jobs": 0,
+    "jobs": 220,
     "teams": 0,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -457600
   },
   "daily_totals": {
     "2026-05-05": {
@@ -792,10 +792,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -6864000
+    },
+    "2026-09-03": {
+      "jobs": 220,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -457600
     }
   },
-  "events_count": 133,
+  "events_count": 134,
   "all_events": [
+    {
+      "id": "evt_20260903_001",
+      "event_date": "2026-09-03",
+      "headline": "PayPal India lays off 220 employees amid AI-adjacent restructuring",
+      "source_url": "https://www.replacedbyai.app/",
+      "source_name": "Replaced by AI",
+      "excerpt": "PayPal India has laid off 220 employees as part of an AI-adjacent restructuring effort.",
+      "causality": "contributing",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 220,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -457600
+      },
+      "notes": "AI-adjacent restructuring",
+      "collected_date": "2026-09-06",
+      "date": "2026-09-06",
+      "created_at": "2026-09-06T08:08:49.433336+00:00"
+    },
     {
       "id": "evt_20260902_001",
       "event_date": "2026-09-02",
@@ -2828,37 +2856,36 @@
       "hashtags": "#Equinix #DataCenter #AI #AILayoffs #TechLayoffs2024 #Infrastructure",
       "date": "2024-11-26",
       "created_at": "2026-04-27T17:59:55.141121"
-    },
-    {
-      "id": "evt_20241113_amd_117",
-      "event_date": "2024-11-13",
-      "collected_date": "2026-04-27",
-      "headline": "AMD cuts 1,000 jobs amid AI transition",
-      "source_url": "https://www.cnbc.com/2024/11/13/amd-layoffs-company-to-4percent-of-workforce-or-about-1000-employees-.html",
-      "source_name": "TrueUp",
-      "excerpt": "AMD cut ~1,000 employees (4% of workforce) to reallocate resources toward AI chip development. Gaming segment expected to fall 59% in 2024 while AI chip sales target $5B. AMD's MI300X AI accelerator competes with Nvidia's H100/H200 but Nvidia holds 80%+ market share. Stock down 5% vs Nvidia's +200% in 2024.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "AMD cut ~1,000 employees (4% of workforce) to reallocate resources toward AI chip development. Gaming segment expected to fall 59% in 2024 while AI chip sales target $5B. AMD's MI300X AI accelerator competes with Nvidia's H100/H200 but Nvidia holds 80%+ market share. Stock down 5% vs Nvidia's +200% in 2024.",
-      "industry": "Semiconductors",
-      "hashtags": "#AMD #Semiconductors #AIChips #Nvidia #AILayoffs #TechLayoffs2024 #GPU",
-      "date": "2024-11-13",
-      "created_at": "2026-04-27T17:59:55.141154"
     }
   ],
-  "summary": "Recent events include Uber's layoffs linked to AI-driven restructuring, Anthropic's pause in AI training due to safety concerns, and AWS's decision to shut down Mechanical Turk as AI capabilities advance.",
-  "events": [],
+  "summary": "Recent reports indicate that PayPal India, WPP, and Wonder have collectively laid off 1,370 employees due to AI-related restructuring and automation efforts.",
+  "events": [
+    {
+      "id": "evt_20260903_001",
+      "event_date": "2026-09-03",
+      "headline": "PayPal India lays off 220 employees amid AI-adjacent restructuring",
+      "source_url": "https://www.replacedbyai.app/",
+      "source_name": "Replaced by AI",
+      "excerpt": "PayPal India has laid off 220 employees as part of an AI-adjacent restructuring effort.",
+      "causality": "contributing",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 220,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -457600
+      },
+      "notes": "AI-adjacent restructuring",
+      "collected_date": "2026-09-06",
+      "date": "2026-09-06",
+      "created_at": "2026-09-06T08:08:49.433336+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-05",
-    "last_nonzero_collection": "2026-09-05",
+    "last_openai_success": "2026-09-06",
+    "last_nonzero_collection": "2026-09-06",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-09-05"
+    "last_collection_date": "2026-09-06"
   }
 }
