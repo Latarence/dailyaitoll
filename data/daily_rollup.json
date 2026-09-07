@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-06T08:08:49.433233+00:00",
+  "last_updated": "2026-09-07T08:39:53.016079+00:00",
   "totals": {
     "jobs": 277174,
     "teams": 165,
@@ -9,12 +9,12 @@
     "labor_hours": -576421920
   },
   "today": {
-    "jobs": 220,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -457600
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2858,34 +2858,13 @@
       "created_at": "2026-04-27T17:59:55.141121"
     }
   ],
-  "summary": "Recent reports indicate that PayPal India, WPP, and Wonder have collectively laid off 1,370 employees due to AI-related restructuring and automation efforts.",
-  "events": [
-    {
-      "id": "evt_20260903_001",
-      "event_date": "2026-09-03",
-      "headline": "PayPal India lays off 220 employees amid AI-adjacent restructuring",
-      "source_url": "https://www.replacedbyai.app/",
-      "source_name": "Replaced by AI",
-      "excerpt": "PayPal India has laid off 220 employees as part of an AI-adjacent restructuring effort.",
-      "causality": "contributing",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 220,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -457600
-      },
-      "notes": "AI-adjacent restructuring",
-      "collected_date": "2026-09-06",
-      "date": "2026-09-06",
-      "created_at": "2026-09-06T08:08:49.433336+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-06",
+    "last_openai_success": "2026-09-07",
     "last_nonzero_collection": "2026-09-06",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-09-06"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-09-07"
   }
 }
