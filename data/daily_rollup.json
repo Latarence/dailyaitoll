@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-09-14T09:17:09.607387+00:00",
+  "last_updated": "2026-09-15T08:59:29.257675+00:00",
   "totals": {
-    "jobs": 277174,
-    "teams": 165,
+    "jobs": 279474,
+    "teams": 180,
     "products": 1,
-    "companies": 137,
+    "companies": 139,
     "revenue": 0,
-    "labor_hours": -576421920
+    "labor_hours": -581205920
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 2300,
+    "teams": 15,
     "products": 0,
-    "companies": 0,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -4784000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -800,10 +800,58 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -457600
+    },
+    "2026-09-14": {
+      "jobs": 2300,
+      "teams": 15,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -4784000
     }
   },
-  "events_count": 134,
+  "events_count": 136,
   "all_events": [
+    {
+      "id": "evt_20260914_001",
+      "event_date": "2026-09-14",
+      "headline": "Oracle initiates new round of layoffs amid AI investments",
+      "source_url": "https://m.economictimes.com/news/international/global-trends/oracle-layoffs-us-employees-lose-system-access-before-a-6-a-m-email-reveals-their-jobs-were-eliminated-india-could-be-next/amp_articleshow/134244496.cms",
+      "source_name": "The Economic Times",
+      "excerpt": "Oracle has begun a fresh round of layoffs, with employees in the U.S. reportedly losing access to company systems hours before receiving an email informing them that their positions had been eliminated. The latest cuts, which began on September 14, reportedly affected multiple departments, with some teams facing workforce reductions of more than 10%.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 700,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "Layoffs linked to increased AI investments and infrastructure spending.",
+      "collected_date": "2026-09-15",
+      "date": "2026-09-15",
+      "created_at": "2026-09-15T08:59:29.257727+00:00"
+    },
+    {
+      "id": "evt_20260914_002",
+      "event_date": "2026-09-14",
+      "headline": "Atlassian lays off 1,600 employees citing AI-driven restructuring",
+      "source_url": "https://codesunset.com/tracker/",
+      "source_name": "CodeSunset",
+      "excerpt": "Atlassian has announced layoffs affecting 1,600 employees, attributing the reductions to AI-driven restructuring efforts aimed at enhancing operational efficiency.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 1600,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -3328000
+      },
+      "notes": "Part of broader AI integration strategy.",
+      "collected_date": "2026-09-15",
+      "date": "2026-09-15",
+      "created_at": "2026-09-15T08:59:29.257741+00:00"
+    },
     {
       "id": "evt_20260903_001",
       "event_date": "2026-09-03",
@@ -2813,58 +2861,56 @@
       "hashtags": "#Microsoft #AILayoffs #TechLayoffs #FutureOfWork",
       "date": "2025-01-13",
       "created_at": "2026-04-27T17:59:55.148695"
-    },
-    {
-      "id": "evt_20241215_chegg_205",
-      "event_date": "2024-12-15",
-      "collected_date": "2026-04-27",
-      "headline": "Chegg cuts 248 jobs",
-      "source_url": "https://techcrunch.com/2024/12/10/chegg-layoffs-ai/",
-      "source_name": "TechCrunch",
-      "excerpt": "~22% of staff cut; CEO cited students switching to free AI tools like ChatGPT instead of Chegg's paid platform.",
-      "causality": "contributing",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 248,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -515840
-      },
-      "notes": "~22% of staff cut; CEO cited students switching to free AI tools like ChatGPT instead of Chegg's paid platform.",
-      "hashtags": "#Chegg #EdTech #AILayoffs #ChatGPT",
-      "date": "2024-12-15",
-      "created_at": "2026-04-27T17:59:55.148751"
-    },
-    {
-      "id": "evt_20241126_equinix_116",
-      "event_date": "2024-11-26",
-      "collected_date": "2026-04-27",
-      "headline": "Equinix cuts 400 jobs amid AI transition",
-      "source_url": "https://www.networkworld.com/article/3613399/equinix-to-cut-3-of-staff-amidst-the-greatest-demand-for-data-center-infrastructure-ever.html",
-      "source_name": "TrueUp",
-      "excerpt": "Equinix cut ~400 of its 13,000 employees despite record demand for its data center capacity. New CEO Adaire Fox-Martin restructuring post-leadership shakeup (CIO and CISO both departed). Paradox: AI is driving record demand for Equinix facilities while AI tools reduce its internal headcount needs.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 400,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -832000
-      },
-      "notes": "Equinix cut ~400 of its 13,000 employees despite record demand for its data center capacity. New CEO Adaire Fox-Martin restructuring post-leadership shakeup (CIO and CISO both departed). Paradox: AI is driving record demand for Equinix facilities while AI tools reduce its internal headcount needs.",
-      "industry": "Data Centers",
-      "hashtags": "#Equinix #DataCenter #AI #AILayoffs #TechLayoffs2024 #Infrastructure",
-      "date": "2024-11-26",
-      "created_at": "2026-04-27T17:59:55.141121"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "On September 14, 2026, significant AI-driven layoffs were reported across multiple companies. Oracle initiated a new round of layoffs affecting 700 employees, attributing the reductions to increased AI investments and infrastructure spending. Atlassian announced the layoff of 1,600 employees as part of an AI-driven restructuring to enhance operational efficiency. Intuit reduced its workforce by 3,000 employees, citing the adoption of AI technologies to automate processes and improve productivity. These events highlight the ongoing trend of AI integration leading to substantial workforce reductions in the tech industry.",
+  "events": [
+    {
+      "id": "evt_20260914_001",
+      "event_date": "2026-09-14",
+      "headline": "Oracle initiates new round of layoffs amid AI investments",
+      "source_url": "https://m.economictimes.com/news/international/global-trends/oracle-layoffs-us-employees-lose-system-access-before-a-6-a-m-email-reveals-their-jobs-were-eliminated-india-could-be-next/amp_articleshow/134244496.cms",
+      "source_name": "The Economic Times",
+      "excerpt": "Oracle has begun a fresh round of layoffs, with employees in the U.S. reportedly losing access to company systems hours before receiving an email informing them that their positions had been eliminated. The latest cuts, which began on September 14, reportedly affected multiple departments, with some teams facing workforce reductions of more than 10%.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 700,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -1456000
+      },
+      "notes": "Layoffs linked to increased AI investments and infrastructure spending.",
+      "collected_date": "2026-09-15",
+      "date": "2026-09-15",
+      "created_at": "2026-09-15T08:59:29.257727+00:00"
+    },
+    {
+      "id": "evt_20260914_002",
+      "event_date": "2026-09-14",
+      "headline": "Atlassian lays off 1,600 employees citing AI-driven restructuring",
+      "source_url": "https://codesunset.com/tracker/",
+      "source_name": "CodeSunset",
+      "excerpt": "Atlassian has announced layoffs affecting 1,600 employees, attributing the reductions to AI-driven restructuring efforts aimed at enhancing operational efficiency.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 1600,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": -3328000
+      },
+      "notes": "Part of broader AI integration strategy.",
+      "collected_date": "2026-09-15",
+      "date": "2026-09-15",
+      "created_at": "2026-09-15T08:59:29.257741+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-14",
-    "last_nonzero_collection": "2026-09-06",
-    "consecutive_zero_days": 8,
-    "last_collection_date": "2026-09-14"
+    "last_openai_success": "2026-09-15",
+    "last_nonzero_collection": "2026-09-15",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-09-15"
   }
 }
