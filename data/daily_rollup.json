@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-09-16T08:52:15.911228+00:00",
+  "last_updated": "2026-09-17T08:56:35.277553+00:00",
   "totals": {
-    "jobs": 279474,
+    "jobs": 284474,
     "teams": 180,
     "products": 1,
-    "companies": 139,
+    "companies": 140,
     "revenue": 0,
-    "labor_hours": -581205920
+    "labor_hours": -591605920
   },
   "today": {
-    "jobs": 0,
+    "jobs": 5000,
     "teams": 0,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -10400000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -808,10 +808,38 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": -4784000
+    },
+    "2026-09-16": {
+      "jobs": 5000,
+      "teams": 0,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -10400000
     }
   },
-  "events_count": 136,
+  "events_count": 137,
   "all_events": [
+    {
+      "id": "evt_20260916_001",
+      "event_date": "2026-09-16",
+      "headline": "Oracle lays off undisclosed number of employees in restructuring, but hiring continues for AI and data center roles",
+      "source_url": "https://www.techradar.com/pro/oracle-lays-off-undisclosed-number-of-employees-in-restructuring-but-hiring-continues-for-ai-and-data-center-roles",
+      "source_name": "TechRadar",
+      "excerpt": "Oracle has initiated a round of layoffs as part of a broader company restructuring driven by shifts in artificial intelligence (AI) and business realignment. While the exact number of job cuts has not been confirmed, market researcher Amanda Goodall estimates that between 5,000 and 8,000 employees could be impacted.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 5000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -10400000
+      },
+      "notes": "Oracle is actively hiring for roles in AI, machine learning, data centers, and infrastructure, signaling a strategic pivot towards emerging technologies.",
+      "collected_date": "2026-09-17",
+      "date": "2026-09-17",
+      "created_at": "2026-09-17T08:56:35.277640+00:00"
+    },
     {
       "id": "evt_20260914_001",
       "event_date": "2026-09-14",
@@ -2840,36 +2868,36 @@
       "hashtags": "#Meta #Facebook #Instagram #AILayoffs #TechLayoffs2025 #Zuckerberg #PerformanceManagement",
       "date": "2025-01-14",
       "created_at": "2026-04-27T17:59:55.141088"
-    },
-    {
-      "id": "evt_20250113_microsof_204",
-      "event_date": "2025-01-13",
-      "collected_date": "2026-04-27",
-      "headline": "Microsoft cuts 200 jobs",
-      "source_url": "https://www.cnbc.com/2025/01/13/microsoft-layoffs-2025.html",
-      "source_name": "CNBC",
-      "excerpt": "Small round of cuts across gaming & sales teams; part of ongoing AI-driven restructuring entering 2025.",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 200,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -416000
-      },
-      "notes": "Small round of cuts across gaming & sales teams; part of ongoing AI-driven restructuring entering 2025.",
-      "hashtags": "#Microsoft #AILayoffs #TechLayoffs #FutureOfWork",
-      "date": "2025-01-13",
-      "created_at": "2026-04-27T17:59:55.148695"
     }
   ],
-  "summary": "No new verifiable AI displacement events found in the past 24-48 hours. Recent developments include market reactions to calls for slowing AI development and discussions on AI's impact on job postings.",
-  "events": [],
+  "summary": "Oracle has initiated a significant round of layoffs, potentially affecting between 5,000 and 8,000 employees, as part of a restructuring driven by shifts in artificial intelligence and business realignment. The company is simultaneously hiring for AI and data center roles, indicating a strategic pivot towards emerging technologies.",
+  "events": [
+    {
+      "id": "evt_20260916_001",
+      "event_date": "2026-09-16",
+      "headline": "Oracle lays off undisclosed number of employees in restructuring, but hiring continues for AI and data center roles",
+      "source_url": "https://www.techradar.com/pro/oracle-lays-off-undisclosed-number-of-employees-in-restructuring-but-hiring-continues-for-ai-and-data-center-roles",
+      "source_name": "TechRadar",
+      "excerpt": "Oracle has initiated a round of layoffs as part of a broader company restructuring driven by shifts in artificial intelligence (AI) and business realignment. While the exact number of job cuts has not been confirmed, market researcher Amanda Goodall estimates that between 5,000 and 8,000 employees could be impacted.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 5000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -10400000
+      },
+      "notes": "Oracle is actively hiring for roles in AI, machine learning, data centers, and infrastructure, signaling a strategic pivot towards emerging technologies.",
+      "collected_date": "2026-09-17",
+      "date": "2026-09-17",
+      "created_at": "2026-09-17T08:56:35.277640+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-16",
-    "last_nonzero_collection": "2026-09-15",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-09-16"
+    "last_openai_success": "2026-09-17",
+    "last_nonzero_collection": "2026-09-17",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-09-17"
   }
 }
