@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-17T08:56:35.277553+00:00",
+  "last_updated": "2026-09-18T08:31:36.819950+00:00",
   "totals": {
     "jobs": 284474,
     "teams": 180,
@@ -9,12 +9,12 @@
     "labor_hours": -591605920
   },
   "today": {
-    "jobs": 5000,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -10400000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2870,34 +2870,13 @@
       "created_at": "2026-04-27T17:59:55.141088"
     }
   ],
-  "summary": "Oracle has initiated a significant round of layoffs, potentially affecting between 5,000 and 8,000 employees, as part of a restructuring driven by shifts in artificial intelligence and business realignment. The company is simultaneously hiring for AI and data center roles, indicating a strategic pivot towards emerging technologies.",
-  "events": [
-    {
-      "id": "evt_20260916_001",
-      "event_date": "2026-09-16",
-      "headline": "Oracle lays off undisclosed number of employees in restructuring, but hiring continues for AI and data center roles",
-      "source_url": "https://www.techradar.com/pro/oracle-lays-off-undisclosed-number-of-employees-in-restructuring-but-hiring-continues-for-ai-and-data-center-roles",
-      "source_name": "TechRadar",
-      "excerpt": "Oracle has initiated a round of layoffs as part of a broader company restructuring driven by shifts in artificial intelligence (AI) and business realignment. While the exact number of job cuts has not been confirmed, market researcher Amanda Goodall estimates that between 5,000 and 8,000 employees could be impacted.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 5000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -10400000
-      },
-      "notes": "Oracle is actively hiring for roles in AI, machine learning, data centers, and infrastructure, signaling a strategic pivot towards emerging technologies.",
-      "collected_date": "2026-09-17",
-      "date": "2026-09-17",
-      "created_at": "2026-09-17T08:56:35.277640+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-17",
+    "last_openai_success": "2026-09-18",
     "last_nonzero_collection": "2026-09-17",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-09-17"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-09-18"
   }
 }
