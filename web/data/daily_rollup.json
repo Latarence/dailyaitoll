@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-21T09:19:29.932687+00:00",
+  "last_updated": "2026-09-22T08:49:57.435921+00:00",
   "totals": {
     "jobs": 284474,
     "teams": 180,
@@ -2870,13 +2870,13 @@
       "created_at": "2026-04-27T17:59:55.141088"
     }
   ],
-  "summary": "Block (Square) has laid off 4,000 employees, nearly half of its workforce, citing AI-native restructuring amid record profits.",
+  "summary": "No new verifiable AI displacement events found.",
   "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-21",
+    "last_openai_success": "2026-09-22",
     "last_nonzero_collection": "2026-09-21",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-09-21"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-09-22"
   }
 }
