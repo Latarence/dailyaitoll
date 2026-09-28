@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-09-27T09:33:13.497472+00:00",
+  "last_updated": "2026-09-28T10:12:13.529467+00:00",
   "totals": {
-    "jobs": 284474,
-    "teams": 180,
+    "jobs": 286074,
+    "teams": 185,
     "products": 1,
-    "companies": 140,
+    "companies": 141,
     "revenue": 0,
-    "labor_hours": -591605920
+    "labor_hours": -594933920
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 1600,
+    "teams": 5,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -3328000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -816,10 +816,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -10400000
+    },
+    "2026-09-09": {
+      "jobs": 1600,
+      "teams": 5,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": -3328000
     }
   },
-  "events_count": 137,
+  "events_count": 138,
   "all_events": [
+    {
+      "id": "evt_20260909_001",
+      "event_date": "2026-09-09",
+      "headline": "Microsoft plans additional 1,600 layoffs amid AI-driven restructuring",
+      "source_url": "https://www.gamesradar.com/games/its-a-new-day-at-blizzard-union-wins-historic-contract-protecting-1-900-world-of-warcraft-diablo-overwatch-and-more-workers-as-microsoft-plans-another-1-600-layoffs/",
+      "source_name": "GamesRadar",
+      "excerpt": "Blizzard employees, represented by the Communications Workers of America (CWA), have secured a historic union contract protecting 1,900 workers across key franchises including World of Warcraft, Diablo, and Overwatch. This comes amid Microsoft\u2019s plan to lay off an additional 1,600 employees as part of broader reductions affecting 3,200 jobs.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 1600,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -3328000
+      },
+      "notes": "Layoffs part of broader 3,200 job reductions; AI cited as a contributing factor.",
+      "collected_date": "2026-09-28",
+      "date": "2026-09-28",
+      "created_at": "2026-09-28T10:12:13.529584+00:00"
+    },
     {
       "id": "evt_20260916_001",
       "event_date": "2026-09-16",
@@ -2846,37 +2874,36 @@
       "hashtags": "#Salesforce #Agentforce #AILayoffs #TechLayoffs2025 #CRM",
       "date": "2025-02-04",
       "created_at": "2026-04-27T17:59:55.141004"
-    },
-    {
-      "id": "evt_20250114_meta_115",
-      "event_date": "2025-01-14",
-      "collected_date": "2026-04-27",
-      "headline": "Meta cuts 3,600 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3816579/tech-layoffs-this-year-a-timeline.html",
-      "source_name": "TrueUp",
-      "excerpt": "CEO Zuckerberg told staff he would 'move out low performers faster' \u2014 cutting 5% (~3,600 employees) beginning Feb 10. Company had already reduced headcount 5% via attrition in 2024. US fact-checkers replaced by AI-assisted community notes system. Zuckerberg framed it as building a 'more meritocratic' organization.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 3600,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -7488000
-      },
-      "notes": "CEO Zuckerberg told staff he would 'move out low performers faster' \u2014 cutting 5% (~3,600 employees) beginning Feb 10. Company had already reduced headcount 5% via attrition in 2024. US fact-checkers replaced by AI-assisted community notes system. Zuckerberg framed it as building a 'more meritocratic' organization.",
-      "industry": "Big Tech / Social Media",
-      "hashtags": "#Meta #Facebook #Instagram #AILayoffs #TechLayoffs2025 #Zuckerberg #PerformanceManagement",
-      "date": "2025-01-14",
-      "created_at": "2026-04-27T17:59:55.141088"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "Two significant AI-related layoff events were identified: Oracle's restructuring affecting an estimated 5,000 to 8,000 employees, and Microsoft's planned reduction of 1,600 positions as part of a broader 3,200 job cut.",
+  "events": [
+    {
+      "id": "evt_20260909_001",
+      "event_date": "2026-09-09",
+      "headline": "Microsoft plans additional 1,600 layoffs amid AI-driven restructuring",
+      "source_url": "https://www.gamesradar.com/games/its-a-new-day-at-blizzard-union-wins-historic-contract-protecting-1-900-world-of-warcraft-diablo-overwatch-and-more-workers-as-microsoft-plans-another-1-600-layoffs/",
+      "source_name": "GamesRadar",
+      "excerpt": "Blizzard employees, represented by the Communications Workers of America (CWA), have secured a historic union contract protecting 1,900 workers across key franchises including World of Warcraft, Diablo, and Overwatch. This comes amid Microsoft\u2019s plan to lay off an additional 1,600 employees as part of broader reductions affecting 3,200 jobs.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 1600,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": -3328000
+      },
+      "notes": "Layoffs part of broader 3,200 job reductions; AI cited as a contributing factor.",
+      "collected_date": "2026-09-28",
+      "date": "2026-09-28",
+      "created_at": "2026-09-28T10:12:13.529584+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-27",
-    "last_nonzero_collection": "2026-09-21",
-    "consecutive_zero_days": 6,
-    "last_collection_date": "2026-09-27"
+    "last_openai_success": "2026-09-28",
+    "last_nonzero_collection": "2026-09-28",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-09-28"
   }
 }
