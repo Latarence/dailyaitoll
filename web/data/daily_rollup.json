@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-28T10:12:13.529467+00:00",
+  "last_updated": "2026-09-29T10:09:56.129672+00:00",
   "totals": {
     "jobs": 286074,
     "teams": 185,
@@ -9,12 +9,12 @@
     "labor_hours": -594933920
   },
   "today": {
-    "jobs": 1600,
-    "teams": 5,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -3328000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2876,34 +2876,13 @@
       "created_at": "2026-04-27T17:59:55.141004"
     }
   ],
-  "summary": "Two significant AI-related layoff events were identified: Oracle's restructuring affecting an estimated 5,000 to 8,000 employees, and Microsoft's planned reduction of 1,600 positions as part of a broader 3,200 job cut.",
-  "events": [
-    {
-      "id": "evt_20260909_001",
-      "event_date": "2026-09-09",
-      "headline": "Microsoft plans additional 1,600 layoffs amid AI-driven restructuring",
-      "source_url": "https://www.gamesradar.com/games/its-a-new-day-at-blizzard-union-wins-historic-contract-protecting-1-900-world-of-warcraft-diablo-overwatch-and-more-workers-as-microsoft-plans-another-1-600-layoffs/",
-      "source_name": "GamesRadar",
-      "excerpt": "Blizzard employees, represented by the Communications Workers of America (CWA), have secured a historic union contract protecting 1,900 workers across key franchises including World of Warcraft, Diablo, and Overwatch. This comes amid Microsoft\u2019s plan to lay off an additional 1,600 employees as part of broader reductions affecting 3,200 jobs.",
-      "causality": "contributing",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 1600,
-        "teams": 5,
-        "companies": 1,
-        "labor_hours": -3328000
-      },
-      "notes": "Layoffs part of broader 3,200 job reductions; AI cited as a contributing factor.",
-      "collected_date": "2026-09-28",
-      "date": "2026-09-28",
-      "created_at": "2026-09-28T10:12:13.529584+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-28",
+    "last_openai_success": "2026-09-29",
     "last_nonzero_collection": "2026-09-28",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-09-28"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-09-29"
   }
 }
