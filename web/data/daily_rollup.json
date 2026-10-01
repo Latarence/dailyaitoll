@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-30T10:01:35.251151+00:00",
+  "last_updated": "2026-10-01T10:29:21.725233+00:00",
   "totals": {
     "jobs": 286074,
     "teams": 185,
@@ -2876,13 +2876,13 @@
       "created_at": "2026-04-27T17:59:55.141004"
     }
   ],
-  "summary": "AWS's closure of Mechanical Turk on September 30, 2026, directly displaces approximately 500,000 workers who performed tasks now handled by AI.",
+  "summary": "No new verifiable AI displacement events found.",
   "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-09-30",
+    "last_openai_success": "2026-10-01",
     "last_nonzero_collection": "2026-09-28",
-    "consecutive_zero_days": 2,
-    "last_collection_date": "2026-09-30"
+    "consecutive_zero_days": 3,
+    "last_collection_date": "2026-10-01"
   }
 }
