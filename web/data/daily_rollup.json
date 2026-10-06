@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-05T10:53:28.395362+00:00",
+  "last_updated": "2026-10-06T10:49:04.567259+00:00",
   "totals": {
     "jobs": 286074,
     "teams": 185,
@@ -2880,9 +2880,9 @@
   "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-10-05",
+    "last_openai_success": "2026-10-06",
     "last_nonzero_collection": "2026-09-28",
-    "consecutive_zero_days": 7,
-    "last_collection_date": "2026-10-05"
+    "consecutive_zero_days": 8,
+    "last_collection_date": "2026-10-06"
   }
 }
