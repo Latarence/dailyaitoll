@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-10-06T10:49:04.567259+00:00",
+  "last_updated": "2026-10-07T10:36:30.009571+00:00",
   "totals": {
-    "jobs": 286074,
+    "jobs": 287304,
     "teams": 185,
     "products": 1,
-    "companies": 141,
+    "companies": 143,
     "revenue": 0,
-    "labor_hours": -594933920
+    "labor_hours": -597492320
   },
   "today": {
-    "jobs": 0,
+    "jobs": 1230,
     "teams": 0,
     "products": 0,
-    "companies": 0,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": -2558400
   },
   "daily_totals": {
     "2026-05-05": {
@@ -824,10 +824,58 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": -3328000
+    },
+    "2026-10-06": {
+      "jobs": 1230,
+      "teams": 0,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": -2558400
     }
   },
-  "events_count": 138,
+  "events_count": 140,
   "all_events": [
+    {
+      "id": "evt_20261006_001",
+      "event_date": "2026-10-06",
+      "headline": "HubSpot lays off 660 employees amid AI-driven restructuring",
+      "source_url": "https://finance.yahoo.com/technology/ai/articles/hubspot-layoffs-660-jobs-cut-181029775.html",
+      "source_name": "Yahoo Finance",
+      "excerpt": "HubSpot announced Tuesday that it is eliminating approximately 660 positions, representing about 7% of its global workforce, as part of a restructuring plan tied to its shift toward AI-driven customer outcomes.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 660,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1372800
+      },
+      "notes": "Q4 restructuring",
+      "collected_date": "2026-10-07",
+      "date": "2026-10-07",
+      "created_at": "2026-10-07T10:36:30.009624+00:00"
+    },
+    {
+      "id": "evt_20261006_002",
+      "event_date": "2026-10-06",
+      "headline": "FICO cuts 570 jobs; denies AI involvement",
+      "source_url": "https://aiimpactnews.com/2026/10/07/two-ai-layoffs-in-one-day-1230-jobs-only-one-confessed/",
+      "source_name": "AI Impact News",
+      "excerpt": "Fair Isaac \u2014 the credit-scoring giant the world calls FICO \u2014 cut about 15% of its staff. One filed the term artificial intelligence right beside the layoffs. The other spent an entire memo insisting AI had nothing to do with it.",
+      "causality": "inferred",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 570,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1185600
+      },
+      "notes": "Q4 restructuring",
+      "collected_date": "2026-10-07",
+      "date": "2026-10-07",
+      "created_at": "2026-10-07T10:36:30.009639+00:00"
+    },
     {
       "id": "evt_20260909_001",
       "event_date": "2026-09-09",
@@ -2830,59 +2878,56 @@
       "hashtags": "#CISA #Cybersecurity #DOGE #GovernmentLayoffs #TechLayoffs2025 #NationalSecurity",
       "date": "2025-02-21",
       "created_at": "2026-04-27T17:59:55.140933"
-    },
-    {
-      "id": "evt_20250205_workday_112",
-      "event_date": "2025-02-05",
-      "collected_date": "2026-04-27",
-      "headline": "Workday cuts 1,750 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3817887/workday-to-cut-1750-jobs-shift-focus-to-ai-and-global-expansion.html",
-      "source_name": "TrueUp",
-      "excerpt": "Workday CEO Carl Eschenbach cut 1,750 employees (8.5% of workforce) to fund AI investment and global expansion, disposing of unused office space. Analysts flagged that AI \u2014 in the form of Workday's own HRIS automation \u2014 was reducing staffing needs in HR-adjacent roles internally.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1750,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -3640000
-      },
-      "notes": "Workday CEO Carl Eschenbach cut 1,750 employees (8.5% of workforce) to fund AI investment and global expansion, disposing of unused office space. Analysts flagged that AI \u2014 in the form of Workday's own HRIS automation \u2014 was reducing staffing needs in HR-adjacent roles internally.",
-      "industry": "HR / ERP Software",
-      "hashtags": "#Workday #HRIS #ERP #AILayoffs #TechLayoffs2025 #HRTech",
-      "date": "2025-02-05",
-      "created_at": "2026-04-27T17:59:55.140968"
-    },
-    {
-      "id": "evt_20250204_salesfor_113",
-      "event_date": "2025-02-04",
-      "collected_date": "2026-04-27",
-      "headline": "Salesforce cuts 1,000 jobs amid AI transition",
-      "source_url": "https://www.computerworld.com/article/3816579/tech-layoffs-this-year-a-timeline.html",
-      "source_name": "TrueUp",
-      "excerpt": "Salesforce cut 1,000+ workers across the company (per Bloomberg) while simultaneously hiring sales staff for new Agentforce AI products. CEO Benioff: the company hired 'zero new engineers in FY26' because AI coding agents handle capacity. Classic dual motion: cut human roles, sell AI to others.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": -2080000
-      },
-      "notes": "Salesforce cut 1,000+ workers across the company (per Bloomberg) while simultaneously hiring sales staff for new Agentforce AI products. CEO Benioff: the company hired 'zero new engineers in FY26' because AI coding agents handle capacity. Classic dual motion: cut human roles, sell AI to others.",
-      "industry": "CRM / Enterprise SaaS",
-      "hashtags": "#Salesforce #Agentforce #AILayoffs #TechLayoffs2025 #CRM",
-      "date": "2025-02-04",
-      "created_at": "2026-04-27T17:59:55.141004"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "Two significant AI-related layoffs were reported on October 6, 2026. HubSpot announced a reduction of 660 positions as part of its shift toward AI-driven customer outcomes. On the same day, FICO cut 570 jobs, representing about 15% of its staff, though the company denied AI involvement in the decision.",
+  "events": [
+    {
+      "id": "evt_20261006_001",
+      "event_date": "2026-10-06",
+      "headline": "HubSpot lays off 660 employees amid AI-driven restructuring",
+      "source_url": "https://finance.yahoo.com/technology/ai/articles/hubspot-layoffs-660-jobs-cut-181029775.html",
+      "source_name": "Yahoo Finance",
+      "excerpt": "HubSpot announced Tuesday that it is eliminating approximately 660 positions, representing about 7% of its global workforce, as part of a restructuring plan tied to its shift toward AI-driven customer outcomes.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 660,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1372800
+      },
+      "notes": "Q4 restructuring",
+      "collected_date": "2026-10-07",
+      "date": "2026-10-07",
+      "created_at": "2026-10-07T10:36:30.009624+00:00"
+    },
+    {
+      "id": "evt_20261006_002",
+      "event_date": "2026-10-06",
+      "headline": "FICO cuts 570 jobs; denies AI involvement",
+      "source_url": "https://aiimpactnews.com/2026/10/07/two-ai-layoffs-in-one-day-1230-jobs-only-one-confessed/",
+      "source_name": "AI Impact News",
+      "excerpt": "Fair Isaac \u2014 the credit-scoring giant the world calls FICO \u2014 cut about 15% of its staff. One filed the term artificial intelligence right beside the layoffs. The other spent an entire memo insisting AI had nothing to do with it.",
+      "causality": "inferred",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 570,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": -1185600
+      },
+      "notes": "Q4 restructuring",
+      "collected_date": "2026-10-07",
+      "date": "2026-10-07",
+      "created_at": "2026-10-07T10:36:30.009639+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-10-06",
-    "last_nonzero_collection": "2026-09-28",
-    "consecutive_zero_days": 8,
-    "last_collection_date": "2026-10-06"
+    "last_openai_success": "2026-10-07",
+    "last_nonzero_collection": "2026-10-07",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-10-07"
   }
 }
