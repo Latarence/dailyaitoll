@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-07T10:36:30.009571+00:00",
+  "last_updated": "2026-10-08T10:57:43.920950+00:00",
   "totals": {
     "jobs": 287304,
     "teams": 185,
@@ -9,12 +9,12 @@
     "labor_hours": -597492320
   },
   "today": {
-    "jobs": 1230,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 2,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": -2558400
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2880,54 +2880,13 @@
       "created_at": "2026-04-27T17:59:55.140933"
     }
   ],
-  "summary": "Two significant AI-related layoffs were reported on October 6, 2026. HubSpot announced a reduction of 660 positions as part of its shift toward AI-driven customer outcomes. On the same day, FICO cut 570 jobs, representing about 15% of its staff, though the company denied AI involvement in the decision.",
-  "events": [
-    {
-      "id": "evt_20261006_001",
-      "event_date": "2026-10-06",
-      "headline": "HubSpot lays off 660 employees amid AI-driven restructuring",
-      "source_url": "https://finance.yahoo.com/technology/ai/articles/hubspot-layoffs-660-jobs-cut-181029775.html",
-      "source_name": "Yahoo Finance",
-      "excerpt": "HubSpot announced Tuesday that it is eliminating approximately 660 positions, representing about 7% of its global workforce, as part of a restructuring plan tied to its shift toward AI-driven customer outcomes.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 660,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -1372800
-      },
-      "notes": "Q4 restructuring",
-      "collected_date": "2026-10-07",
-      "date": "2026-10-07",
-      "created_at": "2026-10-07T10:36:30.009624+00:00"
-    },
-    {
-      "id": "evt_20261006_002",
-      "event_date": "2026-10-06",
-      "headline": "FICO cuts 570 jobs; denies AI involvement",
-      "source_url": "https://aiimpactnews.com/2026/10/07/two-ai-layoffs-in-one-day-1230-jobs-only-one-confessed/",
-      "source_name": "AI Impact News",
-      "excerpt": "Fair Isaac \u2014 the credit-scoring giant the world calls FICO \u2014 cut about 15% of its staff. One filed the term artificial intelligence right beside the layoffs. The other spent an entire memo insisting AI had nothing to do with it.",
-      "causality": "inferred",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 570,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": -1185600
-      },
-      "notes": "Q4 restructuring",
-      "collected_date": "2026-10-07",
-      "date": "2026-10-07",
-      "created_at": "2026-10-07T10:36:30.009639+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-10-07",
+    "last_openai_success": "2026-10-08",
     "last_nonzero_collection": "2026-10-07",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-10-07"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-10-08"
   }
 }
