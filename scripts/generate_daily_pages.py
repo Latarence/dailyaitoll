@@ -147,6 +147,28 @@ def generate_daily_page(date_str, events, template):
 
     return html
 
+SITE_URL = "https://dailyaitoll.com"
+SITEMAP_EXCLUDE = ("api/", "patrons/checkout", "patrons/thank-you")
+
+
+def write_sitemap(web_dir: Path) -> int:
+    """Write web/sitemap.xml listing every index.html page (clean URLs)."""
+    urls = []
+    for page in sorted(web_dir.rglob("index.html")):
+        rel = page.parent.relative_to(web_dir).as_posix()
+        rel = "" if rel == "." else rel
+        if any(rel.startswith(x) for x in SITEMAP_EXCLUDE):
+            continue
+        urls.append(f"{SITE_URL}/{rel}" if rel else f"{SITE_URL}/")
+    body = "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls)
+    (web_dir / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{body}</urlset>\n"
+    )
+    return len(urls)
+
+
 def main():
     base_dir = Path(__file__).parent.parent
     web_dir = base_dir / "web"
@@ -216,6 +238,7 @@ def main():
         print(f"WARNING: skipping placeholder fill: {e}")
 
     print(f"\nGenerated {pages_generated} daily pages ({placeholders_generated} placeholders)")
+    print(f"Wrote sitemap.xml ({write_sitemap(web_dir)} URLs)")
     return 0
 
 if __name__ == "__main__":
