@@ -1,0 +1,4 @@
+Contact: mailto:security@mdo3d.com
+Expires: 2027-10-12T00:00:00Z
+Preferred-Languages: en
+Canonical: https://dailyaitoll.com/.well-known/security.txt
