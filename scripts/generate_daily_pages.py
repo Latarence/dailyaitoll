@@ -73,7 +73,13 @@ def generate_event_html(event, idx):
     confidence = int(event.get('confidence', 0.5) * 100)
     company = event.get('headline', '').split()[0] if event.get('headline') else 'Unknown'
     excerpt = event.get('excerpt', '') or event.get('notes', '') or ''
-    source_url = event.get('source_url', '#')
+    source_url = event.get('source_url')
+    if source_url:
+        label = 'source (archived)' if event.get('source_archived') else 'source'
+        source_html = f'<a href="{source_url}" target="_blank" rel="noopener">{label}</a>'
+    else:
+        # C7-006: the original article is gone and no archived copy exists. Say so; never invent one.
+        source_html = 'source (link no longer available)'
     event_id = event.get('id', f'event-{idx}')
 
     return f'''
@@ -84,7 +90,7 @@ def generate_event_html(event, idx):
                     <span class="entry-jobs">{jobs:,}</span>
                 </div>
                 <div class="entry-meta">
-                    {confidence}% · <a href="{source_url}" target="_blank" rel="noopener">source</a>
+                    {confidence}% · {source_html}
                 </div>
                 <div class="entry-excerpt">{excerpt}</div>
             </div>
