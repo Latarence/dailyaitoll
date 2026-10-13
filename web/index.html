@@ -32,12 +32,12 @@
             --border: #333;
             --border-dim: #2a2a28;
             --text: #F1EFE8;
-            --muted: #888780;
-            --dim: #555;
+            --muted: #a19f98;
+            --dim: #8f8e88;
             --slate: #444;
             --ink: #F1EFE8;
             --toll-red: #A32D2D;
-            --toll-red-dark: #E24B4A;
+            --toll-red-dark: #EA605F;
             --cursor-outer: rgba(241,239,232,0.55);
             --cursor-inner: rgba(241,239,232,1);
         }
@@ -49,7 +49,7 @@
             --border-dim: rgba(0,0,0,0.06);
             --text: #1a1916;
             --muted: #6a6860;
-            --dim: #a09c94;
+            --dim: #6a6860;
             --slate: #d0ccc4;
             --ink: #1a1916;
             --toll-red: #8B2525;
@@ -343,6 +343,37 @@
             letter-spacing: 0.05em;
             margin-top: 0.25rem;
         }
+
+        .hero-cta {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        .hero-cta-btn {
+            display: inline-block;
+            min-height: 44px;
+            padding: 0.75rem 1.75rem;
+            background: var(--toll-red);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.15s;
+        }
+
+        .hero-cta-btn:hover, .hero-cta-btn:focus-visible { filter: brightness(1.15); }
+        .hero-cta-btn:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+
+        .hero-cta-sub {
+            margin-top: 0.75rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .hero-cta-sub a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
 
         .hero-share {
             display: flex;
@@ -1015,6 +1046,11 @@
                 </div>
             </div>
 
+            <div class="hero-cta">
+                <a href="/data/" class="hero-cta-btn">Get the data</a>
+                <p class="hero-cta-sub">Licensed CSV of every event, from $5. <a href="/pricing/">See pricing</a></p>
+            </div>
+
             <div class="hero-share">
                 <a href="#" id="share-linkedin" title="LinkedIn" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -1060,6 +1096,7 @@
                     <a href="/trends/">Trends</a>
                     <a href="/data/">Data</a>
                     <a href="/patrons/">Patrons</a>
+                    <a href="/pricing/">Pricing</a>
                     <a href="https://www.linkedin.com/company/dailyaitoll" class="footer-linkedin" title="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
                 </div>
             </div>

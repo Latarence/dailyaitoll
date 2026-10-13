@@ -34,7 +34,20 @@ module.exports = async (req, res) => {
     const siteUrl = process.env.SITE_URL || 'https://dailyaitoll.com';
     const priceId = getPriceId(tier);
 
-    const lineItem = priceId
+    // Shown = charged: /data and /pricing list TIERS[tier].amount. A configured Stripe Price is used
+    // only if it charges exactly that amount in USD; otherwise the inline price below is used.
+    let usePriceId = false;
+    if (priceId) {
+      try {
+        const p = await stripe.prices.retrieve(priceId);
+        usePriceId = !!p && p.active !== false && p.currency === 'usd' && p.unit_amount === TIERS[tier].amount;
+        if (!usePriceId) console.warn(`data checkout: price for ${tier} does not match the listed amount; using inline price`);
+      } catch (e) {
+        console.warn(`data checkout: could not load price for ${tier}; using inline price`);
+      }
+    }
+
+    const lineItem = usePriceId
       ? { price: priceId, quantity: 1 }
       : {
           price_data: {
@@ -67,3 +80,5 @@ module.exports = async (req, res) => {
     return res.status(500).json({ error: 'Failed to create checkout session' });
   }
 };
+
+module.exports.TIERS = TIERS;

@@ -75,3 +75,5 @@ module.exports = async (req, res) => {
     return res.status(500).json({ error: 'Failed to create checkout session' });
   }
 };
+
+module.exports.PRICES = PRICES;
