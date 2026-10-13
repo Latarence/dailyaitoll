@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | Daily AI Toll</title>
+    <meta name="description" content="Accuracy and liability disclaimer for Daily AI Toll data.">
+    <link rel="canonical" href="https://dailyaitoll.com/disclaimer">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-dark.png">
+    <meta name="theme-color" content="#1A1A18">
+    <meta property="og:title" content="Disclaimer | Daily AI Toll">
+    <meta property="og:description" content="Accuracy and liability disclaimer for Daily AI Toll data.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dailyaitoll.com/disclaimer">
+    <meta property="og:site_name" content="Daily AI Toll">
+    <meta property="og:image" content="https://dailyaitoll.com/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Disclaimer | Daily AI Toll">
+    <meta name="twitter:description" content="Accuracy and liability disclaimer for Daily AI Toll data.">
+    <meta name="twitter:image" content="https://dailyaitoll.com/images/og-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1A1A18;
+            --surface: #232321;
+            --border: #333;
+            --text: #F1EFE8;
+            --muted: #a19f98;
+            --dim: #8f8e88;
+            --toll-red: #A32D2D;
+            --toll-red-dark: #EA605F;
+        }
+
+        :root.light {
+            --bg: #f5f3ee;
+            --surface: #edeae4;
+            --border: rgba(0,0,0,0.12);
+            --text: #1a1916;
+            --muted: #6a6860;
+            --dim: #6a6860;
+            --toll-red: #8B2525;
+            --toll-red-dark: #C03030;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.8;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.75rem;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text);
+        }
+
+        .nav-brand svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-linkedin {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-btn {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 0.25rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-btn:hover {
+            color: var(--text);
+        }
+
+        /* Mobile-only nav actions wrapper (theme toggle + hamburger) */
+        .nav-mobile-actions { display: none; align-items: center; gap: 0.25rem; }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--muted);
+            transition: color 0.15s;
+        }
+        .hamburger:hover { color: var(--text); }
+        .hamburger svg { width: 22px; height: 22px; }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--bg);
+            z-index: 1000;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+        .mobile-menu.open { opacity: 1; visibility: visible; }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--muted);
+            transition: color 0.15s;
+        }
+        .mobile-menu-close:hover { color: var(--text); }
+        .mobile-menu-close svg { width: 24px; height: 24px; }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .mobile-menu-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.15s;
+        }
+        .mobile-menu-links a:last-child { border-bottom: none; }
+        .mobile-menu-links a:hover { color: var(--toll-red-dark); }
+
+        .mobile-menu-footer {
+            margin-top: auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .mobile-menu-footer .theme-btn,
+        .mobile-menu-footer .nav-linkedin { color: var(--muted); transition: color 0.15s; }
+        .mobile-menu-footer .theme-btn:hover,
+        .mobile-menu-footer .nav-linkedin:hover { color: var(--text); }
+        .mobile-menu-footer .theme-btn svg,
+        .mobile-menu-footer .nav-linkedin svg { width: 22px; height: 22px; }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .nav-mobile-actions { display: flex; } .hamburger { display: flex; }
+        }
+
+        .about-text {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 0.9375rem;
+            color: var(--text);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.75rem;
+            text-indent: 1.5em;
+        }
+
+        .about-text p:first-child {
+            text-indent: 0;
+        }
+
+        .about-text p:first-child::first-letter {
+            font-size: 3.5rem;
+            float: left;
+            line-height: 1;
+            padding-right: 0.5rem;
+            padding-top: 0.1rem;
+            font-family: Georgia, serif;
+            color: var(--toll-red-dark);
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-text em {
+            font-style: italic;
+        }
+
+        .section {
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6875rem;
+            color: var(--dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .share-icons {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .share-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.15s;
+        }
+
+        .share-icons a:hover {
+            color: var(--text);
+            border-color: var(--muted);
+        }
+
+        .share-icons svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .patron-cta {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.875rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--toll-red-dark);
+            color: var(--bg);
+            border: none;
+        }
+
+        .btn:hover {
+            background: #f25d5c;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        .footer-linkedin {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-disclaimer {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.625rem;
+            color: var(--dim);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .legal { max-width: 720px; margin: 2rem auto 0; line-height: 1.7; font-size: 0.9375rem; }
+        .legal h1 { font-family: 'Inter', sans-serif; font-size: 1.75rem; font-weight: 600; margin: 0 0 1rem; }
+        .legal h2 { font-family: 'Inter', sans-serif; font-size: 1.125rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+        .legal h3 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+        .legal p, .legal li { color: var(--text); margin: 0 0 0.875rem; }
+        .legal ul, .legal ol { padding-left: 1.5rem; margin: 0 0 1rem; }
+        .legal li { margin-bottom: 0.375rem; }
+        .legal a { color: var(--text); }
+        .legal .legal-meta { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--muted); margin: 0 0 0.25rem; }
+        .legal blockquote { border-left: 2px solid var(--border); margin: 1rem 0; padding: 0.25rem 0 0.25rem 1rem; }
+        .legal hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+    </style>
+  <script src="/js/consent.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/" class="nav-brand">
+                <svg viewBox="0 0 32 32" fill="currentColor">
+                    <rect x="4" y="4" width="6" height="24" rx="1"/>
+                    <rect x="13" y="12" width="6" height="16" rx="1"/>
+                    <rect x="22" y="18" width="6" height="10" rx="1"/>
+                </svg>
+                <span>Daily AI Toll</span>
+            </a>
+            <div class="nav-links">
+                <a href="/about">About</a>
+                <a href="/trends">Trends</a>
+                <a href="/data">Data</a>
+                <a href="/patrons">Patrons</a>
+                <a href="https://www.linkedin.com/company/dailyaitoll" class="nav-linkedin" title="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="nav-mobile-actions">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+                <button class="hamburger" onclick="openMobileMenu()" aria-label="Open menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <a href="/" class="nav-brand">
+                    <svg viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="4" width="6" height="24" rx="1"/><rect x="13" y="12" width="6" height="16" rx="1"/><rect x="22" y="18" width="6" height="10" rx="1"/></svg>
+                    <span>Daily AI Toll</span>
+                </a>
+                <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/trends">Trends</a>
+                <a href="/data">Data</a>
+                <a href="/patrons">Patrons</a>
+            </div>
+            <div class="mobile-menu-footer">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                </button>
+                <a href="https://www.linkedin.com/company/dailyaitoll" class="nav-linkedin" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <main class="legal">
+<h1>Data Accuracy and Liability Disclaimer</h1>
+<p class="legal-meta"><strong>Applies to:</strong> dailyaitoll.com ("Daily AI Toll," the "Site") and the Daily AI Toll dataset (the "Data").</p>
+<p class="legal-meta"><strong>Effective date:</strong> October 13, 2026</p>
+<p class="legal-meta"><strong>Contact:</strong> <a href="mailto:data@dailyaitoll.com">data@dailyaitoll.com</a></p>
+<blockquote><p><strong>Read this first.</strong> Daily AI Toll publishes claims about named companies, products, and workforce changes that are compiled from third-party sources and processed with automated (large language model) tools. This disclaimer explains what the Data is, what it is not, how it may be wrong, and how to get errors corrected. By using the Site or the Data, you accept the terms below.</p></blockquote>
+<hr>
+<h2>1. What Daily AI Toll is</h2>
+<p>Daily AI Toll is a running, best-effort record of publicly reported instances in which artificial intelligence is described as replacing, reducing, or displacing human work — across jobs, teams, products, companies, revenue, and labor hours. Each entry is intended to link back to a publicly available source and to include an excerpt, a causality assessment, and a numeric confidence score.</p>
+<p>Daily AI Toll is a <strong>compilation and characterization of third-party reporting</strong>. It is not original investigative journalism, it is not an audit, and it is not a certification of any fact about any company or person.</p>
+<h2>2. How the Data is produced (and why that matters)</h2>
+<p>Entries are generated through an automated pipeline that uses large language models ("LLMs") to search public sources, extract candidate events, summarize them, assign a causality category, and assign a confidence score. Some entries receive human review; many do not, or receive only limited review.</p>
+<p>Automated language models are known to make mistakes. They can:</p>
+<ul><li>misread or misattribute a source;
+</li><li>summarize a source inaccurately or out of context;
+</li><li>combine facts from different sources incorrectly;
+</li><li>infer a cause (such as "AI") that the underlying source did not actually state;
+</li><li>state a number, date, company name, or job count that is wrong; and
+</li><li>present all of the above with apparent confidence. You should assume that <strong>any individual entry may contain one or more errors of these kinds.</strong>
+</li></ul>
+<h2>3. Confidence scores are estimates, not assertions of fact</h2>
+<p>Each entry may carry a numeric "confidence score" (for example, on a 0.0–1.0 scale). This score is an <strong>internal, automated estimate</strong> of how well-supported the entry appeared to be at the time it was generated, based on factors such as source type and corroboration. It is:</p>
+<ul><li><strong>not</strong> a probability in any statistical sense;
+</li><li><strong>not</strong> a warranty, guarantee, rating, or certification;
+</li><li><strong>not</strong> an assertion that the underlying event is true;
+</li><li><strong>not</strong> professional, legal, financial, employment, or investment advice; and
+</li><li><strong>not</strong> a statement that any named company did, or did not, take any particular action. A high confidence score means only that the automated process found the item comparatively well-sourced. It does not make the item true. A low score does not make it false.
+</li></ul>
+<h2>4. Causality labels are characterizations of what sources reported</h2>
+<p>Each entry may carry a causality label (for example: <em>direct</em>, <em>contributing</em>, <em>inferred</em>, or <em>unclear</em>). These labels describe <strong>how the underlying source(s) characterized the role of AI</strong>, as interpreted by the automated pipeline. They are editorial characterizations of reporting, not independent findings of fact and not accusations against any company. In particular, an "inferred" label expressly signals that no source directly attributed the event to AI and that the connection is an estimate.</p>
+<h2>5. No warranty of accuracy or completeness</h2>
+<p>To the fullest extent permitted by applicable law, the Site and the Data are provided <strong>"as is" and "as available," without warranties of any kind</strong>, express or implied. We specifically disclaim any warranty that the Data is accurate, current, complete, verified, reliable, without errors, or fit for any particular purpose. We do not warrant that any source URL will remain live, that any excerpt faithfully reflects its source, that any number is correct, or that any company, product, or event is correctly identified or characterized.</p>
+<p>The Data is a snapshot of automated processing of third-party reporting at a point in time. Sources change, get corrected, or are retracted; our record may lag, omit, or misstate those changes.</p>
+<h2>6. Do not rely on the Data as a sole basis for decisions</h2>
+<p><strong>You must not use the Data as the sole basis for any decision, and you must independently verify any entry before relying on it.</strong> This includes, without limitation, decisions relating to:</p>
+<ul><li>investing, trading, or valuing any company or security;
+</li><li>employment, hiring, firing, or personnel matters;
+</li><li>credit, lending, insurance, or procurement;
+</li><li>journalism or publication (you are responsible for independently confirming any fact you republish); and
+</li><li>any legal, regulatory, or reputational action concerning any company or person. The appropriate use of the Data is as a <strong>starting point for further research</strong>: a pointer to primary sources that you then verify yourself.
+</li></ul>
+<h2>7. References to named companies, products, and people</h2>
+<p>Daily AI Toll references named third parties because it summarizes public reporting about them. To reduce the risk that entries are read as unfounded accusations, our stated practice is:</p>
+<ol><li><strong>Source-anchored.</strong> Each entry is intended to be tied to a publicly available source and to reflect what that source reported, rather than an independent conclusion of our own.
+</li><li><strong>Reporting, not adjudication.</strong> Entries describe what sources have said. They are not findings that any company engaged in any wrongdoing, and nothing on the Site should be read as an allegation of illegal, improper, or bad-faith conduct by any named party.
+</li><li><strong>Characterization is labeled as such.</strong> Causality labels and confidence scores are presented as estimates and characterizations, per Sections 3 and 4, not as verified fact.
+</li><li><strong>Neutral framing.</strong> The project's stated purpose is to record publicly reported workforce impacts, not to disparage, boycott, or campaign against any company, product, or individual. Company, product, and organization names, logos, and trademarks referenced on the Site are the property of their respective owners. Their appearance does not imply any endorsement of, affiliation with, or sponsorship by those owners. Nothing in this section is a representation that every entry is accurate. It describes our intended sourcing practice; individual entries may still be wrong and are subject to the corrections process below.
+</li></ol>
+<h2>8. Corrections process</h2>
+<p>We want the record to be as accurate as possible and we will review good-faith correction requests.</p>
+<p><strong>If you are the subject of an entry (or their representative), a source, or any reader who believes an entry is inaccurate, incomplete, out of context, or based on a source that has since been corrected or retracted:</strong></p>
+<ul><li>Email <strong><a href="mailto:data@dailyaitoll.com">data@dailyaitoll.com</a></strong> with the subject line <strong>"Correction request."</strong>
+</li><li>Include, if you can: the entry identifier or a link to it; the specific statement you believe is inaccurate; and any source, document, or explanation supporting the correction. <strong>What we will do:</strong> We will review timely, good-faith requests and, where we agree a correction is warranted, we may update, annotate, contextualize, or remove the entry, and (where applicable) recalculate affected totals. Consistent with maintaining an auditable record, corrections may be handled by adding a correcting entry or annotation rather than silently deleting history. We aim to review correction requests promptly but do not guarantee any specific response time or outcome. Submitting a request does not create any contract, and our review does not waive any right or defense. This corrections process is the fastest and preferred path to resolving accuracy concerns and is offered in addition to, not instead of, any rights you may have under applicable law.
+</li></ul>
+<h2>9. No professional advice; no relationship</h2>
+<p>The Site and the Data do not constitute legal, financial, investment, accounting, tax, employment, or other professional advice, and using them does not create any advisory, fiduciary, or professional relationship between you and Daily AI Toll.</p>
+<h2>10. Limitation of liability</h2>
+<p>To the fullest extent permitted by applicable law, Daily AI Toll and its operators, contributors, and agents will not be liable for any loss or damage arising out of or relating to your use of, or reliance on, the Site or the Data, including any errors, omissions, mischaracterizations, or outdated entries. The limitations and exclusions in the <a href="/terms">Terms of Service</a> apply in full to this disclaimer.</p>
+<h2>11. Changes</h2>
+<p>We may update this disclaimer at any time. Material changes will be reflected by a revised effective date. Your continued use of the Site or the Data after a change constitutes acceptance of the updated disclaimer.</p>
+        </main>
+
+        <footer>
+            <div class="footer-main">
+                <div class="footer-links">
+                    <a href="/trends">Trends</a>
+                    <a href="/about">About</a>
+                    <a href="/data">Data</a>
+                    <a href="/patrons">Patrons</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="https://www.linkedin.com/company/dailyaitoll" class="footer-linkedin" title="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+            </div>
+            <p class="footer-disclaimer">
+                AI-automated aggregation of publicly reported information. Contains no opinions or original analysis. Data may contain errors. Verify all information before use.
+            </p>
+            <div class="footer-legal" style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.25rem;margin:1rem 0 0.75rem;font-size:0.6875rem;"><a href="/terms" style="color:var(--muted);text-decoration:none">Terms</a><a href="/privacy" style="color:var(--muted);text-decoration:none">Privacy</a><a href="/refund-policy" style="color:var(--muted);text-decoration:none">Refunds</a><a href="/cancellation" style="color:var(--muted);text-decoration:none">Cancellation</a><a href="/acceptable-use" style="color:var(--muted);text-decoration:none">Acceptable Use</a><a href="/data-license" style="color:var(--muted);text-decoration:none">Data License</a><a href="/disclaimer" style="color:var(--muted);text-decoration:none">Disclaimer</a></div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('light');
+            localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
+        }
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light');
+        }
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.querySelectorAll('.mobile-menu-links a').forEach(link => link.addEventListener('click', closeMobileMenu));
+    </script>
+</body>
+</html>

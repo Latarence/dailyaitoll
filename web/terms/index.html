@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Daily AI Toll</title>
+    <meta name="description" content="Terms of Service for Daily AI Toll (dailyaitoll.com).">
+    <link rel="canonical" href="https://dailyaitoll.com/terms">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-dark.png">
+    <meta name="theme-color" content="#1A1A18">
+    <meta property="og:title" content="Terms of Service | Daily AI Toll">
+    <meta property="og:description" content="Terms of Service for Daily AI Toll (dailyaitoll.com).">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dailyaitoll.com/terms">
+    <meta property="og:site_name" content="Daily AI Toll">
+    <meta property="og:image" content="https://dailyaitoll.com/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Terms of Service | Daily AI Toll">
+    <meta name="twitter:description" content="Terms of Service for Daily AI Toll (dailyaitoll.com).">
+    <meta name="twitter:image" content="https://dailyaitoll.com/images/og-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1A1A18;
+            --surface: #232321;
+            --border: #333;
+            --text: #F1EFE8;
+            --muted: #a19f98;
+            --dim: #8f8e88;
+            --toll-red: #A32D2D;
+            --toll-red-dark: #EA605F;
+        }
+
+        :root.light {
+            --bg: #f5f3ee;
+            --surface: #edeae4;
+            --border: rgba(0,0,0,0.12);
+            --text: #1a1916;
+            --muted: #6a6860;
+            --dim: #6a6860;
+            --toll-red: #8B2525;
+            --toll-red-dark: #C03030;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.8;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.75rem;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text);
+        }
+
+        .nav-brand svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-linkedin {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-btn {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 0.25rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-btn:hover {
+            color: var(--text);
+        }
+
+        /* Mobile-only nav actions wrapper (theme toggle + hamburger) */
+        .nav-mobile-actions { display: none; align-items: center; gap: 0.25rem; }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--muted);
+            transition: color 0.15s;
+        }
+        .hamburger:hover { color: var(--text); }
+        .hamburger svg { width: 22px; height: 22px; }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--bg);
+            z-index: 1000;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+        .mobile-menu.open { opacity: 1; visibility: visible; }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--muted);
+            transition: color 0.15s;
+        }
+        .mobile-menu-close:hover { color: var(--text); }
+        .mobile-menu-close svg { width: 24px; height: 24px; }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .mobile-menu-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.15s;
+        }
+        .mobile-menu-links a:last-child { border-bottom: none; }
+        .mobile-menu-links a:hover { color: var(--toll-red-dark); }
+
+        .mobile-menu-footer {
+            margin-top: auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .mobile-menu-footer .theme-btn,
+        .mobile-menu-footer .nav-linkedin { color: var(--muted); transition: color 0.15s; }
+        .mobile-menu-footer .theme-btn:hover,
+        .mobile-menu-footer .nav-linkedin:hover { color: var(--text); }
+        .mobile-menu-footer .theme-btn svg,
+        .mobile-menu-footer .nav-linkedin svg { width: 22px; height: 22px; }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .nav-mobile-actions { display: flex; } .hamburger { display: flex; }
+        }
+
+        .about-text {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 0.9375rem;
+            color: var(--text);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.75rem;
+            text-indent: 1.5em;
+        }
+
+        .about-text p:first-child {
+            text-indent: 0;
+        }
+
+        .about-text p:first-child::first-letter {
+            font-size: 3.5rem;
+            float: left;
+            line-height: 1;
+            padding-right: 0.5rem;
+            padding-top: 0.1rem;
+            font-family: Georgia, serif;
+            color: var(--toll-red-dark);
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-text em {
+            font-style: italic;
+        }
+
+        .section {
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6875rem;
+            color: var(--dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .share-icons {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .share-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.15s;
+        }
+
+        .share-icons a:hover {
+            color: var(--text);
+            border-color: var(--muted);
+        }
+
+        .share-icons svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .patron-cta {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.875rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--toll-red-dark);
+            color: var(--bg);
+            border: none;
+        }
+
+        .btn:hover {
+            background: #f25d5c;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        .footer-linkedin {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-disclaimer {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.625rem;
+            color: var(--dim);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .legal { max-width: 720px; margin: 2rem auto 0; line-height: 1.7; font-size: 0.9375rem; }
+        .legal h1 { font-family: 'Inter', sans-serif; font-size: 1.75rem; font-weight: 600; margin: 0 0 1rem; }
+        .legal h2 { font-family: 'Inter', sans-serif; font-size: 1.125rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+        .legal h3 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+        .legal p, .legal li { color: var(--text); margin: 0 0 0.875rem; }
+        .legal ul, .legal ol { padding-left: 1.5rem; margin: 0 0 1rem; }
+        .legal li { margin-bottom: 0.375rem; }
+        .legal a { color: var(--text); }
+        .legal .legal-meta { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--muted); margin: 0 0 0.25rem; }
+        .legal blockquote { border-left: 2px solid var(--border); margin: 1rem 0; padding: 0.25rem 0 0.25rem 1rem; }
+        .legal hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+    </style>
+  <script src="/js/consent.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/" class="nav-brand">
+                <svg viewBox="0 0 32 32" fill="currentColor">
+                    <rect x="4" y="4" width="6" height="24" rx="1"/>
+                    <rect x="13" y="12" width="6" height="16" rx="1"/>
+                    <rect x="22" y="18" width="6" height="10" rx="1"/>
+                </svg>
+                <span>Daily AI Toll</span>
+            </a>
+            <div class="nav-links">
+                <a href="/about">About</a>
+                <a href="/trends">Trends</a>
+                <a href="/data">Data</a>
+                <a href="/patrons">Patrons</a>
+                <a href="https://www.linkedin.com/company/dailyaitoll" class="nav-linkedin" title="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="nav-mobile-actions">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+                <button class="hamburger" onclick="openMobileMenu()" aria-label="Open menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <a href="/" class="nav-brand">
+                    <svg viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="4" width="6" height="24" rx="1"/><rect x="13" y="12" width="6" height="16" rx="1"/><rect x="22" y="18" width="6" height="10" rx="1"/></svg>
+                    <span>Daily AI Toll</span>
+                </a>
+                <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/trends">Trends</a>
+                <a href="/data">Data</a>
+                <a href="/patrons">Patrons</a>
+            </div>
+            <div class="mobile-menu-footer">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                </button>
+                <a href="https://www.linkedin.com/company/dailyaitoll" class="nav-linkedin" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <main class="legal">
+<h1>Terms of Service</h1>
+<p class="legal-meta"><strong>Applies to:</strong> dailyaitoll.com ("Daily AI Toll," the "Site," "we," "us," "our") and all products, data, downloads, and services offered through it.</p>
+<p class="legal-meta"><strong>Effective date:</strong> October 13, 2026</p>
+<p class="legal-meta"><strong>Contact:</strong> <a href="mailto:data@dailyaitoll.com">data@dailyaitoll.com</a></p>
+<p>These Terms of Service ("Terms") are a binding agreement between you and the operators of Daily AI Toll. By accessing the Site, purchasing a patron tier, purchasing a data license, or downloading the Data, you agree to these Terms, the <a href="/privacy">Privacy Policy</a>, the <a href="/refund-policy">Refund Policy</a>, the <a href="/disclaimer">Data Accuracy and Liability Disclaimer</a>, and — if you purchase a data license — the <a href="/data-license">Data License</a>. If you do not agree, do not use the Site or purchase anything.</p>
+<hr>
+<h2>1. What Daily AI Toll is</h2>
+<p>Daily AI Toll is a running record of publicly reported instances in which artificial intelligence is described as replacing or reducing human work. Entries are compiled from third-party public sources and processed using automated (large language model) tools. <strong>The Data may contain errors and is not a certification of any fact about any company or person.</strong> Your use of the Data is governed in full by the <a href="/disclaimer">Disclaimer</a>, which is incorporated into these Terms by reference. Read it before relying on anything on the Site.</p>
+<h2>2. Eligibility</h2>
+<p>You must be at least 18 years old, or the age of legal majority where you live, and able to form a binding contract, to purchase anything or download the Data. If you accept these Terms on behalf of an organization, you represent that you are authorized to bind that organization, and "you" refers to that organization.</p>
+<h2>3. Accounts</h2>
+<p>The Site is primarily a public website and does not require a general user account to browse. Some purchases (such as a data license) may associate a download or access link with the email address you provide at checkout.</p>
+<p>If any account or access credential is issued to you:</p>
+<ul><li>you are responsible for keeping it confidential and for all activity under it;
+</li><li>you must provide accurate information and keep it current; and
+</li><li>you must notify us promptly at <a href="mailto:data@dailyaitoll.com">data@dailyaitoll.com</a> of any unauthorized use. We may suspend or terminate access, credentials, or download links for any violation of these Terms.
+</li></ul>
+<h2>4. Purchases and payment</h2>
+<h3>4.1 Products offered</h3>
+<p>Daily AI Toll may offer:</p>
+<ul><li><strong>Patron tiers</strong> — one-time voluntary contributions that support the project (for example, "Supporter," "Sustainer," and "Founding Patron"). Patron tiers may include recognition benefits such as being listed on the patrons page.
+</li><li><strong>Data licenses</strong> — one-time purchases granting a license to download and use the Data under the applicable tier of the <a href="/data-license">Data License</a> (for example, "Journalist / Researcher" and "Commercial"). The specific tiers, prices, and benefits in effect are those shown at checkout at the time of purchase.
+</li></ul>
+<h3>4.2 Payment processing</h3>
+<p>Payments are processed by <strong>Stripe, Inc.</strong> ("Stripe"). We do not receive or store your full payment card number. Your purchase is also subject to Stripe's terms and privacy policy. You represent that any payment method you use is yours and authorized. See the <a href="/privacy">Privacy Policy</a> for what payment-related data we receive.</p>
+<h3>4.3 Pricing and taxes</h3>
+<p>Prices are stated in U.S. dollars unless otherwise shown at checkout. You are responsible for any applicable taxes, and for any fees charged by your bank or card issuer. We may change prices and offerings at any time; changes do not affect purchases already completed.</p>
+<h3>4.4 All sales final</h3>
+<p><strong>All sales are final. All purchases — patron tiers and data licenses alike — are non-refundable.</strong> See the <a href="/refund-policy">Refund Policy</a> for the complete statement.</p>
+<h3>4.5 Recurring elements (if any)</h3>
+<p>Patron tiers and data licenses are offered as <strong>one-time purchases</strong>. If we ever offer a subscription or other recurring charge, it will be disclosed as recurring at checkout, it will continue until you cancel, and <strong>you may cancel at any time to stop future charges effective at the end of the then-current paid period; already-completed charges and the current period are non-refundable.</strong> No pro-rated or mid-period refunds are given.</p>
+<h2>5. License to use the Data (summary)</h2>
+<p>The Data is proprietary to Daily AI Toll and is protected by intellectual property and database rights. Purchasing a data license grants you only the rights expressly set out in the <a href="/data-license">Data License</a> for the tier you purchased — for example, internal use and, for the Journalist / Researcher tier, cited editorial use. <strong>You may not resell, redistribute, republish as a dataset, or sublicense the raw Data.</strong> The full grant, restrictions, attribution requirements, term, and termination are in the <a href="/data-license">Data License</a>, which controls in the event of any conflict with this summary.</p>
+<p>Browsing the public Site does not grant you any license to bulk-copy, scrape, or redistribute the Data.</p>
+<h2>6. Intellectual property</h2>
+<p>As between you and us, we own the Site and the Data, including the selection, arrangement, coordination, structure, scoring, labeling, and presentation of entries, and all associated text, design, and software, except for third-party material and third-party marks referenced in the Data (which belong to their respective owners). "Daily AI Toll" and the dailyaitoll.com name are ours.</p>
+<p>Except for the rights expressly granted in the <a href="/data-license">Data License</a> to purchasers, no rights are granted to you by implication, estoppel, or otherwise. You may make ordinary personal, non-commercial use of the public Site (viewing pages and normal linking), but you may not scrape, crawl at scale, systematically copy, frame, or create derivative datasets from the Site without a license or our written permission.</p>
+<h2>7. Acceptable use</h2>
+<p>You agree not to, and not to enable others to:</p>
+<ul><li>scrape, crawl, harvest, or systematically extract the Data except as expressly licensed;
+</li><li>resell, redistribute, republish, or sublicense the Data except as expressly licensed;
+</li><li>misrepresent an entry as a verified fact, an accusation, or a certification (see the <a href="/disclaimer">Disclaimer</a>);
+</li><li>present the Data, confidence scores, or causality labels in a false, misleading, or defamatory manner, or in a way that suggests any company engaged in wrongdoing when the source does not support that;
+</li><li>use the Data to harass, defame, threaten, or unlawfully target any company or person;
+</li><li>use the Data to make employment, credit, insurance, tenancy, or similar eligibility decisions about individuals;
+</li><li>interfere with, overload, or attempt to gain unauthorized access to the Site, its infrastructure, or other users' access;
+</li><li>remove, obscure, or falsify attribution, source links, or proprietary notices; or
+</li><li>use the Site or Data in violation of any applicable law, or to infringe anyone's rights. You are solely responsible for how you use, republish, or characterize the Data, and for verifying it before doing so.
+</li></ul>
+<h2>8. Third-party sources, links, and marks</h2>
+<p>The Data references third-party sources, companies, products, and marks, and the Site may contain links to third-party websites. We do not control and are not responsible for third-party content, and inclusion of a source, link, or mark does not imply endorsement or affiliation. Third-party marks belong to their owners.</p>
+<h2>9. Disclaimers</h2>
+<p>THE SITE AND THE DATA ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, AND ANY WARRANTY OF ACCURACY, COMPLETENESS, OR RELIABILITY. Without limiting the <a href="/disclaimer">Disclaimer</a>: we do not warrant that the Data is accurate, current, complete, or without errors; that confidence scores or causality labels reflect actual fact; that source links will remain available; or that the Site will be uninterrupted, secure, or without errors. Some jurisdictions do not allow certain warranty exclusions, so some of the above may not apply to you.</p>
+<h2>10. Limitation of liability</h2>
+<p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW:</p>
+<ul><li>IN NO EVENT WILL WE OR OUR OPERATORS, CONTRIBUTORS, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOST PROFITS, LOST REVENUE, LOST DATA, OR LOSS OF GOODWILL OR REPUTATION, ARISING OUT OF OR RELATING TO THE SITE, THE DATA, OR THESE TERMS, WHETHER BASED ON CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER THEORY, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+</li><li>OUR TOTAL AGGREGATE LIABILITY FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THE SITE, THE DATA, OR THESE TERMS WILL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID US IN THE TWELVE (12) MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM, OR (B) ONE HUNDRED U.S. DOLLARS (US $100). Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of the above may not apply to you. These limitations are a fundamental basis of the bargain between you and us.
+</li></ul>
+<h2>11. Indemnification</h2>
+<p>You agree to indemnify, defend, and hold harmless Daily AI Toll and its operators, contributors, and agents from and against any claims, demands, damages, liabilities, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to:</p>
+<ul><li>your use of the Site or the Data;
+</li><li>your republication, characterization, or other use or distribution of the Data (including any claim that your use was inaccurate, misleading, defamatory, or infringing);
+</li><li>your violation of these Terms, the <a href="/data-license">Data License</a>, or any applicable law; or
+</li><li>your violation of any right of any third party. We may assume the exclusive defense and control of any matter subject to indemnification by you, at your expense, and you agree to cooperate with our defense.
+</li></ul>
+<h2>12. Suspension and termination</h2>
+<p>We may suspend or terminate your access to the Site, any download link, and any license granted to you, at any time, with or without notice, if we reasonably believe you have violated these Terms or the <a href="/data-license">Data License</a>. On termination of a data license, you must stop using and delete the Data as described in the <a href="/data-license">Data License</a>. Sections that by their nature should survive termination (including Sections 5–11 and 13) survive.</p>
+<h2>13. Changes to these Terms</h2>
+<p>We may update these Terms from time to time. Material changes will be reflected by a revised effective date. Your continued use of the Site or the Data after a change constitutes acceptance of the updated Terms. If you do not agree, stop using the Site and the Data.</p>
+<h2>14. Governing law and disputes</h2>
+<p>These Terms are governed by the laws of <strong>the State of Delaware, United States</strong>, without regard to its conflict-of-laws rules. Subject to any non-waivable rights you have under applicable law, you agree that the exclusive venue for any dispute arising out of or relating to these Terms, the Site, or the Data will be the courts located in <strong>the State of Delaware, United States</strong>, and you consent to their personal jurisdiction. If any provision of these Terms is held unenforceable, the remaining provisions remain in full effect, and the unenforceable provision will be enforced to the maximum extent permitted.</p>
+<h2>15. Miscellaneous</h2>
+<p>These Terms, together with the documents referenced above, are the entire agreement between you and us regarding the Site and the Data and supersede any prior understanding on that subject. Our failure to enforce any provision is not a waiver. You may not assign these Terms without our consent; we may assign them in connection with a transfer of the project. Nothing in these Terms creates any partnership, agency, employment, or joint venture between you and us.</p>
+<h2>16. Contact</h2>
+<p>Questions about these Terms: <strong><a href="mailto:data@dailyaitoll.com">data@dailyaitoll.com</a></strong>.</p>
+        </main>
+
+        <footer>
+            <div class="footer-main">
+                <div class="footer-links">
+                    <a href="/trends">Trends</a>
+                    <a href="/about">About</a>
+                    <a href="/data">Data</a>
+                    <a href="/patrons">Patrons</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="https://www.linkedin.com/company/dailyaitoll" class="footer-linkedin" title="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+            </div>
+            <p class="footer-disclaimer">
+                AI-automated aggregation of publicly reported information. Contains no opinions or original analysis. Data may contain errors. Verify all information before use.
+            </p>
+            <div class="footer-legal" style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.25rem;margin:1rem 0 0.75rem;font-size:0.6875rem;"><a href="/terms" style="color:var(--muted);text-decoration:none">Terms</a><a href="/privacy" style="color:var(--muted);text-decoration:none">Privacy</a><a href="/refund-policy" style="color:var(--muted);text-decoration:none">Refunds</a><a href="/cancellation" style="color:var(--muted);text-decoration:none">Cancellation</a><a href="/acceptable-use" style="color:var(--muted);text-decoration:none">Acceptable Use</a><a href="/data-license" style="color:var(--muted);text-decoration:none">Data License</a><a href="/disclaimer" style="color:var(--muted);text-decoration:none">Disclaimer</a></div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('light');
+            localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
+        }
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light');
+        }
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.querySelectorAll('.mobile-menu-links a').forEach(link => link.addEventListener('click', closeMobileMenu));
+    </script>
+</body>
+</html>
