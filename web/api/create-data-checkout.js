@@ -1,4 +1,5 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const { termsAccepted, termsMetadata, attribution, TERMS_REQUIRED_ERROR } = require('./_lib/checkout-meta');
 
 const TIERS = {
   journalist: { amount: 500, label: 'Journalist / Researcher' },
@@ -26,10 +27,15 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { tier, email } = req.body || {};
+    const body = req.body || {};
+    const { tier, email } = body;
     if (!tier || !TIERS[tier]) {
       return res.status(400).json({ error: 'Invalid tier' });
     }
+    if (!termsAccepted(body)) {
+      return res.status(400).json({ error: TERMS_REQUIRED_ERROR });
+    }
+    const attr = attribution(body.attribution);
 
     const siteUrl = process.env.SITE_URL || 'https://dailyaitoll.com';
     const priceId = getPriceId(tier);
@@ -69,7 +75,10 @@ module.exports = async (req, res) => {
       metadata: {
         kind: 'data_license',
         tier,
+        ...termsMetadata(),
+        ...attr.metadata,
       },
+      client_reference_id: attr.clientReferenceId,
       success_url: `${siteUrl}/data/success/?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/data/`,
     });

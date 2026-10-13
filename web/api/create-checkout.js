@@ -1,4 +1,5 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const { termsAccepted, termsMetadata, attribution, TERMS_REQUIRED_ERROR } = require('./_lib/checkout-meta');
 
 const PRICES = {
   supporter: 2500,    // $25
@@ -27,10 +28,15 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { tier, name, url, description } = req.body;
+    const body = req.body || {};
+    const { tier, name, url, description } = body;
 
     if (!tier || !name) {
       return res.status(400).json({ error: 'Missing required fields: tier and name' });
+    }
+
+    if (!termsAccepted(body)) {
+      return res.status(400).json({ error: TERMS_REQUIRED_ERROR });
     }
 
     if (!PRICES[tier]) {
@@ -41,6 +47,8 @@ module.exports = async (req, res) => {
     if (tier === 'founding' && description && description.split(/\s+/).length > 250) {
       return res.status(400).json({ error: 'Description exceeds 250 words' });
     }
+
+    const attr = attribution(body.attribution);
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -64,7 +72,10 @@ module.exports = async (req, res) => {
         name,
         url: url || '',
         description: description || '',
+        ...termsMetadata(),
+        ...attr.metadata,
       },
+      client_reference_id: attr.clientReferenceId,
       success_url: `${process.env.SITE_URL || 'https://dailyaitoll.com'}/patrons/thank-you/`,
       cancel_url: `${process.env.SITE_URL || 'https://dailyaitoll.com'}/patrons/`,
     });

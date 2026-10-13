@@ -122,12 +122,72 @@ function stripeMock(priceObj) {
   return calls;
 }
 
-async function runDataCheckout(tier) {
+async function runDataCheckout(tier, extra = { terms_accepted: true }) {
   const h = fresh('create-data-checkout.js');
   const res = mockRes();
-  await h({ method: 'POST', body: { tier } }, res);
+  await h({ method: 'POST', body: { tier, ...extra } }, res);
   return res;
 }
+
+// ---------- L-DAT-03 terms consent + L-DAT-04 campaign attribution (both checkouts) ----------
+test('data checkout: without terms consent -> 400 and no session', async () => {
+  clearEnv();
+  const calls = stripeMock(null);
+  for (const extra of [{}, { terms_accepted: false }, { terms_accepted: 'true' }]) {
+    const res = await runDataCheckout('journalist', extra);
+    assert.strictEqual(res.statusCode, 400);
+    assert.match(res.body.error, /Terms/);
+  }
+  assert.strictEqual(calls.sessions.length, 0);
+});
+
+test('data checkout: consent recorded as ISO UTC; utm -> metadata + client_reference_id', async () => {
+  clearEnv();
+  const calls = stripeMock(null);
+  const res = await runDataCheckout('journalist', { terms_accepted: true,
+    attribution: { utm_source: 'linkedin', utm_campaign: 'launch oct!', ref: 'x'.repeat(400), bogus: 'nope' } });
+  assert.strictEqual(res.statusCode, 200);
+  const s = calls.sessions[0];
+  assert.match(s.metadata.terms_accepted_at, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/);
+  assert.ok(s.metadata.terms_version);
+  assert.strictEqual(s.metadata.kind, 'data_license');
+  assert.strictEqual(s.metadata.utm_source, 'linkedin');
+  assert.strictEqual(s.metadata.utm_campaign, 'launch-oct');
+  assert.strictEqual(s.metadata.ref.length, 150);
+  assert.ok(!('bogus' in s.metadata));
+  assert.match(s.client_reference_id, /^dat_s-linkedin_c-launch-oct_r-x+$/);
+  assert.ok(s.client_reference_id.length <= 200);
+});
+
+test('data checkout: no campaign tags -> no utm metadata, no client_reference_id', async () => {
+  clearEnv();
+  const calls = stripeMock(null);
+  await runDataCheckout('commercial', { terms_accepted: true, attribution: 'junk' });
+  const s = calls.sessions[0];
+  assert.strictEqual(s.client_reference_id, undefined);
+  assert.deepStrictEqual(Object.keys(s.metadata).sort(), ['kind', 'terms_accepted_at', 'terms_version', 'tier']);
+});
+
+test('patron checkout: consent required; recorded with utm', async () => {
+  clearEnv();
+  const calls = stripeMock(null);
+  const h = fresh('create-checkout.js');
+  let res = mockRes();
+  await h({ method: 'POST', body: { tier: 'supporter', name: 'Jane' } }, res);
+  assert.strictEqual(res.statusCode, 400);
+  assert.strictEqual(calls.sessions.length, 0);
+  res = mockRes();
+  await h({ method: 'POST', body: { tier: 'supporter', name: 'Jane', terms_accepted: true,
+    attribution: { utm_medium: 'email' } } }, res);
+  assert.strictEqual(res.statusCode, 200);
+  const s = calls.sessions[0];
+  assert.strictEqual(s.metadata.kind, 'patron');
+  assert.strictEqual(s.metadata.name, 'Jane');
+  assert.match(s.metadata.terms_accepted_at, /Z$/);
+  assert.strictEqual(s.metadata.utm_medium, 'email');
+  assert.strictEqual(s.client_reference_id, 'dat_m-email');
+  assert.strictEqual(s.line_items[0].price_data.unit_amount, 2500);
+});
 
 test('data checkout: no price id -> inline amount equals listed amount', async () => {
   clearEnv();

@@ -246,6 +246,10 @@
             color: var(--text);
         }
 
+        .consent { display:flex; gap:0.625rem; align-items:flex-start; margin:0 0 1.25rem; font-size:0.875rem; line-height:1.5; }
+        .consent input { width:20px; height:20px; min-width:20px; padding:0; margin:0.15rem 0 0; flex:none; accent-color:var(--toll-red-dark); }
+        label.consent-label { display:inline; margin:0; font-size:0.875rem; color:var(--text); font-weight:400; text-transform:none; letter-spacing:normal; }
+        .consent-label a { color:inherit; text-decoration:underline; }
         .error {
             background: rgba(226, 75, 74, 0.1);
             border: 1px solid var(--toll-red-dark);
@@ -360,6 +364,11 @@
                 <strong id="priceDisplay">$25</strong> one-time
             </div>
 
+            <div class="consent">
+                <input type="checkbox" id="terms-consent" name="terms_consent" required>
+                <label for="terms-consent" class="consent-label">I agree to the <a href="/terms">Terms</a> and the <a href="/refund-policy">Refund Policy</a> (patron contributions are one-time and final).</label>
+            </div>
+
             <button type="submit" class="btn" id="submitBtn">Continue to Payment</button>
         </form>
 
@@ -427,6 +436,8 @@
                 name: document.getElementById('name').value.trim(),
                 url: document.getElementById('url').value.trim(),
                 description: document.getElementById('description').value.trim(),
+                terms_accepted: document.getElementById('terms-consent').checked,
+                attribution: (window.DatAttribution && window.DatAttribution.get()) || {},
             };
 
             try {

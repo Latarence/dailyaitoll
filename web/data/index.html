@@ -298,6 +298,10 @@
             margin-left: 1rem;
         }
 
+        .consent-box { display:flex; gap:0.625rem; align-items:flex-start; margin:0 0 1.25rem; font-size:0.875rem; line-height:1.5; color:var(--text); }
+        .consent-box input { width:20px; height:20px; min-width:20px; padding:0; margin:0.15rem 0 0; flex:none; accent-color:var(--toll-red-dark); }
+        .consent-box a { color:inherit; text-decoration:underline; }
+        .consent-error { margin:-0.5rem 0 1.25rem; font-size:0.875rem; font-weight:600; color:var(--text); }
         .note {
             font-size: 0.6875rem;
             color: var(--dim);
@@ -411,6 +415,12 @@
 
         <section>
             <h2>License Tiers</h2>
+
+            <div class="consent-box">
+                <input type="checkbox" id="terms-consent">
+                <label for="terms-consent">I agree to the <a href="/terms">Terms</a>, the <a href="/data-license">Data License</a> for the tier I buy, and the <a href="/refund-policy">Refund Policy</a> (all sales are final).</label>
+            </div>
+            <p class="consent-error" id="consent-error" role="alert" hidden>Please tick the box above to agree to the Terms, the Data License and the Refund Policy before you buy.</p>
 
             <div class="tier">
                 <div class="tier-header">
@@ -547,11 +557,20 @@
         }
 
         async function startCheckout(tier) {
+            const consent = document.getElementById('terms-consent');
+            const consentError = document.getElementById('consent-error');
+            if (!consent.checked) {
+                consentError.hidden = false;
+                consent.focus();
+                return;
+            }
+            consentError.hidden = true;
             try {
+                const attribution = (window.DatAttribution && window.DatAttribution.get()) || {};
                 const response = await fetch('/api/create-data-checkout', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ tier }),
+                    body: JSON.stringify({ tier, terms_accepted: true, attribution }),
                 });
 
                 const data = await response.json();

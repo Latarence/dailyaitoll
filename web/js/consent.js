@@ -14,6 +14,34 @@
  */
 (function () {
   'use strict';
+  // Campaign attribution (L-DAT-04; first-party, no cookies, no third party). Runs on every page,
+  // with or without analytics. First touch: utm_source/medium/campaign/term/content and ref from the
+  // landing URL are kept in sessionStorage for 30 minutes (this tab only). The checkout pages read
+  // them with window.DatAttribution.get() and send them to the create-checkout functions, which put
+  // them in the Stripe Checkout Session metadata. With no campaign tags nothing is stored.
+  var KEY = 'dat_attr', TTL = 30 * 60 * 1000;
+  var FIELDS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'ref'];
+  function clean(v) { return String(v || '').replace(/[^A-Za-z0-9_-]+/g, '-').replace(/^[-_]+|[-_]+$/g, '').slice(0, 150); }
+  function load() {
+    try {
+      var a = JSON.parse(window.sessionStorage.getItem(KEY) || 'null');
+      if (a && a.p && Date.now() - a.t < TTL) return a.p;
+      window.sessionStorage.removeItem(KEY);
+    } catch (e) { /* storage blocked: attribution is optional */ }
+    return null;
+  }
+  if (!load()) {
+    try {
+      var q = new URLSearchParams(window.location.search), p = {}, any = false;
+      FIELDS.forEach(function (f) { var v = clean(q.get(f)); if (v) { p[f] = v; any = true; } });
+      if (any) window.sessionStorage.setItem(KEY, JSON.stringify({ t: Date.now(), p: p }));
+    } catch (e) { /* ignore */ }
+  }
+  window.DatAttribution = { get: function () { return load() || {}; } };
+})();
+
+(function () {
+  'use strict';
 
   var GA_ID = '';
   var PRIVACY_URL = 'https://mdo3d.com/privacy#cookies';
