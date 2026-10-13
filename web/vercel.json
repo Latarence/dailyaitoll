@@ -1,6 +1,6 @@
 {
   "name": "dailyaitoll",
-  "buildCommand": null,
+  "buildCommand": "node -e \"require('fs').writeFileSync('api/_build.json', JSON.stringify({built_at: new Date().toISOString(), commit: process.env.VERCEL_GIT_COMMIT_SHA || null}))\"",
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,
@@ -15,6 +15,10 @@
     },
     "api/data-download.js": {
       "includeFiles": "api/_data/**"
+    },
+    "api/health.js": {
+      "maxDuration": 10,
+      "includeFiles": "api/_build.json"
     }
   }
 }

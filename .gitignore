@@ -10,3 +10,6 @@ node_modules/
 collection_status.json
 anthropic_status.json
 openai_status.json
+
+# Build stamp written by the Vercel buildCommand (web/vercel.json) for /api/health
+web/api/_build.json
