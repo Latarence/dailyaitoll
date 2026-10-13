@@ -95,9 +95,7 @@
             text-decoration: none;
             font-family: 'Inter', sans-serif;
             font-weight: 600;
-            font-size: 0.8125rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            font-size: 0.875rem;
         }
 
         .nav-brand:hover {
@@ -888,9 +886,11 @@
         .mouseCursor {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             pointer-events: none; border-radius: 50%;
-            transform: translateZ(0); visibility: visible; z-index: 100000;
+            transform: translateZ(0); visibility: hidden; z-index: 100000;
             mix-blend-mode: normal;
         }
+        /* Hidden until the first mousemove (otherwise it renders as a partial circle at 0,0). */
+        .mouseCursor.cursor-on { visibility: visible; }
         .cursor-outer {
             margin-left: -16px; margin-top: -16px;
             width: 32px; height: 32px;
@@ -1501,8 +1501,16 @@ The human cost of AI adoption, tracked daily.
             document.body.appendChild(outer);
             document.body.appendChild(inner);
             let x = 0; let y = 0;
-            const onMove = (e) => { x = e.clientX; y = e.clientY; const t = `translate(${x}px, ${y}px)`; outer.style.transform = t; inner.style.transform = t; };
+            const show = (on) => { outer.classList.toggle('cursor-on', on); inner.classList.toggle('cursor-on', on); };
+            let shown = false;
+            const onMove = (e) => {
+                x = e.clientX; y = e.clientY; const t = `translate(${x}px, ${y}px)`;
+                if (!shown) { outer.style.transition = inner.style.transition = 'none'; }
+                outer.style.transform = t; inner.style.transform = t;
+                if (!shown) { show(true); void outer.offsetWidth; outer.style.transition = inner.style.transition = ''; shown = true; }
+            };
             window.addEventListener('mousemove', onMove, { passive: true });
+            document.documentElement.addEventListener('mouseleave', () => { show(false); shown = false; });
             const setHover = (on) => { outer.classList.toggle('cursor-hover', on); inner.classList.toggle('cursor-hover', on); };
             const setBig = (on) => { outer.classList.toggle('cursor-big', on); inner.classList.toggle('cursor-big', on); };
             document.querySelectorAll('a, button, .entry-company').forEach((el) => {
