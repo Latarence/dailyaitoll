@@ -155,3 +155,122 @@ test('data checkout: mismatched or unreadable price id falls back to listed amou
   await runDataCheckout('commercial');
   assert.strictEqual(calls.sessions[0].line_items[0].price_data.unit_amount, 5000);
 });
+
+// ---------- /api/data-download: Blob dataset path (FEATURE_USE_BLOB_DATASET) ----------
+const { PassThrough } = require('stream');
+
+function streamRes() {
+  const res = new PassThrough();
+  Object.assign(res, { statusCode: 0, headers: {}, body: undefined, chunks: [] });
+  res.setHeader = (k, v) => { res.headers[k.toLowerCase()] = v; };
+  res.status = (c) => { res.statusCode = c; return res; };
+  res.json = (b) => { res.body = b; res.end(); return res; };
+  res.on('data', (c) => res.chunks.push(c));
+  res.done = new Promise((resolve) => res.on('finish', resolve));
+  return res;
+}
+
+function paidStripe(metadata = { kind: 'data_license', tier: 'journalist' }, payment_status = 'paid') {
+  mocks.stripe = () => ({ checkout: { sessions: { retrieve: async () => ({ payment_status, metadata,
+    customer_details: { email: 'buyer@example.invalid' } }) } } });
+}
+
+const BLOB_URL = 'https://store.public.blob.vercel-storage.example.invalid/datasets/events.csv';
+async function runDownload({ blob, fetchImpl, query = { session_id: 'cs_test_1' } }) {
+  const calls = { head: [], fetch: [] };
+  mocks['@vercel/blob'] = blob === undefined ? {
+    head: async (p) => { calls.head.push(p); return { url: BLOB_URL, pathname: p, size: 10 }; },
+  } : blob(calls);
+  const origFetch = global.fetch;
+  global.fetch = async (url, opts) => { calls.fetch.push([url, opts]); return fetchImpl(url); };
+  try {
+    const h = fresh('data-download.js');
+    const res = streamRes();
+    await h({ method: 'GET', query }, res);
+    await res.done;
+    return { res, calls, text: Buffer.concat(res.chunks).toString('utf8') };
+  } finally {
+    global.fetch = origFetch;
+  }
+}
+
+test('data download (blob): paid -> head + server-side fetch, CSV streamed, blob URL never exposed', async () => {
+  clearEnv();
+  process.env.FEATURE_USE_BLOB_DATASET = 'true';
+  paidStripe();
+  const csv = 'date,model,toll\n2026-10-01,x,1\n';
+  const { res, calls, text } = await runDownload({ fetchImpl: async () => new Response(csv) });
+  assert.deepStrictEqual(calls.head, ['datasets/events.csv']);
+  assert.strictEqual(calls.fetch.length, 1);
+  assert.strictEqual(calls.fetch[0][0], BLOB_URL);
+  assert.strictEqual(text, csv);
+  assert.match(res.headers['content-type'], /text\/csv/);
+  assert.match(res.headers['content-disposition'], /attachment/);
+  assert.ok(!JSON.stringify(res.headers).includes('blob.vercel-storage'), 'no blob URL in headers');
+  assert.ok(!res.headers.location, 'no redirect to the blob');
+});
+
+test('data download (blob): blob not uploaded (head throws) -> 500 dataset not available, no fetch', async () => {
+  clearEnv();
+  process.env.FEATURE_USE_BLOB_DATASET = 'true';
+  paidStripe();
+  const { res, calls } = await runDownload({
+    blob: () => ({ head: async () => { throw new Error('The requested blob does not exist'); } }),
+    fetchImpl: async () => new Response('x'),
+  });
+  assert.deepStrictEqual([res.statusCode, res.body], [500, { error: 'Dataset not available yet' }]);
+  assert.strictEqual(calls.fetch.length, 0);
+});
+
+test('data download (blob): blob fetch fails -> 500 dataset not available', async () => {
+  clearEnv();
+  process.env.FEATURE_USE_BLOB_DATASET = 'true';
+  paidStripe();
+  const { res } = await runDownload({ fetchImpl: async () => new Response('nope', { status: 404 }) });
+  assert.deepStrictEqual([res.statusCode, res.body], [500, { error: 'Dataset not available yet' }]);
+});
+
+test('data download (blob): @vercel/blob without head -> 500 Blob not available', async () => {
+  clearEnv();
+  process.env.FEATURE_USE_BLOB_DATASET = 'true';
+  paidStripe();
+  const { res } = await runDownload({ blob: () => ({}), fetchImpl: async () => new Response('x') });
+  assert.deepStrictEqual([res.statusCode, res.body], [500, { error: 'Blob not available' }]);
+});
+
+test('data download (blob): unpaid or non-license session -> 403, blob never touched', async () => {
+  clearEnv();
+  process.env.FEATURE_USE_BLOB_DATASET = 'true';
+  paidStripe({ kind: 'data_license', tier: 'journalist' }, 'unpaid');
+  let r = await runDownload({ fetchImpl: async () => new Response('x') });
+  assert.strictEqual(r.res.statusCode, 403);
+  assert.deepStrictEqual([r.calls.head.length, r.calls.fetch.length], [0, 0]);
+  paidStripe({ kind: 'patron', tier: 'x' });
+  r = await runDownload({ fetchImpl: async () => new Response('x') });
+  assert.strictEqual(r.res.statusCode, 403);
+  assert.deepStrictEqual([r.calls.head.length, r.calls.fetch.length], [0, 0]);
+});
+
+test('data download: flag off -> bundled CSV path, Blob never touched', async () => {
+  clearEnv();
+  paidStripe();
+  const { res, calls, text } = await runDownload({ fetchImpl: async () => new Response('x') });
+  assert.deepStrictEqual([calls.head.length, calls.fetch.length], [0, 0]);
+  const bundled = path.join(API, '_data', 'events.csv');
+  if (require('fs').existsSync(bundled)) {
+    assert.strictEqual(text, require('fs').readFileSync(bundled, 'utf8'));
+  } else {
+    assert.deepStrictEqual([res.statusCode, res.body], [500, { error: 'Dataset not available yet' }]);
+  }
+});
+
+test('data download: missing session_id -> 400; POST -> 405', async () => {
+  clearEnv();
+  paidStripe();
+  let r = await runDownload({ fetchImpl: async () => new Response('x'), query: {} });
+  assert.strictEqual(r.res.statusCode, 400);
+  const h = fresh('data-download.js');
+  const res = streamRes();
+  await h({ method: 'POST', query: {} }, res);
+  assert.strictEqual(res.statusCode, 405);
+});

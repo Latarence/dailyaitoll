@@ -11,18 +11,20 @@ async function main() {
 
   const body = fs.readFileSync(csvPath);
 
-  // Stable pathname so /api/data-download can fetch by pathname.
+  // Stable pathname so /api/data-download (head + server-side fetch) and /api/health can find it.
   const pathname = 'datasets/events.csv';
 
-  const blob = await put(pathname, body, {
-    access: 'private',
+  // @vercel/blob 1.x only accepts access: 'public' ('private' throws). The URL is never sent to clients
+  // (data-download streams it after verifying payment) and is never logged: this repo's Actions logs are public.
+  await put(pathname, body, {
+    access: 'public',
     contentType: 'text/csv',
     addRandomSuffix: false,
     allowOverwrite: true,
   });
 
-  // Don't print credentials; printing the blob URL is fine.
-  console.log(`Uploaded ${pathname} -> ${blob.url}`);
+  // Don't print credentials or the blob URL.
+  console.log(`Uploaded ${pathname} (${body.length} bytes)`);
 }
 
 main().catch((err) => {

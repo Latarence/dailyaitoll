@@ -6,12 +6,31 @@ try {
 } catch {
   kv = null;
 }
+const { Readable } = require('stream');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-let blobGet;
+// @vercel/blob 1.x has no get(): look the blob up with head(), then fetch it server-side and stream it,
+// so the client only ever talks to this API and never sees the blob URL.
+let blobHead;
 try {
-  ({ get: blobGet } = require('@vercel/blob'));
+  ({ head: blobHead } = require('@vercel/blob'));
 } catch {
-  blobGet = null;
+  blobHead = null;
+}
+const DATASET_PATHNAME = 'datasets/events.csv';
+
+async function fetchBlobDataset() {
+  let meta;
+  try {
+    meta = await blobHead(DATASET_PATHNAME);
+  } catch (err) {
+    // BlobNotFoundError (not uploaded yet) or a store error: the dataset isn't available.
+    console.error('blob head failed:', err && err.message);
+    return null;
+  }
+  if (!meta || !meta.url) return null;
+  const r = await fetch(meta.url, { cache: 'no-store' });
+  if (!r.ok || !r.body) return null;
+  return r.body;
 }
 
 async function hasLicense(sessionId) {
@@ -68,12 +87,12 @@ module.exports = async (req, res) => {
     res.setHeader('Content-Disposition', 'attachment; filename="daily-ai-toll-events.csv"');
 
     if (process.env.FEATURE_USE_BLOB_DATASET === 'true') {
-      if (!blobGet) return res.status(500).json({ error: 'Blob not available' });
-      const blob = await blobGet('datasets/events.csv', { access: 'private' });
-      if (!blob || !blob.stream) {
+      if (!blobHead) return res.status(500).json({ error: 'Blob not available' });
+      const body = await fetchBlobDataset();
+      if (!body) {
         return res.status(500).json({ error: 'Dataset not available yet' });
       }
-      blob.stream.pipe(res);
+      Readable.fromWeb(body).pipe(res);
       return;
     }
 
