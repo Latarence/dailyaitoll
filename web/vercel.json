@@ -5,12 +5,16 @@
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/data/events.csv", "destination": "/api/data-download" }
+  "redirects": [
+    { "source": "/data/events.csv", "destination": "/api/data-download", "permanent": false },
+    { "source": "/api/_data/:path*", "destination": "/api/data-download", "permanent": false }
   ],
   "functions": {
     "api/stripe-webhook.js": {
       "maxDuration": 10
+    },
+    "api/data-download.js": {
+      "includeFiles": "api/_data/**"
     }
   }
 }

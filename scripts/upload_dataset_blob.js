@@ -4,7 +4,7 @@ const { put } = require('@vercel/blob');
 
 async function main() {
   const root = path.resolve(__dirname, '..');
-  const csvPath = path.join(root, 'web', 'data', 'events.csv');
+  const csvPath = path.join(root, 'web', 'api', '_data', 'events.csv');
   if (!fs.existsSync(csvPath)) {
     throw new Error(`Missing CSV at ${csvPath}`);
   }

@@ -9,7 +9,9 @@ from pathlib import Path
 def main() -> int:
     root = Path(__file__).parent.parent
     events_path = root / "data" / "events.jsonl"
-    out_path = root / "web" / "data" / "events.csv"
+    # Not under a static path: web/api/** is excluded from Vercel static output,
+    # so the CSV is only reachable through the paid /api/data-download function.
+    out_path = root / "web" / "api" / "_data" / "events.csv"
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     if not events_path.exists():

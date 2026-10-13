@@ -77,8 +77,8 @@ module.exports = async (req, res) => {
       return;
     }
 
-    // Fallback: serve the CSV committed in /web/data/events.csv, but only through this API.
-    const csvPath = path.join(__dirname, '..', 'data', 'events.csv');
+    // Fallback: serve the CSV bundled at web/api/_data/events.csv (never a static path), only through this API.
+    const csvPath = path.join(__dirname, '_data', 'events.csv');
     if (!fs.existsSync(csvPath)) {
       return res.status(500).json({ error: 'Dataset not available yet' });
     }
