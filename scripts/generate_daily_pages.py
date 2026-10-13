@@ -79,7 +79,7 @@ def generate_event_html(event, idx):
         source_html = f'<a href="{source_url}" target="_blank" rel="noopener">{label}</a>'
     else:
         # C7-006: the original article is gone and no archived copy exists. Say so; never invent one.
-        source_html = 'source (link no longer available)'
+        source_html = '<span class="source-unavailable">(source no longer available)</span>'
     event_id = event.get('id', f'event-{idx}')
 
     return f'''

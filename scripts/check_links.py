@@ -13,7 +13,7 @@ Usage:
   python scripts/check_links.py --from-csv links.csv --apply
       # rewrite data/events.jsonl and static pages from a checked CSV:
       #   dead + archived -> link points to the Wayback snapshot
-      #   dead, no archive -> link removed, text marked "(link no longer available)"
+      #   dead, no archive -> link removed, text marked "(source no longer available)"
 
 Status classes:
   ok       2xx/3xx after redirects
@@ -43,7 +43,7 @@ WEB = ROOT / "web"
 EVENTS = ROOT / "data" / "events.jsonl"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/128.0 Safari/537.36")
-UNAVAILABLE = "(link no longer available)"
+UNAVAILABLE = "(source no longer available)"
 # Our own and infrastructure hosts are not citations.
 SKIP_HOSTS = {"dailyaitoll.com", "www.dailyaitoll.com", "fonts.googleapis.com",
               "fonts.gstatic.com", "web.archive.org", "buy.stripe.com",
@@ -119,7 +119,9 @@ def classify(status: str) -> str:
 
 
 def wayback(url: str, timeout: float) -> str:
-    api = "https://archive.org/wayback/available?url=" + urllib.parse.quote(url, safe="")
+    # Keep ":" and "/" literal: the availability API returns no snapshot for a fully
+    # percent-encoded URL (verified 2026-10-13 on a TechCrunch URL that has a 200 snapshot).
+    api = "https://archive.org/wayback/available?url=" + urllib.parse.quote(url, safe=":/")
     for attempt in range(3):
         try:
             req = urllib.request.Request(api, headers={"User-Agent": UA})
@@ -158,7 +160,9 @@ def check(found, args) -> list[dict]:
 
 
 def apply_fixes(rows: list[dict]) -> dict[str, int]:
-    dead = {r["url"]: r.get("wayback_url", "") for r in rows if r["class"] == "dead"}
+    # A failed archive lookup is not "no archive": leave those links for the next run.
+    dead = {r["url"]: r.get("wayback_url", "") for r in rows
+            if r["class"] == "dead" and r.get("wayback_url", "") != "lookup-failed"}
     dead = {u: (w if w.startswith("https://web.archive.org/") else "") for u, w in dead.items()}
     stats = {"archived": 0, "unlinked": 0, "pages_changed": 0, "events_changed": 0}
     if not dead:
@@ -179,7 +183,9 @@ def apply_fixes(rows: list[dict]) -> dict[str, int]:
                         ev["source_url"] = None
                         ev["source_unavailable"] = True
                     stats["events_changed"] += 1
-                line = json.dumps(ev, ensure_ascii=False)
+                    # Only changed lines are re-serialized (same style as run_toll.py);
+                    # every other line stays byte-for-byte as it was.
+                    line = json.dumps(ev)
             out.append(line)
         EVENTS.write_text("\n".join(out) + "\n", encoding="utf-8")
     # 2. Static pages (incl. pages the generator no longer rewrites).
@@ -198,7 +204,9 @@ def apply_fixes(rows: list[dict]) -> dict[str, int]:
                 return (tag.replace(m.group(1), html.escape(dead[url], quote=True), 1)
                         .replace(">" + m.group(2) + "</a>", ">" + m.group(2) + " (archived)</a>", 1))
             stats["unlinked"] += 1
-            return f'<span class="source-unavailable">{m.group(2)} {UNAVAILABLE}</span>'
+            text = m.group(2).strip()
+            label = UNAVAILABLE if text.lower() == "source" else f"{text} {UNAVAILABLE}"
+            return f'<span class="source-unavailable">{label}</span>'
 
         new = HREF_RE.sub(sub, text)
         if new != text:

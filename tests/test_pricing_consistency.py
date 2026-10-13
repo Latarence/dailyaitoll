@@ -52,4 +52,4 @@ def test_no_free_tier_language_on_pricing_or_landing():
 def test_landing_has_one_primary_cta_to_data():
     html = (WEB / "index.html").read_text()
     assert html.count('class="hero-cta-btn"') == 1
-    assert re.search(r'<a href="/data/" class="hero-cta-btn">Get the data</a>', html)
+    assert re.search(r'<a href="/data/?" class="hero-cta-btn">Get the data</a>', html)
