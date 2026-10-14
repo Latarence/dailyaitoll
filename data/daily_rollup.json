@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-13T11:12:33.692787+00:00",
+  "last_updated": "2026-10-14T09:03:30.559046+00:00",
   "totals": {
     "jobs": 290574,
     "teams": 185,
@@ -9,12 +9,12 @@
     "labor_hours": 604293920
   },
   "today": {
-    "jobs": 3270,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 2,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": 6801600
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2892,54 +2892,13 @@
       "created_at": "2026-04-27T17:59:55.140861"
     }
   ],
-  "summary": "Today's findings include significant layoffs at Kroger and DNB due to AI-driven efficiencies, and at Flock Safety amid backlash against AI surveillance technologies.",
-  "events": [
-    {
-      "id": "evt_20261012_001",
-      "event_date": "2026-10-12",
-      "headline": "Kroger lays off 3,000 employees, cites AI-driven efficiencies",
-      "source_url": "https://layoffhedge.com/trends/october-2026-layoffs",
-      "source_name": "LayoffHedge",
-      "excerpt": "Kroger announced the elimination of 3,000 positions, attributing the layoffs to AI-driven efficiencies.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 3000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": 6240000
-      },
-      "notes": "Part of October 2026 layoffs totaling 13,449 jobs across 34 companies.",
-      "collected_date": "2026-10-13",
-      "date": "2026-10-13",
-      "created_at": "2026-10-13T11:12:33.692906+00:00"
-    },
-    {
-      "id": "evt_20261008_003",
-      "event_date": "2026-10-08",
-      "headline": "Flock Safety to cut 270 jobs amid AI surveillance backlash",
-      "source_url": "https://www.explainx.ai/blog/flock-safety-cuts-18-percent-staff-270-jobs-surveillance-backlash-2026",
-      "source_name": "ExplainX.ai",
-      "excerpt": "Flock Safety plans to cut about 270 jobs, roughly 18% of its staff, following a September buyout offer and a run of city contract cancellations.",
-      "causality": "contributing",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 270,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": 561600
-      },
-      "notes": "Layoffs attributed to backlash against AI-powered license-plate surveillance.",
-      "collected_date": "2026-10-13",
-      "date": "2026-10-13",
-      "created_at": "2026-10-13T11:12:33.692939+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-10-13",
+    "last_openai_success": "2026-10-14",
     "last_nonzero_collection": "2026-10-13",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-10-13"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-10-14"
   }
 }
