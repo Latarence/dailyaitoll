@@ -5,6 +5,7 @@ try {
 } catch {
   kv = null;
 }
+const { isDisputeEvent, recordDispute } = require('./_lib/disputes');
 
 // Verify Stripe webhook signature
 function verifyStripeSignature(payload, signature, secret) {
@@ -111,7 +112,21 @@ module.exports = async (req, res) => {
 
   const event = JSON.parse(rawBody);
 
-  // Only handle successful checkout sessions
+  // Chargebacks: record charge.dispute.created / .updated / .closed for the operator (no email).
+  if (isDisputeEvent(event.type)) {
+    try {
+      const result = await recordDispute(event, { kv });
+      return res.status(200).json({
+        received: true, kind: 'dispute', dispute: result.record && result.record.id,
+        recorded: result.recorded, duplicate: !!result.duplicate,
+      });
+    } catch (err) {
+      console.error('Error recording dispute:', err && err.message);
+      return res.status(500).json({ error: 'Internal error' });
+    }
+  }
+
+  // Otherwise only handle successful checkout sessions
   if (event.type !== 'checkout.session.completed') {
     return res.status(200).json({ received: true, skipped: true });
   }

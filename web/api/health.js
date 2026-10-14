@@ -1,11 +1,14 @@
-// GET /api/health -> {ok, kv, blob, kv_required, blob_required, built_at, commit}
+// GET /api/health -> {ok, kv, blob, kv_required, blob_required, disputes, built_at, commit}
 // Checks the storage the site actually depends on:
 //   - Vercel KV (Upstash) backs patrons and data licenses when FEATURE_USE_KV_PATRONS /
 //     FEATURE_USE_KV_DATA_LICENSES are 'true'; it is pinged whenever it is configured or required.
 //   - Vercel Blob serves the dataset when FEATURE_USE_BLOB_DATASET is 'true'.
+// disputes: {total, open, last_updated_at} from the KV hash written by the Stripe webhook
+//   (charge.dispute.*), or null when KV is unreachable. Counts only; it never changes `ok`.
 // 503 when a required dependency is unreachable. Never returns env values, URLs or tokens.
 const fs = require('fs');
 const path = require('path');
+const { disputeSummary } = require('./_lib/disputes');
 
 const TIMEOUT_MS = 2500;
 
@@ -35,6 +38,15 @@ function buildInfo() {
     built_at: stamp.built_at || null,
     commit: commit ? String(commit).slice(0, 40) : null,
   };
+}
+
+async function checkDisputes(deps) {
+  const kv = deps.kv === undefined ? loadKv() : deps.kv;
+  try {
+    return await withTimeout(disputeSummary(kv), deps.timeoutMs || TIMEOUT_MS);
+  } catch {
+    return null;
+  }
 }
 
 async function checkKv(deps) {
@@ -77,8 +89,9 @@ function makeHandler(deps = {}) {
       blobRequired ? checkBlob(deps) : Promise.resolve('not_used'),
     ]);
 
+    const disputes = kv === 'reachable' ? await checkDisputes(deps) : null;
     const ok = (!kvRequired || kv === 'reachable') && (!blobRequired || blob === 'reachable');
-    const body = { ok, kv, kv_required: kvRequired, blob, blob_required: blobRequired, ...buildInfo() };
+    const body = { ok, kv, kv_required: kvRequired, blob, blob_required: blobRequired, disputes, ...buildInfo() };
     return res.status(ok ? 200 : 503).json(body);
   };
 }
