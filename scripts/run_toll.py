@@ -36,13 +36,17 @@ RETRY_DELAY_SECONDS = 5             # Delay between retries
 # ANTHROPIC_MODELS is tried in order; the first one the API recognizes wins.
 # Including both "-latest" aliases and pinned IDs means a single retired model
 # no longer breaks collection — the next one in the list takes over.
+#
+# ANTHROPIC_MODEL must stay a double-quoted string literal on one line: the
+# Weekly Health Check workflow reads it with line.split('"')[1] (it does not
+# import this module). tests/test_healthcheck_config.py guards that contract.
+ANTHROPIC_MODEL = "claude-opus-4-7"  # first preference
 ANTHROPIC_MODELS = [
-    "claude-opus-4-7",
+    ANTHROPIC_MODEL,
     "claude-sonnet-4-6",
     "claude-sonnet-4-latest",
     "claude-haiku-4-5",
 ]
-ANTHROPIC_MODEL = ANTHROPIC_MODELS[0]  # back-compat; first preference
 ANTHROPIC_SEARCH_TOOL = "web_search_20260209"
 OPENAI_MODEL = "gpt-4o"
 
