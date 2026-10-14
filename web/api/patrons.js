@@ -6,6 +6,12 @@ try {
 } catch {
   kv = null;
 }
+const { kvConfigured } = require('./_lib/disputes');
+
+function readStaticPatrons() {
+  const p = path.join(__dirname, '..', 'data', 'patrons.json');
+  return JSON.parse(fs.readFileSync(p, 'utf8')).patrons;
+}
 
 module.exports = async (req, res) => {
   if (req.method !== 'GET') {
@@ -14,17 +20,21 @@ module.exports = async (req, res) => {
 
   try {
     if (process.env.FEATURE_USE_KV_PATRONS === 'true') {
-      if (!kv) throw new Error('KV not available');
-      const patrons =
-        (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
-      return res.status(200).json({ patrons });
+      if (kv && kvConfigured()) {
+        try {
+          const patrons =
+            (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
+          return res.status(200).json({ patrons });
+        } catch (err) {
+          console.error('patrons KV read failed, serving static list:', err && err.message);
+        }
+      } else {
+        console.error('patrons: FEATURE_USE_KV_PATRONS is on but KV is not configured; serving static list');
+      }
     }
 
     // Fallback: read the static JSON file committed to the repo.
-    const p = path.join(__dirname, '..', 'data', 'patrons.json');
-    const patrons = JSON.parse(fs.readFileSync(p, 'utf8')).patrons;
-
-    return res.status(200).json({ patrons });
+    return res.status(200).json({ patrons: readStaticPatrons() });
   } catch (err) {
     console.error('patrons api error:', err);
     return res.status(500).json({ error: 'Failed to load patrons' });

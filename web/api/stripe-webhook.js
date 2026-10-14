@@ -5,7 +5,13 @@ try {
 } catch {
   kv = null;
 }
-const { isDisputeEvent, recordDispute } = require('./_lib/disputes');
+const { isDisputeEvent, recordDispute, kvConfigured } = require('./_lib/disputes');
+
+// KV is optional storage. It is used only when its env (KV_REST_API_URL + KV_REST_API_TOKEN) is present,
+// so a FEATURE_USE_KV_* flag turned on without a store can never turn a paid webhook into a 5xx retry loop.
+function kvUsable() {
+  return !!kv && kvConfigured();
+}
 
 // Verify Stripe webhook signature
 function verifyStripeSignature(payload, signature, secret) {
@@ -31,22 +37,28 @@ async function recordPatron({ tier, name, url, description, stripeSessionId }) {
   const first = await kv.setnx(dedupeKey, '1');
   if (!first) return false;
 
-  const existing =
-    (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
+  try {
+    const existing =
+      (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
 
-  const entry = { name, url: url || '' };
-  if (tier === 'founding') entry.description = description || '';
+    const entry = { name, url: url || '' };
+    if (tier === 'founding') entry.description = description || '';
 
-  const next = {
-    founding: existing.founding || [],
-    sustainer: existing.sustainer || [],
-    supporter: existing.supporter || [],
-  };
-  if (!next[tier]) return false;
-  next[tier] = [entry, ...next[tier]].slice(0, 500);
+    const next = {
+      founding: existing.founding || [],
+      sustainer: existing.sustainer || [],
+      supporter: existing.supporter || [],
+    };
+    if (!next[tier]) return false;
+    next[tier] = [entry, ...next[tier]].slice(0, 500);
 
-  await kv.set('patrons:v1', next);
-  return true;
+    await kv.set('patrons:v1', next);
+    return true;
+  } catch (err) {
+    // Release the claim so the fallback (or a Stripe retry) can still record this patron.
+    try { await kv.del(dedupeKey); } catch { /* best effort */ }
+    throw err;
+  }
 }
 
 async function recordLicense({ tier, email, stripeSessionId }) {
@@ -56,30 +68,60 @@ async function recordLicense({ tier, email, stripeSessionId }) {
   return true;
 }
 
-async function dispatchPatronToGitHub({ tier, name, url, description }) {
+const DISPATCH_URL =
+  'https://api.github.com/repos/Latarence/dailyaitoll/actions/workflows/add-patron.yml/dispatches';
+
+// Sends stripe_session_id so add-patron.yml can skip a session it already added (Stripe retries).
+// A workflow that does not declare that input yet answers 422 "Unexpected inputs provided"; then the
+// dispatch is resent without it, so this code works with both the old and the new workflow.
+async function dispatchPatronToGitHub({ tier, name, url, description, stripeSessionId }) {
   const githubToken = process.env.GITHUB_TOKEN;
   if (!githubToken) throw new Error('Missing GITHUB_TOKEN');
 
-  const response = await fetch(
-    'https://api.github.com/repos/Latarence/dailyaitoll/actions/workflows/add-patron.yml/dispatches',
-    {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${githubToken}`,
-        Accept: 'application/vnd.github+json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        ref: 'main',
-        inputs: { tier, name, url: url || '', description: description || '' },
-      }),
+  const base = { tier, name, url: url || '', description: description || '' };
+  const send = (inputs) => fetch(DISPATCH_URL, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${githubToken}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ ref: 'main', inputs }),
+  });
+
+  let response = await send(stripeSessionId ? { ...base, stripe_session_id: stripeSessionId } : base);
+  if (!response.ok && stripeSessionId && response.status === 422) {
+    const text = await response.text();
+    if (!/unexpected inputs/i.test(text)) {
+      throw new Error(`GitHub dispatch failed: 422 ${text}`);
     }
-  );
+    console.log('add-patron.yml has no stripe_session_id input yet; dispatching without it');
+    response = await send(base);
+  }
 
   if (!response.ok) {
     const text = await response.text();
     throw new Error(`GitHub dispatch failed: ${response.status} ${text}`);
   }
+}
+
+// Webhook-side dedupe for the GitHub path, only when a KV store is configured (cheap SETNX).
+// Without KV the add-patron.yml session-id check is the dedupe. KV errors never block the dispatch.
+async function claimDispatch(stripeSessionId) {
+  if (!kvUsable() || !stripeSessionId) return { key: null, duplicate: false };
+  const key = `patron_dispatch:${stripeSessionId}`;
+  try {
+    const first = await kv.setnx(key, '1');
+    return { key: first ? key : null, duplicate: !first };
+  } catch (err) {
+    console.error('patron dispatch dedupe unavailable (KV error):', err && err.message);
+    return { key: null, duplicate: false };
+  }
+}
+
+async function releaseDispatch(key) {
+  if (!key) return;
+  try { await kv.del(key); } catch { /* best effort */ }
 }
 
 module.exports = async (req, res) => {
@@ -146,8 +188,19 @@ module.exports = async (req, res) => {
       }
 
       const email = session.customer_details?.email || '';
+      // Stripe is the source of truth: /api/data-download re-verifies the session with Stripe,
+      // so a missing or failing KV store is logged and never fails the webhook.
       if (process.env.FEATURE_USE_KV_DATA_LICENSES === 'true') {
-        await recordLicense({ tier, email, stripeSessionId });
+        if (!kvUsable()) {
+          console.error(`LICENSE_ALERT (KV not configured, not stored) session=${stripeSessionId} tier=${tier}`);
+        } else {
+          try {
+            await recordLicense({ tier, email, stripeSessionId });
+          } catch (err) {
+            console.error(`LICENSE_ALERT (KV write failed, not stored) session=${stripeSessionId} tier=${tier}:`,
+              err && err.message);
+          }
+        }
       }
 
       console.log(`Data license recorded: ${email || 'unknown'} (${tier})`);
@@ -165,10 +218,32 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: 'Missing patron info' });
     }
 
+    let recordedInKv = false;
     if (process.env.FEATURE_USE_KV_PATRONS === 'true') {
-      await recordPatron({ tier, name, url, description, stripeSessionId });
-    } else {
-      await dispatchPatronToGitHub({ tier, name, url, description });
+      if (!kvUsable()) {
+        console.error('PATRON_ALERT (KV not configured): falling back to the GitHub dispatch');
+      } else {
+        try {
+          await recordPatron({ tier, name, url, description, stripeSessionId });
+          recordedInKv = true;
+        } catch (err) {
+          console.error('PATRON_ALERT (KV write failed): falling back to the GitHub dispatch:', err && err.message);
+        }
+      }
+    }
+
+    if (!recordedInKv) {
+      const claim = await claimDispatch(stripeSessionId);
+      if (claim.duplicate) {
+        console.log(`Patron dispatch already sent for this session (${tier}); skipping`);
+        return res.status(200).json({ success: true, kind: 'patron', patron: name, tier, duplicate: true });
+      }
+      try {
+        await dispatchPatronToGitHub({ tier, name, url, description, stripeSessionId });
+      } catch (err) {
+        await releaseDispatch(claim.key);
+        throw err;
+      }
     }
 
     console.log(`Patron recorded: ${name} (${tier})`);

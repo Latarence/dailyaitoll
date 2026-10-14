@@ -7,6 +7,7 @@ try {
   kv = null;
 }
 const { Readable } = require('stream');
+const { kvConfigured } = require('./_lib/disputes');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 // @vercel/blob 1.x has no get(): look the blob up with head(), then fetch it server-side and stream it,
 // so the client only ever talks to this API and never sees the blob URL.
@@ -33,6 +34,12 @@ async function fetchBlobDataset() {
   return r.body;
 }
 
+// KV is only a cache in front of Stripe. Any KV problem (no env, network, missing-env error from
+// @vercel/kv) falls through to the Stripe paid check, so a paying buyer always gets the download.
+function kvUsable() {
+  return process.env.FEATURE_USE_KV_DATA_LICENSES === 'true' && !!kv && kvConfigured();
+}
+
 async function hasLicense(sessionId) {
   if (!kv) return null;
   const v = await kv.get(`data_license_session:${sessionId}`);
@@ -56,7 +63,15 @@ module.exports = async (req, res) => {
 
   try {
     // Fast path: already recorded via webhook.
-    let license = process.env.FEATURE_USE_KV_DATA_LICENSES === 'true' ? await hasLicense(sessionId) : null;
+    let license = null;
+    if (kvUsable()) {
+      try {
+        license = await hasLicense(sessionId);
+      } catch (err) {
+        console.error('license lookup failed (KV), verifying with Stripe:', err && err.message);
+        license = null;
+      }
+    }
 
     // Slow path: verify with Stripe (covers webhook delays).
     if (!license) {
@@ -73,11 +88,15 @@ module.exports = async (req, res) => {
 
       const email = session.customer_details?.email || session.customer_email || '';
 
-      if (process.env.FEATURE_USE_KV_DATA_LICENSES === 'true' && kv) {
-        await kv.set(
-          `data_license_session:${sessionId}`,
-          JSON.stringify({ tier, email, created_at: new Date().toISOString() })
-        );
+      if (kvUsable()) {
+        try {
+          await kv.set(
+            `data_license_session:${sessionId}`,
+            JSON.stringify({ tier, email, created_at: new Date().toISOString() })
+          );
+        } catch (err) {
+          console.error('license write-back failed (KV), serving anyway:', err && err.message);
+        }
       }
 
       license = { tier, email };

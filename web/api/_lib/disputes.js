@@ -101,4 +101,4 @@ async function disputeSummary(kv) {
   return { total: records.length, open: open.length, last_updated_at: latest };
 }
 
-module.exports = { isDisputeEvent, recordDispute, disputeSummary, mergeRecord, DISPUTES_KEY, OPEN_STATUSES };
+module.exports = { isDisputeEvent, recordDispute, disputeSummary, mergeRecord, kvConfigured, DISPUTES_KEY, OPEN_STATUSES };
