@@ -65,7 +65,7 @@ The LLM does the work—searching news, extracting events, and structuring the o
     "teams": 3,
     "companies": 1,
     "revenue": null,
-    "labor_hours": -416000
+    "labor_hours": 416000
   },
   "notes": "Q2 2026 restructuring announcement",
   "created_at": "2026-04-26T06:00:00Z"
@@ -83,7 +83,7 @@ The LLM does the work—searching news, extracting events, and structuring the o
     "products": 89,
     "companies": 156,
     "revenue": 2400000000,
-    "labor_hours": -32000000
+    "labor_hours": 32000000
   },
   "today": {
     "jobs": 200,
@@ -91,7 +91,7 @@ The LLM does the work—searching news, extracting events, and structuring the o
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": -416000
+    "labor_hours": 416000
   },
   "events_count": 1247,
   "pending_review": 12

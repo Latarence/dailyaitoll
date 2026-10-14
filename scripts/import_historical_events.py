@@ -97,7 +97,7 @@ def process_batch3(filepath):
                 "jobs": jobs,
                 "teams": 0,
                 "companies": 1,
-                "labor_hours": -jobs * 2080
+                "labor_hours": jobs * 2080
             },
             "notes": description,
             "industry": str(row.get('Industry', '')) if pd.notna(row.get('Industry')) else "",
@@ -162,7 +162,7 @@ def process_layoffs(filepath):
                 "jobs": jobs,
                 "teams": 0,
                 "companies": 1,
-                "labor_hours": -jobs * 2080
+                "labor_hours": jobs * 2080
             },
             "notes": notes,
             "hashtags": hashtags,

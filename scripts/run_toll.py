@@ -69,6 +69,36 @@ def get_today() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
 
+def _abs_labor(bucket) -> None:
+    """Force a bucket's labor_hours to a non-negative magnitude in place.
+
+    labor_hours is a count of hours eliminated, so it is always stored as a
+    positive number. Older data (and older prompts) used a negative sign to
+    mean "eliminated"; the site always displayed Math.abs() of it.
+    """
+    if isinstance(bucket, dict) and isinstance(bucket.get("labor_hours"), (int, float)) \
+            and not isinstance(bucket.get("labor_hours"), bool):
+        bucket["labor_hours"] = abs(bucket["labor_hours"])
+
+
+def normalize_event_tolls(event: dict) -> dict:
+    """Ensure an event's tolls.labor_hours is stored as a positive magnitude."""
+    _abs_labor(event.get("tolls") if isinstance(event, dict) else None)
+    return event
+
+
+def normalize_rollup_signs(data: dict) -> dict:
+    """Migrate a rollup so every labor_hours value is a positive magnitude."""
+    _abs_labor(data.get("totals"))
+    _abs_labor(data.get("today"))
+    for bucket in (data.get("daily_totals") or {}).values():
+        _abs_labor(bucket)
+    for key in ("events", "all_events"):
+        for event in data.get(key) or []:
+            normalize_event_tolls(event)
+    return data
+
+
 def load_rollup() -> dict:
     if ROLLUP_FILE.exists():
         with open(ROLLUP_FILE, "r") as f:
@@ -78,7 +108,8 @@ def load_rollup() -> dict:
                 data["daily_totals"] = {}
             if "all_events" not in data:
                 data["all_events"] = data.get("events", [])
-            return data
+            # labor_hours used to be stored negative; store magnitudes
+            return normalize_rollup_signs(data)
     return {
         "last_updated": None,
         "totals": {"jobs": 0, "teams": 0, "products": 0, "companies": 0, "revenue": 0, "labor_hours": 0},
@@ -284,7 +315,7 @@ Return ONLY a JSON object (no other text):
         "jobs": 200,
         "teams": 3,
         "companies": 1,
-        "labor_hours": -416000
+        "labor_hours": 416000
       }},
       "notes": "Q2 restructuring"
     }}
@@ -297,7 +328,7 @@ Return ONLY a JSON object (no other text):
 - event_date: The actual date the event occurred/was announced (YYYY-MM-DD format)
 - causality: "direct" (AI explicitly cited), "contributing" (AI among factors), "inferred" (pattern suggests AI)
 - confidence: 0.0-1.0 based on source reliability
-- labor_hours: negative = hours eliminated (jobs × 2080 annual hours)
+- labor_hours: annual labor hours eliminated, as a POSITIVE number (jobs × 2080 annual hours)
 
 If no NEW events found:
 {{"collected_date": "{today}", "events": [], "summary": "No new verifiable AI displacement events found."}}
@@ -745,7 +776,8 @@ def update_data(result: dict, rollup: dict) -> dict:
         # For backwards compat, also set "date" to event_date
         event["date"] = event_date
 
-        tolls = event.get("tolls", {})
+        normalize_event_tolls(event)
+        tolls = event.get("tolls") or {}
 
         # Update today's collection totals
         for key in rollup["today"]:

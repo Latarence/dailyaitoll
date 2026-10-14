@@ -6,7 +6,7 @@
     "products": 1,
     "companies": 145,
     "revenue": 0,
-    "labor_hours": -604293920
+    "labor_hours": 604293920
   },
   "today": {
     "jobs": 3270,
@@ -14,7 +14,7 @@
     "products": 0,
     "companies": 2,
     "revenue": 0,
-    "labor_hours": -6801600
+    "labor_hours": 6801600
   },
   "daily_totals": {
     "2026-05-05": {
@@ -23,7 +23,7 @@
       "products": 0,
       "companies": 3,
       "revenue": 0,
-      "labor_hours": -12396800
+      "labor_hours": 12396800
     },
     "2026-04-26": {
       "jobs": 8000,
@@ -31,7 +31,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -16640000
+      "labor_hours": 16640000
     },
     "2026-04-25": {
       "jobs": 1400,
@@ -39,7 +39,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2912000
+      "labor_hours": 2912000
     },
     "2026-04-23": {
       "jobs": 8750,
@@ -47,7 +47,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -18100000
+      "labor_hours": 18100000
     },
     "2026-04-15": {
       "jobs": 0,
@@ -63,7 +63,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -388960
+      "labor_hours": 388960
     },
     "2026-04-02": {
       "jobs": 123,
@@ -71,7 +71,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -255840
+      "labor_hours": 255840
     },
     "2026-04-01": {
       "jobs": 0,
@@ -87,7 +87,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -104000
+      "labor_hours": 104000
     },
     "2026-01-15": {
       "jobs": 1600,
@@ -95,7 +95,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -3328000
+      "labor_hours": 3328000
     },
     "2026-01-08": {
       "jobs": 250,
@@ -103,7 +103,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -520000
+      "labor_hours": 520000
     },
     "2026-01-05": {
       "jobs": 50,
@@ -111,7 +111,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -104000
+      "labor_hours": 104000
     },
     "2025-03-06": {
       "jobs": 2500,
@@ -119,7 +119,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -5200000
+      "labor_hours": 5200000
     },
     "2025-02-27": {
       "jobs": 3350,
@@ -127,7 +127,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -6968000
+      "labor_hours": 6968000
     },
     "2025-02-21": {
       "jobs": 130,
@@ -135,7 +135,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -270400
+      "labor_hours": 270400
     },
     "2025-02-05": {
       "jobs": 1750,
@@ -143,7 +143,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -3640000
+      "labor_hours": 3640000
     },
     "2025-02-04": {
       "jobs": 1000,
@@ -151,7 +151,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2080000
+      "labor_hours": 2080000
     },
     "2025-01-14": {
       "jobs": 3600,
@@ -159,7 +159,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -7488000
+      "labor_hours": 7488000
     },
     "2025-01-13": {
       "jobs": 200,
@@ -167,7 +167,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -416000
+      "labor_hours": 416000
     },
     "2024-12-15": {
       "jobs": 248,
@@ -175,7 +175,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -515840
+      "labor_hours": 515840
     },
     "2024-11-26": {
       "jobs": 400,
@@ -183,7 +183,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -832000
+      "labor_hours": 832000
     },
     "2024-11-13": {
       "jobs": 1000,
@@ -191,7 +191,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2080000
+      "labor_hours": 2080000
     },
     "2024-11-07": {
       "jobs": 660,
@@ -199,7 +199,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -1372800
+      "labor_hours": 1372800
     },
     "2024-10-15": {
       "jobs": 200,
@@ -207,7 +207,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -416000
+      "labor_hours": 416000
     },
     "2024-09-17": {
       "jobs": 6000,
@@ -215,7 +215,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -12480000
+      "labor_hours": 12480000
     },
     "2024-08-20": {
       "jobs": 1000,
@@ -223,7 +223,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2080000
+      "labor_hours": 2080000
     },
     "2024-08-01": {
       "jobs": 15000,
@@ -231,7 +231,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -31200000
+      "labor_hours": 31200000
     },
     "2024-07-04": {
       "jobs": 1200,
@@ -239,7 +239,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2496000
+      "labor_hours": 2496000
     },
     "2024-06-15": {
       "jobs": 1000,
@@ -247,7 +247,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2080000
+      "labor_hours": 2080000
     },
     "2024-05-01": {
       "jobs": 200,
@@ -255,7 +255,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -416000
+      "labor_hours": 416000
     },
     "2024-04-15": {
       "jobs": 14000,
@@ -263,7 +263,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -29120000
+      "labor_hours": 29120000
     },
     "2024-04-04": {
       "jobs": 0,
@@ -279,7 +279,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -27040000
+      "labor_hours": 27040000
     },
     "2024-02-15": {
       "jobs": 12430,
@@ -287,7 +287,7 @@
       "products": 0,
       "companies": 3,
       "revenue": 0,
-      "labor_hours": -25854400
+      "labor_hours": 25854400
     },
     "2024-02-10": {
       "jobs": 12000,
@@ -295,7 +295,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -24960000
+      "labor_hours": 24960000
     },
     "2024-01-30": {
       "jobs": 2500,
@@ -303,7 +303,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -5200000
+      "labor_hours": 5200000
     },
     "2024-01-15": {
       "jobs": 1800,
@@ -311,7 +311,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -3744000
+      "labor_hours": 3744000
     },
     "2023-12-15": {
       "jobs": 0,
@@ -335,7 +335,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2635360
+      "labor_hours": 2635360
     },
     "2023-11-20": {
       "jobs": 0,
@@ -351,7 +351,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -1164800
+      "labor_hours": 1164800
     },
     "2023-10-19": {
       "jobs": 14000,
@@ -359,7 +359,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -29120000
+      "labor_hours": 29120000
     },
     "2023-10-16": {
       "jobs": 0,
@@ -375,7 +375,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2616640
+      "labor_hours": 2616640
     },
     "2023-09-15": {
       "jobs": 237,
@@ -383,7 +383,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -492960
+      "labor_hours": 492960
     },
     "2023-01-26": {
       "jobs": 6900,
@@ -391,7 +391,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -14352000
+      "labor_hours": 14352000
     },
     "2023-01-20": {
       "jobs": 12000,
@@ -399,7 +399,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -24960000
+      "labor_hours": 24960000
     },
     "2023-01-18": {
       "jobs": 10000,
@@ -407,7 +407,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -20800000
+      "labor_hours": 20800000
     },
     "2023-01-15": {
       "jobs": 8000,
@@ -415,7 +415,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -16640000
+      "labor_hours": 16640000
     },
     "2023-01-04": {
       "jobs": 18000,
@@ -423,7 +423,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -37440000
+      "labor_hours": 37440000
     },
     "2026-05-07": {
       "jobs": 2200,
@@ -431,7 +431,7 @@
       "products": 0,
       "companies": 4,
       "revenue": 0,
-      "labor_hours": -4576000
+      "labor_hours": 4576000
     },
     "2026-05-06": {
       "jobs": 600,
@@ -439,7 +439,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -1248000
+      "labor_hours": 1248000
     },
     "2026-05-11": {
       "jobs": 600,
@@ -447,7 +447,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -1248000
+      "labor_hours": 1248000
     },
     "2026-05-14": {
       "jobs": 4175,
@@ -455,7 +455,7 @@
       "products": 0,
       "companies": 3,
       "revenue": 0,
-      "labor_hours": -8684000
+      "labor_hours": 8684000
     },
     "2026-05-20": {
       "jobs": 3000,
@@ -463,7 +463,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -6240000
+      "labor_hours": 6240000
     },
     "2026-05-28": {
       "jobs": 11110,
@@ -471,7 +471,7 @@
       "products": 0,
       "companies": 4,
       "revenue": 0,
-      "labor_hours": -23108800
+      "labor_hours": 23108800
     },
     "2026-05-30": {
       "jobs": 4000,
@@ -479,7 +479,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -8320000
+      "labor_hours": 8320000
     },
     "2026-06-01": {
       "jobs": 3770,
@@ -487,7 +487,7 @@
       "products": 0,
       "companies": 6,
       "revenue": 0,
-      "labor_hours": -7841600
+      "labor_hours": 7841600
     },
     "2026-05-13": {
       "jobs": 1000,
@@ -495,7 +495,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2080000
+      "labor_hours": 2080000
     },
     "2026-06-03": {
       "jobs": 440,
@@ -503,7 +503,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -915200
+      "labor_hours": 915200
     },
     "2026-06-02": {
       "jobs": 448,
@@ -511,7 +511,7 @@
       "products": 0,
       "companies": 3,
       "revenue": 0,
-      "labor_hours": -931840
+      "labor_hours": 931840
     },
     "2026-05-15": {
       "jobs": 150,
@@ -519,7 +519,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -312000
+      "labor_hours": 312000
     },
     "2026-05-16": {
       "jobs": 340,
@@ -527,7 +527,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -707200
+      "labor_hours": 707200
     },
     "2026-02-01": {
       "jobs": 1000,
@@ -535,7 +535,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -2080000
+      "labor_hours": 2080000
     },
     "2026-06-10": {
       "jobs": 136,
@@ -543,7 +543,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -282880
+      "labor_hours": 282880
     },
     "2026-06-09": {
       "jobs": 230,
@@ -551,7 +551,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -478400
+      "labor_hours": 478400
     },
     "2026-06-11": {
       "jobs": 300,
@@ -559,7 +559,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -624000
+      "labor_hours": 624000
     },
     "2026-06-16": {
       "jobs": 200,
@@ -567,7 +567,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -416000
+      "labor_hours": 416000
     },
     "2026-06-22": {
       "jobs": 21000,
@@ -575,7 +575,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -43680000
+      "labor_hours": 43680000
     },
     "2026-06-29": {
       "jobs": 5500,
@@ -583,7 +583,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -11440000
+      "labor_hours": 11440000
     },
     "2026-06-25": {
       "jobs": 90,
@@ -591,7 +591,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -187200
+      "labor_hours": 187200
     },
     "2026-07-06": {
       "jobs": 4800,
@@ -599,7 +599,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -9984000
+      "labor_hours": 9984000
     },
     "2026-07-08": {
       "jobs": 500,
@@ -607,7 +607,7 @@
       "products": 0,
       "companies": 5,
       "revenue": 0,
-      "labor_hours": -1040000
+      "labor_hours": 1040000
     },
     "2026-07-13": {
       "jobs": 500,
@@ -615,7 +615,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -1040000
+      "labor_hours": 1040000
     },
     "2026-07-14": {
       "jobs": 0,
@@ -631,7 +631,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -6953440
+      "labor_hours": 6953440
     },
     "2026-07-02": {
       "jobs": 130,
@@ -639,7 +639,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -270400
+      "labor_hours": 270400
     },
     "2026-07-07": {
       "jobs": 170,
@@ -647,7 +647,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -353600
+      "labor_hours": 353600
     },
     "2026-07-22": {
       "jobs": 620,
@@ -655,7 +655,7 @@
       "products": 0,
       "companies": 3,
       "revenue": 0,
-      "labor_hours": -1289600
+      "labor_hours": 1289600
     },
     "2026-07-09": {
       "jobs": 0,
@@ -671,7 +671,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -540800
+      "labor_hours": 540800
     },
     "2026-07-16": {
       "jobs": 3000,
@@ -679,7 +679,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -6240000
+      "labor_hours": 6240000
     },
     "2026-07-24": {
       "jobs": 0,
@@ -703,7 +703,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -5408000
+      "labor_hours": 5408000
     },
     "2026-07-31": {
       "jobs": 1150,
@@ -711,7 +711,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -2392000
+      "labor_hours": 2392000
     },
     "2026-08-06": {
       "jobs": 250,
@@ -719,7 +719,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -520000
+      "labor_hours": 520000
     },
     "2026-08-04": {
       "jobs": 768,
@@ -727,7 +727,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -1597440
+      "labor_hours": 1597440
     },
     "2026-08-05": {
       "jobs": 337,
@@ -735,7 +735,7 @@
       "products": 0,
       "companies": 3,
       "revenue": 0,
-      "labor_hours": -700960
+      "labor_hours": 700960
     },
     "2026-08-10": {
       "jobs": 314,
@@ -743,7 +743,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -653120
+      "labor_hours": 653120
     },
     "2026-08-21": {
       "jobs": 201,
@@ -751,7 +751,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -418080
+      "labor_hours": 418080
     },
     "2026-08-27": {
       "jobs": 319,
@@ -759,7 +759,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -663520
+      "labor_hours": 663520
     },
     "2026-08-31": {
       "jobs": 250,
@@ -767,7 +767,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -520000
+      "labor_hours": 520000
     },
     "2026-08-17": {
       "jobs": 85,
@@ -775,7 +775,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -176800
+      "labor_hours": 176800
     },
     "2026-08-20": {
       "jobs": 8,
@@ -783,7 +783,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -16640
+      "labor_hours": 16640
     },
     "2026-09-02": {
       "jobs": 3300,
@@ -791,7 +791,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -6864000
+      "labor_hours": 6864000
     },
     "2026-09-03": {
       "jobs": 220,
@@ -799,7 +799,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -457600
+      "labor_hours": 457600
     },
     "2026-09-14": {
       "jobs": 2300,
@@ -807,7 +807,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -4784000
+      "labor_hours": 4784000
     },
     "2026-09-16": {
       "jobs": 5000,
@@ -815,7 +815,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -10400000
+      "labor_hours": 10400000
     },
     "2026-09-09": {
       "jobs": 1600,
@@ -823,7 +823,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -3328000
+      "labor_hours": 3328000
     },
     "2026-10-06": {
       "jobs": 1230,
@@ -831,7 +831,7 @@
       "products": 0,
       "companies": 2,
       "revenue": 0,
-      "labor_hours": -2558400
+      "labor_hours": 2558400
     },
     "2026-10-12": {
       "jobs": 3000,
@@ -839,7 +839,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -6240000
+      "labor_hours": 6240000
     },
     "2026-10-08": {
       "jobs": 270,
@@ -847,7 +847,7 @@
       "products": 0,
       "companies": 1,
       "revenue": 0,
-      "labor_hours": -561600
+      "labor_hours": 561600
     }
   },
   "events_count": 142,
@@ -865,7 +865,7 @@
         "jobs": 3000,
         "teams": null,
         "companies": 1,
-        "labor_hours": -6240000
+        "labor_hours": 6240000
       },
       "notes": "Part of October 2026 layoffs totaling 13,449 jobs across 34 companies.",
       "collected_date": "2026-10-13",
@@ -885,7 +885,7 @@
         "jobs": 270,
         "teams": null,
         "companies": 1,
-        "labor_hours": -561600
+        "labor_hours": 561600
       },
       "notes": "Layoffs attributed to backlash against AI-powered license-plate surveillance.",
       "collected_date": "2026-10-13",
@@ -905,7 +905,7 @@
         "jobs": 660,
         "teams": null,
         "companies": 1,
-        "labor_hours": -1372800
+        "labor_hours": 1372800
       },
       "notes": "Q4 restructuring",
       "collected_date": "2026-10-07",
@@ -925,7 +925,7 @@
         "jobs": 570,
         "teams": null,
         "companies": 1,
-        "labor_hours": -1185600
+        "labor_hours": 1185600
       },
       "notes": "Q4 restructuring",
       "collected_date": "2026-10-07",
@@ -945,7 +945,7 @@
         "jobs": 1600,
         "teams": 5,
         "companies": 1,
-        "labor_hours": -3328000
+        "labor_hours": 3328000
       },
       "notes": "Layoffs part of broader 3,200 job reductions; AI cited as a contributing factor.",
       "collected_date": "2026-09-28",
@@ -965,7 +965,7 @@
         "jobs": 5000,
         "teams": null,
         "companies": 1,
-        "labor_hours": -10400000
+        "labor_hours": 10400000
       },
       "notes": "Oracle is actively hiring for roles in AI, machine learning, data centers, and infrastructure, signaling a strategic pivot towards emerging technologies.",
       "collected_date": "2026-09-17",
@@ -985,7 +985,7 @@
         "jobs": 700,
         "teams": 5,
         "companies": 1,
-        "labor_hours": -1456000
+        "labor_hours": 1456000
       },
       "notes": "Layoffs linked to increased AI investments and infrastructure spending.",
       "collected_date": "2026-09-15",
@@ -1005,7 +1005,7 @@
         "jobs": 1600,
         "teams": 10,
         "companies": 1,
-        "labor_hours": -3328000
+        "labor_hours": 3328000
       },
       "notes": "Part of broader AI integration strategy.",
       "collected_date": "2026-09-15",
@@ -1025,7 +1025,7 @@
         "jobs": 220,
         "teams": null,
         "companies": 1,
-        "labor_hours": -457600
+        "labor_hours": 457600
       },
       "notes": "AI-adjacent restructuring",
       "collected_date": "2026-09-06",
@@ -1045,7 +1045,7 @@
         "jobs": 3300,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -6864000
+        "labor_hours": 6864000
       },
       "notes": "Announced Sept 2, 2026 by CEO Dara Khosrowshahi. Uber is combining engineering, science and delivery divisions, cutting micro-teams by ~50%, and reducing employees more than seven layers below the CEO. Savings will be reallocated into ride-sharing, delivery, and robotaxi businesses (over $10B in partnerships), placing this within the broader wave of tech restructurings tied to AI/automation-era efficiency. CEO explicitly did NOT cite AI, so causality classified as 'contributing' rather than 'direct'. This is a separate, larger, company-wide event distinct from prior Uber cuts already tracked (People & Places division, customer service).",
       "collected_date": "2026-09-03",
@@ -1065,7 +1065,7 @@
         "jobs": 8,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -16640
+        "labor_hours": 16640
       },
       "notes": "Executive-layer AI restructuring; ~8,000-person Product and Technology group being reorganized into small autonomous AI-focused squads. Featured in Sept 1, 2026 AI Governance roundup as a recent example that 'no tier is safe from AI layoffs in 2026.' Event dated Aug 20-21, 2026 - slightly outside 48hr window but not previously tracked.",
       "collected_date": "2026-09-02",
@@ -1085,7 +1085,7 @@
         "jobs": 250,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -520000
+        "labor_hours": 520000
       },
       "notes": "Eternal-owned Zomato shut its Hyderabad Customer Delight operations, moving in-house support to Gurugram. Reports indicate a larger share of customer support work is being outsourced and increased use of AI/automation. Prior 2025 round of ~600 customer support layoffs was explicitly tied to AI-driven cost cuts.",
       "collected_date": "2026-09-01",
@@ -1105,7 +1105,7 @@
         "jobs": 172,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -357760
+        "labor_hours": 357760
       },
       "notes": "SEC Form 8-K filed Aug 27, 2026. While the 8-K itself avoided naming AI, PagerDuty simultaneously shipped an autonomous agent for incident response and CEO framed the company as an 'AI-first operations management' leader. Analysts characterize this as an early example of an AI-driven workforce redesign in enterprise software.",
       "collected_date": "2026-09-01",
@@ -1125,7 +1125,7 @@
         "jobs": 60,
         "teams": 3,
         "companies": 1,
-        "labor_hours": -124800
+        "labor_hours": 124800
       },
       "notes": "Second round of cuts in four months at the Israeli cybersecurity unicorn, bringing total to ~100 (20% of workforce). Company explicitly stated changes were driven by adoption of AI and shift toward AI-based cybersecurity validation.",
       "collected_date": "2026-09-01",
@@ -1145,7 +1145,7 @@
         "jobs": 25,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -52000
+        "labor_hours": 52000
       },
       "notes": "Zapier competitor Relay.app is winding down after Google hired founder Jacob Bank (now VP of Product for Chrome) and staff to integrate Gemini into the browser. Product discontinued in favor of Google's AI-integrated alternative. Estimated ~25 employees affected based on $8.1M funding stage; free access ended Aug 15, paid access ends Sep 14.",
       "collected_date": "2026-09-01",
@@ -1165,7 +1165,7 @@
         "jobs": 147,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -305760
+        "labor_hours": 305760
       },
       "notes": "Layoffs primarily affected Vision Pro and Siri teams.",
       "collected_date": "2026-08-29",
@@ -1185,7 +1185,7 @@
         "jobs": 200,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -416000
+        "labor_hours": 416000
       },
       "notes": "Restructuring to focus on newer AI efforts and devices",
       "collected_date": "2026-08-26",
@@ -1205,7 +1205,7 @@
         "jobs": 65,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -135200
+        "labor_hours": 135200
       },
       "notes": "AI integration across software development and customer support",
       "collected_date": "2026-08-26",
@@ -1225,7 +1225,7 @@
         "jobs": 1,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -2080
+        "labor_hours": 2080
       },
       "notes": "First documented case of AI autonomously terminating employment.",
       "collected_date": "2026-08-24",
@@ -1245,7 +1245,7 @@
         "jobs": 314,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -653120
+        "labor_hours": 653120
       },
       "notes": "Board approved restructuring plan on Aug 7, 2026; announced Aug 10, 2026 alongside Q2 earnings. New CEO Wael Mohamed leveraging Kenzo acquisition to build AI-first platform. Company has 2,613 employees; ~314 positions eliminated. Restructuring charges $10-11M. Boston Globe notes growth of AI-powered cyber apps is 'roiling the software security industry' with older firms like Rapid7 adapting while AI-native competitors raise hundreds of millions.",
       "collected_date": "2026-08-12",
@@ -1265,7 +1265,7 @@
         "jobs": 268,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -557440
+        "labor_hours": 557440
       },
       "notes": "Layoffs at local TV stations including WXYZ-TV Detroit and WXMI-TV Grand Rapids in Michigan, plus Nebraska and Oklahoma outlets. Part of transformation to 24/7 streaming-first model with centralized digital production and AI-driven automation. CEO Symson described shift as 'revolution' in local news production. Total cuts for year at Scripps: 432 positions plus 126 open roles = 12% of workforce.",
       "collected_date": "2026-08-10",
@@ -1285,7 +1285,7 @@
         "jobs": 250,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -520000
+        "labor_hours": 520000
       },
       "notes": "<cite index=\"92-2\">TikTok has laid off 250 employees and announced the closure of its Nashville, Tennessee office, as the company restructures parts of its operations and increasingly relies on artificial intelligence for content moderation.</cite> WARN notice filed with Tennessee Department of Labor; office closes October 5. Content moderation team specifically.",
       "collected_date": "2026-08-09",
@@ -1305,7 +1305,7 @@
         "jobs": 220,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -457600
+        "labor_hours": 457600
       },
       "notes": "<cite index=\"83-3,83-4\">Most of the cuts will fall on the product and engineering teams. Patel Goyal, who took over as CEO at the start of this year, said the decision was not a cost-cutting effort and was not driven by artificial intelligence.</cite> However, CEO also acknowledged AI is changing how work is done. Reduces headcount to ~1,600.",
       "collected_date": "2026-08-09",
@@ -1325,7 +1325,7 @@
         "jobs": 52,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -108160
+        "labor_hours": 108160
       },
       "notes": "<cite index=\"54-2,54-5\">Google described the reductions to The Seattle Times as a team-level reorganisation rather than part of a wider company-wide layoff round. As firms spend heavily on AI infrastructure and other capital projects, they are looking for savings elsewhere.</cite> Part of broader industry AI capital reallocation.",
       "collected_date": "2026-08-09",
@@ -1345,7 +1345,7 @@
         "jobs": 500,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -1040000
+        "labor_hours": 1040000
       },
       "notes": "<cite index=\"76-5\">Zillow told GeekWire the cuts were not driven by AI.</cite> However, <cite index=\"79-3,79-4\">the self-styled 'AI-native' firm cut more than 500 jobs, its biggest layoff of the year, and declined to say whether AI had anything to do with it.</cite> Company has publicly emphasized AI-native identity; news outlets framing as AI push.",
       "collected_date": "2026-08-09",
@@ -1365,7 +1365,7 @@
         "jobs": 150,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -312000
+        "labor_hours": 312000
       },
       "notes": "CEO Chris Britt memo cited AI as changing what's possible; announced July 31, 2026, five days before Q2 earnings. Confirmed by Bloomberg, Reuters, Banking Dive, PYMNTS, American Banker.",
       "collected_date": "2026-08-08",
@@ -1385,7 +1385,7 @@
         "jobs": 1000,
         "teams": 3,
         "companies": 1,
-        "labor_hours": -2080000
+        "labor_hours": 2080000
       },
       "notes": "Snap plans to restructure business model to increase use of AI agents; ~$500M annualized cost savings estimated. Not previously tracked.",
       "collected_date": "2026-08-08",
@@ -1407,7 +1407,7 @@
         "products": null,
         "companies": 1,
         "revenue": null,
-        "labor_hours": -5408000
+        "labor_hours": 5408000
       },
       "notes": "Announced on Q3 FY2026 earnings call, Jul 28, 2026. Largest AI-attributed cut of late July; the collector logged zero events this week. [Backfilled 2026-08-05 during data audit; collector missed this date.] Collector re-found this event 2026-08-06 (deduped); per CNBC sourcing, AI was a significant factor but not the sole driver.",
       "collected_date": "2026-07-28",
@@ -1470,7 +1470,7 @@
         "jobs": 620,
         "teams": 12,
         "companies": 1,
-        "labor_hours": -1289600
+        "labor_hours": 1289600
       },
       "notes": "~620 roles (20%), announced Jul 22, 2026 via SEC 6-K; restructuring around 'AI Work Platform' strategy ($45-55M charges). Co-CEO Eran Zinman: not cost-cutting, not replacing people with AI - reorg for the AI era.",
       "collected_date": "2026-07-25",
@@ -1534,7 +1534,7 @@
         "jobs": 3343,
         "teams": 10,
         "companies": 1,
-        "labor_hours": -6953440
+        "labor_hours": 6953440
       },
       "notes": "NET attrition in FY26 annual report (214,521 -> 211,178; first decline in nine years; clerical roles -8,000), not an announced layoff. Bank denies layoffs, cites redeployment amid automation/digital investment. AI link is media framing.",
       "collected_date": "2026-07-17",
@@ -1554,7 +1554,7 @@
         "jobs": 170,
         "teams": 3,
         "companies": 1,
-        "labor_hours": -353600
+        "labor_hours": 353600
       },
       "notes": "~15% of ~1,350 staff (some outlets ~200), announced Jul 7, 2026. Explicit AI-native pivot; founder Richard Valtr said AI made the eliminated roles obsolete. Customer-facing roles largely spared.",
       "collected_date": "2026-07-17",
@@ -1574,7 +1574,7 @@
         "jobs": 130,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -270400
+        "labor_hours": 270400
       },
       "notes": "~130 roles (~3% of 4,000+ staff), reported Jul 2-3, 2026. 'AI-powered simplification' restructuring of banking and tech operations; revenue down 6% to GBP 887m.",
       "collected_date": "2026-07-17",
@@ -1596,7 +1596,7 @@
         "products": null,
         "companies": 1,
         "revenue": null,
-        "labor_hours": -6240000
+        "labor_hours": 6240000
       },
       "notes": "CEO Dan Schulman told investors the AI tech stack would be 'substantially complete' by July and fully done by November; AI already handling customer-service interactions. [Backfilled 2026-08-05 during data audit; collector missed this date.]",
       "collected_date": "2026-07-16",
@@ -1618,7 +1618,7 @@
         "products": null,
         "companies": 1,
         "revenue": null,
-        "labor_hours": -540800
+        "labor_hours": 540800
       },
       "notes": "8-K restructuring plan board-approved Jul 8, 2026; $18-20M charge. CEO Ryan Barretto: software companies 'now need to operate and invest differently' amid AI. [Backfilled 2026-08-05 during data audit; collector missed this date.]",
       "collected_date": "2026-07-15",
@@ -1659,7 +1659,7 @@
         "jobs": 500,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -1040000
+        "labor_hours": 1040000
       },
       "notes": "Announced Jul 13, 2026. Company officially said 'small number' of engineering roles; staff meeting figure was up to 500 (~5.2% of the ~9,400-person ops/tech unit). Tied to deploying AI across businesses; simultaneously hiring 250+ 'AI-native' senior engineers.",
       "collected_date": "2026-07-14",
@@ -1679,7 +1679,7 @@
         "jobs": 500,
         "teams": 10,
         "companies": 5,
-        "labor_hours": -1040000
+        "labor_hours": 1040000
       },
       "notes": "Impact on creative roles in animation due to AI adoption",
       "collected_date": "2026-07-10",
@@ -1721,7 +1721,7 @@
         "jobs": 4800,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -9984000
+        "labor_hours": 9984000
       },
       "notes": "Announced Jul 6, 2026; ~2.1% of workforce, concentrated in Xbox (~3,200 reductions across FY2027, four studios divested). CHRO Amy Coleman: 'AI is changing how work gets done'; Microsoft says eliminated roles are NOT being replaced by AI. Earlier 5,700 figures were pre-announcement rumors.",
       "collected_date": "2026-07-07",
@@ -1741,7 +1741,7 @@
         "jobs": 90,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -187200
+        "labor_hours": 187200
       },
       "notes": "~90 roles (nearly 15% of 603 FTEs per 2025 annual report), announced Jun 26, 2026. Refocus on security, trading, stablecoins, settlement and AI-powered infrastructure; AI is strategic priority, not stated as replacing the cut roles.",
       "collected_date": "2026-07-02",
@@ -1762,7 +1762,7 @@
         "teams": null,
         "companies": 1,
         "revenue": null,
-        "labor_hours": -11440000
+        "labor_hours": 11440000
       },
       "notes": "9,000 roles affected under 'Fit2Win' (~GBP 600m savings target): ~5,500 outright cuts (counted here) + ~3,500 roles migrated to outsourcing partners (Accenture, ITC Infotech, Systems Ltd). Media framed as AI-led overhaul; core driver is cost restructuring.",
       "collected_date": "2026-07-01",
@@ -1803,7 +1803,7 @@
         "jobs": 21000,
         "teams": null,
         "companies": 1,
-        "labor_hours": -43680000
+        "labor_hours": 43680000
       },
       "notes": "21,000 over 12 months per June 2026 reporting; earlier April reports said 'over 20,000' - same ongoing reduction, counted once.",
       "collected_date": "2026-06-24",
@@ -1823,7 +1823,7 @@
         "jobs": 200,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -416000
+        "labor_hours": 416000
       },
       "notes": "Layoffs impact service and customer teams; AI role not explicitly stated but inferred due to timing and industry trends.",
       "collected_date": "2026-06-21",
@@ -1843,7 +1843,7 @@
         "jobs": 300,
         "teams": 4,
         "companies": 1,
-        "labor_hours": -624000
+        "labor_hours": 624000
       },
       "notes": "ServiceNow's first layoff effort since CEO Bill McDermott's 2023 'no job cuts' pledge. Affected functions reportedly include solution consulting, sales, product marketing, and learning and development. Jobs estimate based on confirmed 'three-figure number' (low-hundreds), conservatively pegged at 300. Confirmed by Salesforce Ben, NowBen, and HRKatha reporting on June 11-12, 2026.",
       "collected_date": "2026-06-13",
@@ -1863,7 +1863,7 @@
         "jobs": 230,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -478400
+        "labor_hours": 478400
       },
       "notes": "Seattle-based freight forwarder Expeditors International filed a WARN notice on Monday June 8, 2026, breaking a four-decade no-layoff tradition. CEO Daniel Wall linked reductions to automation and new digital tools. Cuts represent 15.4% of the company's information systems branch as of March 31, 2026. Affected offices: Seattle (68), Federal Way (66), Lynnwood (59), Bellevue (35), Airway Heights (2). Separations begin Aug. 8 and complete by Dec. 31, 2026.",
       "collected_date": "2026-06-12",
@@ -1883,7 +1883,7 @@
         "jobs": 86,
         "teams": 3,
         "companies": 1,
-        "labor_hours": -178880
+        "labor_hours": 178880
       },
       "notes": "Third reduction since September 2025; cuts span sales, administration, technology, and product teams within Agentforce AI, Mulesoft IT and Marketing Cloud software products. Confirmed via Crunchbase News tracker for week ending June 10, 2026.",
       "collected_date": "2026-06-11",
@@ -1903,7 +1903,7 @@
         "jobs": 50,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -104000
+        "labor_hours": 104000
       },
       "notes": "Headcount estimate is conservative (~50) as exact numbers were not disclosed. Reported in Crunchbase tracker week ending June 10, 2026. AI investment prioritization explicitly cited.",
       "collected_date": "2026-06-11",
@@ -1923,7 +1923,7 @@
         "jobs": 340,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -707200
+        "labor_hours": 707200
       },
       "notes": "San Francisco-headquartered healthtech unicorn valued at $3.45B; cuts across India and US; CEO email titled 'Moving Forward as an AI-Native Company'; third major layoff round in four years",
       "collected_date": "2026-06-10",
@@ -1943,7 +1943,7 @@
         "jobs": 1000,
         "teams": 4,
         "companies": 1,
-        "labor_hours": -2080000
+        "labor_hours": 2080000
       },
       "notes": "Home d\u00e9cor / interior design company; restructuring explicitly aimed at AI-native transition; date approximate (February 2026)",
       "collected_date": "2026-06-10",
@@ -1963,7 +1963,7 @@
         "jobs": 50,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -104000
+        "labor_hours": 104000
       },
       "notes": "Exact headcount not disclosed by company; EdTech sector facing pressure from generative AI tools (similar to Chegg). Estimate based on TrueUp listing; Glassdoor user mentioned ~50% cut including C-suite but unverified by official reporting",
       "collected_date": "2026-06-07",
@@ -1983,7 +1983,7 @@
         "jobs": 150,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -312000
+        "labor_hours": 312000
       },
       "notes": "CEO Kevin McCrystle framed cuts as transition to AI-first company; 80% of new code AI-generated; ~$13M annualized savings",
       "collected_date": "2026-06-07",
@@ -2003,7 +2003,7 @@
         "jobs": 340,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -707200
+        "labor_hours": 707200
       },
       "notes": "Uber explicitly stated the cuts are unrelated to AI, but the layoffs came days after the company exhausted its 2026 AI coding budget and last month said it would slow hiring due to internal AI use. CEO Khosrowshahi previously stated AI will replace 70-80% of human work in 10 years. Estimated headcount at ~340 (upper bound of 'well under 1%' of 34,000 employees). Marked inferred due to Uber's explicit denial.",
       "collected_date": "2026-06-06",
@@ -2023,7 +2023,7 @@
         "jobs": 48,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -99840
+        "labor_hours": 99840
       },
       "notes": "Blume Ventures-backed upskilling startup; sources cited 80-100 impacted but cofounder Soham Mehta said less than 50; operations and support functions most affected. Using conservative figure of 48 per TrueUp tracker.",
       "collected_date": "2026-06-06",
@@ -2043,7 +2043,7 @@
         "jobs": 350,
         "teams": 3,
         "companies": 1,
-        "labor_hours": -728000
+        "labor_hours": 728000
       },
       "notes": "Announced alongside Q1 FY27 earnings on June 2, 2026. CEO Bill Staples cited 'agentic era' transformation; ~$30-35M restructuring charge. Savings reinvested in Duo Agent Platform and AI infrastructure. Exit from 22 countries.",
       "collected_date": "2026-06-05",
@@ -2063,7 +2063,7 @@
         "jobs": 260,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -540800
+        "labor_hours": 540800
       },
       "notes": "Atlanta supply-chain software maker. 8-K filed June 1, 2026 listed 'generative and agentic artificial intelligence' as a risk factor. Coincides with launch of AI-powered Solution Design Studio and Manhattan Active platform. AI causality inferred, not explicitly stated; $7-9M Q2 severance charge.",
       "collected_date": "2026-06-05",
@@ -2083,7 +2083,7 @@
         "jobs": 100,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -208000
+        "labor_hours": 208000
       },
       "notes": "Skai's second round in recent years (after ~80 in 2024). Company statement: launched several AI-based products and changed work methods 'with an emphasis on artificial intelligence.' Pre-layoff headcount ~550. Reported by Ctech and tracked by TrueUp on June 3, 2026.",
       "collected_date": "2026-06-04",
@@ -2103,7 +2103,7 @@
         "jobs": 1000,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -2080000
+        "labor_hours": 2080000
       },
       "notes": "Walmart's head of global AI acceleration Daniel Danker and global technology chief Suresh Kumar led the restructuring; cuts tied to consolidation of AI-focused product teams. Walmart publicly framed it as organizational simplification rather than AI replacement, but AI integration was a stated driver.",
       "collected_date": "2026-06-03",
@@ -2123,7 +2123,7 @@
         "jobs": 100,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -208000
+        "labor_hours": 208000
       },
       "notes": "Part of broader AI-driven layoff wave in Israeli tech sector",
       "collected_date": "2026-06-02",
@@ -2143,7 +2143,7 @@
         "jobs": 120,
         "teams": 2,
         "companies": 1,
-        "labor_hours": -249600
+        "labor_hours": 249600
       },
       "notes": "Smaller AI firms being crushed by giant model competition; estimated 60% of ~200 staff",
       "collected_date": "2026-06-02",
@@ -2163,7 +2163,7 @@
         "jobs": 3000,
         "teams": 5,
         "companies": 1,
-        "labor_hours": -6240000
+        "labor_hours": 6240000
       },
       "notes": "Amdocs has ~30,000 employees globally; 10% = ~3,000",
       "collected_date": "2026-06-02",
@@ -2183,7 +2183,7 @@
         "jobs": 250,
         "teams": 3,
         "companies": 1,
-        "labor_hours": -520000
+        "labor_hours": 520000
       },
       "notes": "10% of ~2,500 SentinelOne workforce; cybersecurity firms facing AI model disruption",
       "collected_date": "2026-06-02",
@@ -2203,7 +2203,7 @@
         "jobs": 40,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -83200
+        "labor_hours": 83200
       },
       "notes": "Estimated 'dozens' as ~40 layoffs",
       "collected_date": "2026-06-02",
@@ -2223,7 +2223,7 @@
         "jobs": 60,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -124800
+        "labor_hours": 124800
       },
       "notes": "Israeli sports/media platform; also terminated VideoVerse contract after $200M acquisition",
       "collected_date": "2026-06-02",
@@ -2243,7 +2243,7 @@
         "jobs": 4000,
         "teams": 10,
         "companies": 1,
-        "labor_hours": -8320000
+        "labor_hours": 8320000
       },
       "notes": "Strategic shift towards AI-driven operations",
       "collected_date": "2026-06-01",
@@ -2263,7 +2263,7 @@
         "jobs": 1000,
         "teams": 5,
         "companies": 1,
-        "labor_hours": -2080000
+        "labor_hours": 2080000
       },
       "notes": "CEO Avishai Abrahami publicly cited AI as a primary driver alongside shekel/dollar currency pressure. Wix had 5,277 employees at end of Q1 2026; post-restructuring workforce expected to settle around 4,200. Largest layoff in Wix's history. The company is moving to fewer leadership layers and introducing AI-native roles (Xengineer, Creators). Announced May 28, 2026.",
       "collected_date": "2026-05-31",
@@ -2283,7 +2283,7 @@
         "jobs": 7800,
         "teams": null,
         "companies": 1,
-        "labor_hours": -16224000
+        "labor_hours": 16224000
       },
       "notes": "Part of broader AI integration strategy",
       "collected_date": "2026-05-29",
@@ -2303,7 +2303,7 @@
         "jobs": 2250,
         "teams": null,
         "companies": 1,
-        "labor_hours": -4680000
+        "labor_hours": 4680000
       },
       "notes": "Part of digital transformation strategy",
       "collected_date": "2026-05-29",
@@ -2323,7 +2323,7 @@
         "jobs": 3000,
         "teams": null,
         "companies": 1,
-        "labor_hours": -6240000
+        "labor_hours": 6240000
       },
       "notes": "Announced May 20, 2026 (~17% of workforce; offices closing in Reno and Woodland Hills). Company framed cuts around accelerating its AI strategy, but CEO Sasan Goodarzi told CNBC they had 'nothing to do with AI'. Contested attribution.",
       "collected_date": "2026-05-21",
@@ -2343,7 +2343,7 @@
         "jobs": 150,
         "teams": 3,
         "companies": 1,
-        "labor_hours": -312000
+        "labor_hours": 312000
       },
       "notes": "Layoffs due to AI efficiencies, potential IPO delay",
       "collected_date": "2026-05-18",
@@ -2363,7 +2363,7 @@
         "jobs": 25,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -52000
+        "labor_hours": 52000
       },
       "notes": "Restructuring to focus on core data products",
       "collected_date": "2026-05-17",
@@ -2383,7 +2383,7 @@
         "jobs": 4000,
         "teams": null,
         "companies": 1,
-        "labor_hours": -8320000
+        "labor_hours": 8320000
       },
       "notes": "Global cut of fewer than 4,000 positions (<5% of ~86,200). Includes 471 Bay Area WARN positions (San Jose 236, Milpitas 154, SF 81; software engineers largest affected role). Restructuring to redirect investment into AI infrastructure.",
       "collected_date": "2026-05-14",
@@ -2403,7 +2403,7 @@
         "jobs": 600,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -1248000
+        "labor_hours": 1248000
       },
       "notes": "Restructuring IT department to focus on AI capabilities",
       "collected_date": "2026-05-12",
@@ -2423,7 +2423,7 @@
         "jobs": 700,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -1456000
+        "labor_hours": 1456000
       },
       "notes": "CEO announced becoming 'AI native company' as rationale, announced same day as $1B buyback",
       "collected_date": "2026-05-10",
@@ -2443,7 +2443,7 @@
         "jobs": 150,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -312000
+        "labor_hours": 312000
       },
       "notes": "Freelancing marketplace citing evolving nature of work, likely AI-driven given industry context",
       "collected_date": "2026-05-10",
@@ -2463,7 +2463,7 @@
         "jobs": 4760,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -9900800
+        "labor_hours": 9900800
       },
       "notes": "Multi-year phased reduction, CEO cited 'becoming a technology company again' via AI adoption",
       "collected_date": "2026-05-10",
@@ -2483,7 +2483,7 @@
         "jobs": 1100,
         "teams": 15,
         "companies": 1,
-        "labor_hours": -2288000
+        "labor_hours": 2288000
       },
       "notes": "20% workforce reduction as company shifts to 'agentic AI-first operating model'",
       "collected_date": "2026-05-09",
@@ -2503,7 +2503,7 @@
         "jobs": 350,
         "teams": 8,
         "companies": 1,
-        "labor_hours": -728000
+        "labor_hours": 728000
       },
       "notes": "8% of global workforce cut across 25 countries, focused on engineering, product, and design",
       "collected_date": "2026-05-09",
@@ -2523,7 +2523,7 @@
         "jobs": 250,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -520000
+        "labor_hours": 520000
       },
       "notes": "25% workforce reduction at German translation unicorn",
       "collected_date": "2026-05-08",
@@ -2543,7 +2543,7 @@
         "jobs": 250,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -520000
+        "labor_hours": 520000
       },
       "notes": "Cybersecurity vendor restructuring for AI SOC investment",
       "collected_date": "2026-05-08",
@@ -2563,7 +2563,7 @@
         "jobs": 500,
         "teams": 5,
         "companies": 1,
-        "labor_hours": -1040000
+        "labor_hours": 1040000
       },
       "notes": "AI automation eliminated 'rote work', $8M restructuring cost",
       "date": "2026-05-07",
@@ -2582,7 +2582,7 @@
         "jobs": 700,
         "teams": 1,
         "companies": 1,
-        "labor_hours": -1456000
+        "labor_hours": 1456000
       },
       "notes": "Restructuring complete Q2 2026, creating 'AI-native pods'",
       "collected_date": "2026-05-06",
@@ -2602,7 +2602,7 @@
         "jobs": 8750,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -18100000
+        "labor_hours": 18100000
       },
       "notes": "Buyout OFFERS to ~7% of staff; reports varied between 8,750 and 15,000. Offers are not confirmed separations - treat toll as upper bound.",
       "collected_date": "2026-04-30",
@@ -2623,7 +2623,7 @@
         "jobs": 8000,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -16640000
+        "labor_hours": 16640000
       },
       "notes": "Canonical entry for Meta's ~8,000-person reduction (announced Apr 2026, workers notified May 20, separations effective Jul 22). The 1,395-worker Washington WARN notice and the 26-plaintiff AI-discrimination lawsuit relate to this same reduction.",
       "date": "2026-04-26",
@@ -2643,7 +2643,7 @@
         "jobs": 1400,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -2912000
+        "labor_hours": 2912000
       },
       "notes": "Tech-focused cuts announced April 25; COO cited impact on affected teams",
       "date": "2026-04-25",
@@ -2685,7 +2685,7 @@
         "jobs": 187,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -388960
+        "labor_hours": 388960
       },
       "notes": "Cars.com cut 187 employees (~11% of workforce) as its AI-powered advertising and marketplace platform reduced headcount needs in sales and operations.",
       "industry": "Automotive Tech",
@@ -2707,7 +2707,7 @@
         "jobs": 123,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -255840
+        "labor_hours": 255840
       },
       "notes": "Video platform Vimeo cut ~25% of its New York staff after being acquired by Italian firm Mediaforeurope. Cuts reflect platform consolidation as AI video tools reduce need for human-led production services.",
       "industry": "Video Tech",
@@ -2773,7 +2773,7 @@
         "jobs": 50,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -104000
+        "labor_hours": 104000
       },
       "notes": "UK digital bank Monzo shut down its US operations entirely, laying off ~50 employees. The company is refocusing on the UK and European markets where its AI-driven banking features have stronger traction.",
       "industry": "Fintech / Banking",
@@ -2795,7 +2795,7 @@
         "jobs": 1600,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -3328000
+        "labor_hours": 3328000
       },
       "notes": "Ericsson announced 1,600 job cuts in Sweden, doubling down on cost-saving measures after years of 5G spending slowdown and US tariff headwinds. AI-driven network tools are reducing the need for traditional RF engineering and support roles.",
       "industry": "Telecom Equipment",
@@ -2817,7 +2817,7 @@
         "jobs": 250,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -520000
+        "labor_hours": 520000
       },
       "notes": "IT management vendor Kaseya (owner of Datto, ConnectWise rival) cut 250 employees in its 4th round since April 2024, primarily in sales, marketing, and admin. Cuts reflect Datto acquisition integration and shift to AI-automated MSP tooling.",
       "industry": "IT Management / MSP",
@@ -2839,7 +2839,7 @@
         "jobs": 50,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -104000
+        "labor_hours": 104000
       },
       "notes": "London-based edtech Multiverse (corporate apprenticeship platform backed by Euan Blair) cut dozens of jobs amid widening losses. The apprenticeship market is being disrupted by AI upskilling tools that reduce need for structured human-led programs.",
       "industry": "EdTech",
@@ -2861,7 +2861,7 @@
         "jobs": 2500,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -5200000
+        "labor_hours": 5200000
       },
       "notes": "HPE CEO Antonio Neri announced 2,500 layoffs over 18 months, part of broader cost-cutting while completing the Juniper Networks acquisition. HPE is restructuring around AI-era infrastructure (networking, cloud) and cutting traditional IT support and sales roles.",
       "industry": "Enterprise Hardware / Cloud",
@@ -2883,7 +2883,7 @@
         "jobs": 1350,
         "teams": 0,
         "companies": 1,
-        "labor_hours": -2808000
+        "labor_hours": 2808000
       },
       "notes": "Autodesk cut ~1,350 employees (9% of workforce), citing AI-driven cloud and platform products as most profitable. CEO Andrew Anagnost noted fewer sales staff needed as subscription models and AI self-service tools grow. Company shifting investment toward AI-augmented design tools.",
       "industry": "Design / Engineering Software",
@@ -2907,7 +2907,7 @@
         "jobs": 3000,
         "teams": null,
         "companies": 1,
-        "labor_hours": -6240000
+        "labor_hours": 6240000
       },
       "notes": "Part of October 2026 layoffs totaling 13,449 jobs across 34 companies.",
       "collected_date": "2026-10-13",
@@ -2927,7 +2927,7 @@
         "jobs": 270,
         "teams": null,
         "companies": 1,
-        "labor_hours": -561600
+        "labor_hours": 561600
       },
       "notes": "Layoffs attributed to backlash against AI-powered license-plate surveillance.",
       "collected_date": "2026-10-13",
