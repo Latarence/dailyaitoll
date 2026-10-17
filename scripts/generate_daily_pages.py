@@ -2,9 +2,67 @@
 """Generate static daily pages from events data."""
 
 import json
+import re
 from pathlib import Path
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
+
+# A11Y-004: every page on the site carries one <main> landmark. The daily template has it, but dated pages the
+# generator no longer rewrites (dates outside the collected range) and hand-built pages (checkout, thank-you,
+# data/success) did not, so the generator backfills the landmark on EVERY web/**/*.html after it writes.
+MAIN_OPEN = '<main id="main">'
+_DIV_TAG = re.compile(r'<(/?)div\b[^>]*>', re.I)
+
+
+def _block_end(html: str, start: int) -> int:
+    """Index just past the </div> that closes the <div> opening at `start` (-1 if unbalanced)."""
+    depth = 0
+    for m in _DIV_TAG.finditer(html, start):
+        depth += -1 if m.group(1) else 1
+        if depth == 0:
+            return m.end()
+    return -1
+
+
+def add_main_landmark(html: str) -> str:
+    """Wrap the page content (after the nav + mobile menu, before the footer) in <main id="main">.
+    Pages that already have a <main> are returned unchanged (idempotent). Raises ValueError when the
+    page has no recognizable header/footer shape, so a new page layout cannot silently skip the landmark."""
+    if re.search(r'<main\b', html, re.I):
+        return html
+    menu = re.search(r'<div class="mobile-menu"[^>]*\bid="mobileMenu"[^>]*>', html)
+    if menu:
+        start = _block_end(html, menu.start())
+    else:
+        nav = re.search(r'</nav>', html, re.I)
+        start = nav.end() if nav else -1
+    if start < 0:
+        raise ValueError("no </nav> or mobile menu to anchor <main> after")
+    foot = re.compile(r'\n([ \t]*)<footer\b', re.I).search(html, start)
+    if not foot:
+        raise ValueError("no <footer> after the header to close <main> before")
+    indent = foot.group(1)
+    return (html[:start] + f"\n{indent}{MAIN_OPEN}" + html[start:foot.start()]
+            + f"\n{indent}</main>" + html[foot.start():])
+
+
+def ensure_main_landmarks(web_dir: Path) -> tuple[int, list[str]]:
+    """Backfill <main> on every HTML page under web_dir. Returns (pages fixed, pages that could not be fixed)."""
+    fixed, failed = 0, []
+    for page in sorted(web_dir.rglob("*.html")):
+        if "node_modules" in page.parts:
+            continue
+        html = page.read_text()
+        try:
+            new = add_main_landmark(html)
+        except ValueError as e:
+            failed.append(f"{page.relative_to(web_dir)}: {e}")
+            continue
+        if new != html:
+            page.write_text(new)
+            fixed += 1
+    return fixed, failed
+
 
 def load_template():
     """Load the daily page template."""
@@ -242,6 +300,11 @@ def main():
             cur += timedelta(days=1)
     except (ValueError, IndexError) as e:
         print(f"WARNING: skipping placeholder fill: {e}")
+
+    fixed, failed = ensure_main_landmarks(web_dir)
+    print(f"<main> landmark backfilled on {fixed} page(s)")
+    for f in failed:  # never fail the nightly run over this; tests/test_main_landmark.py fails CI instead
+        print(f"ERROR: no <main> landmark: {f}")
 
     print(f"\nGenerated {pages_generated} daily pages ({placeholders_generated} placeholders)")
     print(f"Wrote sitemap.xml ({write_sitemap(web_dir)} URLs)")
