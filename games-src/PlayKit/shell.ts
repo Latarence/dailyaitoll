@@ -79,7 +79,7 @@ const CSS = (b: PlayBrand) => `
  color:var(--ink);background:var(--bg);border:1px solid var(--ln);border-radius:4px;position:relative;font-size:14px;line-height:1.45;text-align:left;-webkit-tap-highlight-color:transparent}
 .pk *{box-sizing:border-box}
 .pk button{font:inherit;color:inherit;cursor:pointer}
-.pk .pk-head{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name bar" "tag tag";align-items:center;gap:4px 16px;padding:12px 14px;border-bottom:1px solid var(--ln)}
+.pk .pk-head{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name bar" "tag tag" "lv lv";align-items:center;gap:4px 16px;padding:12px 14px;border-bottom:1px solid var(--ln)}
 .pk .pk-title{grid-area:name;min-width:0}
 .pk .pk-name{font-weight:700;font-size:16px;line-height:22px;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pk .pk-tag{grid-area:tag;color:var(--mu);font-size:12px;line-height:1.45;font-family:${MONO}}
@@ -87,34 +87,36 @@ const CSS = (b: PlayBrand) => `
 .pk .pk-hb{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:36px;min-width:36px;padding:0 12px;border:1px solid var(--ln);background:var(--p2);border-radius:4px;font-size:13px;line-height:1;white-space:nowrap}
 .pk .pk-hb svg,.pk .pk-mi svg{width:16px;height:16px;flex:none;display:block}
 .pk .pk-hb[aria-expanded=true]{border-color:var(--a);color:var(--a);background:${withAlpha(b.accent, 0.1)}}
-.pk .pk-tabs{display:inline-flex;align-items:center;gap:3px;height:36px;padding:3px;border:1px solid var(--ln);background:var(--p2);border-radius:4px}
-.pk .pk-tab{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border:1px solid transparent;background:transparent;border-radius:3px;font-size:13px;line-height:1;white-space:nowrap}
+.pk .pk-tabs{grid-area:lv;justify-self:start;display:inline-flex;align-items:center;gap:2px;height:32px;margin-top:6px;padding:2px;border:1px solid var(--ln);background:transparent;border-radius:4px;max-width:100%}
+.pk .pk-tab{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 12px;border:1px solid transparent;background:transparent;border-radius:3px;font-family:${MONO};font-size:12px;line-height:1;white-space:nowrap;color:var(--mu)}
+.pk .pk-tab[aria-pressed=true]{background:var(--btn);border-color:var(--btn);color:var(--bink);font-weight:600}
+.pk .pk-tab[aria-pressed=true] .pk-done{color:inherit}
 .pk .pk-tabs[hidden]{display:none}
-.pk .pk-tab .pk-ts{display:none}
 .pk .pk-more{display:none}
 .pk .pk-menu{position:absolute;top:calc(100% + 6px);right:0;z-index:6;min-width:210px;padding:4px;background:var(--p);border:1px solid var(--ln);border-radius:4px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 .pk .pk-menu[hidden]{display:none}
 .pk .pk-mi{display:flex;align-items:center;gap:10px;width:100%;height:36px;padding:0 10px;border:1px solid transparent;background:transparent;border-radius:3px;font-size:13px;line-height:1;text-align:left;white-space:nowrap}
 .pk .pk-mi:hover,.pk .pk-mi:focus-visible{border-color:${withAlpha(b.accent, 0.6)};outline:none}
+.pk .pk-head.pk-compact{column-gap:10px}
+.pk .pk-head.pk-compact .pk-bar{gap:6px}
 .pk .pk-head.pk-compact .pk-hb{padding:0;width:36px}
 .pk .pk-head.pk-compact .pk-hb .pk-lbl{display:none}
 .pk .pk-head.pk-compact .pk-hide-c{display:none}
 .pk .pk-head.pk-compact .pk-more{display:inline-flex}
-.pk .pk-head.pk-compact .pk-tab .pk-tl{display:none}
-.pk .pk-head.pk-compact .pk-tab .pk-ts{display:inline}
-.pk .pk-tab,.pk .pk-btn,.pk .pk-seg button{font-size:13px}
+.pk .pk-btn,.pk .pk-seg button{font-size:13px}
 .pk .pk-btn,.pk .pk-seg button{border:1px solid var(--ln);background:var(--p2);border-radius:3px;padding:7px 12px;min-height:36px}
-.pk .pk-tab[aria-pressed=true],.pk .pk-seg button[aria-pressed=true]{border-color:var(--a);color:var(--a);background:${withAlpha(b.accent, 0.1)}}
+.pk .pk-seg button[aria-pressed=true]{border-color:var(--a);color:var(--a);background:${withAlpha(b.accent, 0.1)}}
 .pk .pk-tab .pk-done{color:var(--good)}
 .pk .pk-btn:hover,.pk .pk-hb:hover,.pk .pk-seg button:hover{border-color:${withAlpha(b.accent, 0.6)}}
-.pk .pk-tab:hover{border-color:${withAlpha(b.accent, 0.6)}}
+.pk .pk-tab:hover{border-color:${withAlpha(b.accent, 0.6)};color:var(--ink)}
+.pk .pk-tab[aria-pressed=true]:hover{color:var(--bink)}
 .pk .pk-btn.pk-primary{background:var(--btn);color:var(--bink);border-color:var(--btn);font-weight:600}
 .pk .pk-btn:disabled{opacity:.45;cursor:default}
 .pk .pk-icon{min-width:36px;padding:7px 10px}
 .pk .pk-brief{padding:10px 14px;border-bottom:1px solid var(--ln);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
 .pk .pk-brief b{font-weight:600}
 .pk .pk-brief .pk-text{color:var(--mu);flex:1 1 320px}
-.pk .pk-goal{font-family:${MONO};font-size:12px;border:1px solid var(--ln);border-radius:3px;padding:2px 7px;color:var(--ink)}
+.pk .pk-goals{font-family:${MONO};font-size:12px;color:var(--mu);flex:1 1 100%}
 .pk .pk-stage{position:relative;background:var(--bg);overflow:hidden}
 .pk .pk-controls{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding:10px 14px;border-top:1px solid var(--ln);background:var(--p)}
 .pk .pk-group{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -165,7 +167,7 @@ const CSS = (b: PlayBrand) => `
 .pk .pk-how-sec li{margin:0 0 6px;font-size:14px;line-height:1.5;color:var(--ink)}
 .pk .pk-how-sec p:last-child,.pk .pk-how-sec li:last-child{margin-bottom:0}
 .pk .pk-how-foot{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
-@media (max-width:640px){.pk .pk-how{padding:12px 10px}.pk .pk-how-grid{grid-template-columns:1fr}.pk .pk-stage{display:flex;flex-direction:column}.pk .pk-card{order:2;position:relative;left:auto;bottom:auto;transform:none;width:auto;margin:0;border-left:0;border-right:0;border-bottom:0;border-radius:0;box-shadow:none}.pk .pk-head{padding:10px}.pk .pk-controls{padding:10px}.pk .pk-sl{max-width:none}}
+@media (max-width:640px){.pk .pk-how{padding:12px 10px}.pk .pk-how-grid{grid-template-columns:1fr}.pk .pk-stage{display:flex;flex-direction:column}.pk .pk-card{order:2;position:relative;left:auto;bottom:auto;transform:none;width:auto;margin:10px;box-shadow:none}.pk .pk-head{padding:10px}.pk .pk-controls{padding:10px}.pk .pk-sl{max-width:none}}
 @media (prefers-reduced-motion:reduce){.pk .pk-toast{transition:none}}
 `;
 
@@ -190,11 +192,11 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   root.appendChild(style);
   const audio = new Synth();
 
-  // header: the game name on the left; one button bar on the right, in this order: How to play, the level
-  // switch (main level, today's level), About, Sound. Every bar button is 36 px tall with the same padding and an
-  // icon + label. When the bar does not fit on one row beside the name (phones), it goes compact: icon-only
-  // buttons (aria-label + tooltip), short level labels, and About + Sound move into one "More" menu. The tagline
-  // sits on its own line under the name, so the buttons never wrap into a second row.
+  // header (Principal, 2026-10-17: "the bottons dont appear orderly"): row 1 is the game name on the left and one
+  // action bar on the right, in this order: How to play · About · Sound, every button 36 px tall with the same
+  // padding and an icon + label. Row 2 is the tagline. Row 3 is the level switch (main level, Today): one
+  // segmented control under the title, styled apart from the action buttons. When the bar does not fit beside the
+  // name (phones), it collapses into one "More" menu; nothing wraps into a second row of buttons.
   const head = h("div", "pk-head");
   const titleRow = h("div", "pk-title");
   const nameEl = h("div", "pk-name", o.name);
@@ -208,6 +210,8 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   const tabs = h("div", "pk-tabs");
   tabs.setAttribute("role", "group");
   tabs.setAttribute("aria-label", "Level");
+  tabs.hidden = true;
+  head.appendChild(tabs);
   root.appendChild(head);
 
   // How to play: closed by default (every visit opens straight to the game). The "How to play" button next to
@@ -271,9 +275,11 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
       }
     } else {
       document.removeEventListener("keydown", onHowKey, true);
-      if (refocus && howBtn)
+      // focus back on the control that opened it: the How to play button, or More when the bar is compact
+      const back = howBtn && head.classList.contains("pk-compact") ? moreBtn : howBtn;
+      if (refocus && back)
         try {
-          howBtn.focus({ preventScroll: true });
+          back.focus({ preventScroll: true });
         } catch {
           /* older browsers */
         }
@@ -400,14 +406,11 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
       for (let i = 0; i < list.length; i++) {
         const t = list[i];
         const daily = isDailyTab(list, i);
-        const num = /^\s*(\d+)\s*·/.exec(t.label);
-        // wide label: "Today" for the daily level (the date stays in the tooltip); a lone main level drops its "1 · "
+                // wide label: "Today" for the daily level (the date stays in the tooltip); a lone main level drops its "1 · "
         const wide = daily ? "Today" : mains > 1 ? t.label : t.label.replace(/^\s*\d+\s*·\s*/, "");
-        const short = daily ? "Today" : mains > 1 ? (num ? num[1] : String(i + 1)) : "Main";
         const btn = h("button", "pk-tab");
         btn.type = "button";
-        btn.appendChild(h("span", "pk-tl", wide));
-        btn.appendChild(h("span", "pk-ts", short));
+        btn.appendChild(h("span", "", wide));
         btn.title = t.label;
         btn.setAttribute("aria-label", t.label + (t.done ? ", completed" : ""));
         btn.setAttribute("aria-pressed", String(t.id === active));
@@ -429,7 +432,8 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
       brief.innerHTML = "";
       brief.appendChild(h("b", "", title));
       brief.appendChild(h("span", "pk-text", text));
-      if (goals) for (let i = 0; i < goals.length; i++) brief.appendChild(h("span", "pk-goal", goals[i]));
+      // facts about the level are plain muted text ("10 reports · 3 misses end the run"), never button-like pills
+      if (goals && goals.length) brief.appendChild(h("span", "pk-goals", goals.join(" · ")));
     },
     showCard(c) {
       card.innerHTML = "";
@@ -588,7 +592,7 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
     },
   };
 
-  // header bar, in order: How to play · level switch · About · Sound (· More, compact only)
+  // header bar, in order: How to play · About · Sound (compact: one More menu holding all three)
   const SVG = "http://www.w3.org/2000/svg";
   function icon(paths: string): SVGSVGElement {
     const s = document.createElementNS(SVG, "svg");
@@ -619,7 +623,7 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
     return btn;
   }
   if (how) {
-    howBtn = barBtn("pk-howbtn", I_HELP, "How to play");
+    howBtn = barBtn("pk-howbtn pk-hide-c", I_HELP, "How to play");
     howBtn.setAttribute("aria-expanded", "false");
     howBtn.setAttribute("aria-controls", how.id);
     howBtn.addEventListener("click", () => {
@@ -628,7 +632,6 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
     });
     bar.appendChild(howBtn);
   }
-  bar.appendChild(tabs);
   const ABOUT = "About the data";
   const about = barBtn("pk-about pk-hide-c", I_INFO, ABOUT);
   about.addEventListener("click", () => shell.openAbout());
@@ -636,7 +639,7 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   const snd = barBtn("pk-sound pk-hide-c", I_SND, "Sound", "Sound is on");
   snd.setAttribute("aria-pressed", "true");
   bar.appendChild(snd);
-  // More (compact only): About + Sound, one menu
+  // More (compact only): How to play, About, Sound in one menu
   const moreBtn = barBtn("pk-more", I_MORE, "More");
   moreBtn.setAttribute("aria-haspopup", "menu");
   moreBtn.setAttribute("aria-expanded", "false");
@@ -646,6 +649,12 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   menu.setAttribute("aria-label", "More");
   menu.hidden = true;
   moreBtn.setAttribute("aria-controls", menu.id);
+  const miHow = h("button", "pk-mi");
+  miHow.type = "button";
+  miHow.setAttribute("role", "menuitem");
+  miHow.appendChild(icon(I_HELP));
+  const miHowLbl = h("span", "", "How to play");
+  miHow.appendChild(miHowLbl);
   const miAbout = h("button", "pk-mi");
   miAbout.type = "button";
   miAbout.setAttribute("role", "menuitem");
@@ -658,6 +667,7 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   const miSndLbl = h("span", "", "Sound on");
   miSnd.appendChild(icon(I_SND));
   miSnd.appendChild(miSndLbl);
+  if (how) menu.appendChild(miHow);
   menu.appendChild(miAbout);
   menu.appendChild(miSnd);
   bar.appendChild(moreBtn);
@@ -684,8 +694,9 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
     if (open) {
       document.addEventListener("keydown", onMenuKey, true);
       document.addEventListener("pointerdown", onMenuOutside, true);
+      miHowLbl.textContent = how && !how.hidden ? "Hide how to play" : "How to play";
       try {
-        miAbout.focus({ preventScroll: true });
+        (how ? miHow : miAbout).focus({ preventScroll: true });
       } catch {
         /* older browsers */
       }
@@ -705,7 +716,7 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   }
   function onMenuKey(e: KeyboardEvent) {
     if (menu.hidden) return;
-    const items = [miAbout, miSnd];
+    const items = how ? [miHow, miAbout, miSnd] : [miAbout, miSnd];
     const at = items.indexOf(document.activeElement as HTMLButtonElement);
     if (e.key === "Escape" || e.key === "Esc") {
       e.preventDefault();
@@ -719,6 +730,16 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
     } else if (e.key === "Tab") setMenu(false);
   }
   moreBtn.addEventListener("click", () => setMenu(menu.hidden));
+  miHow.addEventListener("click", () => {
+    if (!how) return;
+    if (!how.hidden) {
+      setMenu(false);
+      setHow(false, true);
+    } else {
+      setMenu(false);
+      shell.openHowTo();
+    }
+  });
   miAbout.addEventListener("click", () => {
     setMenu(false);
     shell.openAbout();
