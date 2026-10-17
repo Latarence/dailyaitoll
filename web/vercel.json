@@ -60,5 +60,15 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/refund",
+      "destination": "/refund-policy"
+    },
+    {
+      "source": "/refunds",
+      "destination": "/refund-policy"
+    }
   ]
 }
