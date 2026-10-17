@@ -50,10 +50,17 @@ Then `src/app/play/page.tsx` (Banner + `<PlayGame />`), a "Play" footer link nex
 ## Rules
 
 - Every game passes `howTo` to `createShell`: the plain-words How to play section. It is closed by default (the
-  game opens straight to the board, every visit; no storage flag); the "How to play" button next to the game name
-  opens and closes it (aria-expanded, Esc closes, focus returns to the button). Six headings in order (The goal,
+  game opens straight to the board, every visit; no storage flag); the "How to play" button, first in the header
+  bar, opens and closes it (aria-expanded, Esc closes, focus returns to the button). Six headings in order (The goal,
   How to play, What things cost, How you earn, The challenge, Quick tip), complete sentences, everyday words. If nothing costs or earns anything, say so.
   The science goes in `about` (the About the science panel, also linked from the How to play section).
+
+- Header (Principal, 2026-10-17: "the bottons dont appear orderly"): the game name on the left, one bar on the right
+  in this order: How to play, the level switch (main level, Today), About, Sound. Every bar button is 36 px tall
+  with the same padding and an icon + label; corners 4 px or less, full borders only. When the bar and the name do
+  not fit on one row, the header goes compact (measured, not a breakpoint): icon-only buttons with aria-label and
+  tooltip, short level labels (Main, Today), and About + Sound move into one "More" menu. The tagline sits on its
+  own line under the name. The bar never wraps into a second row.
 
 - Honest model underneath, real units, and an About panel that states what is simplified.
 - No paywall on the landing game. Never call it "free". No internal codenames in public copy.

@@ -1,4 +1,4 @@
-// The DOM frame every game shares: header (name, How to play, level tabs, About the science, sound), the
+// The DOM frame every game shares: header (name left; one bar right: How to play, level switch, About, Sound; compact + More on phones), the
 // How to play section (closed by default; the header button opens and closes it), the brief, a stage that
 // holds the canvas, a controls row, a result card (with a Share button on a pass), an About the science panel
 // with the honest model notes, and a standing link into the product. Plain DOM, no framework; styles are scoped under .pk.
@@ -79,16 +79,35 @@ const CSS = (b: PlayBrand) => `
  color:var(--ink);background:var(--bg);border:1px solid var(--ln);border-radius:4px;position:relative;font-size:14px;line-height:1.45;text-align:left;-webkit-tap-highlight-color:transparent}
 .pk *{box-sizing:border-box}
 .pk button{font:inherit;color:inherit;cursor:pointer}
-.pk .pk-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:12px 14px;border-bottom:1px solid var(--ln)}
-.pk .pk-name{font-weight:700;font-size:16px;letter-spacing:.01em}
-.pk .pk-title{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;min-width:0}
-.pk .pk-title>div{min-width:0}
-.pk .pk-tag{color:var(--mu);font-size:12px;font-family:${MONO}}
-.pk .pk-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
-.pk .pk-tab,.pk .pk-btn,.pk .pk-seg button{border:1px solid var(--ln);background:var(--p2);border-radius:3px;padding:7px 12px;font-size:13px;min-height:36px}
+.pk .pk-head{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name bar" "tag tag";align-items:center;gap:4px 16px;padding:12px 14px;border-bottom:1px solid var(--ln)}
+.pk .pk-title{grid-area:name;min-width:0}
+.pk .pk-name{font-weight:700;font-size:16px;line-height:22px;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pk .pk-tag{grid-area:tag;color:var(--mu);font-size:12px;line-height:1.45;font-family:${MONO}}
+.pk .pk-bar{grid-area:bar;position:relative;display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:8px}
+.pk .pk-hb{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:36px;min-width:36px;padding:0 12px;border:1px solid var(--ln);background:var(--p2);border-radius:4px;font-size:13px;line-height:1;white-space:nowrap}
+.pk .pk-hb svg,.pk .pk-mi svg{width:16px;height:16px;flex:none;display:block}
+.pk .pk-hb[aria-expanded=true]{border-color:var(--a);color:var(--a);background:${withAlpha(b.accent, 0.1)}}
+.pk .pk-tabs{display:inline-flex;align-items:center;gap:3px;height:36px;padding:3px;border:1px solid var(--ln);background:var(--p2);border-radius:4px}
+.pk .pk-tab{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border:1px solid transparent;background:transparent;border-radius:3px;font-size:13px;line-height:1;white-space:nowrap}
+.pk .pk-tabs[hidden]{display:none}
+.pk .pk-tab .pk-ts{display:none}
+.pk .pk-more{display:none}
+.pk .pk-menu{position:absolute;top:calc(100% + 6px);right:0;z-index:6;min-width:210px;padding:4px;background:var(--p);border:1px solid var(--ln);border-radius:4px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.pk .pk-menu[hidden]{display:none}
+.pk .pk-mi{display:flex;align-items:center;gap:10px;width:100%;height:36px;padding:0 10px;border:1px solid transparent;background:transparent;border-radius:3px;font-size:13px;line-height:1;text-align:left;white-space:nowrap}
+.pk .pk-mi:hover,.pk .pk-mi:focus-visible{border-color:${withAlpha(b.accent, 0.6)};outline:none}
+.pk .pk-head.pk-compact .pk-hb{padding:0;width:36px}
+.pk .pk-head.pk-compact .pk-hb .pk-lbl{display:none}
+.pk .pk-head.pk-compact .pk-hide-c{display:none}
+.pk .pk-head.pk-compact .pk-more{display:inline-flex}
+.pk .pk-head.pk-compact .pk-tab .pk-tl{display:none}
+.pk .pk-head.pk-compact .pk-tab .pk-ts{display:inline}
+.pk .pk-tab,.pk .pk-btn,.pk .pk-seg button{font-size:13px}
+.pk .pk-btn,.pk .pk-seg button{border:1px solid var(--ln);background:var(--p2);border-radius:3px;padding:7px 12px;min-height:36px}
 .pk .pk-tab[aria-pressed=true],.pk .pk-seg button[aria-pressed=true]{border-color:var(--a);color:var(--a);background:${withAlpha(b.accent, 0.1)}}
-.pk .pk-tab .pk-done{color:var(--good);margin-left:6px}
-.pk .pk-btn:hover,.pk .pk-tab:hover,.pk .pk-seg button:hover{border-color:${withAlpha(b.accent, 0.6)}}
+.pk .pk-tab .pk-done{color:var(--good)}
+.pk .pk-btn:hover,.pk .pk-hb:hover,.pk .pk-seg button:hover{border-color:${withAlpha(b.accent, 0.6)}}
+.pk .pk-tab:hover{border-color:${withAlpha(b.accent, 0.6)}}
 .pk .pk-btn.pk-primary{background:var(--btn);color:var(--bink);border-color:var(--btn);font-weight:600}
 .pk .pk-btn:disabled{opacity:.45;cursor:default}
 .pk .pk-icon{min-width:36px;padding:7px 10px}
@@ -134,9 +153,7 @@ const CSS = (b: PlayBrand) => `
 .pk kbd{font-family:${MONO};font-size:11px;border:1px solid var(--ln);border-radius:3px;padding:0 4px}
 .pk .pk-how{border-bottom:1px solid var(--ln);background:var(--p);padding:14px;outline:none}
 .pk .pk-how:focus-visible{box-shadow:inset 0 0 0 2px var(--a)}
-.pk .pk-howbtn{white-space:nowrap}
-.pk .pk-howbtn[aria-expanded=true]{border-color:var(--a);color:var(--a);background:${withAlpha(b.accent, 0.1)}}
-.pk .pk-btn:focus-visible,.pk .pk-tab:focus-visible,.pk .pk-seg button:focus-visible{outline:2px solid var(--a);outline-offset:1px}
+.pk .pk-btn:focus-visible,.pk .pk-hb:focus-visible,.pk .pk-tab:focus-visible,.pk .pk-seg button:focus-visible{outline:2px solid var(--a);outline-offset:1px}
 .pk .pk-how[hidden]{display:none}
 .pk .pk-how-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;margin:0 0 10px}
 .pk .pk-how-top h2{margin:0;font-size:17px;font-weight:700}
@@ -148,7 +165,7 @@ const CSS = (b: PlayBrand) => `
 .pk .pk-how-sec li{margin:0 0 6px;font-size:14px;line-height:1.5;color:var(--ink)}
 .pk .pk-how-sec p:last-child,.pk .pk-how-sec li:last-child{margin-bottom:0}
 .pk .pk-how-foot{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
-@media (max-width:640px){.pk .pk-how{padding:12px 10px}.pk .pk-how-grid{grid-template-columns:1fr}.pk .pk-stage{display:flex;flex-direction:column}.pk .pk-card{order:2;position:relative;left:auto;bottom:auto;transform:none;width:auto;margin:0;border-left:0;border-right:0;border-bottom:0;border-radius:0;box-shadow:none}.pk .pk-tabs{margin-left:0;width:100%}.pk .pk-head{padding:10px}.pk .pk-controls{padding:10px}.pk .pk-sl{max-width:none}}
+@media (max-width:640px){.pk .pk-how{padding:12px 10px}.pk .pk-how-grid{grid-template-columns:1fr}.pk .pk-stage{display:flex;flex-direction:column}.pk .pk-card{order:2;position:relative;left:auto;bottom:auto;transform:none;width:auto;margin:0;border-left:0;border-right:0;border-bottom:0;border-radius:0;box-shadow:none}.pk .pk-head{padding:10px}.pk .pk-controls{padding:10px}.pk .pk-sl{max-width:none}}
 @media (prefers-reduced-motion:reduce){.pk .pk-toast{transition:none}}
 `;
 
@@ -173,18 +190,24 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   root.appendChild(style);
   const audio = new Synth();
 
-  // header
+  // header: the game name on the left; one button bar on the right, in this order: How to play, the level
+  // switch (main level, today's level), About, Sound. Every bar button is 36 px tall with the same padding and an
+  // icon + label. When the bar does not fit on one row beside the name (phones), it goes compact: icon-only
+  // buttons (aria-label + tooltip), short level labels, and About + Sound move into one "More" menu. The tagline
+  // sits on its own line under the name, so the buttons never wrap into a second row.
   const head = h("div", "pk-head");
   const titleRow = h("div", "pk-title");
-  const nameBox = h("div");
-  nameBox.appendChild(h("div", "pk-name", o.name));
-  nameBox.appendChild(h("div", "pk-tag", o.tagline));
-  titleRow.appendChild(nameBox);
+  const nameEl = h("div", "pk-name", o.name);
+  titleRow.appendChild(nameEl);
   head.appendChild(titleRow);
+  const bar = h("div", "pk-bar");
+  bar.setAttribute("role", "toolbar");
+  bar.setAttribute("aria-label", o.name + " controls");
+  head.appendChild(bar);
+  if (o.tagline) head.appendChild(h("div", "pk-tag", o.tagline));
   const tabs = h("div", "pk-tabs");
-  head.appendChild(tabs);
-  const tools = h("div", "pk-group");
-  head.appendChild(tools);
+  tabs.setAttribute("role", "group");
+  tabs.setAttribute("aria-label", "Level");
   root.appendChild(head);
 
   // How to play: closed by default (every visit opens straight to the game). The "How to play" button next to
@@ -334,6 +357,7 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   root.addEventListener("keydown", unlock);
 
   let toastTimer: ReturnType<typeof setTimeout> | null = null;
+  let stopHead: () => void = () => undefined;
   let activeTab: { label: string; daily: boolean } = { label: "", daily: false };
   let shareW: ShareWidget | null = null;
 
@@ -371,13 +395,25 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
     setLevels(list, active) {
       tabs.innerHTML = "";
       for (let i = 0; i < list.length; i++) if (list[i].id === active) activeTab = { label: list[i].label, daily: isDailyTab(list, i) };
+      let mains = 0;
+      for (let i = 0; i < list.length; i++) if (!isDailyTab(list, i)) mains++;
       for (let i = 0; i < list.length; i++) {
         const t = list[i];
-        const btn = h("button", "pk-tab", t.label);
+        const daily = isDailyTab(list, i);
+        const num = /^\s*(\d+)\s*·/.exec(t.label);
+        // wide label: "Today" for the daily level (the date stays in the tooltip); a lone main level drops its "1 · "
+        const wide = daily ? "Today" : mains > 1 ? t.label : t.label.replace(/^\s*\d+\s*·\s*/, "");
+        const short = daily ? "Today" : mains > 1 ? (num ? num[1] : String(i + 1)) : "Main";
+        const btn = h("button", "pk-tab");
+        btn.type = "button";
+        btn.appendChild(h("span", "pk-tl", wide));
+        btn.appendChild(h("span", "pk-ts", short));
+        btn.title = t.label;
+        btn.setAttribute("aria-label", t.label + (t.done ? ", completed" : ""));
         btn.setAttribute("aria-pressed", String(t.id === active));
         if (t.done) {
           const d = h("span", "pk-done", "✓");
-          d.setAttribute("aria-label", "completed");
+          d.setAttribute("aria-hidden", "true");
           btn.appendChild(d);
         }
         btn.addEventListener("click", () => {
@@ -386,6 +422,8 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
         });
         tabs.appendChild(btn);
       }
+      tabs.hidden = list.length < 2;
+      fitHead();
     },
     setBrief(title, text, goals) {
       brief.innerHTML = "";
@@ -544,36 +582,184 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
       if (shareW) shareW.destroy();
       document.removeEventListener("keydown", onHowKey, true);
       document.removeEventListener("keydown", onModalKey, true);
+      stopHead();
       audio.setMuted(true);
       root.remove();
     },
   };
 
-  // header tools: "How to play" sits next to the game name (closed by default, toggles the section)
+  // header bar, in order: How to play · level switch · About · Sound (· More, compact only)
+  const SVG = "http://www.w3.org/2000/svg";
+  function icon(paths: string): SVGSVGElement {
+    const s = document.createElementNS(SVG, "svg");
+    s.setAttribute("viewBox", "0 0 24 24");
+    s.setAttribute("fill", "none");
+    s.setAttribute("stroke", "currentColor");
+    s.setAttribute("stroke-width", "2");
+    s.setAttribute("stroke-linecap", "round");
+    s.setAttribute("stroke-linejoin", "round");
+    s.setAttribute("aria-hidden", "true");
+    s.setAttribute("focusable", "false");
+    s.innerHTML = paths;
+    return s;
+  }
+  const I_HELP = '<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>';
+  const I_INFO = '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>';
+  const I_SND = '<path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/>';
+  const I_MUTE = '<path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/>';
+  const I_MORE = '<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>';
+  /** One bar button: icon + label; the label hides in compact mode, so aria-label and title carry the name. */
+  function barBtn(cls: string, paths: string, label: string, tip?: string): HTMLButtonElement {
+    const btn = h("button", "pk-hb " + cls);
+    btn.type = "button";
+    btn.appendChild(icon(paths));
+    btn.appendChild(h("span", "pk-lbl", label));
+    btn.setAttribute("aria-label", label);
+    btn.title = tip || label;
+    return btn;
+  }
   if (how) {
-    howBtn = h("button", "pk-btn pk-howbtn", "How to play");
-    howBtn.type = "button";
+    howBtn = barBtn("pk-howbtn", I_HELP, "How to play");
     howBtn.setAttribute("aria-expanded", "false");
     howBtn.setAttribute("aria-controls", how.id);
     howBtn.addEventListener("click", () => {
       if (how && !how.hidden) setHow(false, true);
       else shell.openHowTo();
     });
-    titleRow.appendChild(howBtn);
+    bar.appendChild(howBtn);
   }
-  const about = h("button", "pk-btn", "About the data");
+  bar.appendChild(tabs);
+  const ABOUT = "About the data";
+  const about = barBtn("pk-about pk-hide-c", I_INFO, ABOUT);
   about.addEventListener("click", () => shell.openAbout());
-  tools.appendChild(about);
-  const snd = h("button", "pk-btn pk-icon", "Sound on");
+  bar.appendChild(about);
+  const snd = barBtn("pk-sound pk-hide-c", I_SND, "Sound", "Sound is on");
   snd.setAttribute("aria-pressed", "true");
-  snd.addEventListener("click", () => {
+  bar.appendChild(snd);
+  // More (compact only): About + Sound, one menu
+  const moreBtn = barBtn("pk-more", I_MORE, "More");
+  moreBtn.setAttribute("aria-haspopup", "menu");
+  moreBtn.setAttribute("aria-expanded", "false");
+  const menu = h("div", "pk-menu");
+  menu.id = "pk-menu-" + o.slug;
+  menu.setAttribute("role", "menu");
+  menu.setAttribute("aria-label", "More");
+  menu.hidden = true;
+  moreBtn.setAttribute("aria-controls", menu.id);
+  const miAbout = h("button", "pk-mi");
+  miAbout.type = "button";
+  miAbout.setAttribute("role", "menuitem");
+  miAbout.appendChild(icon(I_INFO));
+  miAbout.appendChild(h("span", "", ABOUT));
+  const miSnd = h("button", "pk-mi");
+  miSnd.type = "button";
+  miSnd.setAttribute("role", "menuitemcheckbox");
+  miSnd.setAttribute("aria-checked", "true");
+  const miSndLbl = h("span", "", "Sound on");
+  miSnd.appendChild(icon(I_SND));
+  miSnd.appendChild(miSndLbl);
+  menu.appendChild(miAbout);
+  menu.appendChild(miSnd);
+  bar.appendChild(moreBtn);
+  bar.appendChild(menu);
+
+  function syncSound() {
+    const on = !audio.muted;
+    snd.replaceChild(icon(on ? I_SND : I_MUTE), snd.firstChild as Node);
+    snd.setAttribute("aria-pressed", String(on));
+    snd.title = on ? "Sound is on" : "Sound is off";
+    miSnd.replaceChild(icon(on ? I_SND : I_MUTE), miSnd.firstChild as Node);
+    miSnd.setAttribute("aria-checked", String(on));
+    miSndLbl.textContent = on ? "Sound on" : "Sound off";
+  }
+  function toggleSound() {
     audio.unlock();
     audio.setMuted(!audio.muted);
-    snd.textContent = audio.muted ? "Sound off" : "Sound on";
-    snd.setAttribute("aria-pressed", String(!audio.muted));
+    syncSound();
+  }
+  snd.addEventListener("click", toggleSound);
+  function setMenu(open: boolean, refocus?: boolean) {
+    menu.hidden = !open;
+    moreBtn.setAttribute("aria-expanded", String(open));
+    if (open) {
+      document.addEventListener("keydown", onMenuKey, true);
+      document.addEventListener("pointerdown", onMenuOutside, true);
+      try {
+        miAbout.focus({ preventScroll: true });
+      } catch {
+        /* older browsers */
+      }
+    } else {
+      document.removeEventListener("keydown", onMenuKey, true);
+      document.removeEventListener("pointerdown", onMenuOutside, true);
+      if (refocus)
+        try {
+          moreBtn.focus({ preventScroll: true });
+        } catch {
+          /* older browsers */
+        }
+    }
+  }
+  function onMenuOutside(e: Event) {
+    if (!bar.contains(e.target as Node)) setMenu(false);
+  }
+  function onMenuKey(e: KeyboardEvent) {
+    if (menu.hidden) return;
+    const items = [miAbout, miSnd];
+    const at = items.indexOf(document.activeElement as HTMLButtonElement);
+    if (e.key === "Escape" || e.key === "Esc") {
+      e.preventDefault();
+      e.stopPropagation();
+      setMenu(false, true);
+    } else if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      e.stopPropagation();
+      const n = (at + (e.key === "ArrowDown" ? 1 : items.length - 1)) % items.length;
+      items[n < 0 ? 0 : n].focus();
+    } else if (e.key === "Tab") setMenu(false);
+  }
+  moreBtn.addEventListener("click", () => setMenu(menu.hidden));
+  miAbout.addEventListener("click", () => {
+    setMenu(false);
+    shell.openAbout();
   });
-  tools.appendChild(snd);
+  miSnd.addEventListener("click", () => {
+    toggleSound();
+    setMenu(false, true);
+  });
   (shell as Shell & { soundButton?: HTMLElement }).soundButton = snd;
+
+  // compact when the full bar and the whole name do not fit on one row
+  function fitHead() {
+    head.classList.remove("pk-compact");
+    const cs = getComputedStyle(head);
+    const room = head.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
+    if (bar.scrollWidth + 16 + nameEl.scrollWidth > room + 0.5) head.classList.add("pk-compact");
+    else if (!menu.hidden) setMenu(false);
+  }
+  fitHead();
+  let ro: ResizeObserver | null = null;
+  if (typeof ResizeObserver !== "undefined") {
+    let lastW = -1;
+    ro = new ResizeObserver(() => {
+      if (head.clientWidth !== lastW) {
+        lastW = head.clientWidth;
+        fitHead();
+      }
+    });
+    ro.observe(head);
+  } else window.addEventListener("resize", fitHead);
+  try {
+    const fonts = (document as Document & { fonts?: { ready: Promise<unknown> } }).fonts;
+    if (fonts) fonts.ready.then(fitHead, () => undefined);
+  } catch {
+    /* no font loading API */
+  }
+  stopHead = () => {
+    if (ro) ro.disconnect();
+    window.removeEventListener("resize", fitHead);
+    setMenu(false);
+  };
 
   track("play_start");
   return shell;
