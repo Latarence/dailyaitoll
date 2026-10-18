@@ -244,6 +244,12 @@ def main():
         print(f"WARNING: skipping placeholder fill: {e}")
 
     print(f"\nGenerated {pages_generated} daily pages ({placeholders_generated} placeholders)")
+    # /play card pool (Tally): real ledger entries only; a failure here never blocks the daily pages
+    try:
+        import build_play_cards
+        print(f"Wrote web/play/cards.json ({build_play_cards.main(base_dir)} cards)")
+    except Exception as e:  # noqa: BLE001
+        print(f"WARNING: skipping play cards: {e}")
     print(f"Wrote sitemap.xml ({write_sitemap(web_dir)} URLs)")
     return 0
 
