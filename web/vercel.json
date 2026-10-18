@@ -1,6 +1,6 @@
 {
   "name": "dailyaitoll",
-  "buildCommand": "node -e \"require('fs').writeFileSync('api/_build.json', JSON.stringify({built_at: new Date().toISOString(), commit: process.env.VERCEL_GIT_COMMIT_SHA || null}))\"",
+  "buildCommand": "node scripts/copy-lint.mjs && rm -f scripts/copy-lint.mjs copy-lint.config.json && node -e \"require('fs').writeFileSync('api/_build.json', JSON.stringify({built_at: new Date().toISOString(), commit: process.env.VERCEL_GIT_COMMIT_SHA || null}))\"",
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,

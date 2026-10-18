@@ -1,0 +1,9 @@
+{
+  "allow": [
+    {
+      "file": "data/daily_rollup.json",
+      "re": "\\bfree\\b",
+      "why": "third-party AI news notes in the generated rollup, not a Daily AI Toll offer"
+    }
+  ]
+}
