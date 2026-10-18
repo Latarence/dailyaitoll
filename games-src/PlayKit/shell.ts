@@ -1,4 +1,5 @@
-// The DOM frame every game shares: header (name left; one bar right: How to play, level switch, About, Sound; compact + More on phones), the
+// The DOM frame every game shares: header (two columns: name + tagline left, one button bar right, centered on that text;
+// the level switch on its own row below; stacked on phones), the
 // How to play section (closed by default; the header button opens and closes it), the brief, a stage that
 // holds the canvas, a controls row, a result card (with a Share button on a pass), an About the science panel
 // with the honest model notes, and a standing link into the product. Plain DOM, no framework; styles are scoped under .pk.
@@ -79,15 +80,15 @@ const CSS = (b: PlayBrand) => `
  color:var(--ink);background:var(--bg);border:1px solid var(--ln);border-radius:4px;position:relative;font-size:14px;line-height:1.45;text-align:left;-webkit-tap-highlight-color:transparent}
 .pk *{box-sizing:border-box}
 .pk button{font:inherit;color:inherit;cursor:pointer}
-.pk .pk-head{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name bar" "tag tag" "lv lv";align-items:center;gap:4px 16px;padding:12px 14px;border-bottom:1px solid var(--ln)}
-.pk .pk-title{grid-area:name;min-width:0}
+.pk .pk-head{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"text bar" "lv lv";align-items:center;gap:0 24px;padding:12px 14px;border-bottom:1px solid var(--ln)}
+.pk .pk-title{grid-area:text;min-width:0;display:flex;flex-direction:column;gap:4px}
 .pk .pk-name{font-weight:700;font-size:16px;line-height:22px;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pk .pk-tag{grid-area:tag;color:var(--mu);font-size:12px;line-height:1.45;font-family:${MONO}}
-.pk .pk-bar{grid-area:bar;position:relative;display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:8px}
+.pk .pk-tag{max-width:68ch;color:var(--mu);font-size:12px;line-height:1.45;font-family:${MONO}}
+.pk .pk-bar{grid-area:bar;align-self:center;position:relative;display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:8px}
 .pk .pk-hb{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:36px;min-width:36px;padding:0 12px;border:1px solid var(--ln);background:var(--p2);border-radius:4px;font-size:13px;line-height:1;white-space:nowrap}
 .pk .pk-hb svg,.pk .pk-mi svg{width:16px;height:16px;flex:none;display:block}
 .pk .pk-hb[aria-expanded=true]{border-color:var(--a);color:var(--a);background:${withAlpha(b.accent, 0.1)}}
-.pk .pk-tabs{grid-area:lv;justify-self:start;display:inline-flex;align-items:center;gap:2px;height:32px;margin-top:6px;padding:2px;border:1px solid var(--ln);background:transparent;border-radius:4px;max-width:100%}
+.pk .pk-tabs{grid-area:lv;justify-self:start;display:inline-flex;align-items:center;gap:2px;height:32px;margin-top:12px;padding:2px;border:1px solid var(--ln);background:transparent;border-radius:4px;max-width:100%}
 .pk .pk-tab{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 12px;border:1px solid transparent;background:transparent;border-radius:3px;font-family:${MONO};font-size:12px;line-height:1;white-space:nowrap;color:var(--mu)}
 .pk .pk-tab[aria-pressed=true]{background:var(--btn);border-color:var(--btn);color:var(--bink);font-weight:600}
 .pk .pk-tab[aria-pressed=true] .pk-done{color:inherit}
@@ -167,7 +168,7 @@ const CSS = (b: PlayBrand) => `
 .pk .pk-how-sec li{margin:0 0 6px;font-size:14px;line-height:1.5;color:var(--ink)}
 .pk .pk-how-sec p:last-child,.pk .pk-how-sec li:last-child{margin-bottom:0}
 .pk .pk-how-foot{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
-@media (max-width:640px){.pk .pk-how{padding:12px 10px}.pk .pk-how-grid{grid-template-columns:1fr}.pk .pk-stage{display:flex;flex-direction:column}.pk .pk-card{order:2;position:relative;left:auto;bottom:auto;transform:none;width:auto;margin:10px;box-shadow:none}.pk .pk-head{padding:10px}.pk .pk-controls{padding:10px}.pk .pk-sl{max-width:none}}
+@media (max-width:640px){.pk .pk-how{padding:12px 10px}.pk .pk-how-grid{grid-template-columns:1fr}.pk .pk-stage{display:flex;flex-direction:column}.pk .pk-card{order:2;position:relative;left:auto;bottom:auto;transform:none;width:auto;margin:10px;box-shadow:none}.pk .pk-head{padding:10px;grid-template-columns:minmax(0,1fr);grid-template-areas:"text" "bar" "lv"}.pk .pk-bar{justify-content:flex-start;flex-wrap:wrap;gap:6px;margin-top:10px}.pk .pk-hb{flex:1 1 auto;padding:0 10px}.pk .pk-sound{flex:none;padding:0;width:36px}.pk .pk-sound .pk-lbl{display:none}.pk .pk-controls{padding:10px}.pk .pk-sl{max-width:none}}
 @media (prefers-reduced-motion:reduce){.pk .pk-toast{transition:none}}
 `;
 
@@ -192,11 +193,12 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   root.appendChild(style);
   const audio = new Synth();
 
-  // header (Principal, 2026-10-17: "the bottons dont appear orderly"): row 1 is the game name on the left and one
-  // action bar on the right, in this order: How to play · About · Sound, every button 36 px tall with the same
-  // padding and an icon + label. Row 2 is the tagline. Row 3 is the level switch (main level, Today): one
-  // segmented control under the title, styled apart from the action buttons. When the bar does not fit beside the
-  // name (phones), it collapses into one "More" menu; nothing wraps into a second row of buttons.
+  // header (Principal, 2026-10-17: "the bottons dont appear orderly"; 2026-10-18: buttons on the right, text on the
+  // left): two columns. Left: the game name with the tagline under it. Right: one action bar, in this order:
+  // How to play · About · Sound, every button 36 px tall with an icon + label, centered on the left text block.
+  // Below both: the level switch (main level, Today), one segmented control styled apart from the action buttons.
+  // Phones (<= 640 px) stack: text, then the bar in one row (wraps if needed; Sound is icon-only there), then the
+  // level switch. On wider screens the bar collapses into one "More" menu only if it cannot sit beside the name.
   const head = h("div", "pk-head");
   const titleRow = h("div", "pk-title");
   const nameEl = h("div", "pk-name", o.name);
@@ -206,7 +208,7 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   bar.setAttribute("role", "toolbar");
   bar.setAttribute("aria-label", o.name + " controls");
   head.appendChild(bar);
-  if (o.tagline) head.appendChild(h("div", "pk-tag", o.tagline));
+  if (o.tagline) titleRow.appendChild(h("div", "pk-tag", o.tagline));
   const tabs = h("div", "pk-tabs");
   tabs.setAttribute("role", "group");
   tabs.setAttribute("aria-label", "Level");
@@ -750,9 +752,15 @@ export function createShell(host: HTMLElement, o: ShellOptions): Shell {
   });
   (shell as Shell & { soundButton?: HTMLElement }).soundButton = snd;
 
-  // compact when the full bar and the whole name do not fit on one row
+  // compact when the full bar and the whole name do not fit on one row (never in the stacked phone layout, where
+  // the bar has its own row)
+  const stacked = typeof window.matchMedia === "function" ? window.matchMedia("(max-width:640px)") : null;
   function fitHead() {
     head.classList.remove("pk-compact");
+    if (stacked && stacked.matches) {
+      if (!menu.hidden) setMenu(false);
+      return;
+    }
     const cs = getComputedStyle(head);
     const room = head.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
     if (bar.scrollWidth + 16 + nameEl.scrollWidth > room + 0.5) head.classList.add("pk-compact");
