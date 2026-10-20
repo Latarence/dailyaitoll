@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 54,
+ "count": 56,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -648,6 +648,30 @@
    "excerpt": "Kroger announced the elimination of ### positions, attributing the layoffs to AI-driven efficiencies.",
    "source": "LayoffHedge",
    "url": "https://layoffhedge.com/trends/october-2026-layoffs",
+   "causality": "direct",
+   "confidence": 0.85
+  },
+  {
+   "id": "evt_20261012_002",
+   "date": "2026-10-12",
+   "roles": 20000,
+   "headline": "HSBC Holdings weighs deep job cuts as AI overhaul unfolds",
+   "masked": "HSBC Holdings weighs deep job cuts as AI overhaul unfolds",
+   "excerpt": "HSBC Holdings is considering cutting about 10% of its workforce, approximately ### jobs, as it undergoes an AI-driven overhaul.",
+   "source": "Investing.com",
+   "url": "https://www.investing.com/news/stock-market-news/factboxcompanies-cutting-jobs-as-investments-shift-toward-ai-4945243",
+   "causality": "direct",
+   "confidence": 0.8
+  },
+  {
+   "id": "evt_20261012_003",
+   "date": "2026-10-12",
+   "roles": 16000,
+   "headline": "Amazon announces 16,000 corporate job cuts amid AI and efficiency drive",
+   "masked": "Amazon announces ### corporate job cuts amid AI and efficiency drive",
+   "excerpt": "Amazon announced ### corporate job cuts as part of its AI and efficiency drive.",
+   "source": "Investing.com",
+   "url": "https://www.investing.com/news/stock-market-news/factboxcompanies-cutting-jobs-as-investments-shift-toward-ai-4945243",
    "causality": "direct",
    "confidence": 0.85
   }
