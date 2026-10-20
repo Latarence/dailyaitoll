@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-10-19T09:20:21.132892+00:00",
+  "last_updated": "2026-10-20T08:54:23.371453+00:00",
   "totals": {
-    "jobs": 291574,
+    "jobs": 311574,
     "teams": 189,
     "products": 1,
-    "companies": 146,
+    "companies": 147,
     "revenue": 0,
-    "labor_hours": 606373920
+    "labor_hours": 647973920
   },
   "today": {
-    "jobs": 1000,
-    "teams": 4,
+    "jobs": 20000,
+    "teams": 0,
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": 2080000
+    "labor_hours": 41600000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -834,12 +834,12 @@
       "labor_hours": 2558400
     },
     "2026-10-12": {
-      "jobs": 3000,
+      "jobs": 23000,
       "teams": 0,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": 6240000
+      "labor_hours": 47840000
     },
     "2026-10-08": {
       "jobs": 270,
@@ -858,8 +858,28 @@
       "labor_hours": 2080000
     }
   },
-  "events_count": 143,
+  "events_count": 144,
   "all_events": [
+    {
+      "id": "evt_20261012_002",
+      "event_date": "2026-10-12",
+      "headline": "HSBC Holdings weighs deep job cuts as AI overhaul unfolds",
+      "source_url": "https://www.investing.com/news/stock-market-news/factboxcompanies-cutting-jobs-as-investments-shift-toward-ai-4945243",
+      "source_name": "Investing.com",
+      "excerpt": "HSBC Holdings is considering cutting about 10% of its workforce, approximately 20,000 jobs, as it undergoes an AI-driven overhaul.",
+      "causality": "direct",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 20000,
+        "teams": null,
+        "companies": 1,
+        "labor_hours": 41600000
+      },
+      "notes": "Job cuts are under consideration as part of an AI-driven restructuring.",
+      "collected_date": "2026-10-20",
+      "date": "2026-10-20",
+      "created_at": "2026-10-20T08:54:23.371575+00:00"
+    },
     {
       "id": "evt_20261014_002",
       "event_date": "2026-10-14",
@@ -2874,58 +2894,36 @@
       "hashtags": "#Multiverse #EdTech #CorporateTraining #AILayoffs #TechLayoffs2026 #UK",
       "date": "2026-01-05",
       "created_at": "2026-04-27T17:59:55.140823"
-    },
-    {
-      "id": "evt_20250306_hpehewle_114",
-      "event_date": "2025-03-06",
-      "collected_date": "2026-04-27",
-      "headline": "HPE (Hewlett Packard Enterprise) cuts 2,500 jobs amid AI transition",
-      "source_url": "https://www.networkworld.com/article/3840596/hpe-cuts-2500-workers-expects-juniper-buy-to-close-end-of-25-faces-tariff-issues.html",
-      "source_name": "TrueUp",
-      "excerpt": "HPE CEO Antonio Neri announced 2,500 layoffs over 18 months, part of broader cost-cutting while completing the Juniper Networks acquisition. HPE is restructuring around AI-era infrastructure (networking, cloud) and cutting traditional IT support and sales roles.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 2500,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 5200000
-      },
-      "notes": "HPE CEO Antonio Neri announced 2,500 layoffs over 18 months, part of broader cost-cutting while completing the Juniper Networks acquisition. HPE is restructuring around AI-era infrastructure (networking, cloud) and cutting traditional IT support and sales roles.",
-      "industry": "Enterprise Hardware / Cloud",
-      "hashtags": "#HPE #HewlettPackardEnterprise #Juniper #AILayoffs #TechLayoffs2025 #CloudInfrastructure",
-      "date": "2025-03-06",
-      "created_at": "2026-04-27T17:59:55.141054"
     }
   ],
-  "summary": "One new verifiable AI displacement event found: Netflix lays off 1,000 employees amid organizational changes, with inferred AI involvement.",
+  "summary": "Three major companies\u2014Kroger, HSBC Holdings, and Amazon\u2014have announced significant layoffs totaling 39,000 jobs, explicitly citing AI and automation as key factors in their restructuring efforts.",
   "events": [
     {
-      "id": "evt_20261014_002",
-      "event_date": "2026-10-14",
-      "headline": "Netflix lays off 6% of workforce amid organizational changes",
-      "source_url": "https://apnews.com/article/2290c8472a155adb9c4b85fdc885bc7e",
-      "source_name": "AP News",
-      "excerpt": "Netflix announced plans to lay off approximately 6% of its global workforce, totaling nearly 1,000 jobs, marking its largest round of job cuts in years.",
-      "causality": "inferred",
-      "confidence": 0.7,
+      "id": "evt_20261012_002",
+      "event_date": "2026-10-12",
+      "headline": "HSBC Holdings weighs deep job cuts as AI overhaul unfolds",
+      "source_url": "https://www.investing.com/news/stock-market-news/factboxcompanies-cutting-jobs-as-investments-shift-toward-ai-4945243",
+      "source_name": "Investing.com",
+      "excerpt": "HSBC Holdings is considering cutting about 10% of its workforce, approximately 20,000 jobs, as it undergoes an AI-driven overhaul.",
+      "causality": "direct",
+      "confidence": 0.8,
       "tolls": {
-        "jobs": 1000,
-        "teams": 4,
+        "jobs": 20000,
+        "teams": null,
         "companies": 1,
-        "labor_hours": 2080000
+        "labor_hours": 41600000
       },
-      "notes": "Layoffs part of broader organizational changes; no explicit mention of AI.",
-      "collected_date": "2026-10-19",
-      "date": "2026-10-19",
-      "created_at": "2026-10-19T09:20:21.132985+00:00"
+      "notes": "Job cuts are under consideration as part of an AI-driven restructuring.",
+      "collected_date": "2026-10-20",
+      "date": "2026-10-20",
+      "created_at": "2026-10-20T08:54:23.371575+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-10-19",
-    "last_nonzero_collection": "2026-10-19",
+    "last_openai_success": "2026-10-20",
+    "last_nonzero_collection": "2026-10-20",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-10-19"
+    "last_collection_date": "2026-10-20"
   }
 }
