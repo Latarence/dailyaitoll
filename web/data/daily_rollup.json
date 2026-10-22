@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-21T08:54:38.440764+00:00",
+  "last_updated": "2026-10-22T08:57:03.193247+00:00",
   "totals": {
     "jobs": 311574,
     "teams": 189,
@@ -2896,13 +2896,13 @@
       "created_at": "2026-04-27T17:59:55.140823"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
+  "summary": "Anthropic reports a decline in junior technical staff hiring attributed to AI-driven productivity gains.",
   "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-10-21",
+    "last_openai_success": "2026-10-22",
     "last_nonzero_collection": "2026-10-20",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-10-21"
+    "consecutive_zero_days": 2,
+    "last_collection_date": "2026-10-22"
   }
 }
