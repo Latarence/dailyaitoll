@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-10-22T08:57:03.193247+00:00",
+  "last_updated": "2026-10-24T08:25:39.391752+00:00",
   "totals": {
-    "jobs": 311574,
-    "teams": 189,
+    "jobs": 322074,
+    "teams": 212,
     "products": 1,
-    "companies": 147,
+    "companies": 150,
     "revenue": 0,
-    "labor_hours": 647973920
+    "labor_hours": 669813920
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 10500,
+    "teams": 23,
     "products": 0,
-    "companies": 0,
+    "companies": 3,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": 21840000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -856,10 +856,86 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": 2080000
+    },
+    "2026-10-22": {
+      "jobs": 7000,
+      "teams": 16,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": 14560000
+    },
+    "2026-10-23": {
+      "jobs": 3500,
+      "teams": 7,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 7280000
     }
   },
-  "events_count": 144,
+  "events_count": 147,
   "all_events": [
+    {
+      "id": "evt_20261023_001",
+      "event_date": "2026-10-23",
+      "headline": "American Express to cut 3,500 jobs amid AI investment shift",
+      "source_url": "https://www.zerohedge.com/markets/tech-layoffs-surge-corporate-americas-ai-blitz-raises-fears-worst-yet-come",
+      "source_name": "ZeroHedge",
+      "excerpt": "American Express announced plans to cut 3,500 jobs, approximately 5% of its workforce, as it redirects spending toward artificial intelligence.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 3500,
+        "teams": 7,
+        "companies": 1,
+        "labor_hours": 7280000
+      },
+      "notes": "AI investment leading to job cuts",
+      "collected_date": "2026-10-24",
+      "date": "2026-10-24",
+      "created_at": "2026-10-24T08:25:39.391827+00:00"
+    },
+    {
+      "id": "evt_20261022_001",
+      "event_date": "2026-10-22",
+      "headline": "Barclays to eliminate 5,000 jobs, citing AI-driven efficiencies",
+      "source_url": "https://apnews.com/article/300bd6c2585b4a6996c2ac553d870055",
+      "source_name": "AP News",
+      "excerpt": "Barclays plans to eliminate 5,000 jobs, approximately 5% of its workforce, with around 60% of cuts affecting support functions, including developers.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 5000,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": 10400000
+      },
+      "notes": "AI adoption leading to workforce reduction",
+      "collected_date": "2026-10-24",
+      "date": "2026-10-24",
+      "created_at": "2026-10-24T08:25:39.391813+00:00"
+    },
+    {
+      "id": "evt_20261022_002",
+      "event_date": "2026-10-22",
+      "headline": "Qualcomm announces global job cuts amid AI market pivot",
+      "source_url": "https://www.tomshardware.com/tech-industry/big-tech/qualcomm-to-cut-jobs-globally-in-performance-based-layoffs-ceo-says-move-will-build-stronger-performance-culture-as-company-pivots-to-ai-data-center-and-edge-products",
+      "source_name": "Tom's Hardware",
+      "excerpt": "Qualcomm plans worldwide job cuts following its annual performance reviews, as the company pivots to AI data center and edge computing markets.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 2000,
+        "teams": 6,
+        "companies": 1,
+        "labor_hours": 4160000
+      },
+      "notes": "AI market shift contributing to layoffs",
+      "collected_date": "2026-10-24",
+      "date": "2026-10-24",
+      "created_at": "2026-10-24T08:25:39.391844+00:00"
+    },
     {
       "id": "evt_20261012_002",
       "event_date": "2026-10-12",
@@ -2828,81 +2904,76 @@
       "hashtags": "#Monzo #Neobank #Fintech #TechLayoffs2026 #USMarketExit",
       "date": "2026-03-31",
       "created_at": "2026-04-27T17:59:55.140712"
-    },
-    {
-      "id": "evt_20260115_ericsson_106",
-      "event_date": "2026-01-15",
-      "collected_date": "2026-04-27",
-      "headline": "Ericsson cuts 1,600 jobs amid AI transition",
-      "source_url": "https://www.reuters.com/business/world-at-work/ericsson-shed-1600-jobs-sweden-2026-01-15/",
-      "source_name": "TrueUp",
-      "excerpt": "Ericsson announced 1,600 job cuts in Sweden, doubling down on cost-saving measures after years of 5G spending slowdown and US tariff headwinds. AI-driven network tools are reducing the need for traditional RF engineering and support roles.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 1600,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 3328000
-      },
-      "notes": "Ericsson announced 1,600 job cuts in Sweden, doubling down on cost-saving measures after years of 5G spending slowdown and US tariff headwinds. AI-driven network tools are reducing the need for traditional RF engineering and support roles.",
-      "industry": "Telecom Equipment",
-      "hashtags": "#Ericsson #Telecom #5G #AILayoffs #TechLayoffs2026 #Sweden",
-      "date": "2026-01-15",
-      "created_at": "2026-04-27T17:59:55.140750"
-    },
-    {
-      "id": "evt_20260108_kaseya_107",
-      "event_date": "2026-01-08",
-      "collected_date": "2026-04-27",
-      "headline": "Kaseya cuts 250 jobs amid AI transition",
-      "source_url": "https://medhacloud.com/blog/kaseya-layoffs-2026-msp-industry",
-      "source_name": "TrueUp",
-      "excerpt": "IT management vendor Kaseya (owner of Datto, ConnectWise rival) cut 250 employees in its 4th round since April 2024, primarily in sales, marketing, and admin. Cuts reflect Datto acquisition integration and shift to AI-automated MSP tooling.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 250,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 520000
-      },
-      "notes": "IT management vendor Kaseya (owner of Datto, ConnectWise rival) cut 250 employees in its 4th round since April 2024, primarily in sales, marketing, and admin. Cuts reflect Datto acquisition integration and shift to AI-automated MSP tooling.",
-      "industry": "IT Management / MSP",
-      "hashtags": "#Kaseya #Datto #MSP #ITManagement #AILayoffs #TechLayoffs2026",
-      "date": "2026-01-08",
-      "created_at": "2026-04-27T17:59:55.140787"
-    },
-    {
-      "id": "evt_20260105_multiver_108",
-      "event_date": "2026-01-05",
-      "collected_date": "2026-04-27",
-      "headline": "Multiverse cuts 50 jobs amid AI transition",
-      "source_url": "https://sifted.eu/articles/multiverse-job-cuts-euan-blair",
-      "source_name": "TrueUp",
-      "excerpt": "London-based edtech Multiverse (corporate apprenticeship platform backed by Euan Blair) cut dozens of jobs amid widening losses. The apprenticeship market is being disrupted by AI upskilling tools that reduce need for structured human-led programs.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 50,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 104000
-      },
-      "notes": "London-based edtech Multiverse (corporate apprenticeship platform backed by Euan Blair) cut dozens of jobs amid widening losses. The apprenticeship market is being disrupted by AI upskilling tools that reduce need for structured human-led programs.",
-      "industry": "EdTech",
-      "hashtags": "#Multiverse #EdTech #CorporateTraining #AILayoffs #TechLayoffs2026 #UK",
-      "date": "2026-01-05",
-      "created_at": "2026-04-27T17:59:55.140823"
     }
   ],
-  "summary": "Anthropic reports a decline in junior technical staff hiring attributed to AI-driven productivity gains.",
-  "events": [],
+  "summary": "Today's findings include significant job cuts across multiple companies, with AI adoption and investment shifts cited as primary factors.",
+  "events": [
+    {
+      "id": "evt_20261022_001",
+      "event_date": "2026-10-22",
+      "headline": "Barclays to eliminate 5,000 jobs, citing AI-driven efficiencies",
+      "source_url": "https://apnews.com/article/300bd6c2585b4a6996c2ac553d870055",
+      "source_name": "AP News",
+      "excerpt": "Barclays plans to eliminate 5,000 jobs, approximately 5% of its workforce, with around 60% of cuts affecting support functions, including developers.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 5000,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": 10400000
+      },
+      "notes": "AI adoption leading to workforce reduction",
+      "collected_date": "2026-10-24",
+      "date": "2026-10-24",
+      "created_at": "2026-10-24T08:25:39.391813+00:00"
+    },
+    {
+      "id": "evt_20261023_001",
+      "event_date": "2026-10-23",
+      "headline": "American Express to cut 3,500 jobs amid AI investment shift",
+      "source_url": "https://www.zerohedge.com/markets/tech-layoffs-surge-corporate-americas-ai-blitz-raises-fears-worst-yet-come",
+      "source_name": "ZeroHedge",
+      "excerpt": "American Express announced plans to cut 3,500 jobs, approximately 5% of its workforce, as it redirects spending toward artificial intelligence.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 3500,
+        "teams": 7,
+        "companies": 1,
+        "labor_hours": 7280000
+      },
+      "notes": "AI investment leading to job cuts",
+      "collected_date": "2026-10-24",
+      "date": "2026-10-24",
+      "created_at": "2026-10-24T08:25:39.391827+00:00"
+    },
+    {
+      "id": "evt_20261022_002",
+      "event_date": "2026-10-22",
+      "headline": "Qualcomm announces global job cuts amid AI market pivot",
+      "source_url": "https://www.tomshardware.com/tech-industry/big-tech/qualcomm-to-cut-jobs-globally-in-performance-based-layoffs-ceo-says-move-will-build-stronger-performance-culture-as-company-pivots-to-ai-data-center-and-edge-products",
+      "source_name": "Tom's Hardware",
+      "excerpt": "Qualcomm plans worldwide job cuts following its annual performance reviews, as the company pivots to AI data center and edge computing markets.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 2000,
+        "teams": 6,
+        "companies": 1,
+        "labor_hours": 4160000
+      },
+      "notes": "AI market shift contributing to layoffs",
+      "collected_date": "2026-10-24",
+      "date": "2026-10-24",
+      "created_at": "2026-10-24T08:25:39.391844+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-10-22",
-    "last_nonzero_collection": "2026-10-20",
-    "consecutive_zero_days": 2,
-    "last_collection_date": "2026-10-22"
+    "last_openai_success": "2026-10-24",
+    "last_nonzero_collection": "2026-10-24",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-10-24"
   }
 }
