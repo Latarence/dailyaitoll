@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 56,
+ "count": 59,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -672,6 +672,42 @@
    "excerpt": "Amazon announced ### corporate job cuts as part of its AI and efficiency drive.",
    "source": "Investing.com",
    "url": "https://www.investing.com/news/stock-market-news/factboxcompanies-cutting-jobs-as-investments-shift-toward-ai-4945243",
+   "causality": "direct",
+   "confidence": 0.85
+  },
+  {
+   "id": "evt_20261022_001",
+   "date": "2026-10-22",
+   "roles": 5000,
+   "headline": "Barclays to eliminate 5,000 jobs, citing AI-driven efficiencies",
+   "masked": "Barclays to eliminate ### jobs, citing AI-driven efficiencies",
+   "excerpt": "Barclays plans to eliminate ### jobs, approximately 5% of its workforce, with around 60% of cuts affecting support functions, including developers.",
+   "source": "AP News",
+   "url": "https://apnews.com/article/300bd6c2585b4a6996c2ac553d870055",
+   "causality": "direct",
+   "confidence": 0.9
+  },
+  {
+   "id": "evt_20261022_004",
+   "date": "2026-10-22",
+   "roles": 1000,
+   "headline": "Netflix to lay off 6% of global staff amid AI efficiency drive",
+   "masked": "Netflix to lay off 6% of global staff amid AI efficiency drive",
+   "excerpt": "Netflix announced plans to lay off 6% of its global staff, approximately ### employees, as it increases AI investment.",
+   "source": "ZeroHedge",
+   "url": "https://www.zerohedge.com/markets/tech-layoffs-surge-corporate-americas-ai-blitz-raises-fears-worst-yet-come",
+   "causality": "direct",
+   "confidence": 0.85
+  },
+  {
+   "id": "evt_20261023_001",
+   "date": "2026-10-23",
+   "roles": 3500,
+   "headline": "American Express to cut 3,500 jobs amid AI investment shift",
+   "masked": "American Express to cut ### jobs amid AI investment shift",
+   "excerpt": "American Express announced plans to cut ### jobs, approximately 5% of its workforce, as it redirects spending toward artificial intelligence.",
+   "source": "ZeroHedge",
+   "url": "https://www.zerohedge.com/markets/tech-layoffs-surge-corporate-americas-ai-blitz-raises-fears-worst-yet-come",
    "causality": "direct",
    "confidence": 0.85
   }
