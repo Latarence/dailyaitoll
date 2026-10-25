@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-10-24T08:25:39.391752+00:00",
+  "last_updated": "2026-10-25T08:45:08.655859+00:00",
   "totals": {
-    "jobs": 322074,
-    "teams": 212,
+    "jobs": 322474,
+    "teams": 213,
     "products": 1,
-    "companies": 150,
+    "companies": 151,
     "revenue": 0,
-    "labor_hours": 669813920
+    "labor_hours": 670645920
   },
   "today": {
-    "jobs": 10500,
-    "teams": 23,
+    "jobs": 400,
+    "teams": 1,
     "products": 0,
-    "companies": 3,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 21840000
+    "labor_hours": 832000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -872,10 +872,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": 7280000
+    },
+    "2026-10-21": {
+      "jobs": 400,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 832000
     }
   },
-  "events_count": 147,
+  "events_count": 148,
   "all_events": [
+    {
+      "id": "evt_20261021_002",
+      "event_date": "2026-10-21",
+      "headline": "Electronic Arts to Cut 400 Jobs, Shut Down BioWare",
+      "source_url": "https://bloomberg.com/news/articles/2026-10-21/electronic-arts-to-cut-400-jobs-shut-down-bioware",
+      "source_name": "Bloomberg",
+      "excerpt": "Electronic Arts Inc. said it will lay off staff and shut down BioWare, the long-running development studio behind roleplaying games such as Dragon Age and Mass Effect.",
+      "causality": "inferred",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 400,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 832000
+      },
+      "notes": "Layoffs and studio closure; AI not explicitly cited.",
+      "collected_date": "2026-10-25",
+      "date": "2026-10-25",
+      "created_at": "2026-10-25T08:45:08.655919+00:00"
+    },
     {
       "id": "evt_20261023_001",
       "event_date": "2026-10-23",
@@ -2882,98 +2910,36 @@
       "hashtags": "#Sonos #ConsumerAudio #AILayoffs #TechLayoffs2026 #Marketing",
       "date": "2026-04-01",
       "created_at": "2026-04-27T17:59:55.140673"
-    },
-    {
-      "id": "evt_20260331_monzo_105",
-      "event_date": "2026-03-31",
-      "collected_date": "2026-04-27",
-      "headline": "Monzo cuts 50 jobs amid AI transition",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "UK digital bank Monzo shut down its US operations entirely, laying off ~50 employees. The company is refocusing on the UK and European markets where its AI-driven banking features have stronger traction.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 50,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 104000
-      },
-      "notes": "UK digital bank Monzo shut down its US operations entirely, laying off ~50 employees. The company is refocusing on the UK and European markets where its AI-driven banking features have stronger traction.",
-      "industry": "Fintech / Banking",
-      "hashtags": "#Monzo #Neobank #Fintech #TechLayoffs2026 #USMarketExit",
-      "date": "2026-03-31",
-      "created_at": "2026-04-27T17:59:55.140712"
     }
   ],
-  "summary": "Today's findings include significant job cuts across multiple companies, with AI adoption and investment shifts cited as primary factors.",
+  "summary": "Today's findings include Barclays cutting 5,000 jobs due to AI-driven efficiencies and Electronic Arts laying off 400 employees and shutting down BioWare, though AI was not explicitly cited in the latter case.",
   "events": [
     {
-      "id": "evt_20261022_001",
-      "event_date": "2026-10-22",
-      "headline": "Barclays to eliminate 5,000 jobs, citing AI-driven efficiencies",
-      "source_url": "https://apnews.com/article/300bd6c2585b4a6996c2ac553d870055",
-      "source_name": "AP News",
-      "excerpt": "Barclays plans to eliminate 5,000 jobs, approximately 5% of its workforce, with around 60% of cuts affecting support functions, including developers.",
-      "causality": "direct",
-      "confidence": 0.9,
+      "id": "evt_20261021_002",
+      "event_date": "2026-10-21",
+      "headline": "Electronic Arts to Cut 400 Jobs, Shut Down BioWare",
+      "source_url": "https://bloomberg.com/news/articles/2026-10-21/electronic-arts-to-cut-400-jobs-shut-down-bioware",
+      "source_name": "Bloomberg",
+      "excerpt": "Electronic Arts Inc. said it will lay off staff and shut down BioWare, the long-running development studio behind roleplaying games such as Dragon Age and Mass Effect.",
+      "causality": "inferred",
+      "confidence": 0.7,
       "tolls": {
-        "jobs": 5000,
-        "teams": 10,
+        "jobs": 400,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": 10400000
+        "labor_hours": 832000
       },
-      "notes": "AI adoption leading to workforce reduction",
-      "collected_date": "2026-10-24",
-      "date": "2026-10-24",
-      "created_at": "2026-10-24T08:25:39.391813+00:00"
-    },
-    {
-      "id": "evt_20261023_001",
-      "event_date": "2026-10-23",
-      "headline": "American Express to cut 3,500 jobs amid AI investment shift",
-      "source_url": "https://www.zerohedge.com/markets/tech-layoffs-surge-corporate-americas-ai-blitz-raises-fears-worst-yet-come",
-      "source_name": "ZeroHedge",
-      "excerpt": "American Express announced plans to cut 3,500 jobs, approximately 5% of its workforce, as it redirects spending toward artificial intelligence.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 3500,
-        "teams": 7,
-        "companies": 1,
-        "labor_hours": 7280000
-      },
-      "notes": "AI investment leading to job cuts",
-      "collected_date": "2026-10-24",
-      "date": "2026-10-24",
-      "created_at": "2026-10-24T08:25:39.391827+00:00"
-    },
-    {
-      "id": "evt_20261022_002",
-      "event_date": "2026-10-22",
-      "headline": "Qualcomm announces global job cuts amid AI market pivot",
-      "source_url": "https://www.tomshardware.com/tech-industry/big-tech/qualcomm-to-cut-jobs-globally-in-performance-based-layoffs-ceo-says-move-will-build-stronger-performance-culture-as-company-pivots-to-ai-data-center-and-edge-products",
-      "source_name": "Tom's Hardware",
-      "excerpt": "Qualcomm plans worldwide job cuts following its annual performance reviews, as the company pivots to AI data center and edge computing markets.",
-      "causality": "contributing",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 2000,
-        "teams": 6,
-        "companies": 1,
-        "labor_hours": 4160000
-      },
-      "notes": "AI market shift contributing to layoffs",
-      "collected_date": "2026-10-24",
-      "date": "2026-10-24",
-      "created_at": "2026-10-24T08:25:39.391844+00:00"
+      "notes": "Layoffs and studio closure; AI not explicitly cited.",
+      "collected_date": "2026-10-25",
+      "date": "2026-10-25",
+      "created_at": "2026-10-25T08:45:08.655919+00:00"
     }
   ],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-10-24",
-    "last_nonzero_collection": "2026-10-24",
+    "last_openai_success": "2026-10-25",
+    "last_nonzero_collection": "2026-10-25",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-10-24"
+    "last_collection_date": "2026-10-25"
   }
 }
