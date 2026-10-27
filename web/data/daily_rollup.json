@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-26T09:24:03.811753+00:00",
+  "last_updated": "2026-10-27T09:23:11.661464+00:00",
   "totals": {
     "jobs": 322474,
     "teams": 213,
@@ -2912,13 +2912,13 @@
       "created_at": "2026-04-27T17:59:55.140673"
     }
   ],
-  "summary": "Barclays announced plans to cut 5,000 jobs by the end of 2026, citing AI-driven automation as a key factor in their restructuring efforts.",
+  "summary": "No new verifiable AI displacement events found.",
   "events": [],
   "health": {
     "last_anthropic_success": "2026-09-03",
-    "last_openai_success": "2026-10-26",
+    "last_openai_success": "2026-10-27",
     "last_nonzero_collection": "2026-10-26",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-10-26"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-10-27"
   }
 }
