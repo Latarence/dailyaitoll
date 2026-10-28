@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-10-27T09:23:11.661464+00:00",
+  "last_updated": "2026-10-28T14:34:31.736007+00:00",
   "totals": {
-    "jobs": 322474,
-    "teams": 213,
+    "jobs": 409230,
+    "teams": 253,
     "products": 1,
-    "companies": 151,
+    "companies": 156,
     "revenue": 0,
-    "labor_hours": 670645920
+    "labor_hours": 851098400
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 86756,
+    "teams": 40,
     "products": 0,
-    "companies": 0,
+    "companies": 5,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": 180452480
   },
   "daily_totals": {
     "2026-05-05": {
@@ -866,12 +866,12 @@
       "labor_hours": 14560000
     },
     "2026-10-23": {
-      "jobs": 3500,
-      "teams": 7,
+      "jobs": 4300,
+      "teams": 10,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": 7280000
+      "labor_hours": 8944000
     },
     "2026-10-21": {
       "jobs": 400,
@@ -880,10 +880,142 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": 832000
+    },
+    "2026-10-26": {
+      "jobs": 60000,
+      "teams": 10,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 124800000
+    },
+    "2026-10-28": {
+      "jobs": 25000,
+      "teams": 20,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 52000000
+    },
+    "2026-10-27": {
+      "jobs": 431,
+      "teams": 5,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 896480
+    },
+    "2026-09-29": {
+      "jobs": 525,
+      "teams": 2,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 1092000
     }
   },
-  "events_count": 148,
+  "events_count": 153,
   "all_events": [
+    {
+      "id": "evt_20261028_001",
+      "event_date": "2026-10-28",
+      "headline": "Netherlands plans to eliminate 25,000 government jobs tied to AI adoption",
+      "source_url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-october-28-2026",
+      "source_name": "The Neuron",
+      "excerpt": "The Netherlands plans to eliminate 25,000 government jobs as part of savings associated with AI adoption. The cuts represent over 15% of the civil service workforce and come ahead of additional government AI deployment plans.",
+      "causality": "direct",
+      "confidence": 0.6,
+      "tolls": {
+        "jobs": 25000,
+        "teams": 20,
+        "companies": 1,
+        "labor_hours": 52000000
+      },
+      "notes": "Government-sector AI-driven workforce reduction; over 15% of Dutch civil service. Confidence lowered due to single-source reporting and plan phase; verify with primary government source if used.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736136+00:00"
+    },
+    {
+      "id": "evt_20261027_001",
+      "event_date": "2026-10-27",
+      "headline": "E.W. Scripps eliminates additional 431 jobs across local TV stations in digital/automation restructuring",
+      "source_url": "https://www.newscaststudio.com/2026/10/28/scripps-layoffs-1026/",
+      "source_name": "NewscastStudio",
+      "excerpt": "The E.W. Scripps Company eliminated 431 positions nationwide on Tuesday, Oct. 27, 2026, in another round of sweeping layoffs affecting its local television stations as the broadcaster continues restructuring its news operations around digital platforms, streaming and automation.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 431,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": 896480
+      },
+      "notes": "Separate round from the previously tracked 268-job Scripps cut; Scripps has been publicly transforming into an 'AI-powered broadcast journalism company'. Automation explicitly cited in reporting.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736144+00:00"
+    },
+    {
+      "id": "evt_20261026_001",
+      "event_date": "2026-10-26",
+      "headline": "Microsoft offers voluntary buyouts to 60,000 employees (27% of workforce) amid AI spending push",
+      "source_url": "https://www.cnbc.com/2026/10/26/microsoft-msft-voluntary-buyouts.html",
+      "source_name": "CNBC",
+      "excerpt": "Microsoft said Monday that it's offering buyouts to a wide swath of employees as it strives to balance a costly artificial intelligence infrastructure build-out with capital efficiency. Around 60,000 people are eligible, affecting about 27% of Microsoft's total workforce of 223,000 people.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 60000,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": 124800000
+      },
+      "notes": "Voluntary exit offer; eligible employees have until early December to accept, exit by Dec 31. Covers Windows, Xbox, Copilot, AI-related operations and finance divisions. This represents the eligibility pool; actual takers typically 3-5% in tech industry but Microsoft is explicitly tying this to AI capital spending demands. Reported as material displacement event by multiple major outlets.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736100+00:00"
+    },
+    {
+      "id": "evt_20261023_002",
+      "event_date": "2026-10-23",
+      "headline": "Generali Deutschland cuts 800 jobs (9% of German workforce), invests \u20ac100M+ in AI",
+      "source_url": "https://live.euronext.com/en/financial-news/italys-generali-cuts-around-800-jobs-germany",
+      "source_name": "Reuters/Euronext",
+      "excerpt": "The German subsidiary of the Italian insurer Generali said on Friday it would cut 800 jobs by the end of 2030 as part of a restructuring programme. The reduction represents about 9% of its current workforce of 9,100 employees. Generali will invest more than \u20ac100 million ($112.07 million) in technology and AI.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 800,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": 1664000
+      },
+      "notes": "Closing offices in Aachen, Nuremberg and Stuttgart. Cuts tied directly to digitalization and AI investment, implemented through retirements and attrition by end of 2030.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736123+00:00"
+    },
+    {
+      "id": "evt_20260929_001",
+      "event_date": "2026-09-29",
+      "headline": "Workday cuts 525 jobs (2.5%) in Product & Technology to fund agentic AI roadmap",
+      "source_url": "https://www.thestreet.com/employment/workday-layoffs-tech-team-ai-shift",
+      "source_name": "TheStreet",
+      "excerpt": "Workday is cutting 2.5% of its workforce, targeting its tech and product teams, as the HR software giant shifts focus toward its agentic AI roadmap. CFO Zane Rowe said Workday would 'prioritize investment in our agentic AI roadmap.'",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 525,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": 1092000
+      },
+      "notes": "SEC 8-K filing Sept 29, 2026. Third layoff in under 20 months. Backfilled from older event not in tracked list - explicitly tied to AI/agentic AI priorities.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736153+00:00"
+    },
     {
       "id": "evt_20261021_002",
       "event_date": "2026-10-21",
@@ -2800,125 +2932,116 @@
       "notes": "Tech-focused cuts announced April 25; COO cited impact on affected teams",
       "date": "2026-04-25",
       "created_at": "2026-04-27T00:55:11.795365+00:00"
-    },
-    {
-      "id": "evt_20260415_vianaisy_100",
-      "event_date": "2026-04-15",
-      "collected_date": "2026-04-27",
-      "headline": "Vianai Systems reduces workforce citing AI efficiency",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "Vianai Systems, an enterprise AI company, cut ~90% of its engineering team amid mounting uncertainty over funding and product direction. Irony: the company's core product was an AI productivity platform for enterprises.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Vianai Systems, an enterprise AI company, cut ~90% of its engineering team amid mounting uncertainty over funding and product direction. Irony: the company's core product was an AI productivity platform for enterprises.",
-      "industry": "Enterprise AI",
-      "hashtags": "#Vianai #AIStartup #EnterpriseAI #AILayoffs #TechLayoffs2026 #Startup",
-      "date": "2026-04-15",
-      "created_at": "2026-04-27T17:59:55.140440"
-    },
-    {
-      "id": "evt_20260409_carscom_101",
-      "event_date": "2026-04-09",
-      "collected_date": "2026-04-27",
-      "headline": "Cars.com cuts 187 jobs amid AI transition",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "Cars.com cut 187 employees (~11% of workforce) as its AI-powered advertising and marketplace platform reduced headcount needs in sales and operations.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 187,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 388960
-      },
-      "notes": "Cars.com cut 187 employees (~11% of workforce) as its AI-powered advertising and marketplace platform reduced headcount needs in sales and operations.",
-      "industry": "Automotive Tech",
-      "hashtags": "#CarsDotCom #AutomotiveTech #AILayoffs #TechLayoffs2026 #DigitalAds",
-      "date": "2026-04-09",
-      "created_at": "2026-04-27T17:59:55.140526"
-    },
-    {
-      "id": "evt_20260402_vimeo_102",
-      "event_date": "2026-04-02",
-      "collected_date": "2026-04-27",
-      "headline": "Vimeo cuts 123 jobs amid AI transition",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "Video platform Vimeo cut ~25% of its New York staff after being acquired by Italian firm Mediaforeurope. Cuts reflect platform consolidation as AI video tools reduce need for human-led production services.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 123,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 255840
-      },
-      "notes": "Video platform Vimeo cut ~25% of its New York staff after being acquired by Italian firm Mediaforeurope. Cuts reflect platform consolidation as AI video tools reduce need for human-led production services.",
-      "industry": "Video Tech",
-      "hashtags": "#Vimeo #VideoTech #AILayoffs #TechLayoffs2026 #MediaTech",
-      "date": "2026-04-02",
-      "created_at": "2026-04-27T17:59:55.140577"
-    },
-    {
-      "id": "evt_20260402_kintsugi_103",
-      "event_date": "2026-04-02",
-      "collected_date": "2026-04-27",
-      "headline": "Kintsugi reduces workforce citing AI efficiency",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "Mental health voice-biomarker startup Kintsugi shut down entirely, laying off all staff. Company had raised significant VC funding to use AI to detect depression and anxiety via voice analysis, but could not achieve product-market fit.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Mental health voice-biomarker startup Kintsugi shut down entirely, laying off all staff. Company had raised significant VC funding to use AI to detect depression and anxiety via voice analysis, but could not achieve product-market fit.",
-      "industry": "Mental Health Tech",
-      "hashtags": "#Kintsugi #MentalHealthTech #AIStartup #Shutdown #TechLayoffs2026 #VoiceAI",
-      "date": "2026-04-02",
-      "created_at": "2026-04-27T17:59:55.140622"
-    },
-    {
-      "id": "evt_20260401_sonos_104",
-      "event_date": "2026-04-01",
-      "collected_date": "2026-04-27",
-      "headline": "Sonos reduces workforce citing AI efficiency",
-      "source_url": "https://www.trueup.io/layoffs",
-      "source_name": "TrueUp",
-      "excerpt": "Sonos made cuts in its marketing division as new CMO reshaped the department, partly citing AI tools enabling smaller marketing teams to do more. Company still recovering from its disastrous 2024 app redesign.",
-      "causality": "direct",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 0,
-        "teams": 0,
-        "companies": 1,
-        "labor_hours": 0
-      },
-      "notes": "Sonos made cuts in its marketing division as new CMO reshaped the department, partly citing AI tools enabling smaller marketing teams to do more. Company still recovering from its disastrous 2024 app redesign.",
-      "industry": "Consumer Hardware",
-      "hashtags": "#Sonos #ConsumerAudio #AILayoffs #TechLayoffs2026 #Marketing",
-      "date": "2026-04-01",
-      "created_at": "2026-04-27T17:59:55.140673"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "Found 5 new AI-displacement events. Highlight: Microsoft (Oct 26) opened voluntary buyouts to 60,000 employees (27% of workforce) explicitly tied to AI infrastructure spending pressure\u2014largest single event in this cycle. Generali Deutschland (Oct 23) announced 800 job cuts tied to \u20ac100M+ AI investment. The Netherlands government (Oct 28) announced plans to eliminate 25,000 civil service jobs via AI adoption. E.W. Scripps conducted another 431-job round on Oct 27 as it restructures around automation. Also backfilled Workday's Sept 29 cut of 525 jobs tied to its agentic AI roadmap, which was not in the tracked list.",
+  "events": [
+    {
+      "id": "evt_20261026_001",
+      "event_date": "2026-10-26",
+      "headline": "Microsoft offers voluntary buyouts to 60,000 employees (27% of workforce) amid AI spending push",
+      "source_url": "https://www.cnbc.com/2026/10/26/microsoft-msft-voluntary-buyouts.html",
+      "source_name": "CNBC",
+      "excerpt": "Microsoft said Monday that it's offering buyouts to a wide swath of employees as it strives to balance a costly artificial intelligence infrastructure build-out with capital efficiency. Around 60,000 people are eligible, affecting about 27% of Microsoft's total workforce of 223,000 people.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 60000,
+        "teams": 10,
+        "companies": 1,
+        "labor_hours": 124800000
+      },
+      "notes": "Voluntary exit offer; eligible employees have until early December to accept, exit by Dec 31. Covers Windows, Xbox, Copilot, AI-related operations and finance divisions. This represents the eligibility pool; actual takers typically 3-5% in tech industry but Microsoft is explicitly tying this to AI capital spending demands. Reported as material displacement event by multiple major outlets.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736100+00:00"
+    },
+    {
+      "id": "evt_20261023_002",
+      "event_date": "2026-10-23",
+      "headline": "Generali Deutschland cuts 800 jobs (9% of German workforce), invests \u20ac100M+ in AI",
+      "source_url": "https://live.euronext.com/en/financial-news/italys-generali-cuts-around-800-jobs-germany",
+      "source_name": "Reuters/Euronext",
+      "excerpt": "The German subsidiary of the Italian insurer Generali said on Friday it would cut 800 jobs by the end of 2030 as part of a restructuring programme. The reduction represents about 9% of its current workforce of 9,100 employees. Generali will invest more than \u20ac100 million ($112.07 million) in technology and AI.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 800,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": 1664000
+      },
+      "notes": "Closing offices in Aachen, Nuremberg and Stuttgart. Cuts tied directly to digitalization and AI investment, implemented through retirements and attrition by end of 2030.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736123+00:00"
+    },
+    {
+      "id": "evt_20261028_001",
+      "event_date": "2026-10-28",
+      "headline": "Netherlands plans to eliminate 25,000 government jobs tied to AI adoption",
+      "source_url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-october-28-2026",
+      "source_name": "The Neuron",
+      "excerpt": "The Netherlands plans to eliminate 25,000 government jobs as part of savings associated with AI adoption. The cuts represent over 15% of the civil service workforce and come ahead of additional government AI deployment plans.",
+      "causality": "direct",
+      "confidence": 0.6,
+      "tolls": {
+        "jobs": 25000,
+        "teams": 20,
+        "companies": 1,
+        "labor_hours": 52000000
+      },
+      "notes": "Government-sector AI-driven workforce reduction; over 15% of Dutch civil service. Confidence lowered due to single-source reporting and plan phase; verify with primary government source if used.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736136+00:00"
+    },
+    {
+      "id": "evt_20261027_001",
+      "event_date": "2026-10-27",
+      "headline": "E.W. Scripps eliminates additional 431 jobs across local TV stations in digital/automation restructuring",
+      "source_url": "https://www.newscaststudio.com/2026/10/28/scripps-layoffs-1026/",
+      "source_name": "NewscastStudio",
+      "excerpt": "The E.W. Scripps Company eliminated 431 positions nationwide on Tuesday, Oct. 27, 2026, in another round of sweeping layoffs affecting its local television stations as the broadcaster continues restructuring its news operations around digital platforms, streaming and automation.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 431,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": 896480
+      },
+      "notes": "Separate round from the previously tracked 268-job Scripps cut; Scripps has been publicly transforming into an 'AI-powered broadcast journalism company'. Automation explicitly cited in reporting.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736144+00:00"
+    },
+    {
+      "id": "evt_20260929_001",
+      "event_date": "2026-09-29",
+      "headline": "Workday cuts 525 jobs (2.5%) in Product & Technology to fund agentic AI roadmap",
+      "source_url": "https://www.thestreet.com/employment/workday-layoffs-tech-team-ai-shift",
+      "source_name": "TheStreet",
+      "excerpt": "Workday is cutting 2.5% of its workforce, targeting its tech and product teams, as the HR software giant shifts focus toward its agentic AI roadmap. CFO Zane Rowe said Workday would 'prioritize investment in our agentic AI roadmap.'",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 525,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": 1092000
+      },
+      "notes": "SEC 8-K filing Sept 29, 2026. Third layoff in under 20 months. Backfilled from older event not in tracked list - explicitly tied to AI/agentic AI priorities.",
+      "collected_date": "2026-10-28",
+      "date": "2026-10-28",
+      "created_at": "2026-10-28T14:34:31.736153+00:00"
+    }
+  ],
   "health": {
-    "last_anthropic_success": "2026-09-03",
+    "last_anthropic_success": "2026-10-28",
     "last_openai_success": "2026-10-27",
-    "last_nonzero_collection": "2026-10-26",
-    "consecutive_zero_days": 1,
-    "last_collection_date": "2026-10-27"
+    "last_nonzero_collection": "2026-10-28",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-10-28"
   }
 }
