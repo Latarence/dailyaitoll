@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 59,
+ "count": 62,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -604,6 +604,18 @@
    "confidence": 0.85
   },
   {
+   "id": "evt_20260929_001",
+   "date": "2026-09-29",
+   "roles": 525,
+   "headline": "Workday cuts 525 jobs (2.5%) in Product & Technology to fund agentic AI roadmap",
+   "masked": "Workday cuts ### jobs (2.5%) in Product & Technology to fund agentic AI roadmap",
+   "excerpt": "Workday is cutting 2.5% of its workforce, targeting its tech and product teams, as the HR software giant shifts focus toward its agentic AI roadmap. CFO Zane Rowe said Workday would 'prioritize investment in our agentic AI roadmap.'",
+   "source": "TheStreet",
+   "url": "https://www.thestreet.com/employment/workday-layoffs-tech-team-ai-shift",
+   "causality": "direct",
+   "confidence": 0.85
+  },
+  {
    "id": "evt_20261006_001",
    "date": "2026-10-06",
    "roles": 660,
@@ -710,6 +722,30 @@
    "url": "https://www.zerohedge.com/markets/tech-layoffs-surge-corporate-americas-ai-blitz-raises-fears-worst-yet-come",
    "causality": "direct",
    "confidence": 0.85
+  },
+  {
+   "id": "evt_20261023_002",
+   "date": "2026-10-23",
+   "roles": 800,
+   "headline": "Generali Deutschland cuts 800 jobs (9% of German workforce), invests €100M+ in AI",
+   "masked": "Generali Deutschland cuts ### jobs (9% of German workforce), invests €100M+ in AI",
+   "excerpt": "The German subsidiary of the Italian insurer Generali said on Friday it would cut ### jobs by the end of 2030 as part of a restructuring programme. The reduction represents about 9% of its current workforce of ### employees. Generali will invest more than €### million ($### million) in technology and AI.",
+   "source": "Reuters/Euronext",
+   "url": "https://live.euronext.com/en/financial-news/italys-generali-cuts-around-800-jobs-germany",
+   "causality": "direct",
+   "confidence": 0.85
+  },
+  {
+   "id": "evt_20261026_001",
+   "date": "2026-10-26",
+   "roles": 60000,
+   "headline": "Microsoft offers voluntary buyouts to 60,000 employees (27% of workforce) amid AI spending push",
+   "masked": "Microsoft offers voluntary buyouts to ### employees (27% of workforce) amid AI spending push",
+   "excerpt": "Microsoft said Monday that it's offering buyouts to a wide swath of employees as it strives to balance a costly artificial intelligence infrastructure build-out with capital efficiency. Around ### people are eligible, affecting about 27% of Microsoft's total workforce of ### people.",
+   "source": "CNBC",
+   "url": "https://www.cnbc.com/2026/10/26/microsoft-msft-voluntary-buyouts.html",
+   "causality": "direct",
+   "confidence": 0.9
   }
  ]
 }
