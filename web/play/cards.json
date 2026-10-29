@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 62,
+ "count": 63,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -746,6 +746,18 @@
    "url": "https://www.cnbc.com/2026/10/26/microsoft-msft-voluntary-buyouts.html",
    "causality": "direct",
    "confidence": 0.9
+  },
+  {
+   "id": "evt_20261028_002",
+   "date": "2026-10-28",
+   "roles": 250,
+   "headline": "Amazon lays off up to 250 in Devices unit as engineers urged to 'learn AI or risk falling behind'",
+   "masked": "Amazon lays off up to ### in Devices unit as engineers urged to 'learn AI or risk falling behind'",
+   "excerpt": "Amazon has laid off ### employees in its devices unit, which makes products such as Kindle e-readers and Echo smart speakers. The cuts follow an engineering memo the company circulated urging developers to learn AI or risk falling behind.",
+   "source": "The Federal / Reuters",
+   "url": "https://thefederal.com/category/business/amazon-lays-off-250-employees-in-devices-unit-amid-ai-push-261092",
+   "causality": "direct",
+   "confidence": 0.85
   }
  ]
 }
