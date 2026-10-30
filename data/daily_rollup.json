@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-10-29T10:28:23.933674+00:00",
+  "last_updated": "2026-10-30T10:30:10.524582+00:00",
   "totals": {
-    "jobs": 415230,
-    "teams": 263,
+    "jobs": 415296,
+    "teams": 264,
     "products": 1,
-    "companies": 160,
+    "companies": 161,
     "revenue": 0,
-    "labor_hours": 863578400
+    "labor_hours": 863715680
   },
   "today": {
-    "jobs": 6000,
-    "teams": 10,
+    "jobs": 66,
+    "teams": 1,
     "products": 0,
-    "companies": 4,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 12480000
+    "labor_hours": 137280
   },
   "daily_totals": {
     "2026-05-05": {
@@ -874,12 +874,12 @@
       "labor_hours": 8944000
     },
     "2026-10-21": {
-      "jobs": 400,
-      "teams": 1,
+      "jobs": 466,
+      "teams": 2,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": 832000
+      "labor_hours": 969280
     },
     "2026-10-26": {
       "jobs": 60550,
@@ -914,8 +914,28 @@
       "labor_hours": 1092000
     }
   },
-  "events_count": 157,
+  "events_count": 158,
   "all_events": [
+    {
+      "id": "evt_20261021_004",
+      "event_date": "2026-10-21",
+      "headline": "Vermont Information Processing (VIP) lays off 66 employees amid AI push at Colchester software firm",
+      "source_url": "https://www.vermontpublic.org/local-news/2026-10-21/more-than-60-lose-jobs-colchester-software-firm-ai-push",
+      "source_name": "Vermont Public",
+      "excerpt": "A large Vermont software company is laying off 66 employees as it leans into artificial intelligence. Vermont Information Processing disclosed the layoffs Tuesday in a legally required notice to the Vermont Department of Labor.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 66,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 137280
+      },
+      "notes": "<cite index=\"56-3,56-4\">Colchester-based Vermont Information Processing (VIP), a beverage-industry software firm, disclosed layoffs of 66 employees in a required notice to the Vermont Department of Labor as it leans into AI.</cite> <cite index=\"58-7,58-9\">The company held an 'AI Week' in April to upskill workers, and an employee reported a company-wide push to teach AI tools to do employees' jobs.</cite> Company publicly cited 'product-led transition' in official statement; AI role is contributing/inferred rather than directly cited by management.",
+      "collected_date": "2026-10-30",
+      "date": "2026-10-30",
+      "created_at": "2026-10-30T10:30:10.524684+00:00"
+    },
     {
       "id": "evt_20261028_002",
       "event_date": "2026-10-28",
@@ -2913,115 +2933,36 @@
       "collected_date": "2026-05-08",
       "date": "2026-05-08",
       "created_at": "2026-05-08T05:49:14.777528+00:00"
-    },
-    {
-      "id": "evt_20260505_003",
-      "event_date": "2026-05-05",
-      "headline": "Freshworks lays off 500 workers (11% of workforce) citing AI code automation",
-      "source_url": "https://diginomica.com/why-freshworks-laying-11-its-workforce-ai-takes-over-majority-coding-work",
-      "source_name": "Diginomica",
-      "excerpt": "CEO Dennis Woodside said that more than half of their code is written by AI",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 500,
-        "teams": 5,
-        "companies": 1,
-        "labor_hours": 1040000
-      },
-      "notes": "AI automation eliminated 'rote work', $8M restructuring cost",
-      "date": "2026-05-07",
-      "created_at": "2026-05-07T06:27:49.372122+00:00"
     }
   ],
-  "summary": "Four new AI-displacement events identified in the past 48 hours: (1) Amazon cut up to 250 Devices software jobs on Oct 28, days after an engineering memo urged developers to 'learn AI or risk falling behind'; (2) Dropbox cut ~200 jobs (9%) on Oct 28 alongside CTO exit\u2014inferred AI linkage since memo was silent on AI despite Dropbox's AI-first pivot; (3) Innodata abruptly terminated ~550+ workers in India and the Philippines on Oct 26 after an AI data-labeling client ramped down, stock fell ~26%; (4) Comcast confirmed on Oct 22 a $1B+ Q4 charge for cable layoffs explicitly tied to agentic AI customer-service tools (Sierra/Cresta) that have already eliminated 30M+ service interactions. Conservative total: ~6,000 jobs across 4 companies.",
+  "summary": "Two new AI-related layoff events identified in the past 24-48 hours of coverage. Vermont Information Processing (VIP), a Colchester, VT beverage-industry software firm, laid off 66 employees on Oct 21 amid a company-wide AI push following its acquisition of AI-focused Encompass Technologies. Separately, Israeli neobank One Zero reportedly cut 25 jobs in an AI-driven efficiency push on Oct 11. Most other events surfacing today (Amazon Devices 250, Microsoft 60,000 buyouts, HP 4,000-6,000, Paramount Skydance, Automattic) were either already tracked or not AI-attributed per sources. The Washington Post and AP published a widely-syndicated October 29 story on the 'AI boomerang' phenomenon, confirming the ongoing wave of AI-cited workforce reductions.",
   "events": [
     {
-      "id": "evt_20261028_002",
-      "event_date": "2026-10-28",
-      "headline": "Amazon lays off up to 250 in Devices unit as engineers urged to 'learn AI or risk falling behind'",
-      "source_url": "https://thefederal.com/category/business/amazon-lays-off-250-employees-in-devices-unit-amid-ai-push-261092",
-      "source_name": "The Federal / Reuters",
-      "excerpt": "Amazon has laid off 250 employees in its devices unit, which makes products such as Kindle e-readers and Echo smart speakers. The cuts follow an engineering memo the company circulated urging developers to learn AI or risk falling behind.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 250,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 520000
-      },
-      "notes": "Job losses mainly affect software development roles. Reuters reported employees were informed through emails and text messages sent early Wednesday (October 28). Layoffs coincide with Amazon's engineering memo pushing AI adoption among developers.",
-      "collected_date": "2026-10-29",
-      "date": "2026-10-29",
-      "created_at": "2026-10-29T10:28:23.933775+00:00"
-    },
-    {
-      "id": "evt_20261028_003",
-      "event_date": "2026-10-28",
-      "headline": "Dropbox cuts ~200 jobs (9% of workforce), CTO departs, as it reorganizes around priority products",
-      "source_url": "https://americanbazaaronline.com/2026/10/28/dropbox-to-cut-9-of-workforce-as-cto-ali-dasdan-exits-490978/",
-      "source_name": "American Bazaar / Reuters",
-      "excerpt": "Dropbox plans to eliminate about 200 jobs across its global workforce as the cloud storage company reshapes its teams around key product and growth priorities. Chief Technology Officer Ali Dasdan will also leave the company, effective Nov. 18, 2026.",
-      "causality": "inferred",
-      "confidence": 0.55,
-      "tolls": {
-        "jobs": 200,
-        "teams": 4,
-        "companies": 1,
-        "labor_hours": 416000
-      },
-      "notes": "Today's memo does not mention AI once, though Dropbox has been publicly reorienting around AI (Dropbox Dash) since 2023. Cuts hit Engineering, Product, Design and G&A. Company says it remains profitable\u2014classified as inferred due to absence of explicit AI language in this round's memo.",
-      "collected_date": "2026-10-29",
-      "date": "2026-10-29",
-      "created_at": "2026-10-29T10:28:23.933797+00:00"
-    },
-    {
-      "id": "evt_20261026_002",
-      "event_date": "2026-10-26",
-      "headline": "Innodata abruptly lays off ~550 in India plus additional Philippines staff after AI client project ramp-down",
-      "source_url": "https://americanbazaaronline.com/2026/10/28/innodata-layoffs-workers-in-india-philippines-fired-mid-shift-490952/",
-      "source_name": "American Bazaar / India Today",
-      "excerpt": "Hundreds of workers in India and the Philippines say they lost their jobs in the middle of their work shifts after American AI data services company Innodata cut off their access to company systems on Oct. 26. The workers affected included data raters, quality assurance staff, team leaders and operations managers. One termination notice cited a 'ramp-down of the business assignment' as the reason for the cuts.",
+      "id": "evt_20261021_004",
+      "event_date": "2026-10-21",
+      "headline": "Vermont Information Processing (VIP) lays off 66 employees amid AI push at Colchester software firm",
+      "source_url": "https://www.vermontpublic.org/local-news/2026-10-21/more-than-60-lose-jobs-colchester-software-firm-ai-push",
+      "source_name": "Vermont Public",
+      "excerpt": "A large Vermont software company is laying off 66 employees as it leans into artificial intelligence. Vermont Information Processing disclosed the layoffs Tuesday in a legally required notice to the Vermont Department of Labor.",
       "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 550,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": 1144000
-      },
-      "notes": "Investors fear the company lost a major AI client. Some employee posts blamed lower work from a large customer, and the Philippine cuts reportedly tie to a project called MUPSL. Innodata is itself an AI data-services firm; stock fell ~26% on the news. Reflects the volatility of human-in-the-loop AI data labeling labor as model developers reduce dependence.",
-      "collected_date": "2026-10-29",
-      "date": "2026-10-29",
-      "created_at": "2026-10-29T10:28:23.933811+00:00"
-    },
-    {
-      "id": "evt_20261022_006",
-      "event_date": "2026-10-22",
-      "headline": "Comcast takes $1B Q4 charge for layoffs as AI agents cut 30M+ service interactions",
-      "source_url": "https://deadline.com/2026/10/comcast-warns-q4-charge-layoffs-connectivity-1237171103/",
-      "source_name": "Deadline",
-      "excerpt": "Agentic AI tools have streamlined the customer service operations at Comcast. 'We've already reduced customer service contact rates by roughly 20% and eliminated more than 30 million service interactions year to date versus the prior year,' Armstrong said. 'As personal AI agents reshape how consumers discover, purchase and manage services, we're positioning Comcast to capitalize on that shift.'",
-      "causality": "direct",
       "confidence": 0.75,
       "tolls": {
-        "jobs": 5000,
-        "teams": 3,
+        "jobs": 66,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": 10400000
+        "labor_hours": 137280
       },
-      "notes": "CFO Jason Armstrong on the Q3 call: a Q4 charge of 'over $1 billion,' with cable layoffs coming in the weeks ahead. Headcount not officially disclosed; preliminary external estimate is 5,000\u201310,000 jobs. Comcast described expanded customer-experience AI partnerships with Sierra and Cresta. Using lower-bound estimate of 5,000.",
-      "collected_date": "2026-10-29",
-      "date": "2026-10-29",
-      "created_at": "2026-10-29T10:28:23.933822+00:00"
+      "notes": "<cite index=\"56-3,56-4\">Colchester-based Vermont Information Processing (VIP), a beverage-industry software firm, disclosed layoffs of 66 employees in a required notice to the Vermont Department of Labor as it leans into AI.</cite> <cite index=\"58-7,58-9\">The company held an 'AI Week' in April to upskill workers, and an employee reported a company-wide push to teach AI tools to do employees' jobs.</cite> Company publicly cited 'product-led transition' in official statement; AI role is contributing/inferred rather than directly cited by management.",
+      "collected_date": "2026-10-30",
+      "date": "2026-10-30",
+      "created_at": "2026-10-30T10:30:10.524684+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-10-29",
+    "last_anthropic_success": "2026-10-30",
     "last_openai_success": "2026-10-27",
-    "last_nonzero_collection": "2026-10-29",
+    "last_nonzero_collection": "2026-10-30",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-10-29"
+    "last_collection_date": "2026-10-30"
   }
 }
