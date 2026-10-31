@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-10-30T10:30:10.524582+00:00",
+  "last_updated": "2026-10-31T09:59:12.684719+00:00",
   "totals": {
-    "jobs": 415296,
-    "teams": 264,
+    "jobs": 416290,
+    "teams": 268,
     "products": 1,
-    "companies": 161,
+    "companies": 162,
     "revenue": 0,
-    "labor_hours": 863715680
+    "labor_hours": 865783200
   },
   "today": {
-    "jobs": 66,
-    "teams": 1,
+    "jobs": 994,
+    "teams": 4,
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": 137280
+    "labor_hours": 2067520
   },
   "daily_totals": {
     "2026-05-05": {
@@ -912,10 +912,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": 1092000
+    },
+    "2026-10-30": {
+      "jobs": 994,
+      "teams": 4,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 2067520
     }
   },
-  "events_count": 158,
+  "events_count": 159,
   "all_events": [
+    {
+      "id": "evt_20261030_001",
+      "event_date": "2026-10-30",
+      "headline": "Comcast files WARN notices for 994 layoffs across Philadelphia, NJ, WA, CA as it deploys AI agents in customer service",
+      "source_url": "https://www.inquirer.com/business/comcast/comcast-layoffs-warn-notice-philadelphia-ai-jobs-20261030.html",
+      "source_name": "Philadelphia Inquirer",
+      "excerpt": "Comcast is laying off 634 employees at its Philadelphia headquarters, as the telecommunications and media giant pursues a cost-cutting transformation and invests in artificial intelligence. In addition to the layoffs in Pennsylvania, Comcast notified regulators that it was cutting 119 positions in New Jersey, 159 in Washington state, and 82 in California. Executives have said they are simplifying the company's structure, reducing layers of workers and expanding use of artificial intelligence agents to handle customer service.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 994,
+        "teams": 4,
+        "companies": 1,
+        "labor_hours": 2067520
+      },
+      "notes": "Specific WARN notice filings quantify the broader Comcast restructuring previously tracked. Philadelphia HQ: 634 (begins Dec 31, continues through 2027), New Jersey: 119, Washington state: 159, California: 82. Executives explicitly cited expanding AI agents in customer service. Company plans to hire 1,100+ new positions. By far largest Pennsylvania RIF in October.",
+      "collected_date": "2026-10-31",
+      "date": "2026-10-31",
+      "created_at": "2026-10-31T09:59:12.684781+00:00"
+    },
     {
       "id": "evt_20261021_004",
       "event_date": "2026-10-21",
@@ -2913,56 +2941,36 @@
       "collected_date": "2026-05-08",
       "date": "2026-05-08",
       "created_at": "2026-05-08T05:49:14.777519+00:00"
-    },
-    {
-      "id": "evt_20260506_001",
-      "event_date": "2026-05-06",
-      "headline": "Arctic Wolf lays off 250 workers to invest in AI platform",
-      "source_url": "https://www.theregister.com/ai-and-ml/2026/05/06/arctic-wolf-cuts-250-jobs-in-ai-push/5231213",
-      "source_name": "The Register",
-      "excerpt": "<cite index=\"1-2\">\"position Arctic Wolf to operate more efficiently, continue investing in our Superintelligence platform\"</cite>",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 250,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 520000
-      },
-      "notes": "Cybersecurity vendor restructuring for AI SOC investment",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777528+00:00"
     }
   ],
-  "summary": "Two new AI-related layoff events identified in the past 24-48 hours of coverage. Vermont Information Processing (VIP), a Colchester, VT beverage-industry software firm, laid off 66 employees on Oct 21 amid a company-wide AI push following its acquisition of AI-focused Encompass Technologies. Separately, Israeli neobank One Zero reportedly cut 25 jobs in an AI-driven efficiency push on Oct 11. Most other events surfacing today (Amazon Devices 250, Microsoft 60,000 buyouts, HP 4,000-6,000, Paramount Skydance, Automattic) were either already tracked or not AI-attributed per sources. The Washington Post and AP published a widely-syndicated October 29 story on the 'AI boomerang' phenomenon, confirming the ongoing wave of AI-cited workforce reductions.",
+  "summary": "One new verifiable event found: Comcast filed WARN notices on Oct 30, 2026 for 994 layoffs across four states (634 Philadelphia, 119 NJ, 159 WA, 82 CA), with executives explicitly citing expansion of AI agents in customer service. This represents the detailed WARN filing specifics tied to Comcast's previously-tracked $1B Q4 restructuring charge, newly quantified at a per-location level. Other coverage from the past 48 hours (CNBC boomerang employees, AP rehiring, Goldman Sachs scar analysis) was retrospective/analytical rather than reporting new displacement events.",
   "events": [
     {
-      "id": "evt_20261021_004",
-      "event_date": "2026-10-21",
-      "headline": "Vermont Information Processing (VIP) lays off 66 employees amid AI push at Colchester software firm",
-      "source_url": "https://www.vermontpublic.org/local-news/2026-10-21/more-than-60-lose-jobs-colchester-software-firm-ai-push",
-      "source_name": "Vermont Public",
-      "excerpt": "A large Vermont software company is laying off 66 employees as it leans into artificial intelligence. Vermont Information Processing disclosed the layoffs Tuesday in a legally required notice to the Vermont Department of Labor.",
-      "causality": "contributing",
-      "confidence": 0.75,
+      "id": "evt_20261030_001",
+      "event_date": "2026-10-30",
+      "headline": "Comcast files WARN notices for 994 layoffs across Philadelphia, NJ, WA, CA as it deploys AI agents in customer service",
+      "source_url": "https://www.inquirer.com/business/comcast/comcast-layoffs-warn-notice-philadelphia-ai-jobs-20261030.html",
+      "source_name": "Philadelphia Inquirer",
+      "excerpt": "Comcast is laying off 634 employees at its Philadelphia headquarters, as the telecommunications and media giant pursues a cost-cutting transformation and invests in artificial intelligence. In addition to the layoffs in Pennsylvania, Comcast notified regulators that it was cutting 119 positions in New Jersey, 159 in Washington state, and 82 in California. Executives have said they are simplifying the company's structure, reducing layers of workers and expanding use of artificial intelligence agents to handle customer service.",
+      "causality": "direct",
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 66,
-        "teams": 1,
+        "jobs": 994,
+        "teams": 4,
         "companies": 1,
-        "labor_hours": 137280
+        "labor_hours": 2067520
       },
-      "notes": "<cite index=\"56-3,56-4\">Colchester-based Vermont Information Processing (VIP), a beverage-industry software firm, disclosed layoffs of 66 employees in a required notice to the Vermont Department of Labor as it leans into AI.</cite> <cite index=\"58-7,58-9\">The company held an 'AI Week' in April to upskill workers, and an employee reported a company-wide push to teach AI tools to do employees' jobs.</cite> Company publicly cited 'product-led transition' in official statement; AI role is contributing/inferred rather than directly cited by management.",
-      "collected_date": "2026-10-30",
-      "date": "2026-10-30",
-      "created_at": "2026-10-30T10:30:10.524684+00:00"
+      "notes": "Specific WARN notice filings quantify the broader Comcast restructuring previously tracked. Philadelphia HQ: 634 (begins Dec 31, continues through 2027), New Jersey: 119, Washington state: 159, California: 82. Executives explicitly cited expanding AI agents in customer service. Company plans to hire 1,100+ new positions. By far largest Pennsylvania RIF in October.",
+      "collected_date": "2026-10-31",
+      "date": "2026-10-31",
+      "created_at": "2026-10-31T09:59:12.684781+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-10-30",
+    "last_anthropic_success": "2026-10-31",
     "last_openai_success": "2026-10-27",
-    "last_nonzero_collection": "2026-10-30",
+    "last_nonzero_collection": "2026-10-31",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-10-30"
+    "last_collection_date": "2026-10-31"
   }
 }
