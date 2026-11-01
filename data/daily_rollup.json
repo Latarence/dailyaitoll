@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-31T09:59:12.684719+00:00",
+  "last_updated": "2026-11-01T10:50:48.844250+00:00",
   "totals": {
     "jobs": 416290,
     "teams": 268,
@@ -9,12 +9,12 @@
     "labor_hours": 865783200
   },
   "today": {
-    "jobs": 994,
-    "teams": 4,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": 2067520
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -2943,34 +2943,13 @@
       "created_at": "2026-05-08T05:49:14.777519+00:00"
     }
   ],
-  "summary": "One new verifiable event found: Comcast filed WARN notices on Oct 30, 2026 for 994 layoffs across four states (634 Philadelphia, 119 NJ, 159 WA, 82 CA), with executives explicitly citing expansion of AI agents in customer service. This represents the detailed WARN filing specifics tied to Comcast's previously-tracked $1B Q4 restructuring charge, newly quantified at a per-location level. Other coverage from the past 48 hours (CNBC boomerang employees, AP rehiring, Goldman Sachs scar analysis) was retrospective/analytical rather than reporting new displacement events.",
-  "events": [
-    {
-      "id": "evt_20261030_001",
-      "event_date": "2026-10-30",
-      "headline": "Comcast files WARN notices for 994 layoffs across Philadelphia, NJ, WA, CA as it deploys AI agents in customer service",
-      "source_url": "https://www.inquirer.com/business/comcast/comcast-layoffs-warn-notice-philadelphia-ai-jobs-20261030.html",
-      "source_name": "Philadelphia Inquirer",
-      "excerpt": "Comcast is laying off 634 employees at its Philadelphia headquarters, as the telecommunications and media giant pursues a cost-cutting transformation and invests in artificial intelligence. In addition to the layoffs in Pennsylvania, Comcast notified regulators that it was cutting 119 positions in New Jersey, 159 in Washington state, and 82 in California. Executives have said they are simplifying the company's structure, reducing layers of workers and expanding use of artificial intelligence agents to handle customer service.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 994,
-        "teams": 4,
-        "companies": 1,
-        "labor_hours": 2067520
-      },
-      "notes": "Specific WARN notice filings quantify the broader Comcast restructuring previously tracked. Philadelphia HQ: 634 (begins Dec 31, continues through 2027), New Jersey: 119, Washington state: 159, California: 82. Executives explicitly cited expanding AI agents in customer service. Company plans to hire 1,100+ new positions. By far largest Pennsylvania RIF in October.",
-      "collected_date": "2026-10-31",
-      "date": "2026-10-31",
-      "created_at": "2026-10-31T09:59:12.684781+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-10-31",
-    "last_openai_success": "2026-10-27",
+    "last_openai_success": "2026-11-01",
     "last_nonzero_collection": "2026-10-31",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-10-31"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-11-01"
   }
 }
