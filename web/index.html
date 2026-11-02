@@ -1458,9 +1458,9 @@ Via @DailyAIToll`;
         }
 
         function updateShareLinks(data) {
-            const jobs = data.totals?.jobs?.toLocaleString() || '—';
-            const companies = data.totals?.companies?.toLocaleString() || '—';
-            const laborHours = data.totals?.labor_hours ? formatLaborHours(Math.abs(data.totals.labor_hours)) : '—';
+            const jobs = data.totals?.jobs?.toLocaleString() || 'n/a';
+            const companies = data.totals?.companies?.toLocaleString() || 'n/a';
+            const laborHours = data.totals?.labor_hours ? formatLaborHours(Math.abs(data.totals.labor_hours)) : 'n/a';
 
             const shareText = `${jobs} jobs displaced · ${companies} companies · ${laborHours} labor hours
 
