@@ -6,6 +6,7 @@ try {
   kv = null;
 }
 const { isDisputeEvent, recordDispute, kvConfigured } = require('./_lib/disputes');
+const { addPatron } = require('./_lib/patron-store');
 
 // KV is optional storage. It is used only when its env (KV_REST_API_URL + KV_REST_API_TOKEN) is present,
 // so a FEATURE_USE_KV_* flag turned on without a store can never turn a paid webhook into a 5xx retry loop.
@@ -33,32 +34,8 @@ function verifyStripeSignature(payload, signature, secret) {
 
 async function recordPatron({ tier, name, url, description, stripeSessionId }) {
   if (!kv) throw new Error('KV not available');
-  const dedupeKey = `patron_session:${stripeSessionId}`;
-  const first = await kv.setnx(dedupeKey, '1');
-  if (!first) return false;
-
-  try {
-    const existing =
-      (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
-
-    const entry = { name, url: url || '' };
-    if (tier === 'founding') entry.description = description || '';
-
-    const next = {
-      founding: existing.founding || [],
-      sustainer: existing.sustainer || [],
-      supporter: existing.supporter || [],
-    };
-    if (!next[tier]) return false;
-    next[tier] = [entry, ...next[tier]].slice(0, 500);
-
-    await kv.set('patrons:v1', next);
-    return true;
-  } catch (err) {
-    // Release the claim so the fallback (or a Stripe retry) can still record this patron.
-    try { await kv.del(dedupeKey); } catch { /* best effort */ }
-    throw err;
-  }
+  // One atomic HSETNX per session: dedupe and record together, never overwriting another session.
+  return addPatron(kv, { tier, name, url, description, stripeSessionId });
 }
 
 async function recordLicense({ tier, email, stripeSessionId }) {

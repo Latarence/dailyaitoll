@@ -45,6 +45,7 @@ function fakeKv() {
     hget: async (k, f) => { calls.push(['hget', k, f]); const h = hashes.get(k); return h && h[f] !== undefined ? h[f] : null; },
     hset: async (k, obj) => { calls.push(['hset', k]); hashes.set(k, { ...(hashes.get(k) || {}), ...obj }); return 1; },
     hgetall: async (k) => { calls.push(['hgetall', k]); return hashes.get(k) || null; },
+    hsetnx: async (k, f, v) => { calls.push(['hsetnx', k]); const h = hashes.get(k) || {}; if (h[f] !== undefined) return 0; hashes.set(k, { ...h, [f]: v }); return 1; },
   };
   return kv;
 }
@@ -209,7 +210,7 @@ test('checkout.session.completed (patron, KV flag on) still processed unchanged'
   const res = await deliver({ id: 'evt_c', type: 'checkout.session.completed', created: 1, data: { object: {
     id: 'cs_test_1', metadata: { kind: 'patron', tier: 'supporter', name: 'Jane', url: '' }, customer_details: {} } } }, { kv });
   assert.deepStrictEqual([res.statusCode, res.body.kind, res.body.patron], [200, 'patron', 'Jane']);
-  assert.strictEqual(kv.store.get('patrons:v1').supporter[0].name, 'Jane');
+  assert.strictEqual(JSON.parse(kv.hashes.get('patrons:v2').cs_test_1).name, 'Jane');
   assert.ok(!kv.hashes.has('disputes:v1'));
 });
 

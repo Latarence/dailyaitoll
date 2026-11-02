@@ -36,6 +36,7 @@ function mockRes() {
 // @vercel/kv stand-in. `throwing` mimics the real client with no env (every call throws).
 function fakeKv({ throwing = false } = {}) {
   const store = new Map();
+  const hashes = new Map();
   const calls = [];
   const op = (name, fn) => async (...a) => {
     calls.push([name, a[0]]);
@@ -43,10 +44,12 @@ function fakeKv({ throwing = false } = {}) {
     return fn(...a);
   };
   return {
-    calls, store,
+    calls, store, hashes,
     get: op('get', (k) => (store.has(k) ? store.get(k) : null)),
     set: op('set', (k, v) => { store.set(k, v); return 'OK'; }),
     setnx: op('setnx', (k, v) => { if (store.has(k)) return 0; store.set(k, v); return 1; }),
+    hgetall: op('hgetall', (k) => hashes.get(k) || null),
+    hsetnx: op('hsetnx', (k, f, v) => { const h = hashes.get(k) || {}; if (h[f] !== undefined) return 0; hashes.set(k, { ...h, [f]: v }); return 1; }),
     del: op('del', (k) => (store.delete(k) ? 1 : 0)),
   };
 }
@@ -207,7 +210,7 @@ test('webhook patron: KV configured + flag on -> recorded in KV, no dispatch; re
     assert.strictEqual((await deliver(checkoutEvent(PATRON), kv)).statusCode, 200);
     assert.strictEqual((await deliver(checkoutEvent(PATRON), kv)).statusCode, 200);
     assert.strictEqual(gh.calls.length, 0);
-    assert.strictEqual(kv.store.get('patrons:v1').supporter.length, 1);
+    assert.strictEqual(Object.keys(kv.hashes.get('patrons:v2')).length, 1);
   } finally { gh.restore(); }
 });
 

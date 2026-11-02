@@ -7,6 +7,7 @@ try {
   kv = null;
 }
 const { kvConfigured } = require('./_lib/disputes');
+const { listPatrons } = require('./_lib/patron-store');
 
 function readStaticPatrons() {
   const p = path.join(__dirname, '..', 'data', 'patrons.json');
@@ -22,8 +23,7 @@ module.exports = async (req, res) => {
     if (process.env.FEATURE_USE_KV_PATRONS === 'true') {
       if (kv && kvConfigured()) {
         try {
-          const patrons =
-            (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
+          const patrons = await listPatrons(kv);
           return res.status(200).json({ patrons });
         } catch (err) {
           console.error('patrons KV read failed, serving static list:', err && err.message);
