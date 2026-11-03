@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-02T11:43:47.713674+00:00",
+  "last_updated": "2026-11-03T11:25:44.030155+00:00",
   "totals": {
-    "jobs": 416290,
-    "teams": 268,
+    "jobs": 418480,
+    "teams": 274,
     "products": 1,
-    "companies": 162,
+    "companies": 164,
     "revenue": 0,
-    "labor_hours": 865783200
+    "labor_hours": 870338400
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 2190,
+    "teams": 6,
     "products": 0,
-    "companies": 0,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": 4555200
   },
   "daily_totals": {
     "2026-05-05": {
@@ -920,10 +920,66 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": 2067520
+    },
+    "2026-11-02": {
+      "jobs": 190,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 395200
+    },
+    "2026-11-03": {
+      "jobs": 2000,
+      "teams": 5,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 4160000
     }
   },
-  "events_count": 159,
+  "events_count": 161,
   "all_events": [
+    {
+      "id": "evt_20261103_001",
+      "event_date": "2026-11-03",
+      "headline": "Disney plans thousands of layoffs targeting 20% cost savings, cites AI adoption pressure",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-11-03/disney-eyes-thousands-of-layoffs-with-managers-asked-to-cut-20",
+      "source_name": "Bloomberg",
+      "excerpt": "Walt Disney Co. is moving toward thousands of job cuts with the entertainment giant asking some managers to target 20% in annual cost savings. The move follows pressure from AI-driven automation, weak box office results, streaming competition, and lower international park attendance.",
+      "causality": "contributing",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 2000,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": 4160000
+      },
+      "notes": "Disney employs ~231,000 globally. Bloomberg reports thousands of job cuts planned under CEO Josh D'Amaro's 20% cost-savings directive. Reuters identified AI, weaker box-office, streaming competition and park attendance as key pressures. Conservative estimate of 2,000 jobs used; actual figure may be higher. Follows September memo from Chief Legal Officer Horacio Gutierrez about 'automating certain workflows by leveraging the latest technologies.'",
+      "collected_date": "2026-11-03",
+      "date": "2026-11-03",
+      "created_at": "2026-11-03T11:25:44.030281+00:00"
+    },
+    {
+      "id": "evt_20261102_001",
+      "event_date": "2026-11-02",
+      "headline": "SUSE to cut ~190 jobs (10% of workforce), CEO blames 'automation and AI'",
+      "source_url": "https://dealroom.co/news/168992-suse-to-cut-10-of-staff-blaming-ai-and-automation/",
+      "source_name": "Dealroom / The Register",
+      "excerpt": "SUSE will cut about 10% of its roughly 1,900-person workforce \u2014 around 190 jobs \u2014 with chief executive Dirk-Peter van Leeuwen blaming 'automation and AI' in a memo sent to all staff on November 2. 'AI capabilities are advancing exponentially, forcing us to radically reimagine our work,' he wrote.",
+      "causality": "direct",
+      "confidence": 0.95,
+      "tolls": {
+        "jobs": 190,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 395200
+      },
+      "notes": "German/Nuremberg-based Linux company owned by EQT. CEO explicitly named AI as the cause in internal memo. Staff to be notified by Nov 4. Voluntary separation program in September 2026 drew insufficient uptake, pushing SUSE to mandatory redundancies. Contrast: SUSE announced new agentic AI capabilities for Linux management tools on Oct 27.",
+      "collected_date": "2026-11-03",
+      "date": "2026-11-03",
+      "created_at": "2026-11-03T11:25:44.030256+00:00"
+    },
     {
       "id": "evt_20261030_001",
       "event_date": "2026-10-30",
@@ -2901,55 +2957,56 @@
       "collected_date": "2026-05-09",
       "date": "2026-05-09",
       "created_at": "2026-05-09T06:06:45.468069+00:00"
-    },
-    {
-      "id": "evt_20260506_002",
-      "event_date": "2026-05-06",
-      "headline": "Ticketmaster lays off 350 workers prioritizing AI initiatives",
-      "source_url": "https://news.pollstar.com/2026/05/06/ticketmaster-cuts-8-of-staff-350-employees-primarily-in-engineering-product-design/",
-      "source_name": "Pollstar News",
-      "excerpt": "AI as a new utility",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 350,
-        "teams": 8,
-        "companies": 1,
-        "labor_hours": 728000
-      },
-      "notes": "8% of global workforce cut across 25 countries, focused on engineering, product, and design",
-      "collected_date": "2026-05-09",
-      "date": "2026-05-09",
-      "created_at": "2026-05-09T06:06:45.468090+00:00"
-    },
-    {
-      "id": "evt_20260507_002",
-      "event_date": "2026-05-07",
-      "headline": "DeepL cuts 250 jobs citing massive AI structural shift",
-      "source_url": "https://www.bloomberg.com/news/articles/2026-05-07/google-translate-rival-deepl-announces-plans-to-cut-25-of-staff",
-      "source_name": "Bloomberg",
-      "excerpt": "<cite index=\"35-4\">\"massive structural shift\" from artificial intelligence</cite>",
-      "causality": "direct",
-      "confidence": 0.92,
-      "tolls": {
-        "jobs": 250,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 520000
-      },
-      "notes": "25% workforce reduction at German translation unicorn",
-      "collected_date": "2026-05-08",
-      "date": "2026-05-08",
-      "created_at": "2026-05-08T05:49:14.777519+00:00"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "Two new verifiable AI displacement events in the past 24-48 hours. SUSE (direct AI citation): The German Linux vendor is cutting ~190 jobs (10% of its 1,900-person workforce), with CEO Dirk-Peter van Leeuwen explicitly blaming 'automation and AI' in a Nov 2 memo and stating 'AI capabilities are advancing exponentially, forcing us to radically reimagine our work.' Disney (contributing): Bloomberg reported Nov 3 that Disney is planning thousands of layoffs under a 20% cost-savings mandate, with AI-driven automation named alongside box office weakness and streaming competition as key pressures; conservative estimate of 2,000 jobs. Combined estimated impact: ~2,190 jobs, ~4,555,200 annual labor hours eliminated.",
+  "events": [
+    {
+      "id": "evt_20261102_001",
+      "event_date": "2026-11-02",
+      "headline": "SUSE to cut ~190 jobs (10% of workforce), CEO blames 'automation and AI'",
+      "source_url": "https://dealroom.co/news/168992-suse-to-cut-10-of-staff-blaming-ai-and-automation/",
+      "source_name": "Dealroom / The Register",
+      "excerpt": "SUSE will cut about 10% of its roughly 1,900-person workforce \u2014 around 190 jobs \u2014 with chief executive Dirk-Peter van Leeuwen blaming 'automation and AI' in a memo sent to all staff on November 2. 'AI capabilities are advancing exponentially, forcing us to radically reimagine our work,' he wrote.",
+      "causality": "direct",
+      "confidence": 0.95,
+      "tolls": {
+        "jobs": 190,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 395200
+      },
+      "notes": "German/Nuremberg-based Linux company owned by EQT. CEO explicitly named AI as the cause in internal memo. Staff to be notified by Nov 4. Voluntary separation program in September 2026 drew insufficient uptake, pushing SUSE to mandatory redundancies. Contrast: SUSE announced new agentic AI capabilities for Linux management tools on Oct 27.",
+      "collected_date": "2026-11-03",
+      "date": "2026-11-03",
+      "created_at": "2026-11-03T11:25:44.030256+00:00"
+    },
+    {
+      "id": "evt_20261103_001",
+      "event_date": "2026-11-03",
+      "headline": "Disney plans thousands of layoffs targeting 20% cost savings, cites AI adoption pressure",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-11-03/disney-eyes-thousands-of-layoffs-with-managers-asked-to-cut-20",
+      "source_name": "Bloomberg",
+      "excerpt": "Walt Disney Co. is moving toward thousands of job cuts with the entertainment giant asking some managers to target 20% in annual cost savings. The move follows pressure from AI-driven automation, weak box office results, streaming competition, and lower international park attendance.",
+      "causality": "contributing",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 2000,
+        "teams": 5,
+        "companies": 1,
+        "labor_hours": 4160000
+      },
+      "notes": "Disney employs ~231,000 globally. Bloomberg reports thousands of job cuts planned under CEO Josh D'Amaro's 20% cost-savings directive. Reuters identified AI, weaker box-office, streaming competition and park attendance as key pressures. Conservative estimate of 2,000 jobs used; actual figure may be higher. Follows September memo from Chief Legal Officer Horacio Gutierrez about 'automating certain workflows by leveraging the latest technologies.'",
+      "collected_date": "2026-11-03",
+      "date": "2026-11-03",
+      "created_at": "2026-11-03T11:25:44.030281+00:00"
+    }
+  ],
   "health": {
-    "last_anthropic_success": "2026-10-31",
+    "last_anthropic_success": "2026-11-03",
     "last_openai_success": "2026-11-02",
-    "last_nonzero_collection": "2026-10-31",
-    "consecutive_zero_days": 2,
-    "last_collection_date": "2026-11-02"
+    "last_nonzero_collection": "2026-11-03",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-11-03"
   }
 }
