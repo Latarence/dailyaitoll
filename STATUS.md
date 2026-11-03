@@ -6,7 +6,7 @@
 
 ```bash
 # Local development
-cd /Users/latarencebutts/latarence/dailyaitoll
+cd ~/mdo3d/projects/external/dailyaitoll
 python scripts/run_toll.py
 
 # Manual trigger (requires GITHUB_TOKEN)
