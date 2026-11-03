@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 64,
+ "count": 65,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -770,6 +770,18 @@
    "url": "https://www.inquirer.com/business/comcast/comcast-layoffs-warn-notice-philadelphia-ai-jobs-20261030.html",
    "causality": "direct",
    "confidence": 0.9
+  },
+  {
+   "id": "evt_20261102_001",
+   "date": "2026-11-02",
+   "roles": 190,
+   "headline": "SUSE to cut ~190 jobs (10% of workforce), CEO blames 'automation and AI'",
+   "masked": "SUSE to cut ~### jobs (10% of workforce), CEO blames 'automation and AI'",
+   "excerpt": "SUSE will cut about 10% of its roughly ###-person workforce — around ### jobs — with chief executive Dirk-Peter van Leeuwen blaming 'automation and AI' in a memo sent to all staff on November 2. 'AI capabilities are advancing exponentially, forcing us to radically reimagine our work,' he wrote.",
+   "source": "Dealroom / The Register",
+   "url": "https://dealroom.co/news/168992-suse-to-cut-10-of-staff-blaming-ai-and-automation/",
+   "causality": "direct",
+   "confidence": 0.95
   }
  ]
 }
