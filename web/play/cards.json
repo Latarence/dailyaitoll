@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 65,
+ "count": 66,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -780,6 +780,18 @@
    "excerpt": "SUSE will cut about 10% of its roughly ###-person workforce — around ### jobs — with chief executive Dirk-Peter van Leeuwen blaming 'automation and AI' in a memo sent to all staff on November 2. 'AI capabilities are advancing exponentially, forcing us to radically reimagine our work,' he wrote.",
    "source": "Dealroom / The Register",
    "url": "https://dealroom.co/news/168992-suse-to-cut-10-of-staff-blaming-ai-and-automation/",
+   "causality": "direct",
+   "confidence": 0.95
+  },
+  {
+   "id": "evt_20261103_002",
+   "date": "2026-11-03",
+   "roles": 500,
+   "headline": "Nice to lay off 500 employees (5% of workforce) as it struggles to navigate AI transition in customer service",
+   "masked": "Nice to lay off ### employees (5% of workforce) as it struggles to navigate AI transition in customer service",
+   "excerpt": "Israeli software company Nice is laying off ### employees worldwide, representing 5% of its workforce. Nice's stock has faced significant pressure over the past year, driven by investor concerns regarding the potential impact of AI on demand for the company's products and its future growth rate.",
+   "source": "Globes",
+   "url": "https://en.globes.co.il/en/article-nice-to-lay-off-500-amid-ai-transition-1001561821",
    "causality": "direct",
    "confidence": 0.95
   }
