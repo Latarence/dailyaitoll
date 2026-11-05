@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 66,
+ "count": 67,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -794,6 +794,18 @@
    "url": "https://en.globes.co.il/en/article-nice-to-lay-off-500-amid-ai-transition-1001561821",
    "causality": "direct",
    "confidence": 0.95
+  },
+  {
+   "id": "evt_20261103_004",
+   "date": "2026-11-03",
+   "roles": 1271,
+   "headline": "Canva restructures 22% of workforce (~1,271 roles) as AI forces structural reckoning",
+   "masked": "Canva restructures 22% of workforce (~### roles) as AI forces structural reckoning",
+   "excerpt": "Canva Inc. announced job cuts and a sweeping overhaul that will impact more than one-fifth of the workforce, as artificial intelligence forces a structural reckoning at one of Australia's highest-profile technology companies. Some ### people, or 22% of Canva's staff, will lose their jobs, change roles or relocate to central hubs.",
+   "source": "Bloomberg",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-03/canva-announces-layoffs-job-changes-for-about-22-of-workforce",
+   "causality": "contributing",
+   "confidence": 0.8
   }
  ]
 }
