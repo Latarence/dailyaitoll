@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-06T11:38:03.375470+00:00",
+  "last_updated": "2026-11-07T10:44:00.702678+00:00",
   "totals": {
-    "jobs": 423716,
-    "teams": 285,
+    "jobs": 424326,
+    "teams": 293,
     "products": 1,
-    "companies": 170,
+    "companies": 174,
     "revenue": 0,
-    "labor_hours": 881229280
+    "labor_hours": 882498080
   },
   "today": {
-    "jobs": 365,
-    "teams": 5,
+    "jobs": 610,
+    "teams": 8,
     "products": 0,
-    "companies": 2,
+    "companies": 4,
     "revenue": 0,
-    "labor_hours": 759200
+    "labor_hours": 1268800
   },
   "daily_totals": {
     "2026-05-05": {
@@ -930,12 +930,12 @@
       "labor_hours": 395200
     },
     "2026-11-03": {
-      "jobs": 6771,
-      "teams": 10,
+      "jobs": 7071,
+      "teams": 12,
       "products": 0,
-      "companies": 4,
+      "companies": 5,
       "revenue": 0,
-      "labor_hours": 14083680
+      "labor_hours": 14707680
     },
     "2026-11-04": {
       "jobs": 357,
@@ -946,16 +946,96 @@
       "labor_hours": 742560
     },
     "2026-11-05": {
-      "jobs": 108,
-      "teams": 3,
+      "jobs": 418,
+      "teams": 9,
       "products": 0,
-      "companies": 1,
+      "companies": 4,
       "revenue": 0,
-      "labor_hours": 224640
+      "labor_hours": 869440
     }
   },
-  "events_count": 167,
+  "events_count": 171,
   "all_events": [
+    {
+      "id": "evt_20261105_002",
+      "event_date": "2026-11-05",
+      "headline": "ServiceNow conducts third round of 2026 layoffs across US, UK, and India amid AI-driven restructuring",
+      "source_url": "https://www.thepeoplesboard.com/news/servicenow-layoffs-uk-us-india-november-2026-ai-restructure/",
+      "source_name": "The People's Board / CTech / Salesforce Ben",
+      "excerpt": "<cite index=\"24-7\">ServiceNow's latest quarterly filing described the programme as a plan 'to optimise our workforce through AI-driven efficiencies and investment in talent in key strategic areas', expected to be 'substantially completed in 2026'.</cite> <cite index=\"23-3\">ServiceNow is conducting further global layoffs, allegedly impacting teams across CSM, Marketing, Media, CEG (Customer Excellence Group), and more.</cite>",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 200,
+        "teams": 4,
+        "companies": 1,
+        "labor_hours": 416000
+      },
+      "notes": "ServiceNow confirmed a new round of global layoffs on Nov 5, 2026, affecting staff in US, UK, India across CSM, Marketing, Media, and Customer Excellence Group teams. Company's filing explicitly cites 'AI-driven efficiencies.' Specific count not disclosed; estimated at ~200 based on 'hundreds' terminology and prior rounds. Q3 severance costs hit $87M (vs $24M YoY). Third round of 2026.",
+      "collected_date": "2026-11-07",
+      "date": "2026-11-07",
+      "created_at": "2026-11-07T10:44:00.702766+00:00"
+    },
+    {
+      "id": "evt_20261105_003",
+      "event_date": "2026-11-05",
+      "headline": "Israeli AI startup Bria lays off 20 employees (33% of workforce) amid competitive pressure from AI giants",
+      "source_url": "https://www.geektime.co.il/bria-ai-layoffs-stops-fibo-model-development/",
+      "source_name": "Geektime / TrueUp",
+      "excerpt": "<cite index=\"28-1\">Israeli AI startup Bria lays off a third of its workforce in restructuring.</cite> <cite index=\"34-2\">The company will part with 20 of its 60 employees \u2014 about 33% of its workforce \u2014 following tough competition against technology giants and well-funded companies like Runway or Black Forest Labs.</cite>",
+      "causality": "contributing",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 20,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 41600
+      },
+      "notes": "Bria AI (generative image/video) cutting 33% of staff due to competition from AI giants. VP Research departed; VP Business moved to advisor role. Restructuring to focus on Bria Create platform.",
+      "collected_date": "2026-11-07",
+      "date": "2026-11-07",
+      "created_at": "2026-11-07T10:44:00.702790+00:00"
+    },
+    {
+      "id": "evt_20261105_004",
+      "event_date": "2026-11-05",
+      "headline": "Abridge lays off ~90 employees at AI clinical documentation startup in realignment",
+      "source_url": "https://www.modernhealthcare.com/health-tech/mh-abridge-layoffs-realignment-ai/",
+      "source_name": "Modern Healthcare / Blind",
+      "excerpt": "<cite index=\"46-1\">The AI documentation company said the realignment would allow Abridge to hire in priority areas and invest in new opportunities.</cite> <cite index=\"50-3,50-4\">Date: Nov 5, 2026. Laid Off: 90.</cite>",
+      "causality": "inferred",
+      "confidence": 0.65,
+      "tolls": {
+        "jobs": 90,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 187200
+      },
+      "notes": "Abridge, an AI clinical documentation startup, laid off approximately 90 employees in San Francisco and New York in a 'realignment' to reinvest in priority areas. Blind tracker lists 90 as 'Rumor' status. Company has grown from 10 to 550+ employees. Classified as inferred since AI is their product (not displacement) but restructuring is AI-company-driven.",
+      "collected_date": "2026-11-07",
+      "date": "2026-11-07",
+      "created_at": "2026-11-07T10:44:00.702808+00:00"
+    },
+    {
+      "id": "evt_20261103_005",
+      "event_date": "2026-11-03",
+      "headline": "Angi cuts 300 jobs as AI tools scale; targets $50-60M annual savings",
+      "source_url": "https://www.fool.com/earnings/call-transcripts/2026/11/04/angi-inc-angi-q3-2026-earnings-call-transcript/",
+      "source_name": "Motley Fool / TradingView / IBJ",
+      "excerpt": "<cite index=\"40-1\">Angi cuts 300 roles and pivots to larger pros as AI tools scale.</cite> <cite index=\"40-6,40-7\">Angi Inc. reported a focus on maximizing cash flow and operational efficiency through a significant organizational restructuring and the integration of artificial intelligence (AI). Management announced a reduction of approximately 300 roles to simplify management layers and increase decision-making velocity, aiming to generate $50 million to $60 million in total annual savings.</cite>",
+      "causality": "contributing",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 300,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": 624000
+      },
+      "notes": "Angi's second major layoff round of 2026 (first was 350 in January citing 'AI-driven efficiency improvements'). Pro CRO AI initiative expanded to ~1,000 test users with conversion rates comparable to human outreach. Cuts primarily in middle management and support functions.",
+      "collected_date": "2026-11-07",
+      "date": "2026-11-07",
+      "created_at": "2026-11-07T10:44:00.702800+00:00"
+    },
     {
       "id": "evt_20261105_001",
       "event_date": "2026-11-05",
@@ -2893,136 +2973,96 @@
       "collected_date": "2026-05-29",
       "date": "2026-05-29",
       "created_at": "2026-05-29T07:42:57.915272+00:00"
-    },
-    {
-      "id": "evt_20260528_003",
-      "event_date": "2026-05-28",
-      "headline": "Acrisure cuts 2,250 jobs due to AI transformation",
-      "source_url": "https://layoffhedge.com/trends/may-2026-layoffs",
-      "source_name": "LayoffHedge",
-      "excerpt": "Acrisure announced the elimination of 2,250 positions, citing its transition towards AI-driven processes.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 2250,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": 4680000
-      },
-      "notes": "Part of digital transformation strategy",
-      "collected_date": "2026-05-29",
-      "date": "2026-05-29",
-      "created_at": "2026-05-29T07:42:57.915308+00:00"
-    },
-    {
-      "id": "evt_20260520_002",
-      "event_date": "2026-05-20",
-      "headline": "Intuit to lay off over 3,000 employees to refocus on AI",
-      "source_url": "https://techcrunch.com/2026/05/20/intuit-to-lay-off-over-3000-employees-to-refocus-on-ai/",
-      "source_name": "TechCrunch",
-      "excerpt": "Enterprise software giant Intuit is letting 17% of its staff go, or about 3,000 people, as it seeks to divert resources toward baking AI into its products, Reuters reported, citing an internal memo sent to employees.",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 3000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": 6240000
-      },
-      "notes": "Announced May 20, 2026 (~17% of workforce; offices closing in Reno and Woodland Hills). Company framed cuts around accelerating its AI strategy, but CEO Sasan Goodarzi told CNBC they had 'nothing to do with AI'. Contested attribution.",
-      "collected_date": "2026-05-21",
-      "date": "2026-05-21",
-      "created_at": "2026-05-21T07:38:52.448592+00:00"
-    },
-    {
-      "id": "evt_20260514_005",
-      "event_date": "2026-05-14",
-      "headline": "Kraken cuts 150 staff amid AI efficiencies, potentially delaying IPO",
-      "source_url": "https://cointelegraph.com/news/kraken-parent-payward-cuts-150-staff-potentially-delaying-ipo-report",
-      "source_name": "Cointelegraph",
-      "excerpt": "The company, whose corporate name is Payward, laid off about 150 workers due to efficiencies from deploying artificial intelligence across the business.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 150,
-        "teams": 3,
-        "companies": 1,
-        "labor_hours": 312000
-      },
-      "notes": "Layoffs due to AI efficiencies, potential IPO delay",
-      "collected_date": "2026-05-18",
-      "date": "2026-05-18",
-      "created_at": "2026-05-18T07:50:12.261249+00:00"
-    },
-    {
-      "id": "evt_20260514_003",
-      "event_date": "2026-05-14",
-      "headline": "Dune cuts 25% of staff citing AI efficiencies",
-      "source_url": "https://www.theblock.co/post/401322/crypto-data-firm-dune-cuts-25-of-staff-citing-ai-efficiencies",
-      "source_name": "The Block",
-      "excerpt": "Dune CEO Fredrik Haga announced the firm let 25% of the team go this week, in part citing its heavy investment in AI-powered tools.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 25,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 52000
-      },
-      "notes": "Restructuring to focus on core data products",
-      "collected_date": "2026-05-17",
-      "date": "2026-05-17",
-      "created_at": "2026-05-17T06:37:48.725005+00:00"
     }
   ],
-  "summary": "Found 3 new verifiable events totaling ~414 jobs: Heidi Health (108, AI medical scribe restructure), SoundHound AI (~257 estimated, 27% workforce reduction post-LivePerson), and Schell Games (49, inferred). Heidi and SoundHound are both AI companies restructuring their own workforces, reflecting industry-wide AI company consolidation. Confidence varies \u2014 SoundHound's filing cites profitability (not AI) explicitly, but context suggests AI-era restructuring.",
+  "summary": "Found 4 new AI-displacement events for Nov 3-6, 2026, totaling approximately 710 jobs. Headliners: ServiceNow's third 2026 layoff round across US/UK/India with filing explicitly citing 'AI-driven efficiencies'; Angi cutting 300 (second 2026 round) as AI scales lead-conversion tools; Israeli AI startup Bria shedding 33% of staff amid competition from AI giants; and AI health-tech leader Abridge quietly laying off ~90 in a 'realignment.' ServiceNow's quarterly severance costs tripled YoY ($87M vs $24M), signaling continued cuts. The new events illustrate both AI-driven internal restructuring at enterprise SaaS firms and consolidation pressure within the AI startup ecosystem itself.",
   "events": [
     {
-      "id": "evt_20261105_001",
+      "id": "evt_20261105_002",
       "event_date": "2026-11-05",
-      "headline": "Heidi Health lays off 108 employees (18% of workforce) at AI medical scribe startup",
-      "source_url": "https://au.headtopics.com/news/melbourne-ai-firm-heidi-cuts-18-of-staff-as-co-founders-89557235",
-      "source_name": "Brisbane Times",
-      "excerpt": "Melbourne-based AI healthcare company Heidi is laying off 108 employees, representing 18 percent of its workforce, coinciding with the departure of two co-founders.",
-      "causality": "contributing",
-      "confidence": 0.75,
+      "headline": "ServiceNow conducts third round of 2026 layoffs across US, UK, and India amid AI-driven restructuring",
+      "source_url": "https://www.thepeoplesboard.com/news/servicenow-layoffs-uk-us-india-november-2026-ai-restructure/",
+      "source_name": "The People's Board / CTech / Salesforce Ben",
+      "excerpt": "<cite index=\"24-7\">ServiceNow's latest quarterly filing described the programme as a plan 'to optimise our workforce through AI-driven efficiencies and investment in talent in key strategic areas', expected to be 'substantially completed in 2026'.</cite> <cite index=\"23-3\">ServiceNow is conducting further global layoffs, allegedly impacting teams across CSM, Marketing, Media, CEG (Customer Excellence Group), and more.</cite>",
+      "causality": "direct",
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 108,
-        "teams": 3,
+        "jobs": 200,
+        "teams": 4,
         "companies": 1,
-        "labor_hours": 224640
+        "labor_hours": 416000
       },
-      "notes": "AI medical scribe company cuts R&D, customer support and sales teams after $140M funding round; two co-founders also exited. Restructuring to focus on high-impact markets.",
-      "collected_date": "2026-11-06",
-      "date": "2026-11-06",
-      "created_at": "2026-11-06T11:38:03.375567+00:00"
+      "notes": "ServiceNow confirmed a new round of global layoffs on Nov 5, 2026, affecting staff in US, UK, India across CSM, Marketing, Media, and Customer Excellence Group teams. Company's filing explicitly cites 'AI-driven efficiencies.' Specific count not disclosed; estimated at ~200 based on 'hundreds' terminology and prior rounds. Q3 severance costs hit $87M (vs $24M YoY). Third round of 2026.",
+      "collected_date": "2026-11-07",
+      "date": "2026-11-07",
+      "created_at": "2026-11-07T10:44:00.702766+00:00"
     },
     {
-      "id": "evt_20261104_002",
-      "event_date": "2026-11-04",
-      "headline": "SoundHound AI cuts 27% of global workforce in restructuring following LivePerson integration",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/0001840856/000184085626000025/soun-20261105.htm",
-      "source_name": "SEC Form 8-K",
-      "excerpt": "On November 4, 2026, the Company implemented a restructuring plan intended to align our teams and resources with our strategic priorities to drive long-term profitability. The Plan includes a reduction of the Company's current global workforce by approximately 27%.",
+      "id": "evt_20261105_003",
+      "event_date": "2026-11-05",
+      "headline": "Israeli AI startup Bria lays off 20 employees (33% of workforce) amid competitive pressure from AI giants",
+      "source_url": "https://www.geektime.co.il/bria-ai-layoffs-stops-fibo-model-development/",
+      "source_name": "Geektime / TrueUp",
+      "excerpt": "<cite index=\"28-1\">Israeli AI startup Bria lays off a third of its workforce in restructuring.</cite> <cite index=\"34-2\">The company will part with 20 of its 60 employees \u2014 about 33% of its workforce \u2014 following tough competition against technology giants and well-funded companies like Runway or Black Forest Labs.</cite>",
       "causality": "contributing",
-      "confidence": 0.8,
+      "confidence": 0.85,
       "tolls": {
-        "jobs": 257,
+        "jobs": 20,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 41600
+      },
+      "notes": "Bria AI (generative image/video) cutting 33% of staff due to competition from AI giants. VP Research departed; VP Business moved to advisor role. Restructuring to focus on Bria Create platform.",
+      "collected_date": "2026-11-07",
+      "date": "2026-11-07",
+      "created_at": "2026-11-07T10:44:00.702790+00:00"
+    },
+    {
+      "id": "evt_20261103_005",
+      "event_date": "2026-11-03",
+      "headline": "Angi cuts 300 jobs as AI tools scale; targets $50-60M annual savings",
+      "source_url": "https://www.fool.com/earnings/call-transcripts/2026/11/04/angi-inc-angi-q3-2026-earnings-call-transcript/",
+      "source_name": "Motley Fool / TradingView / IBJ",
+      "excerpt": "<cite index=\"40-1\">Angi cuts 300 roles and pivots to larger pros as AI tools scale.</cite> <cite index=\"40-6,40-7\">Angi Inc. reported a focus on maximizing cash flow and operational efficiency through a significant organizational restructuring and the integration of artificial intelligence (AI). Management announced a reduction of approximately 300 roles to simplify management layers and increase decision-making velocity, aiming to generate $50 million to $60 million in total annual savings.</cite>",
+      "causality": "contributing",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 300,
         "teams": 2,
         "companies": 1,
-        "labor_hours": 534560
+        "labor_hours": 624000
       },
-      "notes": "Voice AI company cuts ~27% after LivePerson acquisition integration; targets $120M annualized savings. Estimated 257 based on ~953 employees March 2026; actual post-LivePerson headcount may be higher. $18M-$22M pre-tax charges.",
-      "collected_date": "2026-11-06",
-      "date": "2026-11-06",
-      "created_at": "2026-11-06T11:38:03.375603+00:00"
+      "notes": "Angi's second major layoff round of 2026 (first was 350 in January citing 'AI-driven efficiency improvements'). Pro CRO AI initiative expanded to ~1,000 test users with conversion rates comparable to human outreach. Cuts primarily in middle management and support functions.",
+      "collected_date": "2026-11-07",
+      "date": "2026-11-07",
+      "created_at": "2026-11-07T10:44:00.702800+00:00"
+    },
+    {
+      "id": "evt_20261105_004",
+      "event_date": "2026-11-05",
+      "headline": "Abridge lays off ~90 employees at AI clinical documentation startup in realignment",
+      "source_url": "https://www.modernhealthcare.com/health-tech/mh-abridge-layoffs-realignment-ai/",
+      "source_name": "Modern Healthcare / Blind",
+      "excerpt": "<cite index=\"46-1\">The AI documentation company said the realignment would allow Abridge to hire in priority areas and invest in new opportunities.</cite> <cite index=\"50-3,50-4\">Date: Nov 5, 2026. Laid Off: 90.</cite>",
+      "causality": "inferred",
+      "confidence": 0.65,
+      "tolls": {
+        "jobs": 90,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 187200
+      },
+      "notes": "Abridge, an AI clinical documentation startup, laid off approximately 90 employees in San Francisco and New York in a 'realignment' to reinvest in priority areas. Blind tracker lists 90 as 'Rumor' status. Company has grown from 10 to 550+ employees. Classified as inferred since AI is their product (not displacement) but restructuring is AI-company-driven.",
+      "collected_date": "2026-11-07",
+      "date": "2026-11-07",
+      "created_at": "2026-11-07T10:44:00.702808+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-11-06",
+    "last_anthropic_success": "2026-11-07",
     "last_openai_success": "2026-11-02",
-    "last_nonzero_collection": "2026-11-06",
+    "last_nonzero_collection": "2026-11-07",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-11-06"
+    "last_collection_date": "2026-11-07"
   }
 }
