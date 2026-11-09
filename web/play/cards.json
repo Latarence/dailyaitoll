@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 69,
+ "count": 70,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -817,6 +817,18 @@
    "source": "Motley Fool / TradingView / IBJ",
    "url": "https://www.fool.com/earnings/call-transcripts/2026/11/04/angi-inc-angi-q3-2026-earnings-call-transcript/",
    "causality": "contributing",
+   "confidence": 0.85
+  },
+  {
+   "id": "evt_20261104_003",
+   "date": "2026-11-04",
+   "roles": 70,
+   "headline": "Israeli AI data startup Explorium shuts down after raising $127M, ~70+ employees laid off",
+   "masked": "Israeli AI data startup Explorium shuts down after raising $127M, ~###+ employees laid off",
+   "excerpt": "The Israeli startup Explorium is shutting down after nearly nine years of operation. Despite its efforts to reposition the company for the emerging AI-agent market, Explorium was unable to sustain its operations.",
+   "source": "Calcalist Tech",
+   "url": "https://www.calcalistech.com/ctechnews/article/skvs9uupme",
+   "causality": "direct",
    "confidence": 0.85
   },
   {
