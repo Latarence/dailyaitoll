@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-08T10:48:17.032337+00:00",
+  "last_updated": "2026-11-09T12:13:10.875768+00:00",
   "totals": {
-    "jobs": 424626,
-    "teams": 295,
+    "jobs": 425946,
+    "teams": 302,
     "products": 1,
-    "companies": 175,
+    "companies": 179,
     "revenue": 0,
-    "labor_hours": 883122080
+    "labor_hours": 885867680
   },
   "today": {
-    "jobs": 300,
-    "teams": 2,
+    "jobs": 1320,
+    "teams": 7,
     "products": 0,
-    "companies": 1,
+    "companies": 4,
     "revenue": 0,
-    "labor_hours": 624000
+    "labor_hours": 2745600
   },
   "daily_totals": {
     "2026-05-05": {
@@ -938,24 +938,120 @@
       "labor_hours": 14707680
     },
     "2026-11-04": {
-      "jobs": 357,
-      "teams": 3,
+      "jobs": 427,
+      "teams": 4,
       "products": 0,
-      "companies": 2,
+      "companies": 3,
       "revenue": 0,
-      "labor_hours": 742560
+      "labor_hours": 888160
     },
     "2026-11-05": {
-      "jobs": 418,
-      "teams": 9,
+      "jobs": 718,
+      "teams": 12,
       "products": 0,
-      "companies": 4,
+      "companies": 5,
       "revenue": 0,
-      "labor_hours": 869440
+      "labor_hours": 1493440
+    },
+    "2026-11-06": {
+      "jobs": 150,
+      "teams": 2,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 312000
+    },
+    "2026-11-07": {
+      "jobs": 800,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 1664000
     }
   },
-  "events_count": 172,
+  "events_count": 176,
   "all_events": [
+    {
+      "id": "evt_20261107_001",
+      "event_date": "2026-11-07",
+      "headline": "Oracle files WARN notices for 800 additional layoffs in CA and WA amid AI restructuring",
+      "source_url": "https://fourweekmba.com/ai-oracles-2026-layoff-filings-total-1977-jobs-in-two-states/",
+      "source_name": "FourWeekMBA",
+      "excerpt": "Eight state WARN notices show Oracle filing for 1,977 layoffs in California and Washington in 2026, in two rounds of 1,177 and 800 jobs.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 800,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 1664000
+      },
+      "notes": "Oracle's November 2026 WARN filing round totals 800 jobs across California and Washington, disclosed via state WARN databases on November 7. Oracle has previously stated restructuring is tied to AI investment per annual report. This is the second round of 2026 WARN filings (prior spring round was 1,177). Distinct from earlier Oracle 'undisclosed' event in tracker; this quantifies the November cuts.",
+      "collected_date": "2026-11-09",
+      "date": "2026-11-09",
+      "created_at": "2026-11-09T12:13:10.875918+00:00"
+    },
+    {
+      "id": "evt_20261106_003",
+      "event_date": "2026-11-06",
+      "headline": "DraftKings conducts third round of 2026 layoffs amid AI/prediction market restructuring",
+      "source_url": "https://frontofficesports.com/article/draftkings-cut-more-jobs-ahead-of-q3-earnings/",
+      "source_name": "Front Office Sports",
+      "excerpt": "DraftKings underwent layoffs this week, marking at least the third round of job cuts the company has made this year. It represents the latest in a broader wave of 2026 gambling industry layoffs from companies including FanDuel, Underdog, and PrizePicks.",
+      "causality": "contributing",
+      "confidence": 0.65,
+      "tolls": {
+        "jobs": 150,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": 312000
+      },
+      "notes": "DraftKings third round of 2026 layoffs; prior Yogonet/Casino.org reporting tied earlier 2026 DraftKings restructuring to 'the continued implementation of AI, which is modifying work dynamics.' Analyst estimates DraftKings could eventually cut up to 20% of workforce (~1,100). Exact November headcount not disclosed; conservative estimate used based on social media accounts of 'more than a handful' of cuts. Content creation and sports analysis divisions prior reporting cited consolidation via 'automated content generation tools.'",
+      "collected_date": "2026-11-09",
+      "date": "2026-11-09",
+      "created_at": "2026-11-09T12:13:10.875907+00:00"
+    },
+    {
+      "id": "evt_20261105_005",
+      "event_date": "2026-11-05",
+      "headline": "Block announces second round of 2026 layoffs hitting Customer Ops, Risk Ops, Learning & Content Operations",
+      "source_url": "https://www.gurufocus.com/news/9175734/block-inc-xyz-announces-second-round-of-2026-job-cuts-amid-strong-q3-results",
+      "source_name": "GuruFocus / Business Insider",
+      "excerpt": "On November 05, 2026, Block Inc (NYSE: XYZ) disclosed plans for a second wave of job reductions this year, affecting teams within Customer Operations, Risk Operations, and Learning & Content Operations.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 300,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": 624000
+      },
+      "notes": "Second round of Block layoffs in 2026 (separate from the February cut of ~4,000 already tracked). Affected teams include Customer Ops, Risk Ops, and Learning & Content Operations - areas where AI automation commonly displaces workers. Jack Dorsey previously explicitly cited AI as justification for prior round. Exact headcount not disclosed; estimate used. Cash App and Square divisions affected.",
+      "collected_date": "2026-11-09",
+      "date": "2026-11-09",
+      "created_at": "2026-11-09T12:13:10.875870+00:00"
+    },
+    {
+      "id": "evt_20261104_003",
+      "event_date": "2026-11-04",
+      "headline": "Israeli AI data startup Explorium shuts down after raising $127M, ~70+ employees laid off",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/skvs9uupme",
+      "source_name": "Calcalist Tech",
+      "excerpt": "The Israeli startup Explorium is shutting down after nearly nine years of operation. Despite its efforts to reposition the company for the emerging AI-agent market, Explorium was unable to sustain its operations.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 70,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 145600
+      },
+      "notes": "Explorium pivoted toward generative AI and tools for AI agents but could not sustain the business as AI tools commoditized data services. Founders cited AI commoditization; capabilities became available in free chatbots. Over 70 employees affected per Geektime; company had reached ~130 at peak. AgentSource platform ends December 2, 2026.",
+      "collected_date": "2026-11-09",
+      "date": "2026-11-09",
+      "created_at": "2026-11-09T12:13:10.875893+00:00"
+    },
     {
       "id": "evt_20261102_004",
       "event_date": "2026-11-02",
@@ -2893,116 +2989,96 @@
       "collected_date": "2026-06-02",
       "date": "2026-06-02",
       "created_at": "2026-06-02T08:18:05.264480+00:00"
-    },
-    {
-      "id": "evt_20260601_005",
-      "event_date": "2026-06-01",
-      "headline": "Lightricks lays off dozens as AI reshapes video creation industry",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-10\">Israeli AI video company Lightricks laid off dozens.</cite>",
-      "causality": "contributing",
-      "confidence": 0.65,
-      "tolls": {
-        "jobs": 40,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 83200
-      },
-      "notes": "Estimated 'dozens' as ~40 layoffs",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264488+00:00"
-    },
-    {
-      "id": "evt_20260528_005",
-      "event_date": "2026-05-28",
-      "headline": "Minute Media lays off 12% of workforce (~60 employees), cites rise of AI in media market",
-      "source_url": "https://www.calcalistech.com/ctechnews/article/kk215pdq7",
-      "source_name": "CTech (Calcalist)",
-      "excerpt": "<cite index=\"28-14,28-15\">About 12% of the company's global workforce was laid off, including employees in Israel. The move comes alongside continued growth at the company, as it adapts its operations to changes in the media market and the rise of artificial intelligence.</cite>",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 60,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 124800
-      },
-      "notes": "Israeli sports/media platform; also terminated VideoVerse contract after $200M acquisition",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264426+00:00"
-    },
-    {
-      "id": "evt_20260530_001",
-      "event_date": "2026-05-30",
-      "headline": "Block (Square) lays off 4,000 employees, nearly half of workforce",
-      "source_url": "https://www.aiterminated.com/",
-      "source_name": "Terminated.ai",
-      "excerpt": "Block (Square) has announced the termination of 4,000 employees, nearly half of its workforce, as part of its strategic shift towards AI-driven operations.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 4000,
-        "teams": 10,
-        "companies": 1,
-        "labor_hours": 8320000
-      },
-      "notes": "Strategic shift towards AI-driven operations",
-      "collected_date": "2026-06-01",
-      "date": "2026-06-01",
-      "created_at": "2026-06-01T09:08:21.424127+00:00"
-    },
-    {
-      "id": "evt_20260528_004",
-      "event_date": "2026-05-28",
-      "headline": "Wix lays off 1,000 employees (20% of workforce), CEO cites AI evolution",
-      "source_url": "https://www.cnbc.com/2026/05/28/wix-layoffs-ai-exchange-rates.html",
-      "source_name": "CNBC",
-      "excerpt": "Israel-based web development company Wix is slashing roughly 20% of its workforce, CEO Avishai Abrahami announced in a post on X early Thursday morning, citing the 'fast evolution of AI capabilities' and difficulties around currency exchange rates.",
-      "causality": "direct",
-      "confidence": 0.92,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 5,
-        "companies": 1,
-        "labor_hours": 2080000
-      },
-      "notes": "CEO Avishai Abrahami publicly cited AI as a primary driver alongside shekel/dollar currency pressure. Wix had 5,277 employees at end of Q1 2026; post-restructuring workforce expected to settle around 4,200. Largest layoff in Wix's history. The company is moving to fewer leadership layers and introducing AI-native roles (Xengineer, Creators). Announced May 28, 2026.",
-      "collected_date": "2026-05-31",
-      "date": "2026-05-31",
-      "created_at": "2026-05-31T07:36:50.252757+00:00"
     }
   ],
-  "summary": "Two new AI-displacement events identified in the 24-48 hour window. Squarespace confirmed November 2 layoffs of 300 employees (19% of workforce) concentrated in product and engineering, with CEO acknowledging the technology landscape has fundamentally changed\u2014though spokesperson rejected direct AI framing. Ollie AI, a privacy-focused family AI assistant startup that recently raised $7.5M from Khosla Ventures, officially shut down November 6 with CEO citing inability to compete with better-funded AI assistants like Muse and Instinct. Several larger stories (Meta weighing 16,000 cuts) were excluded as future projections rather than confirmed actions.",
+  "summary": "Four new AI-related displacement events identified in the past 48 hours: Block's second 2026 layoff round (Nov 5) hitting customer operations and risk ops teams (automation-adjacent); the shutdown of Israeli AI data startup Explorium (Nov 4) affecting 70+ employees as AI commoditized its data services; DraftKings' third 2026 layoff round (Nov 6) tied to AI-driven restructuring and prediction market pivot; and Oracle's November WARN filings totaling 800 additional jobs across California and Washington (disclosed Nov 7) linked to AI restructuring. Estimated ~1,320 additional jobs displaced. Note: event sizes for Block and DraftKings are conservative estimates since neither company disclosed headcounts.",
   "events": [
     {
-      "id": "evt_20261102_004",
-      "event_date": "2026-11-02",
-      "headline": "Squarespace lays off 300 employees (19% of workforce) as AI-driven website builders disrupt industry",
-      "source_url": "https://tech.yahoo.com/general/breaking-news/article/tech-layoffs-2026-tracking-the-job-losses-across-canva-squarespace-amazon-microsoft-apple-meta-and-others-131049176.html",
-      "source_name": "Yahoo Tech / TechCrunch",
-      "excerpt": "<cite index=\"47-3\">Squarespace, the website-building company, is laying off 19% of its workforce, which amounts to about 300 people.</cite> <cite index=\"47-5\">Squarespace's industry has been disrupted by AI, as 'vibe-coding' website builders have become more popular.</cite> Most cuts hit product and engineering teams.",
+      "id": "evt_20261105_005",
+      "event_date": "2026-11-05",
+      "headline": "Block announces second round of 2026 layoffs hitting Customer Ops, Risk Ops, Learning & Content Operations",
+      "source_url": "https://www.gurufocus.com/news/9175734/block-inc-xyz-announces-second-round-of-2026-job-cuts-amid-strong-q3-results",
+      "source_name": "GuruFocus / Business Insider",
+      "excerpt": "On November 05, 2026, Block Inc (NYSE: XYZ) disclosed plans for a second wave of job reductions this year, affecting teams within Customer Operations, Risk Operations, and Learning & Content Operations.",
       "causality": "contributing",
-      "confidence": 0.7,
+      "confidence": 0.75,
       "tolls": {
         "jobs": 300,
-        "teams": 2,
+        "teams": 3,
         "companies": 1,
         "labor_hours": 624000
       },
-      "notes": "Company spokesperson explicitly rejected AI as the reason, but CEO Casalena said in memo that 'the way we need to work is changing faster than at any point in our history' and operating model must 'adapt for the modern era.' Industry context (AI vibe-coding tools disrupting website builders) strongly suggests AI contribution. Most cuts hit product and engineering teams.",
-      "collected_date": "2026-11-08",
-      "date": "2026-11-08",
-      "created_at": "2026-11-08T10:48:17.032468+00:00"
+      "notes": "Second round of Block layoffs in 2026 (separate from the February cut of ~4,000 already tracked). Affected teams include Customer Ops, Risk Ops, and Learning & Content Operations - areas where AI automation commonly displaces workers. Jack Dorsey previously explicitly cited AI as justification for prior round. Exact headcount not disclosed; estimate used. Cash App and Square divisions affected.",
+      "collected_date": "2026-11-09",
+      "date": "2026-11-09",
+      "created_at": "2026-11-09T12:13:10.875870+00:00"
+    },
+    {
+      "id": "evt_20261104_003",
+      "event_date": "2026-11-04",
+      "headline": "Israeli AI data startup Explorium shuts down after raising $127M, ~70+ employees laid off",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/skvs9uupme",
+      "source_name": "Calcalist Tech",
+      "excerpt": "The Israeli startup Explorium is shutting down after nearly nine years of operation. Despite its efforts to reposition the company for the emerging AI-agent market, Explorium was unable to sustain its operations.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 70,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 145600
+      },
+      "notes": "Explorium pivoted toward generative AI and tools for AI agents but could not sustain the business as AI tools commoditized data services. Founders cited AI commoditization; capabilities became available in free chatbots. Over 70 employees affected per Geektime; company had reached ~130 at peak. AgentSource platform ends December 2, 2026.",
+      "collected_date": "2026-11-09",
+      "date": "2026-11-09",
+      "created_at": "2026-11-09T12:13:10.875893+00:00"
+    },
+    {
+      "id": "evt_20261106_003",
+      "event_date": "2026-11-06",
+      "headline": "DraftKings conducts third round of 2026 layoffs amid AI/prediction market restructuring",
+      "source_url": "https://frontofficesports.com/article/draftkings-cut-more-jobs-ahead-of-q3-earnings/",
+      "source_name": "Front Office Sports",
+      "excerpt": "DraftKings underwent layoffs this week, marking at least the third round of job cuts the company has made this year. It represents the latest in a broader wave of 2026 gambling industry layoffs from companies including FanDuel, Underdog, and PrizePicks.",
+      "causality": "contributing",
+      "confidence": 0.65,
+      "tolls": {
+        "jobs": 150,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": 312000
+      },
+      "notes": "DraftKings third round of 2026 layoffs; prior Yogonet/Casino.org reporting tied earlier 2026 DraftKings restructuring to 'the continued implementation of AI, which is modifying work dynamics.' Analyst estimates DraftKings could eventually cut up to 20% of workforce (~1,100). Exact November headcount not disclosed; conservative estimate used based on social media accounts of 'more than a handful' of cuts. Content creation and sports analysis divisions prior reporting cited consolidation via 'automated content generation tools.'",
+      "collected_date": "2026-11-09",
+      "date": "2026-11-09",
+      "created_at": "2026-11-09T12:13:10.875907+00:00"
+    },
+    {
+      "id": "evt_20261107_001",
+      "event_date": "2026-11-07",
+      "headline": "Oracle files WARN notices for 800 additional layoffs in CA and WA amid AI restructuring",
+      "source_url": "https://fourweekmba.com/ai-oracles-2026-layoff-filings-total-1977-jobs-in-two-states/",
+      "source_name": "FourWeekMBA",
+      "excerpt": "Eight state WARN notices show Oracle filing for 1,977 layoffs in California and Washington in 2026, in two rounds of 1,177 and 800 jobs.",
+      "causality": "contributing",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 800,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 1664000
+      },
+      "notes": "Oracle's November 2026 WARN filing round totals 800 jobs across California and Washington, disclosed via state WARN databases on November 7. Oracle has previously stated restructuring is tied to AI investment per annual report. This is the second round of 2026 WARN filings (prior spring round was 1,177). Distinct from earlier Oracle 'undisclosed' event in tracker; this quantifies the November cuts.",
+      "collected_date": "2026-11-09",
+      "date": "2026-11-09",
+      "created_at": "2026-11-09T12:13:10.875918+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-11-08",
+    "last_anthropic_success": "2026-11-09",
     "last_openai_success": "2026-11-02",
-    "last_nonzero_collection": "2026-11-08",
+    "last_nonzero_collection": "2026-11-09",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-11-08"
+    "last_collection_date": "2026-11-09"
   }
 }
