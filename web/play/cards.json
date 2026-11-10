@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 70,
+ "count": 71,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -842,6 +842,18 @@
    "url": "https://www.geektime.co.il/bria-ai-layoffs-stops-fibo-model-development/",
    "causality": "contributing",
    "confidence": 0.85
+  },
+  {
+   "id": "evt_20261110_001",
+   "date": "2026-11-10",
+   "roles": 850,
+   "headline": "Qantas to cut 850 corporate jobs in Accenture outsourcing deal, citing AI adoption",
+   "masked": "Qantas to cut ### corporate jobs in Accenture outsourcing deal, citing AI adoption",
+   "excerpt": "Qantas said on Tuesday it would cut ### jobs in Australia and outsource some corporate functions to consulting firm Accenture as it adapts to the increased use of artificial intelligence in the airline industry.",
+   "source": "The Star / Reuters",
+   "url": "https://www.thestar.com.my/business/business-news/2026/11/10/australia039s-qantas-to-axe-850-jobs-in-offshoring-deal-with-accenture",
+   "causality": "direct",
+   "confidence": 0.95
   }
  ]
 }
