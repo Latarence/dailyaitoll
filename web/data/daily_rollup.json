@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-09T12:13:10.875768+00:00",
+  "last_updated": "2026-11-10T11:52:45.555742+00:00",
   "totals": {
-    "jobs": 425946,
-    "teams": 302,
+    "jobs": 426796,
+    "teams": 306,
     "products": 1,
-    "companies": 179,
+    "companies": 180,
     "revenue": 0,
-    "labor_hours": 885867680
+    "labor_hours": 887635680
   },
   "today": {
-    "jobs": 1320,
-    "teams": 7,
+    "jobs": 850,
+    "teams": 4,
     "products": 0,
-    "companies": 4,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 2745600
+    "labor_hours": 1768000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -968,10 +968,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": 1664000
+    },
+    "2026-11-10": {
+      "jobs": 850,
+      "teams": 4,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 1768000
     }
   },
-  "events_count": 176,
+  "events_count": 177,
   "all_events": [
+    {
+      "id": "evt_20261110_001",
+      "event_date": "2026-11-10",
+      "headline": "Qantas to cut 850 corporate jobs in Accenture outsourcing deal, citing AI adoption",
+      "source_url": "https://www.thestar.com.my/business/business-news/2026/11/10/australia039s-qantas-to-axe-850-jobs-in-offshoring-deal-with-accenture",
+      "source_name": "The Star / Reuters",
+      "excerpt": "Qantas said on Tuesday it would cut 850 jobs in Australia and outsource some corporate functions to consulting firm Accenture as it adapts to the increased use of artificial intelligence in the airline industry.",
+      "causality": "direct",
+      "confidence": 0.95,
+      "tolls": {
+        "jobs": 850,
+        "teams": 4,
+        "companies": 1,
+        "labor_hours": 1768000
+      },
+      "notes": "CEO Vanessa Hudson explicitly cited AI; affects finance, procurement, HR and marketing; most work moves to Accenture teams in India; ~3% of Qantas's 28,000 Australian workforce; first round of cuts by mid-2027.",
+      "collected_date": "2026-11-10",
+      "date": "2026-11-10",
+      "created_at": "2026-11-10T11:52:45.555840+00:00"
+    },
     {
       "id": "evt_20261107_001",
       "event_date": "2026-11-07",
@@ -2969,116 +2997,36 @@
       "collected_date": "2026-06-02",
       "date": "2026-06-02",
       "created_at": "2026-06-02T08:18:05.264471+00:00"
-    },
-    {
-      "id": "evt_20260601_004",
-      "event_date": "2026-06-01",
-      "headline": "SentinelOne cuts 10% of workforce amid AI-era cybersecurity disruption",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-17\">Cybersecurity giant SentinelOne carried out a broad 10% workforce cut, affecting about 70 employees in Israel.</cite>",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 250,
-        "teams": 3,
-        "companies": 1,
-        "labor_hours": 520000
-      },
-      "notes": "10% of ~2,500 SentinelOne workforce; cybersecurity firms facing AI model disruption",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264480+00:00"
     }
   ],
-  "summary": "Four new AI-related displacement events identified in the past 48 hours: Block's second 2026 layoff round (Nov 5) hitting customer operations and risk ops teams (automation-adjacent); the shutdown of Israeli AI data startup Explorium (Nov 4) affecting 70+ employees as AI commoditized its data services; DraftKings' third 2026 layoff round (Nov 6) tied to AI-driven restructuring and prediction market pivot; and Oracle's November WARN filings totaling 800 additional jobs across California and Washington (disclosed Nov 7) linked to AI restructuring. Estimated ~1,320 additional jobs displaced. Note: event sizes for Block and DraftKings are conservative estimates since neither company disclosed headcounts.",
+  "summary": "One new major AI-attributed displacement event: Qantas announced Nov 10 that it will cut 850 Australian corporate jobs under a seven-year Accenture outsourcing deal, with CEO Vanessa Hudson directly citing AI transformation as the driver. Work in finance, procurement, HR and marketing will move mostly to Accenture teams in India. Boeing's 5% commercial airplane workforce cut (Nov 9) was excluded as it was attributed to production slowdown, not AI. Abridge layoffs and Meta 8,000 were already tracked or previously reported (May 2026).",
   "events": [
     {
-      "id": "evt_20261105_005",
-      "event_date": "2026-11-05",
-      "headline": "Block announces second round of 2026 layoffs hitting Customer Ops, Risk Ops, Learning & Content Operations",
-      "source_url": "https://www.gurufocus.com/news/9175734/block-inc-xyz-announces-second-round-of-2026-job-cuts-amid-strong-q3-results",
-      "source_name": "GuruFocus / Business Insider",
-      "excerpt": "On November 05, 2026, Block Inc (NYSE: XYZ) disclosed plans for a second wave of job reductions this year, affecting teams within Customer Operations, Risk Operations, and Learning & Content Operations.",
-      "causality": "contributing",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 300,
-        "teams": 3,
-        "companies": 1,
-        "labor_hours": 624000
-      },
-      "notes": "Second round of Block layoffs in 2026 (separate from the February cut of ~4,000 already tracked). Affected teams include Customer Ops, Risk Ops, and Learning & Content Operations - areas where AI automation commonly displaces workers. Jack Dorsey previously explicitly cited AI as justification for prior round. Exact headcount not disclosed; estimate used. Cash App and Square divisions affected.",
-      "collected_date": "2026-11-09",
-      "date": "2026-11-09",
-      "created_at": "2026-11-09T12:13:10.875870+00:00"
-    },
-    {
-      "id": "evt_20261104_003",
-      "event_date": "2026-11-04",
-      "headline": "Israeli AI data startup Explorium shuts down after raising $127M, ~70+ employees laid off",
-      "source_url": "https://www.calcalistech.com/ctechnews/article/skvs9uupme",
-      "source_name": "Calcalist Tech",
-      "excerpt": "The Israeli startup Explorium is shutting down after nearly nine years of operation. Despite its efforts to reposition the company for the emerging AI-agent market, Explorium was unable to sustain its operations.",
+      "id": "evt_20261110_001",
+      "event_date": "2026-11-10",
+      "headline": "Qantas to cut 850 corporate jobs in Accenture outsourcing deal, citing AI adoption",
+      "source_url": "https://www.thestar.com.my/business/business-news/2026/11/10/australia039s-qantas-to-axe-850-jobs-in-offshoring-deal-with-accenture",
+      "source_name": "The Star / Reuters",
+      "excerpt": "Qantas said on Tuesday it would cut 850 jobs in Australia and outsource some corporate functions to consulting firm Accenture as it adapts to the increased use of artificial intelligence in the airline industry.",
       "causality": "direct",
-      "confidence": 0.85,
+      "confidence": 0.95,
       "tolls": {
-        "jobs": 70,
-        "teams": 1,
+        "jobs": 850,
+        "teams": 4,
         "companies": 1,
-        "labor_hours": 145600
+        "labor_hours": 1768000
       },
-      "notes": "Explorium pivoted toward generative AI and tools for AI agents but could not sustain the business as AI tools commoditized data services. Founders cited AI commoditization; capabilities became available in free chatbots. Over 70 employees affected per Geektime; company had reached ~130 at peak. AgentSource platform ends December 2, 2026.",
-      "collected_date": "2026-11-09",
-      "date": "2026-11-09",
-      "created_at": "2026-11-09T12:13:10.875893+00:00"
-    },
-    {
-      "id": "evt_20261106_003",
-      "event_date": "2026-11-06",
-      "headline": "DraftKings conducts third round of 2026 layoffs amid AI/prediction market restructuring",
-      "source_url": "https://frontofficesports.com/article/draftkings-cut-more-jobs-ahead-of-q3-earnings/",
-      "source_name": "Front Office Sports",
-      "excerpt": "DraftKings underwent layoffs this week, marking at least the third round of job cuts the company has made this year. It represents the latest in a broader wave of 2026 gambling industry layoffs from companies including FanDuel, Underdog, and PrizePicks.",
-      "causality": "contributing",
-      "confidence": 0.65,
-      "tolls": {
-        "jobs": 150,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": 312000
-      },
-      "notes": "DraftKings third round of 2026 layoffs; prior Yogonet/Casino.org reporting tied earlier 2026 DraftKings restructuring to 'the continued implementation of AI, which is modifying work dynamics.' Analyst estimates DraftKings could eventually cut up to 20% of workforce (~1,100). Exact November headcount not disclosed; conservative estimate used based on social media accounts of 'more than a handful' of cuts. Content creation and sports analysis divisions prior reporting cited consolidation via 'automated content generation tools.'",
-      "collected_date": "2026-11-09",
-      "date": "2026-11-09",
-      "created_at": "2026-11-09T12:13:10.875907+00:00"
-    },
-    {
-      "id": "evt_20261107_001",
-      "event_date": "2026-11-07",
-      "headline": "Oracle files WARN notices for 800 additional layoffs in CA and WA amid AI restructuring",
-      "source_url": "https://fourweekmba.com/ai-oracles-2026-layoff-filings-total-1977-jobs-in-two-states/",
-      "source_name": "FourWeekMBA",
-      "excerpt": "Eight state WARN notices show Oracle filing for 1,977 layoffs in California and Washington in 2026, in two rounds of 1,177 and 800 jobs.",
-      "causality": "contributing",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 800,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 1664000
-      },
-      "notes": "Oracle's November 2026 WARN filing round totals 800 jobs across California and Washington, disclosed via state WARN databases on November 7. Oracle has previously stated restructuring is tied to AI investment per annual report. This is the second round of 2026 WARN filings (prior spring round was 1,177). Distinct from earlier Oracle 'undisclosed' event in tracker; this quantifies the November cuts.",
-      "collected_date": "2026-11-09",
-      "date": "2026-11-09",
-      "created_at": "2026-11-09T12:13:10.875918+00:00"
+      "notes": "CEO Vanessa Hudson explicitly cited AI; affects finance, procurement, HR and marketing; most work moves to Accenture teams in India; ~3% of Qantas's 28,000 Australian workforce; first round of cuts by mid-2027.",
+      "collected_date": "2026-11-10",
+      "date": "2026-11-10",
+      "created_at": "2026-11-10T11:52:45.555840+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-11-09",
+    "last_anthropic_success": "2026-11-10",
     "last_openai_success": "2026-11-02",
-    "last_nonzero_collection": "2026-11-09",
+    "last_nonzero_collection": "2026-11-10",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-11-09"
+    "last_collection_date": "2026-11-10"
   }
 }
