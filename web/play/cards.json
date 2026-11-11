@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 71,
+ "count": 72,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -842,6 +842,18 @@
    "url": "https://www.geektime.co.il/bria-ai-layoffs-stops-fibo-model-development/",
    "causality": "contributing",
    "confidence": 0.85
+  },
+  {
+   "id": "evt_20261109_001",
+   "date": "2026-11-09",
+   "roles": 1000,
+   "headline": "Qualcomm begins India layoffs with ~1,000 jobs at risk in Bengaluru as chipmaker pivots to AI, automotive and data centers",
+   "masked": "Qualcomm begins India layoffs with ~### jobs at risk in Bengaluru as chipmaker pivots to AI, automotive and data centers",
+   "excerpt": "The first phase of job cuts hit Qualcomm's Bengaluru R&D center on Monday, November 9. Qualcomm is aggressively reallocating resources toward automotive computing, Internet of Things (IoT) hardware, and AI data centers.",
+   "source": "APAC News Network / Business Today",
+   "url": "https://apacnewsnetwork.com/2026/11/qualcomm-begins-india-layoffs-as-global-tech-pressure-mounts/",
+   "causality": "contributing",
+   "confidence": 0.8
   },
   {
    "id": "evt_20261110_001",
