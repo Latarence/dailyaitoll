@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-10T11:52:45.555742+00:00",
+  "last_updated": "2026-11-11T11:29:34.188757+00:00",
   "totals": {
-    "jobs": 426796,
-    "teams": 306,
+    "jobs": 427796,
+    "teams": 307,
     "products": 1,
-    "companies": 180,
+    "companies": 181,
     "revenue": 0,
-    "labor_hours": 887635680
+    "labor_hours": 889715680
   },
   "today": {
-    "jobs": 850,
-    "teams": 4,
+    "jobs": 1000,
+    "teams": 1,
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": 1768000
+    "labor_hours": 2080000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -976,10 +976,38 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": 1768000
+    },
+    "2026-11-09": {
+      "jobs": 1000,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 2080000
     }
   },
-  "events_count": 177,
+  "events_count": 178,
   "all_events": [
+    {
+      "id": "evt_20261109_001",
+      "event_date": "2026-11-09",
+      "headline": "Qualcomm begins India layoffs with ~1,000 jobs at risk in Bengaluru as chipmaker pivots to AI, automotive and data centers",
+      "source_url": "https://apacnewsnetwork.com/2026/11/qualcomm-begins-india-layoffs-as-global-tech-pressure-mounts/",
+      "source_name": "APAC News Network / Business Today",
+      "excerpt": "The first phase of job cuts hit Qualcomm's Bengaluru R&D center on Monday, November 9. Qualcomm is aggressively reallocating resources toward automotive computing, Internet of Things (IoT) hardware, and AI data centers.",
+      "causality": "contributing",
+      "confidence": 0.8,
+      "tolls": {
+        "jobs": 1000,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 2080000
+      },
+      "notes": "India-specific phase of previously-tracked Qualcomm global cuts; ~5-6% of India workforce (~20,000); extends to Hyderabad, Chennai, Delhi NCR. Qualcomm pivoting to AI data centers ($5B revenue target FY27). Potential overlap with existing 'Qualcomm announces global job cuts amid AI market pivot' entry \u2014 this entry adds the specific India headcount.",
+      "collected_date": "2026-11-11",
+      "date": "2026-11-11",
+      "created_at": "2026-11-11T11:29:34.188856+00:00"
+    },
     {
       "id": "evt_20261110_001",
       "event_date": "2026-11-10",
@@ -2977,56 +3005,36 @@
       "collected_date": "2026-06-02",
       "date": "2026-06-02",
       "created_at": "2026-06-02T08:18:05.264461+00:00"
-    },
-    {
-      "id": "evt_20260601_003",
-      "event_date": "2026-06-01",
-      "headline": "Amdocs reports layoffs affecting 10% of workforce amid AI shift",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-16\">Amdocs, one of the pillars of Israeli high-tech, reported layoffs affecting 10% of its workforce, including hundreds in Israel.</cite>",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 3000,
-        "teams": 5,
-        "companies": 1,
-        "labor_hours": 6240000
-      },
-      "notes": "Amdocs has ~30,000 employees globally; 10% = ~3,000",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264471+00:00"
     }
   ],
-  "summary": "One new major AI-attributed displacement event: Qantas announced Nov 10 that it will cut 850 Australian corporate jobs under a seven-year Accenture outsourcing deal, with CEO Vanessa Hudson directly citing AI transformation as the driver. Work in finance, procurement, HR and marketing will move mostly to Accenture teams in India. Boeing's 5% commercial airplane workforce cut (Nov 9) was excluded as it was attributed to production slowdown, not AI. Abridge layoffs and Meta 8,000 were already tracked or previously reported (May 2026).",
+  "summary": "Three new events identified in the last 24-48 hours: (1) Qualcomm India phase of global cuts began Nov 9 in Bengaluru with ~1,000 jobs at risk as the chipmaker reallocates toward AI data centers and automotive \u2014 note this may partially overlap with the previously-tracked global Qualcomm event, flagged for dedup review; (2) cyber unicorn Axonius cut 66 workers (22% of Israel dev staff) in an AI-driven restructuring; (3) Israeli AI food-tech startup Tastewise laid off dozens. Qantas (850) and SUSE (190) coverage from the window was already tracked. Broader context: Challenger reports AI cited in 121,401 US job cuts through October 2026.",
   "events": [
     {
-      "id": "evt_20261110_001",
-      "event_date": "2026-11-10",
-      "headline": "Qantas to cut 850 corporate jobs in Accenture outsourcing deal, citing AI adoption",
-      "source_url": "https://www.thestar.com.my/business/business-news/2026/11/10/australia039s-qantas-to-axe-850-jobs-in-offshoring-deal-with-accenture",
-      "source_name": "The Star / Reuters",
-      "excerpt": "Qantas said on Tuesday it would cut 850 jobs in Australia and outsource some corporate functions to consulting firm Accenture as it adapts to the increased use of artificial intelligence in the airline industry.",
-      "causality": "direct",
-      "confidence": 0.95,
+      "id": "evt_20261109_001",
+      "event_date": "2026-11-09",
+      "headline": "Qualcomm begins India layoffs with ~1,000 jobs at risk in Bengaluru as chipmaker pivots to AI, automotive and data centers",
+      "source_url": "https://apacnewsnetwork.com/2026/11/qualcomm-begins-india-layoffs-as-global-tech-pressure-mounts/",
+      "source_name": "APAC News Network / Business Today",
+      "excerpt": "The first phase of job cuts hit Qualcomm's Bengaluru R&D center on Monday, November 9. Qualcomm is aggressively reallocating resources toward automotive computing, Internet of Things (IoT) hardware, and AI data centers.",
+      "causality": "contributing",
+      "confidence": 0.8,
       "tolls": {
-        "jobs": 850,
-        "teams": 4,
+        "jobs": 1000,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": 1768000
+        "labor_hours": 2080000
       },
-      "notes": "CEO Vanessa Hudson explicitly cited AI; affects finance, procurement, HR and marketing; most work moves to Accenture teams in India; ~3% of Qantas's 28,000 Australian workforce; first round of cuts by mid-2027.",
-      "collected_date": "2026-11-10",
-      "date": "2026-11-10",
-      "created_at": "2026-11-10T11:52:45.555840+00:00"
+      "notes": "India-specific phase of previously-tracked Qualcomm global cuts; ~5-6% of India workforce (~20,000); extends to Hyderabad, Chennai, Delhi NCR. Qualcomm pivoting to AI data centers ($5B revenue target FY27). Potential overlap with existing 'Qualcomm announces global job cuts amid AI market pivot' entry \u2014 this entry adds the specific India headcount.",
+      "collected_date": "2026-11-11",
+      "date": "2026-11-11",
+      "created_at": "2026-11-11T11:29:34.188856+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-11-10",
+    "last_anthropic_success": "2026-11-11",
     "last_openai_success": "2026-11-02",
-    "last_nonzero_collection": "2026-11-10",
+    "last_nonzero_collection": "2026-11-11",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-11-10"
+    "last_collection_date": "2026-11-11"
   }
 }
