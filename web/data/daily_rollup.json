@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-11T11:29:34.188757+00:00",
+  "last_updated": "2026-11-12T11:55:46.646245+00:00",
   "totals": {
-    "jobs": 427796,
-    "teams": 307,
+    "jobs": 430096,
+    "teams": 309,
     "products": 1,
-    "companies": 181,
+    "companies": 182,
     "revenue": 0,
-    "labor_hours": 889715680
+    "labor_hours": 894499680
   },
   "today": {
-    "jobs": 1000,
-    "teams": 1,
+    "jobs": 2300,
+    "teams": 2,
     "products": 0,
     "companies": 1,
     "revenue": 0,
-    "labor_hours": 2080000
+    "labor_hours": 4784000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -978,16 +978,36 @@
       "labor_hours": 1768000
     },
     "2026-11-09": {
-      "jobs": 1000,
-      "teams": 1,
+      "jobs": 3300,
+      "teams": 3,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": 2080000
+      "labor_hours": 6864000
     }
   },
-  "events_count": 178,
+  "events_count": 179,
   "all_events": [
+    {
+      "id": "evt_20261109_004",
+      "event_date": "2026-11-09",
+      "headline": "Vodafone Germany to cut 2,300 jobs (nearly 1 in 5) as it expands AI and automation",
+      "source_url": "https://ppc.land/vodafone-germany-cuts-2-300-jobs-over-two-years-as-ai-use-expands/",
+      "source_name": "PPC Land / Reuters",
+      "excerpt": "Vodafone's German business plans to cut about 2,300 jobs over its next two financial years while it brings customer service together with its sales teams and uses more AI, which it says analyzes network faults, helps service staff and creates and steers ad campaigns.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 2300,
+        "teams": 2,
+        "companies": 1,
+        "labor_hours": 4784000
+      },
+      "notes": "Announced Nov 9, 2026 by Germany chief Marcel de Groot. ~2,300 of ~12,000 German workforce (nearly 1 in 5 jobs). Vodafone said it would simplify structures, make greater use of AI, and integrate sales and customer service. Company increasing investment in AI, IT, fibre-optic networks and digital channels. Cuts over next two financial years.",
+      "collected_date": "2026-11-12",
+      "date": "2026-11-12",
+      "created_at": "2026-11-12T11:55:46.646344+00:00"
+    },
     {
       "id": "evt_20261109_001",
       "event_date": "2026-11-09",
@@ -2985,56 +3005,36 @@
       "collected_date": "2026-06-02",
       "date": "2026-06-02",
       "created_at": "2026-06-02T08:18:05.264450+00:00"
-    },
-    {
-      "id": "evt_20260601_002",
-      "event_date": "2026-06-01",
-      "headline": "AI21 shuts down AI model development operation, lays off 60% of staff",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-15\">Israeli AI company AI21 shut down its AI model development operation and laid off 60% of its staff.</cite>",
-      "causality": "direct",
-      "confidence": 0.8,
-      "tolls": {
-        "jobs": 120,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": 249600
-      },
-      "notes": "Smaller AI firms being crushed by giant model competition; estimated 60% of ~200 staff",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264461+00:00"
     }
   ],
-  "summary": "Three new events identified in the last 24-48 hours: (1) Qualcomm India phase of global cuts began Nov 9 in Bengaluru with ~1,000 jobs at risk as the chipmaker reallocates toward AI data centers and automotive \u2014 note this may partially overlap with the previously-tracked global Qualcomm event, flagged for dedup review; (2) cyber unicorn Axonius cut 66 workers (22% of Israel dev staff) in an AI-driven restructuring; (3) Israeli AI food-tech startup Tastewise laid off dozens. Qantas (850) and SUSE (190) coverage from the window was already tracked. Broader context: Challenger reports AI cited in 121,401 US job cuts through October 2026.",
+  "summary": "One new verifiable AI-linked displacement event identified in the past 24-48 hours: Vodafone Germany announced on Nov 9, 2026 it will cut 2,300 jobs (nearly 20% of its ~12,000 German workforce) over two financial years as it integrates customer service with sales and expands AI and automation across operations, from network fault analysis to ad campaigns. Other recent coverage (Qantas 850, SUSE 190, Canva 1,271, Squarespace 300, NICE 500, Abridge, etc.) was already tracked. Cognizant Project Leap, BAT 5,500, Cloudflare 1,100, Monday.com 630, and Wix 1,000 are older 2026 events outside the 24-48 hour window.",
   "events": [
     {
-      "id": "evt_20261109_001",
+      "id": "evt_20261109_004",
       "event_date": "2026-11-09",
-      "headline": "Qualcomm begins India layoffs with ~1,000 jobs at risk in Bengaluru as chipmaker pivots to AI, automotive and data centers",
-      "source_url": "https://apacnewsnetwork.com/2026/11/qualcomm-begins-india-layoffs-as-global-tech-pressure-mounts/",
-      "source_name": "APAC News Network / Business Today",
-      "excerpt": "The first phase of job cuts hit Qualcomm's Bengaluru R&D center on Monday, November 9. Qualcomm is aggressively reallocating resources toward automotive computing, Internet of Things (IoT) hardware, and AI data centers.",
-      "causality": "contributing",
-      "confidence": 0.8,
+      "headline": "Vodafone Germany to cut 2,300 jobs (nearly 1 in 5) as it expands AI and automation",
+      "source_url": "https://ppc.land/vodafone-germany-cuts-2-300-jobs-over-two-years-as-ai-use-expands/",
+      "source_name": "PPC Land / Reuters",
+      "excerpt": "Vodafone's German business plans to cut about 2,300 jobs over its next two financial years while it brings customer service together with its sales teams and uses more AI, which it says analyzes network faults, helps service staff and creates and steers ad campaigns.",
+      "causality": "direct",
+      "confidence": 0.9,
       "tolls": {
-        "jobs": 1000,
-        "teams": 1,
+        "jobs": 2300,
+        "teams": 2,
         "companies": 1,
-        "labor_hours": 2080000
+        "labor_hours": 4784000
       },
-      "notes": "India-specific phase of previously-tracked Qualcomm global cuts; ~5-6% of India workforce (~20,000); extends to Hyderabad, Chennai, Delhi NCR. Qualcomm pivoting to AI data centers ($5B revenue target FY27). Potential overlap with existing 'Qualcomm announces global job cuts amid AI market pivot' entry \u2014 this entry adds the specific India headcount.",
-      "collected_date": "2026-11-11",
-      "date": "2026-11-11",
-      "created_at": "2026-11-11T11:29:34.188856+00:00"
+      "notes": "Announced Nov 9, 2026 by Germany chief Marcel de Groot. ~2,300 of ~12,000 German workforce (nearly 1 in 5 jobs). Vodafone said it would simplify structures, make greater use of AI, and integrate sales and customer service. Company increasing investment in AI, IT, fibre-optic networks and digital channels. Cuts over next two financial years.",
+      "collected_date": "2026-11-12",
+      "date": "2026-11-12",
+      "created_at": "2026-11-12T11:55:46.646344+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-11-11",
+    "last_anthropic_success": "2026-11-12",
     "last_openai_success": "2026-11-02",
-    "last_nonzero_collection": "2026-11-11",
+    "last_nonzero_collection": "2026-11-12",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-11-11"
+    "last_collection_date": "2026-11-12"
   }
 }
