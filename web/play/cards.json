@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 72,
+ "count": 73,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -854,6 +854,18 @@
    "url": "https://apacnewsnetwork.com/2026/11/qualcomm-begins-india-layoffs-as-global-tech-pressure-mounts/",
    "causality": "contributing",
    "confidence": 0.8
+  },
+  {
+   "id": "evt_20261109_004",
+   "date": "2026-11-09",
+   "roles": 2300,
+   "headline": "Vodafone Germany to cut 2,300 jobs (nearly 1 in 5) as it expands AI and automation",
+   "masked": "Vodafone Germany to cut ### jobs (nearly 1 in 5) as it expands AI and automation",
+   "excerpt": "Vodafone's German business plans to cut about ### jobs over its next two financial years while it brings customer service together with its sales teams and uses more AI, which it says analyzes network faults, helps service staff and creates and steers ad campaigns.",
+   "source": "PPC Land / Reuters",
+   "url": "https://ppc.land/vodafone-germany-cuts-2-300-jobs-over-two-years-as-ai-use-expands/",
+   "causality": "direct",
+   "confidence": 0.9
   },
   {
    "id": "evt_20261110_001",
