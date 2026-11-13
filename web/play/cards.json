@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 73,
+ "count": 75,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -844,6 +844,18 @@
    "confidence": 0.85
   },
   {
+   "id": "evt_20261106_004",
+   "date": "2026-11-06",
+   "roles": 45,
+   "headline": "Galapagos Capital cuts 45 jobs (9% of workforce) as AI push drives efficiency",
+   "masked": "Galapagos Capital cuts ### jobs (9% of workforce) as AI push drives efficiency",
+   "excerpt": "Galapagos Capital, an investment firm founded by former Banco BTG Pactual SA partners, dismissed ### employees, or about 9% of its workforce. The São Paulo-based asset manager is targeting operational streamlining through the expanded adoption of artificial intelligence while navigating persistent market headwinds. Cuts included roughly six of ### investment banking positions (mostly analysts plus two interns), eight back-office personnel, and seven asset management roles.",
+   "source": "Bloomberg",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-06/investment-firm-galapagos-dismisses-9-of-its-global-workforce",
+   "causality": "direct",
+   "confidence": 0.85
+  },
+  {
    "id": "evt_20261109_001",
    "date": "2026-11-09",
    "roles": 1000,
@@ -878,6 +890,18 @@
    "url": "https://www.thestar.com.my/business/business-news/2026/11/10/australia039s-qantas-to-axe-850-jobs-in-offshoring-deal-with-accenture",
    "causality": "direct",
    "confidence": 0.95
+  },
+  {
+   "id": "evt_20261112_001",
+   "date": "2026-11-12",
+   "roles": 270,
+   "headline": "Gainsight cuts about 270 jobs as it refounds business around AI agents",
+   "masked": "Gainsight cuts about ### jobs as it refounds business around AI agents",
+   "excerpt": "Gainsight has cut jobs as the customer success software company restructures around AI agents and outcome-based pricing. Approximately ### roles are affected by the cuts. Under the new model, the company aims to give every customer a single Outcome Executive accountable for results: a dedicated person for the largest accounts and an AI agent for the long tail of smaller ones.",
+   "source": "Investing.com",
+   "url": "https://www.investing.com/news/stock-market-news/gainsight-cuts-jobs-as-it-refounds-business-around-ai-agents-5021270",
+   "causality": "direct",
+   "confidence": 0.9
   }
  ]
 }
