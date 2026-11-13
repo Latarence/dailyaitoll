@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-12T11:55:46.646245+00:00",
+  "last_updated": "2026-11-13T11:38:48.962079+00:00",
   "totals": {
-    "jobs": 430096,
-    "teams": 309,
+    "jobs": 430411,
+    "teams": 313,
     "products": 1,
-    "companies": 182,
+    "companies": 184,
     "revenue": 0,
-    "labor_hours": 894499680
+    "labor_hours": 895154880
   },
   "today": {
-    "jobs": 2300,
-    "teams": 2,
+    "jobs": 315,
+    "teams": 4,
     "products": 0,
-    "companies": 1,
+    "companies": 2,
     "revenue": 0,
-    "labor_hours": 4784000
+    "labor_hours": 655200
   },
   "daily_totals": {
     "2026-05-05": {
@@ -954,12 +954,12 @@
       "labor_hours": 1493440
     },
     "2026-11-06": {
-      "jobs": 150,
-      "teams": 2,
+      "jobs": 195,
+      "teams": 5,
       "products": 0,
-      "companies": 1,
+      "companies": 2,
       "revenue": 0,
-      "labor_hours": 312000
+      "labor_hours": 405600
     },
     "2026-11-07": {
       "jobs": 800,
@@ -984,10 +984,58 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": 6864000
+    },
+    "2026-11-12": {
+      "jobs": 270,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 561600
     }
   },
-  "events_count": 179,
+  "events_count": 181,
   "all_events": [
+    {
+      "id": "evt_20261112_001",
+      "event_date": "2026-11-12",
+      "headline": "Gainsight cuts about 270 jobs as it refounds business around AI agents",
+      "source_url": "https://www.investing.com/news/stock-market-news/gainsight-cuts-jobs-as-it-refounds-business-around-ai-agents-5021270",
+      "source_name": "Investing.com",
+      "excerpt": "Gainsight has cut jobs as the customer success software company restructures around AI agents and outcome-based pricing. Approximately 270 roles are affected by the cuts. Under the new model, the company aims to give every customer a single Outcome Executive accountable for results: a dedicated person for the largest accounts and an AI agent for the long tail of smaller ones.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 270,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 561600
+      },
+      "notes": "Customer success software company explicitly restructuring to replace customer-facing roles for smaller accounts with AI agents. CEO Chuck Ganapathi confirmed cuts on LinkedIn. Source: Investing.com exclusive reporting Nov 12, 2026.",
+      "collected_date": "2026-11-13",
+      "date": "2026-11-13",
+      "created_at": "2026-11-13T11:38:48.962166+00:00"
+    },
+    {
+      "id": "evt_20261106_004",
+      "event_date": "2026-11-06",
+      "headline": "Galapagos Capital cuts 45 jobs (9% of workforce) as AI push drives efficiency",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-11-06/investment-firm-galapagos-dismisses-9-of-its-global-workforce",
+      "source_name": "Bloomberg",
+      "excerpt": "Galapagos Capital, an investment firm founded by former Banco BTG Pactual SA partners, dismissed 45 employees, or about 9% of its workforce. The S\u00e3o Paulo-based asset manager is targeting operational streamlining through the expanded adoption of artificial intelligence while navigating persistent market headwinds. Cuts included roughly six of 35 investment banking positions (mostly analysts plus two interns), eight back-office personnel, and seven asset management roles.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 45,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": 93600
+      },
+      "notes": "S\u00e3o Paulo-based investment firm cutting across investment banking, back-office, and asset management divisions. Aims to lower annual expenses from ~195M reais to ~160M reais by 2027 largely through process automation. Event slightly outside 48-hour window but surfaced in Nov 12-13 tracker coverage and not previously tracked.",
+      "collected_date": "2026-11-13",
+      "date": "2026-11-13",
+      "created_at": "2026-11-13T11:38:48.962185+00:00"
+    },
     {
       "id": "evt_20261109_004",
       "event_date": "2026-11-09",
@@ -2965,76 +3013,56 @@
       "collected_date": "2026-06-04",
       "date": "2026-06-04",
       "created_at": "2026-06-04T08:10:22.305343+00:00"
-    },
-    {
-      "id": "evt_20260513_003",
-      "event_date": "2026-05-13",
-      "headline": "Walmart cuts or relocates 1,000 corporate workers as it consolidates global tech and AI product teams",
-      "source_url": "https://hrexecutive.com/walmart-cuts-1000-corporate-roles-as-ai-reorganization-reshapes-tech-teams/",
-      "source_name": "HR Executive",
-      "excerpt": "Walmart is set to cut or relocate about 1,000 corporate employees as the retail giant reorganizes its global technology and AI product teams. The reorganization was led by Suresh Kumar, Walmart's head of global technology, who reviewed internal structures and identified overlapping roles created in part by the integration of AI-focused product units.",
-      "causality": "contributing",
-      "confidence": 0.75,
-      "tolls": {
-        "jobs": 1000,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": 2080000
-      },
-      "notes": "Walmart's head of global AI acceleration Daniel Danker and global technology chief Suresh Kumar led the restructuring; cuts tied to consolidation of AI-focused product teams. Walmart publicly framed it as organizational simplification rather than AI replacement, but AI integration was a stated driver.",
-      "collected_date": "2026-06-03",
-      "date": "2026-06-03",
-      "created_at": "2026-06-03T08:45:11.083551+00:00"
-    },
-    {
-      "id": "evt_20260601_001",
-      "event_date": "2026-06-01",
-      "headline": "Taboola lays off about 100 employees amid AI-driven Israeli tech shakeup",
-      "source_url": "https://www.ynetnews.com/business/article/ryt113f9xfx",
-      "source_name": "Ynet News",
-      "excerpt": "<cite index=\"29-12\">Israeli online advertising company Taboola laid off about 100 employees.</cite>",
-      "causality": "contributing",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 100,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 208000
-      },
-      "notes": "Part of broader AI-driven layoff wave in Israeli tech sector",
-      "collected_date": "2026-06-02",
-      "date": "2026-06-02",
-      "created_at": "2026-06-02T08:18:05.264450+00:00"
     }
   ],
-  "summary": "One new verifiable AI-linked displacement event identified in the past 24-48 hours: Vodafone Germany announced on Nov 9, 2026 it will cut 2,300 jobs (nearly 20% of its ~12,000 German workforce) over two financial years as it integrates customer service with sales and expands AI and automation across operations, from network fault analysis to ad campaigns. Other recent coverage (Qantas 850, SUSE 190, Canva 1,271, Squarespace 300, NICE 500, Abridge, etc.) was already tracked. Cognizant Project Leap, BAT 5,500, Cloudflare 1,100, Monday.com 630, and Wix 1,000 are older 2026 events outside the 24-48 hour window.",
+  "summary": "Two new AI-attributed displacement events identified. Gainsight (Nov 12) cut ~270 roles while explicitly replacing human customer success managers with AI agents for its smaller accounts under a new 'Outcome Executive' operating model\u2014a clear direct replacement case. Galapagos Capital (Nov 6, newly surfaced) cut 45 employees (9% of global workforce) across investment banking, back-office, and asset management as it expands AI adoption to cut annual costs by ~35M reais. Combined: 315 jobs across 2 companies, ~655,200 annual labor hours eliminated. Broader context: Challenger reported 121,401 US job cuts attributed to AI through October 2026, and TrueUp's tracker shows 206,817 tech workers displaced globally in 2026 across 712 events.",
   "events": [
     {
-      "id": "evt_20261109_004",
-      "event_date": "2026-11-09",
-      "headline": "Vodafone Germany to cut 2,300 jobs (nearly 1 in 5) as it expands AI and automation",
-      "source_url": "https://ppc.land/vodafone-germany-cuts-2-300-jobs-over-two-years-as-ai-use-expands/",
-      "source_name": "PPC Land / Reuters",
-      "excerpt": "Vodafone's German business plans to cut about 2,300 jobs over its next two financial years while it brings customer service together with its sales teams and uses more AI, which it says analyzes network faults, helps service staff and creates and steers ad campaigns.",
+      "id": "evt_20261112_001",
+      "event_date": "2026-11-12",
+      "headline": "Gainsight cuts about 270 jobs as it refounds business around AI agents",
+      "source_url": "https://www.investing.com/news/stock-market-news/gainsight-cuts-jobs-as-it-refounds-business-around-ai-agents-5021270",
+      "source_name": "Investing.com",
+      "excerpt": "Gainsight has cut jobs as the customer success software company restructures around AI agents and outcome-based pricing. Approximately 270 roles are affected by the cuts. Under the new model, the company aims to give every customer a single Outcome Executive accountable for results: a dedicated person for the largest accounts and an AI agent for the long tail of smaller ones.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
-        "jobs": 2300,
-        "teams": 2,
+        "jobs": 270,
+        "teams": 1,
         "companies": 1,
-        "labor_hours": 4784000
+        "labor_hours": 561600
       },
-      "notes": "Announced Nov 9, 2026 by Germany chief Marcel de Groot. ~2,300 of ~12,000 German workforce (nearly 1 in 5 jobs). Vodafone said it would simplify structures, make greater use of AI, and integrate sales and customer service. Company increasing investment in AI, IT, fibre-optic networks and digital channels. Cuts over next two financial years.",
-      "collected_date": "2026-11-12",
-      "date": "2026-11-12",
-      "created_at": "2026-11-12T11:55:46.646344+00:00"
+      "notes": "Customer success software company explicitly restructuring to replace customer-facing roles for smaller accounts with AI agents. CEO Chuck Ganapathi confirmed cuts on LinkedIn. Source: Investing.com exclusive reporting Nov 12, 2026.",
+      "collected_date": "2026-11-13",
+      "date": "2026-11-13",
+      "created_at": "2026-11-13T11:38:48.962166+00:00"
+    },
+    {
+      "id": "evt_20261106_004",
+      "event_date": "2026-11-06",
+      "headline": "Galapagos Capital cuts 45 jobs (9% of workforce) as AI push drives efficiency",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-11-06/investment-firm-galapagos-dismisses-9-of-its-global-workforce",
+      "source_name": "Bloomberg",
+      "excerpt": "Galapagos Capital, an investment firm founded by former Banco BTG Pactual SA partners, dismissed 45 employees, or about 9% of its workforce. The S\u00e3o Paulo-based asset manager is targeting operational streamlining through the expanded adoption of artificial intelligence while navigating persistent market headwinds. Cuts included roughly six of 35 investment banking positions (mostly analysts plus two interns), eight back-office personnel, and seven asset management roles.",
+      "causality": "direct",
+      "confidence": 0.85,
+      "tolls": {
+        "jobs": 45,
+        "teams": 3,
+        "companies": 1,
+        "labor_hours": 93600
+      },
+      "notes": "S\u00e3o Paulo-based investment firm cutting across investment banking, back-office, and asset management divisions. Aims to lower annual expenses from ~195M reais to ~160M reais by 2027 largely through process automation. Event slightly outside 48-hour window but surfaced in Nov 12-13 tracker coverage and not previously tracked.",
+      "collected_date": "2026-11-13",
+      "date": "2026-11-13",
+      "created_at": "2026-11-13T11:38:48.962185+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-11-12",
+    "last_anthropic_success": "2026-11-13",
     "last_openai_success": "2026-11-02",
-    "last_nonzero_collection": "2026-11-12",
+    "last_nonzero_collection": "2026-11-13",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-11-12"
+    "last_collection_date": "2026-11-13"
   }
 }
