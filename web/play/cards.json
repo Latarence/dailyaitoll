@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 75,
+ "count": 76,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -900,6 +900,18 @@
    "excerpt": "Gainsight has cut jobs as the customer success software company restructures around AI agents and outcome-based pricing. Approximately ### roles are affected by the cuts. Under the new model, the company aims to give every customer a single Outcome Executive accountable for results: a dedicated person for the largest accounts and an AI agent for the long tail of smaller ones.",
    "source": "Investing.com",
    "url": "https://www.investing.com/news/stock-market-news/gainsight-cuts-jobs-as-it-refounds-business-around-ai-agents-5021270",
+   "causality": "direct",
+   "confidence": 0.9
+  },
+  {
+   "id": "evt_20261113_001",
+   "date": "2026-11-13",
+   "roles": 60,
+   "headline": "SpaceX's AI group lays off ~60 Grok Imagine video team staff as resources shift to AI coding tools and Grok Bot agent",
+   "masked": "SpaceX's AI group lays off ~### Grok Imagine video team staff as resources shift to AI coding tools and Grok Bot agent",
+   "excerpt": "SpaceX's artificial intelligence division has eliminated roughly ### roles from the team developing its Grok Imagine video and image generation tool, The Information reported on November ###. The cuts redirect resources to AI coding tools and the Grok Bot agent.",
+   "source": "AI Weekly / The Information",
+   "url": "https://aiweekly.co/alerts/spacex-super-intelligence-cuts-60-from-grok-imagine-video-team",
    "causality": "direct",
    "confidence": 0.9
   }
