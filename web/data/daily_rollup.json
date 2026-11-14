@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-13T11:38:48.962079+00:00",
+  "last_updated": "2026-11-14T11:00:07.319087+00:00",
   "totals": {
-    "jobs": 430411,
-    "teams": 313,
+    "jobs": 430491,
+    "teams": 318,
     "products": 1,
-    "companies": 184,
+    "companies": 186,
     "revenue": 0,
-    "labor_hours": 895154880
+    "labor_hours": 895321280
   },
   "today": {
-    "jobs": 315,
-    "teams": 4,
+    "jobs": 80,
+    "teams": 5,
     "products": 0,
     "companies": 2,
     "revenue": 0,
-    "labor_hours": 655200
+    "labor_hours": 166400
   },
   "daily_totals": {
     "2026-05-05": {
@@ -992,10 +992,58 @@
       "companies": 1,
       "revenue": 0,
       "labor_hours": 561600
+    },
+    "2026-11-13": {
+      "jobs": 80,
+      "teams": 5,
+      "products": 0,
+      "companies": 2,
+      "revenue": 0,
+      "labor_hours": 166400
     }
   },
-  "events_count": 181,
+  "events_count": 183,
   "all_events": [
+    {
+      "id": "evt_20261113_001",
+      "event_date": "2026-11-13",
+      "headline": "SpaceX's AI group lays off ~60 Grok Imagine video team staff as resources shift to AI coding tools and Grok Bot agent",
+      "source_url": "https://aiweekly.co/alerts/spacex-super-intelligence-cuts-60-from-grok-imagine-video-team",
+      "source_name": "AI Weekly / The Information",
+      "excerpt": "SpaceX's artificial intelligence division has eliminated roughly 60 roles from the team developing its Grok Imagine video and image generation tool, The Information reported on November 13. The cuts redirect resources to AI coding tools and the Grok Bot agent.",
+      "causality": "direct",
+      "confidence": 0.9,
+      "tolls": {
+        "jobs": 60,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 124800
+      },
+      "notes": "Cuts inside SpaceX Super Intelligence group (formed from xAI merger in Feb 2026). Grok Imagine tab disappeared for many users on Nov 13; only a skeleton crew remains. Cuts linked to shifting AI product priorities toward coding tools (Cursor) and Grok Bot agent.",
+      "collected_date": "2026-11-14",
+      "date": "2026-11-14",
+      "created_at": "2026-11-14T11:00:07.319189+00:00"
+    },
+    {
+      "id": "evt_20261113_002",
+      "event_date": "2026-11-13",
+      "headline": "MEGA (formerly MegaETH Foundation) cuts 20% of staff as it pivots to AI inference marketplace",
+      "source_url": "https://cryptonews.net/news/other/33750292/",
+      "source_name": "Crypto News / Crypto Briefing",
+      "excerpt": "MEGA cut 20% of its workforce after several months of restructuring. Co-founder Shuyao Kong announced the layoffs in a November 13 post on X. Three days earlier, the MegaETH Foundation announced its rebrand and pledged $30 million for new products. The first planned product is an AI marketplace where customers could pay providers to run trained models.",
+      "causality": "direct",
+      "confidence": 0.75,
+      "tolls": {
+        "jobs": 20,
+        "teams": 4,
+        "companies": 1,
+        "labor_hours": 41600
+      },
+      "notes": "Exact headcount not disclosed; estimated ~20 based on 20% cut of small foundation team. Layoffs affected chain development, wallet tooling, ecosystem support and communications. Pivot funded by $30M product pledge for AI inference marketplace launching December 2026.",
+      "collected_date": "2026-11-14",
+      "date": "2026-11-14",
+      "created_at": "2026-11-14T11:00:07.319212+00:00"
+    },
     {
       "id": "evt_20261112_001",
       "event_date": "2026-11-12",
@@ -2973,96 +3021,56 @@
       "collected_date": "2026-06-05",
       "date": "2026-06-05",
       "created_at": "2026-06-05T07:57:01.874600+00:00"
-    },
-    {
-      "id": "evt_20260601_006",
-      "event_date": "2026-06-01",
-      "headline": "Manhattan Associates cuts ~260 jobs (6% of workforce) citing operational efficiencies amid AI shift",
-      "source_url": "https://www.stocktitan.net/sec-filings/MANH/8-k-manhattan-associates-inc-reports-material-event-05b6c9aa2551.html",
-      "source_name": "StockTitan / SEC 8-K",
-      "excerpt": "Manhattan Associates, Inc. has launched a cost-reduction plan that will cut its global workforce by approximately 6%... leveraging increased operational efficiencies and allowing it to focus investments on key strategic priorities.",
-      "causality": "inferred",
-      "confidence": 0.55,
-      "tolls": {
-        "jobs": 260,
-        "teams": 2,
-        "companies": 1,
-        "labor_hours": 540800
-      },
-      "notes": "Atlanta supply-chain software maker. 8-K filed June 1, 2026 listed 'generative and agentic artificial intelligence' as a risk factor. Coincides with launch of AI-powered Solution Design Studio and Manhattan Active platform. AI causality inferred, not explicitly stated; $7-9M Q2 severance charge.",
-      "collected_date": "2026-06-05",
-      "date": "2026-06-05",
-      "created_at": "2026-06-05T07:57:01.874636+00:00"
-    },
-    {
-      "id": "evt_20260603_001",
-      "event_date": "2026-06-03",
-      "headline": "Skai (formerly Kenshoo) lays off 20% of staff (~100 employees), cites AI-driven transformation",
-      "source_url": "https://www.calcalistech.com/ctechnews/article/jmjuqzfe6",
-      "source_name": "Calcalist (Ctech)",
-      "excerpt": "Digital marketing company Skai, formerly known as Kenshoo, has laid off about 20% of its workforce in Israel and around the world, roughly 100 employees. The company also attributes the current layoffs to the impact of artificial intelligence on its operations.",
-      "causality": "direct",
-      "confidence": 0.9,
-      "tolls": {
-        "jobs": 100,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 208000
-      },
-      "notes": "Skai's second round in recent years (after ~80 in 2024). Company statement: launched several AI-based products and changed work methods 'with an emphasis on artificial intelligence.' Pre-layoff headcount ~550. Reported by Ctech and tracked by TrueUp on June 3, 2026.",
-      "collected_date": "2026-06-04",
-      "date": "2026-06-04",
-      "created_at": "2026-06-04T08:10:22.305343+00:00"
     }
   ],
-  "summary": "Two new AI-attributed displacement events identified. Gainsight (Nov 12) cut ~270 roles while explicitly replacing human customer success managers with AI agents for its smaller accounts under a new 'Outcome Executive' operating model\u2014a clear direct replacement case. Galapagos Capital (Nov 6, newly surfaced) cut 45 employees (9% of global workforce) across investment banking, back-office, and asset management as it expands AI adoption to cut annual costs by ~35M reais. Combined: 315 jobs across 2 companies, ~655,200 annual labor hours eliminated. Broader context: Challenger reported 121,401 US job cuts attributed to AI through October 2026, and TrueUp's tracker shows 206,817 tech workers displaced globally in 2026 across 712 events.",
+  "summary": "Two new AI-displacement events confirmed in the past 24-48 hours. SpaceX's AI group (Super Intelligence) laid off ~60 Grok Imagine video team members on Nov 13, reallocating resources to AI coding tools and agents following the xAI merger. MEGA (formerly MegaETH Foundation) cut 20% of staff on Nov 13 while pivoting to launch an AI inference marketplace. PepsiCo's 1,000 job cuts (Nov 9-10) were excluded as the company cited weak demand and restructuring without naming AI. Allianz Partners' 1,800 AI-driven cuts (July) were noted but fall outside the 24-48 hour window.",
   "events": [
     {
-      "id": "evt_20261112_001",
-      "event_date": "2026-11-12",
-      "headline": "Gainsight cuts about 270 jobs as it refounds business around AI agents",
-      "source_url": "https://www.investing.com/news/stock-market-news/gainsight-cuts-jobs-as-it-refounds-business-around-ai-agents-5021270",
-      "source_name": "Investing.com",
-      "excerpt": "Gainsight has cut jobs as the customer success software company restructures around AI agents and outcome-based pricing. Approximately 270 roles are affected by the cuts. Under the new model, the company aims to give every customer a single Outcome Executive accountable for results: a dedicated person for the largest accounts and an AI agent for the long tail of smaller ones.",
+      "id": "evt_20261113_001",
+      "event_date": "2026-11-13",
+      "headline": "SpaceX's AI group lays off ~60 Grok Imagine video team staff as resources shift to AI coding tools and Grok Bot agent",
+      "source_url": "https://aiweekly.co/alerts/spacex-super-intelligence-cuts-60-from-grok-imagine-video-team",
+      "source_name": "AI Weekly / The Information",
+      "excerpt": "SpaceX's artificial intelligence division has eliminated roughly 60 roles from the team developing its Grok Imagine video and image generation tool, The Information reported on November 13. The cuts redirect resources to AI coding tools and the Grok Bot agent.",
       "causality": "direct",
       "confidence": 0.9,
       "tolls": {
-        "jobs": 270,
+        "jobs": 60,
         "teams": 1,
         "companies": 1,
-        "labor_hours": 561600
+        "labor_hours": 124800
       },
-      "notes": "Customer success software company explicitly restructuring to replace customer-facing roles for smaller accounts with AI agents. CEO Chuck Ganapathi confirmed cuts on LinkedIn. Source: Investing.com exclusive reporting Nov 12, 2026.",
-      "collected_date": "2026-11-13",
-      "date": "2026-11-13",
-      "created_at": "2026-11-13T11:38:48.962166+00:00"
+      "notes": "Cuts inside SpaceX Super Intelligence group (formed from xAI merger in Feb 2026). Grok Imagine tab disappeared for many users on Nov 13; only a skeleton crew remains. Cuts linked to shifting AI product priorities toward coding tools (Cursor) and Grok Bot agent.",
+      "collected_date": "2026-11-14",
+      "date": "2026-11-14",
+      "created_at": "2026-11-14T11:00:07.319189+00:00"
     },
     {
-      "id": "evt_20261106_004",
-      "event_date": "2026-11-06",
-      "headline": "Galapagos Capital cuts 45 jobs (9% of workforce) as AI push drives efficiency",
-      "source_url": "https://www.bloomberg.com/news/articles/2026-11-06/investment-firm-galapagos-dismisses-9-of-its-global-workforce",
-      "source_name": "Bloomberg",
-      "excerpt": "Galapagos Capital, an investment firm founded by former Banco BTG Pactual SA partners, dismissed 45 employees, or about 9% of its workforce. The S\u00e3o Paulo-based asset manager is targeting operational streamlining through the expanded adoption of artificial intelligence while navigating persistent market headwinds. Cuts included roughly six of 35 investment banking positions (mostly analysts plus two interns), eight back-office personnel, and seven asset management roles.",
+      "id": "evt_20261113_002",
+      "event_date": "2026-11-13",
+      "headline": "MEGA (formerly MegaETH Foundation) cuts 20% of staff as it pivots to AI inference marketplace",
+      "source_url": "https://cryptonews.net/news/other/33750292/",
+      "source_name": "Crypto News / Crypto Briefing",
+      "excerpt": "MEGA cut 20% of its workforce after several months of restructuring. Co-founder Shuyao Kong announced the layoffs in a November 13 post on X. Three days earlier, the MegaETH Foundation announced its rebrand and pledged $30 million for new products. The first planned product is an AI marketplace where customers could pay providers to run trained models.",
       "causality": "direct",
-      "confidence": 0.85,
+      "confidence": 0.75,
       "tolls": {
-        "jobs": 45,
-        "teams": 3,
+        "jobs": 20,
+        "teams": 4,
         "companies": 1,
-        "labor_hours": 93600
+        "labor_hours": 41600
       },
-      "notes": "S\u00e3o Paulo-based investment firm cutting across investment banking, back-office, and asset management divisions. Aims to lower annual expenses from ~195M reais to ~160M reais by 2027 largely through process automation. Event slightly outside 48-hour window but surfaced in Nov 12-13 tracker coverage and not previously tracked.",
-      "collected_date": "2026-11-13",
-      "date": "2026-11-13",
-      "created_at": "2026-11-13T11:38:48.962185+00:00"
+      "notes": "Exact headcount not disclosed; estimated ~20 based on 20% cut of small foundation team. Layoffs affected chain development, wallet tooling, ecosystem support and communications. Pivot funded by $30M product pledge for AI inference marketplace launching December 2026.",
+      "collected_date": "2026-11-14",
+      "date": "2026-11-14",
+      "created_at": "2026-11-14T11:00:07.319212+00:00"
     }
   ],
   "health": {
-    "last_anthropic_success": "2026-11-13",
+    "last_anthropic_success": "2026-11-14",
     "last_openai_success": "2026-11-02",
-    "last_nonzero_collection": "2026-11-13",
+    "last_nonzero_collection": "2026-11-14",
     "consecutive_zero_days": 0,
-    "last_collection_date": "2026-11-13"
+    "last_collection_date": "2026-11-14"
   }
 }
