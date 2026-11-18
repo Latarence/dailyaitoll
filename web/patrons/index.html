@@ -539,6 +539,17 @@
             }
         }
 
+        function esc(s) {
+            return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+        function safeHref(u) {
+            try { const x = new URL(String(u || '').trim()); return (x.protocol === 'https:' || x.protocol === 'http:') ? x.href : ''; } catch (e) { return ''; }
+        }
+        function patronName(p) {
+            const href = safeHref(p.url);
+            return href ? `<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(p.name)}</a>` : esc(p.name);
+        }
+
         function renderPatrons(patrons) {
             const container = document.getElementById('patrons-display');
             const hasPatrons = patrons.founding.length || patrons.sustainer.length || patrons.supporter.length;
@@ -556,9 +567,9 @@
                     ${patrons.founding.map(p => `
                         <div class="patron-founding">
                             <div class="patron-founding-name">
-                                ${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${p.name}</a>` : p.name}
+                                ${patronName(p)}
                             </div>
-                            ${p.description ? `<div class="patron-founding-desc">${p.description}</div>` : ''}
+                            ${p.description ? `<div class="patron-founding-desc">${esc(p.description)}</div>` : ''}
                         </div>
                     `).join('')}
                 </div>`;
@@ -571,7 +582,7 @@
                     <div class="patrons-tier-list">
                         ${patrons.sustainer.map(p => `
                             <span class="patron-sustainer">
-                                ${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${p.name}</a>` : p.name}
+                                ${patronName(p)}
                             </span>
                         `).join(' · ')}
                     </div>
@@ -583,7 +594,7 @@
                 html += `<div class="patrons-tier">
                     <div class="patrons-tier-label">Supporters</div>
                     <div class="patrons-tier-list">
-                        ${patrons.supporter.map(p => `<span class="patron-supporter">${p.name}</span>`).join(' · ')}
+                        ${patrons.supporter.map(p => `<span class="patron-supporter">${esc(p.name)}</span>`).join(' · ')}
                     </div>
                 </div>`;
             }

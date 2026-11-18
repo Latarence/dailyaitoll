@@ -7,6 +7,7 @@ try {
   kv = null;
 }
 const { kvConfigured } = require('./_lib/disputes');
+const { sanitizePatrons } = require('./_lib/patron-safe');
 
 function readStaticPatrons() {
   const p = path.join(__dirname, '..', 'data', 'patrons.json');
@@ -24,7 +25,7 @@ module.exports = async (req, res) => {
         try {
           const patrons =
             (await kv.get('patrons:v1')) || { founding: [], sustainer: [], supporter: [] };
-          return res.status(200).json({ patrons });
+          return res.status(200).json({ patrons: sanitizePatrons(patrons) });
         } catch (err) {
           console.error('patrons KV read failed, serving static list:', err && err.message);
         }
@@ -34,7 +35,7 @@ module.exports = async (req, res) => {
     }
 
     // Fallback: read the static JSON file committed to the repo.
-    return res.status(200).json({ patrons: readStaticPatrons() });
+    return res.status(200).json({ patrons: sanitizePatrons(readStaticPatrons()) });
   } catch (err) {
     console.error('patrons api error:', err);
     return res.status(500).json({ error: 'Failed to load patrons' });
