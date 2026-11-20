@@ -7,6 +7,28 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.dailyaitoll.com"
+        }
+      ],
+      "destination": "https://dailyaitoll.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.dailyaitoll.com"
+        }
+      ],
+      "destination": "https://dailyaitoll.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/data/events.csv",
       "destination": "/api/data-download",
       "permanent": false
