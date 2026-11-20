@@ -1268,6 +1268,18 @@
                 return;
             }
 
+            // Feed fields come from AI-aggregated third-party news: escape every
+            // interpolated value and allow only http(s) links (see patrons fix 58c38d8).
+            const esc = (v) => String(v == null ? '' : v)
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+            const safeUrl = (u) => {
+                try {
+                    const x = new URL(String(u || ''), location.origin);
+                    return (x.protocol === 'https:' || x.protocol === 'http:') ? x.href : '';
+                } catch (e) { return ''; }
+            };
+
             // Group by date for separators
             let lastDate = null;
             let rank = 1;
@@ -1289,7 +1301,7 @@
                     separator.className = 'date-separator';
                     if (datePath) {
                         // Daily pages are emitted as /YYYY/MM/DD/index.html; link to the directory URL.
-                        separator.innerHTML = `<a href="/${datePath}">${displayDate}</a>`;
+                        separator.innerHTML = `<a href="/${esc(datePath)}">${esc(displayDate)}</a>`;
                     } else {
                         separator.textContent = displayDate;
                     }
@@ -1304,9 +1316,10 @@
                 const eventId = event.id || `event-${idx}`;
                 entry.id = eventId;
 
-                const jobs = event.tolls?.jobs || 0;
+                const jobs = Number(event.tolls?.jobs) || 0;
                 const confidence = event.confidence ? Math.round(event.confidence * 100) : null;
-                const company = event.headline?.split(' ')[0] || 'Unknown';
+                const company = String(event.headline || '').split(' ')[0] || 'Unknown';
+                const srcUrl = safeUrl(event.source_url);
                 const excerptId = `excerpt-${idx}`;
 
                 const shareUrl = datePath ? `https://dailyaitoll.com/${datePath}#${eventId}` : `https://dailyaitoll.com/#${eventId}`;
@@ -1323,7 +1336,7 @@ Via @DailyAIToll`;
                 entry.innerHTML = `
                     <div class="entry-main">
                         <div class="entry-headline">
-                            <a href="${eventPageUrl}" class="entry-company">${company}</a>
+                            <a href="${esc(eventPageUrl)}" class="entry-company">${esc(company)}</a>
                             <span class="entry-jobs">${jobs.toLocaleString()}</span>
                         </div>
                         <div class="entry-meta">
@@ -1333,16 +1346,16 @@ Via @DailyAIToll`;
                                 <span class="source-trigger" data-source-id="${idx}">source</span>
                                 <div class="source-popup" id="source-popup-${idx}">
                                     <div class="source-popup-title">Source</div>
-                                    <div class="source-popup-headline">${event.headline || company}</div>
+                                    <div class="source-popup-headline">${esc(event.headline || company)}</div>
                                     <div class="source-popup-url">
-                                        <a href="${event.source_url || '#'}" target="_blank" rel="noopener">${event.source_url || 'No URL available'}</a>
+                                        <a href="${esc(srcUrl || '#')}" target="_blank" rel="noopener">${esc(event.source_url || 'No URL available')}</a>
                                     </div>
                                     <div class="source-popup-actions">
-                                        <button class="source-copy-btn" data-url="${event.source_url || ''}">
+                                        <button class="source-copy-btn" data-url="${esc(srcUrl)}">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
                                             Copy
                                         </button>
-                                        <a href="${event.source_url || '#'}" target="_blank" rel="noopener" class="source-open-btn">
+                                        <a href="${esc(srcUrl || '#')}" target="_blank" rel="noopener" class="source-open-btn">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                             Open
                                         </a>
@@ -1354,30 +1367,30 @@ Via @DailyAIToll`;
                                 <div class="share-popup" id="share-popup-${idx}">
                                     <div class="share-popup-title">Share this</div>
                                     <div class="share-popup-icons">
-                                        <a href="${entryShareUrls.linkedin}" target="_blank" rel="noopener" title="LinkedIn">
+                                        <a href="${esc(entryShareUrls.linkedin)}" target="_blank" rel="noopener" title="LinkedIn">
                                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                         </a>
-                                        <a href="${entryShareUrls.twitter}" target="_blank" rel="noopener" title="X">
+                                        <a href="${esc(entryShareUrls.twitter)}" target="_blank" rel="noopener" title="X">
                                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                                         </a>
-                                        <a href="${entryShareUrls.threads}" target="_blank" rel="noopener" title="Threads">
+                                        <a href="${esc(entryShareUrls.threads)}" target="_blank" rel="noopener" title="Threads">
                                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.187.408-2.264 1.332-3.03.903-.748 2.141-1.202 3.583-1.315.996-.078 1.964-.022 2.882.167.004-.396-.01-.784-.053-1.16-.144-1.226-.573-2.09-1.238-2.5-.69-.422-1.647-.517-2.767-.274l-.418-1.953c1.557-.333 2.99-.2 4.142.386 1.21.614 2.027 1.69 2.363 3.112.106.448.173.942.206 1.476 1.12.603 1.987 1.413 2.508 2.404.79 1.505.96 3.947-.942 5.81-1.77 1.737-4.017 2.493-7.085 2.516zm-.508-6.27c-1.553.1-2.404.756-2.357 1.63.028.5.307.936.786 1.229.538.328 1.255.472 2.016.431 1.072-.058 1.9-.472 2.464-1.23.475-.638.756-1.503.84-2.585-.907-.182-1.87-.26-2.862-.186-.299.024-.593.058-.887.104z"/></svg>
                                         </a>
-                                        <a href="${entryShareUrls.bluesky}" target="_blank" rel="noopener" title="Bluesky">
+                                        <a href="${esc(entryShareUrls.bluesky)}" target="_blank" rel="noopener" title="Bluesky">
                                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
                                         </a>
-                                        <a href="${entryShareUrls.email}" title="Email">
+                                        <a href="${esc(entryShareUrls.email)}" title="Email">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
                                         </a>
                                     </div>
-                                    <button class="share-copy-btn" data-url="${shareUrl}">
+                                    <button class="share-copy-btn" data-url="${esc(shareUrl)}">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
                                         Copy link
                                     </button>
                                 </div>
                             </span>
                         </div>
-                        <div class="entry-excerpt" id="${excerptId}">${event.excerpt || ''}</div>
+                        <div class="entry-excerpt" id="${excerptId}">${esc(event.excerpt)}</div>
                     </div>
                 `;
                 container.appendChild(entry);
