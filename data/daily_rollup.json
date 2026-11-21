@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-20T12:14:25.471018+00:00",
+  "last_updated": "2026-11-21T11:50:30.683131+00:00",
   "totals": {
-    "jobs": 430491,
-    "teams": 318,
+    "jobs": 430891,
+    "teams": 319,
     "products": 1,
-    "companies": 186,
+    "companies": 187,
     "revenue": 0,
-    "labor_hours": 895321280
+    "labor_hours": 896153280
   },
   "today": {
-    "jobs": 0,
-    "teams": 0,
+    "jobs": 400,
+    "teams": 1,
     "products": 0,
-    "companies": 0,
+    "companies": 1,
     "revenue": 0,
-    "labor_hours": 0
+    "labor_hours": 832000
   },
   "daily_totals": {
     "2026-05-05": {
@@ -1000,10 +1000,38 @@
       "companies": 2,
       "revenue": 0,
       "labor_hours": 166400
+    },
+    "2026-11-20": {
+      "jobs": 400,
+      "teams": 1,
+      "products": 0,
+      "companies": 1,
+      "revenue": 0,
+      "labor_hours": 832000
     }
   },
-  "events_count": 183,
+  "events_count": 184,
   "all_events": [
+    {
+      "id": "evt_20261120_001",
+      "event_date": "2026-11-20",
+      "headline": "Intel initiates layoffs in IT department amid ongoing restructuring",
+      "source_url": "https://www.tomshardware.com/pc-components/cpus/intel-continues-layoffs-with-cuts-to-its-it-department-hundreds-of-employees-reportedly-affected-companys-workforce-reduced-by-27-800-under-lip-bu-tan",
+      "source_name": "Tom's Hardware",
+      "excerpt": "Intel has reportedly begun another round of layoffs, this time across its global IT organization, with cuts starting November 16. The company has not confirmed how many employees are affected or which teams are involved.",
+      "causality": "inferred",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 400,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 832000
+      },
+      "notes": "Estimates suggest a double-digit percentage of the department\u2019s roughly 2,607 staff could be cut\u2014potentially 260 to 520 jobs\u2014but these figures are unverified.",
+      "collected_date": "2026-11-21",
+      "date": "2026-11-21",
+      "created_at": "2026-11-21T11:50:30.683194+00:00"
+    },
     {
       "id": "evt_20261113_001",
       "event_date": "2026-11-13",
@@ -3001,35 +3029,36 @@
       "collected_date": "2026-06-06",
       "date": "2026-06-06",
       "created_at": "2026-06-06T06:45:02.212981+00:00"
-    },
-    {
-      "id": "evt_20260602_001",
-      "event_date": "2026-06-02",
-      "headline": "GitLab cuts 14% of workforce (~350 employees) in AI pivot to 'agentic era'",
-      "source_url": "https://techcrunch.com/2026/06/03/gitlab-cuts-14-of-staff-as-it-scales-its-platform-to-serve-ai-workloads/",
-      "source_name": "TechCrunch",
-      "excerpt": "Developer platform GitLab has laid off about 14% of its workforce, about 350 employees, as part of a broader restructuring effort... as it exited 22 countries, flattened management layers, and invested in infrastructure to scale its platform and serve increased traffic from AI workflows.",
-      "causality": "direct",
-      "confidence": 0.92,
-      "tolls": {
-        "jobs": 350,
-        "teams": 3,
-        "companies": 1,
-        "labor_hours": 728000
-      },
-      "notes": "Announced alongside Q1 FY27 earnings on June 2, 2026. CEO Bill Staples cited 'agentic era' transformation; ~$30-35M restructuring charge. Savings reinvested in Duo Agent Platform and AI infrastructure. Exit from 22 countries.",
-      "collected_date": "2026-06-05",
-      "date": "2026-06-05",
-      "created_at": "2026-06-05T07:57:01.874600+00:00"
     }
   ],
-  "summary": "No new verifiable AI displacement events found.",
-  "events": [],
+  "summary": "Intel has initiated layoffs in its IT department as part of ongoing restructuring efforts. While the exact number of affected employees is unconfirmed, estimates suggest significant reductions. The role of AI in these layoffs is inferred based on industry trends and Intel's strategic focus.",
+  "events": [
+    {
+      "id": "evt_20261120_001",
+      "event_date": "2026-11-20",
+      "headline": "Intel initiates layoffs in IT department amid ongoing restructuring",
+      "source_url": "https://www.tomshardware.com/pc-components/cpus/intel-continues-layoffs-with-cuts-to-its-it-department-hundreds-of-employees-reportedly-affected-companys-workforce-reduced-by-27-800-under-lip-bu-tan",
+      "source_name": "Tom's Hardware",
+      "excerpt": "Intel has reportedly begun another round of layoffs, this time across its global IT organization, with cuts starting November 16. The company has not confirmed how many employees are affected or which teams are involved.",
+      "causality": "inferred",
+      "confidence": 0.7,
+      "tolls": {
+        "jobs": 400,
+        "teams": 1,
+        "companies": 1,
+        "labor_hours": 832000
+      },
+      "notes": "Estimates suggest a double-digit percentage of the department\u2019s roughly 2,607 staff could be cut\u2014potentially 260 to 520 jobs\u2014but these figures are unverified.",
+      "collected_date": "2026-11-21",
+      "date": "2026-11-21",
+      "created_at": "2026-11-21T11:50:30.683194+00:00"
+    }
+  ],
   "health": {
     "last_anthropic_success": "2026-11-14",
-    "last_openai_success": "2026-11-20",
-    "last_nonzero_collection": "2026-11-14",
-    "consecutive_zero_days": 6,
-    "last_collection_date": "2026-11-20"
+    "last_openai_success": "2026-11-21",
+    "last_nonzero_collection": "2026-11-21",
+    "consecutive_zero_days": 0,
+    "last_collection_date": "2026-11-21"
   }
 }
