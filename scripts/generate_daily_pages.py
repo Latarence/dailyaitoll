@@ -2,6 +2,7 @@
 """Generate static daily pages from events data."""
 
 import json
+import re
 from pathlib import Path
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
@@ -110,7 +111,7 @@ def generate_daily_page(date_str, events, template):
     # Generate OG description and events HTML, with empty-day fallback so
     # /YYYY/MM/DD is always reachable even when the day had zero collected events.
     if num_companies == 0:
-        og_description = "No AI displacement events recorded on this date."
+        og_description = f"Daily AI Toll for {date_display}: no AI displacement events recorded on this date."
         events_html = (
             '        <div class="entry no-events">\n'
             '            <div class="entry-main">\n'
@@ -123,10 +124,10 @@ def generate_daily_page(date_str, events, template):
         )
     elif num_companies == 1:
         company = events[0].get('headline', '').split()[0]
-        og_description = f"{company} announces {total_jobs:,} job cuts"
+        og_description = f"Daily AI Toll for {date_display}: {company} announces {total_jobs:,} job cuts"
         events_html = '\n'.join(generate_event_html(e, i) for i, e in enumerate(events))
     else:
-        og_description = f"{num_companies} companies announced {total_jobs:,} job cuts"
+        og_description = f"Daily AI Toll for {date_display}: {num_companies} companies announced {total_jobs:,} job cuts"
         events_html = '\n'.join(generate_event_html(e, i) for i, e in enumerate(events))
 
     # Generate share text
@@ -166,7 +167,14 @@ def write_sitemap(web_dir: Path) -> int:
         if any(rel.startswith(x) for x in SITEMAP_EXCLUDE):
             continue
         urls.append(f"{SITE_URL}/{rel}" if rel else f"{SITE_URL}/")
-    body = "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls)
+    def _entry(u):
+        # lastmod only for dated daily pages (/YYYY/MM/DD): the page date, deterministic.
+        m = re.fullmatch(re.escape(SITE_URL) + r"/(\d{4})/(\d{2})/(\d{2})", u)
+        if m:
+            return f"  <url><loc>{u}</loc><lastmod>{'-'.join(m.groups())}</lastmod></url>\n"
+        return f"  <url><loc>{u}</loc></url>\n"
+
+    body = "".join(_entry(u) for u in urls)
     (web_dir / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
