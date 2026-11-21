@@ -65,6 +65,10 @@
           "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://cdn.jsdelivr.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.google.com/g/collect; manifest-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"
         },
         {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-/kOa3mLXCv3qUKOzsHppLusfBUaqNKa+jOnOeYr8nog=' 'sha256-1AHeksinKlsPnBSEIZk68HeRkjXDNdYsp1OqmjIbXyw=' 'sha256-5J8QIN0uHa3X4+TaUpRKBKn3pljcpBNl9MhDpDECP+U=' 'sha256-80HuQPwPpOuVK+Wu1X2wmZ8LqeaXuNjS69YRBjfEiLw=' 'sha256-H+mRxkHzNPHEG6dmC39SXUf+JB+NkGxNWW+MAtStPKQ=' 'sha256-T3Gr03HN0rwiBYBExKzSsazX1FxlNJjXMtNFiBfkkPY=' 'sha256-TAu21uLPkcN8L1lSQouYoSeCjEf5jwjXqim+1Co4LAI=' 'sha256-Xlguq9EI956DiszUlBr7why9AxMgJzJhkGIw1bu59fE=' 'sha256-kKw4Y+xZBQ5s29HZjkR+brZ35Thvc21detELjqIFXt0=' 'sha256-qP8uWePYLYuR4UlR7VgOwbL6gUMqFErOxwKycBphXmY=' 'sha256-s1vPhiq8DdZ5vubYM/JP8UgmXnZYw3+KBqk3lU/dSuU=' 'sha256-ugM2Z2i9RXfR4olmRDYLAcddfYEY4+w67Iw/s3sh1wc=' 'sha256-zgXKRj/XMvdq+OQ9zV1KZ8qy0ZwsXnIkKm/Bl3POND8=' https://static.cloudflareinsights.com https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.google.com/g/collect; manifest-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"
+        },
+        {
           "key": "X-Frame-Options",
           "value": "DENY"
         },
