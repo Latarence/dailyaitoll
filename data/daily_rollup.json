@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T11:50:30.683131+00:00",
+  "last_updated": "2026-11-22T12:01:41.709067+00:00",
   "totals": {
     "jobs": 430891,
     "teams": 319,
@@ -9,12 +9,12 @@
     "labor_hours": 896153280
   },
   "today": {
-    "jobs": 400,
-    "teams": 1,
+    "jobs": 0,
+    "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": 832000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -3031,34 +3031,13 @@
       "created_at": "2026-06-06T06:45:02.212981+00:00"
     }
   ],
-  "summary": "Intel has initiated layoffs in its IT department as part of ongoing restructuring efforts. While the exact number of affected employees is unconfirmed, estimates suggest significant reductions. The role of AI in these layoffs is inferred based on industry trends and Intel's strategic focus.",
-  "events": [
-    {
-      "id": "evt_20261120_001",
-      "event_date": "2026-11-20",
-      "headline": "Intel initiates layoffs in IT department amid ongoing restructuring",
-      "source_url": "https://www.tomshardware.com/pc-components/cpus/intel-continues-layoffs-with-cuts-to-its-it-department-hundreds-of-employees-reportedly-affected-companys-workforce-reduced-by-27-800-under-lip-bu-tan",
-      "source_name": "Tom's Hardware",
-      "excerpt": "Intel has reportedly begun another round of layoffs, this time across its global IT organization, with cuts starting November 16. The company has not confirmed how many employees are affected or which teams are involved.",
-      "causality": "inferred",
-      "confidence": 0.7,
-      "tolls": {
-        "jobs": 400,
-        "teams": 1,
-        "companies": 1,
-        "labor_hours": 832000
-      },
-      "notes": "Estimates suggest a double-digit percentage of the department\u2019s roughly 2,607 staff could be cut\u2014potentially 260 to 520 jobs\u2014but these figures are unverified.",
-      "collected_date": "2026-11-21",
-      "date": "2026-11-21",
-      "created_at": "2026-11-21T11:50:30.683194+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-11-14",
-    "last_openai_success": "2026-11-21",
+    "last_openai_success": "2026-11-22",
     "last_nonzero_collection": "2026-11-21",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-11-21"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-11-22"
   }
 }
