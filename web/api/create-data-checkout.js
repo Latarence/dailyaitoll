@@ -60,7 +60,7 @@ module.exports = async (req, res) => {
             currency: 'usd',
             product_data: {
               name: `Daily AI Toll Dataset - ${TIERS[tier].label}`,
-              description: 'Licensed CSV download of the full Daily AI Toll dataset.',
+              description: 'Licensed CSV download of the Daily AI Toll dataset as recorded to date.',
             },
             unit_amount: TIERS[tier].amount,
           },
