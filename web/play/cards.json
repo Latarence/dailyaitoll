@@ -1,7 +1,7 @@
 {
  "built_from": "data/events.jsonl",
  "rule": "roles figure appears in the cited headline or excerpt; confidence >= 0.8; reports that call the count unconfirmed or an estimate are left out; repeats removed",
- "count": 78,
+ "count": 79,
  "cards": [
   {
    "id": "evt_20240215_grammarl_219",
@@ -936,6 +936,18 @@
    "excerpt": "Cellebrite announced a reduction of ### positions as part of its strategic shift towards AI-driven solutions.",
    "source": "Globes",
    "url": "https://www.globes.co.il/en/article-cellebrite-lays-off-1200-employees-amid-ai-transition-1001445678",
+   "causality": "direct",
+   "confidence": 0.85
+  },
+  {
+   "id": "evt_20261126_001",
+   "date": "2026-11-26",
+   "roles": 10000,
+   "headline": "SAP plans to cut at least 10,000 positions amid AI-driven restructuring",
+   "masked": "SAP plans to cut at least ### positions amid AI-driven restructuring",
+   "excerpt": "SAP överväger att säga upp minst nio procent av personalen i en AI-omställning.",
+   "source": "Svenska Dagbladet",
+   "url": "https://www.svd.se/a/2vGLAG/kinesisk-ai-utveckling-saktas-ned-av-usa-s-lagar",
    "causality": "direct",
    "confidence": 0.85
   }
