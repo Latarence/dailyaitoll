@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T13:12:16.839453+00:00",
+  "last_updated": "2026-11-28T12:27:48.276651+00:00",
   "totals": {
     "jobs": 442257,
     "teams": 319,
@@ -9,12 +9,12 @@
     "labor_hours": 919794560
   },
   "today": {
-    "jobs": 10000,
+    "jobs": 0,
     "teams": 0,
     "products": 0,
-    "companies": 1,
+    "companies": 0,
     "revenue": 0,
-    "labor_hours": 20800000
+    "labor_hours": 0
   },
   "daily_totals": {
     "2026-05-05": {
@@ -3055,34 +3055,13 @@
       "created_at": "2026-06-07T07:45:34.578744+00:00"
     }
   ],
-  "summary": "SAP plans to cut at least 10,000 positions amid AI-driven restructuring.",
-  "events": [
-    {
-      "id": "evt_20261126_001",
-      "event_date": "2026-11-26",
-      "headline": "SAP plans to cut at least 10,000 positions amid AI-driven restructuring",
-      "source_url": "https://www.svd.se/a/2vGLAG/kinesisk-ai-utveckling-saktas-ned-av-usa-s-lagar",
-      "source_name": "Svenska Dagbladet",
-      "excerpt": "SAP \u00f6verv\u00e4ger att s\u00e4ga upp minst nio procent av personalen i en AI-omst\u00e4llning.",
-      "causality": "direct",
-      "confidence": 0.85,
-      "tolls": {
-        "jobs": 10000,
-        "teams": null,
-        "companies": 1,
-        "labor_hours": 20800000
-      },
-      "notes": "SAP considering layoffs as part of AI transition",
-      "collected_date": "2026-11-27",
-      "date": "2026-11-27",
-      "created_at": "2026-11-27T13:12:16.839516+00:00"
-    }
-  ],
+  "summary": "No new verifiable AI displacement events found.",
+  "events": [],
   "health": {
     "last_anthropic_success": "2026-11-14",
-    "last_openai_success": "2026-11-27",
+    "last_openai_success": "2026-11-28",
     "last_nonzero_collection": "2026-11-27",
-    "consecutive_zero_days": 0,
-    "last_collection_date": "2026-11-27"
+    "consecutive_zero_days": 1,
+    "last_collection_date": "2026-11-28"
   }
 }
